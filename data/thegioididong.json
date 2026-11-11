@@ -1,0 +1,1641 @@
+{
+  "source": "thegioididong",
+  "crawledAt": "2026-11-11T04:39:23.774Z",
+  "totalCategories": 108,
+  "totalProducts": 15,
+  "categories": [
+    {
+      "name": "Laptop HP",
+      "slug": "laptop-hp-compaq",
+      "url": "https://www.thegioididong.com/laptop-hp-compaq",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Asus VIVOBOOK",
+      "slug": "laptop-asus-vivobook",
+      "url": "https://www.thegioididong.com/laptop-asus-vivobook",
+      "type": "brand"
+    },
+    {
+      "name": "iphone 15",
+      "slug": "laptop-apple-macbook-pro-m6-series",
+      "url": "https://www.thegioididong.com/laptop-apple-macbook-pro-m6-series",
+      "type": "series"
+    },
+    {
+      "name": "Laptop Dell CHÍNH HÃNG",
+      "slug": "laptop-dell",
+      "url": "https://www.thegioididong.com/laptop-dell",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Lenovo",
+      "slug": "laptop-lenovo-ideapad",
+      "url": "https://www.thegioididong.com/laptop-lenovo-ideapad",
+      "type": "brand"
+    },
+    {
+      "name": "Acer ASPIRE",
+      "slug": "laptop-acer-aspire",
+      "url": "https://www.thegioididong.com/laptop-acer-aspire",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop MSI CYBORG",
+      "slug": "laptop-msi-gaming-gf",
+      "url": "https://www.thegioididong.com/laptop-msi-gaming-gf",
+      "type": "series"
+    },
+    {
+      "name": "Laptop GIGABYTE RTX 40",
+      "slug": "laptop-gigabyte",
+      "url": "https://www.thegioididong.com/laptop-gigabyte",
+      "type": "brand"
+    },
+    {
+      "name": "Asus",
+      "slug": "laptop-asus",
+      "url": "https://www.thegioididong.com/laptop-asus",
+      "type": "brand"
+    },
+    {
+      "name": "Acer",
+      "slug": "laptop-acer",
+      "url": "https://www.thegioididong.com/laptop-acer",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo",
+      "slug": "laptop-lenovo",
+      "url": "https://www.thegioididong.com/laptop-lenovo",
+      "type": "brand"
+    },
+    {
+      "name": "MSI",
+      "slug": "laptop-msi",
+      "url": "https://www.thegioididong.com/laptop-msi",
+      "type": "brand"
+    },
+    {
+      "name": "MacBook",
+      "slug": "laptop-apple-macbook",
+      "url": "https://www.thegioididong.com/laptop-apple-macbook",
+      "type": "brand"
+    },
+    {
+      "name": "SingPC",
+      "slug": "laptop-singpc",
+      "url": "https://www.thegioididong.com/laptop-singpc",
+      "type": "brand"
+    },
+    {
+      "name": "Thunderobot",
+      "slug": "laptop-thunderobot",
+      "url": "https://www.thegioididong.com/laptop-thunderobot",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop AI",
+      "slug": "laptop-ai",
+      "url": "https://www.thegioididong.com/laptop-ai",
+      "type": "brand"
+    },
+    {
+      "name": "Kỹ thuật",
+      "slug": "laptop-ky-thuat",
+      "url": "https://www.thegioididong.com/laptop-ky-thuat",
+      "type": "brand"
+    },
+    {
+      "name": "Dưới 14 inch",
+      "slug": "laptop-khoang-13-inch",
+      "url": "https://www.thegioididong.com/laptop-khoang-13-inch",
+      "type": "series"
+    },
+    {
+      "name": "Từ 14 - 15 inch",
+      "slug": "laptop-khoang-14-inch",
+      "url": "https://www.thegioididong.com/laptop-khoang-14-inch",
+      "type": "series"
+    },
+    {
+      "name": "Từ 15 - 16 inch",
+      "slug": "laptop-khoang-15-inch",
+      "url": "https://www.thegioididong.com/laptop-khoang-15-inch",
+      "type": "series"
+    },
+    {
+      "name": "Trên 16 inch",
+      "slug": "laptop-tren-16-inch",
+      "url": "https://www.thegioididong.com/laptop-tren-16-inch",
+      "type": "series"
+    },
+    {
+      "name": "Ultra 9",
+      "slug": "laptop-ultra-9",
+      "url": "https://www.thegioididong.com/laptop-ultra-9",
+      "type": "brand"
+    },
+    {
+      "name": "Ultra 7",
+      "slug": "laptop-ultra-7",
+      "url": "https://www.thegioididong.com/laptop-ultra-7",
+      "type": "brand"
+    },
+    {
+      "name": "Ultra 5",
+      "slug": "laptop-ultra-5",
+      "url": "https://www.thegioididong.com/laptop-ultra-5",
+      "type": "brand"
+    },
+    {
+      "name": "Ultra X7",
+      "slug": "laptop-ultra-x7",
+      "url": "https://www.thegioididong.com/laptop-ultra-x7",
+      "type": "brand"
+    },
+    {
+      "name": "Core i9",
+      "slug": "laptop-core-i9",
+      "url": "https://www.thegioididong.com/laptop-core-i9",
+      "type": "brand"
+    },
+    {
+      "name": "Core i7",
+      "slug": "laptop-core-i7",
+      "url": "https://www.thegioididong.com/laptop-core-i7",
+      "type": "brand"
+    },
+    {
+      "name": "Core i5",
+      "slug": "laptop-core-i5",
+      "url": "https://www.thegioididong.com/laptop-core-i5",
+      "type": "brand"
+    },
+    {
+      "name": "Core i3",
+      "slug": "laptop-core-i3",
+      "url": "https://www.thegioididong.com/laptop-core-i3",
+      "type": "brand"
+    },
+    {
+      "name": "Core 3",
+      "slug": "laptop-core-3",
+      "url": "https://www.thegioididong.com/laptop-core-3",
+      "type": "brand"
+    },
+    {
+      "name": "Core 5",
+      "slug": "laptop-core-5",
+      "url": "https://www.thegioididong.com/laptop-core-5",
+      "type": "brand"
+    },
+    {
+      "name": "Core 7",
+      "slug": "laptop-core-7",
+      "url": "https://www.thegioididong.com/laptop-core-7",
+      "type": "brand"
+    },
+    {
+      "name": "Core 9",
+      "slug": "laptop-core-9",
+      "url": "https://www.thegioididong.com/laptop-core-9",
+      "type": "brand"
+    },
+    {
+      "name": "Ryzen 9",
+      "slug": "laptop-ryzen-9",
+      "url": "https://www.thegioididong.com/laptop-ryzen-9",
+      "type": "brand"
+    },
+    {
+      "name": "Ryzen 7",
+      "slug": "laptop-ryzen-7",
+      "url": "https://www.thegioididong.com/laptop-ryzen-7",
+      "type": "brand"
+    },
+    {
+      "name": "Ryzen 5",
+      "slug": "laptop-ryzen-5",
+      "url": "https://www.thegioididong.com/laptop-ryzen-5",
+      "type": "brand"
+    },
+    {
+      "name": "Ryzen 3",
+      "slug": "laptop-ryzen-3",
+      "url": "https://www.thegioididong.com/laptop-ryzen-3",
+      "type": "brand"
+    },
+    {
+      "name": "Ryzen AI 300 series",
+      "slug": "laptop-ryzen-ai-300-series",
+      "url": "https://www.thegioididong.com/laptop-ryzen-ai-300-series",
+      "type": "series"
+    },
+    {
+      "name": "Ryzen AI Max 300 Series",
+      "slug": "laptop-ryzen-ai-max-300-series",
+      "url": "https://www.thegioididong.com/laptop-ryzen-ai-max-300-series",
+      "type": "series"
+    },
+    {
+      "name": "Ryzen AI 200 Series",
+      "slug": "laptop-ryzen-ai-200-series",
+      "url": "https://www.thegioididong.com/laptop-ryzen-ai-200-series",
+      "type": "series"
+    },
+    {
+      "name": "Ryzen AI 400 Series",
+      "slug": "laptop-ryzen-ai-400-series",
+      "url": "https://www.thegioididong.com/laptop-ryzen-ai-400-series",
+      "type": "series"
+    },
+    {
+      "name": "Snapdragon X Elite",
+      "slug": "laptop-snapdragon-x-elite",
+      "url": "https://www.thegioididong.com/laptop-snapdragon-x-elite",
+      "type": "series"
+    },
+    {
+      "name": "Snapdragon X Plus",
+      "slug": "laptop-snapdragon-x-plus",
+      "url": "https://www.thegioididong.com/laptop-snapdragon-x-plus",
+      "type": "series"
+    },
+    {
+      "name": "Snapdragon X",
+      "slug": "laptop-snapdragon-x",
+      "url": "https://www.thegioididong.com/laptop-snapdragon-x",
+      "type": "brand"
+    },
+    {
+      "name": "RTX Spark",
+      "slug": "laptop-rtx-spark",
+      "url": "https://www.thegioididong.com/laptop-rtx-spark",
+      "type": "brand"
+    },
+    {
+      "name": "Card tích hợp",
+      "slug": "laptop-card-tich-hop",
+      "url": "https://www.thegioididong.com/laptop-card-tich-hop",
+      "type": "series"
+    },
+    {
+      "name": "Card rời",
+      "slug": "laptop-card-roi",
+      "url": "https://www.thegioididong.com/laptop-card-roi",
+      "type": "brand"
+    },
+    {
+      "name": "RTX 50 series",
+      "slug": "laptop-rtx-50-series",
+      "url": "https://www.thegioididong.com/laptop-rtx-50-series",
+      "type": "series"
+    },
+    {
+      "name": "RTX 40 series",
+      "slug": "laptop-rtx-40-series",
+      "url": "https://www.thegioididong.com/laptop-rtx-40-series",
+      "type": "series"
+    },
+    {
+      "name": "RTX 30 series",
+      "slug": "laptop-rtx-30-series",
+      "url": "https://www.thegioididong.com/laptop-rtx-30-series",
+      "type": "series"
+    },
+    {
+      "name": "MX Series",
+      "slug": "laptop-geforce-mx-series",
+      "url": "https://www.thegioididong.com/laptop-geforce-mx-series",
+      "type": "series"
+    },
+    {
+      "name": "8 GB",
+      "slug": "laptop-8-gb",
+      "url": "https://www.thegioididong.com/laptop-8-gb",
+      "type": "brand"
+    },
+    {
+      "name": "32 GB",
+      "slug": "laptop-32-gb",
+      "url": "https://www.thegioididong.com/laptop-32-gb",
+      "type": "brand"
+    },
+    {
+      "name": "36 GB",
+      "slug": "laptop-36-gb",
+      "url": "https://www.thegioididong.com/laptop-36-gb",
+      "type": "brand"
+    },
+    {
+      "name": "48 GB",
+      "slug": "laptop-48-gb",
+      "url": "https://www.thegioididong.com/laptop-48-gb",
+      "type": "brand"
+    },
+    {
+      "name": "64 GB",
+      "slug": "laptop-64-gb",
+      "url": "https://www.thegioididong.com/laptop-64-gb",
+      "type": "brand"
+    },
+    {
+      "name": "128 GB",
+      "slug": "laptop-128-gb",
+      "url": "https://www.thegioididong.com/laptop-128-gb",
+      "type": "brand"
+    },
+    {
+      "name": "192 GB",
+      "slug": "laptop-192-gb",
+      "url": "https://www.thegioididong.com/laptop-192-gb",
+      "type": "brand"
+    },
+    {
+      "name": "SSD 1 TB",
+      "slug": "laptop-ssd-1-tb",
+      "url": "https://www.thegioididong.com/laptop-ssd-1-tb",
+      "type": "series"
+    },
+    {
+      "name": "SSD 2 TB",
+      "slug": "laptop-ssd-2-tb",
+      "url": "https://www.thegioididong.com/laptop-ssd-2-tb",
+      "type": "series"
+    },
+    {
+      "name": "SSD 3 TB",
+      "slug": "laptop-ssd-3-tb",
+      "url": "https://www.thegioididong.com/laptop-ssd-3-tb",
+      "type": "series"
+    },
+    {
+      "name": "SSD 6 TB",
+      "slug": "laptop-ssd-6-tb",
+      "url": "https://www.thegioididong.com/laptop-ssd-6-tb",
+      "type": "series"
+    },
+    {
+      "name": "Cảm ứng",
+      "slug": "laptop-man-hinh-cam-ung",
+      "url": "https://www.thegioididong.com/laptop-man-hinh-cam-ung",
+      "type": "series"
+    },
+    {
+      "name": "Gập 360 độ",
+      "slug": "laptop-man-hinh-gap-360-do",
+      "url": "https://www.thegioididong.com/laptop-man-hinh-gap-360-do",
+      "type": "series"
+    },
+    {
+      "name": "100% sRGB",
+      "slug": "laptop-man-hinh-100-srgb",
+      "url": "https://www.thegioididong.com/laptop-man-hinh-100-srgb",
+      "type": "series"
+    },
+    {
+      "name": "Chống chói (Anti Glare)",
+      "slug": "laptop-man-hinh-chong-choi-anti-glare",
+      "url": "https://www.thegioididong.com/laptop-man-hinh-chong-choi-anti-glare",
+      "type": "series"
+    },
+    {
+      "name": "Màn hình OLED",
+      "slug": "laptop-man-hinh-oled",
+      "url": "https://www.thegioididong.com/laptop-man-hinh-oled",
+      "type": "series"
+    },
+    {
+      "name": "Bảo mật vân tay",
+      "slug": "laptop-bao-mat-van-tay",
+      "url": "https://www.thegioididong.com/laptop-bao-mat-van-tay",
+      "type": "series"
+    },
+    {
+      "name": "Bảo mật khuôn mặt",
+      "slug": "laptop-bao-mat-khuon-mat",
+      "url": "https://www.thegioididong.com/laptop-bao-mat-khuon-mat",
+      "type": "series"
+    },
+    {
+      "name": "Có bàn phím số",
+      "slug": "laptop-ban-phim-so",
+      "url": "https://www.thegioididong.com/laptop-ban-phim-so",
+      "type": "series"
+    },
+    {
+      "name": "Có đèn bàn phím",
+      "slug": "laptop-den-ban-phim",
+      "url": "https://www.thegioididong.com/laptop-den-ban-phim",
+      "type": "series"
+    },
+    {
+      "name": "4K",
+      "slug": "laptop-4k",
+      "url": "https://www.thegioididong.com/laptop-4k",
+      "type": "brand"
+    },
+    {
+      "name": "2K",
+      "slug": "laptop-2k",
+      "url": "https://www.thegioididong.com/laptop-2k",
+      "type": "brand"
+    },
+    {
+      "name": "Retina",
+      "slug": "laptop-retina",
+      "url": "https://www.thegioididong.com/laptop-retina",
+      "type": "brand"
+    },
+    {
+      "name": "Full HD",
+      "slug": "laptop-full-hd",
+      "url": "https://www.thegioididong.com/laptop-full-hd",
+      "type": "brand"
+    },
+    {
+      "name": "HD",
+      "slug": "laptop-hd",
+      "url": "https://www.thegioididong.com/laptop-hd",
+      "type": "brand"
+    },
+    {
+      "name": "90 Hz",
+      "slug": "laptop-90-hz",
+      "url": "https://www.thegioididong.com/laptop-90-hz",
+      "type": "brand"
+    },
+    {
+      "name": "120 Hz",
+      "slug": "laptop-120-hz",
+      "url": "https://www.thegioididong.com/laptop-120-hz",
+      "type": "brand"
+    },
+    {
+      "name": "144 Hz",
+      "slug": "laptop-144-hz",
+      "url": "https://www.thegioididong.com/laptop-144-hz",
+      "type": "brand"
+    },
+    {
+      "name": "165 Hz",
+      "slug": "laptop-165-hz",
+      "url": "https://www.thegioididong.com/laptop-165-hz",
+      "type": "brand"
+    },
+    {
+      "name": "180 Hz",
+      "slug": "laptop-180-hz",
+      "url": "https://www.thegioididong.com/laptop-180-hz",
+      "type": "brand"
+    },
+    {
+      "name": "240 Hz",
+      "slug": "laptop-240-hz",
+      "url": "https://www.thegioididong.com/laptop-240-hz",
+      "type": "brand"
+    },
+    {
+      "name": "250 Hz",
+      "slug": "laptop-250-hz",
+      "url": "https://www.thegioididong.com/laptop-250-hz",
+      "type": "brand"
+    },
+    {
+      "name": "300 Hz",
+      "slug": "laptop-300-hz",
+      "url": "https://www.thegioididong.com/laptop-300-hz",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo Legion",
+      "slug": "laptop-lenovo-gaming-legion",
+      "url": "https://www.thegioididong.com/laptop-lenovo-gaming-legion",
+      "type": "series"
+    },
+    {
+      "name": "Lenovo LOQ",
+      "slug": "laptop-lenovo-loq",
+      "url": "https://www.thegioididong.com/laptop-lenovo-loq",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Nitro",
+      "slug": "laptop-acer-nitro",
+      "url": "https://www.thegioididong.com/laptop-acer-nitro",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Predator",
+      "slug": "laptop-acer-predator",
+      "url": "https://www.thegioididong.com/laptop-acer-predator",
+      "type": "brand"
+    },
+    {
+      "name": "HP Omen",
+      "slug": "laptop-hp-compaq-omen",
+      "url": "https://www.thegioididong.com/laptop-hp-compaq-omen",
+      "type": "series"
+    },
+    {
+      "name": "HP Victus",
+      "slug": "laptop-hp-compaq-victus",
+      "url": "https://www.thegioididong.com/laptop-hp-compaq-victus",
+      "type": "series"
+    },
+    {
+      "name": "Asus TUF",
+      "slug": "laptop-asus-tuf-gaming",
+      "url": "https://www.thegioididong.com/laptop-asus-tuf-gaming",
+      "type": "series"
+    },
+    {
+      "name": "Asus Gaming V Series",
+      "slug": "laptop-asus-gaming-v-series",
+      "url": "https://www.thegioididong.com/laptop-asus-gaming-v-series",
+      "type": "series"
+    },
+    {
+      "name": "Asus ROG",
+      "slug": "laptop-asus-rog",
+      "url": "https://www.thegioididong.com/laptop-asus-rog",
+      "type": "brand"
+    },
+    {
+      "name": "Gigabyte Aorus",
+      "slug": "laptop-gigabyte-gigabyte-aorus",
+      "url": "https://www.thegioididong.com/laptop-gigabyte-gigabyte-aorus",
+      "type": "series"
+    },
+    {
+      "name": "Gigabyte Aero",
+      "slug": "laptop-gigabyte-gigabyte-aero",
+      "url": "https://www.thegioididong.com/laptop-gigabyte-gigabyte-aero",
+      "type": "series"
+    },
+    {
+      "name": "Gigabyte A Series",
+      "slug": "laptop-gigabyte-a-series",
+      "url": "https://www.thegioididong.com/laptop-gigabyte-a-series",
+      "type": "series"
+    },
+    {
+      "name": "G Series",
+      "slug": "laptop-gigabyte-g-series",
+      "url": "https://www.thegioididong.com/laptop-gigabyte-g-series",
+      "type": "series"
+    },
+    {
+      "name": "Dell Alienware",
+      "slug": "laptop-dell-gaming-alienware",
+      "url": "https://www.thegioididong.com/laptop-dell-gaming-alienware",
+      "type": "series"
+    },
+    {
+      "name": "HP Spectre x360",
+      "slug": "laptop-hp-compaq-spectre",
+      "url": "https://www.thegioididong.com/laptop-hp-compaq-spectre",
+      "type": "series"
+    },
+    {
+      "name": "Lenovo Yoga Series",
+      "slug": "laptop-lenovo-yoga",
+      "url": "https://www.thegioididong.com/laptop-lenovo-yoga",
+      "type": "brand"
+    },
+    {
+      "name": "MacBook Air",
+      "slug": "laptop-apple-macbook-air",
+      "url": "https://www.thegioididong.com/laptop-apple-macbook-air",
+      "type": "series"
+    },
+    {
+      "name": "MacBook Pro",
+      "slug": "laptop-apple-macbook-pro",
+      "url": "https://www.thegioididong.com/laptop-apple-macbook-pro",
+      "type": "series"
+    },
+    {
+      "name": "Macbook Air M5",
+      "slug": "laptop-apple-macbook-air-m5-series",
+      "url": "https://www.thegioididong.com/laptop-apple-macbook-air-m5-series",
+      "type": "series"
+    },
+    {
+      "name": "Macbook Pro M5",
+      "slug": "laptop-apple-macbook-pro-m5-series",
+      "url": "https://www.thegioididong.com/laptop-apple-macbook-pro-m5-series",
+      "type": "series"
+    },
+    {
+      "name": "MacBook Neo",
+      "slug": "laptop-apple-macbook-macbook-neo",
+      "url": "https://www.thegioididong.com/laptop-apple-macbook-macbook-neo",
+      "type": "series"
+    },
+    {
+      "name": "Zenbook",
+      "slug": "laptop-asus-zenbook",
+      "url": "https://www.thegioididong.com/laptop-asus-zenbook",
+      "type": "brand"
+    },
+    {
+      "name": "Thinkpad",
+      "slug": "laptop-lenovo-thinkpad",
+      "url": "https://www.thegioididong.com/laptop-lenovo-thinkpad",
+      "type": "brand"
+    },
+    {
+      "name": "laptop LG",
+      "slug": "laptop-lg",
+      "url": "https://www.thegioididong.com/laptop-lg",
+      "type": "brand"
+    }
+  ],
+  "products": [
+    {
+      "id": "f230b970b23f4fb3",
+      "source": "thegioididong",
+      "sku": "0220042003457",
+      "name": "Laptop HP 240R G10 - C3RU7AT (Core 5 120U, 16GB, 512GB, Full HD, Win11)",
+      "brand": "Hp",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/hp-240r-g10-core-5-120u-c3ru7at",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 21290000,
+        "original": 29090000,
+        "discountPercent": 26,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core 5 Raptor Lake - 120U",
+        "ram": "16 GB",
+        "storage": "512 GB SSD PCIe M.2 (2280) (Có thể tháo rời, lắp thanh khác tối đa 1 TB (2280))",
+        "gpu": "Card tích hợp - Intel UHD Graphics",
+        "screen": "14 inch",
+        "battery": "3 cell, 41.04 Wh",
+        "weight": null,
+        "os": "Windows 11 Home SL",
+        "ports": "•HDMI•2 x USB 3.2•Jack tai nghe 3.5 mm•1 x USB 3.2 Gen 2 Type-C (hỗ trợ DisplayPort, Power delivery, HP Sleep and Charge)",
+        "rawSpecs": {
+          "Công nghệ CPU": "Intel Core 5 Raptor Lake - 120U",
+          "Số nhân": "10",
+          "Số luồng": "12",
+          "Tốc độ CPU": "1.40 GHz (Lên đến 5.00 GHz khi tải nặng)",
+          "Card màn hình": "Card tích hợp - Intel UHD Graphics",
+          "RAM": "16 GB",
+          "Loại RAM": "DDR4 (1 khe 16 GB + 1 khe rời)",
+          "Tốc độ Bus RAM": "3200 MHz",
+          "Hỗ trợ RAM tối đa": "32 GB",
+          "Ổ cứng": "512 GB SSD PCIe M.2 (2280) (Có thể tháo rời, lắp thanh khác tối đa 1 TB (2280))",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tấm nền": "IPS",
+          "Tần số quét": "Hãng không công bố",
+          "Độ phủ màu": "45% NTSC",
+          "Công nghệ màn hình": "•300 nits•Chống chói Anti Glare",
+          "Cổng giao tiếp": "•HDMI•2 x USB 3.2•Jack tai nghe 3.5 mm•1 x USB 3.2 Gen 2 Type-C (hỗ trợ DisplayPort, Power delivery, HP Sleep and Charge)",
+          "Kết nối không dây": "•Wi-Fi 6 (802.11ax)•Bluetooth 5.4",
+          "Khe đọc thẻ nhớ": "Không",
+          "Webcam": "HD webcam",
+          "Đèn bàn phím": "Không có đèn",
+          "Bảo mật": "Công tắc khoá camera",
+          "Công nghệ âm thanh": "•Dual speakers•Realtek High Definition Audio",
+          "Tản nhiệt": "Hãng không công bố",
+          "Thông tin Pin": "3 cell, 41.04 Wh",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Thời điểm ra mắt": "2025",
+          "Kích thước": "Dài 323.7 mm - Rộng 215 mm - Dày 9.3 mm - Nặng 1.402 kg",
+          "Chất liệu": "Vỏ nhựa"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": 4.9,
+        "count": 5902
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003457-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003457-laptop-tron-20261104-600x600.png",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-1-639153150184061271.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-2-639153150190075414.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-3-639153150196376684.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-4-639153150202780328.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-5-639153150209273826.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-6-639153150216014021.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-7-639153150225706118.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-8-639153150232259074.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-9-639153150239887479.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-10-639153150246430160.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-11-639153150252443612.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-12-639153150259659056.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-13-639153150266938956.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-14-639153150275689142.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-99-638945005502293968.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.758Z"
+      }
+    },
+    {
+      "id": "ad3abce85c608efe",
+      "source": "thegioididong",
+      "sku": "0220042104187",
+      "name": "Laptop Asus Vivobook 14 X1404VA - EB2385W (Core 3 100U, 8GB, 256GB, 14'' Full HD, Win11)",
+      "brand": "Asus",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/asus-vivobook-14-x1404va-core-3-100u-eb2385w",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 15590000,
+        "original": 16490000,
+        "discountPercent": 5,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core 3 Raptor Lake - 100U",
+        "ram": "8 GB",
+        "storage": "256 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+        "gpu": "Card tích hợp - Intel UHD Graphics",
+        "screen": "14 inch",
+        "battery": "3-cell Li-ion, 42 Wh",
+        "weight": "1.40 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "•1 × USB 2.0 Type-A•1x USB 3.2 Gen 1 (5 Gbps) Type-C•2x USB-A (USB 5Gbps/USB 3.2 Gen 1)•1x HDMI® 1.4•1 x 3.5 mm combo audio jack•1x DC-in",
+        "rawSpecs": {
+          "Công nghệ CPU": "Intel Core 3 Raptor Lake - 100U",
+          "Số nhân": "6",
+          "Số luồng": "8",
+          "Tốc độ CPU": "1.20 GHz (Lên đến 4.70 GHz khi tải nặng)",
+          "Card màn hình": "Card tích hợp - Intel UHD Graphics",
+          "RAM": "8 GB",
+          "Loại RAM": "DDR4",
+          "Tốc độ Bus RAM": "3200 MHz",
+          "Hỗ trợ RAM tối đa": "16 GB",
+          "Ổ cứng": "256 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tấm nền": "IPS",
+          "Tần số quét": "60 Hz",
+          "Độ phủ màu": "45% NTSC",
+          "Công nghệ màn hình": "Chống chói Anti Glare",
+          "Màn hình cảm ứng": "Không",
+          "Cổng giao tiếp": "•1 × USB 2.0 Type-A•1x USB 3.2 Gen 1 (5 Gbps) Type-C•2x USB-A (USB 5Gbps/USB 3.2 Gen 1)•1x HDMI® 1.4•1 x 3.5 mm combo audio jack•1x DC-in",
+          "Kết nối không dây": "•Wi-Fi 6 (802.11ax)•Bluetooth 5.2",
+          "Webcam": "HD 720p with Privacy Shutter",
+          "Bảo mật": "•McAfee•Mô-đun bảo mật TPM (Firmware TPM)•Mật khẩu người dùng BIOS",
+          "Công nghệ âm thanh": "•SonicMaster•Built-in speaker•Built-in array microphone",
+          "Tính năng khác": "Độ bền chuẩn quân đội MIL STD 810H",
+          "Thông tin Pin": "3-cell Li-ion, 42 Wh",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Thời điểm ra mắt": "2026",
+          "Kích thước": "Dài 32.49 cm - Rộng 21.39 cm - Dày 1.79 - 1.79 cm - Nặng 1.40 kg",
+          "Chất liệu": "Vỏ nhựa"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": 5,
+        "count": 76
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042104187-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042104187-laptop-tron-20261104-600x600.png",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-1105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-2105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-3105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-4105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-5105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-6105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-7105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-8105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-9105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-10105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-11105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-12105320.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-99135548.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.758Z"
+      }
+    },
+    {
+      "id": "76142541fb30d5dd",
+      "source": "thegioididong",
+      "sku": "0220042003992",
+      "name": "Laptop Dell 15 DC15255 - DC5R5973W1-2Y (R5 7530U, 16GB, 512GB, Full HD 120Hz, OfficeHS24+365, Win11)",
+      "brand": "Dell",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/dell-15-dc15255-r5-7530u-dc5r5973w1-2y",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 23990000,
+        "original": 25690000,
+        "discountPercent": 6,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "AMD Ryzen 5 - 7530U",
+        "ram": "16 GB",
+        "storage": "512 GB SSD M.2 NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+        "gpu": "Card tích hợp - AMD Radeon Graphics",
+        "screen": "15.6 inch",
+        "battery": "3-cell Li-ion, 41 Wh",
+        "weight": "1.65 kg",
+        "os": "Windows 11 Home + Office Home 2024 + Microsoft 365 Basic 1 năm",
+        "ports": "•1 x USB 2.0•1 x USB 3.2 Gen 1 Type-C•1 x USB 3.2•HDMI 1.4•1 x Headphone/microphone combo",
+        "rawSpecs": {
+          "Công nghệ CPU": "AMD Ryzen 5 - 7530U",
+          "Số nhân": "6",
+          "Số luồng": "12",
+          "Tốc độ CPU": "2.00 GHz (Lên đến 4.50 GHz khi tải nặng)",
+          "NPU": "Không",
+          "Hiệu năng xử lý AI (TOPS)": "2,2",
+          "Card màn hình": "Card tích hợp - AMD Radeon Graphics",
+          "Số nhân GPU": "Không",
+          "RAM": "16 GB",
+          "Loại RAM": "DDR4 (1 khe 16 GB + 1 khe rời)",
+          "Tốc độ Bus RAM": "3200 MHz",
+          "Hỗ trợ RAM tối đa": "16 GB",
+          "Ổ cứng": "512 GB SSD M.2 NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+          "Kích thước màn hình": "15.6 inch",
+          "Độ phân giải": "Full HD (1920 x 1200)",
+          "Tấm nền": "WVA",
+          "Tần số quét": "120 Hz",
+          "Độ phủ màu": "45% NTSC",
+          "Công nghệ màn hình": "•250 nits•Chống chói Anti Glare",
+          "Màn hình cảm ứng": "Không",
+          "Cổng giao tiếp": "•1 x USB 2.0•1 x USB 3.2 Gen 1 Type-C•1 x USB 3.2•HDMI 1.4•1 x Headphone/microphone combo",
+          "Kết nối không dây": "•Bluetooth•Wi-Fi 5(802.11ac)",
+          "Khe đọc thẻ nhớ": "SD",
+          "Webcam": "HD webcam",
+          "Đèn bàn phím": "Không có đèn",
+          "Bảo mật": "Không có",
+          "Công nghệ âm thanh": "Realtek Audio",
+          "Tản nhiệt": "Hãng không công bố",
+          "Tính năng khác": "Hãng không công bố",
+          "Thông tin Pin": "3-cell Li-ion, 41 Wh",
+          "Hệ điều hành": "Windows 11 Home + Office Home 2024 + Microsoft 365 Basic 1 năm",
+          "Thời điểm ra mắt": "2025",
+          "Kích thước": "Dài 358.5 mm - Rộng 235 mm - Dày 17.5 mm - Nặng 1.65 kg",
+          "Chất liệu": "Vỏ nhựa"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": 5,
+        "count": 519
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003992-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003992-laptop-tron-20261104-600x600.png",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-1-639180727027097582.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-2-639180727018799972.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-3-639180726926627681.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-4-639180726920662569.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-5-639180726913748327.jpg",
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-99-639180726898007692.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.758Z"
+      }
+    },
+    {
+      "id": "a1ee4165cda3b8ec",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "MacBook Air 13 inch M5 16GB/512GB/8GPU 30W",
+      "brand": "Apple",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/macbook-air-13-inch-m5-16gb-512gb",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 33390000,
+        "original": 35990000,
+        "discountPercent": 7,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "16GB",
+        "storage": "512GB",
+        "gpu": null,
+        "screen": "13 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/Products/Images/44/363474/macbook-air-13-inch-m5-16gb-512gb-bac.jpg",
+        "images": [
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/Products/Images/44/363474/macbook-air-13-inch-m5-16gb-512gb-bac.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    },
+    {
+      "id": "5782a1f84495e024",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "HP 15 fc0023AU R5 7520U (D0BH1PA)",
+      "brand": "HP",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/hp-15-fc0023au-r5-7520u-d0bh1pa",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 21990000,
+        "original": 24690000,
+        "discountPercent": 10,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "R5 7520U",
+        "ram": "16 GB",
+        "storage": "SSD 512 GB",
+        "gpu": null,
+        "screen": "15.6 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003571-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003571-laptop-tron-20261104-600x600.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    },
+    {
+      "id": "9b8200c7a8ca76e7",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "Dell 15 DC15250 i5 1334U (DC5I5897W1)",
+      "brand": "Dell",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/dell-15-dc15250-i5-1334u-dc5i5897w1",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 22990000,
+        "original": 24490000,
+        "discountPercent": 6,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "16 GB",
+        "storage": "SSD 512 GB",
+        "gpu": null,
+        "screen": "15.6 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003649-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003649-laptop-tron-20261104-600x600.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    },
+    {
+      "id": "3bd6eb67586962ad",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "Acer Aspire Lite 14 AL14-44P-R0SP R7 7730U (NX.DMCSV.003)",
+      "brand": "Acer",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/acer-aspire-lite-14-al14-44p-r0sp-r7-7730u-nx-dmcsv-003",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 20490000,
+        "original": 22990000,
+        "discountPercent": 10,
+        "installment": "Trả chậm 0% trả trước 0đQuà 900.000₫",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "R7 7730U",
+        "ram": "8 GB",
+        "storage": "SSD 512 GB",
+        "gpu": null,
+        "screen": "14.5 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003933-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003933-laptop-tron-20261104-600x600.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    },
+    {
+      "id": "3670eca089f3082e",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "Asus Zenbook 14 UM3406GA R7 AI 445 (QD073WS)",
+      "brand": "ASUS",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/asus-zenbook-14-um3406ga-r7-ai-445-qd073ws",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 35990000,
+        "original": 39990000,
+        "discountPercent": 10,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "32 GB",
+        "storage": "SSD 1 TB",
+        "gpu": null,
+        "screen": "14 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003674-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003674-laptop-tron-20261104-600x600.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    },
+    {
+      "id": "661e1af9d36d8403",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "MSI Modern 15 F1MG-1264VN Core 5 120U",
+      "brand": "MSI",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/msi-modern-15-f1mg-1264vn-core-5-120u",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 20990000,
+        "original": 22090000,
+        "discountPercent": 4,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Core 5 120U",
+        "ram": "16 GB",
+        "storage": "SSD 512 GB",
+        "gpu": null,
+        "screen": "15.6 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042004015-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://cdn.tgdd.vn/2026/11/timerseo/0220042004015-laptop-tron-20261104-600x600.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    },
+    {
+      "id": "8dcb7faec0406c39",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "Asus Vivobook S 16 S3607VA Core 5 210H (RP155W)",
+      "brand": "ASUS",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/asus-vivobook-s-16-s3607va-core-5-210h-rp155w",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 25490000,
+        "original": 34990000,
+        "discountPercent": 27,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Core 5 210H",
+        "ram": "16 GB",
+        "storage": "SSD 512 GB",
+        "gpu": null,
+        "screen": "16 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042004028-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://cdn.tgdd.vn/2026/11/timerseo/0220042004028-laptop-tron-20261104-600x600.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    },
+    {
+      "id": "bda527c380e4c123",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "Lenovo IdeaPad Slim 3 15IPH11 Ultra 5 322 (83UR00A4VN)",
+      "brand": "Lenovo",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/lenovo-ideapad-slim-3-15iph11-ultra-5-322-83ur00a4vn",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 24990000,
+        "original": 31990000,
+        "discountPercent": 21,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "16 GB",
+        "storage": "SSD 512 GB",
+        "gpu": null,
+        "screen": "15.3 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003922-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003922-laptop-tron-20261104-600x600.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    },
+    {
+      "id": "e27bdda8ed313c49",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "HP OmniBook 5 AI 16 af1048TU Ultra 5 225U (BZ7Q9PA)",
+      "brand": "HP",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/hp-omnibook-5-ai-16-af1048tu-ultra-5-225u-bz7q9pa",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 26490000,
+        "original": 31290000,
+        "discountPercent": 15,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "16 GB",
+        "storage": "SSD 512 GB",
+        "gpu": null,
+        "screen": "16 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003311-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003311-laptop-tron-20261104-600x600.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    },
+    {
+      "id": "de357c0a165dad04",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "Dell 15 DC15250 i5 1334U (71092479)",
+      "brand": "Dell",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/dell-15-dc15250-i5-1334u-71092479",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 22990000,
+        "original": 24490000,
+        "discountPercent": 6,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "16 GB",
+        "storage": "SSD 512 GB",
+        "gpu": null,
+        "screen": "15.6 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003833-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003833-laptop-tron-20261104-600x600.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    },
+    {
+      "id": "c161bc3b0624e9f4",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "SingPC M16-i382 i3 1215U",
+      "brand": null,
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/singpc-m16-i382-i3-1215u",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 13690000,
+        "original": 15190000,
+        "discountPercent": 9,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "8 GB",
+        "storage": "SSD 256 GB",
+        "gpu": null,
+        "screen": "14 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003938-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003938-laptop-tron-20261104-600x600.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    },
+    {
+      "id": "a8fbf419f19cb0ef",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "Asus Vivobook S14 S3407VA Core 5 210H (LY146W)",
+      "brand": "ASUS",
+      "model": null,
+      "url": "https://www.thegioididong.com/laptop/asus-vivobook-s14-s3407va-core-5-210h-ly146w",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 21890000,
+        "original": 22990000,
+        "discountPercent": 4,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Core 5 210H",
+        "ram": "16 GB",
+        "storage": "SSD 512 GB",
+        "gpu": null,
+        "screen": "14 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003498-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003498-laptop-tron-20261104-600x600.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:23.759Z"
+      }
+    }
+  ]
+}

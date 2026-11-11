@@ -1,0 +1,1128 @@
+{
+  "source": "fptshop",
+  "crawledAt": "2026-11-11T04:39:50.775Z",
+  "totalCategories": 38,
+  "totalProducts": 15,
+  "categories": [
+    {
+      "name": "Ai",
+      "slug": "may-tinh-xach-tay/ai",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/ai",
+      "type": "segment"
+    },
+    {
+      "name": "Gaming Do Hoa",
+      "slug": "may-tinh-xach-tay/gaming-do-hoa",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/gaming-do-hoa",
+      "type": "segment"
+    },
+    {
+      "name": "Asus",
+      "slug": "may-tinh-xach-tay/asus",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo",
+      "slug": "may-tinh-xach-tay/lenovo",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/lenovo",
+      "type": "brand"
+    },
+    {
+      "name": "Hp",
+      "slug": "may-tinh-xach-tay/hp",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp",
+      "type": "brand"
+    },
+    {
+      "name": "Acer",
+      "slug": "may-tinh-xach-tay/acer",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/acer",
+      "type": "brand"
+    },
+    {
+      "name": "Msi",
+      "slug": "may-tinh-xach-tay/msi",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/msi",
+      "type": "brand"
+    },
+    {
+      "name": "Apple Macbook",
+      "slug": "may-tinh-xach-tay/apple-macbook",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/apple-macbook",
+      "type": "brand"
+    },
+    {
+      "name": "Dell",
+      "slug": "may-tinh-xach-tay/dell",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/dell",
+      "type": "brand"
+    },
+    {
+      "name": "Thunderobot",
+      "slug": "may-tinh-xach-tay/thunderobot",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/thunderobot",
+      "type": "brand"
+    },
+    {
+      "name": "Colorful",
+      "slug": "may-tinh-xach-tay/colorful",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/colorful",
+      "type": "segment"
+    },
+    {
+      "name": "Gigabyte",
+      "slug": "may-tinh-xach-tay/gigabyte",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/gigabyte",
+      "type": "brand"
+    },
+    {
+      "name": "Sinh viên - Văn phòng",
+      "slug": "may-tinh-xach-tay/sinh-vien-van-phong",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/sinh-vien-van-phong",
+      "type": "segment"
+    },
+    {
+      "name": "Mỏng nhẹ",
+      "slug": "may-tinh-xach-tay/mong-nhe",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/mong-nhe",
+      "type": "segment"
+    },
+    {
+      "name": "Doanh nhân",
+      "slug": "may-tinh-xach-tay/doanh-nhan",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/doanh-nhan",
+      "type": "segment"
+    },
+    {
+      "name": "Asus ROG",
+      "slug": "may-tinh-xach-tay/asus-rog",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus-rog",
+      "type": "segment"
+    },
+    {
+      "name": "Lenovo Legion",
+      "slug": "may-tinh-xach-tay/lenovo-legion-gaming",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-legion-gaming",
+      "type": "segment"
+    },
+    {
+      "name": "Asus TUF Gaming",
+      "slug": "may-tinh-xach-tay/asus-tuf-gaming",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus-tuf-gaming",
+      "type": "segment"
+    },
+    {
+      "name": "Dell Inspiron",
+      "slug": "may-tinh-xach-tay/dell-inspiron",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/dell-inspiron",
+      "type": "segment"
+    },
+    {
+      "name": "Lenovo IdeaPad",
+      "slug": "may-tinh-xach-tay/lenovo-ideapad",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-ideapad",
+      "type": "segment"
+    },
+    {
+      "name": "Acer Swift",
+      "slug": "may-tinh-xach-tay/acer-swift",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/acer-swift",
+      "type": "segment"
+    },
+    {
+      "name": "Asus VivoBook",
+      "slug": "may-tinh-xach-tay/asus-vivobook",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus-vivobook",
+      "type": "segment"
+    },
+    {
+      "name": "HP Envy",
+      "slug": "may-tinh-xach-tay/hp-envy",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-envy",
+      "type": "segment"
+    },
+    {
+      "name": "MacBook Pro",
+      "slug": "may-tinh-xach-tay/macbook-pro",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/macbook-pro",
+      "type": "segment"
+    },
+    {
+      "name": "Dell XPS",
+      "slug": "may-tinh-xach-tay/dell-xps",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/dell-xps",
+      "type": "segment"
+    },
+    {
+      "name": "Asus ZenBook",
+      "slug": "may-tinh-xach-tay/asus-zenbook",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus-zenbook",
+      "type": "segment"
+    },
+    {
+      "name": "Lenovo Yoga",
+      "slug": "may-tinh-xach-tay/lenovo-yoga",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-yoga",
+      "type": "segment"
+    },
+    {
+      "name": "Acer Aspire",
+      "slug": "may-tinh-xach-tay/acer-aspire",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/acer-aspire",
+      "type": "segment"
+    },
+    {
+      "name": "Lenovo ThinkPad",
+      "slug": "may-tinh-xach-tay/lenovo-thinkpad",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-thinkpad",
+      "type": "segment"
+    },
+    {
+      "name": "Dell Latitude",
+      "slug": "may-tinh-xach-tay/dell-latitude",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/dell-latitude",
+      "type": "segment"
+    },
+    {
+      "name": "MacBook Neo",
+      "slug": "may-tinh-xach-tay/macbook-neo",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/macbook-neo",
+      "type": "segment"
+    },
+    {
+      "name": "MacBook Air",
+      "slug": "may-tinh-xach-tay/macbook-air",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/macbook-air",
+      "type": "segment"
+    },
+    {
+      "name": "ASUS ExpertBook",
+      "slug": "may-tinh-xach-tay/asus-expertbook",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus-expertbook",
+      "type": "segment"
+    },
+    {
+      "name": "HP OmniBook 5",
+      "slug": "may-tinh-xach-tay/hp-omnibook-5",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-omnibook-5",
+      "type": "segment"
+    },
+    {
+      "name": "HP OmniBook 7",
+      "slug": "may-tinh-xach-tay/hp-omnibook-7",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-omnibook-7",
+      "type": "segment"
+    },
+    {
+      "name": "Acer Nitro Propanel",
+      "slug": "may-tinh-xach-tay/acer-nitrov-propanel",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/acer-nitrov-propanel",
+      "type": "segment"
+    },
+    {
+      "name": "Predator",
+      "slug": "may-tinh-xach-tay/acer-predator",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/acer-predator",
+      "type": "segment"
+    },
+    {
+      "name": "Nitro",
+      "slug": "may-tinh-xach-tay/acer-nitro",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/acer-nitro",
+      "type": "segment"
+    }
+  ],
+  "products": [
+    {
+      "id": "f8d02408bda8ae93",
+      "source": "fptshop",
+      "sku": "00930661",
+      "name": "Laptop Acer Aspire Lite 14 AL14-44P-R0SP R7 7730U/8GB/512GB/14.5\" FHD/Win11",
+      "brand": "Acer",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/acer-aspire-lite-14-al14-44p-r0sp-r7-7730u",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 19290000,
+        "original": 21990000,
+        "discountPercent": 12,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Ryzen 7",
+        "ram": "8 GB",
+        "storage": "512GB SSD",
+        "gpu": null,
+        "screen": "14.5\" FHD",
+        "battery": null,
+        "weight": null,
+        "os": "Win11",
+        "ports": null,
+        "rawSpecs": {
+          "CPU": "Ryzen 7",
+          "RAM": "8 GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "14.5\" FHD",
+          "Hệ điều hành": "Win11",
+          "Kích thước màn hình": "14.5 inch",
+          "Tấm nền": "IPS"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": 4.9,
+        "count": 10
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930661_acer_aspire_lite_14_al14_44_01_fb52eeb1fe.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930661_acer_aspire_lite_14_al14_44_01_fb52eeb1fe.png",
+          "https://cdn2.fptshop.com.vn/unsafe/00930661_acer_aspire_lite_14_al14_44_01_fb52eeb1fe.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "f18437115175ec5f",
+      "source": "fptshop",
+      "sku": "00922642",
+      "name": "Laptop HP 250R G10 Core 5-120U/16GB/512GB/15.6\" FHD/Win11 (C3SH7AT)",
+      "brand": "HP",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-250r-g10-core-5-120u-c3sh7at",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 21290000,
+        "original": 26790000,
+        "discountPercent": 21,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Core 5",
+        "ram": "16 GB",
+        "storage": "512GB SSD",
+        "gpu": null,
+        "screen": "15.6\" FHD",
+        "battery": null,
+        "weight": null,
+        "os": "Win11 (C3SH7AT)",
+        "ports": null,
+        "rawSpecs": {
+          "CPU": "Core 5",
+          "RAM": "16 GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "15.6\" FHD",
+          "Hệ điều hành": "Win11 (C3SH7AT)",
+          "Kích thước màn hình": "15.6 inch",
+          "Tấm nền": "IPS"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": 4.9,
+        "count": 68
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/hp_250r_g10_silver_no_figer_01_4189a6deca.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/hp_250r_g10_silver_no_figer_01_4189a6deca.png",
+          "https://cdn2.fptshop.com.vn/unsafe/hp_250r_g10_silver_no_figer_01_4189a6deca.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "9ebacea6eb86d412",
+      "source": "fptshop",
+      "sku": "00924298",
+      "name": "Laptop Asus Vivobook X1404VA-EB355W Core 7 150U/16GB/512GB/14\" FHD/Win11",
+      "brand": "Asus",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus-vivobook-x1404va-eb355w-core-7-150u",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 22990000,
+        "original": 25990000,
+        "discountPercent": 12,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Core 7",
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "gpu": null,
+        "screen": "14\" FHD",
+        "battery": null,
+        "weight": null,
+        "os": "Win11",
+        "ports": null,
+        "rawSpecs": {
+          "CPU": "Core 7",
+          "RAM": "16GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "14\" FHD",
+          "Hệ điều hành": "Win11",
+          "Kích thước màn hình": "14 inch",
+          "Tấm nền": "IPS"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": 4.9,
+        "count": 141
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/asus_vivobook_14_x1404_1_172d6c07b6.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/asus_vivobook_14_x1404_1_172d6c07b6.png",
+          "https://cdn2.fptshop.com.vn/unsafe/asus_vivobook_14_x1404_1_172d6c07b6.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "28a617079f02bd8b",
+      "source": "fptshop",
+      "sku": null,
+      "name": "Laptop Dell 14 DC14250 Core 5 120U (DC4C5386W)",
+      "brand": "Dell",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/dell-14-dc14250-core-5-120u-dc4c5386w",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 26990000,
+        "original": 27990000,
+        "discountPercent": 4,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Core 5 120U",
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/dell_14_dc14250_bac_01_187ecc6453.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/dell_14_dc14250_bac_01_187ecc6453.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "1f1dd132e6326e76",
+      "source": "fptshop",
+      "sku": null,
+      "name": "MacBook Neo 13 8GB/256GB/20W",
+      "brand": "Apple",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/macbook-neo-13-inch-8gb-256gb",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 18790000,
+        "original": 19490000,
+        "discountPercent": 4,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "256GB",
+        "storage": "256GB",
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {
+          "RAM": "256GB"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/Mac_Book_13_in_A18_Pro_Citrus_1_f70ec68b06.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/Mac_Book_13_in_A18_Pro_Citrus_1_f70ec68b06.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "90dc4e8b5da26c0d",
+      "source": "fptshop",
+      "sku": null,
+      "name": "Laptop Lenovo IdeaPad Slim 3 16IWC11 Core 5 320 (83RS002KVN)",
+      "brand": "Lenovo",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-ideapad-slim-3-16iwc11-83rs002kvn",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 18490000,
+        "original": 25990000,
+        "discountPercent": 29,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Core 5 320",
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930377_lenovo_ideapad_slim_3_16iwc11_01_dae1811782.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930377_lenovo_ideapad_slim_3_16iwc11_01_dae1811782.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "1f335510f698863f",
+      "source": "fptshop",
+      "sku": null,
+      "name": "Laptop Acer Aspire Lite 15 AL15-36P-30TN C3 N350",
+      "brand": "Acer",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/acer-aspire-lite-15-al15-36p-30tn-c3-n350",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 15690000,
+        "original": 18990000,
+        "discountPercent": 17,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930513_acer_aspire_lite_15_al15_36p_30tn_01_31569a6c93.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930513_acer_aspire_lite_15_al15_36p_30tn_01_31569a6c93.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "5634a28bf0fbd9ac",
+      "source": "fptshop",
+      "sku": null,
+      "name": "Laptop Colorful Rimbook L1 i5-12450H (CE50016512C-G-E1AC)",
+      "brand": null,
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/colorful-rimbook-l1-i5-12450h-ce50016512c-g-e1ac",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 17490000,
+        "original": 21990000,
+        "discountPercent": 20,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "i5-12450H",
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/colorful_rimbook_l1_xam_1_96ce53228b.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/colorful_rimbook_l1_xam_1_96ce53228b.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "e23bf7863b1b3369",
+      "source": "fptshop",
+      "sku": null,
+      "name": "MacBook Air 13 M5 10CPU/8GPU/16GB/512GB",
+      "brand": "Apple",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/macbook-air-13-m5-2026-10cpu-8gpu-16gb-512gb",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 33390000,
+        "original": 35990000,
+        "discountPercent": 7,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "16GB",
+        "storage": "512GB SSD",
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {
+          "RAM": "16GB",
+          "Ổ cứng": "512GB SSD"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_air_13_m5_starlight_1_bfd6f1c5ed.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_air_13_m5_starlight_1_bfd6f1c5ed.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "98baf04ff7b010fe",
+      "source": "fptshop",
+      "sku": null,
+      "name": "Laptop Lenovo IdeaPad Slim 3 14IWC11 Core 5 320 (83RQ002PVN)",
+      "brand": "Lenovo",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-ideapad-slim-3-14iwc11-83rq002pvn",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 18490000,
+        "original": 25990000,
+        "discountPercent": 29,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Core 5 320",
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00929657_lenovo_ideapad_slim_3_14iwc11_01_a7054ebbc2.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00929657_lenovo_ideapad_slim_3_14iwc11_01_a7054ebbc2.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "07490167de78ab2e",
+      "source": "fptshop",
+      "sku": null,
+      "name": "Laptop Asus Vivobook 16 X1607CA-MB387W Ultra 5 225H",
+      "brand": "ASUS",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus-vivobook-16-x1607ca-mb387w-ultra-5-225h",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 24990000,
+        "original": 33490000,
+        "discountPercent": 25,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930030_asus_vivobook_16_x1607ca_bac_logo_ai_17df31a9b3.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930030_asus_vivobook_16_x1607ca_bac_logo_ai_17df31a9b3.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "41dd2a495dd74724",
+      "source": "fptshop",
+      "sku": null,
+      "name": "Laptop HP 15-fd1289TU Ultra 7-155H (C2CV8PA)",
+      "brand": "HP",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-15-fd1289tu-ultra-7-155h-c2cv8pa",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 25990000,
+        "original": 27590000,
+        "discountPercent": 6,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00922844_hp_15_fd1289tu_c2cv8pa_bac_01_216c5b8b09.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00922844_hp_15_fd1289tu_c2cv8pa_bac_01_216c5b8b09.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "6992c93e76516db7",
+      "source": "fptshop",
+      "sku": null,
+      "name": "MacBook Pro 14 M5 10CPU/10GPU/16GB/1TB/96W",
+      "brand": "Apple",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/macbook-pro-14-m5-2026-10cpu-10gpu-16gb-1tb-96w",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 53990000,
+        "original": 55490000,
+        "discountPercent": 3,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "16GB",
+        "storage": "1TB SSD",
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {
+          "RAM": "16GB",
+          "Ổ cứng": "1TB SSD"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_pro_14_m5_2025_den_1_c0818fdf94.jpg",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_pro_14_m5_2025_den_1_c0818fdf94.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "11ef0732e787d7bd",
+      "source": "fptshop",
+      "sku": null,
+      "name": "Laptop HP OmniBook 7 14-fr0033TU Ultra 5-225U (C1MN2PA)",
+      "brand": "HP",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-omnibook-7-14-fr0033tu-ultra-5-225u-c1mn2pa",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 27990000,
+        "original": 28790000,
+        "discountPercent": 3,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00921488_hp_omnibook_7_14_fr0033tu_bac_01_fb14b7c88d.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00921488_hp_omnibook_7_14_fr0033tu_bac_01_fb14b7c88d.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    },
+    {
+      "id": "1ff17e84130248f7",
+      "source": "fptshop",
+      "sku": null,
+      "name": "Laptop HP 14-em0024AU Ryzen 5-7520U (D0BG8PA)",
+      "brand": "HP",
+      "model": null,
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-14-em0024au-ryzen-5-7520u-d0bg8pa",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Máy tính xách tay",
+          "slug": "may-tinh-xach-tay",
+          "url": "https://fptshop.com.vn/may-tinh-xach-tay",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 21490000,
+        "original": 23990000,
+        "discountPercent": 10,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/hp_14_em_bac_01_f60ff4a623.png",
+        "images": [
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/hp_14_em_bac_01_f60ff4a623.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T04:39:50.754Z"
+      }
+    }
+  ]
+}

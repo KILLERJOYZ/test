@@ -63,10 +63,13 @@ function inferBrand(name = '', explicitBrand = null) {
     { pattern: /\b(lg|gram)\b/i, brand: 'LG' },
     { pattern: /\b(huawei|matebook)\b/i, brand: 'Huawei' },
     { pattern: /\b(surface|microsoft)\b/i, brand: 'Microsoft' },
-    { pattern: /\b(samsung|galaxy\s*book)\b/i, brand: 'Samsung' },
+    { pattern: /\b(samsung|galaxy\s*book|chromebook)\b/i, brand: 'Samsung' },
     { pattern: /\b(masstel)\b/i, brand: 'Masstel' },
     { pattern: /\b(avita)\b/i, brand: 'Avita' },
     { pattern: /\b(vaio)\b/i, brand: 'VAIO' },
+    { pattern: /\b(thunderobot)\b/i, brand: 'Thunderobot' },
+    { pattern: /\b(singpc)\b/i, brand: 'SingPC' },
+    { pattern: /\b(colorful)\b/i, brand: 'Colorful' },
   ];
   for (const item of knownBrands) {
     if (item.pattern.test(name)) {
@@ -74,6 +77,74 @@ function inferBrand(name = '', explicitBrand = null) {
     }
   }
   return null;
+}
+
+/**
+ * Infers the laptop model name from the full product title when not explicitly provided.
+ * Example: "Laptop Dell Inspiron 15 3530 - P16WD (i7 1355U, 16GB...)" -> "Inspiron 15 3530 - P16WD"
+ */
+function inferModel(name = '', brand = null, explicitModel = null) {
+  if (explicitModel && typeof explicitModel === 'string' && explicitModel.trim()) {
+    return explicitModel.trim();
+  }
+  if (!name || typeof name !== 'string') return null;
+
+  let cleaned = name
+    .replace(/^máy tính xách tay\s+/i, '')
+    .replace(/^laptop\s+/i, '')
+    .trim();
+
+  if (brand) {
+    const brandRegex = new RegExp(`^${brand}\\s+`, 'i');
+    cleaned = cleaned.replace(brandRegex, '').trim();
+    if (/^apple$/i.test(brand)) {
+      cleaned = cleaned.replace(/^apple\s+/i, '').trim();
+    }
+  }
+
+  // Strip parenthetical spec list at the end if it contains commas, e.g. (i7 1355U, 16GB, ...)
+  cleaned = cleaned.replace(/\s*\([^)]*,[^)]*\)\s*$/, '').trim();
+
+  // Strip slash-delimited spec tail, e.g. "R7 7730U/8GB/512GB/14.5\" FHD/Win11"
+  const slashIdx = cleaned.indexOf('/');
+  if (slashIdx > 0) {
+    const beforeSlash = cleaned.slice(0, slashIdx).trim();
+    // Strip trailing CPU token at the end of beforeSlash if present
+    cleaned = beforeSlash
+      .replace(
+        /\s+(?:(?:Intel\s+)?Core\s+(?:Ultra\s+)?[i3579]?[-\s]?\w+|i[3579][-\s]\d{4,5}[A-Z0-9]*|R[3579][-\s]\d{4}[A-Z0-9]*|Ryzen\s+[3579]\s+\w+|N\d{3,4})$/i,
+        ''
+      )
+      .trim();
+  }
+
+  return cleaned || null;
+}
+
+function extractRegex(text, regex) {
+  if (!text) return null;
+  const match = text.match(regex);
+  return match ? match[1].trim() : null;
+}
+
+/**
+ * Extracts normalized weight (e.g. "1.65 kg") from dedicated weight keys or combined dimension/weight strings
+ * such as "Dài 358.5 mm - Rộng 235.6 mm - Dày 19 mm - 1.65 kg" or "Nặng 1.402 kg".
+ */
+function extractWeight(specsMap, combinedText) {
+  for (const [k, v] of Object.entries(specsMap)) {
+    if (/^(trọng lượng|khối lượng|weight|cân nặng)$/i.test(k)) {
+      const m = v.match(/(\d+(?:[.,]\d+)?\s*(?:kg|g))\b/i);
+      return m ? m[1].trim() : v;
+    }
+  }
+  for (const [k, v] of Object.entries(specsMap)) {
+    if (/(kích thước|khối lượng|trọng lượng|cân nặng|weight)/i.test(k)) {
+      const m = v.match(/(?:nặng\s*|-\s*|\b)(\d+(?:[.,]\d+)?\s*kg)\b/i);
+      if (m) return m[1].trim();
+    }
+  }
+  return extractRegex(combinedText, /\b(\d+(?:[.,]\d{1,3})?\s*kg)\b/i);
 }
 
 /**
@@ -107,15 +178,15 @@ function normalizeSpecs(rawSpecs = {}, fallbackText = '') {
   const combinedText = `${fallbackText} ${Object.values(specsMap).join(' | ')}`;
 
   const cpu =
-    findByKeyPattern(/^(cpu|loại cpu|công nghệ cpu|vi xử lý|bộ vi xử lý|processor)$/i) ||
-    findByKeyPattern(/(loại cpu|công nghệ cpu|\bcpu\b|vi xử lý)/i) ||
+    findByKeyPattern(/^(công nghệ cpu|loại cpu|cpu|vi xử lý|bộ vi xử lý|processor)$/i) ||
+    findByKeyPattern(/(công nghệ cpu|loại cpu|\bcpu\b|vi xử lý)/i) ||
     extractRegex(
       combinedText,
-      /\b((?:Intel\s+)?Core\s+(?:Ultra\s+)?[i3579]?[-\s]?\w+|Apple\s+M[12345](?:\s+(?:Pro|Max|Ultra))?|AMD\s+Ryzen\s+[3579]\s+\w+|Ryzen\s+[3579]\s+\w+|Snapdragon\s+X\s+\w+|Celeron\s+\w+|Pentium\s+\w+|i[3579]-\d{4,5}[A-Z0-9]*|R[3579]\s*\d{4}[A-Z0-9]*)\b/i
+      /\b((?:Intel\s+)?Core\s+(?:Ultra\s+)?[i3579]?[-\s]?\w+|Apple\s+M[12345](?:\s+(?:Pro|Max|Ultra))?|AMD\s+Ryzen\s+[3579]\s+\w+|Ryzen\s+[3579]\s+\w+|Snapdragon\s+X\s+\w+|Celeron\s+\w+|Pentium\s+\w+|i[3579][-\s]\d{4,5}[A-Z0-9]*|R[3579]\s*\d{4}[A-Z0-9]*)\b/i
     );
 
   const ram =
-    findByKeyPattern(/^(ram|bộ nhớ ram|dung lượng ram|memory)$/i) ||
+    findByKeyPattern(/^(ram|dung lượng ram|bộ nhớ ram|memory)$/i) ||
     findByKeyPattern(/\bram\b/i) ||
     extractRegex(combinedText, /\b(\d{1,3}\s*GB(?:\s*(?:DDR[45]|LPDDR[45]X?))?)\b/i);
 
@@ -128,38 +199,51 @@ function normalizeSpecs(rawSpecs = {}, fallbackText = '') {
     );
 
   const gpu =
-    findByKeyPattern(/^(vga|gpu|card đồ họa|card màn hình|đồ họa|graphics)$/i) ||
-    findByKeyPattern(/(card|đồ họa|vga|gpu)/i) ||
+    findByKeyPattern(/^(card màn hình|loại card đồ họa|card đồ họa|vga|gpu|đồ họa|graphics)$/i) ||
+    findByKeyPattern(/(card màn hình|card đồ họa|đồ họa|vga|gpu)/i) ||
     extractRegex(
       combinedText,
-      /\b((?:NVIDIA\s+)?(?:GeForce\s+)?(?:RTX|GTX|MX)\s*\d{3,4}(?:\s*Ti|\s*SUPER)?|AMD\s+Radeon\s+\w+|Intel\s+(?:Iris\s+Xe|Arc|UHD)\s*Graphics?|GPU\s+\d+\s*lõi)\b/i
+      /\b((?:NVIDIA\s+)?(?:GeForce\s+)?(?:RTX|GTX|MX)\s*\d{3,4}(?:\s*Ti|\s*SUPER)?|AMD\s+Radeon\s+\w+|Intel\s+(?:Iris\s+Xe|Arc|UHD)\s*(?:Graphics)?|Card\s+tích\s+hợp\s*[-–]?\s*[A-Za-z0-9\s]+|GPU\s+\d+\s*lõi)\b/i
     );
 
-  const screen =
-    findByKeyPattern(/^(màn hình|man hinh|screen|display|kích thước màn hình)$/i) ||
-    findByKeyPattern(/(màn hình|display|screen)/i) ||
-    extractRegex(
-      combinedText,
-      /\b(\d{2}(?:[.,]\d)?\s*(?:inch|"|''|\s*in)(?:\s*(?:FHD|Full\s*HD|2K|2\.8K|3K|4K|OLED|IPS|WUXGA|QHD|\d{2,3}Hz))*)/i
-    );
+  // Combine screen size + resolution + refresh rate if available in separate keys
+  const screenExplicit = findByKeyPattern(/^(màn hình|man hinh|screen|display)$/i);
+  const screenSize = findByKeyPattern(/^(kích thước màn hình)$/i);
+  const screenRes = findByKeyPattern(/^(độ phân giải|độ phân giải màn hình)$/i);
+  const screenHz = findByKeyPattern(/^(tần số quét)$/i);
+
+  let screen = null;
+  if (screenSize) {
+    const parts = [screenSize];
+    if (screenRes && !screenSize.includes(screenRes)) parts.push(screenRes);
+    if (screenHz && !/hãng không công bố/i.test(screenHz) && !screenSize.includes(screenHz)) {
+      parts.push(screenHz);
+    }
+    screen = parts.join(', ');
+  } else {
+    screen =
+      screenExplicit ||
+      findByKeyPattern(/(màn hình|display|screen)/i) ||
+      extractRegex(
+        combinedText,
+        /\b(\d{2}(?:[.,]\d)?\s*(?:inch|"|''|\s*in)(?:\s*(?:FHD|Full\s*HD|2K|2\.8K|3K|4K|OLED|IPS|WUXGA|QHD|\d{2,3}Hz))*)/i
+      );
+  }
 
   const battery =
-    findByKeyPattern(/^(pin|battery|dung lượng pin)$/i) ||
+    findByKeyPattern(/^(thông tin pin|pin|battery|dung lượng pin)$/i) ||
     findByKeyPattern(/\b(pin|battery)\b/i);
 
-  const weight =
-    findByKeyPattern(/^(trọng lượng|khối lượng|weight|cân nặng)$/i) ||
-    findByKeyPattern(/(trọng lượng|khối lượng|weight)/i) ||
-    extractRegex(combinedText, /\b(\d(?:[.,]\d{1,2})?\s*kg)\b/i);
+  const weight = extractWeight(specsMap, combinedText);
 
   const os =
-    findByKeyPattern(/^(hệ điều hành|os|operating system)$/i) ||
+    findByKeyPattern(/^(hệ điều hành|hệ điều hành khi ra mắt|os|operating system)$/i) ||
     findByKeyPattern(/(hệ điều hành|\bos\b)/i) ||
-    extractRegex(combinedText, /\b(Windows\s*1[01](?:\s*Home|\s*Pro)?|macOS|FreeDOS|Ubuntu|Linux)\b/i);
+    extractRegex(combinedText, /\b(Windows\s*1[01](?:\s*Home(?:\s*SL)?|\s*Pro)?|Win\s*1[01]|macOS|ChromeOS|FreeDOS|Ubuntu|Linux)\b/i);
 
   const ports =
-    findByKeyPattern(/^(cổng kết nối|cổng giao tiếp|ports|kết nối)$/i) ||
-    findByKeyPattern(/(cổng kết nối|giao tiếp)/i);
+    findByKeyPattern(/^(cổng giao tiếp|cổng kết nối|ports|kết nối)$/i) ||
+    findByKeyPattern(/(cổng giao tiếp|cổng kết nối)/i);
 
   return {
     cpu: cpu || null,
@@ -175,23 +259,9 @@ function normalizeSpecs(rawSpecs = {}, fallbackText = '') {
   };
 }
 
-function extractRegex(text, regex) {
-  if (!text) return null;
-  const match = text.match(regex);
-  return match ? match[1].trim() : null;
-}
-
 /**
  * Normalizes a raw laptop product object into a strict, database-ready schema
  * suitable for both relational (SQL) and document (NoSQL) databases.
- *
- * Relational mapping design:
- * - `products` table: id, source, sku, name, slug, url, brand, model, condition, availability, rating_average, rating_count, crawled_at
- * - `product_prices` table: product_id, current_price, original_price, discount_percent, currency, installment_info, updated_at
- * - `product_specs` table: product_id, cpu, ram, storage, gpu, screen, battery, weight, os, ports, raw_specs_json
- * - `product_options` table: product_id, option_type ('configuration' | 'color' | 'condition'), label, value, price, url, sku, is_selected
- * - `product_categories` table: product_id, category_name, category_slug, category_url, category_type
- * - `product_media` / `product_promotions`: images[], promotions[]
  */
 function createNormalizedLaptop(raw = {}) {
   const source = raw.source || 'unknown';
@@ -209,6 +279,7 @@ function createNormalizedLaptop(raw = {}) {
   );
 
   const brand = inferBrand(name, raw.brand);
+  const model = inferModel(name, brand, raw.model);
   const specs = normalizeSpecs(raw.specs || raw.specifications || {}, `${name} ${raw.summarySpecs || ''}`);
 
   const categories = Array.isArray(raw.categories)
@@ -231,7 +302,7 @@ function createNormalizedLaptop(raw = {}) {
           value: String(o.value || o.label).trim(),
           price: parsePriceVnd(o.price),
           url: o.url || null,
-          sku: o.sku || null,
+          sku: o.sku ? String(o.sku).trim() : null,
           isSelected: Boolean(o.isSelected),
         }))
     : [];
@@ -252,9 +323,9 @@ function createNormalizedLaptop(raw = {}) {
     sku,
     name,
     brand,
-    model: raw.model || null,
+    model,
     url,
-    condition: raw.condition || 'new', // 'new' | 'used' | 'refurbished' (e.g. Dien May Xanh may-doi-tra)
+    condition: raw.condition || 'new',
     availability: raw.availability || (currentPrice ? 'in_stock' : 'unknown'),
     categories,
     pricing: {
@@ -296,6 +367,7 @@ module.exports = {
   parsePriceVnd,
   parseDiscountPercent,
   inferBrand,
+  inferModel,
   normalizeSpecs,
   generateId,
 };

@@ -1,0 +1,2307 @@
+{
+  "source": "dienmayxanh",
+  "crawledAt": "2026-11-11T06:37:58.378Z",
+  "totalCategories": 89,
+  "totalProducts": 15,
+  "categories": [
+    {
+      "name": "HP",
+      "slug": "laptop-hp-compaq",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop-hp-compaq",
+      "type": "brand"
+    },
+    {
+      "name": "Asus",
+      "slug": "laptop-asus",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop-asus",
+      "type": "brand"
+    },
+    {
+      "name": "Acer",
+      "slug": "laptop-acer",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop-acer",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo",
+      "slug": "laptop-lenovo",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop-lenovo",
+      "type": "brand"
+    },
+    {
+      "name": "Dell",
+      "slug": "laptop-dell",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop-dell",
+      "type": "brand"
+    },
+    {
+      "name": "MSI",
+      "slug": "laptop-msi",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop-msi",
+      "type": "brand"
+    },
+    {
+      "name": "MacBook",
+      "slug": "laptop-apple-macbook",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop-apple-macbook",
+      "type": "brand"
+    },
+    {
+      "name": "GIGABYTE",
+      "slug": "laptop-gigabyte",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop-gigabyte",
+      "type": "brand"
+    },
+    {
+      "name": "Thunderobot",
+      "slug": "laptop-thunderobot",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop-thunderobot",
+      "type": "brand"
+    },
+    {
+      "name": "SingPC",
+      "slug": "laptop-singpc",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop-singpc",
+      "type": "brand"
+    },
+    {
+      "name": "Samsung",
+      "slug": "laptop-samsung",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop-samsung",
+      "type": "brand"
+    },
+    {
+      "name": "10 - 15 triệu",
+      "slug": "laptop-p-10-15-trieu",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?p=10-15-trieu",
+      "type": "price_range"
+    },
+    {
+      "name": "4 GB",
+      "slug": "laptop-g-4-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=4-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "8 GB",
+      "slug": "laptop-g-8-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=8-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "12 GB",
+      "slug": "laptop-g-12-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=12-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "16 GB",
+      "slug": "laptop-g-16-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=16-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "18 GB",
+      "slug": "laptop-g-18-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=18-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "24 GB",
+      "slug": "laptop-g-24-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=24-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "32 GB",
+      "slug": "laptop-g-32-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=32-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "36 GB",
+      "slug": "laptop-g-36-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=36-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "48 GB",
+      "slug": "laptop-g-48-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=48-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "64 GB",
+      "slug": "laptop-g-64-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=64-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "96 GB",
+      "slug": "laptop-g-96-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=96-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "128 GB",
+      "slug": "laptop-g-128-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=128-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "192 GB",
+      "slug": "laptop-g-192-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=192-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Dưới 14 inch",
+      "slug": "laptop-g-khoang-13-inch",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=khoang-13-inch",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Từ 14 - 15 inch",
+      "slug": "laptop-g-khoang-14-inch",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=khoang-14-inch",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Từ 15 - 16 inch",
+      "slug": "laptop-g-khoang-15-inch",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=khoang-15-inch",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Trên 16 inch",
+      "slug": "laptop-g-tren-16-inch",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=tren-16-inch",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Laptop AI",
+      "slug": "laptop-g-ai",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ai",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Gaming",
+      "slug": "laptop-g-laptop-gaming",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=laptop-gaming",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Học tập, văn phòng",
+      "slug": "laptop-g-hoc-tap-van-phong",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=hoc-tap-van-phong",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Đồ hoạ",
+      "slug": "laptop-g-do-hoa-ky-thuat",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=do-hoa-ky-thuat",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Kỹ thuật",
+      "slug": "laptop-g-ky-thuat",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ky-thuat",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Mỏng nhẹ",
+      "slug": "laptop-g-mong-nhe-thoi-trang",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=mong-nhe-thoi-trang",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Cao cấp",
+      "slug": "laptop-g-cao-cap-sang-trong",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=cao-cap-sang-trong",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Intel Core i9",
+      "slug": "laptop-g-core-i9",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=core-i9",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Intel Core i7",
+      "slug": "laptop-g-core-i7",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=core-i7",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Intel Core i5",
+      "slug": "laptop-g-core-i5",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=core-i5",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Intel Core i3",
+      "slug": "laptop-g-core-i3",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=core-i3",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Intel Celeron/Pentium",
+      "slug": "laptop-g-celeron-pentium",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=celeron-pentium",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Ultra 5",
+      "slug": "laptop-g-ultra-5",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ultra-5",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Ultra 7",
+      "slug": "laptop-g-ultra-7",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ultra-7",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Ultra 9",
+      "slug": "laptop-g-ultra-9",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ultra-9",
+      "type": "ram_filter"
+    },
+    {
+      "name": "AMD Ryzen 9",
+      "slug": "laptop-g-ryzen-9",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ryzen-9",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Core 7",
+      "slug": "laptop-g-core-7",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=core-7",
+      "type": "ram_filter"
+    },
+    {
+      "name": "AMD Ryzen 7",
+      "slug": "laptop-g-ryzen-7",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ryzen-7",
+      "type": "ram_filter"
+    },
+    {
+      "name": "AMD Ryzen 5",
+      "slug": "laptop-g-ryzen-5",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ryzen-5",
+      "type": "ram_filter"
+    },
+    {
+      "name": "AMD Ryzen 3",
+      "slug": "laptop-g-ryzen-3",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ryzen-3",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Apple M1",
+      "slug": "laptop-g-apple-m1",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=apple-m1",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Apple M2",
+      "slug": "laptop-g-apple-m2",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=apple-m2",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Apple M2 Pro",
+      "slug": "laptop-g-m2-pro",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=m2-pro",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Apple M2 Max",
+      "slug": "laptop-g-m2-max",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=m2-max",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Apple M1 Pro",
+      "slug": "laptop-g-apple-m1-pro",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=apple-m1-pro",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Apple M1 Max",
+      "slug": "laptop-g-apple-m1-max",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=apple-m1-max",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Apple M3",
+      "slug": "laptop-g-apple-m3",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=apple-m3",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Snapdragon X Elite",
+      "slug": "laptop-g-snapdragon-x-elite",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=snapdragon-x-elite",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Apple M3 Pro",
+      "slug": "laptop-g-apple-m3-pro",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=apple-m3-pro",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Apple M3 Max",
+      "slug": "laptop-g-apple-m3-max",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=apple-m3-max",
+      "type": "ram_filter"
+    },
+    {
+      "name": "4K",
+      "slug": "laptop-g-4k",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=4k",
+      "type": "ram_filter"
+    },
+    {
+      "name": "2K",
+      "slug": "laptop-g-2k",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=2k",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Retina",
+      "slug": "laptop-g-retina",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=retina",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Full HD",
+      "slug": "laptop-g-full-hd",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=full-hd",
+      "type": "ram_filter"
+    },
+    {
+      "name": "HD",
+      "slug": "laptop-g-hd",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=hd",
+      "type": "ram_filter"
+    },
+    {
+      "name": "32GB eMMC",
+      "slug": "laptop-g-32gb-emmc",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=32gb-emmc",
+      "type": "ram_filter"
+    },
+    {
+      "name": "SSD 128 GB",
+      "slug": "laptop-g-ssd-128-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ssd-128-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "SSD 256 GB",
+      "slug": "laptop-g-ssd-256-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ssd-256-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "SSD 512 GB",
+      "slug": "laptop-g-ssd-512-gb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ssd-512-gb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "SSD 1 TB",
+      "slug": "laptop-g-ssd-1-tb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ssd-1-tb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "SSD 2 TB",
+      "slug": "laptop-g-ssd-2-tb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ssd-2-tb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "SSD 3 TB",
+      "slug": "laptop-g-ssd-3-tb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ssd-3-tb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "SSD 4 TB",
+      "slug": "laptop-g-ssd-4-tb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ssd-4-tb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "SSD 6 TB",
+      "slug": "laptop-g-ssd-6-tb",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=ssd-6-tb",
+      "type": "ram_filter"
+    },
+    {
+      "name": "90 Hz",
+      "slug": "laptop-g-90-hz",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=90-hz",
+      "type": "ram_filter"
+    },
+    {
+      "name": "120 Hz",
+      "slug": "laptop-g-120-hz",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=120-hz",
+      "type": "ram_filter"
+    },
+    {
+      "name": "144 Hz",
+      "slug": "laptop-g-144-hz",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=144-hz",
+      "type": "ram_filter"
+    },
+    {
+      "name": "165 Hz",
+      "slug": "laptop-g-165-hz",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=165-hz",
+      "type": "ram_filter"
+    },
+    {
+      "name": "180 Hz",
+      "slug": "laptop-g-180-hz",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=180-hz",
+      "type": "ram_filter"
+    },
+    {
+      "name": "240 Hz",
+      "slug": "laptop-g-240-hz",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=240-hz",
+      "type": "ram_filter"
+    },
+    {
+      "name": "250 Hz",
+      "slug": "laptop-g-250-hz",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=250-hz",
+      "type": "ram_filter"
+    },
+    {
+      "name": "300 Hz",
+      "slug": "laptop-g-300-hz",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=300-hz",
+      "type": "ram_filter"
+    },
+    {
+      "name": "360 Hz",
+      "slug": "laptop-g-360-hz",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=360-hz",
+      "type": "ram_filter"
+    },
+    {
+      "name": "CPU Intel thế hệ 14 (mới nhất)",
+      "slug": "laptop-g-cpu-intel-gen-14",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=cpu-intel-gen-14",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Card rời RTX 50 series (mới nhất)",
+      "slug": "laptop-g-card-rtx-50-series",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=card-rtx-50-series",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Card rời RTX 40 series",
+      "slug": "laptop-g-card-rtx-40-series",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=card-rtx-40-series",
+      "type": "ram_filter"
+    },
+    {
+      "name": "CPU Intel Core Ultra (mới nhất)",
+      "slug": "laptop-g-cpu-intel-the-he-14-moi-nhat",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=cpu-intel-the-he-14-moi-nhat",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Công nghệ Wifi 6",
+      "slug": "laptop-g-wifi-6",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=wifi-6",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Tiêu chuẩn Intel Evo",
+      "slug": "laptop-g-intel-evo",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=intel-evo",
+      "type": "ram_filter"
+    },
+    {
+      "name": "Card đồ họa rời",
+      "slug": "laptop-g-card-do-hoa-roi",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop?g=card-do-hoa-roi",
+      "type": "ram_filter"
+    }
+  ],
+  "products": [
+    {
+      "id": "fc8c18d46da007ee",
+      "source": "dienmayxanh",
+      "sku": "328598",
+      "name": "Laptop Samsung XE340XDA-KA1VN (N4500, 4GB, 32GB, HD, ChromeOS)",
+      "brand": "Samsung",
+      "model": "XE340XDA-KA1VN",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/samsung-galaxy-chromebook-go-xe340xda-n4500?pid=328598&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 5350000,
+        "original": 11790000,
+        "discountPercent": 55,
+        "installment": "Trả chậm 0%",
+        "priceNote": "1 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Celeron - N4500",
+        "ram": "4 GB",
+        "storage": "eMMC 32 GB",
+        "gpu": "Card tích hợp - Intel UHD Graphics",
+        "screen": "14 inch, HD (1366 x 768), 60 Hz",
+        "battery": "2 cell Li-ion, 42.3 Wh",
+        "weight": "1.145 kg",
+        "os": "Chrome OS",
+        "ports": "Jack tai nghe 3.5 mm 2 x USB Type-C 1 x USB 3.2",
+        "rawSpecs": {
+          "CPU": "Celeron - N4500",
+          "RAM": "4 GB",
+          "Ổ cứng": "eMMC 32 GB",
+          "Màn hình": "HD",
+          "Hệ điều hành": "Chrome OS",
+          "Màu sắc": "Bạc",
+          "Công nghệ CPU": "Celeron - N4500",
+          "Số nhân": "2",
+          "Số luồng": "2",
+          "Tốc độ CPU": "1.10 GHz (Lên đến 2.80 GHz khi tải nặng)",
+          "Card màn hình": "Card tích hợp - Intel UHD Graphics",
+          "Loại RAM": "LPDDR4X (Onboard)",
+          "Tốc độ Bus RAM": "2933 MHz",
+          "Hỗ trợ RAM tối đa": "Không hỗ trợ nâng cấp",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "HD (1366 x 768)",
+          "Tần số quét": "60 Hz",
+          "Công nghệ màn hình": "Chống chói Anti Glare",
+          "Cổng giao tiếp": "Jack tai nghe 3.5 mm 2 x USB Type-C 1 x USB 3.2",
+          "Kết nối không dây": "Wi-Fi 6 (802.11ax) Bluetooth 5.1",
+          "Khe đọc thẻ nhớ": "Micro SD",
+          "Webcam": "HD webcam",
+          "Đèn bàn phím": "Không có đèn",
+          "Công nghệ âm thanh": "Stereo speakers",
+          "Tản nhiệt": "Hãng không công bố",
+          "Tính năng khác": "Bản lề mở 180 độ",
+          "Thông tin Pin": "2 cell Li-ion, 42.3 Wh",
+          "Thời điểm ra mắt": "2023",
+          "Kích thước": "Dài 327.1 mm - Rộng 225.6 mm - Dày 15.9 mm - 1.145 kg",
+          "Chất liệu": "Vỏ nhựa"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Bạc | Tại: Tỉnh Đắk Lắk | BH: 1 tháng tại ĐMX",
+          "value": "Samsung XE340XDA-KA1VN N4500/4GB/32GB/14 inch/ChromeOS/Bạc",
+          "price": 5350000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/samsung-galaxy-chromebook-go-xe340xda-n4500/detail?oldid=46972800&pid=328598&type=2",
+          "sku": "46972800",
+          "isSelected": true
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/328598/samsung-galaxy-chromebook-go-xe340xda-n4500-thumb-638754875185657229-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/328598/samsung-galaxy-chromebook-go-xe340xda-n4500-thumb-638754875185657229-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/14/0_46972800_samsungxe340xdaka1vnn45004gb32gb14chromeosbac_1776132591565.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/14/5_46972800_samsungxe340xdaka1vnn45004gb32gb14chromeosbac_1776132644705.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/14/6_46972800_samsungxe340xdaka1vnn45004gb32gb14chromeosbac_1776132651570.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/14/7_46972800_samsungxe340xdaka1vnn45004gb32gb14chromeosbac_1776132661555.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/14/8_46972800_samsungxe340xdaka1vnn45004gb32gb14chromeosbac_1776132670375.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/14/9_46972800_samsungxe340xdaka1vnn45004gb32gb14chromeosbac_1776132677859.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/14/1_46972800_samsungxe340xdaka1vnn45004gb32gb14chromeosbac_1776132599980.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/14/2_46972800_samsungxe340xdaka1vnn45004gb32gb14chromeosbac_1776132621083.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/14/3_46972800_samsungxe340xdaka1vnn45004gb32gb14chromeosbac_1776132631022.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/14/4_46972800_samsungxe340xdaka1vnn45004gb32gb14chromeosbac_1776132639648.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "1 tháng tại ĐMX",
+        "storeCount": 1,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.328Z"
+      }
+    },
+    {
+      "id": "3cde85a162616dc5",
+      "source": "dienmayxanh",
+      "sku": "309016",
+      "name": "Laptop Apple MacBook Air 15 inch M2 8GB/256GB Sạc 35W",
+      "brand": "Apple",
+      "model": "MacBook Air 15 inch M2 8GB",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/apple-macbook-air-m2-2023?pid=309016&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 17980000,
+        "original": 31690000,
+        "discountPercent": 43,
+        "installment": "Trả chậm 0%",
+        "priceNote": "1 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Apple M2 - Hãng không công bố",
+        "ram": "8 GB",
+        "storage": "256 GB SSD",
+        "gpu": "Card tích hợp - 10 nhân GPU",
+        "screen": "15.3 inch, Liquid Retina (2880 x 1864)",
+        "battery": "Lên đến 18 giờ (Hãng công bố)",
+        "weight": "1.51 kg",
+        "os": "macOS",
+        "ports": "MagSafe 3 Jack tai nghe 3.5 mm 2 x Thunderbolt / USB 4 (hỗ trợ DisplayPort, Thunderbolt 3 (up to 40Gb/s), USB 4 (up to 40Gb/s))",
+        "rawSpecs": {
+          "CPU": "Apple M2 - Hãng không công bố",
+          "RAM": "8 GB",
+          "Ổ cứng": "256 GB SSD",
+          "Card màn hình": "Card tích hợp - 10 nhân GPU",
+          "Màn hình": "15.3 inch",
+          "Màu sắc": "Vàng",
+          "Công nghệ CPU": "Apple M2 - Hãng không công bố",
+          "Số nhân": "8",
+          "Số luồng": "Hãng không công bố",
+          "Tốc độ CPU": "100 GB/s memory bandwidth",
+          "Loại RAM": "Hãng không công bố",
+          "Tốc độ Bus RAM": "Hãng không công bố",
+          "Hỗ trợ RAM tối đa": "Không hỗ trợ nâng cấp",
+          "Kích thước màn hình": "15.3 inch",
+          "Độ phân giải": "Liquid Retina (2880 x 1864)",
+          "Tần số quét": "Hãng không công bố",
+          "Công nghệ màn hình": "Wide color (P3) True Tone Technology LED Backlit 500 nits brightness 1 tỷ màu",
+          "Cổng giao tiếp": "MagSafe 3 Jack tai nghe 3.5 mm 2 x Thunderbolt / USB 4 (hỗ trợ DisplayPort, Thunderbolt 3 (up to 40Gb/s), USB 4 (up to 40Gb/s))",
+          "Kết nối không dây": "Wi-Fi 6 (802.11ax) Bluetooth 5.3",
+          "Webcam": "1080p FaceTime HD camera",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "Spatial AudioHệ thống âm thanh 6 loa Dolby Atmos 3 microphones",
+          "Tản nhiệt": "Hãng không công bố",
+          "Tính năng khác": "Bảo mật vân tay",
+          "Thông tin Pin": "Lên đến 18 giờ (Hãng công bố)",
+          "Hệ điều hành": "macOS",
+          "Thời điểm ra mắt": "06/2023",
+          "Kích thước": "Dài 340.4 mm - Rộng 237.6 mm - Dày 11.5 mm - 1.51 kg",
+          "Chất liệu": "Vỏ kim loại",
+          "Hãng": "MacBook., Xem thông tin hãng",
+          "Phụ kiện": "Sách hướng dẫn,Thùng máy"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Vàng | Tại: Tỉnh Sơn La | BH: 1 tháng tại ĐMX",
+          "value": "Apple Macbook Air M2 8-core CPU/8GB/256GB/10-core GPU/15.3 inch/(MQKU3SA/A)/Vàng",
+          "price": 17980000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/apple-macbook-air-m2-2023/detail?oldid=47307021&pid=309016&type=2",
+          "sku": "47307021",
+          "isSelected": true
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/309016/apple-macbook-air-m2-2023-starlight-thumb-200x200.jpg",
+        "images": [
+          "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/309016/apple-macbook-air-m2-2023-starlight-thumb-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2025/10/22/0_47096229_applemacbookairm28corecpu8gb256gb10coregpu15.3mqku3saavang_1761126130634.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2025/10/22/5_47096229_applemacbookairm28corecpu8gb256gb10coregpu15.3mqku3saavang_1761126207462.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2025/10/22/6_47096229_applemacbookairm28corecpu8gb256gb10coregpu15.3mqku3saavang_1761126222829.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/02/7_47307021_applemacbookairm28corecpu8gb256gb10coregpu15.3mqku3saavang_1772444589334.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/02/8_47307021_applemacbookairm28corecpu8gb256gb10coregpu15.3mqku3saavang_1772444603523.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/02/9_47307021_applemacbookairm28corecpu8gb256gb10coregpu15.3mqku3saavang_1772444617344.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/02/1_47307021_applemacbookairm28corecpu8gb256gb10coregpu15.3mqku3saavang_1772444512693.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2025/10/22/2_47096229_applemacbookairm28corecpu8gb256gb10coregpu15.3mqku3saavang_1761136845609.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/07/01/3_47307021_applemacbookairm28corecpu8gb256gb10coregpu15.3mqku3saavang_1782899334075.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/02/4_47307021_applemacbookairm28corecpu8gb256gb10coregpu15.3mqku3saavang_1772444528036.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "1 tháng tại ĐMX",
+        "storeCount": 1,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.330Z"
+      }
+    },
+    {
+      "id": "401a45d2a5234832",
+      "source": "dienmayxanh",
+      "sku": "329337",
+      "name": "Laptop Acer Gaming Nitro AN515 58 773Y i7 12700H/16GB/512GB/4GB RTX3050Ti/144Hz/Win11 (NH.QFKSV.001.16G)",
+      "brand": "Acer",
+      "model": "Gaming Nitro AN515 58 773Y",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/acer-nitro-an515-58-773y-i7-12700h-nhqfksv00116g?pid=329337&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 20090000,
+        "original": 33190000,
+        "discountPercent": 39,
+        "installment": "Trả chậm 0%",
+        "priceNote": "1 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Intel Core i7 Alder Lake - 12700H",
+        "ram": "16 GB",
+        "storage": "Hỗ trợ khe cắm HDD SATA 2.5 inch mở rộngHỗ trợ thêm 1 khe cắm SSD M.2 PCIe mở rộng (nâng cấp tối đa 2 TB) 512 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+        "gpu": "Card rời - NVIDIA GeForce RTX 3050Ti, 4 GB",
+        "screen": "15.6 inch, Full HD (1920 x 1080), 144 Hz",
+        "battery": "4-cell Li-ion, 57.5 Wh",
+        "weight": "2.5 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "LAN (RJ45) HDMI 1 x USB Type-C (hỗ trợ cổng Thunderbolt 4) 3 x USB 3.2 Jack tai nghe 3.5 mm",
+        "rawSpecs": {
+          "RAM": "16 GB",
+          "Ổ cứng": "Hỗ trợ khe cắm HDD SATA 2.5 inch mở rộngHỗ trợ thêm 1 khe cắm SSD M.2 PCIe mở rộng (nâng cấp tối đa 2 TB) 512 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+          "Card màn hình": "Card rời - NVIDIA GeForce RTX 3050Ti, 4 GB",
+          "Màn hình": "144Hz",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Màu sắc": "Đen",
+          "CPU": "Intel Core i7 Alder Lake - 12700H",
+          "Công nghệ CPU": "Intel Core i7 Alder Lake - 12700H",
+          "Số nhân": "14",
+          "Số luồng": "20",
+          "Tốc độ CPU": "2.30 GHz (Lên đến 4.70 GHz khi tải nặng)",
+          "Loại RAM": "DDR4 (1 khe 8 GB + 1 khe 8 GB)",
+          "Tốc độ Bus RAM": "3200 MHz",
+          "Hỗ trợ RAM tối đa": "32 GB",
+          "Kích thước màn hình": "15.6 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tần số quét": "144 Hz",
+          "Độ phủ màu": "45% NTSC",
+          "Công nghệ màn hình": "250 nits Acer ComfyView LED Backlit",
+          "Cổng giao tiếp": "LAN (RJ45) HDMI 1 x USB Type-C (hỗ trợ cổng Thunderbolt 4) 3 x USB 3.2 Jack tai nghe 3.5 mm",
+          "Kết nối không dây": "Bluetooth 5 Wi-Fi 6 (802.11ax)",
+          "Webcam": "HD webcam",
+          "Đèn bàn phím": "Đèn chuyển màu RGB - 4 vùng",
+          "Công nghệ âm thanh": "DTS:X ULTRA Acer TrueHarmony Acer Purified Voice",
+          "Tản nhiệt": "Hãng không công bố",
+          "Tính năng khác": "MUX Switch",
+          "Thông tin Pin": "4-cell Li-ion, 57.5 Wh",
+          "Thời điểm ra mắt": "2022",
+          "Kích thước": "Dài 360.4 mm - Rộng 271.09 mm - Dày 25.9 mm - 2.5 kg",
+          "Chất liệu": "Vỏ nhựa",
+          "Phụ kiện": "Thùng máy,Sạc Laptop Acer"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Tỉnh Vĩnh Long | BH: 1 tháng tại ĐMX",
+          "value": "Acer Nitro AN515 58 773Y i7/12700H/16GB/512GB/4GB RTX3050Ti/15.6 inchF/144Hz/Win11/(NH.QFKSV.001.16G)/Đen",
+          "price": 20090000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/acer-nitro-an515-58-773y-i7-12700h-nhqfksv00116g/detail?oldid=48213956&pid=329337&type=2",
+          "sku": "48213956",
+          "isSelected": true
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/329337/acer-nitro-an515-58-773y-i7-12700h-nhqfksv00116g-thumb-638760092227335057-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/329337/acer-nitro-an515-58-773y-i7-12700h-nhqfksv00116g-thumb-638760092227335057-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/27/0_47647306_acernitroan51558773yi712700h16gb512gb4gbrtx3050ti15.6f144hzwin11nh.qfksv.001.16gden_1774614040727.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/27/5_47647306_acernitroan51558773yi712700h16gb512gb4gbrtx3050ti15.6f144hzwin11nh.qfksv.001.16gden_1774614138643.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/27/6_47647306_acernitroan51558773yi712700h16gb512gb4gbrtx3050ti15.6f144hzwin11nh.qfksv.001.16gden_1774614149152.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/27/7_47647306_acernitroan51558773yi712700h16gb512gb4gbrtx3050ti15.6f144hzwin11nh.qfksv.001.16gden_1774614166952.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/27/8_47647306_acernitroan51558773yi712700h16gb512gb4gbrtx3050ti15.6f144hzwin11nh.qfksv.001.16gden_1774614173510.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/07/22/9_48213956_acernitroan51558773yi712700h16gb512gb4gbrtx3050ti15.6f144hzwin11nh.qfksv.001.16gden_1784696968662.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/27/1_47647306_acernitroan51558773yi712700h16gb512gb4gbrtx3050ti15.6f144hzwin11nh.qfksv.001.16gden_1774614058976.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/27/2_47647306_acernitroan51558773yi712700h16gb512gb4gbrtx3050ti15.6f144hzwin11nh.qfksv.001.16gden_1774614085586.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/27/3_47647306_acernitroan51558773yi712700h16gb512gb4gbrtx3050ti15.6f144hzwin11nh.qfksv.001.16gden_1774614111503.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/27/4_47647306_acernitroan51558773yi712700h16gb512gb4gbrtx3050ti15.6f144hzwin11nh.qfksv.001.16gden_1774614121943.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "1 tháng tại ĐMX",
+        "storeCount": 1,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.330Z"
+      }
+    },
+    {
+      "id": "975c0a4a08415634",
+      "source": "dienmayxanh",
+      "sku": "326830",
+      "name": "Laptop HP Pavilion X360 14 ek2024TU - 9Z2V6PA (Core 5 120U, 16GB, 512GB, Full HD, Cảm ứng, Win11)",
+      "brand": "HP",
+      "model": "Pavilion X360 14 ek2024TU - 9Z2V6PA",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/hp-pavilion-x360-14-ek2024tu-core-5-9z2v6pa?pid=326830&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 15380000,
+        "original": 24490000,
+        "discountPercent": 37,
+        "installment": "Trả chậm 0%",
+        "priceNote": "1 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Intel Core 5 Raptor Lake - 120U",
+        "ram": "16 GB",
+        "storage": "512 GB SSD NVMe M.2 PCIe Gen 4.0",
+        "gpu": "Card tích hợp - Intel Graphics",
+        "screen": "14 inch, Full HD (1920 x 1080), 60 Hz",
+        "battery": "3-cell Li-ion, 43 Wh",
+        "weight": "1.51 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "1 x USB Type-C (hỗ trợ USB Power Delivery, DisplayPort 1.4) HDMI 1 x Headphone/microphone combo2 x USB Type-A",
+        "rawSpecs": {
+          "CPU": "Intel Core 5 Raptor Lake - 120U",
+          "RAM": "16 GB",
+          "Ổ cứng": "512 GB SSD NVMe M.2 PCIe Gen 4.0",
+          "Màn hình": "Full HD",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Màu sắc": "Vàng",
+          "Công nghệ CPU": "Intel Core 5 Raptor Lake - 120U",
+          "Số nhân": "10",
+          "Số luồng": "12",
+          "Tốc độ CPU": "1.40 GHz (Lên đến 5.00 GHz khi tải nặng)",
+          "Card màn hình": "Card tích hợp - Intel Graphics",
+          "Số nhân GPU": "Hãng không công bố",
+          "Loại RAM": "DDR4 (Onboard)",
+          "Tốc độ Bus RAM": "3200 MHz",
+          "Hỗ trợ RAM tối đa": "Không hỗ trợ nâng cấp",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tấm nền": "IPS",
+          "Tần số quét": "60 Hz",
+          "Độ phủ màu": "62.5% sRGB",
+          "Công nghệ màn hình": "300 nits",
+          "Màn hình cảm ứng": "Có",
+          "Cổng giao tiếp": "1 x USB Type-C (hỗ trợ USB Power Delivery, DisplayPort 1.4) HDMI 1 x Headphone/microphone combo2 x USB Type-A",
+          "Kết nối không dây": "Bluetooth 5.3 Wi-Fi 6E (802.11ax)",
+          "Khe đọc thẻ nhớ": "Micro SD",
+          "Webcam": "HP TrueVision 5 MP",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Công tắc khoá cameraBảo mật vân tay",
+          "Công nghệ âm thanh": "HP Audio Boost",
+          "Tản nhiệt": "Hãng không công bố",
+          "Tính năng khác": "Màn hình gập 360 độ",
+          "Thông tin Pin": "3-cell Li-ion, 43 Wh",
+          "Thời điểm ra mắt": "2024",
+          "Kích thước": "Dài 322 mm - Rộng 210 mm - Dày 18.9 mm - 1.51 kg",
+          "Chất liệu": "Vỏ nhựa - chiếu nghỉ tay bằng kim loại"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Vàng | Tại: Thành phố Huế | BH: 1 tháng tại ĐMX",
+          "value": "HP Pavilion X360 14 ek2024TU Core 5 120U/16GB/512GB/14 inchF/Touch/Pen/Win11/(9Z2V6PA)/Vàng",
+          "price": 15380000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/hp-pavilion-x360-14-ek2024tu-core-5-9z2v6pa/detail?oldid=48788939&pid=326830&type=2",
+          "sku": "48788939",
+          "isSelected": true
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/326830/hp-pavilion-x360-14-ek2024tu-core-5-9z2v6pa-170225-110535-640-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/326830/hp-pavilion-x360-14-ek2024tu-core-5-9z2v6pa-170225-110535-640-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/04/0_48788939_hppavilionx36014ek2024tucore5120u16gb512gb14ftouchpenwin119z2v6pavang_1793775844303.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/04/5_48788939_hppavilionx36014ek2024tucore5120u16gb512gb14ftouchpenwin119z2v6pavang_1793775908833.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/04/6_48788939_hppavilionx36014ek2024tucore5120u16gb512gb14ftouchpenwin119z2v6pavang_1793775916237.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/04/7_48788939_hppavilionx36014ek2024tucore5120u16gb512gb14ftouchpenwin119z2v6pavang_1793775923748.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/04/8_48788939_hppavilionx36014ek2024tucore5120u16gb512gb14ftouchpenwin119z2v6pavang_1793775927725.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/04/9_48788939_hppavilionx36014ek2024tucore5120u16gb512gb14ftouchpenwin119z2v6pavang_1793775933105.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/04/1_48788939_hppavilionx36014ek2024tucore5120u16gb512gb14ftouchpenwin119z2v6pavang_1793775851980.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/04/2_48788939_hppavilionx36014ek2024tucore5120u16gb512gb14ftouchpenwin119z2v6pavang_1793775885075.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/04/3_48788939_hppavilionx36014ek2024tucore5120u16gb512gb14ftouchpenwin119z2v6pavang_1793775893134.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/04/4_48788939_hppavilionx36014ek2024tucore5120u16gb512gb14ftouchpenwin119z2v6pavang_1793775899636.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "1 tháng tại ĐMX",
+        "storeCount": 1,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.330Z"
+      }
+    },
+    {
+      "id": "4fd6d2a03d14af3b",
+      "source": "dienmayxanh",
+      "sku": "311145",
+      "name": "Laptop HP Pavilion 15 eg3094TU - 8C5L5PA (i5 1335U, 8GB, 512GB, Full HD, Win11)",
+      "brand": "HP",
+      "model": "Pavilion 15 eg3094TU - 8C5L5PA",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/hp-pavilion-15-eg3094tu-i5-8c5l5pa?pid=311145&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 12300000,
+        "original": 19590000,
+        "discountPercent": 37,
+        "installment": "Trả chậm 0%",
+        "priceNote": "1 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Intel Core i5 Raptor Lake - 1335U",
+        "ram": "8 GB",
+        "storage": "512 GB SSD NVMe PCIe",
+        "gpu": "Card tích hợp - Intel Iris Xe Graphics",
+        "screen": "15.6 inch, Full HD (1920 x 1080), 60 Hz",
+        "battery": "3-cell Li-ion, 41 Wh",
+        "weight": "1.69 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "1 x USB Type-C (hỗ trợ USB, Power Delivery và DisplayPort) HDMI 2 x USB 3.2 Jack tai nghe 3.5 mm",
+        "rawSpecs": {
+          "CPU": "Intel Core i5 Raptor Lake - 1335U",
+          "RAM": "8 GB",
+          "Ổ cứng": "512 GB SSD NVMe PCIe",
+          "Màn hình": "Full HD",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Màu sắc": "Vàng",
+          "Công nghệ CPU": "Intel Core i5 Raptor Lake - 1335U",
+          "Số nhân": "10",
+          "Số luồng": "12",
+          "Tốc độ CPU": "1.30 GHz (Lên đến 4.60 GHz khi tải nặng)",
+          "Card màn hình": "Card tích hợp - Intel Iris Xe Graphics",
+          "Loại RAM": "DDR4 (1 khe 4 GB + 1 khe 4 GB)",
+          "Tốc độ Bus RAM": "3200 MHz",
+          "Hỗ trợ RAM tối đa": "16 GB",
+          "Kích thước màn hình": "15.6 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tấm nền": "IPS",
+          "Tần số quét": "60 Hz",
+          "Độ phủ màu": "45% NTSC",
+          "Công nghệ màn hình": "250 nits Chống chói Anti Glare",
+          "Cổng giao tiếp": "1 x USB Type-C (hỗ trợ USB, Power Delivery và DisplayPort) HDMI 2 x USB 3.2 Jack tai nghe 3.5 mm",
+          "Kết nối không dây": "Wi-Fi 6 (802.11ax) Bluetooth 5.2",
+          "Webcam": "HD webcam",
+          "Đèn bàn phím": "Không có đèn",
+          "Công nghệ âm thanh": "HP Audio Boost Realtek High Definition Audio Audio by B&O",
+          "Tản nhiệt": "Hãng không công bố",
+          "Thông tin Pin": "3-cell Li-ion, 41 Wh",
+          "Thời điểm ra mắt": "2023",
+          "Kích thước": "Dài 360.2 mm - Rộng 234 mm - Dày 18 mm - 1.69 kg",
+          "Chất liệu": "Vỏ kim loại - Nắp lưng bằng nhựa",
+          "Phụ kiện": "Thùng máy,Sạc Laptop HP"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Vàng | Tại: Thành phố Hồ Chí Minh | BH: 1 tháng tại ĐMX",
+          "value": "HP Pavilion 15 eg3094TU i5 1335U/8GB/512GB/15.6 inchF/Win11/(8C5L5PA)/Vàng",
+          "price": 12300000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/hp-pavilion-15-eg3094tu-i5-8c5l5pa/detail?oldid=48453093&pid=311145&type=2",
+          "sku": "48453093",
+          "isSelected": true
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/311145/hp-pavilion-15-eg3094tu-i5-8c5l5pa-170225-103254-484-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/311145/hp-pavilion-15-eg3094tu-i5-8c5l5pa-170225-103254-484-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/0_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804474407.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/04/5_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804550631.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/6_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804559913.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/7_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804597359.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/8_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804617280.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/1_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804487080.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/2_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804508137.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/3_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804523551.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/4_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804538948.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "1 tháng tại ĐMX",
+        "storeCount": 1,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.330Z"
+      }
+    },
+    {
+      "id": "8566430c8f1ff31e",
+      "source": "dienmayxanh",
+      "sku": "307786",
+      "name": "Laptop Acer Aspire 7 Gaming A715 76G 5132 i5 12450H/8GB/512GB/4GB GTX1650/144Hz/Win11 (NH.QMESV.002)",
+      "brand": "Acer",
+      "model": "Aspire 7 Gaming A715 76G 5132",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/acer-aspire-7-gaming-a715-76g-5132-i5-nhqmesv002?pid=307786&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 11710000,
+        "original": 18644727,
+        "discountPercent": 37,
+        "installment": "Trả chậm 0%",
+        "priceNote": "1 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Intel Core i5 Alder Lake - 12450H",
+        "ram": "8 GB",
+        "storage": "Hỗ trợ thêm 1 khe cắm SSD M.2 PCIe mở rộng (nâng cấp tối đa 2 TB) 512 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 2 TB)",
+        "gpu": "Card rời - NVIDIA GeForce GTX 1650 4 GB",
+        "screen": "15.6 inch, Full HD (1920 x 1080), 144 Hz",
+        "battery": "4-cell Li-ion, 50 Wh",
+        "weight": "2.1 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "LAN (RJ45) Jack tai nghe 3.5 mm HDMI 3 x USB 3.2 1 x USB Type-C (hỗ trợ USB, DisplayPort, Thunderbolt 4)",
+        "rawSpecs": {
+          "CPU": "Intel Core i5 Alder Lake - 12450H",
+          "RAM": "8 GB",
+          "Ổ cứng": "Hỗ trợ thêm 1 khe cắm SSD M.2 PCIe mở rộng (nâng cấp tối đa 2 TB) 512 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 2 TB)",
+          "Card màn hình": "Card rời - NVIDIA GeForce GTX 1650 4 GB",
+          "Màn hình": "144Hz",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Màu sắc": "Đen",
+          "Công nghệ CPU": "Intel Core i5 Alder Lake - 12450H",
+          "Số nhân": "8",
+          "Số luồng": "12",
+          "Tốc độ CPU": "2.00 GHz (Lên đến 5.10 GHz khi tải nặng)",
+          "Loại RAM": "DDR4 (1 khe 8 GB + 1 khe rời)",
+          "Tốc độ Bus RAM": "3200 MHz",
+          "Hỗ trợ RAM tối đa": "32 GB",
+          "Kích thước màn hình": "15.6 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tần số quét": "144 Hz",
+          "Cổng giao tiếp": "LAN (RJ45) Jack tai nghe 3.5 mm HDMI 3 x USB 3.2 1 x USB Type-C (hỗ trợ USB, DisplayPort, Thunderbolt 4)",
+          "Kết nối không dây": "Wi-Fi 6E (802.11ax) Bluetooth 5.1",
+          "Webcam": "HD webcam",
+          "Đèn bàn phím": "Có",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "Acer TrueHarmony Acer Purified Voice",
+          "Tản nhiệt": "3 ống đồng2 quạt",
+          "Tính năng khác": "Bảo mật vân tay",
+          "Thông tin Pin": "4-cell Li-ion, 50 Wh",
+          "Thời điểm ra mắt": "2023",
+          "Kích thước": "Dài 362.3 mm - Rộng 237.4 mm - Dày 19.9 mm - 2.1 kg",
+          "Chất liệu": "Vỏ nhựa - nắp lưng bằng kim loại",
+          "Phụ kiện": "Thùng máy,Sạc Laptop Acer"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Tỉnh Cà Mau | BH: 1 tháng tại ĐMX",
+          "value": "Acer Aspire 7 A715 76G 5132 i5 12450H/8GB/512GB/4GB GTX1650/15.6 inchF/144Hz/Win11/(NH.QMESV.002)/Đen",
+          "price": 11710000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/acer-aspire-7-gaming-a715-76g-5132-i5-nhqmesv002/detail?oldid=47997943&pid=307786&type=2",
+          "sku": "47997943",
+          "isSelected": true
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/307786/acer-aspire-7-gaming-a715-76g-5132-i5-nhqmesv002-thumb-200x200.jpg",
+        "images": [
+          "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/307786/acer-aspire-7-gaming-a715-76g-5132-i5-nhqmesv002-thumb-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/07/0_47997943_aceraspire7a71576g5132i512450h8gb512gb4gbgtx165015.6f144hzwin11nh.qmesv.002den_1794018699703.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/07/3_47997943_aceraspire7a71576g5132i512450h8gb512gb4gbgtx165015.6f144hzwin11nh.qmesv.002den_1794018819619.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/07/4_47997943_aceraspire7a71576g5132i512450h8gb512gb4gbgtx165015.6f144hzwin11nh.qmesv.002den_1794018832784.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/07/5_47997943_aceraspire7a71576g5132i512450h8gb512gb4gbgtx165015.6f144hzwin11nh.qmesv.002den_1794018858456.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/07/7_47997943_aceraspire7a71576g5132i512450h8gb512gb4gbgtx165015.6f144hzwin11nh.qmesv.002den_1794018903982.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/07/9_47997943_aceraspire7a71576g5132i512450h8gb512gb4gbgtx165015.6f144hzwin11nh.qmesv.002den_1794018933099.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/07/8_47997943_aceraspire7a71576g5132i512450h8gb512gb4gbgtx165015.6f144hzwin11nh.qmesv.002den_1794018917829.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/07/6_47997943_aceraspire7a71576g5132i512450h8gb512gb4gbgtx165015.6f144hzwin11nh.qmesv.002den_1794018888269.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/07/2_47997943_aceraspire7a71576g5132i512450h8gb512gb4gbgtx165015.6f144hzwin11nh.qmesv.002den_1794018743621.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/07/1_47997943_aceraspire7a71576g5132i512450h8gb512gb4gbgtx165015.6f144hzwin11nh.qmesv.002den_1794018717543.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "1 tháng tại ĐMX",
+        "storeCount": 1,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.331Z"
+      }
+    },
+    {
+      "id": "027eb9f9e4270165",
+      "source": "dienmayxanh",
+      "sku": "322616",
+      "name": "Laptop Apple MacBook Air 15 inch M3 8GB/256GB",
+      "brand": "Apple",
+      "model": "MacBook Air 15 inch M3 8GB",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/macbook-air-15-inch-m3-2024?pid=322616&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 20770000,
+        "original": 32290000,
+        "discountPercent": 36,
+        "installment": "Trả chậm 0%",
+        "priceNote": "2 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Apple M3 - Hãng không công bố",
+        "ram": "8 GB",
+        "storage": "256 GB SSD",
+        "gpu": "Card tích hợp - 10 nhân GPU",
+        "screen": "15.3 inch, Liquid Retina (2880 x 1864)",
+        "battery": "Lên đến 18 giờ (Hãng công bố)",
+        "weight": "1.51 kg",
+        "os": "macOS Sonoma",
+        "ports": "MagSafe 3 Jack tai nghe 3.5 mm 2 x Thunderbolt 3 / USB 4 (lên đến 40 Gb/s)",
+        "rawSpecs": {
+          "Công nghệ CPU": "Apple M3 - Hãng không công bố",
+          "Số nhân": "8",
+          "Số luồng": "Hãng không công bố",
+          "Tốc độ CPU": "100 GB/s memory bandwidth",
+          "Card màn hình": "Card tích hợp - 10 nhân GPU",
+          "RAM": "8 GB",
+          "Loại RAM": "Hãng không công bố",
+          "Tốc độ Bus RAM": "Hãng không công bố",
+          "Hỗ trợ RAM tối đa": "Không hỗ trợ nâng cấp",
+          "Ổ cứng": "256 GB SSD",
+          "Kích thước màn hình": "15.3 inch",
+          "Độ phân giải": "Liquid Retina (2880 x 1864)",
+          "Tần số quét": "Hãng không công bố",
+          "Công nghệ màn hình": "Wide color (P3) True Tone Technology 500 nits brightness 1 tỷ màu",
+          "Cổng giao tiếp": "MagSafe 3 Jack tai nghe 3.5 mm 2 x Thunderbolt 3 / USB 4 (lên đến 40 Gb/s)",
+          "Kết nối không dây": "Wi-Fi 6E (802.11ax) Bluetooth 5.3",
+          "Webcam": "1080p FaceTime HD camera",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "Spatial AudioHệ thống âm thanh 6 loa Dolby Atmos 3 microphones",
+          "Tản nhiệt": "Hãng không công bố",
+          "Tính năng khác": "Bảo mật vân tay",
+          "Thông tin Pin": "Lên đến 18 giờ (Hãng công bố)",
+          "Hệ điều hành": "macOS Sonoma",
+          "Thời điểm ra mắt": "2024",
+          "Kích thước": "Dài 340.4 mm - Rộng 237.6 mm - Dày 11.5 mm - 1.51 kg",
+          "Chất liệu": "Vỏ nhôm tái chế 100%",
+          "Hãng": "MacBook., Xem thông tin hãng",
+          "Phụ kiện": "Adapter sạc,Hộp,Cáp",
+          "CPU": "Apple M3 - Hãng không công bố"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Vàng | Tại: Tỉnh Lâm Đồng | BH: 1 tháng tại ĐMX",
+          "value": "Macbook Air 15 inch M3 8GB - 256GB Vàng MRYR3SA/A",
+          "price": 20770000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/macbook-air-15-inch-m3-2024/detail?oldid=47653695&pid=322616&type=2",
+          "sku": "47653695",
+          "isSelected": true
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Vàng | Tại: Tỉnh Cà Mau | BH: 1 tháng tại ĐMX",
+          "value": "Macbook Air 15 inch M3 8GB - 256GB Vàng MRYR3SA/A",
+          "price": 20770000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/macbook-air-15-inch-m3-2024/detail?oldid=47821875&pid=322616&type=2",
+          "sku": "47821875",
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/322616/macbook-air-15-inch-m3-2024-xanh-200x200.jpg",
+        "images": [
+          "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/322616/macbook-air-15-inch-m3-2024-xanh-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/20/0_47653695_macbookair15inchm38gb256gbvangmryr3saa_1776695991843.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/27/0_47821875_macbookair15inchm38gb256gbvangmryr3saa_1777287653464.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/20/5_47653695_macbookair15inchm38gb256gbvangmryr3saa_1776696115564.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/20/6_47653695_macbookair15inchm38gb256gbvangmryr3saa_1776696122130.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/20/7_47653695_macbookair15inchm38gb256gbvangmryr3saa_1776696190453.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/20/8_47653695_macbookair15inchm38gb256gbvangmryr3saa_1776696152843.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/20/9_47653695_macbookair15inchm38gb256gbvangmryr3saa_1776696140522.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/20/1_47653695_macbookair15inchm38gb256gbvangmryr3saa_1776696001290.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/20/2_47653695_macbookair15inchm38gb256gbvangmryr3saa_1776696082957.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/20/3_47653695_macbookair15inchm38gb256gbvangmryr3saa_1776696100224.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/04/20/4_47653695_macbookair15inchm38gb256gbvangmryr3saa_1776696107709.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "1 tháng tại ĐMX",
+        "storeCount": 2,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.331Z"
+      }
+    },
+    {
+      "id": "f3a0bb001a472037",
+      "source": "dienmayxanh",
+      "sku": "313177",
+      "name": "Laptop Acer Gaming Aspire 7 A715 76G 5806 - NH.QMFSV.002 (i5 12450H, 16GB, 512GB, RTX 3050 4GB, Full HD 144Hz, Win11)",
+      "brand": "Acer",
+      "model": "Gaming Aspire 7 A715 76G 5806 - NH.QMFSV.002",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/acer-aspire-7-gaming-a715-76g-5806-i5-nhqmfsv002?pid=313177&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 15060000,
+        "original": 15060000,
+        "discountPercent": null,
+        "installment": "Trả chậm 0%",
+        "priceNote": "3 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Intel Core i5 Alder Lake - 12450H",
+        "ram": "16 GB",
+        "storage": "Hỗ trợ thêm 1 khe cắm SSD M.2 PCIe mở rộng (nâng cấp tối đa 1 TB) 512 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+        "gpu": "Card rời - NVIDIA GeForce RTX 3050, 4 GB",
+        "screen": "15.6 inch, Full HD (1920 x 1080), 144 Hz",
+        "battery": "3-cell Li-ion, 50 Wh",
+        "weight": "2.1 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "LAN (RJ45) HDMI 1 x USB Type-C (hỗ trợ USB, DisplayPort, Thunderbolt 4) 3 x USB 3.2 Jack tai nghe 3.5 mm",
+        "rawSpecs": {
+          "CPU": "Intel Core i5 Alder Lake - 12450H",
+          "RAM": "16 GB",
+          "Ổ cứng": "Hỗ trợ thêm 1 khe cắm SSD M.2 PCIe mở rộng (nâng cấp tối đa 1 TB) 512 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+          "Card màn hình": "Card rời - NVIDIA GeForce RTX 3050, 4 GB",
+          "Màn hình": "Full HD 144Hz",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Màu sắc": "Đen",
+          "Công nghệ CPU": "Intel Core i5 Alder Lake - 12450H",
+          "Số nhân": "8",
+          "Số luồng": "12",
+          "Tốc độ CPU": "2.00 GHz (Lên đến 4.40 GHz khi tải nặng)",
+          "Loại RAM": "DDR4 (1 khe 8 GB + 1 khe 8 GB)",
+          "Tốc độ Bus RAM": "3200 MHz",
+          "Hỗ trợ RAM tối đa": "32 GB",
+          "Kích thước màn hình": "15.6 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tấm nền": "IPS",
+          "Tần số quét": "144 Hz",
+          "Công nghệ màn hình": "Acer ComfyView",
+          "Cổng giao tiếp": "LAN (RJ45) HDMI 1 x USB Type-C (hỗ trợ USB, DisplayPort, Thunderbolt 4) 3 x USB 3.2 Jack tai nghe 3.5 mm",
+          "Kết nối không dây": "Bluetooth 5.1 Wi-Fi 6E (802.11ax)",
+          "Webcam": "HD webcam",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "Acer TrueHarmony Acer Purified Voice",
+          "Tản nhiệt": "2 quạt3 ống đồng",
+          "Thông tin Pin": "3-cell Li-ion, 50 Wh",
+          "Thời điểm ra mắt": "2023",
+          "Kích thước": "Dài 362.3 mm - Rộng 237.4 mm - Dày 19.9 mm - 2.1 kg",
+          "Chất liệu": "Vỏ nhựa - nắp lưng bằng kim loại",
+          "Phụ kiện": "Sách hướng dẫn,Thùng máy,Sạc Laptop Acer"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Tỉnh Nghệ An | BH: 1 tháng tại ĐMX",
+          "value": "Acer Aspire 7 A715 76G 5806 i5 12450H/16GB/512GB/4GB RTX3050/15.6 inchF/144Hz/Win11/(NH.QMFSV.002)/Đen",
+          "price": 15060000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/acer-aspire-7-gaming-a715-76g-5806-i5-nhqmfsv002/detail?oldid=48117363&pid=313177&type=2",
+          "sku": "48117363",
+          "isSelected": true
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Tỉnh Khánh Hòa | BH: 1 tháng tại ĐMX",
+          "value": "Acer Aspire 7 A715 76G 5806 i5 12450H/16GB/512GB/4GB RTX3050/15.6 inchF/144Hz/Win11/(NH.QMFSV.002)/Đen",
+          "price": 15060000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/acer-aspire-7-gaming-a715-76g-5806-i5-nhqmfsv002/detail?oldid=48697396&pid=313177&type=2",
+          "sku": "48697396",
+          "isSelected": false
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Tỉnh Gia Lai | BH: Chính hãng đến 10/09/2027",
+          "value": "Acer Aspire 7 A715 76G 5806 i5 12450H/16GB/512GB/4GB RTX3050/15.6 inchF/144Hz/Win11/(NH.QMFSV.002)/Đen",
+          "price": 16980000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/acer-aspire-7-gaming-a715-76g-5806-i5-nhqmfsv002/detail?oldid=48679290&pid=313177&type=2",
+          "sku": "48679290",
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/313177/acer-aspire-7-gaming-a715-76g-5806-i5-nhqmfsv002-thumb-638754898004072091-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/313177/acer-aspire-7-gaming-a715-76g-5806-i5-nhqmfsv002-thumb-638754898004072091-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/11/03/0_48117363_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1793700899281.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/09/0_48697396_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1794194592712.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/19/0_48538093_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1789825046196.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/03/5_48117363_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1793701047814.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/03/6_48117363_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1793701060773.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/11/03/7_48117363_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1793701102396.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/11/03/8_48117363_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1793701146948.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/03/9_48117363_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1793701159221.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/11/03/1_48117363_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1793700877498.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/03/2_48117363_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1793700934645.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/03/3_48117363_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1793700970755.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/11/03/4_48117363_aceraspire7a71576g5806i512450h16gb512gb4gbrtx305015.6f144hzwin11nh.qmfsv.002den_1793701001564.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "1 tháng tại ĐMX",
+        "storeCount": 3,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.331Z"
+      }
+    },
+    {
+      "id": "0f6328af0c586cd1",
+      "source": "dienmayxanh",
+      "sku": "311177",
+      "name": "Laptop HP Pavilion 15 eg3091TU - 8C5L2PA (i7 1355U, 16GB, 512GB, Full HD, Win11)",
+      "brand": "HP",
+      "model": "Pavilion 15 eg3091TU - 8C5L2PA",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/hp-pavilion-15-eg3091tu-i7-8c5l2pa?pid=311177&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 17040000,
+        "original": 25390000,
+        "discountPercent": 33,
+        "installment": "Trả chậm 0%",
+        "priceNote": "4 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Intel Core i7 Raptor Lake - 1355U",
+        "ram": "16 GB",
+        "storage": "512 GB SSD NVMe PCIe",
+        "gpu": "Card tích hợp - Intel Iris Xe Graphics",
+        "screen": "15.6 inch, Full HD (1920 x 1080), 60 Hz",
+        "battery": "3-cell Li-ion, 41 Wh",
+        "weight": "1.69 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "1 x USB Type-C (hỗ trợ USB Power Delivery, DisplayPort 1.4) HDMI 2 x USB 3.2 Jack tai nghe 3.5 mm",
+        "rawSpecs": {
+          "CPU": "Intel Core i7 Raptor Lake - 1355U",
+          "RAM": "16 GB",
+          "Ổ cứng": "512 GB SSD NVMe PCIe",
+          "Màn hình": "Full HD",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Màu sắc": "Vàng",
+          "Công nghệ CPU": "Intel Core i7 Raptor Lake - 1355U",
+          "Số nhân": "10",
+          "Số luồng": "12",
+          "Tốc độ CPU": "1.70 GHz (Lên đến 5.00 GHz khi tải nặng)",
+          "Card màn hình": "Card tích hợp - Intel Iris Xe Graphics",
+          "Loại RAM": "DDR4 (1 khe 8 GB + 1 khe 8 GB)",
+          "Tốc độ Bus RAM": "3200 MHz",
+          "Hỗ trợ RAM tối đa": "32 GB",
+          "Kích thước màn hình": "15.6 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tấm nền": "IPS",
+          "Tần số quét": "60 Hz",
+          "Độ phủ màu": "45% NTSC",
+          "Công nghệ màn hình": "250 nits Chống chói Anti Glare",
+          "Cổng giao tiếp": "1 x USB Type-C (hỗ trợ USB Power Delivery, DisplayPort 1.4) HDMI 2 x USB 3.2 Jack tai nghe 3.5 mm",
+          "Kết nối không dây": "Bluetooth 5.3 Wi-Fi 6 (802.11ax)",
+          "Webcam": "HD webcam",
+          "Đèn bàn phím": "Không có đèn",
+          "Công nghệ âm thanh": "HP Audio Boost Realtek High Definition Audio Audio by B&O",
+          "Tản nhiệt": "Hãng không công bố",
+          "Thông tin Pin": "3-cell Li-ion, 41 Wh",
+          "Thời điểm ra mắt": "2023",
+          "Kích thước": "Dài 360.2 mm - Rộng 234 mm - Dày 18 mm - 1.69 kg",
+          "Chất liệu": "Vỏ kim loại - Nắp lưng bằng nhựa",
+          "Phụ kiện": "Thùng máy,Sạc Laptop HP"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Vàng | Tại: Tỉnh Ninh Bình | BH: Chính hãng đến 31/08/2027",
+          "value": "HP Pavilion 15 eg3091TU i7 1355U/16GB/512GB/15.6 inchF/Win11/(8C5L2PA)/Vàng",
+          "price": 17040000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/hp-pavilion-15-eg3091tu-i7-8c5l2pa/detail?oldid=48562168&pid=311177&type=2",
+          "sku": "48562168",
+          "isSelected": true
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Vàng | Tại: Thành phố Hồ Chí Minh | BH: Chính hãng đến 18/09/2027",
+          "value": "HP Pavilion 15 eg3091TU i7 1355U/16GB/512GB/15.6 inchF/Win11/(8C5L2PA)/Vàng",
+          "price": 18820000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/hp-pavilion-15-eg3091tu-i7-8c5l2pa/detail?oldid=48689295&pid=311177&type=2",
+          "sku": "48689295",
+          "isSelected": false
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Vàng | Tại: Thành phố Hồ Chí Minh | BH: Chính hãng đến 25/09/2027",
+          "value": "HP Pavilion 15 eg3091TU i7 1355U/16GB/512GB/15.6 inchF/Win11/(8C5L2PA)/Vàng",
+          "price": 18820000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/hp-pavilion-15-eg3091tu-i7-8c5l2pa/detail?oldid=48717154&pid=311177&type=2",
+          "sku": "48717154",
+          "isSelected": false
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Vàng | Tại: Thành phố Đồng Nai | BH: Chính hãng đến 30/09/2027",
+          "value": "HP Pavilion 15 eg3091TU i7 1355U/16GB/512GB/15.6 inchF/Win11/(8C5L2PA)/Vàng",
+          "price": 18920000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/hp-pavilion-15-eg3091tu-i7-8c5l2pa/detail?oldid=48735792&pid=311177&type=2",
+          "sku": "48735792",
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/311177/hp-pavilion-15-eg3091tu-i7-8c5l2pa-170225-103417-620-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/311177/hp-pavilion-15-eg3091tu-i7-8c5l2pa-170225-103417-620-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/25/0_48562168_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1790343543275.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/27/0_48689295_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1793112072109.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/23/0_48717154_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1792766462183.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/24/0_48735792_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1792836791724.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/25/5_48562168_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1790343604800.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/25/6_48562168_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1790343611592.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/25/7_48562168_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1790343638610.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/25/8_48562168_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1790343647058.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/25/9_48562168_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1790343652151.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/25/1_48562168_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1790343527705.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/25/2_48562168_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1790343553378.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/25/3_48562168_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1790343563907.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/25/4_48562168_hppavilion15eg3091tui71355u16gb512gb15.6fwin118c5l2pavang_1790343597662.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "Chính hãng đến 31/08/2027",
+        "storeCount": 4,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.331Z"
+      }
+    },
+    {
+      "id": "c3d7210a8d7d1a76",
+      "source": "dienmayxanh",
+      "sku": "318233",
+      "name": "Laptop Apple MacBook Pro 16 inch M3 Pro 18GB/512GB",
+      "brand": "Apple",
+      "model": "MacBook Pro 16 inch M3 Pro 18GB",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/apple-macbook-pro-16-inch-m3-pro-2023-12-core?pid=318233&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 45780000,
+        "original": 63690000,
+        "discountPercent": 28,
+        "installment": "Trả chậm 0%",
+        "priceNote": "5 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Apple M3 Pro - Hãng không công bố",
+        "ram": "18 GB",
+        "storage": "512 GB SSD",
+        "gpu": "• 18 lõi",
+        "screen": "16.2 inch, Liquid Retina XDR display (3456 x 2234), up to 120 Hz",
+        "battery": "Lên đến 22 giờ (Hãng công bố)",
+        "weight": "2.14 kg",
+        "os": "macOS Sonoma",
+        "ports": "• Ba cổng Thunderbolt 4 (USB-C), • Cổng HDMI, • Khe thẻ nhớ SDXC",
+        "rawSpecs": {
+          "Tiêu chí": "MacBook Pro 16 inch M3 Pro 2023",
+          "Màn hình": "• Màn hình Liquid Retina XDR, • Độ sáng SDR: tối đa 600 nits, • Độ phân giải: 3456 x 2234 pixel",
+          "Kích thước (Cao x Rộng x Dài)": "• 16.8 x 355.7 x 248.1 mm",
+          "Khối lượng": "• 2.14 kg",
+          "Bộ xử lý": "• Chip Apple M3 Pro",
+          "CPU": "Apple M3 Pro - Hãng không công bố",
+          "GPU": "• 18 lõi",
+          "Camera": "• Camera FaceTime HD 1080p",
+          "Bàn phím": "• Bàn phím Magic Keyboard (đèn nền), • Touch ID",
+          "Kết nối không dây": "Wi-Fi 6E (802.11ax) Bluetooth 5.3",
+          "Cổng kết nối": "• Ba cổng Thunderbolt 4 (USB-C), • Cổng HDMI, • Khe thẻ nhớ SDXC",
+          "Thời lượng pin": "• Lên đến 22 giờ",
+          "Các phiên bản": "Giá bán Quốc Tế",
+          "Công nghệ CPU": "Apple M3 Pro - Hãng không công bố",
+          "Số nhân": "12",
+          "Số luồng": "Hãng không công bố",
+          "Tốc độ CPU": "150 GB/s memory bandwidth",
+          "Card màn hình": "Card tích hợp - 18 nhân GPU",
+          "RAM": "18 GB",
+          "Loại RAM": "Hãng không công bố",
+          "Tốc độ Bus RAM": "Hãng không công bố",
+          "Hỗ trợ RAM tối đa": "Không hỗ trợ nâng cấp",
+          "Ổ cứng": "512 GB SSD",
+          "Kích thước màn hình": "16.2 inch",
+          "Độ phân giải": "Liquid Retina XDR display (3456 x 2234)",
+          "Tần số quét": "up to 120 Hz",
+          "Công nghệ màn hình": "Độ sáng XDR: toàn màn hình 1000 nits, cao nhất 1600 nits (chỉ nội dung HDR)Độ sáng SDR: 600 nits Wide color (P3) True Tone Technology ProMotion1 tỷ màu",
+          "Cổng giao tiếp": "MagSafe 3 Jack tai nghe 3.5 mm HDMI 3 x Thunderbolt 4 ( hỗ trợ DisplayPort, Thunderbolt 4 (up to 40Gb/s), USB 4 (up to 40Gb/s))",
+          "Khe đọc thẻ nhớ": "SD",
+          "Webcam": "1080p FaceTime HD camera",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "Spatial AudioHệ thống âm thanh 6 loa Dolby Atmos 3 microphones",
+          "Tản nhiệt": "Hãng không công bố",
+          "Tính năng khác": "Bảo mật vân tay",
+          "Thông tin Pin": "Lên đến 22 giờ (Hãng công bố)",
+          "Hệ điều hành": "macOS Sonoma",
+          "Thời điểm ra mắt": "2023",
+          "Kích thước": "Dài 355.7 mm - Rộng 248.1 mm - Dày 16.8 mm - 2.14 kg",
+          "Chất liệu": "Vỏ nhôm tái chế 100%",
+          "Hãng": "MacBook., Xem thông tin hãng",
+          "Phụ kiện": "Sách hướng dẫn, Thùng máy, Cáp, Sạc Laptop Apple"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Thành phố Hải Phòng | BH: 1 tháng tại ĐMX",
+          "value": "Macbook Pro 16 inch M3 Pro 18GB - 512GB Đen MRW13SA/A",
+          "price": 45780000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/apple-macbook-pro-16-inch-m3-pro-2023-12-core/detail?oldid=47720382&pid=318233&type=2",
+          "sku": "47720382",
+          "isSelected": true
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Thành phố Hà Nội | BH: 1 tháng tại ĐMX",
+          "value": "Macbook Pro 16 inch M3 Pro 18GB - 512GB Đen MRW13SA/A",
+          "price": 45780000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/apple-macbook-pro-16-inch-m3-pro-2023-12-core/detail?oldid=48385566&pid=318233&type=2",
+          "sku": "48385566",
+          "isSelected": false
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Tỉnh Vĩnh Long | BH: 1 tháng tại ĐMX",
+          "value": "Macbook Pro 16 inch M3 Pro 18GB - 512GB Đen MRW13SA/A",
+          "price": 45780000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/apple-macbook-pro-16-inch-m3-pro-2023-12-core/detail?oldid=47998969&pid=318233&type=2",
+          "sku": "47998969",
+          "isSelected": false
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Thành phố Hồ Chí Minh | BH: 1 tháng tại ĐMX",
+          "value": "Macbook Pro 16 inch M3 Pro 18GB - 512GB Đen MRW13SA/A",
+          "price": 45780000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/apple-macbook-pro-16-inch-m3-pro-2023-12-core/detail?oldid=48225723&pid=318233&type=2",
+          "sku": "48225723",
+          "isSelected": false
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Tỉnh Hưng Yên | BH: 1 tháng tại ĐMX",
+          "value": "Macbook Pro 16 inch M3 Pro 18GB - 512GB Đen MRW13SA/A",
+          "price": 45780000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/apple-macbook-pro-16-inch-m3-pro-2023-12-core/detail?oldid=48079127&pid=318233&type=2",
+          "sku": "48079127",
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/318233/apple-macbook-pro-16-inch-m3-pro-2023-12-core-311023-033651-200x200.jpg",
+        "images": [
+          "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/318233/apple-macbook-pro-16-inch-m3-pro-2023-12-core-311023-033651-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/03/30/0_47720382_macbookpro16inchm3pro18gb512gbdenmrw13saa_1774861535722.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/30/0_48385566_macbookpro16inchm3pro18gb512gbdenmrw13saa_1790752892555.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/01/0_47998969_macbookpro16inchm3pro18gb512gbdenmrw13saa_1780295302445.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2025/12/22/0_47290074_macbookpro16inchm3pro18gb512gbdenmrw13saa_1766395230752.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/22/0_48079127_macbookpro16inchm3pro18gb512gbdenmrw13saa_1782119777806.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/03/30/5_47720382_macbookpro16inchm3pro18gb512gbdenmrw13saa_1774861585890.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/03/30/6_47720382_macbookpro16inchm3pro18gb512gbdenmrw13saa_1774861601779.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/30/7_47720382_macbookpro16inchm3pro18gb512gbdenmrw13saa_1774861636210.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/30/8_47720382_macbookpro16inchm3pro18gb512gbdenmrw13saa_1774861663331.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/03/30/9_47720382_macbookpro16inchm3pro18gb512gbdenmrw13saa_1774861675192.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/03/30/1_47720382_macbookpro16inchm3pro18gb512gbdenmrw13saa_1774861508191.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/03/30/2_47720382_macbookpro16inchm3pro18gb512gbdenmrw13saa_1774861479140.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/03/30/3_47720382_macbookpro16inchm3pro18gb512gbdenmrw13saa_1774861559567.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/03/30/4_47720382_macbookpro16inchm3pro18gb512gbdenmrw13saa_1774861571263.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "1 tháng tại ĐMX",
+        "storeCount": 5,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.331Z"
+      }
+    },
+    {
+      "id": "fd53f0025ec17ce9",
+      "source": "dienmayxanh",
+      "sku": "325247",
+      "name": "Laptop Dell Inspiron 15 3530 - P16WD (i7 1355U, 16GB, 1TB, Full HD 120Hz, OfficeHS, Win11)",
+      "brand": "Dell",
+      "model": "Inspiron 15 3530 - P16WD",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/dell-inspiron-15-3530-i7-p16wd?pid=325247&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 17680000,
+        "original": 28490000,
+        "discountPercent": 38,
+        "installment": "Trả chậm 0%",
+        "priceNote": "1 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Intel Core i7 Raptor Lake - 1355U",
+        "ram": "16 GB",
+        "storage": "1 TB SSD M.2 PCIe",
+        "gpu": "Card tích hợp - Intel Iris Xe Graphics",
+        "screen": "15.6 inch, Full HD (1920 x 1080), 120 Hz",
+        "battery": "4-cell Li-ion, 54 Wh",
+        "weight": "1.65 kg",
+        "os": "Windows 11 Home SL + Office Home & Student 2021 vĩnh viễn",
+        "ports": "USB Type-C HDMI 1 x USB 3.2 Jack tai nghe 3.5 mm 1 x USB 2.0",
+        "rawSpecs": {
+          "CPU": "Intel Core i7 Raptor Lake - 1355U",
+          "RAM": "16 GB",
+          "Ổ cứng": "1 TB SSD M.2 PCIe",
+          "Màn hình": "Full HD 120Hz",
+          "Phần mềm": "OfficeHS",
+          "Hệ điều hành": "Windows 11 Home SL + Office Home & Student 2021 vĩnh viễn",
+          "Màu sắc": "Bạc",
+          "Công nghệ CPU": "Intel Core i7 Raptor Lake - 1355U",
+          "Số nhân": "10",
+          "Số luồng": "12",
+          "Tốc độ CPU": "1.70 GHz (Lên đến 5.00 GHz khi tải nặng)",
+          "Card màn hình": "Card tích hợp - Intel Iris Xe Graphics",
+          "Loại RAM": "DDR4 (8 GB onboard + 1 khe 8 GB)",
+          "Tốc độ Bus RAM": "2666 MHz",
+          "Hỗ trợ RAM tối đa": "16 GB",
+          "Kích thước màn hình": "15.6 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tần số quét": "120 Hz",
+          "Công nghệ màn hình": "WVA LED Backlit Chống chói Anti Glare",
+          "Cổng giao tiếp": "USB Type-C HDMI 1 x USB 3.2 Jack tai nghe 3.5 mm 1 x USB 2.0",
+          "Kết nối không dây": "Wi-Fi 6 (802.11ax) Bluetooth 5.0",
+          "Khe đọc thẻ nhớ": "SD",
+          "Webcam": "HD webcam",
+          "Đèn bàn phím": "Không có đèn",
+          "Công nghệ âm thanh": "Realtek High Definition Audio",
+          "Tản nhiệt": "Hãng không công bố",
+          "Thông tin Pin": "4-cell Li-ion, 54 Wh",
+          "Thời điểm ra mắt": "2024",
+          "Kích thước": "Dài 358.5 mm - Rộng 235.6 mm - Dày 19 mm - 1.65 kg",
+          "Chất liệu": "Vỏ nhựa",
+          "Phụ kiện": "Sạc Laptop Dell"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Bạc | Tại: Tỉnh Đắk Lắk | BH: 1 tháng tại ĐMX",
+          "value": "Dell Inspiron 15 3530 i7 1355U/16GB/1TB/15.6 inchF/120Hz/OfficeHS/Win11/(P16WD)/Bạc",
+          "price": 17680000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/dell-inspiron-15-3530-i7-p16wd/detail?oldid=48510935&pid=325247&type=2",
+          "sku": "48510935",
+          "isSelected": true
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/325247/dell-inspiron-15-3530-i7-p16wd-thumb-638754948496889615-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/325247/dell-inspiron-15-3530-i7-p16wd-thumb-638754948496889615-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/15/0_48510935_dellinspiron153530i71355u16gb1tb15.6f120hzofficehswin11p16wdbac_1789455094210.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/15/3_48510935_dellinspiron153530i71355u16gb1tb15.6f120hzofficehswin11p16wdbac_1789455164929.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/15/4_48510935_dellinspiron153530i71355u16gb1tb15.6f120hzofficehswin11p16wdbac_1789455203048.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/15/5_48510935_dellinspiron153530i71355u16gb1tb15.6f120hzofficehswin11p16wdbac_1789455212042.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/15/6_48510935_dellinspiron153530i71355u16gb1tb15.6f120hzofficehswin11p16wdbac_1789455218588.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/15/7_48510935_dellinspiron153530i71355u16gb1tb15.6f120hzofficehswin11p16wdbac_1789455235741.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/15/1_48510935_dellinspiron153530i71355u16gb1tb15.6f120hzofficehswin11p16wdbac_1789455125736.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/15/2_48510935_dellinspiron153530i71355u16gb1tb15.6f120hzofficehswin11p16wdbac_1789455151307.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "1 tháng tại ĐMX",
+        "storeCount": 1,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.332Z"
+      }
+    },
+    {
+      "id": "dca9629c8dc17df8",
+      "source": "dienmayxanh",
+      "sku": "318230",
+      "name": "Laptop MacBook Pro 14 inch M3 Pro 18GB/512GB",
+      "brand": "Apple",
+      "model": "MacBook Pro 14 inch M3 Pro 18GB",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/apple-macbook-pro-14-inch-m3-pro-2023?pid=318230&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 38060000,
+        "original": 38060000,
+        "discountPercent": null,
+        "installment": "Trả chậm 0%",
+        "priceNote": "1 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Apple M3 Pro - Hãng không công bố",
+        "ram": "18 GB",
+        "storage": "512 GB SSD",
+        "gpu": "• 18 lõi",
+        "screen": "14.2 inch, Liquid Retina XDR display (3024 x 1964), up to 120 Hz",
+        "battery": "Lên đến 18 giờ (Hãng công bố)",
+        "weight": "1.61 kg",
+        "os": "macOS Sonoma",
+        "ports": "• Ba cổng Thunderbolt 4 (USB-C), • Cổng HDMI, • Khe thẻ nhớ SDXC",
+        "rawSpecs": {
+          "Tiêu chí": "MacBook Pro 14 inch M3 Pro 2023",
+          "Màn hình": "• Màn hình Liquid Retina XDR, • Độ sáng SDR: tối đa 600 nits, • Độ phân giải: 3024 x 1964 pixel",
+          "Kích thước (Cao x Rộng x Dài)": "• 15.5 x 312.6 x 221.2 mm",
+          "Khối lượng": "• 1.61 kg",
+          "Bộ xử lý": "• Chip Apple M3 Pro",
+          "CPU": "Apple M3 Pro - Hãng không công bố",
+          "GPU": "• 18 lõi",
+          "Camera": "• Camera FaceTime HD 1080p",
+          "Bàn phím": "• Bàn phím Magic Keyboard (đèn nền), • Touch ID",
+          "Kết nối không dây": "Wi-Fi 6E (802.11ax) Bluetooth 5.3",
+          "Cổng kết nối": "• Ba cổng Thunderbolt 4 (USB-C), • Cổng HDMI, • Khe thẻ nhớ SDXC",
+          "Thời lượng pin": "• Lên đến 18 giờ",
+          "RAM": "18 GB",
+          "Các phiên bản MacBook Pro 14 inch M3 2023": "Giá bán Quốc Tế",
+          "Công nghệ CPU": "Apple M3 Pro - Hãng không công bố",
+          "Số nhân": "11",
+          "Số luồng": "Hãng không công bố",
+          "Tốc độ CPU": "150 GB/s memory bandwidth",
+          "Card màn hình": "Card tích hợp - 14 nhân GPU",
+          "Loại RAM": "Hãng không công bố",
+          "Tốc độ Bus RAM": "Hãng không công bố",
+          "Hỗ trợ RAM tối đa": "Không hỗ trợ nâng cấp",
+          "Ổ cứng": "512 GB SSD",
+          "Kích thước màn hình": "14.2 inch",
+          "Độ phân giải": "Liquid Retina XDR display (3024 x 1964)",
+          "Tần số quét": "up to 120 Hz",
+          "Công nghệ màn hình": "Độ sáng XDR: toàn màn hình 1000 nits, cao nhất 1600 nits (chỉ nội dung HDR)Độ sáng SDR: 600 nits Wide color (P3) True Tone Technology ProMotion1 tỷ màu",
+          "Cổng giao tiếp": "MagSafe 3 Jack tai nghe 3.5 mm HDMI 3 x Thunderbolt 4 ( hỗ trợ DisplayPort, Thunderbolt 4 (up to 40Gb/s), USB 4 (up to 40Gb/s))",
+          "Khe đọc thẻ nhớ": "SD",
+          "Webcam": "1080p FaceTime HD camera",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "Spatial AudioHệ thống âm thanh 6 loa Dolby Atmos 3 microphones",
+          "Tính năng khác": "Bảo mật vân tay",
+          "Thông tin Pin": "Lên đến 18 giờ (Hãng công bố)",
+          "Hệ điều hành": "macOS Sonoma",
+          "Thời điểm ra mắt": "2023",
+          "Kích thước": "Dài 312.6 mm - Rộng 221.2 mm - Dày 15.5 mm - 1.61 kg",
+          "Chất liệu": "Vỏ nhôm tái chế 100%",
+          "Hãng": "MacBook., Xem thông tin hãng",
+          "Phụ kiện": "Sách hướng dẫn,Thùng máy,Cáp,Sạc Laptop Apple"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Tỉnh Sơn La | BH: 1 tháng tại ĐMX",
+          "value": "Macbook Pro 14 inch M3 Pro 18GB - 512GB Đen MRX33SA/A",
+          "price": 38060000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/apple-macbook-pro-14-inch-m3-pro-2023/detail?oldid=48079045&pid=318230&type=2",
+          "sku": "48079045",
+          "isSelected": true
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/318230/apple-macbook-pro-14-inch-m3-pro-2023-111124-040015-777-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/318230/apple-macbook-pro-14-inch-m3-pro-2023-111124-040015-777-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/22/0_48079045_macbookpro14inchm3pro18gb512gbdenmrx33saa_1782110879899.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/22/3_48079045_macbookpro14inchm3pro18gb512gbdenmrx33saa_1782110912709.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/22/4_48079045_macbookpro14inchm3pro18gb512gbdenmrx33saa_1782110922834.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/22/5_48079045_macbookpro14inchm3pro18gb512gbdenmrx33saa_1782110951290.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/22/6_48079045_macbookpro14inchm3pro18gb512gbdenmrx33saa_1782110963423.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/22/7_48079045_macbookpro14inchm3pro18gb512gbdenmrx33saa_1782111058559.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/22/1_48079045_macbookpro14inchm3pro18gb512gbdenmrx33saa_1782110889386.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/22/2_48079045_macbookpro14inchm3pro18gb512gbdenmrx33saa_1782110867435.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "1 tháng tại ĐMX",
+        "storeCount": 1,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.332Z"
+      }
+    },
+    {
+      "id": "ac0e0dda196d6217",
+      "source": "dienmayxanh",
+      "sku": "327506",
+      "name": "Laptop Acer Swift Go 14 41 R251 - NX.KG3SV.005 (R5 7430U, 16GB, 1TB, Full HD, Win11)",
+      "brand": "Acer",
+      "model": "Swift Go 14 41 R251 - NX.KG3SV.005",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/acer-swift-go-14-41-r251-r5-nxkg3sv005?pid=327506&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 15010000,
+        "original": 22090000,
+        "discountPercent": 32,
+        "installment": "Trả chậm 0%",
+        "priceNote": "1 sản phẩm"
+      },
+      "specs": {
+        "cpu": "AMD Ryzen 5 - 7430U",
+        "ram": "16 GB",
+        "storage": "1 TB SSD M.2 PCIe (Có thể tháo ra, lắp thanh khác tối đa 2 TB)",
+        "gpu": "Card tích hợp - AMD Radeon Graphics",
+        "screen": "14 inch, Full HD (1920 x 1080), 60 Hz",
+        "battery": "50 Wh",
+        "weight": "1.25 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "2 x USB Type-C (hỗ trợ USB, DisplayPort, Thunderbolt 4) HDMI 2 x USB 3.2 Jack tai nghe 3.5 mm",
+        "rawSpecs": {
+          "CPU": "AMD Ryzen 5 - 7430U",
+          "RAM": "16 GB",
+          "Ổ cứng": "1 TB SSD M.2 PCIe (Có thể tháo ra, lắp thanh khác tối đa 2 TB)",
+          "Màn hình": "Full HD",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Màu sắc": "Bạc",
+          "Công nghệ CPU": "AMD Ryzen 5 - 7430U",
+          "Số nhân": "6",
+          "Số luồng": "12",
+          "Tốc độ CPU": "2.30 GHz (Lên đến 4.30 GHz khi tải nặng)",
+          "Card màn hình": "Card tích hợp - AMD Radeon Graphics",
+          "Loại RAM": "LPDDR4X (Onboard)",
+          "Tốc độ Bus RAM": "4800 MHz",
+          "Hỗ trợ RAM tối đa": "Không hỗ trợ nâng cấp",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tần số quét": "60 Hz",
+          "Độ phủ màu": "100% sRGB",
+          "Công nghệ màn hình": "Acer ComfyView 300 nits LED Backlit TFT",
+          "Cổng giao tiếp": "2 x USB Type-C (hỗ trợ USB, DisplayPort, Thunderbolt 4) HDMI 2 x USB 3.2 Jack tai nghe 3.5 mm",
+          "Kết nối không dây": "Bluetooth 5.1 Wi-Fi 6E (802.11ax)",
+          "Webcam": "Full HD Webcam",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "DTS:X ULTRA Acer TrueHarmony Acer Purified Voice",
+          "Tản nhiệt": "Hãng không công bố",
+          "Thông tin Pin": "50 Wh",
+          "Kích thước": "Dài 321.71 mm - Rộng 211.72 mm - Dày 15.9 mm - 1.25 kg",
+          "Chất liệu": "Vỏ hợp kim Nhôm",
+          "Phụ kiện": "Sách hướng dẫn,Thùng máy,Sạc Laptop Acer"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Bạc | Tại: Tỉnh Phú Thọ | BH: Chính hãng đến 19/10/2028",
+          "value": "Acer Swift Go 14 41 R251 R5 7430U/16GB/1TB/14 inchF/Win11/(NX.KG3SV.005)/Bạc",
+          "price": 15010000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/acer-swift-go-14-41-r251-r5-nxkg3sv005/detail?oldid=48772375&pid=327506&type=2",
+          "sku": "48772375",
+          "isSelected": true
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/327506/acer-swift-go-14-41-r251-r5-nxkg3sv005-thumb-638754974034145190-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/327506/acer-swift-go-14-41-r251-r5-nxkg3sv005-thumb-638754974034145190-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/31/0_48772375_acerswiftgo1441r251r57430u16gb1tb14fwin11nx.kg3sv.005bac_1793438733772.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/31/4_48772375_acerswiftgo1441r251r57430u16gb1tb14fwin11nx.kg3sv.005bac_1793438773472.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/31/5_48772375_acerswiftgo1441r251r57430u16gb1tb14fwin11nx.kg3sv.005bac_1793438780204.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/31/6_48772375_acerswiftgo1441r251r57430u16gb1tb14fwin11nx.kg3sv.005bac_1793438789432.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/31/7_48772375_acerswiftgo1441r251r57430u16gb1tb14fwin11nx.kg3sv.005bac_1793438812778.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/31/8_48772375_acerswiftgo1441r251r57430u16gb1tb14fwin11nx.kg3sv.005bac_1793438823149.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/31/1_48772375_acerswiftgo1441r251r57430u16gb1tb14fwin11nx.kg3sv.005bac_1793438755529.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/31/2_48772375_acerswiftgo1441r251r57430u16gb1tb14fwin11nx.kg3sv.005bac_1793438762258.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/10/31/3_48772375_acerswiftgo1441r251r57430u16gb1tb14fwin11nx.kg3sv.005bac_1793438769248.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "Chính hãng đến 19/10/2028",
+        "storeCount": 1,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.332Z"
+      }
+    },
+    {
+      "id": "cc43755c5fb814cd",
+      "source": "dienmayxanh",
+      "sku": "325953",
+      "name": "Laptop Dell Inspiron 14 5440 - 7FN5J (Core 7 150U, 16GB, 1TB, Full HD+, OfficeHS, Win11)",
+      "brand": "Dell",
+      "model": "Inspiron 14 5440 - 7FN5J",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/dell-inspiron-14-5440-core-7-7fn5j?pid=325953&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 21340000,
+        "original": 31390000,
+        "discountPercent": 32,
+        "installment": "Trả chậm 0%",
+        "priceNote": "2 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Intel Core 7 Raptor Lake - 150U",
+        "ram": "16 GB",
+        "storage": "1 TB SSD M.2 PCIe",
+        "gpu": "Card tích hợp - Intel Graphics",
+        "screen": "14 inch, Full HD+ (1920 x 1200) 16:10, 60 Hz",
+        "battery": "4-cell Li-ion, 54 Wh",
+        "weight": "1.56 kg",
+        "os": "Windows 11 Home SL + Office Home & Student 2021 vĩnh viễn",
+        "ports": "1 x USB Type-C 3.2 (hỗ trợ Power Delivery và DisplayPort) HDMI 1 x Headphone/microphone combo 2 x USB 3.2",
+        "rawSpecs": {
+          "CPU": "Intel Core 7 Raptor Lake - 150U",
+          "RAM": "16 GB",
+          "Ổ cứng": "1 TB SSD M.2 PCIe",
+          "Màn hình": "Full HD+",
+          "Phần mềm": "OfficeHS",
+          "Hệ điều hành": "Windows 11 Home SL + Office Home & Student 2021 vĩnh viễn",
+          "Màu sắc": "Xanh",
+          "Công nghệ CPU": "Intel Core 7 Raptor Lake - 150U",
+          "Số nhân": "10",
+          "Số luồng": "12",
+          "Tốc độ CPU": "1.80 GHz (Lên đến 5.40 GHz khi tải nặng)",
+          "Card màn hình": "Card tích hợp - Intel Graphics",
+          "Loại RAM": "DDR5 (1 khe 8 GB + 1 khe 8 GB)",
+          "Tốc độ Bus RAM": "5200 MHz",
+          "Hỗ trợ RAM tối đa": "24 GB",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "Full HD+ (1920 x 1200) 16:10",
+          "Tần số quét": "60 Hz",
+          "Công nghệ màn hình": "WVA 250 nits Chống chói Anti Glare",
+          "Cổng giao tiếp": "1 x USB Type-C 3.2 (hỗ trợ Power Delivery và DisplayPort) HDMI 1 x Headphone/microphone combo 2 x USB 3.2",
+          "Kết nối không dây": "Bluetooth 5.3 Wi-Fi 6 (802.11ax)",
+          "Khe đọc thẻ nhớ": "SD",
+          "Webcam": "HD webcam",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "Dolby Atmos Waves MaxxAudio Pro",
+          "Tản nhiệt": "Hãng không công bố",
+          "Thông tin Pin": "4-cell Li-ion, 54 Wh",
+          "Thời điểm ra mắt": "2024",
+          "Kích thước": "Dài 314 mm - Rộng 226.15 mm - Dày 18.9 mm - 1.56 kg",
+          "Chất liệu": "Vỏ nhựa",
+          "Phụ kiện": "Sách hướng dẫn, Thùng máy, Sạc Laptop Dell"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Xanh Dương | Tại: Tỉnh Sơn La | BH: Chính hãng đến 25/04/2027",
+          "value": "Dell Inspiron 14 5440 Core 7 150U/16GB/1TB/14 inchF/OfficeHS/Win11/(7FN5J)/Xanh",
+          "price": 21340000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/dell-inspiron-14-5440-core-7-7fn5j/detail?oldid=48220548&pid=325953&type=2",
+          "sku": "48220548",
+          "isSelected": true
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Xanh Dương | Tại: Tỉnh Thanh Hóa | BH: Chính hãng đến 10/08/2027",
+          "value": "Dell Inspiron 14 5440 Core 7 150U/16GB/1TB/14 inchF/OfficeHS/Win11/(7FN5J)/Xanh",
+          "price": 22140000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/dell-inspiron-14-5440-core-7-7fn5j/detail?oldid=48508684&pid=325953&type=2",
+          "sku": "48508684",
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/325953/dell-inspiron-14-5440-core-7-7fn5j-thumb-638754955274250524-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/325953/dell-inspiron-14-5440-core-7-7fn5j-thumb-638754955274250524-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/15/0_48076655_dellinspiron145440core7150u16gb1tb14fofficehswin117fn5jxanh_1781530875032.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/29/0_48390990_dellinspiron145440core7150u16gb1tb14fofficehswin117fn5jxanh_1788014088457.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/15/5_48076655_dellinspiron145440core7150u16gb1tb14fofficehswin117fn5jxanh_1781530937926.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/15/6_48076655_dellinspiron145440core7150u16gb1tb14fofficehswin117fn5jxanh_1781530946410.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/15/7_48076655_dellinspiron145440core7150u16gb1tb14fofficehswin117fn5jxanh_1781530998531.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/15/8_48076655_dellinspiron145440core7150u16gb1tb14fofficehswin117fn5jxanh_1781531008243.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/15/9_48076655_dellinspiron145440core7150u16gb1tb14fofficehswin117fn5jxanh_1781531012214.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/15/1_48076655_dellinspiron145440core7150u16gb1tb14fofficehswin117fn5jxanh_1781530891426.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/15/2_48076655_dellinspiron145440core7150u16gb1tb14fofficehswin117fn5jxanh_1781530907109.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/15/3_48076655_dellinspiron145440core7150u16gb1tb14fofficehswin117fn5jxanh_1781530917961.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/06/15/4_48076655_dellinspiron145440core7150u16gb1tb14fofficehswin117fn5jxanh_1781530928553.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "Chính hãng đến 25/04/2027",
+        "storeCount": 2,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.332Z"
+      }
+    },
+    {
+      "id": "2e0ced591a8cfb17",
+      "source": "dienmayxanh",
+      "sku": "327707",
+      "name": "Laptop MSI Gaming Cyborg 15 A13VEK - 1423VN (i7 13620H, 16GB, 512GB, RTX 4050 6GB, Full HD 144Hz, Win11)",
+      "brand": "MSI",
+      "model": "Gaming Cyborg 15 A13VEK - 1423VN",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/msi-cyborg-15-a13vek-i7-1423vn?pid=327707&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 22420000,
+        "original": 33990000,
+        "discountPercent": 34,
+        "installment": "Trả chậm 0%",
+        "priceNote": "1 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Intel Core i7 Raptor Lake - 13620H",
+        "ram": "16 GB",
+        "storage": "512 GB SSD NVMe M.2 PCIe Gen 4.0",
+        "gpu": "Card rời - NVIDIA GeForce RTX 4050, 6 GB",
+        "screen": "15.6 inch, Full HD (1920 x 1080), 144 Hz",
+        "battery": "3 cell, 53.5 Wh",
+        "weight": "1.98 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "LAN (RJ45) Jack tai nghe 3.5 mm HDMI 2 x USB 3.2 1 x USB Type-C (hỗ trợ USB 3.2, DisplayPort)",
+        "rawSpecs": {
+          "CPU": "Intel Core i7 Raptor Lake - 13620H",
+          "RAM": "16 GB",
+          "Ổ cứng": "512 GB SSD NVMe M.2 PCIe Gen 4.0",
+          "Card màn hình": "Card rời - NVIDIA GeForce RTX 4050, 6 GB",
+          "Màn hình": "Full HD 144Hz",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Màu sắc": "Đen",
+          "Công nghệ CPU": "Intel Core i7 Raptor Lake - 13620H",
+          "Số nhân": "10",
+          "Số luồng": "16",
+          "Tốc độ CPU": "2.40 GHz (Lên đến 4.90 GHz khi tải nặng)",
+          "Loại RAM": "DDR5 (1 khe 8 GB + 1 khe 8 GB)",
+          "Tốc độ Bus RAM": "5200 MHz",
+          "Hỗ trợ RAM tối đa": "64 GB",
+          "Kích thước màn hình": "15.6 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tấm nền": "IPS",
+          "Tần số quét": "144 Hz",
+          "Độ phủ màu": "45% NTSC",
+          "Công nghệ màn hình": "Chống chói Anti Glare 250 nits",
+          "Cổng giao tiếp": "LAN (RJ45) Jack tai nghe 3.5 mm HDMI 2 x USB 3.2 1 x USB Type-C (hỗ trợ USB 3.2, DisplayPort)",
+          "Kết nối không dây": "Wi-Fi 6E (802.11ax) Bluetooth 5.3",
+          "Webcam": "HD webcam",
+          "Đèn bàn phím": "Đèn chuyển màu RGB - 4 vùng",
+          "Công nghệ âm thanh": "Hi-Res Audio",
+          "Tản nhiệt": "Cooler Boost",
+          "Tính năng khác": "Bản lề mở 180 độ",
+          "Thông tin Pin": "3 cell, 53.5 Wh",
+          "Thời điểm ra mắt": "2024",
+          "Kích thước": "Dài 359.36 mm - Rộng 250.34 mm - Dày 22.9 mm - 1.98 kg",
+          "Chất liệu": "Vỏ nhựa - nắp lưng bằng kim loại",
+          "Phụ kiện": "Sạc Laptop MSI"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Đen | Tại: Tỉnh Quảng Ngãi | BH: Chính hãng đến 03/05/2028",
+          "value": "MSI Cyborg 15 A13VEK i7 13620H/16GB/512GB/6GB RTX4050/15.6 inchF/144Hz/Balo/Win11/(1423VN)/Đen",
+          "price": 22420000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/msi-cyborg-15-a13vek-i7-1423vn/detail?oldid=48391656&pid=327707&type=2",
+          "sku": "48391656",
+          "isSelected": true
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/327707/msi-cyborg-15-a13vek-i7-1423vn-thumb-638754872255271079-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/327707/msi-cyborg-15-a13vek-i7-1423vn-thumb-638754872255271079-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/05/0_48391656_msicyborg15a13veki713620h16gb512gb6gbrtx405015.6f144hzbalowin111423vnden_1788594538532.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/05/5_48391656_msicyborg15a13veki713620h16gb512gb6gbrtx405015.6f144hzbalowin111423vnden_1788594568024.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/05/6_48391656_msicyborg15a13veki713620h16gb512gb6gbrtx405015.6f144hzbalowin111423vnden_1788594571746.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/05/7_48391656_msicyborg15a13veki713620h16gb512gb6gbrtx405015.6f144hzbalowin111423vnden_1788594576750.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/05/8_48391656_msicyborg15a13veki713620h16gb512gb6gbrtx405015.6f144hzbalowin111423vnden_1788594580916.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/05/9_48391656_msicyborg15a13veki713620h16gb512gb6gbrtx405015.6f144hzbalowin111423vnden_1788594584470.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/05/1_48391656_msicyborg15a13veki713620h16gb512gb6gbrtx405015.6f144hzbalowin111423vnden_1788594545692.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/05/2_48391656_msicyborg15a13veki713620h16gb512gb6gbrtx405015.6f144hzbalowin111423vnden_1788594554762.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/05/3_48391656_msicyborg15a13veki713620h16gb512gb6gbrtx405015.6f144hzbalowin111423vnden_1788594560408.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/09/05/4_48391656_msicyborg15a13veki713620h16gb512gb6gbrtx405015.6f144hzbalowin111423vnden_1788594563960.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "Chính hãng đến 03/05/2028",
+        "storeCount": 1,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-11T06:37:58.332Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "laptop-crawler",
+  "version": "1.0.0",
+  "description": "Laptop retailer crawler using Puppeteer and Cheerio with normalized SQL/NoSQL ready JSON schema",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "crawl:all": "node index.js --source=all",
+    "crawl:cellphones": "node index.js --source=cellphones",
+    "crawl:thegioididong": "node index.js --source=thegioididong",
+    "crawl:dienmayxanh": "node index.js --source=dienmayxanh",
+    "crawl:fptshop": "node index.js --source=fptshop"
+  },
+  "keywords": [
+    "crawler",
+    "laptop",
+    "puppeteer",
+    "cheerio",
+    "cellphones",
+    "thegioididong",
+    "dienmayxanh",
+    "fptshop"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "puppeteer": "^24.40.0"
+  }
+}

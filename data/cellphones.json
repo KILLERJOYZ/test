@@ -1,0 +1,1680 @@
+{
+  "source": "cellphones",
+  "crawledAt": "2026-11-11T06:05:39.573Z",
+  "totalCategories": 19,
+  "totalProducts": 25,
+  "categories": [
+    {
+      "name": "Mac",
+      "slug": "laptop/mac",
+      "url": "https://cellphones.com.vn/laptop/mac.html",
+      "type": "brand"
+    },
+    {
+      "name": "Asus",
+      "slug": "laptop/asus",
+      "url": "https://cellphones.com.vn/laptop/asus.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo",
+      "slug": "laptop/lenovo",
+      "url": "https://cellphones.com.vn/laptop/lenovo.html",
+      "type": "brand"
+    },
+    {
+      "name": "MSI",
+      "slug": "laptop/msi",
+      "url": "https://cellphones.com.vn/laptop/msi.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer",
+      "slug": "laptop/acer",
+      "url": "https://cellphones.com.vn/laptop/acer.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP",
+      "slug": "laptop/hp",
+      "url": "https://cellphones.com.vn/laptop/hp.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell",
+      "slug": "laptop/dell",
+      "url": "https://cellphones.com.vn/laptop/dell.html",
+      "type": "brand"
+    },
+    {
+      "name": "Gigabyte",
+      "slug": "laptop/gigabyte",
+      "url": "https://cellphones.com.vn/laptop/gigabyte.html",
+      "type": "brand"
+    },
+    {
+      "name": "LG",
+      "slug": "laptop/lg",
+      "url": "https://cellphones.com.vn/laptop/lg.html",
+      "type": "brand"
+    },
+    {
+      "name": "Microsoft Surface",
+      "slug": "laptop/surface",
+      "url": "https://cellphones.com.vn/laptop/surface.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Thunderobot",
+      "slug": "laptop/thunderobot",
+      "url": "https://cellphones.com.vn/laptop/thunderobot.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Colorful",
+      "slug": "laptop/colorful",
+      "url": "https://cellphones.com.vn/laptop/colorful.html",
+      "type": "brand"
+    },
+    {
+      "name": "Văn phòng",
+      "slug": "laptop/van-phong",
+      "url": "https://cellphones.com.vn/laptop/van-phong.html",
+      "type": "segment"
+    },
+    {
+      "name": "Gaming",
+      "slug": "laptop/gaming",
+      "url": "https://cellphones.com.vn/laptop/gaming.html",
+      "type": "segment"
+    },
+    {
+      "name": "Mỏng nhẹ",
+      "slug": "laptop/mong-nhe",
+      "url": "https://cellphones.com.vn/laptop/mong-nhe.html",
+      "type": "segment"
+    },
+    {
+      "name": "Đồ họa - kỹ thuật",
+      "slug": "laptop/do-hoa",
+      "url": "https://cellphones.com.vn/laptop/do-hoa.html",
+      "type": "segment"
+    },
+    {
+      "name": "Sinh viên",
+      "slug": "laptop/sinh-vien",
+      "url": "https://cellphones.com.vn/laptop/sinh-vien.html",
+      "type": "segment"
+    },
+    {
+      "name": "Cảm ứng",
+      "slug": "laptop/cam-ung",
+      "url": "https://cellphones.com.vn/laptop/cam-ung.html",
+      "type": "segment"
+    },
+    {
+      "name": "Laptop AI",
+      "slug": "laptop/ai",
+      "url": "https://cellphones.com.vn/laptop/ai.html",
+      "type": "segment"
+    }
+  ],
+  "products": [
+    {
+      "id": "7f2f820acd4a84f3",
+      "source": "cellphones",
+      "sku": "laptop-lenovo-loq-15irh11e-83y9003vvn",
+      "name": "Laptop Lenovo LOQ 15IRH11E 83Y9003VVN",
+      "brand": "Lenovo",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-lenovo-loq-15irh11e-83y9003vvn.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 26990000,
+        "original": 36990000,
+        "discountPercent": 27,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core 5 205H, 8 lõi (4P + 4E) / 12 luồng, P-core 2.2 / 4.8GHz, E-core 1.6 / 3.6GHz, 12MB Intel Smart Cache",
+        "ram": "8GB",
+        "storage": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Hỗ trợ tối đa hai ổ đĩa, 2x SSD M.2, dung lượng lên đến 1TB)",
+        "gpu": "NVIDIA GeForce RTX 3050 6GB GDDR6, Boost Clock 1732MHz, TGP 75W, 142 AI TOPS",
+        "screen": "15.3 inches",
+        "battery": "60Wh, 135W Slim Tip (3-pin)",
+        "weight": null,
+        "os": "Windows 11 Home Single Language, English",
+        "ports": "1 x Cổng nguồn Slim Tip (hình chữ nhật) 1 x USB-A 10Gbps (công suất 4.5W) 1 x USB-C 5Gbps (USB PD 65–100W đầu vào / 15W đầu ra) 2 x USB-A 5Gbps (công suất 4.5W) 1 x HDMI 2.1 (tối đa 4K@60Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ-45",
+        "rawSpecs": {
+          "Loại card đồ họa": "NVIDIA GeForce RTX 3050 6GB GDDR6, Boost Clock 1732MHz, TGP 75W, 142 AI TOPS",
+          "Dung lượng RAM": "8GB",
+          "Loại RAM": "SODIMM DDR5-5200",
+          "Số khe ram": "2 khe (1 x 8GB, nâng cấp tối đa 32GB DDR5-5200)",
+          "Ổ cứng": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Hỗ trợ tối đa hai ổ đĩa, 2x SSD M.2, dung lượng lên đến 1TB)",
+          "Công nghệ màn hình": "Độ sáng 300 nits Màn hình chống chói Độ phủ màu 100% sRGB Giảm ánh sáng xanh",
+          "Hệ điều hành khi ra mắt": "Windows 11 Home Single Language, English",
+          "Loại CPU": "Intel Core 5 205H, 8 lõi (4P + 4E) / 12 luồng, P-core 2.2 / 4.8GHz, E-core 1.6 / 3.6GHz, 12MB Intel Smart Cache",
+          "Kích thước màn hình": "15.3 inches",
+          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
+          "Pin": "60Wh, 135W Slim Tip (3-pin)",
+          "Cổng giao tiếp": "1 x Cổng nguồn Slim Tip (hình chữ nhật) 1 x USB-A 10Gbps (công suất 4.5W) 1 x USB-C 5Gbps (USB PD 65–100W đầu vào / 15W đầu ra) 2 x USB-A 5Gbps (công suất 4.5W) 1 x HDMI 2.1 (tối đa 4K@60Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ-45"
+        }
+      },
+      "options": [
+        {
+          "type": "color",
+          "label": "Xám",
+          "value": "Xám",
+          "price": 26990000,
+          "url": "https://cellphones.com.vn/laptop-lenovo-loq-15irh11e-83y9003vvn.html?product_id=144020",
+          "sku": null,
+          "isSelected": false
+        }
+      ],
+      "promotions": [
+        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 3 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_87.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_87.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/t/e/text_d_i_1__4_87.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.531Z"
+      }
+    },
+    {
+      "id": "a7bab6632c13ea32",
+      "source": "cellphones",
+      "sku": "laptop-lenovo-ideapad-slim-3-14iwc11-83rq002pvn",
+      "name": "Laptop Lenovo IdeaPad Slim 3 14IWC11 83RQ002PVN",
+      "brand": "Lenovo",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-lenovo-ideapad-slim-3-14iwc11-83rq002pvn.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 18990000,
+        "original": 22990000,
+        "discountPercent": 17,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core 5 320, 6C (2P + 4LPE) / 6T, Max Turbo up to 4.6Ghz, 6MB Intel Smart Cache",
+        "ram": "8GB",
+        "storage": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Một ổ đĩa, SSD M.2 2242 dung lượng lên đến 1TB)",
+        "gpu": "Intel Graphics",
+        "screen": "14 inches",
+        "battery": "50Wh, 65W Round Tip (3-pin)",
+        "weight": null,
+        "os": "Windows 11 Home Single Language, English",
+        "ports": "2x USB-A (USB 5Gbps) 1x USB-C (USB 5Gbps, hỗ trợ USB Power Delivery 45–65W và DisplayPort 1.2) 1x HDMI 1.4 1x jack tai nghe/micro 3.5mm (combo) 1x đầu đọc thẻ SD 1x cổng nguồn đầu tròn (Round Tip Power Connector)",
+        "rawSpecs": {
+          "Chip AI": "Up to 16 TOPS",
+          "Loại card đồ họa": "Intel Graphics",
+          "Dung lượng RAM": "8GB",
+          "Loại RAM": "SODIMM DDR5-5600",
+          "Số khe ram": "1 khe (Tối đa 32GB DDR5-5600)",
+          "Ổ cứng": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Một ổ đĩa, SSD M.2 2242 dung lượng lên đến 1TB)",
+          "Công nghệ màn hình": "Độ sáng 400 nits Màn hình chống chói Độ phủ màu 45% NTSC",
+          "Hệ điều hành khi ra mắt": "Windows 11 Home Single Language, English",
+          "Loại CPU": "Intel Core 5 320, 6C (2P + 4LPE) / 6T, Max Turbo up to 4.6Ghz, 6MB Intel Smart Cache",
+          "Kích thước màn hình": "14 inches",
+          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
+          "Pin": "50Wh, 65W Round Tip (3-pin)",
+          "Cổng giao tiếp": "2x USB-A (USB 5Gbps) 1x USB-C (USB 5Gbps, hỗ trợ USB Power Delivery 45–65W và DisplayPort 1.2) 1x HDMI 1.4 1x jack tai nghe/micro 3.5mm (combo) 1x đầu đọc thẻ SD 1x cổng nguồn đầu tròn (Round Tip Power Connector)"
+        }
+      },
+      "options": [
+        {
+          "type": "color",
+          "label": "Xám",
+          "value": "Xám",
+          "price": 18990000,
+          "url": "https://cellphones.com.vn/laptop-lenovo-ideapad-slim-3-14iwc11-83rq002pvn.html?product_id=135164",
+          "sku": null,
+          "isSelected": false
+        }
+      ],
+      "promotions": [
+        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 3 km khác"
+      ],
+      "rating": {
+        "average": 5,
+        "count": 1
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2__3.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2__3.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_2__3.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.532Z"
+      }
+    },
+    {
+      "id": "ad9773c67399899b",
+      "source": "cellphones",
+      "sku": "laptop-acer-swift-air-14-sfa14-i31-55nr",
+      "name": "Laptop Acer Swift Air 14 SFA14-I31-55NR",
+      "brand": "Acer",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-acer-swift-air-14-sfa14-i31-55nr.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 24990000,
+        "original": 24990000,
+        "discountPercent": null,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core 5 320 (6 lõi / 6 luồng, Tần số cơ bản của nhân hiệu năng cao 1.5 GHz, 3.0 up to 4.6 GHz, 6 MB Smart Cache)",
+        "ram": "12GB",
+        "storage": "512GB PCIe NVMe SSD (Nâng cấp tối đa 2TB)",
+        "gpu": "Intel Graphics",
+        "screen": "14 inches",
+        "battery": "70 Wh 3-cell Li-ion battery 3-pin 100 W PD PCR 50%, TCO 9.0 AC adapter",
+        "weight": null,
+        "os": "Windows 11 Home",
+        "ports": "2x USB-C (USB4 40Gbps, Thunderbolt 4, sạc 5V/3A) 1x USB-C (DC-in 20V/100W) 1x USB-A 3.2 Gen 1",
+        "rawSpecs": {
+          "Loại card đồ họa": "Intel Graphics",
+          "Dung lượng RAM": "12GB",
+          "Loại RAM": "LPDDR5X 7467 MT/s Onboard",
+          "Số khe ram": "Không nâng cấp",
+          "Ổ cứng": "512GB PCIe NVMe SSD (Nâng cấp tối đa 2TB)",
+          "Công nghệ màn hình": "Độ sáng 350 nits Tỉ lệ màn hình 16:10 Độ phủ màu 100% sRGB Góc nhìn 170° Màn hình LED-backlit TFT LCD",
+          "Hệ điều hành khi ra mắt": "Windows 11 Home",
+          "Loại CPU": "Intel Core 5 320 (6 lõi / 6 luồng, Tần số cơ bản của nhân hiệu năng cao 1.5 GHz, 3.0 up to 4.6 GHz, 6 MB Smart Cache)",
+          "Kích thước màn hình": "14 inches",
+          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
+          "Pin": "70 Wh 3-cell Li-ion battery 3-pin 100 W PD PCR 50%, TCO 9.0 AC adapter",
+          "Cổng giao tiếp": "2x USB-C (USB4 40Gbps, Thunderbolt 4, sạc 5V/3A) 1x USB-C (DC-in 20V/100W) 1x USB-A 3.2 Gen 1"
+        }
+      },
+      "options": [
+        {
+          "type": "color",
+          "label": "Hồng",
+          "value": "Hồng",
+          "price": 24990000,
+          "url": "https://cellphones.com.vn/laptop-acer-swift-air-14-sfa14-i31-55nr.html?product_id=139794",
+          "sku": null,
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_8.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_8.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_2_8.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.533Z"
+      }
+    },
+    {
+      "id": "be1679c5de970b02",
+      "source": "cellphones",
+      "sku": "laptop-asus-vivobook-s16-s5608qa-mb354w",
+      "name": "Laptop ASUS Vivobook S16 S5608QA-MB354W",
+      "brand": "ASUS",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-asus-vivobook-s16-s5608qa-mb354w.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 22990000,
+        "original": 29990000,
+        "discountPercent": 23,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Snapdragon X X1 26 101 (30MB Cache, up to 2.97GHz, 8 lõi, 8 luồng)",
+        "ram": "16GB",
+        "storage": "512GB M.2 NVMe PCIe 4.0 SSD",
+        "gpu": "Qualcomm Adreno",
+        "screen": "16 inches",
+        "battery": "50WHrs, 3S1P, 3-cell Li-ion",
+        "weight": null,
+        "os": "Windows 11 Home",
+        "ports": "1 x USB-A 3.2 Gen 1 (5Gbps) 2 x USB-C 3.2 Gen 2 (10Gbps, hỗ trợ DisplayPort / Power Delivery) 1 x micro HDMI 2.1 TMDS 1 x Jack tai nghe/mic 3.5 mm",
+        "rawSpecs": {
+          "Chip AI": "Qualcomm Hexagon NPU up to 45TOPS",
+          "Loại card đồ họa": "Qualcomm Adreno",
+          "Dung lượng RAM": "16GB",
+          "Loại RAM": "LPDDR5X on board",
+          "Ổ cứng": "512GB M.2 NVMe PCIe 4.0 SSD",
+          "Công nghệ màn hình": "Độ sáng 300 nits Độ phủ màu 45% NTSC Màn hình chống chói Tỷ lệ màn hình so với thân máy: 89%",
+          "Hệ điều hành khi ra mắt": "Windows 11 Home",
+          "Loại CPU": "Snapdragon X X1 26 101 (30MB Cache, up to 2.97GHz, 8 lõi, 8 luồng)",
+          "Kích thước màn hình": "16 inches",
+          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
+          "Pin": "50WHrs, 3S1P, 3-cell Li-ion",
+          "Cổng giao tiếp": "1 x USB-A 3.2 Gen 1 (5Gbps) 2 x USB-C 3.2 Gen 2 (10Gbps, hỗ trợ DisplayPort / Power Delivery) 1 x micro HDMI 2.1 TMDS 1 x Jack tai nghe/mic 3.5 mm"
+        }
+      },
+      "options": [
+        {
+          "type": "color",
+          "label": "Xám",
+          "value": "Xám",
+          "price": 22990000,
+          "url": "https://cellphones.com.vn/laptop-asus-vivobook-s16-s5608qa-mb354w.html?product_id=142530",
+          "sku": null,
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_18_48.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_18_48.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/t/e/text_ng_n_18_48.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.533Z"
+      }
+    },
+    {
+      "id": "c546b624c5687d64",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop ASUS Vivobook S16 S3607CA-SH080W",
+      "brand": "ASUS",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-asus-vivobook-s16-s3607ca-sh080w.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 27490000,
+        "original": 35990000,
+        "discountPercent": 24,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_881_7.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_881_7.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.534Z"
+      }
+    },
+    {
+      "id": "43a42e0d27bb63af",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop Dell 14 DC14250 DC4C5375W1 - Bảo hành 2 năm",
+      "brand": "Dell",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-dell-14-dc14250-dc4c5375w1.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 29990000,
+        "original": 31390000,
+        "discountPercent": 4,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_21.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_21.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.534Z"
+      }
+    },
+    {
+      "id": "0cfd4aff7363aea1",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop MSI Modern 14 H1M-014VN",
+      "brand": "MSI",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-msi-modern-14-h1m-014vn.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 22990000,
+        "original": 25490000,
+        "discountPercent": 10,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_24.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_24.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "18f41f2b58f0034c",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop Acer Aspire Lite 14 AL14-57P-59HB",
+      "brand": "Acer",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-acer-aspire-lite-14-al14-57p-59hb.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 22990000,
+        "original": 24990000,
+        "discountPercent": 8,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_11.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_11.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "f73b3f9a9bf91111",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop ASUS Vivobook Go 14 E1404FA-EB1941W",
+      "brand": "ASUS",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-asus-vivobook-go-14-e1404fa-eb1941w.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 18890000,
+        "original": 22990000,
+        "discountPercent": 18,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1091_1.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1091_1.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "d191518716fc7b4e",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop ASUS Vivobook 16 X1607CA-MB399W",
+      "brand": "ASUS",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-asus-vivobook-16-x1607ca-mb399w.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 28990000,
+        "original": 36490000,
+        "discountPercent": 21,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_28.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_28.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "7c700dfcb047445c",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop ASUS Zenbook 14 UX3405CA-ST1713W",
+      "brand": "ASUS",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-asus-zenbook-14-ux3405ca-st1713w.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 32490000,
+        "original": 38990000,
+        "discountPercent": 17,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 2 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_72.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_72.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "618bf9a0a7f065e0",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop Lenovo IdeaPad Slim 3 14IPH11 83UQ003NVN",
+      "brand": "Lenovo",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-lenovo-ideapad-slim-3-14iph11-83uq003nvn.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 24990000,
+        "original": 27990000,
+        "discountPercent": 11,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (THECAO-PM-WIN11-PRO/DV.PM.42) và 4 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_16_63.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_16_63.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "a7d68e1c68f7fc9a",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop MSI Modern 15 F1MG-1225VN",
+      "brand": "MSI",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-msi-modern-15-f1mg-1225vn.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 20990000,
+        "original": 21990000,
+        "discountPercent": 5,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (THECAO-PM-WIN11-PRO/DV.PM.42) và 3 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_29.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_29.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "424142f3b39c2be7",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop Lenovo IdeaPad Slim 3 14AHP10 83K9004RVN",
+      "brand": "Lenovo",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-lenovo-ideapad-slim-3-14ahp10-83k9004rvn.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 22990000,
+        "original": 27990000,
+        "discountPercent": 18,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (THECAO-PM-WIN11-PRO/DV.PM.42) và 2 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1099_4_.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1099_4_.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "45f82ddcf4314b09",
+      "source": "cellphones",
+      "sku": null,
+      "name": "MacBook Neo 13 inch A18 Pro 2026 6CPU 5GPU 8GB 256GB | Chính hãng Apple Việt Nam",
+      "brand": "Apple",
+      "model": null,
+      "url": "https://cellphones.com.vn/macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-256gb.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 18790000,
+        "original": 19490000,
+        "discountPercent": 4,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "8GB",
+        "storage": "256GB",
+        "gpu": null,
+        "screen": "13 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "mua HUB TYPE C ORICO PW11-5P-GY 5 IN 1 PD-60W giá 129k (giá gốc 490k) và 3 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_13_19.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_13_19.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "cb6e98e031bbb0e1",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop Acer Aspire Go 15 AI AG15-52P-52WT",
+      "brand": "Acer",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-acer-aspire-go-15-ai-ag15-52p-52wt.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 22990000,
+        "original": 23490000,
+        "discountPercent": 2,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 3 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_19.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_19.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "8fc93efa3c3a4db3",
+      "source": "cellphones",
+      "sku": null,
+      "name": "MacBook Air M5 13 inch 2026 10CPU 8GPU 16GB 512GB | Chính hãng Apple Việt Nam",
+      "brand": "Apple",
+      "model": null,
+      "url": "https://cellphones.com.vn/macbook-air-13-m5-10-cpu-8-gpu-16gb-512gb.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 33190000,
+        "original": 35990000,
+        "discountPercent": 8,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "16GB",
+        "storage": "512GB",
+        "gpu": null,
+        "screen": "13 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "mua HUB TYPE C ORICO PW11-5P-GY 5 IN 1 PD-60W giá 129k (giá gốc 490k) và 3 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_13_17.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_13_17.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "96260129b298bbe3",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop MSI Cyborg 15 A13UC-2082VN",
+      "brand": "MSI",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-msi-cyborg-15-a13uc-2082vn.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 28990000,
+        "original": 30690000,
+        "discountPercent": 6,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (THECAO-PM-WIN11-PRO/DV.PM.42) và 3 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_7_126.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_7_126.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "9669286e9e3aee87",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop Acer Gaming Aspire 7 A715-59G-59RD",
+      "brand": "Acer",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-acer-gaming-aspire-7-a715-59g-59rd.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 25990000,
+        "original": 27990000,
+        "discountPercent": 7,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Từ 1/10 - 31/11 ƯU ĐÃI ROAD TO PREDATOR LEAGUE 2027 - Nhận ngay GIFT CODE 500,000Đ khi mua LAPTOP GAMING trong danh sách và 3 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1042.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1042.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "fc193c03b0115811",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop HP Victus 15-FA2731TX B85LNPA",
+      "brand": "HP",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-hp-victus-15-fa2731tx-b85lnpa.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 27990000,
+        "original": 29990000,
+        "discountPercent": 7,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Trả góp 0% - 0đ phụ phí - 0đ trả trước - kỳ hạn đến 18 tháng"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_7_78.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_7_78.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "d93ecd1977a584c9",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop MSI Katana 15 B13VEK-2440VN",
+      "brand": "MSI",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-msi-katana-15-b13vek-2440vn.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 34990000,
+        "original": 35490000,
+        "discountPercent": 1,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 3 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_62.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_62.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "ef236226aa7e40fc",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Apple MacBook Air M2 2024 8CPU 8GPU 16GB 256GB I Chính hãng Apple Việt Nam",
+      "brand": "Apple",
+      "model": null,
+      "url": "https://cellphones.com.vn/macbook-air-m2-2022-16gb.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 18590000,
+        "original": 24990000,
+        "discountPercent": 26,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "16GB",
+        "storage": "256GB",
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 2 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/m/image_1396_1.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/m/image_1396_1.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "32aa9831a4c2750c",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop Acer Gaming Nitro ProPanel ANV15-52-50VA",
+      "brand": "Acer",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-acer-gaming-nitro-v-15-propanel-anv15-52-50va.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 28990000,
+        "original": 29990000,
+        "discountPercent": 3,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (THECAO-PM-WIN11-PRO/DV.PM.42) và 4 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_975_17.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_975_17.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "fc5a3d5a9daba598",
+      "source": "cellphones",
+      "sku": null,
+      "name": "MacBook Neo 13 inch A18 Pro 2026 6CPU 5GPU 8GB 512GB Touch ID | Chính hãng Apple Việt Nam",
+      "brand": "Apple",
+      "model": null,
+      "url": "https://cellphones.com.vn/macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-512gb.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 21290000,
+        "original": 21990000,
+        "discountPercent": 3,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": "8GB",
+        "storage": "512GB",
+        "gpu": null,
+        "screen": "13 inch",
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "mua HUB TYPE C ORICO PW11-5P-GY 5 IN 1 PD-60W giá 129k (giá gốc 490k) và 3 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_1__7_10.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_1__7_10.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    },
+    {
+      "id": "e41688f770712ac8",
+      "source": "cellphones",
+      "sku": null,
+      "name": "Laptop ASUS VivoBook 14 X1407CA-LY008W",
+      "brand": "ASUS",
+      "model": null,
+      "url": "https://cellphones.com.vn/laptop-asus-vivobook-14-x1407ca-ly008w.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 23990000,
+        "original": 25990000,
+        "discountPercent": 8,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": null,
+        "ram": null,
+        "storage": null,
+        "gpu": null,
+        "screen": null,
+        "battery": null,
+        "weight": null,
+        "os": null,
+        "ports": null,
+        "rawSpecs": {}
+      },
+      "options": [],
+      "promotions": [
+        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 5 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_4__10_30.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_4__10_30.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-11T06:05:39.535Z"
+      }
+    }
+  ]
+}
