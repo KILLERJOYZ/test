@@ -1,0 +1,2589 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-11-11",
+  "status": "draft v2.3; U19 documented with delivery stage pending; partial browser frontend evidence available; native, live AI and production acceptance remain pending",
+  "source": {
+    "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/12dppW4eD3ej3eNVrsff2c4afLkCRoGLh4WWpfufvVGA/edit?gid=0",
+    "sheetId": 0,
+    "sheetTitle": "Liệt kê tính năng",
+    "readDate": "2026-11-11",
+    "range": "A1:O45",
+    "sourceWasModified": true,
+    "modifiedRanges": [
+      "B4",
+      "F4",
+      "F27:F28"
+    ],
+    "changeReason": "Expand existing U01 picker and A06/A07 support; preserve 36 journeys, priorities and approval values."
+  },
+  "documents": {
+    "brd": "./BRD.md",
+    "implementation": "./IMPLEMENTATION_PLAN.md"
+  },
+  "features": [
+    {
+      "id": "U01",
+      "actor": "buyer",
+      "sourceStt": 1,
+      "sourceRow": 4,
+      "titleVi": "Tìm laptop phù hợp theo nhu cầu (Laptop Picker)",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/D1/P",
+      "demoCoverage": "Partial existing browser wizard; ordered-use picker, refinement, task evidence and migration extensions planned",
+      "implementationPackages": [
+        "DEMO-03",
+        "DEMO-04",
+        "DEMO-05",
+        "DEMO-10",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-D05",
+        "T-D09",
+        "T-P01",
+        "T-P05"
+      ],
+      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "acceptanceCriteriaIds": [
+        "AC-U01-01",
+        "AC-U01-02",
+        "AC-U01-03",
+        "AC-U01-04",
+        "AC-U01-05",
+        "AC-U01-06",
+        "AC-U01-07",
+        "AC-U01-08",
+        "AC-U01-09",
+        "AC-U01-10"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md",
+      "pickerExtensionStatus": "planned; not implemented or verified"
+    },
+    {
+      "id": "U02",
+      "actor": "buyer",
+      "sourceStt": 2,
+      "sourceRow": 5,
+      "titleVi": "Tìm deal mới và nơi bán",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/P",
+      "demoCoverage": "Partial: bounded synthetic catalog search",
+      "implementationPackages": [
+        "DEMO-05",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-D05",
+        "T-P01",
+        "T-P02"
+      ],
+      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "acceptanceCriteriaIds": [
+        "AC-U02-01",
+        "AC-U02-02",
+        "AC-U02-03",
+        "AC-U02-04"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+    },
+    {
+      "id": "U03",
+      "actor": "buyer",
+      "sourceStt": 3,
+      "sourceRow": 6,
+      "titleVi": "Xem và kiểm chứng thông tin chi tiết máy",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/P",
+      "demoCoverage": "Partial: synthetic variant detail; live reporting in P",
+      "implementationPackages": [
+        "DEMO-06",
+        "REAL-02",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-P01",
+        "T-P04"
+      ],
+      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "acceptanceCriteriaIds": [
+        "AC-U03-01",
+        "AC-U03-02",
+        "AC-U03-03",
+        "AC-U03-04"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+    },
+    {
+      "id": "U04",
+      "actor": "buyer",
+      "sourceStt": 4,
+      "sourceRow": 7,
+      "titleVi": "So sánh và chọn phương án mua",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/P/E",
+      "demoCoverage": "Partial: synthetic two-variant comparison",
+      "implementationPackages": [
+        "DEMO-06",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D02",
+        "T-D05",
+        "T-P01",
+        "T-P05"
+      ],
+      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "acceptanceCriteriaIds": [
+        "AC-U04-01",
+        "AC-U04-02",
+        "AC-U04-03",
+        "AC-U04-04"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+    },
+    {
+      "id": "U05",
+      "actor": "buyer",
+      "sourceStt": 5,
+      "sourceRow": 8,
+      "titleVi": "Chọn nơi mua và chuyển tới cửa hàng",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/P",
+      "demoCoverage": "Simulation only: sample offer summary, no retailer handoff",
+      "implementationPackages": [
+        "DEMO-06",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-P02"
+      ],
+      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "acceptanceCriteriaIds": [
+        "AC-U05-01",
+        "AC-U05-02",
+        "AC-U05-03",
+        "AC-U05-04"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+    },
+    {
+      "id": "U06",
+      "actor": "buyer",
+      "sourceStt": 6,
+      "sourceRow": 9,
+      "titleVi": "Kiểm tra deal hoặc báo giá đang có",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "P",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [
+        "REAL-02",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-P01",
+        "T-P02",
+        "T-P05"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-U06-01",
+        "AC-U06-02",
+        "AC-U06-03",
+        "AC-U06-04"
+      ],
+      "detailStatus": "core use case with detailed criteria"
+    },
+    {
+      "id": "U07",
+      "actor": "buyer",
+      "sourceStt": 7,
+      "sourceRow": 10,
+      "titleVi": "Lưu, xem lại và chia sẻ phương án mua",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/P/E",
+      "demoCoverage": "Partial: local save, restore and delete; sharing in P",
+      "implementationPackages": [
+        "DEMO-07",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D06",
+        "T-P01",
+        "T-P06"
+      ],
+      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "acceptanceCriteriaIds": [
+        "AC-U07-01",
+        "AC-U07-02",
+        "AC-U07-03",
+        "AC-U07-04"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+    },
+    {
+      "id": "U08",
+      "actor": "buyer",
+      "sourceStt": 8,
+      "sourceRow": 11,
+      "titleVi": "Bắt đầu sử dụng và quản lý dữ liệu cá nhân",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/P",
+      "demoCoverage": "Partial: guest mode, local settings and deletion",
+      "implementationPackages": [
+        "DEMO-05",
+        "DEMO-07",
+        "REAL-03",
+        "REAL-04"
+      ],
+      "verificationIds": [
+        "T-D06",
+        "T-D07",
+        "T-P01",
+        "T-P06"
+      ],
+      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "acceptanceCriteriaIds": [
+        "AC-U08-01",
+        "AC-U08-02",
+        "AC-U08-03",
+        "AC-U08-04"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+    },
+    {
+      "id": "U09",
+      "actor": "buyer",
+      "sourceStt": 9,
+      "sourceRow": 12,
+      "titleVi": "Theo dõi giá và nhận thông báo deal phù hợp",
+      "sourcePriority": "Làm sau",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X02"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-01"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+    },
+    {
+      "id": "U10",
+      "actor": "buyer",
+      "sourceStt": 10,
+      "sourceRow": 13,
+      "titleVi": "Lập phương án chi trả cho thiết bị",
+      "sourcePriority": "Làm sau",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X02"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-02"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+    },
+    {
+      "id": "U11",
+      "actor": "buyer",
+      "sourceStt": 11,
+      "sourceRow": 14,
+      "titleVi": "Tìm mua và kiểm tra máy cũ an toàn hơn",
+      "sourcePriority": "Làm sau",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E/L",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X01",
+        "T-X03"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-03"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+    },
+    {
+      "id": "U12",
+      "actor": "buyer",
+      "sourceStt": 12,
+      "sourceRow": 15,
+      "titleVi": "Quyết định sửa, nâng cấp hay thay thiết bị đang dùng",
+      "sourcePriority": "Làm sau",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E/L",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X01",
+        "T-X03"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-04"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+    },
+    {
+      "id": "U13",
+      "actor": "buyer",
+      "sourceStt": 13,
+      "sourceRow": 16,
+      "titleVi": "Xây dựng và tìm mua một bộ PC hoàn chỉnh",
+      "sourcePriority": "Làm sau",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X01"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-05"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+    },
+    {
+      "id": "U14",
+      "actor": "buyer",
+      "sourceStt": 14,
+      "sourceRow": 17,
+      "titleVi": "Nhận hàng, theo dõi bảo hành và chăm sóc thiết bị",
+      "sourcePriority": "Làm sau",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X02"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-06"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+    },
+    {
+      "id": "U15",
+      "actor": "buyer",
+      "sourceStt": 15,
+      "sourceRow": 18,
+      "titleVi": "Cùng chọn và chốt mua cho gia đình hoặc nhóm",
+      "sourcePriority": "Còn thời gian thì làm",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "L",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X03"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-07"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+    },
+    {
+      "id": "U16",
+      "actor": "buyer",
+      "sourceStt": 16,
+      "sourceRow": 19,
+      "titleVi": "Bán lại hoặc thu cũ đổi mới thiết bị",
+      "sourcePriority": "Còn thời gian thì làm",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "L",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X03"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-08"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+    },
+    {
+      "id": "U17",
+      "actor": "buyer",
+      "sourceStt": 17,
+      "sourceRow": 20,
+      "titleVi": "Tham khảo kinh nghiệm và hỏi người tư vấn",
+      "sourcePriority": "Còn thời gian thì làm",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "L",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X04"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-09"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+    },
+    {
+      "id": "U18",
+      "actor": "buyer",
+      "sourceStt": 18,
+      "sourceRow": 21,
+      "titleVi": "Tìm phương án thuê, mượn hoặc hỗ trợ thiết bị",
+      "sourcePriority": "Còn thời gian thì làm",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "L",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X03"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-10"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+    },
+    {
+      "id": "U19",
+      "actor": "buyer",
+      "sourceStt": null,
+      "sourceRow": null,
+      "titleVi": "Chatbot chủ động hỏi nhu cầu sau thời gian duyệt và tìm kiếm sản phẩm",
+      "sourcePriority": null,
+      "approvalStatus": "user-requested requirement addition; delivery stage pending; not added to source spreadsheet",
+      "plannedStages": "TBD; review before implementation",
+      "demoCoverage": "Not implemented; no acceptance evidence",
+      "implementationPackages": [],
+      "verificationIds": [],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-U19-01",
+        "AC-U19-02",
+        "AC-U19-03",
+        "AC-U19-04"
+      ],
+      "detailStatus": "BRD sections 7.2 and 16.9; timing, idle/session/cooldown policy and delivery assignments pending",
+      "relatedRequirementIds": [
+        "U01",
+        "U02",
+        "U03",
+        "U04",
+        "U05",
+        "U08"
+      ],
+      "businessRuleIds": [
+        "BR-02",
+        "BR-03",
+        "BR-07",
+        "BR-08",
+        "BR-11",
+        "BR-12",
+        "BR-15"
+      ]
+    },
+    {
+      "id": "A01",
+      "actor": "admin",
+      "sourceStt": 19,
+      "sourceRow": 22,
+      "titleVi": "Admin — Quản lý người quản trị và quyền truy cập",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "P",
+      "demoCoverage": "No product admin identity; local maintainer only",
+      "implementationPackages": [
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-P03"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-A01-01",
+        "AC-A01-02"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "businessNeed": "Attributable authority over privileged changes",
+      "minimumOperatingTiming": "Before privileged production operation",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A02",
+      "actor": "admin",
+      "sourceStt": 20,
+      "sourceRow": 23,
+      "titleVi": "Admin — Kết nối nguồn và vận hành nhập dữ liệu",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/R/P",
+      "demoCoverage": "Analogue only: versioned fixture validation/import",
+      "implementationPackages": [
+        "DEMO-03",
+        "REAL-01",
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-R01",
+        "T-R02",
+        "T-P03"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-A02-01",
+        "AC-A02-02"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "businessNeed": "Maintain permitted, validated and repeatable source intake",
+      "minimumOperatingTiming": "D0 analogue; R/P bounded import",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A03",
+      "actor": "admin",
+      "sourceStt": 21,
+      "sourceRow": 24,
+      "titleVi": "Admin — Biên tập và xuất bản danh mục thiết bị",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/R/P",
+      "demoCoverage": "Analogue only: fixture editing/preview",
+      "implementationPackages": [
+        "DEMO-03",
+        "REAL-01",
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-R02",
+        "T-P03"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-A03-01",
+        "AC-A03-02"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "businessNeed": "Preserve exact purchasable configuration identity",
+      "minimumOperatingTiming": "D0 analogue; R/P catalog control",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A04",
+      "actor": "admin",
+      "sourceStt": 22,
+      "sourceRow": 25,
+      "titleVi": "Admin — Quản lý cửa hàng và đề nghị bán",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/R/P",
+      "demoCoverage": "Analogue only: synthetic offer scenarios",
+      "implementationPackages": [
+        "DEMO-03",
+        "DEMO-04",
+        "REAL-01",
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-D02",
+        "T-D04",
+        "T-R02",
+        "T-P02"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-A04-01",
+        "AC-A04-02"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "frontendReviewCoverage": "Local sample-price editor only; no production admin identity, publication or seller operations.",
+      "businessNeed": "Maintain comparable, current and actionable buying options",
+      "minimumOperatingTiming": "D0 analogue; R/P offer control",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A05",
+      "actor": "admin",
+      "sourceStt": 23,
+      "sourceRow": 26,
+      "titleVi": "Admin — Thẩm định bằng chứng và nội dung tư vấn",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/R/P",
+      "demoCoverage": "Analogue only: explicit synthetic provenance",
+      "implementationPackages": [
+        "DEMO-03",
+        "DEMO-06",
+        "REAL-01",
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-R01",
+        "T-R02",
+        "T-P05"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-A05-01",
+        "AC-A05-02"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "businessNeed": "Substantiate advice and resolve or withdraw conflicting assertions",
+      "minimumOperatingTiming": "D0 synthetic provenance; R/P evidence control",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A06",
+      "actor": "admin",
+      "sourceStt": 24,
+      "sourceRow": 27,
+      "titleVi": "Admin — Thiết kế bảng hỏi và quy tắc nhu cầu sử dụng",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/P",
+      "demoCoverage": "Partial: versioned questionnaire/rules in source",
+      "implementationPackages": [
+        "DEMO-03",
+        "DEMO-04",
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-P03",
+        "T-P05"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-A06-01",
+        "AC-A06-02",
+        "AC-A06-03",
+        "AC-A06-04",
+        "AC-A06-05",
+        "AC-A06-06",
+        "AC-A06-07"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "businessNeed": "Translate confirmed work into relevant questions and defensible constraints",
+      "minimumOperatingTiming": "D0 versioned policy and simulation; P controlled activation",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A07",
+      "actor": "admin",
+      "sourceStt": 25,
+      "sourceRow": 28,
+      "titleVi": "Admin — Kiểm thử và phát hành bộ tư vấn AI",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/D1/P",
+      "demoCoverage": "Partial: deterministic and model evaluation, no production portal",
+      "implementationPackages": [
+        "DEMO-04",
+        "DEMO-09",
+        "DEMO-10",
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-D02",
+        "T-D03",
+        "T-D09",
+        "T-P03",
+        "T-P05"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-A07-01",
+        "AC-A07-02",
+        "AC-A06-03",
+        "AC-A06-05",
+        "AC-A06-07"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "businessNeed": "Detect recommendation regressions before release and recover a known-good version",
+      "minimumOperatingTiming": "D0 rules; D1 model evaluation; P release control",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A08",
+      "actor": "admin",
+      "sourceStt": 26,
+      "sourceRow": 29,
+      "titleVi": "Admin — Tiếp nhận và xử lý báo lỗi thông tin",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "P",
+      "demoCoverage": "Review findings logged locally only",
+      "implementationPackages": [
+        "REVIEW-01",
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-P04"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-A08-01",
+        "AC-A08-02"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "businessNeed": "Resolve buyer-reported information errors with verified closure",
+      "minimumOperatingTiming": "P reporting and correction",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A09",
+      "actor": "admin",
+      "sourceStt": 27,
+      "sourceRow": 30,
+      "titleVi": "Admin — Giám sát và khắc phục sự cố vận hành",
+      "sourcePriority": "Làm trước tiên",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "D0/D1/P",
+      "demoCoverage": "Partial: diagnostics/fallbacks, no production operations console",
+      "implementationPackages": [
+        "DEMO-08",
+        "DEMO-09",
+        "REAL-02",
+        "REAL-04"
+      ],
+      "verificationIds": [
+        "T-D08",
+        "T-D09",
+        "T-P07",
+        "T-P08"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-A09-01",
+        "AC-A09-02"
+      ],
+      "detailStatus": "core use case with detailed criteria",
+      "businessNeed": "Contain source/model failures, stale data and unbounded operating cost",
+      "minimumOperatingTiming": "D0/D1 diagnostics; P accountable operations",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A10",
+      "actor": "admin",
+      "sourceStt": 28,
+      "sourceRow": 31,
+      "titleVi": "Admin — Quản lý phát hành và bật tính năng theo giai đoạn",
+      "sourcePriority": "Làm sau",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E (basic process in P)",
+      "demoCoverage": "Build/run procedure only",
+      "implementationPackages": [
+        "DEMO-08",
+        "REAL-04"
+      ],
+      "verificationIds": [
+        "T-P03",
+        "T-P07",
+        "T-P08"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-11"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "businessNeed": "Control rollout and restore approved behavior",
+      "minimumOperatingTiming": "P minimum process; E richer UI",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A11",
+      "actor": "admin",
+      "sourceStt": 29,
+      "sourceRow": 32,
+      "titleVi": "Admin — Phân tích nhu cầu và hiệu quả quyết định mua",
+      "sourcePriority": "Làm sau",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E (minimum measurement in P)",
+      "demoCoverage": "Exploratory observations only",
+      "implementationPackages": [
+        "REVIEW-01",
+        "PILOT-01"
+      ],
+      "verificationIds": [
+        "T-D10",
+        "T-P06",
+        "T-P07"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-11"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "businessNeed": "Identify unmet needs, coverage gaps and operating effort",
+      "minimumOperatingTiming": "Demo observations; P minimum report; E richer UI",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A12",
+      "actor": "admin",
+      "sourceStt": 30,
+      "sourceRow": 33,
+      "titleVi": "Admin — Vận hành lịch sử giá và chiến dịch thông báo deal",
+      "sourcePriority": "Làm sau",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X02"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-01"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "businessNeed": "Deliver consented alerts only for rechecked eligible offers",
+      "minimumOperatingTiming": "Before U09 expansion",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A13",
+      "actor": "admin",
+      "sourceStt": 31,
+      "sourceRow": 34,
+      "titleVi": "Admin — Xử lý hỗ trợ tài khoản và yêu cầu dữ liệu cá nhân",
+      "sourcePriority": "Làm sau",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E (basic requests in P if server data exists)",
+      "demoCoverage": "Local data deletion only",
+      "implementationPackages": [
+        "DEMO-07",
+        "REAL-04"
+      ],
+      "verificationIds": [
+        "T-D06",
+        "T-P06"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-11"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "businessNeed": "Resolve access and personal-data requests for data actually held",
+      "minimumOperatingTiming": "D0 local control; before server-held personal data; richer account tooling later",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A14",
+      "actor": "admin",
+      "sourceStt": 32,
+      "sourceRow": 35,
+      "titleVi": "Admin — Duyệt cấu hình PC và phương án nâng cấp",
+      "sourcePriority": "Làm sau",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X01"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-04",
+        "AC-EX-05"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "businessNeed": "Validate whole-build and upgrade compatibility",
+      "minimumOperatingTiming": "Before supported U12/U13 scope",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A15",
+      "actor": "admin",
+      "sourceStt": 33,
+      "sourceRow": 36,
+      "titleVi": "Admin — Quản lý đối tác và dịch vụ hỗ trợ mua thiết bị",
+      "sourcePriority": "Còn thời gian thì làm",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "L",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X03"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-10"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "businessNeed": "Verify that referrals have real coverage, terms and responsibility",
+      "minimumOperatingTiming": "Before partner-dependent services",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A16",
+      "actor": "admin",
+      "sourceStt": 34,
+      "sourceRow": 37,
+      "titleVi": "Admin — Kiểm duyệt trải nghiệm cộng đồng và tư vấn chuyên gia",
+      "sourcePriority": "Còn thời gian thì làm",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "L",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X04"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-09"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "businessNeed": "Maintain trustworthy community and expert contribution",
+      "minimumOperatingTiming": "Before U17",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A17",
+      "actor": "admin",
+      "sourceStt": 35,
+      "sourceRow": 38,
+      "titleVi": "Admin — Quản lý tài trợ, liên kết giới thiệu và báo cáo đối soát",
+      "sourcePriority": "Còn thời gian thì làm",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "L",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X04"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-12"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "businessNeed": "Disclose commercial influence and reconcile actual partner activity",
+      "minimumOperatingTiming": "Disclosure from first commercial placement; fuller tools L",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    },
+    {
+      "id": "A18",
+      "actor": "admin",
+      "sourceStt": 36,
+      "sourceRow": 39,
+      "titleVi": "Admin — Mở thêm nhóm thiết bị và thị trường",
+      "sourcePriority": "Còn thời gian thì làm",
+      "approvalStatus": "proposed; Chốt làm blank at source read",
+      "plannedStages": "E/L",
+      "demoCoverage": "Not in demo",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X05"
+      ],
+      "implementationStatus": "not started; planning artifact only",
+      "acceptanceCriteriaIds": [
+        "AC-EX-12"
+      ],
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "businessNeed": "Prove category/country coverage and operating readiness before expansion",
+      "minimumOperatingTiming": "Before each category/country rollout",
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+    }
+  ],
+  "businessRules": [
+    {
+      "id": "BR-01",
+      "implementationPackages": [
+        "DEMO-03",
+        "DEMO-04",
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-R02",
+        "T-P02"
+      ]
+    },
+    {
+      "id": "BR-02",
+      "implementationPackages": [
+        "DEMO-04",
+        "DEMO-05",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D02",
+        "T-D03",
+        "T-P05"
+      ]
+    },
+    {
+      "id": "BR-03",
+      "implementationPackages": [
+        "DEMO-03",
+        "DEMO-04",
+        "DEMO-05",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-P05"
+      ]
+    },
+    {
+      "id": "BR-04",
+      "implementationPackages": [
+        "DEMO-04",
+        "DEMO-06",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D02",
+        "T-D04",
+        "T-P02"
+      ]
+    },
+    {
+      "id": "BR-05",
+      "implementationPackages": [
+        "DEMO-04",
+        "DEMO-06",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-P02",
+        "T-P08"
+      ]
+    },
+    {
+      "id": "BR-06",
+      "implementationPackages": [
+        "DEMO-03",
+        "DEMO-07",
+        "REAL-04"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-D06",
+        "T-P08"
+      ]
+    },
+    {
+      "id": "BR-07",
+      "implementationPackages": [
+        "DEMO-09",
+        "DEMO-10",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D09",
+        "T-P05"
+      ]
+    },
+    {
+      "id": "BR-08",
+      "implementationPackages": [
+        "DEMO-06",
+        "REAL-01",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-R02",
+        "T-P05"
+      ]
+    },
+    {
+      "id": "BR-09",
+      "implementationPackages": [
+        "REAL-01",
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-R01",
+        "T-R02"
+      ]
+    },
+    {
+      "id": "BR-10",
+      "implementationPackages": [
+        "REAL-02",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-P02",
+        "T-X04"
+      ]
+    },
+    {
+      "id": "BR-11",
+      "implementationPackages": [
+        "DEMO-05",
+        "DEMO-06",
+        "DEMO-07",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-D05",
+        "T-D06",
+        "T-P01"
+      ]
+    },
+    {
+      "id": "BR-12",
+      "implementationPackages": [
+        "DEMO-05",
+        "DEMO-07",
+        "REAL-04"
+      ],
+      "verificationIds": [
+        "T-D06",
+        "T-D07",
+        "T-P06"
+      ]
+    },
+    {
+      "id": "BR-13",
+      "implementationPackages": [
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-P03",
+        "T-P04"
+      ]
+    },
+    {
+      "id": "BR-14",
+      "implementationPackages": [],
+      "verificationIds": [
+        "T-X01"
+      ]
+    },
+    {
+      "id": "BR-15",
+      "implementationPackages": [
+        "DEMO-03",
+        "DEMO-07",
+        "REAL-02"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-R02",
+        "T-P03"
+      ]
+    },
+    {
+      "id": "BR-16",
+      "implementationPackages": [
+        "DEMO-06",
+        "REAL-03"
+      ],
+      "verificationIds": [
+        "T-P02",
+        "T-X02",
+        "T-X03"
+      ]
+    }
+  ],
+  "nonfunctionalRequirements": [
+    {
+      "id": "NFR-01",
+      "implementationPackages": [
+        "DEMO-01",
+        "DEMO-02",
+        "DEMO-04"
+      ],
+      "verificationIds": [
+        "T-D01",
+        "T-D02"
+      ]
+    },
+    {
+      "id": "NFR-02",
+      "implementationPackages": [
+        "DEMO-02",
+        "DEMO-08"
+      ],
+      "verificationIds": [
+        "T-D01",
+        "T-D07"
+      ]
+    },
+    {
+      "id": "NFR-03",
+      "implementationPackages": [
+        "DEMO-02",
+        "DEMO-08"
+      ],
+      "verificationIds": [
+        "T-D07"
+      ]
+    },
+    {
+      "id": "NFR-04",
+      "implementationPackages": [
+        "DEMO-08",
+        "REAL-04"
+      ],
+      "verificationIds": [
+        "T-D08",
+        "T-P07"
+      ]
+    },
+    {
+      "id": "NFR-05",
+      "implementationPackages": [
+        "DEMO-08",
+        "REAL-04"
+      ],
+      "verificationIds": [
+        "T-D08",
+        "T-P07"
+      ]
+    },
+    {
+      "id": "NFR-06",
+      "implementationPackages": [
+        "DEMO-09",
+        "DEMO-10",
+        "REAL-04"
+      ],
+      "verificationIds": [
+        "T-D08",
+        "T-D09",
+        "T-P07",
+        "T-P08"
+      ]
+    },
+    {
+      "id": "NFR-07",
+      "implementationPackages": [
+        "DEMO-09",
+        "REAL-02",
+        "REAL-04"
+      ],
+      "verificationIds": [
+        "T-D09",
+        "T-P03",
+        "T-P06"
+      ]
+    },
+    {
+      "id": "NFR-08",
+      "implementationPackages": [
+        "DEMO-07",
+        "REAL-04"
+      ],
+      "verificationIds": [
+        "T-D06",
+        "T-P06",
+        "T-P08"
+      ]
+    },
+    {
+      "id": "NFR-09",
+      "implementationPackages": [
+        "DEMO-09",
+        "REAL-04",
+        "PILOT-01"
+      ],
+      "verificationIds": [
+        "T-D08",
+        "T-D09",
+        "T-P07"
+      ]
+    },
+    {
+      "id": "NFR-10",
+      "implementationPackages": [
+        "DEMO-02",
+        "DEMO-05",
+        "DEMO-06"
+      ],
+      "verificationIds": [
+        "T-D01",
+        "T-D05",
+        "T-D07"
+      ]
+    }
+  ],
+  "documentVersion": "2.3",
+  "acceptanceCriteria": [
+    {
+      "id": "AC-U19-01",
+      "requirementIds": [
+        "U19"
+      ],
+      "verificationIds": [],
+      "applicability": "Delivery stage pending review; supported app/site surfaces only",
+      "status": "planned; no implementation or acceptance evidence; verification assignment pending",
+      "definition": "BRD.md, sections 7.2 and 16.9"
+    },
+    {
+      "id": "AC-U19-02",
+      "requirementIds": [
+        "U19"
+      ],
+      "verificationIds": [],
+      "applicability": "Delivery stage pending review; supported app/site surfaces only",
+      "status": "planned; no implementation or acceptance evidence; verification assignment pending",
+      "definition": "BRD.md, sections 7.2 and 16.9"
+    },
+    {
+      "id": "AC-U19-03",
+      "requirementIds": [
+        "U19"
+      ],
+      "verificationIds": [],
+      "applicability": "Delivery stage pending review; supported app/site surfaces only",
+      "status": "planned; no implementation or acceptance evidence; verification assignment pending",
+      "definition": "BRD.md, sections 7.2 and 16.9"
+    },
+    {
+      "id": "AC-U19-04",
+      "requirementIds": [
+        "U19"
+      ],
+      "verificationIds": [],
+      "applicability": "Delivery stage pending review; supported app/site surfaces only",
+      "status": "planned; no implementation or acceptance evidence; verification assignment pending",
+      "definition": "BRD.md, sections 7.2 and 16.9"
+    },
+    {
+      "id": "AC-U01-01",
+      "requirementIds": [
+        "U01"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-D05",
+        "T-D09",
+        "T-P01",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U01-02",
+      "requirementIds": [
+        "U01"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-D05",
+        "T-D09",
+        "T-P01",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U01-03",
+      "requirementIds": [
+        "U01"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-D05",
+        "T-D09",
+        "T-P01",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U01-04",
+      "requirementIds": [
+        "U01"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-D05",
+        "T-D09",
+        "T-P01",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U02-01",
+      "requirementIds": [
+        "U02"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-D05",
+        "T-P01",
+        "T-P02"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U02-02",
+      "requirementIds": [
+        "U02"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-D05",
+        "T-P01",
+        "T-P02"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U02-03",
+      "requirementIds": [
+        "U02"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-D05",
+        "T-P01",
+        "T-P02"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U02-04",
+      "requirementIds": [
+        "U02"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-D05",
+        "T-P01",
+        "T-P02"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U03-01",
+      "requirementIds": [
+        "U03"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-P01",
+        "T-P04"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U03-02",
+      "requirementIds": [
+        "U03"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-P01",
+        "T-P04"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U03-03",
+      "requirementIds": [
+        "U03"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-P01",
+        "T-P04"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U03-04",
+      "requirementIds": [
+        "U03"
+      ],
+      "verificationIds": [
+        "T-P01",
+        "T-P04"
+      ],
+      "applicability": "P; relevant supported feature must exist",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U04-01",
+      "requirementIds": [
+        "U04"
+      ],
+      "verificationIds": [
+        "T-D02",
+        "T-D05",
+        "T-P01",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U04-02",
+      "requirementIds": [
+        "U04"
+      ],
+      "verificationIds": [
+        "T-D02",
+        "T-D05",
+        "T-P01",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U04-03",
+      "requirementIds": [
+        "U04"
+      ],
+      "verificationIds": [
+        "T-D02",
+        "T-D05",
+        "T-P01",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U04-04",
+      "requirementIds": [
+        "U04"
+      ],
+      "verificationIds": [
+        "T-D02",
+        "T-D05",
+        "T-P01",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U05-01",
+      "requirementIds": [
+        "U05"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-P02"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U05-02",
+      "requirementIds": [
+        "U05"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-P02"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U05-03",
+      "requirementIds": [
+        "U05"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-P02"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U05-04",
+      "requirementIds": [
+        "U05"
+      ],
+      "verificationIds": [
+        "T-D04",
+        "T-P02"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U06-01",
+      "requirementIds": [
+        "U06"
+      ],
+      "verificationIds": [
+        "T-P01",
+        "T-P02",
+        "T-P05"
+      ],
+      "applicability": "P; relevant supported feature must exist",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U06-02",
+      "requirementIds": [
+        "U06"
+      ],
+      "verificationIds": [
+        "T-P01",
+        "T-P02",
+        "T-P05"
+      ],
+      "applicability": "P; relevant supported feature must exist",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U06-03",
+      "requirementIds": [
+        "U06"
+      ],
+      "verificationIds": [
+        "T-P01",
+        "T-P02",
+        "T-P05"
+      ],
+      "applicability": "P; relevant supported feature must exist",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U06-04",
+      "requirementIds": [
+        "U06"
+      ],
+      "verificationIds": [
+        "T-P01",
+        "T-P02",
+        "T-P05"
+      ],
+      "applicability": "P; relevant supported feature must exist",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U07-01",
+      "requirementIds": [
+        "U07"
+      ],
+      "verificationIds": [
+        "T-D06",
+        "T-P01",
+        "T-P06"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U07-02",
+      "requirementIds": [
+        "U07"
+      ],
+      "verificationIds": [
+        "T-D06",
+        "T-P01",
+        "T-P06"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U07-03",
+      "requirementIds": [
+        "U07"
+      ],
+      "verificationIds": [
+        "T-P01",
+        "T-P06"
+      ],
+      "applicability": "P; relevant supported feature must exist",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U07-04",
+      "requirementIds": [
+        "U07"
+      ],
+      "verificationIds": [
+        "T-D06",
+        "T-P01",
+        "T-P06"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U08-01",
+      "requirementIds": [
+        "U08"
+      ],
+      "verificationIds": [
+        "T-D06",
+        "T-D07",
+        "T-P01",
+        "T-P06"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U08-02",
+      "requirementIds": [
+        "U08"
+      ],
+      "verificationIds": [
+        "T-D06",
+        "T-D07",
+        "T-P01",
+        "T-P06"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U08-03",
+      "requirementIds": [
+        "U08"
+      ],
+      "verificationIds": [
+        "T-P01",
+        "T-P06"
+      ],
+      "applicability": "P; relevant supported feature must exist",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U08-04",
+      "requirementIds": [
+        "U08"
+      ],
+      "verificationIds": [
+        "T-P01",
+        "T-P06"
+      ],
+      "applicability": "P; relevant supported feature must exist",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A01-01",
+      "requirementIds": [
+        "A01"
+      ],
+      "verificationIds": [
+        "T-P03"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A01-02",
+      "requirementIds": [
+        "A01"
+      ],
+      "verificationIds": [
+        "T-P03"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A02-01",
+      "requirementIds": [
+        "A02"
+      ],
+      "verificationIds": [
+        "T-P03",
+        "T-R01",
+        "T-R02"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A02-02",
+      "requirementIds": [
+        "A02"
+      ],
+      "verificationIds": [
+        "T-P03",
+        "T-R01",
+        "T-R02"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A03-01",
+      "requirementIds": [
+        "A03"
+      ],
+      "verificationIds": [
+        "T-P03",
+        "T-R02"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A03-02",
+      "requirementIds": [
+        "A03"
+      ],
+      "verificationIds": [
+        "T-P03",
+        "T-R02"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A04-01",
+      "requirementIds": [
+        "A04"
+      ],
+      "verificationIds": [
+        "T-P02",
+        "T-R02"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A04-02",
+      "requirementIds": [
+        "A04"
+      ],
+      "verificationIds": [
+        "T-P02",
+        "T-R02"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A05-01",
+      "requirementIds": [
+        "A05"
+      ],
+      "verificationIds": [
+        "T-P05",
+        "T-R01",
+        "T-R02"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A05-02",
+      "requirementIds": [
+        "A05"
+      ],
+      "verificationIds": [
+        "T-P05",
+        "T-R01",
+        "T-R02"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A06-01",
+      "requirementIds": [
+        "A06"
+      ],
+      "verificationIds": [
+        "T-P03",
+        "T-P05"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A06-02",
+      "requirementIds": [
+        "A06"
+      ],
+      "verificationIds": [
+        "T-P03",
+        "T-P05"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A07-01",
+      "requirementIds": [
+        "A07"
+      ],
+      "verificationIds": [
+        "T-P03",
+        "T-P05"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A07-02",
+      "requirementIds": [
+        "A07"
+      ],
+      "verificationIds": [
+        "T-P03",
+        "T-P05"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A08-01",
+      "requirementIds": [
+        "A08"
+      ],
+      "verificationIds": [
+        "T-P04"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A08-02",
+      "requirementIds": [
+        "A08"
+      ],
+      "verificationIds": [
+        "T-P04"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A09-01",
+      "requirementIds": [
+        "A09"
+      ],
+      "verificationIds": [
+        "T-P07",
+        "T-P08"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-A09-02",
+      "requirementIds": [
+        "A09"
+      ],
+      "verificationIds": [
+        "T-P07",
+        "T-P08"
+      ],
+      "applicability": "P; demo analogue does not satisfy this production admin criterion",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-01",
+      "requirementIds": [
+        "U09",
+        "A12"
+      ],
+      "verificationIds": [
+        "T-X02"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-02",
+      "requirementIds": [
+        "U10"
+      ],
+      "verificationIds": [
+        "T-X02"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-03",
+      "requirementIds": [
+        "U11"
+      ],
+      "verificationIds": [
+        "T-X01",
+        "T-X03"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-04",
+      "requirementIds": [
+        "U12",
+        "A14"
+      ],
+      "verificationIds": [
+        "T-X01",
+        "T-X03"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-05",
+      "requirementIds": [
+        "U13",
+        "A14"
+      ],
+      "verificationIds": [
+        "T-X01"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-06",
+      "requirementIds": [
+        "U14"
+      ],
+      "verificationIds": [
+        "T-X02"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-07",
+      "requirementIds": [
+        "U15"
+      ],
+      "verificationIds": [
+        "T-X03"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-08",
+      "requirementIds": [
+        "U16"
+      ],
+      "verificationIds": [
+        "T-X03"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-09",
+      "requirementIds": [
+        "U17",
+        "A16"
+      ],
+      "verificationIds": [
+        "T-X04"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-10",
+      "requirementIds": [
+        "U18",
+        "A15"
+      ],
+      "verificationIds": [
+        "T-X03"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-11",
+      "requirementIds": [
+        "A10",
+        "A11",
+        "A13"
+      ],
+      "verificationIds": [
+        "T-D06",
+        "T-D10",
+        "T-P03",
+        "T-P06",
+        "T-P07",
+        "T-P08"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-EX-12",
+      "requirementIds": [
+        "A17",
+        "A18"
+      ],
+      "verificationIds": [
+        "T-X04",
+        "T-X05"
+      ],
+      "applicability": "E/L; refine before implementation authorization",
+      "status": "planned; no product acceptance result recorded",
+      "definition": "BRD.md, sections 16-17"
+    },
+    {
+      "id": "AC-U01-05",
+      "requirementIds": [
+        "U01"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-D05",
+        "T-D06",
+        "T-D07",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
+      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
+    },
+    {
+      "id": "AC-U01-06",
+      "requirementIds": [
+        "U01"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-D05",
+        "T-D06",
+        "T-D07",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
+      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
+    },
+    {
+      "id": "AC-U01-07",
+      "requirementIds": [
+        "U01"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-D05",
+        "T-D06",
+        "T-D07",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
+      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
+    },
+    {
+      "id": "AC-U01-08",
+      "requirementIds": [
+        "U01"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-D05",
+        "T-D06",
+        "T-D07",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
+      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
+    },
+    {
+      "id": "AC-U01-09",
+      "requirementIds": [
+        "U01"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-D05",
+        "T-D06",
+        "T-D07",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
+      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
+    },
+    {
+      "id": "AC-U01-10",
+      "requirementIds": [
+        "U01"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-D05",
+        "T-D06",
+        "T-D07",
+        "T-P05"
+      ],
+      "applicability": "D0 and P, within each declared scope",
+      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
+      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
+    },
+    {
+      "id": "AC-A06-03",
+      "requirementIds": [
+        "A06",
+        "A07"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-P03",
+        "T-P05"
+      ],
+      "applicability": "D0 source-controlled simulation; P reviewer-operated publication",
+      "status": "planned; no acceptance result recorded",
+      "definition": "BRD.md, section 17; IMPLEMENTATION_PLAN.md, section 23"
+    },
+    {
+      "id": "AC-A06-04",
+      "requirementIds": [
+        "A06"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-P03",
+        "T-P05"
+      ],
+      "applicability": "D0 source-controlled analogue within synthetic scope; P enforced publication and compatible policy behavior",
+      "status": "planned; no implementation or acceptance result recorded",
+      "definition": "BRD.md, sections 8.3-8.5 and 17.2"
+    },
+    {
+      "id": "AC-A06-05",
+      "requirementIds": [
+        "A06",
+        "A07"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-P03",
+        "T-P05"
+      ],
+      "applicability": "D0 source-controlled analogue within synthetic scope; P enforced publication and compatible policy behavior",
+      "status": "planned; no implementation or acceptance result recorded",
+      "definition": "BRD.md, sections 8.3-8.5 and 17.2"
+    },
+    {
+      "id": "AC-A06-06",
+      "requirementIds": [
+        "A06"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-P03",
+        "T-P05",
+        "T-D05",
+        "T-D06"
+      ],
+      "applicability": "D0 source-controlled analogue within synthetic scope; P enforced publication and compatible policy behavior",
+      "status": "planned; no implementation or acceptance result recorded",
+      "definition": "BRD.md, sections 8.3-8.5 and 17.2"
+    },
+    {
+      "id": "AC-A06-07",
+      "requirementIds": [
+        "A06",
+        "A07"
+      ],
+      "verificationIds": [
+        "T-D03",
+        "T-P03",
+        "T-P05"
+      ],
+      "applicability": "D0 source-controlled analogue within synthetic scope; P enforced publication and compatible policy behavior",
+      "status": "planned; no implementation or acceptance result recorded",
+      "definition": "BRD.md, sections 8.3-8.5 and 17.2"
+    }
+  ],
+  "workPackages": [
+    {
+      "id": "PREP-01",
+      "dependsOn": [],
+      "exitGate": "G0",
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "DEMO-01",
+      "dependsOn": [
+        "PREP-01"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "DEMO-02",
+      "dependsOn": [
+        "DEMO-01"
+      ],
+      "exitGate": "G1",
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "DEMO-03",
+      "dependsOn": [
+        "PREP-01"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "DEMO-04",
+      "dependsOn": [
+        "DEMO-03"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "DEMO-05",
+      "dependsOn": [
+        "DEMO-02",
+        "DEMO-04"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "DEMO-06",
+      "dependsOn": [
+        "DEMO-05"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "DEMO-07",
+      "dependsOn": [
+        "DEMO-06"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "DEMO-08",
+      "dependsOn": [
+        "DEMO-05",
+        "DEMO-06",
+        "DEMO-07"
+      ],
+      "exitGate": "G2",
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "DEMO-09",
+      "dependsOn": [
+        "DEMO-03",
+        "DEMO-04"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": [
+        "AI provider access, settings and usage budget"
+      ]
+    },
+    {
+      "id": "DEMO-10",
+      "dependsOn": [
+        "DEMO-06",
+        "DEMO-09"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "REVIEW-01",
+      "dependsOn": [
+        "DEMO-08"
+      ],
+      "exitGate": "G3",
+      "status": "planned; not executed",
+      "externalDependencies": [],
+      "conditionalDependencies": [
+        {
+          "packageId": "DEMO-10",
+          "requiredByDefault": true,
+          "mayDeferOnlyWith": "explicit sponsor-approved D1 deferral recorded at G3",
+          "deferralStatus": "not approved; decision pending"
+        }
+      ]
+    },
+    {
+      "id": "REAL-01",
+      "dependsOn": [
+        "REVIEW-01"
+      ],
+      "exitGate": "G4",
+      "status": "planned; not executed",
+      "externalDependencies": [
+        "permitted sources, operating owner and G4 scope decision"
+      ]
+    },
+    {
+      "id": "REAL-02",
+      "dependsOn": [
+        "REAL-01"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "REAL-03",
+      "dependsOn": [
+        "REAL-02"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "REAL-04",
+      "dependsOn": [
+        "REAL-02",
+        "REAL-03"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": []
+    },
+    {
+      "id": "PILOT-01",
+      "dependsOn": [
+        "REAL-04"
+      ],
+      "exitGate": "G5",
+      "status": "planned; not executed",
+      "externalDependencies": []
+    }
+  ],
+  "reviewNote": "Version 2.2 adds U19 and four planned acceptance criteria to the documentation: 37 parent journeys and 73 criteria. The source spreadsheet still has 36 journeys; no sheet rows, priorities or approval values were changed for U19. Its delivery stage, timing policy and verification/package assignments remain pending. Version 2.1 picker additions and U19 have no acceptance evidence from existing frontend verification. Version 2.3 analyses all 18 admin needs and expands A06 acceptance; sheet values, implementation claims and U19 scope remain unchanged.",
+  "frontendReviewBuild": {
+    "date": "2026-11-11",
+    "status": "partial browser frontend implemented; native and live AI gates pending",
+    "source": "../../apps/adviser/README.md",
+    "evidence": "../../apps/adviser/VERIFICATION.md",
+    "nativeGateAccepted": false,
+    "liveAI": false
+  },
+  "adminNecessityAnalysis": {
+    "date": "2026-11-11",
+    "document": "BRD.md, sections 8.1-8.6",
+    "status": "proposed operating model; owners/capacity and production scope not approved",
+    "sourceSpreadsheetModifiedThisRevision": false,
+    "parentAdminJourneyCount": 18,
+    "newParentJourneys": 0
+  }
+}
