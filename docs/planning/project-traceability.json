@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "date": "2026-11-11",
-  "status": "draft v2.3; U19 documented with delivery stage pending; partial browser frontend evidence available; native, live AI and production acceptance remain pending",
+  "date": "2026-11-12",
+  "status": "Expo Android demo implemented; release APK built; acceptance evidence and limitations recorded; production and live-provider acceptance pending",
   "source": {
     "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/12dppW4eD3ej3eNVrsff2c4afLkCRoGLh4WWpfufvVGA/edit?gid=0",
     "sheetId": 0,
@@ -17,7 +17,7 @@
     "changeReason": "Expand existing U01 picker and A06/A07 support; preserve 36 journeys, priorities and approval values."
   },
   "documents": {
-    "brd": "./BRD.md",
+    "brd": "../../brd.md",
     "implementation": "./IMPLEMENTATION_PLAN.md"
   },
   "features": [
@@ -45,22 +45,18 @@
         "T-P01",
         "T-P05"
       ],
-      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
         "AC-U01-01",
         "AC-U01-02",
         "AC-U01-03",
-        "AC-U01-04",
-        "AC-U01-05",
-        "AC-U01-06",
-        "AC-U01-07",
-        "AC-U01-08",
-        "AC-U01-09",
-        "AC-U01-10"
+        "AC-U01-04"
       ],
       "detailStatus": "core use case with detailed criteria",
       "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md",
-      "pickerExtensionStatus": "planned; not implemented or verified"
+      "pickerExtensionStatus": "planned; not implemented or verified",
+      "sourceBrdUrgency": 1,
+      "androidDemoEvidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "U02",
@@ -82,7 +78,7 @@
         "T-P01",
         "T-P02"
       ],
-      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
         "AC-U02-01",
         "AC-U02-02",
@@ -90,7 +86,9 @@
         "AC-U02-04"
       ],
       "detailStatus": "core use case with detailed criteria",
-      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md",
+      "sourceBrdUrgency": 1,
+      "androidDemoEvidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "U03",
@@ -112,7 +110,7 @@
         "T-P01",
         "T-P04"
       ],
-      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
         "AC-U03-01",
         "AC-U03-02",
@@ -120,7 +118,9 @@
         "AC-U03-04"
       ],
       "detailStatus": "core use case with detailed criteria",
-      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md",
+      "sourceBrdUrgency": 1,
+      "androidDemoEvidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "U04",
@@ -142,7 +142,7 @@
         "T-P01",
         "T-P05"
       ],
-      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
         "AC-U04-01",
         "AC-U04-02",
@@ -150,7 +150,9 @@
         "AC-U04-04"
       ],
       "detailStatus": "core use case with detailed criteria",
-      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md",
+      "sourceBrdUrgency": 1,
+      "androidDemoEvidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "U05",
@@ -170,7 +172,7 @@
         "T-D04",
         "T-P02"
       ],
-      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
         "AC-U05-01",
         "AC-U05-02",
@@ -178,7 +180,9 @@
         "AC-U05-04"
       ],
       "detailStatus": "core use case with detailed criteria",
-      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md",
+      "sourceBrdUrgency": 1,
+      "androidDemoEvidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "U06",
@@ -206,7 +210,8 @@
         "AC-U06-03",
         "AC-U06-04"
       ],
-      "detailStatus": "core use case with detailed criteria"
+      "detailStatus": "core use case with detailed criteria",
+      "sourceBrdUrgency": 3
     },
     {
       "id": "U07",
@@ -227,7 +232,7 @@
         "T-P01",
         "T-P06"
       ],
-      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
         "AC-U07-01",
         "AC-U07-02",
@@ -235,7 +240,9 @@
         "AC-U07-04"
       ],
       "detailStatus": "core use case with detailed criteria",
-      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md",
+      "sourceBrdUrgency": 2,
+      "androidDemoEvidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "U08",
@@ -259,7 +266,7 @@
         "T-P01",
         "T-P06"
       ],
-      "implementationStatus": "browser frontend subset implemented; native and production acceptance pending",
+      "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
         "AC-U08-01",
         "AC-U08-02",
@@ -267,7 +274,9 @@
         "AC-U08-04"
       ],
       "detailStatus": "core use case with detailed criteria",
-      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md"
+      "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md",
+      "sourceBrdUrgency": 2,
+      "androidDemoEvidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "U09",
@@ -287,7 +296,8 @@
       "acceptanceCriteriaIds": [
         "AC-EX-01"
       ],
-      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "sourceBrdUrgency": 3
     },
     {
       "id": "U10",
@@ -307,7 +317,8 @@
       "acceptanceCriteriaIds": [
         "AC-EX-02"
       ],
-      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "U11",
@@ -328,7 +339,8 @@
       "acceptanceCriteriaIds": [
         "AC-EX-03"
       ],
-      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "U12",
@@ -349,7 +361,8 @@
       "acceptanceCriteriaIds": [
         "AC-EX-04"
       ],
-      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "sourceBrdUrgency": 3
     },
     {
       "id": "U13",
@@ -369,7 +382,8 @@
       "acceptanceCriteriaIds": [
         "AC-EX-05"
       ],
-      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "sourceBrdUrgency": 3
     },
     {
       "id": "U14",
@@ -389,7 +403,8 @@
       "acceptanceCriteriaIds": [
         "AC-EX-06"
       ],
-      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "U15",
@@ -409,7 +424,8 @@
       "acceptanceCriteriaIds": [
         "AC-EX-07"
       ],
-      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "U16",
@@ -429,7 +445,8 @@
       "acceptanceCriteriaIds": [
         "AC-EX-08"
       ],
-      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "U17",
@@ -449,7 +466,8 @@
       "acceptanceCriteriaIds": [
         "AC-EX-09"
       ],
-      "detailStatus": "future outcome criteria; detailed scope readiness still required"
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "U18",
@@ -469,45 +487,8 @@
       "acceptanceCriteriaIds": [
         "AC-EX-10"
       ],
-      "detailStatus": "future outcome criteria; detailed scope readiness still required"
-    },
-    {
-      "id": "U19",
-      "actor": "buyer",
-      "sourceStt": null,
-      "sourceRow": null,
-      "titleVi": "Chatbot chủ động hỏi nhu cầu sau thời gian duyệt và tìm kiếm sản phẩm",
-      "sourcePriority": null,
-      "approvalStatus": "user-requested requirement addition; delivery stage pending; not added to source spreadsheet",
-      "plannedStages": "TBD; review before implementation",
-      "demoCoverage": "Not implemented; no acceptance evidence",
-      "implementationPackages": [],
-      "verificationIds": [],
-      "implementationStatus": "not started; planning artifact only",
-      "acceptanceCriteriaIds": [
-        "AC-U19-01",
-        "AC-U19-02",
-        "AC-U19-03",
-        "AC-U19-04"
-      ],
-      "detailStatus": "BRD sections 7.2 and 16.9; timing, idle/session/cooldown policy and delivery assignments pending",
-      "relatedRequirementIds": [
-        "U01",
-        "U02",
-        "U03",
-        "U04",
-        "U05",
-        "U08"
-      ],
-      "businessRuleIds": [
-        "BR-02",
-        "BR-03",
-        "BR-07",
-        "BR-08",
-        "BR-11",
-        "BR-12",
-        "BR-15"
-      ]
+      "detailStatus": "future outcome criteria; detailed scope readiness still required",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "A01",
@@ -533,7 +514,8 @@
       "detailStatus": "core use case with detailed criteria",
       "businessNeed": "Attributable authority over privileged changes",
       "minimumOperatingTiming": "Before privileged production operation",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "A02",
@@ -564,7 +546,8 @@
       "detailStatus": "core use case with detailed criteria",
       "businessNeed": "Maintain permitted, validated and repeatable source intake",
       "minimumOperatingTiming": "D0 analogue; R/P bounded import",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 1
     },
     {
       "id": "A03",
@@ -594,7 +577,8 @@
       "detailStatus": "core use case with detailed criteria",
       "businessNeed": "Preserve exact purchasable configuration identity",
       "minimumOperatingTiming": "D0 analogue; R/P catalog control",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 1
     },
     {
       "id": "A04",
@@ -627,7 +611,8 @@
       "frontendReviewCoverage": "Local sample-price editor only; no production admin identity, publication or seller operations.",
       "businessNeed": "Maintain comparable, current and actionable buying options",
       "minimumOperatingTiming": "D0 analogue; R/P offer control",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 1
     },
     {
       "id": "A05",
@@ -659,7 +644,8 @@
       "detailStatus": "core use case with detailed criteria",
       "businessNeed": "Substantiate advice and resolve or withdraw conflicting assertions",
       "minimumOperatingTiming": "D0 synthetic provenance; R/P evidence control",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 3
     },
     {
       "id": "A06",
@@ -684,17 +670,13 @@
       "implementationStatus": "not started; planning artifact only",
       "acceptanceCriteriaIds": [
         "AC-A06-01",
-        "AC-A06-02",
-        "AC-A06-03",
-        "AC-A06-04",
-        "AC-A06-05",
-        "AC-A06-06",
-        "AC-A06-07"
+        "AC-A06-02"
       ],
       "detailStatus": "core use case with detailed criteria",
       "businessNeed": "Translate confirmed work into relevant questions and defensible constraints",
       "minimumOperatingTiming": "D0 versioned policy and simulation; P controlled activation",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 1
     },
     {
       "id": "A07",
@@ -722,15 +704,13 @@
       "implementationStatus": "not started; planning artifact only",
       "acceptanceCriteriaIds": [
         "AC-A07-01",
-        "AC-A07-02",
-        "AC-A06-03",
-        "AC-A06-05",
-        "AC-A06-07"
+        "AC-A07-02"
       ],
       "detailStatus": "core use case with detailed criteria",
       "businessNeed": "Detect recommendation regressions before release and recover a known-good version",
       "minimumOperatingTiming": "D0 rules; D1 model evaluation; P release control",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 1
     },
     {
       "id": "A08",
@@ -757,7 +737,8 @@
       "detailStatus": "core use case with detailed criteria",
       "businessNeed": "Resolve buyer-reported information errors with verified closure",
       "minimumOperatingTiming": "P reporting and correction",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 3
     },
     {
       "id": "A09",
@@ -789,7 +770,8 @@
       "detailStatus": "core use case with detailed criteria",
       "businessNeed": "Contain source/model failures, stale data and unbounded operating cost",
       "minimumOperatingTiming": "D0/D1 diagnostics; P accountable operations",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 2
     },
     {
       "id": "A10",
@@ -817,7 +799,8 @@
       "detailStatus": "future outcome criteria; detailed scope readiness still required",
       "businessNeed": "Control rollout and restore approved behavior",
       "minimumOperatingTiming": "P minimum process; E richer UI",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "A11",
@@ -845,7 +828,8 @@
       "detailStatus": "future outcome criteria; detailed scope readiness still required",
       "businessNeed": "Identify unmet needs, coverage gaps and operating effort",
       "minimumOperatingTiming": "Demo observations; P minimum report; E richer UI",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 3
     },
     {
       "id": "A12",
@@ -868,7 +852,8 @@
       "detailStatus": "future outcome criteria; detailed scope readiness still required",
       "businessNeed": "Deliver consented alerts only for rechecked eligible offers",
       "minimumOperatingTiming": "Before U09 expansion",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 3
     },
     {
       "id": "A13",
@@ -895,7 +880,8 @@
       "detailStatus": "future outcome criteria; detailed scope readiness still required",
       "businessNeed": "Resolve access and personal-data requests for data actually held",
       "minimumOperatingTiming": "D0 local control; before server-held personal data; richer account tooling later",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "A14",
@@ -919,7 +905,8 @@
       "detailStatus": "future outcome criteria; detailed scope readiness still required",
       "businessNeed": "Validate whole-build and upgrade compatibility",
       "minimumOperatingTiming": "Before supported U12/U13 scope",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 3
     },
     {
       "id": "A15",
@@ -942,7 +929,8 @@
       "detailStatus": "future outcome criteria; detailed scope readiness still required",
       "businessNeed": "Verify that referrals have real coverage, terms and responsibility",
       "minimumOperatingTiming": "Before partner-dependent services",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "A16",
@@ -965,7 +953,8 @@
       "detailStatus": "future outcome criteria; detailed scope readiness still required",
       "businessNeed": "Maintain trustworthy community and expert contribution",
       "minimumOperatingTiming": "Before U17",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "A17",
@@ -988,7 +977,8 @@
       "detailStatus": "future outcome criteria; detailed scope readiness still required",
       "businessNeed": "Disclose commercial influence and reconcile actual partner activity",
       "minimumOperatingTiming": "Disclosure from first commercial placement; fuller tools L",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 0
     },
     {
       "id": "A18",
@@ -1011,7 +1001,8 @@
       "detailStatus": "future outcome criteria; detailed scope readiness still required",
       "businessNeed": "Prove category/country coverage and operating readiness before expansion",
       "minimumOperatingTiming": "Before each category/country rollout",
-      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance"
+      "necessityAnalysis": "BRD.md, sections 8.1-8.6; analysis only, no new implementation acceptance",
+      "sourceBrdUrgency": 0
     }
   ],
   "businessRules": [
@@ -1231,7 +1222,16 @@
       ],
       "verificationIds": [
         "T-D01",
-        "T-D07"
+        "T-D07",
+        "T-D05",
+        "T-D08"
+      ],
+      "acceptanceCriteriaIds": [
+        "AC-UX01",
+        "AC-UX02",
+        "AC-UX03",
+        "AC-UX04",
+        "AC-UX05"
       ]
     },
     {
@@ -1241,7 +1241,17 @@
         "DEMO-08"
       ],
       "verificationIds": [
-        "T-D07"
+        "T-D07",
+        "T-D01",
+        "T-D05",
+        "T-D08"
+      ],
+      "acceptanceCriteriaIds": [
+        "AC-UX01",
+        "AC-UX02",
+        "AC-UX03",
+        "AC-UX04",
+        "AC-UX05"
       ]
     },
     {
@@ -1328,52 +1338,20 @@
       "verificationIds": [
         "T-D01",
         "T-D05",
-        "T-D07"
+        "T-D07",
+        "T-D08"
+      ],
+      "acceptanceCriteriaIds": [
+        "AC-UX01",
+        "AC-UX02",
+        "AC-UX03",
+        "AC-UX04",
+        "AC-UX05"
       ]
     }
   ],
-  "documentVersion": "2.3",
+  "documentVersion": "3.2",
   "acceptanceCriteria": [
-    {
-      "id": "AC-U19-01",
-      "requirementIds": [
-        "U19"
-      ],
-      "verificationIds": [],
-      "applicability": "Delivery stage pending review; supported app/site surfaces only",
-      "status": "planned; no implementation or acceptance evidence; verification assignment pending",
-      "definition": "BRD.md, sections 7.2 and 16.9"
-    },
-    {
-      "id": "AC-U19-02",
-      "requirementIds": [
-        "U19"
-      ],
-      "verificationIds": [],
-      "applicability": "Delivery stage pending review; supported app/site surfaces only",
-      "status": "planned; no implementation or acceptance evidence; verification assignment pending",
-      "definition": "BRD.md, sections 7.2 and 16.9"
-    },
-    {
-      "id": "AC-U19-03",
-      "requirementIds": [
-        "U19"
-      ],
-      "verificationIds": [],
-      "applicability": "Delivery stage pending review; supported app/site surfaces only",
-      "status": "planned; no implementation or acceptance evidence; verification assignment pending",
-      "definition": "BRD.md, sections 7.2 and 16.9"
-    },
-    {
-      "id": "AC-U19-04",
-      "requirementIds": [
-        "U19"
-      ],
-      "verificationIds": [],
-      "applicability": "Delivery stage pending review; supported app/site surfaces only",
-      "status": "planned; no implementation or acceptance evidence; verification assignment pending",
-      "definition": "BRD.md, sections 7.2 and 16.9"
-    },
     {
       "id": "AC-U01-01",
       "requirementIds": [
@@ -1388,7 +1366,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U01-02",
@@ -1404,7 +1382,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U01-03",
@@ -1420,7 +1398,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U01-04",
@@ -1436,7 +1414,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U02-01",
@@ -1451,7 +1429,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U02-02",
@@ -1466,7 +1444,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U02-03",
@@ -1481,7 +1459,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U02-04",
@@ -1496,7 +1474,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U03-01",
@@ -1510,7 +1488,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U03-02",
@@ -1524,7 +1502,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U03-03",
@@ -1538,7 +1516,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U03-04",
@@ -1551,7 +1529,7 @@
       ],
       "applicability": "P; relevant supported feature must exist",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U04-01",
@@ -1566,7 +1544,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U04-02",
@@ -1581,7 +1559,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U04-03",
@@ -1596,7 +1574,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U04-04",
@@ -1611,7 +1589,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U05-01",
@@ -1624,7 +1602,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U05-02",
@@ -1637,7 +1615,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U05-03",
@@ -1650,7 +1628,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U05-04",
@@ -1663,7 +1641,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U06-01",
@@ -1677,7 +1655,7 @@
       ],
       "applicability": "P; relevant supported feature must exist",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U06-02",
@@ -1691,7 +1669,7 @@
       ],
       "applicability": "P; relevant supported feature must exist",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U06-03",
@@ -1705,7 +1683,7 @@
       ],
       "applicability": "P; relevant supported feature must exist",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U06-04",
@@ -1719,7 +1697,7 @@
       ],
       "applicability": "P; relevant supported feature must exist",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U07-01",
@@ -1733,7 +1711,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U07-02",
@@ -1747,7 +1725,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U07-03",
@@ -1760,7 +1738,7 @@
       ],
       "applicability": "P; relevant supported feature must exist",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U07-04",
@@ -1774,7 +1752,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U08-01",
@@ -1789,7 +1767,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U08-02",
@@ -1804,7 +1782,7 @@
       ],
       "applicability": "D0 and P, within each declared scope",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U08-03",
@@ -1817,7 +1795,7 @@
       ],
       "applicability": "P; relevant supported feature must exist",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-U08-04",
@@ -1830,7 +1808,7 @@
       ],
       "applicability": "P; relevant supported feature must exist",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A01-01",
@@ -1842,7 +1820,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A01-02",
@@ -1854,7 +1832,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A02-01",
@@ -1868,7 +1846,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A02-02",
@@ -1882,7 +1860,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A03-01",
@@ -1895,7 +1873,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A03-02",
@@ -1908,7 +1886,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A04-01",
@@ -1921,7 +1899,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A04-02",
@@ -1934,7 +1912,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A05-01",
@@ -1948,7 +1926,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A05-02",
@@ -1962,7 +1940,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A06-01",
@@ -1975,7 +1953,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A06-02",
@@ -1988,7 +1966,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A07-01",
@@ -2001,7 +1979,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A07-02",
@@ -2014,7 +1992,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A08-01",
@@ -2026,7 +2004,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A08-02",
@@ -2038,7 +2016,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A09-01",
@@ -2051,7 +2029,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-A09-02",
@@ -2064,7 +2042,7 @@
       ],
       "applicability": "P; demo analogue does not satisfy this production admin criterion",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-01",
@@ -2077,7 +2055,7 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-02",
@@ -2089,7 +2067,7 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-03",
@@ -2102,7 +2080,7 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-04",
@@ -2116,7 +2094,7 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-05",
@@ -2129,7 +2107,7 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-06",
@@ -2141,7 +2119,7 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-07",
@@ -2153,7 +2131,7 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-08",
@@ -2165,7 +2143,7 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-09",
@@ -2178,7 +2156,7 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-10",
@@ -2191,7 +2169,7 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-11",
@@ -2210,7 +2188,7 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
       "id": "AC-EX-12",
@@ -2224,178 +2202,92 @@
       ],
       "applicability": "E/L; refine before implementation authorization",
       "status": "planned; no product acceptance result recorded",
-      "definition": "BRD.md, sections 16-17"
+      "definition": "brd.md, sections 16–17"
     },
     {
-      "id": "AC-U01-05",
+      "id": "AC-UX01",
       "requirementIds": [
-        "U01"
+        "NFR-02",
+        "NFR-03",
+        "NFR-10"
       ],
       "verificationIds": [
-        "T-D03",
+        "T-D01",
         "T-D05",
-        "T-D06",
         "T-D07",
-        "T-P05"
+        "T-D08"
       ],
-      "applicability": "D0 and P, within each declared scope",
-      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
-      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
+      "applicability": "Android React Native; representative G1 slice then full scoped D0 at G2",
+      "status": "planned; no Android design or device acceptance evidence",
+      "definition": "brd.md, section 11.1"
     },
     {
-      "id": "AC-U01-06",
+      "id": "AC-UX02",
       "requirementIds": [
-        "U01"
+        "NFR-02",
+        "NFR-03",
+        "NFR-10"
       ],
       "verificationIds": [
-        "T-D03",
+        "T-D01",
         "T-D05",
-        "T-D06",
         "T-D07",
-        "T-P05"
+        "T-D08"
       ],
-      "applicability": "D0 and P, within each declared scope",
-      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
-      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
+      "applicability": "Android React Native; representative G1 slice then full scoped D0 at G2",
+      "status": "planned; no Android design or device acceptance evidence",
+      "definition": "brd.md, section 11.1"
     },
     {
-      "id": "AC-U01-07",
+      "id": "AC-UX03",
       "requirementIds": [
-        "U01"
+        "NFR-02",
+        "NFR-03",
+        "NFR-10"
       ],
       "verificationIds": [
-        "T-D03",
+        "T-D01",
         "T-D05",
-        "T-D06",
         "T-D07",
-        "T-P05"
+        "T-D08"
       ],
-      "applicability": "D0 and P, within each declared scope",
-      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
-      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
+      "applicability": "Android React Native; representative G1 slice then full scoped D0 at G2",
+      "status": "planned; no Android design or device acceptance evidence",
+      "definition": "brd.md, section 11.1"
     },
     {
-      "id": "AC-U01-08",
+      "id": "AC-UX04",
       "requirementIds": [
-        "U01"
+        "NFR-02",
+        "NFR-03",
+        "NFR-10"
       ],
       "verificationIds": [
-        "T-D03",
+        "T-D01",
         "T-D05",
-        "T-D06",
         "T-D07",
-        "T-P05"
+        "T-D08"
       ],
-      "applicability": "D0 and P, within each declared scope",
-      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
-      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
+      "applicability": "Android React Native; representative G1 slice then full scoped D0 at G2",
+      "status": "planned; no Android design or device acceptance evidence",
+      "definition": "brd.md, section 11.1"
     },
     {
-      "id": "AC-U01-09",
+      "id": "AC-UX05",
       "requirementIds": [
-        "U01"
+        "NFR-02",
+        "NFR-03",
+        "NFR-10"
       ],
       "verificationIds": [
-        "T-D03",
+        "T-D01",
         "T-D05",
-        "T-D06",
         "T-D07",
-        "T-P05"
+        "T-D08"
       ],
-      "applicability": "D0 and P, within each declared scope",
-      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
-      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
-    },
-    {
-      "id": "AC-U01-10",
-      "requirementIds": [
-        "U01"
-      ],
-      "verificationIds": [
-        "T-D03",
-        "T-D05",
-        "T-D06",
-        "T-D07",
-        "T-P05"
-      ],
-      "applicability": "D0 and P, within each declared scope",
-      "status": "planned; no implementation or acceptance evidence for v2.1 addition",
-      "definition": "BRD.md, section 16.1; IMPLEMENTATION_PLAN.md, section 23"
-    },
-    {
-      "id": "AC-A06-03",
-      "requirementIds": [
-        "A06",
-        "A07"
-      ],
-      "verificationIds": [
-        "T-D03",
-        "T-P03",
-        "T-P05"
-      ],
-      "applicability": "D0 source-controlled simulation; P reviewer-operated publication",
-      "status": "planned; no acceptance result recorded",
-      "definition": "BRD.md, section 17; IMPLEMENTATION_PLAN.md, section 23"
-    },
-    {
-      "id": "AC-A06-04",
-      "requirementIds": [
-        "A06"
-      ],
-      "verificationIds": [
-        "T-D03",
-        "T-P03",
-        "T-P05"
-      ],
-      "applicability": "D0 source-controlled analogue within synthetic scope; P enforced publication and compatible policy behavior",
-      "status": "planned; no implementation or acceptance result recorded",
-      "definition": "BRD.md, sections 8.3-8.5 and 17.2"
-    },
-    {
-      "id": "AC-A06-05",
-      "requirementIds": [
-        "A06",
-        "A07"
-      ],
-      "verificationIds": [
-        "T-D03",
-        "T-P03",
-        "T-P05"
-      ],
-      "applicability": "D0 source-controlled analogue within synthetic scope; P enforced publication and compatible policy behavior",
-      "status": "planned; no implementation or acceptance result recorded",
-      "definition": "BRD.md, sections 8.3-8.5 and 17.2"
-    },
-    {
-      "id": "AC-A06-06",
-      "requirementIds": [
-        "A06"
-      ],
-      "verificationIds": [
-        "T-D03",
-        "T-P03",
-        "T-P05",
-        "T-D05",
-        "T-D06"
-      ],
-      "applicability": "D0 source-controlled analogue within synthetic scope; P enforced publication and compatible policy behavior",
-      "status": "planned; no implementation or acceptance result recorded",
-      "definition": "BRD.md, sections 8.3-8.5 and 17.2"
-    },
-    {
-      "id": "AC-A06-07",
-      "requirementIds": [
-        "A06",
-        "A07"
-      ],
-      "verificationIds": [
-        "T-D03",
-        "T-P03",
-        "T-P05"
-      ],
-      "applicability": "D0 source-controlled analogue within synthetic scope; P enforced publication and compatible policy behavior",
-      "status": "planned; no implementation or acceptance result recorded",
-      "definition": "BRD.md, sections 8.3-8.5 and 17.2"
+      "applicability": "Android React Native; representative G1 slice then full scoped D0 at G2",
+      "status": "planned; no Android design or device acceptance evidence",
+      "definition": "brd.md, section 11.1"
     }
   ],
   "workPackages": [
@@ -2569,7 +2461,7 @@
       "externalDependencies": []
     }
   ],
-  "reviewNote": "Version 2.2 adds U19 and four planned acceptance criteria to the documentation: 37 parent journeys and 73 criteria. The source spreadsheet still has 36 journeys; no sheet rows, priorities or approval values were changed for U19. Its delivery stage, timing policy and verification/package assignments remain pending. Version 2.1 picker additions and U19 have no acceptance evidence from existing frontend verification. Version 2.3 analyses all 18 admin needs and expands A06 acceptance; sheet values, implementation claims and U19 scope remain unchanged.",
+  "reviewNote": "Use lowercase brd.md attachment baseline and its urgency values. The superseded uppercase workspace document is archived. 36 parent journeys and 67 criteria remain in the corrected baseline (62 source criteria plus 5 confirmed design criteria). Native app implementation and evidence are in progress.",
   "frontendReviewBuild": {
     "date": "2026-11-11",
     "status": "partial browser frontend implemented; native and live AI gates pending",
@@ -2585,5 +2477,82 @@
     "sourceSpreadsheetModifiedThisRevision": false,
     "parentAdminJourneyCount": 18,
     "newParentJourneys": 0
+  },
+  "deliveryScope": {
+    "decisionDate": "2026-11-12",
+    "status": "confirmed by user",
+    "platform": "Android only",
+    "appRuntime": "React Native TypeScript/TSX screens",
+    "appStyling": "React Native styles with Material 3 Expressive tokens/components",
+    "htmlCssUse": "design previews only",
+    "nativeFeasibilityGate": "G1: installed React Native Android release build, components and device evidence",
+    "designAcceptanceCriteria": [
+      "AC-UX01",
+      "AC-UX02",
+      "AC-UX03",
+      "AC-UX04",
+      "AC-UX05"
+    ],
+    "verificationIds": [
+      "T-D01",
+      "T-D05",
+      "T-D07",
+      "T-D08"
+    ],
+    "implementationPackages": [
+      "PREP-01",
+      "DEMO-01",
+      "DEMO-02",
+      "DEMO-05",
+      "DEMO-06",
+      "DEMO-08"
+    ],
+    "reference": "https://m3.material.io/blog/building-with-m3-expressive",
+    "sourceSpreadsheetModifiedThisRevision": false,
+    "framework": "Expo SDK 54 / React Native 0.81"
+  },
+  "requirementsBaseline": {
+    "source": "user attachment brd.md",
+    "attachmentSha256": "F39EDF46F9816B694D61294FF53391D698A2814B59740277DA6027D09687DB1F",
+    "correctionDate": "2026-11-12",
+    "scopeAmendments": [
+      "Android only",
+      "React Native screens",
+      "HTML/CSS design previews",
+      "Material 3 Expressive"
+    ],
+    "supersededDocument": "archive/BRD-workspace-v3.0-superseded.md",
+    "U19InScope": false,
+    "upstreamBase": "f7ec267",
+    "note": "main removed root brd.md; user-supplied lowercase attachment remains the selected baseline; docs/planning/BRD.md is retained as upstream reference."
+  },
+  "androidDemoEvidence": {
+    "manifest": "../../apps/adviser/verification/android-demo-manifest.json",
+    "record": "../../apps/adviser/VERIFICATION.md",
+    "artifact": "../../apps/adviser/artifacts/lua-adviser-demo.apk",
+    "brd": "../../brd.md",
+    "coreUserDemoImplemented": [
+      "U01",
+      "U02",
+      "U03",
+      "U04",
+      "U05"
+    ],
+    "additionalDemoImplemented": [
+      "U07",
+      "U08",
+      "A09"
+    ],
+    "localMaintenanceSupport": [
+      "A02",
+      "A03",
+      "A04",
+      "A06",
+      "A07"
+    ],
+    "nativeGateAccepted": false,
+    "liveAI": false,
+    "providerAdapterImplemented": true,
+    "engineeringStatus": "release APK built and emulator core flow checked; see manifest for passed tests and remaining formal acceptance evidence"
   }
 }

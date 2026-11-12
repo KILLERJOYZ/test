@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Lựa · Demo",
+    "slug": "lua-adviser",
+    "version": "0.3.0",
+    "platforms": [
+      "android"
+    ],
+    "orientation": "default",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "android": {
+      "package": "vn.lua.adviser",
+      "versionCode": 1,
+      "edgeToEdgeEnabled": true,
+      "permissions": []
+    },
+    "extra": {
+      "dataset": "synthetic-android-v2",
+      "aiMode": "optional-server"
+    }
+  }
+}

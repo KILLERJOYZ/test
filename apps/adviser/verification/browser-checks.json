@@ -1,0 +1,218 @@
+{
+  "date": "2026-11-11",
+  "scope": "Browser review build only; not native Windows/Android acceptance",
+  "method": "Bundled React Native Web application, rendered DOM actions via React flushSync in isolated synthetic-state QA pages; adviser timer controlled in QA, not a latency measurement",
+  "checks": [
+    {
+      "mode": "flow",
+      "width": 1440,
+      "contentHeight": 1310,
+      "capturedHeight": 1310,
+      "consoleMessages": [
+        {
+          "level": "info",
+          "text": "LUA_QA_PASS {\"mode\":\"flow\",\"count\":14}"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Initial shortlist renders three eligible variants"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Comparison keeps exact variants and RAM values"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Saving writes both variant IDs to local storage"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Save retains dated offer observations"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Saved workspace exposes reopen and export actions"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK No-fit is explicit"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Exact budget and unknown VM requirement remain unchanged"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Detail shows conditional discount separately"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Buying action shows simulation, never checkout"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Rule-based adviser renders grounded cheaper alternative"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Adviser explicitly discloses no live AI connection"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Workshop rejects negative prices"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Validated workshop edit updates stored offer"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Shortlist recomputes using next lowest complete offer"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 1440,
+        "height": 1310
+      }
+    },
+    {
+      "mode": "storage-invalid",
+      "width": 1440,
+      "contentHeight": 1354,
+      "capturedHeight": 1354,
+      "consoleMessages": [
+        {
+          "level": "info",
+          "text": "LUA_QA_PASS {\"mode\":\"storage-invalid\",\"count\":3}"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Invalid payload is not partially applied"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Invalid stored payload is preserved until explicit reset"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Storage warning is shown"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 1440,
+        "height": 1354
+      }
+    },
+    {
+      "mode": "storage-restore",
+      "width": 1440,
+      "contentHeight": 940,
+      "capturedHeight": 940,
+      "consoleMessages": [
+        {
+          "level": "info",
+          "text": "LUA_QA_PASS {\"mode\":\"storage-restore\",\"count\":2}"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Stored profile loads with its original cap"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Saved decision loads from prior payload"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 1440,
+        "height": 940
+      }
+    },
+    {
+      "mode": "storage-denied",
+      "width": 1440,
+      "contentHeight": 940,
+      "capturedHeight": 940,
+      "consoleMessages": [
+        {
+          "level": "info",
+          "text": "LUA_QA_PASS {\"mode\":\"storage-denied\",\"count\":3}"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Write failure preserves prior stored decisions"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Write failure is explicitly disclosed"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK In-session decision remains usable"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 1440,
+        "height": 940
+      }
+    },
+    {
+      "mode": "layout-mobile",
+      "width": 390,
+      "contentHeight": 2728,
+      "capturedHeight": 2728,
+      "consoleMessages": [
+        {
+          "level": "info",
+          "text": "LUA_QA_PASS {\"mode\":\"layout-mobile\",\"count\":4}"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Mobile discovery has no horizontal overflow"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Mobile paired comparison is readable without page overflow"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Mobile wizard opens and retains task controls"
+        },
+        {
+          "level": "info",
+          "text": "LUA_CHECK Mobile budget entry remains inside viewport"
+        }
+      ],
+      "screenshot": {
+        "mimeType": "image/png",
+        "width": 390,
+        "height": 2728
+      }
+    }
+  ],
+  "summary": {
+    "domainChecksPassed": 8,
+    "renderedDomAssertionsPassed": 26,
+    "typeCheck": "passed",
+    "productionWebBuild": "passed",
+    "nativeBuilds": "not attempted; hosts absent",
+    "liveAI": "not implemented",
+    "realRetailerData": "not integrated"
+  },
+  "manualRenderWidths": [
+    320,
+    390,
+    728,
+    1440
+  ],
+  "limitations": [
+    "Not a physical Android/Windows test",
+    "No native WinUI 3 or Compose adapter verification",
+    "No full screen-reader or keyboard interaction audit",
+    "No measured startup/p95/performance claim",
+    "Export action rendered; actual downloaded file not exercised by scripted DOM checks"
+  ]
+}

@@ -1,9 +1,15 @@
 # Demo-first implementation plan
 ## Vietnam-first AI device buying adviser
 
-Version 2.2 — 11 November 2026 — Draft for review. Companion: [BRD](./BRD.md). [Traceability register](./project-traceability.json). This is an execution plan, not a record of completed builds or tests.
+Version 3.2 — 12 November 2026 — Draft for review. Companion: [BRD](../../brd.md). [Traceability register](./project-traceability.json). This is an execution plan, not a record of completed builds or tests.
 
-Version 2.2 records the requested U19 contextual chatbot invitation in BRD sections 7.2/16.9 and the traceability register. Delivery stage, active-time/idle/session policy, threshold, cooldown and verification/package assignments remain pending review. U19 is not implemented, is not implicitly added to D0/D1 or the production pilot, and does not change existing native/live-AI gates.
+Implementation progress, 12 November 2026: an Expo Android demo and standalone release APK are implemented, with synthetic core journeys, local persistence/workshop, a bounded AI adapter and engineering checks. See the [current verification record](../../apps/adviser/VERIFICATION.md) and [run instructions](../../apps/adviser/README.md). Real-provider and physical-device evidence remain pending; stage gates are not automatically accepted. The older frontend progress note below is historical.
+
+Version 3.2 adds Expo as the React Native framework for fast Android debugging. Expo Go supports the pure-JavaScript demo and Expo development/release builds provide the app-specific native verification path. Use `npx expo start --android` for quick iteration and `npx expo run:android` for an app-specific Android build. Expo Go evidence alone does not complete G1. SDK/dependency versions are pinned in the app lockfile.
+
+Version 3.1 corrects the source to the user-supplied lowercase brd.md. Demo inclusion follows its urgency table: U01–U05 and A02/A03/A04/A06/A07 are core; U07/U08/A09 are additional demo scope already implemented; U06/U09/U12/U13 and later items remain future or excluded. U19 from the superseded workspace BRD is outside this baseline. Native Android feasibility and the confirmed React Native/HTML-CSS boundary still apply. The historical 4–6 hour hackathon framing is a prioritization context, not a measured implementation estimate.
+
+Version 3.0 applies Android-only React Native delivery and HTML/CSS design previews. Android feasibility, Expressive review and Android package/device evidence replace former dual-platform work. brd.md §11.1 and plan §24 define design acceptance. Historical effort ranges need re-estimation.
 
 Version 2.1 adds the explicit U01 laptop-picker delivery contract in section 23, including ordered uses, refinement, compromise handling and A06/A07 simulation. These are pending extensions to the existing browser frontend and to the future native demo. See the [research and implementation gap assessment](../../research/laptop-picker-research.md).
 
@@ -15,7 +21,7 @@ Frontend progress note, 11 November 2026: a [browser-reviewable React Native Web
 
 Build and review a native demo before committing to production implementation. The demo proves a coherent interaction and feasible platform boundaries. A subsequent data-readiness stage proves whether the intended real buying claims can be supported. Production acceptance requires both; one does not substitute for the other.
 
-Initial clients remain Android and Windows. Initial content remains Vietnamese laptop selection with VND totals. React Native shares domain/feature contracts; the Windows and Android shells adapt to WinUI 3 and Material 3 Expressive respectively. Do not replace the native requirement with an HTML prototype without an explicit product decision.
+Android is the only app delivery platform. Implement screens with React Native and TypeScript using Android-backed components; HTML/CSS is for design previews only, as confirmed by the user on 12 November 2026. Initial content is Vietnamese laptop selection with VND totals. Apply Material 3 Expressive through the app design system. Native feasibility concerns the installed React Native Android app; app screens do not require a WebView or a Kotlin/Compose rewrite.
 
 The minimum demo path is: Discover → guided needs/review → shortlist → exact variant detail → two-device comparison → sample offers → saved decision. The existing [HTML concept](../../research/mobile-adviser-concept.html) is an interaction reference, not a native codebase or completion evidence.
 
@@ -24,24 +30,24 @@ The minimum demo path is: Discover → guided needs/review → shortlist → exa
 | Gate | Decision | Evidence required | Decision owner |
 |---|---|---|---|
 | G0 | Start the scoped demo | Named sponsor/technical owner, scope and scenario, target devices, proposed acceptance baseline, versioned plan | Product owner with technical lead |
-| G1 | Native approach is viable | Android/Windows release builds, native budget/task/command controls, state-event round trip, lifecycle/focus/Back/resizing checks, dependency matrix and limitations | Technical lead; sponsor decides any requirement change |
+| G1 | Native approach is viable | Installed React Native Android release build, budget/task/command controls, state-event round trip, Expressive component spike, lifecycle/focus/Back/IME/window checks, dependency matrix and limitations | Technical lead; sponsor decides any requirement change |
 | G2 | D0 interaction demo is ready | Full local journey, fixture invariants, save/restart/delete, visible sample labels, installation/run instructions and known issues | QA/design recommend; product owner accepts |
 | G3 | Demo supports a production decision | D1 real provider interaction, output rejection/fallback, exploratory usability findings, revised estimate and a recorded accept/revise/stop decision | Product owner / sponsor |
 | G4 | Real-data implementation is ready to proceed | Confirmed source usage/retention, audited starter coverage, workload evidence, operating owners, approved production scope/capacity and acceptance thresholds | Product owner, data lead, technical lead |
 | G5 | Pilot is ready for a defined wider release | Production test/audit results, actual device measurements, restore/rollback and support readiness, pilot findings and unresolved issue decision | Product owner / sponsor |
 
-G3 requires D0 and D1 unless a D1 deferral is explicitly recorded. With no model access, D0 may be delivered and reviewed, while D1 remains pending. Provider absence must not be hidden behind a scripted response. G3 does not approve all 37 documented backlog journeys. G4 authorizes the bounded production pilot, not global rollout.
+G3 requires D0 and D1 unless a D1 deferral is explicitly recorded. With no model access, D0 may be delivered and reviewed, while D1 remains pending. Provider absence must not be hidden behind a scripted response. G3 does not approve all 36 source-backlog journeys. G4 authorizes the bounded production pilot, not global rollout.
 
 ## 3. First executable slice
 
-The first implementation work is a single native screen on each platform containing an exact VND ceiling input, multiple task choices and a command to show the resulting typed profile. Use the same TypeScript domain contract and display the same values on both clients.
+The first implementation work is a single React Native Android screen containing an exact VND ceiling input, multiple task choices and a command to show the resulting typed profile. Use a typed TypeScript domain contract and verify displayed values and events in the installed Android app.
 
-1. Inventory the local Node/package manager, JDK/Android SDK, Visual Studio C++/Windows SDK, test devices and build capabilities without assuming they exist.
-2. Select a compatible React Native/RNW Fabric pair and the native SDK/library versions. Initialize from supported templates, compile both hosts and commit the lockfile/version matrix.
-3. Expose a small WinUI 3 control group and a Compose Material 3 Expressive group through supported native boundaries. Verify actual control usage, event delivery, sizing and accessible semantics.
+1. Inventory the local Node/package manager, JDK, Android SDK/Gradle, emulator, physical Android device access, signing setup and build capabilities without assuming they exist.
+2. Select compatible React Native, Android toolchain and component-library versions. Initialize an Android host from a supported template, build/install the release variant and commit the lockfile/version matrix.
+3. Build budget input, task selection and result/action components using React Native and Expressive tokens. Verify Android-backed control usage, events, sizing, TalkBack semantics and required Expressive behavior. Identify any small custom Android adapter needed; Compose hosting is not the default UI architecture.
 4. Exercise budget edits, multiple task selection, keyboard/Back, theme and repeated mount/unmount. Record failures before adding screens.
 
-Completion is G1. If a native control cannot be hosted reliably, adjust the boundary and investigate with a bounded spike; do not spend the full demo budget rebuilding a general widget library. Any switch to a separate front end or styling-only implementation requires a visible scope/estimate decision.
+Completion is G1. If an Android component cannot provide required behavior reliably, adjust the component boundary and investigate with a bounded spike; do not spend the full demo budget rebuilding a general widget library. Any switch to a separate front end or styling-only implementation requires a visible scope/estimate decision.
 
 ## 4. Demo backlog
 
@@ -50,11 +56,11 @@ Role names below represent responsibilities rather than assumed staff headcount.
 | ID | Work and tangible output | Dependencies | Owner | Acceptance / gate |
 |---|---|---|---|---|
 | PREP-01 | Freeze one scenario, identify test hardware and agree D0/D1 acceptance; capture current risks and unsupported capabilities | None | Product + design + lead | G0 record; no unowned prerequisite |
-| DEMO-01 | Create pinned Android/Windows hosts and reproducible build instructions | PREP-01 | Native lead | Both hosts run; versions and supported architecture recorded |
-| DEMO-02 | Implement essential native control adapters and shared state round trip | DEMO-01 | Native lead | T-D01 and initial T-D07; G1 |
+| DEMO-01 | Create a pinned React Native Android host and reproducible build instructions | PREP-01 | Native lead | Android release build installs/runs; versions and supported architectures recorded |
+| DEMO-02 | Implement Android component/theme feasibility and typed state round trip | DEMO-01 | Native lead | T-D01 and initial T-D07; G1 |
 | DEMO-03 | Define domain schema, versioned fixtures, frozen clock and validation/reset workflow | PREP-01; finalize UI contracts after 02 | Domain/data developer | Fixture validation; required scenario matrix covered |
 | DEMO-04 | Implement pure eligibility, money, offer selection, ranking, explanations and exclusions | DEMO-03 | Domain developer + reviewer | T-D02–04; no critical invariant failures |
-| DEMO-05 | Implement app shells, guided picker with ordered uses/review, result refinement, local search and profile edits | DEMO-02, 04 | Client + design | U01/U02 limited demo path; T-D03/05; picker contract §23 |
+| DEMO-05 | Implement Android app shell, guided picker with ordered uses/review, result refinement, local search and profile edits | DEMO-02, 04 | Client + design | U01/U02 limited demo path; T-D03/05; picker contract §23 |
 | DEMO-06 | Add variant detail/provenance, paired comparison, sample offers and contextual explanation surface | DEMO-05 | Client | U03–05 simulated/data-limited coverage; T-D04/05/07 |
 | DEMO-07 | Add local saved decision, restore/delete, visible data mode and scenario reset | DEMO-06 | Client | T-D06 and no real purchase implication |
 | DEMO-08 | Finish failure states, accessibility, release measurements and installation packages | DEMO-05–07 | QA/native/client | T-D01–08; G2 evidence and issue register |
@@ -100,21 +106,22 @@ Fixture workload assumptions demonstrate software behavior, not hardware buying 
 
 ```text
 apps/adviser/
-  android/  windows/
+  android/
   src/
-    app/              # routes, Android/Windows shells
+    app/              # routes and Android app shell
     domain/           # typed entities, validation, money, eligibility, ranking
     data/             # repository contracts, fixtures, local persistence
     features/         # needs, results, detail, compare, saved
-    ui/               # public semantic contracts and platform-specific files
-    native/           # component specs and host integration
+    ui/               # React Native components, tokens and state contracts
+    native/           # optional Android adapter specs and host integration
     localization/     # Vietnamese copy and locale formatting
     demo/             # fixture scenarios, fixed clock, reset and mode notice
+design-previews/      # HTML/CSS screen studies; no app runtime dependency
 services/demo-ai/      # D1 only
 docs/decisions/
 ```
 
-No independently published packages, database or job queue is needed for D0. Extract modules only when actual sharing warrants it. Adopt third-party navigation/storage/list libraries only after verifying the selected RNW architecture supports the required behavior.
+No independently published packages, database or job queue is needed for D0. Extract modules when reuse warrants it. Verify navigation/storage/list/animation library compatibility with the chosen React Native Android version. Keep HTML/CSS previews separate; share token values and state examples where useful, without DOM or CSS runtime dependencies in app screens.
 
 ### 6.2 Shared contracts
 
@@ -124,13 +131,13 @@ No independently published packages, database or job queue is needed for D0. Ext
 - RecommendationRun: profile revision, dataset/rules versions, eligible IDs, reasons, exclusions and unknowns.
 - SavedDecision: stable references plus sufficient dated display context for restore.
 - CatalogRepository, DecisionStore and Clock interfaces: fixture/local adapters first, API/current-time adapters later.
-- AdviserService: proposed profile edits and grounded explanations only; validation/fallback applies equally to both clients.
+- AdviserService: proposed profile edits and grounded explanations only; validation/fallback applies to every Android app flow.
 
 Recommendation math is pure shared TypeScript in the demo. Production moves authoritative evaluation and price resolution behind a typed service while preserving fixtures/contract tests. Avoid simultaneously authoritative client/server calculations with different versions.
 
 ### 6.3 Reusable UI boundaries
 
-AppShell, BudgetField, ChoiceGroup, NeedsSummary, ProductSummary/RecommendationCard, PriceSummary/OfferList, CompareSelection/ComparisonView, EvidenceView, ExplanationPanel and FeedbackState are the initial inventory. Share meaning, state and event contracts; adapt shell/navigation, density, focus, dialogs and controls per platform. Avoid per-label native composition hosts and global state updates for every explanation token.
+AppShell, BudgetField, ChoiceGroup, NeedsSummary, ProductSummary/RecommendationCard, PriceSummary/OfferList, CompareSelection/ComparisonView, EvidenceView, ExplanationPanel and FeedbackState are the initial inventory. Share meaning, state and event contracts; adapt shell/navigation, density, focus, dialogs and controls to Android window size/input. Avoid unnecessary custom native composition hosts and global state updates for every explanation token.
 
 ### 6.4 D1 AI service
 
@@ -150,13 +157,13 @@ All tests below are planned. Store results with build commit, package/dependency
 
 | ID | Verification and evidence |
 |---|---|
-| T-D01 | Native host/release-build and value-event round-trip on both clients |
+| T-D01 | React Native Android release build/install, value-event round-trip and Expressive component spike |
 | T-D02 | Exact budget/integer-money boundaries, mandatory charges, eligibility and non-stacking calculation cases |
 | T-D03 | Questionnaire branching, answer-state semantics, dependency clearing, hard constraints, unknowns and no-fit behavior |
 | T-D04 | Variant identity, assertion provenance, offer validity and total-completeness presentation |
 | T-D05 | Full selection/detail/comparison flow, profile revision invalidation and navigation state |
 | T-D06 | Local save, restart/restore, delete and reset scopes |
-| T-D07 | Keyboard, screen reader, text scaling, theme/contrast, Android Back/IME and adaptive windows |
+| T-D07 | TalkBack, external keyboard, text/display scaling, theme/contrast, reduced motion, Back/IME and adaptive Android windows; AC-UX01–05 |
 | T-D08 | Offline/failure recovery, repeated native lifecycle operations, release performance and memory observations |
 | T-D09 | Real AI request, proposed-edit review, invalid IDs/claims, timeout/cancellation, fallback and client secret inspection |
 | T-D10 | Reproducible demo script and exploratory comprehension/task sessions |
@@ -184,7 +191,7 @@ At REVIEW-01, use approximately five exploratory participants with different tec
 
 ## 9. Demo review and transition to production
 
-The G3 decision pack contains both platform artifacts, the scripted scenario, D0/D1 verification results, native integration decisions, observed usability issues, remaining technical/data risks, measured effort/cost and a revised production proposal. Record one outcome: accept bounded production readiness; revise/retest named gaps; or stop/pivot with reasons.
+The G3 decision pack contains the Android install artifact and build/configuration records, the scripted scenario, D0/D1 verification results, native integration decisions, observed usability issues, remaining technical/data risks, measured effort/cost and a revised production proposal. Record one outcome: accept bounded production readiness; revise/retest named gaps; or stop/pivot with reasons.
 
 Do not carry artificial hardware assumptions, fixed clocks, sample discounts or permissive local access into production. Keep fixture mode useful for regression tests, but exclude it from production import/publication and label it explicitly in internal preview environments.
 
@@ -210,7 +217,9 @@ After G5, review demand, cost and dependency readiness before selecting E/L scop
 
 ## 10. Capacity, estimate and cost controls
 
-Earlier sizing hypothesis: D0 including the native feasibility slice might take 15–25 focused engineering days for someone already competent in React Native and the native stacks; D1 might add 3–5. Version 2.0's detailed acceptance work has not been estimated task by task, so these figures are historical planning context, not the execution budget. They exclude unresolved platform blockers, participant recruitment/review waits and source negotiations. Do not schedule a release against them.
+The Android-only revision removes desktop build/adapter/test work and adds explicit Expressive component validation. Earlier multi-platform estimates do not establish effort for this baseline; re-estimate after Android G1.
+
+Earlier sizing hypothesis: D0 including the native feasibility slice might take 15–25 focused engineering days for someone already competent in React Native and Android integration; D1 might add 3–5. Version 2.0's detailed acceptance work has not been estimated task by task, so these figures are historical planning context, not the execution budget. They exclude unresolved platform blockers, participant recruitment/review waits and source negotiations. Do not schedule a release against them.
 
 After DEMO-02, replace that range with a task-based estimate reflecting actual integration results, available specialists, QA/design effort and device access. Do not divide effort by headcount mechanically. The earlier illustrative 10–14 week pilot timeline is historical context, not an approved baseline. Estimate production after G3/G4 evidence; no dependable total project price or release date exists yet.
 
@@ -218,7 +227,7 @@ Track native/client engineering, design/research, backend/AI, data review/operat
 
 ## 11. Handover and change control
 
-Demo handover: repository/lockfile, native dependency matrix and decisions, Android install artifact and Windows package/run artifact with prerequisites/signing notes, fixture schema/data and local maintenance procedure, domain/flow checks and results, scenario script, performance observations, AI mode/configuration instructions, known issues and the G3 decision pack. A recording is useful supporting evidence but does not replace runnable builds.
+Demo handover: repository/lockfile, native dependency matrix and decisions, Android review APK and release AAB where required by the selected distribution channel with prerequisites/signing notes, fixture schema/data and local maintenance procedure, domain/flow checks and results, scenario script, performance observations, AI mode/configuration instructions, known issues and the G3 decision pack. A recording is useful supporting evidence but does not replace runnable builds.
 
 Production handover adds permitted-source records, API/data contracts, restricted admin workflows, publication/correction history, refresh/freshness policies, restore/rollback evidence, support and incident runbooks, environment/secret instructions, acceptance results and pilot findings.
 
@@ -228,13 +237,13 @@ Every material scope change names affected U/A/BR/NFR IDs, stage, revised depend
 
 Start PREP-01, DEMO-01 and the bounded DEMO-02 native slice. Define DEMO-03 fixtures/contracts while the slice is explored. Review G1 before continuing with DEMO-05/06. Finish D0 and the planned D1 checkpoint, conduct REVIEW-01, and record G3 before beginning REAL-02/03 production engineering. If the sponsor explicitly defers D1, REVIEW-01 records that decision and the missing AI evidence; the D1 packages remain pending rather than completed.
 
-Reference mechanisms: [RNW architecture](https://microsoft.github.io/react-native-windows/docs/new-architecture/), [Fabric components](https://reactnative.dev/docs/fabric-native-components-introduction), [Compose/View lifecycle](https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/compose-in-views), [Material 3 Expressive](https://developer.android.com/develop/ui/compose/designsystems/material3). Verify exact library/toolchain compatibility during DEMO-01; no version pair has been proven by writing this plan.
+Reference mechanisms: [React Native components](https://reactnative.dev/docs/intro-react-native-components), [Fabric components](https://reactnative.dev/docs/fabric-native-components-introduction), [Building with M3 Expressive](https://m3.material.io/blog/building-with-m3-expressive), [Material motion](https://m3.material.io/styles/motion) and [Android Material guidance](https://developer.android.com/develop/ui/compose/designsystems/material3). Compose documentation supplies design/native reference context, not a requirement to implement Compose screens. Verify React Native Android component/toolchain compatibility during DEMO-01/02.
 
 ## 13. Work readiness and completion contracts
 
 Before starting any package, identify inputs, owner, supported platform/data mode, linked requirements/acceptance cases, dependencies and evidence destination. If an assumption affects the user-visible outcome, record it rather than implementing an implicit default. An unavailable provider or device is a named dependency, not a successful stubbed check.
 
-A package is done only when its declared output is reviewable, linked tests/manual checks have actual results, relevant clients build, defects have severity/owner, and setup/limitations are documented. A checked-in component or screenshot alone does not finish the complete journey. These are implementation policies to adopt when building; this document revision runs documentation checks only.
+A package is done only when its declared output is reviewable, linked tests/manual checks have actual results, the Android app builds, defects have severity/owner, and setup/limitations are documented. A checked-in component or screenshot alone does not finish the complete journey. These are implementation policies to adopt when building; this document revision runs documentation checks only.
 
 Recommended build increments have outcomes rather than fixed dates:
 
@@ -249,11 +258,11 @@ Recommended build increments have outcomes rather than fixed dates:
 | Package | Concrete subtasks and output | Completion evidence |
 |---|---|---|
 | PREP-01 | Record scope, selected scenario and supported devices; assign reviewer roles; list provider/device/toolchain dependencies; draft gate record and known issue log | Product owner can state what D0/D1 demonstrate and what remains simulated; G0 inputs are named |
-| DEMO-01 | Inventory SDKs; select compatible versions; initialize Fabric hosts; add lockfile and environment example without secrets; define development/release commands; build/install on both targets | Fresh setup instructions, actual build logs, native SDK/version/architecture matrix and launch evidence |
-| DEMO-02 | Define budget/task native specs; implement Android and Windows hosts; bridge value/change/submit events; handle focus, size, theme and disposal; exercise mount/reopen | Same typed values round-trip on both platforms; keyboard/Back and accessible labels work; native control identity recorded; G1 issues resolved or scope decision recorded |
+| DEMO-01 | Inventory SDKs; select compatible versions; initialize the React Native Android host; add lockfile and environment example without secrets; define development/release commands; build/install on Android targets | Fresh setup instructions, actual build logs, native SDK/version/architecture matrix and launch evidence |
+| DEMO-02 | Define budget/task native specs; implement the Android component layer; connect value/change/submit events; handle focus, size, theme and disposal; exercise mount/reopen | Typed values round-trip in the installed Android app; keyboard/Back and accessible labels work; native control identity recorded; G1 issues resolved or scope decision recorded |
 | DEMO-03 | Define runtime schemas and IDs; create synthetic dataset and provenance; implement fixed clock; validate referential integrity; provide scenario reset and controlled fixture-edit/preview process | Invalid records and cross-variant offers rejected; twelve/eighteen/three fixture counts validated; no live retailer destinations; dataset/rules versions shown |
 | DEMO-04 | Implement integer-money calculation; resolve eligibility/known totals; apply hard constraints; rank soft preferences; generate structured reasons and exclusions; add stable tie-breaking | Domain checks cover exact-ceiling, conditional/partial totals, unknowns, expired offers and no-fit; results deterministic for identical input versions |
-| DEMO-05 | Build platform shells; implement route-specific picker/review, ordered uses, profile revisions, result cards/refinement, bounded search and async cancellation | AC-U01-01–10 and AC-U02-01–04 demonstrated within the fixture boundary with supporting DEMO-03/04/06/07 work; stale results cannot overwrite current input |
+| DEMO-05 | Build the Android app shell; implement route-specific picker/review, ordered uses, profile revisions, result cards/refinement, bounded search and async cancellation | AC-U01-01–04 and AC-U02-01–04 demonstrated within the fixture boundary with supporting DEMO-03/04/06/07 work; stale results cannot overwrite current input |
 | DEMO-06 | Bind detail/offer content to variant IDs; build paired comparison; expose evidence/unknowns; implement sample-offer action and explanation surface | AC-U03-01–03, AC-U04-01–04 and AC-U05-01–04 in sample mode; no real transaction or fictitious retailer handoff |
 | DEMO-07 | Define saved schema/version; add save acknowledgement and error path; restore after restart; delete individual/all local records as explicit actions; preserve mode/date labels | AC-U07-01/02/04 and AC-U08-01/02; failed write does not say saved, corrupt record does not erase healthy records; permission-refusal checks apply when a feature actually requests that permission |
 | DEMO-08 | Add named failure scenarios; verify input/accessibility/adaptive behavior; collect release startup/render/memory observations; create reproducible install artifacts and limitations record | G2 evidence, T-D01–08 and no unresolved S0/S1 in scoped D0; platform gaps are visible rather than masked by desktop HTML |
@@ -294,7 +303,7 @@ Local persistence writes should be recoverable and versioned. A failed write pre
 
 Proposed service envelopes contain request ID, decision ID, profile revision, schema version, dataset/rule version and input payload. Responses repeat the relevant versions and have an explicit success/clarification/error mode. Errors have a stable code, useful safe message and retryability; raw provider errors or secrets do not enter the view.
 
-For D0, repository/service calls can be in-process. For D1, the thin AI server is an actual network boundary. Document how a physical Android device, emulator and Windows client reach the development service; use narrow controlled access and appropriate transport. Do not embed a developer machine's address as a production endpoint or broadly expose the service merely to make a demo work.
+For D0, repository/service calls can be in-process. For D1, the thin AI server is an actual network boundary. Document how a physical Android device and emulator reach the development service; use narrow controlled access and appropriate transport. Do not embed a developer machine's address as a production endpoint or broadly expose the service merely to make a demo work.
 
 ## 16. AI implementation and evaluation details
 
@@ -340,14 +349,14 @@ Evaluate a small fixed set covering: clear Vietnamese request, ambiguous budget,
 | Component group | Shared responsibility | Platform evidence before calling it ready |
 |---|---|---|
 | BudgetField / ChoiceGroup | Typed amount, selection semantics, field errors and change/submit events | Actual native control group, locale input, screen-reader labels, focus and repeated update behavior |
-| AppShell / navigation | Same destination and decision state | Windows keyboard/focus/window resizing; Android Back/IME/insets; no lost context after reopening a view |
+| AppShell / navigation | Same destination and decision state | Android keyboard/focus/window resizing, Back/IME/insets; no lost context after reopening a view |
 | Cards / offers / evidence | Exact identity, meaningful status, actions and source context | Readable compact/wide layouts, large text, accessible action names, no color-only eligibility |
 | Comparison | Stable pair and normalized criteria | Narrow-screen readable sections; desktop column alignment; replacing one selection does not lose the other |
 | Explanation surface | Current context, loading/mode/error and user confirmation | Correct modal/pane focus, keyboard avoidance, dismissal/reopen and lifecycle disposal |
 
 Choose control-group boundaries during DEMO-02 based on ownership/lifecycle behavior, not a target percentage of shared JSX. Document which controls are genuinely native and which content uses shared primitives. Inspect code and behavior; screenshots alone cannot establish native identity or accessible semantics.
 
-Create a compatibility record with exact RN/RNW, native SDK/compiler/JDK/Gradle/Compose versions, architecture, OS/device and each dependency's required feature. Status is tested, blocked, not tested or rejected, with evidence. Pick minimum supported OS/hardware after the spike; do not infer broad support from one developer machine or an emulator.
+Create a compatibility record with exact React Native, Android SDK/JDK/Gradle, component and animation-library versions, architecture, OS/device and each dependency's required feature. Status is tested, blocked, not tested or rejected, with evidence. Pick minimum supported OS/hardware after the spike; do not infer broad support from one developer machine or an emulator.
 
 ## 18. Test execution, evidence and release procedures
 
@@ -357,7 +366,7 @@ Domain checks run without a device and use manually reasoned expected values for
 
 Repository/schema checks exercise invalid IDs, import retry, saved-schema compatibility and corrupted local records. Component/flow checks cover confirmation, selection and outdated response rejection. Native/device checks cover actual control/input/accessibility behavior and release packaging. AI contract checks include both controlled invalid output and at least one real provider-backed request. Manual buyer sessions address comprehension rather than code coverage.
 
-Use an appropriate Windows runner to build RNW and a configured Android toolchain for Android; record unavailable CI/device checks explicitly. Define prospective scripts such as `check:types`, `check:fixtures`, `check:domain`, `build:android`, `build:windows` and `verify:demo` during implementation. They are not commands that can be run in the current research-only repository yet.
+Use a configured React Native Android build runner and Android device/emulator setup; record unavailable CI/device checks explicitly. Define prospective scripts such as `check:types`, `check:fixtures`, `check:domain`, `build:android` and `verify:demo` during implementation. They are not commands that can be run in the current research-only repository yet.
 
 ### 18.2 Evidence bundle
 
@@ -374,7 +383,7 @@ Use an example future layout `evidence/<run-id>/{manifest,results,artifacts,obse
 
 ### 18.3 Proposed performance protocol
 
-At G1, name a representative Android device and Windows laptop and their OS/RAM/display/power state. At DEMO-08, use release builds, the same fixture/version, a defined list-scroll path, cold and warm launches, and offline/provider-timeout scenarios. Collect at least 30 samples per timing case for an initial distribution; this is a provisional collection floor, not proof of precise tail behavior. Report all samples, median, range and failures; any p95 estimate includes count and methodological limits and may require a larger run.
+At G1, name representative Android devices and their OS/RAM/display/power state. At DEMO-08, use release builds, the same fixture/version, a defined list-scroll path, cold and warm launches, and offline/provider-timeout scenarios. Collect at least 30 samples per timing case for an initial distribution; this is a provisional collection floor, not proof of precise tail behavior. Report all samples, median, range and failures; any p95 estimate includes count and methodological limits and may require a larger run.
 
 Exercise repeated open/close/back cycles and inspect memory/resource trends after settling. A universal memory ceiling is not invented before the native spike. Investigate sustained growth, long UI stalls and regressions relative to the same device baseline. Reconcile observations with NFR-04–06; record accepted limitations rather than silently changing a target after measurement.
 
@@ -422,7 +431,7 @@ Decision log fields: ID, date, owner, question, options/evidence, decision or pe
 
 ## 21. Reproducible demo review script
 
-Use the same prepared synthetic dataset and a clean scenario reset on both platforms. The scenario price/ceiling is an example, not a market recommendation.
+Use the same prepared synthetic dataset and a clean scenario reset on the Android test matrix. The scenario price/ceiling is an example, not a market recommendation.
 
 1. Open Discover; reviewer identifies the sample-data label and starts without signup.
 2. Select study/coding, enter VND 22 million as an exact total ceiling, answer a VM branch and inspect the review. Change an answer and confirm what is hard versus preferred.
@@ -432,7 +441,7 @@ Use the same prepared synthetic dataset and a clean scenario reset on both platf
 6. Open sample offers; identify a complete total, a conditional discount and unknown shipping. Select the sample action and confirm it does not claim a real checkout.
 7. Save the decision, restart, reopen and delete it; demonstrate the expected response to a simulated persistence failure separately.
 8. At D1, use a synthetic natural-language request, review proposed edits, confirm a change and ask for an explanation. Trigger timeout/invalid output; identify the fallback mode and unchanged authoritative product facts.
-9. Repeat the core path with keyboard-only Windows input and an Android Back/large-text check. Record any untested accessibility/device combination.
+9. Repeat the core path with Android TalkBack/external-keyboard input and Back/large-text/reduced-motion checks. Record any untested accessibility/device combination.
 10. Summarize observed issues and decide accept/revise/stop using the gate record. Do not interpret the rehearsal as a live-price or national-market validation.
 
 ## 22. Required planning and delivery records
@@ -458,12 +467,12 @@ This section expands U01 and A06/A07, not the number of parent features. It foll
 |---|---|---|
 | PREP-01 | Product/design confirms supported use cases, additional-task capture, shortcut amounts and ranking interpretation; record estimate delta | Scope note explicitly lists unsupported work; no automatic support for all competitor categories |
 | DEMO-03 | Domain/data owner versions profile, picker policy and fixtures; adds numeric screen size and task-level synthetic evidence; migration/reset rules | Validated schema and reproducible ordered-use, extra-task, filter-empty and compromise scenarios |
-| DEMO-04 | Domain developer implements pure eligibility, task evidence, ranking and refinement selectors | T-D03 boundary cases and AC-U01-05–09; changing preference order cannot waive mandatory requirements |
+| DEMO-04 | Domain developer implements pure eligibility, task evidence, ranking and refinement selectors | T-D03 boundary cases and AC-U01-01–04; changing preference order cannot waive mandatory requirements |
 | DEMO-05 | Client/design adds picker entry, accessible use ordering, budget shortcuts, relevant branches, review and result filters | T-D05 flow; state retained on Back/edit and errors; native controls remain subject to G1 |
-| DEMO-06/07 | Client connects per-task explanations and exploratory details to existing compare/save; persists and migrates picker context | AC-U01-09/10, dated saved snapshot, unsupported schema recovery |
+| DEMO-06/07 | Client connects per-task explanations and exploratory details to existing compare/save; persists and migrates picker context | AC-U07-01/02, dated saved snapshot, unsupported schema recovery |
 | DEMO-08 | QA checks compact/wide layouts, large text, focus/Back, order announcement, stale results and release responsiveness | Existing T-D05/06/07 plus new acceptance evidence; no unmeasured performance claim |
 | DEMO-09/10 | AI developer accepts typed proposed edits, validates task IDs/order and confirms changes | Existing T-D09; model cannot change price, silently raise budget or override hard fit |
-| REAL-02/03 | Data/reviewer/client replaces synthetic rules with permitted evidence, production publication and source conditions | AC-A06-03, T-P03/05, provenance and rollback record |
+| REAL-02/03 | Data/reviewer/client replaces synthetic rules with permitted evidence, production publication and source conditions | AC-A06-01/02, T-P03/05, provenance and rollback record |
 
 Keep existing package dependencies and stage gates. Additions change effort and must be included in the post-G1 estimate; no new delivery date or budget is committed here. D0 uses source-controlled policy and a local simulation harness, not a new production admin portal.
 
@@ -491,7 +500,7 @@ Exploration runs only after an explicit user action. It may show excluded option
 
 Use a common `PickerState` and domain selectors with `RankedUseCaseSelector`, `BudgetField`, `NeedsReview`, `ActiveFilterSummary`, `TaskFitSummary` and existing product/offer/comparison components. Keep these inside U01 and its supporting journeys, not as independent user features.
 
-On Android, use short steps, visible progress and an applied-filter summary above results; advanced refinements open in an accessible sheet. On Windows, use a resizable input/review pane next to results. Provide move-earlier/later buttons and announced rank; drag may be optional, never the only reorder mechanism. Focus moves predictably after removal, filter application and no-results messages. A quick route is available without signup, and no unsupported destination appears functional.
+On Android, use short steps, visible progress and an applied-filter summary above results; advanced refinements open in an accessible sheet. On expanded Android windows, use an input/review pane next to results where readable. Provide move-earlier/later buttons and announced rank; drag may be optional, never the only reorder mechanism. Focus moves predictably after removal, filter application and no-results messages. A quick route is available without signup, and no unsupported destination appears functional.
 
 ### 23.5 Verification and review script
 
@@ -504,5 +513,37 @@ On Android, use short steps, visible progress and an applied-filter summary abov
 7. Compare and save; reopen a v2 decision and migrate a v1 fixture. Verify task context, original observations and truthful unknown ordering.
 8. Simulate a bad policy revision under A06/A07, record blocked activation, then restore the prior version. Historical decisions remain interpretable.
 
-Map these to AC-U01-05–10 and AC-A06-03 in the traceability register. Run focused domain and flow checks when implemented; do not count today's documentation validation or previous 26 browser assertions as passing these cases. During exploratory buyer review, record whether participants understand priority versus requirement, hard ceiling, filter-empty and compromise labels.
+Map these to AC-U01-01–04 and AC-A06-01/02 in the traceability register. Run focused domain and flow checks when implemented; do not count today's documentation validation or previous 26 browser assertions as passing these cases. During exploratory buyer review, record whether participants understand priority versus requirement, hard ceiling, filter-empty and compromise labels.
 
+
+## 24. React Native Android and Material 3 Expressive delivery contract — v3.0
+
+### 24.1 Runtime and preview boundary
+
+Use TypeScript/TSX React Native screens, Android-backed controls and a reusable app design-system layer. React Native styles implement app presentation; HTML/CSS implements browser design previews. Preview CSS variables can mirror the same token source. There is no separately supported web/desktop release or WebView product UI. Add small Android native modules only for actual integration needs and verify them at G1.
+
+The existing browser prototype is interaction/reference evidence. Review domain logic for reuse and verify it against fixtures in the Android app. Passing browser checks cannot satisfy Android device acceptance.
+
+### 24.2 Design work and component evidence
+
+Follow [Building with M3 Expressive](https://m3.material.io/blog/building-with-m3-expressive), supported by [Material motion](https://m3.material.io/styles/motion) and [Android Material guidance](https://developer.android.com/develop/ui/compose/designsystems/material3). Color, type, shape, motion and component emphasis guide attention and make actions legible. The mappings below are project design decisions evaluated under brd.md §11.1.
+
+| Package | Design/Android deliverable | Evidence |
+|---|---|---|
+| PREP-01 | Expressive screen/state inventory and token/component checklist; named Android devices and reviewer. | Discovery, picker/review, results, detail, comparison, offers, saved and failure-state coverage. |
+| DEMO-01/02 | Pin Android tooling; inspect Material/component/animation library candidates; implement one budget/task/result screen. | Installed release APK; component/version/API coverage marked tested/blocked/not tested; Expressive support verified separately from generic Material 3 support. |
+| DEMO-03/04 | Supply typed synthetic task-fit and complete/partial-price states. | Domain invariants independent of theme/motion. |
+| DEMO-05/06 | Implement theme, reusable components and scoped journeys; map HTML/CSS studies to app states. | AC-UX01/02/05, device/build-specific screenshots and interaction observations; compact/expanded layouts with visible caveats. |
+| DEMO-07/08 | Check saved states, themes, scaling, TalkBack, touch targets, Back/IME, reduced motion and recreation. | AC-UX03–05 and T-D06/07/08 on Android; measured responsiveness and limitations. |
+
+Use one token source for semantic colors, typography, shapes, spacing and motion roles, mapped to React Native styles and preview CSS variables. Provide light/dark themes, dynamic color where supported and a fallback palette. Record font licenses and verify Vietnamese glyphs. Keep fit/price statuses understandable without color. Motion supports state changes and respects reduced/disabled animation; it does not delay a user's decision.
+
+Keep a component matrix for budget input, ordered-use choices, primary actions, cards, filters, navigation, comparison, loading/progress, dialogs and chat. For each, record library/version, Expressive behavior, accessible states, custom work and test evidence. Choose libraries at G1; this plan does not assert untested package compatibility. Use the Expressive scheme and suitable spring-based motion where supported, with an accessible no-motion equivalent. G1 must record any adaptation required by the React Native stack.
+
+Apply the article’s design tactics to this product: contrasting shapes distinguish the primary action; semantic color and emphasized type focus the budget and task summary; containers group reasons and price conditions; motion clarifies state changes; flexible components adapt to Android window size. Limit combined “hero” treatment to one or two important moments, such as confirming needs and revealing the shortlist. Keep offer tables and evidence readable. This mapping is a project proposal to review under AC-UX01–05, not a prescribed Google layout or proof of usability improvement.
+
+### 24.3 Android feasibility and review protocol
+
+Install the React Native release build on at least one named physical Android phone; use an emulator for additional OS/window configurations. Demonstrate exact VND input, task selection/reordering, typed state-event updates and a result action. Check Android Back, IME, edge-to-edge insets, TalkBack, font/display scaling, rotation/recreation, foreground/background return and reduced/disabled animation. Verify focus and state after closing sheets/dialogs. Record supported OS/architectures and missing device coverage at G1; repeat applicable checks across the full D0 journey at G2.
+
+Map AC-UX01–05 to T-D01/T-D05/T-D07/T-D08 in the evidence manifest. Previews support layout/state review; acceptance uses installed React Native Android behavior. Existing money, variant, evidence and AI invariants still apply. No feasibility, design or release check is passed by this planning revision.

@@ -1,0 +1,81 @@
+@import "./design-tokens.css";
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background: var(--lua-bg);
+  height: 100%;
+  min-width: 320px;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+button,
+input,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+input:focus,
+textarea:focus,
+[role="button"]:focus-visible {
+  outline: 2px solid #59409D;
+  outline-offset: 3px;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #8b958f;
+}
+::selection {
+  background: #DFF36F;
+  color: #211B30;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5ca;
+  border-radius: 5px;
+}
+a {
+  color: inherit;
+}
+svg {
+  vertical-align: middle;
+}
+@media (prefers-reduced-motion: no-preference) {
+  [data-testid="product-card"] {
+    transition:
+      transform 0.18s,
+      box-shadow 0.18s;
+  }
+  [data-testid="product-card"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px #243e3010;
+  }
+  [data-testid="toast"] {
+    animation: toast-in 0.18s ease-out;
+  }
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+@media print {
+  [data-testid="sidebar"],
+  [data-testid="mobile-nav"],
+  [data-testid="toast"] {
+    display: none !important;
+  }
+}
