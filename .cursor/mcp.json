@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gemini-notebook-mcp": {
+      "command": "C:\\Users\\luken\\.local\\bin\\notebooklm-mcp.exe",
+      "args": []
+    }
+  }
+}

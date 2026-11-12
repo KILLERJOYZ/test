@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Adaptive onboarding question routing</title>
+<style>
+html,body{margin:0;padding:0;background:transparent;color:var(--foreground);font-family:var(--font-sans,sans-serif)}
+#routing{width:100%;font-size:14px;line-height:1.5}
+#routing fieldset{margin:0 0 16px;padding:0;border:0}
+#routing legend{font-size:15px;font-weight:500;padding:0;margin-bottom:8px}
+#routing .choices{display:flex;flex-wrap:wrap;gap:8px}
+#routing label{display:flex;align-items:center;gap:8px;padding:10px 12px;background:var(--secondary);color:var(--secondary-foreground,var(--foreground));border-radius:var(--radius);min-height:24px}
+#routing input{accent-color:var(--primary);width:18px;height:18px;margin:0}
+#routing .result{border-top:1px solid var(--border);padding-top:16px}
+#routing .sub{color:var(--muted-foreground);font-size:12px;margin:0 0 12px}
+#routing h2{font-size:15px;font-weight:500;margin:0 0 10px}
+#routing ul{padding-left:20px;margin:0}#routing li{margin:0 0 10px}
+#routing .why{display:block;color:var(--muted-foreground);font-size:12px;margin-top:3px}
+#routing .flow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:18px;color:var(--muted-foreground);font-size:12px}
+#routing .flow span{padding:5px 0}
+#routing .foot{margin:14px 0 0;color:var(--muted-foreground);font-size:12px}
+#routing [hidden]{display:none}
+</style></head><body>
+<section id="routing" aria-label="Explore how device and task selections change follow-up questions. This is an illustrative routing concept, not the full application onboarding.">
+<fieldset><legend>What are you choosing? Select one.</legend><div class="choices"><label><input type="radio" name="category" value="laptop">Laptop</label><label><input type="radio" name="category" value="phone">Phone</label><label><input type="radio" name="category" value="desktop">Desktop PC</label></div></fieldset>
+<fieldset id="tasks" hidden><legend>What will you use it for? Select all relevant examples.</legend><div class="choices" id="task-choices"></div></fieldset>
+<div class="result" aria-live="polite"><h2>Relevant follow-ups</h2><div id="followups"><p class="sub">Choose a device to explore the question routing.</p></div></div>
+<div class="flow" aria-label="Proposed journey"><span>Common basics</span><span aria-hidden="true">→</span><span>Relevant follow-ups</span><span aria-hidden="true">→</span><span>Editable review</span><span aria-hidden="true">→</span><span>Options or a qualified preview</span></div>
+<p class="foot">Illustrative branches only. The full protocol also includes Other, Not sure, skipping where valid, exact-budget controls and later offer-specific questions. No recommendation or compatibility check is performed here.</p>
+</section>
+<script>
+(()=>{
+const root=document.getElementById('routing'),tasks=document.getElementById('tasks'),choices=document.getElementById('task-choices'),output=document.getElementById('followups');
+const data={
+laptop:[['office','Study / office'],['coding','Programming'],['gaming','Gaming']],
+phone:[['daily','Everyday apps'],['camera','Photography'],['outdoor','Outdoor / navigation']],
+desktop:[['office','Office / study'],['gaming','Gaming'],['creative','Creative work']]
+};
+const follow={
+coding:['Which applications and tools must work?','Ask about VMs or emulators only if the user uses them.'],
+gaming:['Which games matter, and what experience are you aiming for?','Use named titles and relevant evidence instead of a generic gamer label.'],
+camera:['What do you mainly photograph or record?','People, low light, distant subjects, moving video and work documents can lead to different priorities.'],
+outdoor:['How often can you charge during your day?','Clarify charging context; do not promise all-day battery from capacity alone.'],
+creative:['Which applications and project types do you work with?','Ask resolution, codec or model scale only when it affects the decision.']
+};
+let category='';
+function update(){
+const selected=[...choices.querySelectorAll('input:checked')].map(x=>x.value),items=[];
+if(category==='desktop')items.push(['What must your total PC budget include?','Confirm tower, monitor, peripherals and any parts being reused.']);
+for(const id of selected)if(follow[id])items.push(follow[id]);
+output.innerHTML=items.length?'<ul>'+items.map(x=>'<li>'+x[0]+'<span class="why">'+x[1]+'</span></li>').join('')+'</ul>':'<p class="sub">No extra critical question is triggered by these example selections. Required software, peripherals or accessibility needs may still need clarification.</p>';
+}
+root.addEventListener('change',e=>{
+if(e.target.name==='category'){category=e.target.value;tasks.hidden=false;choices.innerHTML=data[category].map(x=>'<label><input type="checkbox" value="'+x[0]+'">'+x[1]+'</label>').join('');update();}
+else if(e.target.closest('#task-choices'))update();
+});
+})();
+</script></body></html>

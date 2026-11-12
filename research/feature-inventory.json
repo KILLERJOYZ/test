@@ -1,0 +1,659 @@
+{
+  "date": "2026-11-10",
+  "market": "Vietnam",
+  "platforms": [
+    "Windows",
+    "Android"
+  ],
+  "status": "Proposed features; priorities and demand not validated",
+  "features": [
+    {
+      "id": 1,
+      "group": "Affordability and payment planning",
+      "name": "Hard budget and essentials reserve",
+      "benefit": "Keep a firm purchase ceiling and optionally reserve money for accessories and other user-defined essentials.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 2,
+      "group": "Affordability and payment planning",
+      "name": "Complete payable-price calculator",
+      "benefit": "Include delivery, required accessories, assembly, taxes not already included, and eligible immediate discounts.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 3,
+      "group": "Affordability and payment planning",
+      "name": "Installment total-cost comparison",
+      "benefit": "Compare down payment, every repayment, disclosed fees and optional extras against the cash purchase.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": true
+    },
+    {
+      "id": 4,
+      "group": "Affordability and payment planning",
+      "name": "User-controlled cash-flow scenarios",
+      "benefit": "Let users test repayment schedules against their own disposable-budget assumptions, without loan approval claims.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 5,
+      "group": "Affordability and payment planning",
+      "name": "Save-to-buy planner",
+      "benefit": "Calculate a savings schedule from a user-entered contribution and deadline; keep money outside the app.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 6,
+      "group": "Affordability and payment planning",
+      "name": "Benefit and entitlement finder",
+      "benefit": "Find eligible student, teacher, employee and manufacturer benefits, with documented conditions and expiry.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 7,
+      "group": "Affordability and payment planning",
+      "name": "Discount-combination checker",
+      "benefit": "Check coupon, card, membership and trade-in stacking rules; separate uncertain cashback from cash savings.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 8,
+      "group": "Affordability and payment planning",
+      "name": "Checkout extras review",
+      "benefit": "Explain required versus optional insurance, warranties, subscriptions and accessories before the user pays.",
+      "previouslyDiscussed": false,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 9,
+      "group": "Finding value and choosing when to buy",
+      "name": "Need-and-deadline deal alerts",
+      "benefit": "Watch several suitable exact configurations, with a target total and purchase deadline rather than one model.",
+      "previouslyDiscussed": true,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 10,
+      "group": "Finding value and choosing when to buy",
+      "name": "Comparable price history",
+      "benefit": "Track the same variant, condition and seller context, with observation coverage and missing periods visible.",
+      "previouslyDiscussed": true,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 11,
+      "group": "Finding value and choosing when to buy",
+      "name": "Real-discount evidence",
+      "benefit": "Compare current totals with observed selling prices instead of trusting a struck-through reference price.",
+      "previouslyDiscussed": true,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 12,
+      "group": "Finding value and choosing when to buy",
+      "name": "Previous-generation value finder",
+      "benefit": "Surface older models that still meet requirements and show remaining published support and purchasing tradeoffs.",
+      "previouslyDiscussed": false,
+      "phase": "pilot",
+      "highlight": true
+    },
+    {
+      "id": 13,
+      "group": "Finding value and choosing when to buy",
+      "name": "Configuration downgrade detector",
+      "benefit": "Expose reduced RAM, storage, display, GPU configuration or included items hidden behind similar model names.",
+      "previouslyDiscussed": false,
+      "phase": "pilot",
+      "highlight": true
+    },
+    {
+      "id": 14,
+      "group": "Finding value and choosing when to buy",
+      "name": "Local stock and inspection finder",
+      "benefit": "Show verified nearby stock, pickup options and places to inspect a shortlisted device before purchase.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 15,
+      "group": "Finding value and choosing when to buy",
+      "name": "Suitable substitute alerts",
+      "benefit": "Suggest alternatives when an offer expires or stock disappears, rechecking every hard requirement.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 16,
+      "group": "Finding value and choosing when to buy",
+      "name": "Buy-by-deadline decision aid",
+      "benefit": "Balance urgency, observed price ranges and availability; disclose when evidence cannot support waiting.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 17,
+      "group": "Safer used, refurbished and imported purchases",
+      "name": "Standardized condition comparison",
+      "benefit": "Separate new, open-box, refurbished, ex-display and used listings with specific evidence behind each label.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 18,
+      "group": "Safer used, refurbished and imported purchases",
+      "name": "Seller evidence profiles",
+      "benefit": "Show verifiable seller identity, policies, sourced complaint context, dates and sample sizes instead of opaque trust scores.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 19,
+      "group": "Safer used, refurbished and imported purchases",
+      "name": "Device inspection checklist",
+      "benefit": "Guide buyers through specification, screen, battery, ports, connectivity and ownership-lock checks appropriate to the model.",
+      "previouslyDiscussed": false,
+      "phase": "pilot",
+      "highlight": true
+    },
+    {
+      "id": 20,
+      "group": "Safer used, refurbished and imported purchases",
+      "name": "Region and ownership-lock checks",
+      "benefit": "Explain model-region, SIM/network and activation/management-lock concerns using authorized checks and visible unknowns.",
+      "previouslyDiscussed": true,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 21,
+      "group": "Safer used, refurbished and imported purchases",
+      "name": "Warranty and return comparison",
+      "benefit": "Compare written coverage, exclusions, claim routes, return costs and distance to service for each offer.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 22,
+      "group": "Safer used, refurbished and imported purchases",
+      "name": "Repair and replacement-part disclosures",
+      "benefit": "Collect seller-provided repair history and part disclosures, distinguishing documents from unverified statements.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 23,
+      "group": "Safer used, refurbished and imported purchases",
+      "name": "Independent inspection referral",
+      "benefit": "Offer an optional qualified inspection through transparent partners, with scope, price and responsibility stated.",
+      "previouslyDiscussed": false,
+      "phase": "partner",
+      "highlight": false
+    },
+    {
+      "id": 24,
+      "group": "Safer used, refurbished and imported purchases",
+      "name": "Net used-device value comparison",
+      "benefit": "Compare used and new options after known battery/service needs, warranty terms and complete purchase costs.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 25,
+      "group": "Personal suitability and decision support",
+      "name": "Application and workload fit",
+      "benefit": "Match actual tools, versions, project sizes and peripherals to exact configurations and support evidence.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 26,
+      "group": "Personal suitability and decision support",
+      "name": "Editable guided needs profile",
+      "benefit": "Support plain Vietnamese or English input, guided questions and user corrections to everything the AI extracts.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 27,
+      "group": "Personal suitability and decision support",
+      "name": "Evidence-linked advantages and disadvantages",
+      "benefit": "Explain consequential strengths and weaknesses for this person, with sources and measurement context.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 28,
+      "group": "Personal suitability and decision support",
+      "name": "Why included, why excluded, what is unknown",
+      "benefit": "Show decisive requirements, failed constraints, stale facts and missing tests without false certainty.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 29,
+      "group": "Personal suitability and decision support",
+      "name": "Comparison and budget tradeoff explorer",
+      "benefit": "Compare exact variants and show what changes when budget, weight, performance or another preference changes.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 30,
+      "group": "Personal suitability and decision support",
+      "name": "Accessibility and hands-on trial profile",
+      "benefit": "Capture text, hearing, dexterity and input needs; create a checklist to test real devices in a store.",
+      "previouslyDiscussed": true,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 31,
+      "group": "Personal suitability and decision support",
+      "name": "Comfort and working-environment fit",
+      "benefit": "Consider reading comfort, keyboard layout, noise, weight and workspace needs, using measurements or stated preferences.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 32,
+      "group": "Personal suitability and decision support",
+      "name": "Ownership-cost scenarios",
+      "benefit": "Compare known running and support costs over a user-chosen period, separating assumptions from verified prices.",
+      "previouslyDiscussed": true,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 33,
+      "group": "Existing devices, upgrades and PC configurations",
+      "name": "Keep, repair, upgrade or replace adviser",
+      "benefit": "Compare valid alternatives to buying a replacement after identifying the actual limitation and exact model.",
+      "previouslyDiscussed": true,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 34,
+      "group": "Existing devices, upgrades and PC configurations",
+      "name": "Optional local hardware assessment",
+      "benefit": "Collect only approved device facts with a manual alternative; explain limits before suggesting improvements.",
+      "previouslyDiscussed": true,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 35,
+      "group": "Existing devices, upgrades and PC configurations",
+      "name": "PC compatibility validation",
+      "benefit": "Check firmware, electrical and physical interactions and block critical unknowns from a fully-compatible verdict.",
+      "previouslyDiscussed": true,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 36,
+      "group": "Existing devices, upgrades and PC configurations",
+      "name": "Reuse existing components and accessories",
+      "benefit": "Retain suitable monitors, parts, chargers and peripherals with their exact compatibility requirements.",
+      "previouslyDiscussed": true,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 37,
+      "group": "Existing devices, upgrades and PC configurations",
+      "name": "Staged upgrade roadmap",
+      "benefit": "Order worthwhile upgrades under successive budget limits while exposing future incompatibilities and duplicated spending.",
+      "previouslyDiscussed": false,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 38,
+      "group": "Existing devices, upgrades and PC configurations",
+      "name": "Single-store versus multi-store build totals",
+      "benefit": "Compare basket prices, shipping, assembly, stock and support consequences rather than summing item minima.",
+      "previouslyDiscussed": true,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 39,
+      "group": "Existing devices, upgrades and PC configurations",
+      "name": "Prebuilt versus custom-build comparison",
+      "benefit": "Compare complete supported systems, assembly responsibility, software and equivalent task capability.",
+      "previouslyDiscussed": false,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 40,
+      "group": "Existing devices, upgrades and PC configurations",
+      "name": "Whole-setup budget allocation",
+      "benefit": "Allocate a total budget across computers, phones and peripherals where the user's mobility and access needs allow.",
+      "previouslyDiscussed": true,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 41,
+      "group": "Families, access and buying for other people",
+      "name": "Family decision workspace",
+      "benefit": "Let buyer and payer share a shortlist, comment on compromises and confirm the same spending ceiling.",
+      "previouslyDiscussed": false,
+      "phase": "pilot",
+      "highlight": true
+    },
+    {
+      "id": 42,
+      "group": "Families, access and buying for other people",
+      "name": "Contribution planning",
+      "benefit": "Record agreed family or employer contributions and remaining cost without collecting or holding payments.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 43,
+      "group": "Families, access and buying for other people",
+      "name": "Gift and buy-for-someone flow",
+      "benefit": "Ask about the recipient's needs, existing ecosystem and return flexibility without requiring them to become a technical buyer.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 44,
+      "group": "Families, access and buying for other people",
+      "name": "Shared-device household planning",
+      "benefit": "Evaluate several users' schedules and requirements before recommending one shared device or separate ones.",
+      "previouslyDiscussed": false,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 45,
+      "group": "Families, access and buying for other people",
+      "name": "Verified support-program directory",
+      "benefit": "List current school lending, grants, donations or assistance programs with eligibility and official application links.",
+      "previouslyDiscussed": false,
+      "phase": "partner",
+      "highlight": false
+    },
+    {
+      "id": 46,
+      "group": "Families, access and buying for other people",
+      "name": "Employer reimbursement and invoice fit",
+      "benefit": "Filter for required invoices, documented reimbursement conditions, procurement restrictions and service requirements.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 47,
+      "group": "Families, access and buying for other people",
+      "name": "Emergency replacement mode",
+      "benefit": "Prioritize fit, available stock, migration and support when the user cannot wait; optionally model user-supplied downtime cost.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 48,
+      "group": "Families, access and buying for other people",
+      "name": "Rent, borrow or buy comparison",
+      "benefit": "Compare verified short-term access options for temporary needs, including deposits, return terms and total costs.",
+      "previouslyDiscussed": false,
+      "phase": "partner",
+      "highlight": false
+    },
+    {
+      "id": 49,
+      "group": "After-purchase protection and useful life",
+      "name": "Delivery and unboxing checklist",
+      "benefit": "Guide verification of the received configuration, condition, accessories and seller's documented return requirements.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 50,
+      "group": "After-purchase protection and useful life",
+      "name": "Private receipt and warranty organizer",
+      "benefit": "Store user-approved invoices, model details and coverage dates with export and deletion controls.",
+      "previouslyDiscussed": false,
+      "phase": "pilot",
+      "highlight": true
+    },
+    {
+      "id": 51,
+      "group": "After-purchase protection and useful life",
+      "name": "Return-window and warranty reminders",
+      "benefit": "Remind users of verified policy deadlines and product tests to finish while relevant options remain open.",
+      "previouslyDiscussed": false,
+      "phase": "pilot",
+      "highlight": true
+    },
+    {
+      "id": 52,
+      "group": "After-purchase protection and useful life",
+      "name": "Policy-based price-drop follow-up",
+      "benefit": "Check post-purchase price drops only against an actual seller price-adjustment or return policy; never promise a refund.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 53,
+      "group": "After-purchase protection and useful life",
+      "name": "Migration and safe handover guide",
+      "benefit": "Provide platform-appropriate backup, transfer and account-removal checklists without claiming to verify secure erasure.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 54,
+      "group": "After-purchase protection and useful life",
+      "name": "Repair-quote comparison",
+      "benefit": "Compare documented diagnosis, parts, labor, turnaround and warranty from verified service providers.",
+      "previouslyDiscussed": false,
+      "phase": "partner",
+      "highlight": false
+    },
+    {
+      "id": 55,
+      "group": "After-purchase protection and useful life",
+      "name": "Maintenance and support-date reminders",
+      "benefit": "Use model-specific support and care guidance; avoid invented failure predictions or unnecessary service nudges.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 56,
+      "group": "After-purchase protection and useful life",
+      "name": "Replacement-part and service availability",
+      "benefit": "Show sourced battery/part options, costs and service locations, with compatibility and freshness checks.",
+      "previouslyDiscussed": true,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 57,
+      "group": "Human advice, community and small-business buying",
+      "name": "Retailer-link and quotation checker",
+      "benefit": "Match a pasted offer or confirmed OCR fields against exact variants, user needs and total-cost conditions.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 58,
+      "group": "Human advice, community and small-business buying",
+      "name": "Optional expert second opinion",
+      "benefit": "Provide a scoped independent technical review with fee, qualification and commercial conflicts disclosed.",
+      "previouslyDiscussed": false,
+      "phase": "partner",
+      "highlight": false
+    },
+    {
+      "id": 59,
+      "group": "Human advice, community and small-business buying",
+      "name": "Structured owner outcomes",
+      "benefit": "Collect consented configuration/workload reports and separate them from controlled measurements.",
+      "previouslyDiscussed": true,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 60,
+      "group": "Human advice, community and small-business buying",
+      "name": "Corrections and issue reporting",
+      "benefit": "Let users report wrong variants, inaccurate offers and missing facts; track resolution and notify affected users when appropriate.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 61,
+      "group": "Human advice, community and small-business buying",
+      "name": "Shareable decision brief",
+      "benefit": "Export a concise shortlist with reasons, total price, timestamps and caveats for family, school or employer review.",
+      "previouslyDiscussed": false,
+      "phase": "pilot",
+      "highlight": true
+    },
+    {
+      "id": 62,
+      "group": "Human advice, community and small-business buying",
+      "name": "Lightweight team procurement",
+      "benefit": "Create role-based equipment standards, compare supplier quotations and track approvals for small teams.",
+      "previouslyDiscussed": false,
+      "phase": "later",
+      "highlight": false
+    },
+    {
+      "id": 63,
+      "group": "Human advice, community and small-business buying",
+      "name": "Opt-in group-purchase requests",
+      "benefit": "Aggregate compatible demand for genuine merchant quotes with minimum quantities and terms; no speculative discount promise.",
+      "previouslyDiscussed": false,
+      "phase": "partner",
+      "highlight": false
+    },
+    {
+      "id": 64,
+      "group": "Human advice, community and small-business buying",
+      "name": "Resale, trade-in and responsible handover",
+      "benefit": "Compare current confirmed quotes and inspection conditions, then help users prepare a documented handover.",
+      "previouslyDiscussed": true,
+      "phase": "partner",
+      "highlight": false
+    },
+    {
+      "id": 65,
+      "group": "Access, privacy and platform foundations",
+      "name": "Guest and low-data browsing",
+      "benefit": "Make the basic adviser usable without signup and reduce image/data demands on weaker connections.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 66,
+      "group": "Access, privacy and platform foundations",
+      "name": "Android-to-Windows continuation",
+      "benefit": "Continue an approved shortlist or profile across devices, with optional account sync or user-controlled sharing.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 67,
+      "group": "Access, privacy and platform foundations",
+      "name": "Privacy and local-data controls",
+      "benefit": "Minimize collection, redact imported documents where possible and make history, sharing and deletion choices explicit.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 68,
+      "group": "Access, privacy and platform foundations",
+      "name": "Native adaptive UI and shared components",
+      "benefit": "Use reusable contracts with WinUI and Expressive adapters, responsive layouts, accessibility and measured release performance.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 69,
+      "group": "Access, privacy and platform foundations",
+      "name": "Transparent monetization and ranking",
+      "benefit": "Separate sponsored placements and referral disclosures from eligibility and organic suitability decisions.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 70,
+      "group": "Access, privacy and platform foundations",
+      "name": "Evidence, freshness and correction trail",
+      "benefit": "Expose sources, exact tested variants, last checks, unknowns and relevant revisions to advice.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    },
+    {
+      "id": 71,
+      "group": "Access, privacy and platform foundations",
+      "name": "Offline store-visit pack",
+      "benefit": "Save selected specs, comparison questions and inspection checklists for a shop visit with honest last-verified timestamps.",
+      "previouslyDiscussed": false,
+      "phase": "next",
+      "highlight": false
+    },
+    {
+      "id": 72,
+      "group": "Access, privacy and platform foundations",
+      "name": "Localization and changing-needs review",
+      "benefit": "Support local language, money and units, and let users refresh recommendations when tasks or study requirements change.",
+      "previouslyDiscussed": true,
+      "phase": "pilot",
+      "highlight": false
+    }
+  ]
+}

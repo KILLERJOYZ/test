@@ -1,0 +1,12 @@
+
+<section id="price-context" data-viz-composition aria-label="Two separate global price comparisons reported by Counterpoint on September 3, 2026. Existing models rose 15 percent on average so far in 2026; new launches were 25 percent costlier than year-earlier variants. These are not Vietnam-specific prices.">
+<div data-viz-container></div>
+<script type="application/json" data-viz-chart>{"charts":[{"id":"existing-phone-prices","title":"Existing phone models","description":"Average retail-price increase among tracked global models in 2026 so far.","height":180,"spec":{"type":"horizontalBar","y":"comparison","x":"increase","xDomain":[0,0.3],"xLabel":"Reported price increase","showValues":true,"showLegend":false,"startAtZero":true,"valueFormat":{"style":"percent","maximumFractionDigits":0}},"columns":["comparison","increase"],"rows":[["2026 so far",0.15]]},{"id":"new-phone-prices","title":"New phone launches","description":"Global launch prices compared with year-earlier variants; a different comparison group.","height":180,"spec":{"type":"horizontalBar","y":"comparison","x":"increase","xDomain":[0,0.3],"xLabel":"Reported price increase","showValues":true,"showLegend":false,"startAtZero":true,"valueFormat":{"style":"percent","maximumFractionDigits":0}},"columns":["comparison","increase"],"rows":[["vs. year-earlier variants",0.25]]}]}</script>
+<p class="source">Global figures from <a href="https://counterpointresearch.com/en/insights/global-existing-smartphone-prices-climb-about-15-percent-in-2026">Counterpoint Research, 3 September 2026</a>. The two measures cover different comparison groups; they are not a Vietnam retail-price index or a forecast for an individual product.</p>
+</section>
+<script type="module">
+import {mountChart} from "https://persistent.oaistatic.com/plugins/visualize/charts/1.1.6/element.js";
+const root=document.getElementById("price-context");
+const config=JSON.parse(root.querySelector("[data-viz-chart]").textContent);
+mountChart(root.querySelector("[data-viz-container]"),config);
+</script>

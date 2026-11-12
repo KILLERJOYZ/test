@@ -1,0 +1,5 @@
+
+package/
+*.tgz
+native-cli-android/
+before-main-f7ec267/
