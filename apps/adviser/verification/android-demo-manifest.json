@@ -1,7 +1,7 @@
 {
-  "runId": "android-demo-2026-11-12",
+  "runId": "android-demo-2026-11-12-primary-checkout-rebuild",
   "sourceBase": "f7ec267fdcdac181ab88422c9aba297cd3deca85",
-  "workingTree": "implementation changes not committed",
+  "workingTree": "release APK rebuilt from committed Expo source in the primary E:\\test checkout",
   "requirements": "../../brd.md (lowercase attachment baseline plus confirmed Android/Expo amendments)",
   "framework": {
     "expo": "54.0.38",
@@ -10,7 +10,7 @@
   },
   "artifact": {
     "path": "../artifacts/lua-adviser-demo.apk",
-    "sha256": "626b5014f927487b5ce7014332ae1c7115ae707c38b3022628f7cf7a40c9f86c",
+    "sha256": "a41961f3c8b4558fbcaFE0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
     "bytes": 34375792,
     "abis": [
       "arm64-v8a",

@@ -1,6 +1,6 @@
 # Android implementation verification — 12 November 2026
 
-The selected requirement source is lowercase [brd.md](../../brd.md), amended by the user's Android-only React Native and Expo decisions. The upstream base is `f7ec267`; implementation changes are currently in the working tree. This record reports engineering evidence, not a product-owner acceptance or production release decision.
+The selected requirement source is lowercase [brd.md](../../brd.md), amended by the user's Android-only React Native and Expo decisions. The upstream base is `f7ec267`; the current release artifact was rebuilt from the committed Expo source in the primary `E:\test` checkout. This record reports engineering evidence, not a product-owner acceptance or production release decision.
 
 ## Deliverables and environment
 
@@ -10,6 +10,7 @@ The selected requirement source is lowercase [brd.md](../../brd.md), amended by 
 - Tested emulator: `Resizable_Experimental`, `sdk_gphone16k_x86_64`, Android 17 / API 37, 1080×2400 at density 420.
 - Windows build host, Node 24.18.0, Android build tools 36.0.0, Gradle 8.14.3, Expo-generated Android project, NDK 27.1.12297006. Local JDK 17 and the build script's installed JDK fallback are supported build paths used during this work.
 - [Machine-readable manifest](./verification/android-demo-manifest.json) records the final APK hash and evidence limitations.
+- Rebuilt in the primary checkout with Gradle 8.14.3; APK signature and package metadata were verified before publication in the repository.
 - [Self-contained HTML/CSS preview](./dist/demo.html) is built from the same screen implementation. The older [browser verification record](./verification/BROWSER_VERIFICATION_2026-11-11.md) is preserved separately.
 
 ## Automated results

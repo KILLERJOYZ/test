@@ -28,7 +28,7 @@ Start an emulator in Android Studio Device Manager before running the command. Y
 
 ### Install the existing APK
 
-The APK is a local build artifact at `apps/adviser/artifacts/lua-adviser-demo.apk`; it is not checked into GitHub. With Android Platform Tools installed and an authorized phone or running emulator, use this from the repository root:
+The release APK is checked into GitHub at `apps/adviser/artifacts/lua-adviser-demo.apk`. With Android Platform Tools installed and an authorized phone or running emulator, use this from the repository root:
 
 ```powershell
 $adb = "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe"
