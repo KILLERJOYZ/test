@@ -4,6 +4,7 @@ An Expo Android implementation demo and the research/planning package for a need
 
 - [Open the self-contained frontend demo](./apps/adviser/dist/demo.html)
 - [Expo Android source, debug/build instructions and limitations](./apps/adviser/README.md)
+- [Install the Android demo](./apps/adviser/INSTALL.md)
 - [Business requirements document](./brd.md)
 - [Demo-first implementation plan](./docs/planning/IMPLEMENTATION_PLAN.md)
 - [Research index](./research/README.md)

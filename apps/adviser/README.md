@@ -2,6 +2,8 @@
 
 Vietnamese laptop decision demo built with **Expo SDK 54, React Native 0.81.5 and TypeScript**. The installed app uses React Native screens. HTML/CSS provides a design preview of those same screens through React Native Web. Material 3 Expressive is expressed through semantic colors, contrasting shapes, emphasized typography, grouped surfaces, adaptive layouts and spring press feedback with reduced-motion support.
 
+For step-by-step Expo Go, APK and source-build installation instructions, see [INSTALL.md](./INSTALL.md).
+
 Requirements: the user-supplied lowercase [brd.md](../../brd.md), its hackathon priorities, the confirmed Android-only scope and the [implementation plan](../../docs/planning/IMPLEMENTATION_PLAN.md). The different uppercase planning BRD is an upstream historical reference. This work continues from upstream `f7ec267`.
 
 ## Fast Expo debugging
