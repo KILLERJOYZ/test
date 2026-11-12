@@ -81,11 +81,13 @@ Các use case người dùng (STT 1–18) được tối giản và gộp nhóm 
 | U04 / 4 | Người dùng chọn 2 sản phẩm để đối chiếu và điều chỉnh tiêu chí ưu tiên, hệ thống hiển thị bảng so sánh trực quan về thông số, giá bán và mức độ đáp ứng nhu cầu | 1 |
 | U07 / 7 | Người dùng nhấn lưu sản phẩm hoặc kết quả tư vấn, hệ thống lưu vào thiết bị để xem lại, xóa hoặc chia sẻ bản tóm tắt quyết định | 2 |
 | U08 / 8 | Người dùng sử dụng ứng dụng ngay không cần đăng nhập và thao tác trong mục Cài đặt, hệ thống cập nhật tùy chọn hiển thị hoặc xóa dữ liệu lịch sử lưu trên máy | 2 |
-| U06 / 6 | Người dùng dán đường dẫn (link) sản phẩm hoặc báo giá có sẵn vào ô kiểm tra, hệ thống trích xuất thông tin và phản hồi đánh giá mức độ phù hợp kèm chi phí thực tế | 3 |
+| U06 / 6 | Người dùng dán đường dẫn (link) sản phẩm hoặc báo giá có sẵn vào ô kiểm tra, hệ thống trích xuất thông tin và phản hồi đánh giá mức độ phù hợp kèm chi phí thực tế | 2 |
 | U09 / 9 | Người dùng đặt mức giá mục tiêu cần theo dõi cho một sản phẩm, hệ thống lưu cấu hình và gửi thông báo khi giá bán giảm chạm ngưỡng | 3 |
-| U12, U13 / 12, 13 | Người dùng nhập thông tin thiết bị hiện có hoặc nhu cầu tự ráp PC, hệ thống kiểm tra tính tương thích linh kiện và phản hồi phương án nâng cấp hoặc cấu hình PC hoàn chỉnh | 3 |
-| U10, U11, U14 / 10, 11, 14 | Người dùng nhập kế hoạch tài chính trả góp, tìm mua máy cũ hoặc xác nhận đã mua hàng, hệ thống hiển thị bảng tính tiết kiệm, checklist kiểm tra máy cũ hoặc lịch nhắc bảo hành | 0 |
-| U15, U16, U17, U18 / 15, 16, 17, 18 | Người dùng tạo kế hoạch mua sắm nhóm/gia đình, định giá thu cũ đổi mới, gửi câu hỏi cho chuyên gia hoặc tìm dịch vụ thuê máy, hệ thống phản hồi các thông tin dịch vụ phụ trợ tương ứng | 0 |
+| U10 / 10 | Người dùng truy cập vào banner sự kiện, hệ thống chuyển sang màn hình sự kiện và hiển thị các sản phẩm trong sự kiện với giá mới | 3 |
+| U11 / 11 | (AI) Người dùng truy cập vào nút mở Trợ lý, Popup Trợ lý hiện ra, thu thập yêu cầu của người dùng, hiển thị các lựa chọn theo yêu cầu và cập nhật các lựa chọn khi người dùng thay đổi yêu cầu | 1 |
+| U12 / 12 | (AI) Trong phần "Chi tiết máy", người dùng lựa chọn 'Phân tích sản phẩm', trợ lý cung cấp các ưu điểm/hạn chế của sản phẩm, loại người dùng và phân khúc phù hợp/không phù hợp với sản phẩm. | 1 |
+| U13 / 13 | (AI) Trong phần "So sánh sản phẩm", người dùng lựa chọn 'Phân tích', trợ lý cung cấp các ưu điểm/hạn chế của hai sản phẩm, so sánh với yêu cầu ban đầu của người dùng (nếu có) để đưa ra lựa chọn hợp lý. | 1 |
+
 
 ### 7.1 Needs intake rules
 
@@ -98,7 +100,7 @@ Các use case quản trị (STT 19–36) được tối giản và gộp nhóm t
 | ID / source STT | Complete journey and acceptance outcome | Urgency |
 |---|---|---|
 | A02, A03, A04 / 20, 21, 22 | Quản trị viên nhập hoặc cập nhật danh sách sản phẩm, phiên bản cấu hình và giá bán từ các cửa hàng (qua file dữ liệu hoặc form), hệ thống kiểm tra tính hợp lệ và cập nhật lên danh mục hiển thị | 1 |
-| A06, A07 / 24, 25 | Quản trị viên thiết lập bộ câu hỏi khảo sát nhu cầu, luật chấm điểm và câu lệnh (prompt) cho AI, hệ thống áp dụng cấu hình mới để phân tích và phản hồi gợi ý sản phẩm | 1 |
+| A06, A07 / 24, 25 | Quản trị viên thiết lập bộ câu hỏi khảo sát nhu cầu, luật chấm điểm và câu lệnh (prompt) cho AI, hệ thống áp dụng cấu hình mới để phân tích và phản hồi gợi ý sản phẩm | 0 (hard code instruction cho LLM) |
 | A09 / 27 | Quản trị viên kiểm tra trạng thái kết nối AI và dữ liệu, hệ thống hiển thị thông báo trạng thái và tự động chuyển sang chế độ gợi ý dự phòng (fallback) khi dịch vụ AI gặp sự cố | 2 |
 | A05, A08 / 23, 26 | Quản trị viên xem các báo cáo sai sót thông tin từ người dùng và chỉnh sửa lại thông số/dẫn chứng, hệ thống lưu bản cập nhật và hiển thị thông tin đã đính chính | 3 |
 | A11, A12, A14 / 29, 30, 32 | Quản trị viên xem thống kê lượt sử dụng, quản lý chiến dịch báo giá giảm hoặc cập nhật danh mục linh kiện PC, hệ thống tổng hợp số liệu và cập nhật dữ liệu cho các tính năng mở rộng | 3 |
