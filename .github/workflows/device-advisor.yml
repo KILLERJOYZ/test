@@ -28,6 +28,7 @@ jobs:
         working-directory: .
       - run: npm run check
       - run: npm test
+      - run: npm run test:host-feature
       - run: npm run test:device-system
       - run: npm run test:demo2
       - run: npm run test:catalog-system

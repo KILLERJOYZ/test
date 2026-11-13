@@ -69,6 +69,8 @@ import {
 import { ExpressiveSurface } from "./ExpressiveSurface";
 import { ExpressiveButton } from "./ExpressiveButton";
 import { VI, formatVnd } from "./i18n";
+import DeviceAdvisorApp from "./DeviceAdvisorApp";
+import { AdvisorTheme } from "./AdvisorTheme";
 const localBridge = NativeModules.AdviserLocalAi as LocalAiBridge | undefined;
 
 const KEY = "lua-connected-adviser-v1";
@@ -91,12 +93,15 @@ const TASKS = [
 ];
 export default function AdviserApp() {
   return (
-    <SafeAreaProvider>
-      <Adviser />
-    </SafeAreaProvider>
+    <AdvisorTheme>
+      <SafeAreaProvider>
+        <Adviser />
+      </SafeAreaProvider>
+    </AdvisorTheme>
   );
 }
 function Adviser() {
+  const [deviceAdvisorOpen, setDeviceAdvisorOpen] = useState(false);
   const dark = useColorScheme() === "dark";
   const c = useExpressiveTheme(dark);
   const { width } = useWindowDimensions();
@@ -204,20 +209,22 @@ function Adviser() {
     const bootTimer = setTimeout(() => {
       if (mounted) setBoot((b) => (b === "loading" ? "failed" : b));
     }, 5000);
-    void getStore().load().then((ok) => {
-      if (mounted) {
-        clearTimeout(bootTimer);
-        setBoot(ok ? "ready" : "failed");
-        const currentEndpoint = getStore().current().endpoint;
-        if (!currentEndpoint && DEFAULT_API_ENDPOINT) {
-          void persist((s) => ({ ...s, endpoint: DEFAULT_API_ENDPOINT }));
-          setEndpoint(DEFAULT_API_ENDPOINT);
-        } else {
-          setEndpoint(currentEndpoint);
+    void getStore()
+      .load()
+      .then((ok) => {
+        if (mounted) {
+          clearTimeout(bootTimer);
+          setBoot(ok ? "ready" : "failed");
+          const currentEndpoint = getStore().current().endpoint;
+          if (!currentEndpoint && DEFAULT_API_ENDPOINT) {
+            void persist((s) => ({ ...s, endpoint: DEFAULT_API_ENDPOINT }));
+            setEndpoint(DEFAULT_API_ENDPOINT);
+          } else {
+            setEndpoint(currentEndpoint);
+          }
+          setToken(getStore().current().token);
         }
-        setToken(getStore().current().token);
-      }
-    });
+      });
     return () => {
       mounted = false;
       clearTimeout(bootTimer);
@@ -227,8 +234,7 @@ function Adviser() {
   }, []);
   async function refresh() {
     const current = getStore().current();
-    if (!current.endpoint || !getStore().ready() || refreshBusy.current)
-      return;
+    if (!current.endpoint || !getStore().ready() || refreshBusy.current) return;
     refreshBusy.current = true;
     setRefreshing(true);
     const controller = new AbortController();
@@ -245,9 +251,7 @@ function Adviser() {
         current.token !== getStore().current().token
       )
         return;
-      if (
-        value.catalog.revision !== getStore().current().catalog.revision
-      ) {
+      if (value.catalog.revision !== getStore().current().catalog.revision) {
         cancel();
         setAnswer("");
         setProposal(null);
@@ -295,6 +299,7 @@ function Adviser() {
     return () => sub.remove();
   }, []);
   useEffect(() => {
+    if (deviceAdvisorOpen) return;
     if (Platform.OS === "web") return;
     const sub = BackHandler.addEventListener("hardwareBackPress", () => {
       if (deletion) {
@@ -325,7 +330,16 @@ function Adviser() {
       return false;
     });
     return () => sub.remove();
-  }, [form, quoteModal, detail, history, tab, deletion, pending]);
+  }, [
+    form,
+    quoteModal,
+    detail,
+    history,
+    tab,
+    deletion,
+    pending,
+    deviceAdvisorOpen,
+  ]);
   const rows = useMemo(
     () => searchCatalog(state.catalog, state.requirements, query, source, sort),
     [state.catalog, state.requirements, query, source, sort],
@@ -840,350 +854,394 @@ function Adviser() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: c.bg }}>
       <StatusBar barStyle={dark ? "light-content" : "dark-content"} />
-      <FlatList<
-        | { kind: "listing"; listing: Listing }
-        | { kind: "saved"; saved: SavedDecision }
-      >
-        data={
-          tab === "advisor" || tab === "explore"
-            ? visible.map((x) => ({ kind: "listing" as const, listing: x.listing }))
-            : tab === "saved"
-              ? filteredSaved.map((s) => ({ kind: "saved" as const, saved: s }))
-              : []
-        }
-        keyExtractor={(item) =>
-          item.kind === "listing" ? item.listing.id : item.saved.id
-        }
-        renderItem={({ item }) =>
-          <View style={expanded && item.kind === "listing" ? { flex: 1 } : undefined}>
-            {item.kind === "listing"
-              ? listingCard(item.listing)
-              : savedCard(item.saved)}
-          </View>
-        }
-        numColumns={expanded && (tab === "advisor" || tab === "explore") ? 2 : 1}
-        columnWrapperStyle={
-          expanded && (tab === "advisor" || tab === "explore")
-            ? { gap: EXPRESSIVE_SPACE.lg }
-            : undefined
-        }
-        initialNumToRender={5}
-        windowSize={7}
-        key={`${tab}-${expanded ? "2col" : "1col"}`}
-        style={{ flex: 1, minHeight: 0 }}
-        contentContainerStyle={{
-          padding: EXPRESSIVE_SPACE.lg,
-          gap: EXPRESSIVE_SPACE.lg,
-          paddingBottom: 30,
-          width: "100%",
-          maxWidth: expanded ? 1120 : 680,
-          alignSelf: "center",
-        }}
-        keyboardShouldPersistTaps="handled"
-        ListHeaderComponent={
-          <ExpressiveSurface key={tab} reduceMotion={reduceMotion}>
-            <View style={styles.row}>
-              <View style={{ flex: 1 }}>
-                <Text
-                  accessibilityRole="header"
-                  style={{ ...EXPRESSIVE_TYPE.display, color: c.text }}
-                >
-                  {VI.brandTitle}
-                </Text>
-                {txt(VI.brandSubtitle, true)}
-              </View>
-              {button(
-                refreshing ? VI.refreshBusy : VI.refreshAction,
-                () => void refresh(),
-                true,
-                refreshing || !state.endpoint,
-                undefined,
-                refreshing,
-              )}
+      {deviceAdvisorOpen ? (
+        <DeviceAdvisorApp
+          asFeature
+          onExit={() => setDeviceAdvisorOpen(false)}
+        />
+      ) : (
+        <FlatList<
+          | { kind: "listing"; listing: Listing }
+          | { kind: "saved"; saved: SavedDecision }
+        >
+          data={
+            tab === "advisor" || tab === "explore"
+              ? visible.map((x) => ({
+                  kind: "listing" as const,
+                  listing: x.listing,
+                }))
+              : tab === "saved"
+                ? filteredSaved.map((s) => ({
+                    kind: "saved" as const,
+                    saved: s,
+                  }))
+                : []
+          }
+          keyExtractor={(item) =>
+            item.kind === "listing" ? item.listing.id : item.saved.id
+          }
+          renderItem={({ item }) => (
+            <View
+              style={
+                expanded && item.kind === "listing" ? { flex: 1 } : undefined
+              }
+            >
+              {item.kind === "listing"
+                ? listingCard(item.listing)
+                : savedCard(item.saved)}
             </View>
-            {boot === "failed" &&
-              card(
-                <>
-                  {txt(VI.bootFailedNotice)}
-                  {button(
-                    VI.exportRawData,
-                    () => {
-                      void AsyncStorage.getItem(KEY)
-                        .then((raw) =>
-                          Share.share({
-                            message: raw ?? "Không đọc được dữ liệu",
-                          }),
-                        )
-                        .catch(() => setNotice("Không đọc được dữ liệu gốc."));
-                    },
-                    true,
-                  )}
-                  {button(
-                    VI.restoreInitialData,
-                    () => {
-                      void getStore()
-                        .update(() => INITIAL, true)
-                        .then((ok) => {
-                          if (ok) setBoot("ready");
-                        });
-                    },
-                    true,
-                  )}
-                </>,
-              )}
-            {notice &&
-              card(
-                <>
-                  {txt(notice)}
-                  {button(VI.acknowledge, () => setNotice(""), true)}
-                </>,
-              )}
-            {txt(connection, true)}
-            {checkedAt &&
-              txt(
-                "Kiểm tra máy chủ: " +
-                  new Date(checkedAt).toLocaleString("vi-VN"),
-                true,
-              )}
-            {(tab === "advisor" || tab === "explore") && (
-              <>
-                {tab === "advisor" &&
-                  card(
-                    <ExpressiveSurface key={state.revision} reduceMotion={reduceMotion}>
-                      <Text
-                        style={{
-                          ...EXPRESSIVE_TYPE.headline,
-                          color: c.text,
-                        }}
-                      >
-                        {VI.heroTitle}
-                      </Text>
-                      {txt(
-                        `${state.catalog.listings.length} tin đăng thực tế từ dữ liệu kho. Giá là quan sát lịch sử, không phải giá trực tiếp.`,
-                      )}
-                      {txt(
-                        `Trần chi: ${money(state.requirements.budget)} · ${state.requirements.minRam ? `RAM ≥ ${state.requirements.minRam} GB` : "RAM: chưa đặt yêu cầu"} · ${state.requirements.minStorage ? `Ổ ≥ ${state.requirements.minStorage} GB` : "Ổ: chưa đặt yêu cầu"}`,
-                      )}
-                      {txt(
-                        state.requirements.tasks.join(" · ") ||
-                          "Chưa chọn tác vụ",
-                        true,
-                      )}
-                      {button(VI.adjustNeeds, () => edit())}
-                      {button(
-                        VI.checkExternalQuote,
-                        () => {
-                          setQuoteError("");
-                          setQuoteModal(true);
-                        },
-                        true,
-                      )}
-                    </ExpressiveSurface>,
-                  )}
-                {input(query, setQuery, VI.searchPlaceholder)}
-                <ScrollView horizontal contentContainerStyle={{ gap: 8 }}>
-                  {[
-                    "",
-                    ...new Set(state.catalog.listings.map((v) => v.source)),
-                  ].map((s) => (
-                    <View key={s}>
-                      {button(
-                        s || "Mọi nguồn",
-                        () => setSource(s),
-                        source !== s,
-                        false,
-                        { selected: source === s, role: "radio" },
-                      )}
-                    </View>
-                  ))}
-                </ScrollView>
-                <View style={styles.row}>
-                  {button(
-                    sort === "price" ? "Sắp xếp: giá lịch sử" : "Sắp xếp: tên",
-                    () => setSort(sort === "price" ? "name" : "price"),
-                    true,
-                  )}
-                  {button(
-                    showExcluded ? "Ẩn máy không đạt" : "Hiện máy không đạt",
-                    () => setShowExcluded(!showExcluded),
-                    true,
-                  )}
+          )}
+          numColumns={
+            expanded && (tab === "advisor" || tab === "explore") ? 2 : 1
+          }
+          columnWrapperStyle={
+            expanded && (tab === "advisor" || tab === "explore")
+              ? { gap: EXPRESSIVE_SPACE.lg }
+              : undefined
+          }
+          initialNumToRender={5}
+          windowSize={7}
+          key={`${tab}-${expanded ? "2col" : "1col"}`}
+          style={{ flex: 1, minHeight: 0 }}
+          contentContainerStyle={{
+            padding: EXPRESSIVE_SPACE.lg,
+            gap: EXPRESSIVE_SPACE.lg,
+            paddingBottom: 30,
+            width: "100%",
+            maxWidth: expanded ? 1120 : 680,
+            alignSelf: "center",
+          }}
+          keyboardShouldPersistTaps="handled"
+          ListHeaderComponent={
+            <ExpressiveSurface key={tab} reduceMotion={reduceMotion}>
+              <View style={styles.row}>
+                <View style={{ flex: 1 }}>
+                  <Text
+                    accessibilityRole="header"
+                    style={{ ...EXPRESSIVE_TYPE.display, color: c.text }}
+                  >
+                    {VI.brandTitle}
+                  </Text>
+                  {txt(VI.brandSubtitle, true)}
                 </View>
-                {txt(
-                  `${visible.length} tin cần kiểm tra · ${rows.filter((x) => x.assessment.state === "excluded").length} không đạt yêu cầu đã biết`,
-                  true,
-                )}
-                {!visible.length &&
-                  card(
-                    <>
-                      {txt(
-                        query
-                          ? "Không tìm thấy tin khớp từ khóa."
-                          : source
-                            ? "Nguồn này không có tin đáp ứng bộ lọc."
-                            : connection.startsWith("Nguồn không truy cập được") &&
-                                !state.catalog.listings.length
-                              ? "Nguồn dữ liệu hiện không truy cập được và chưa có dữ liệu đã lưu."
-                              : "Không có tin đáp ứng các tiêu chí đã biết. Giữ nguyên ngân sách và yêu cầu.",
-                      )}
-                      {!query && !source && rows.length > 0 && (
-                        <>
-                          {txt(
-                            `Lý do loại: ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("ngân sách"))).length} vượt ngân sách · ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("RAM"))).length} thiếu RAM · ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("Ổ"))).length} thiếu ổ lưu trữ · ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("Hệ điều hành"))).length} lệch hệ điều hành.`,
-                            true,
-                          )}
-                          {upgrades.length > 0 &&
-                            txt(
-                              `Tham khảo trần chi (+5.000.000 ₫, không khuyến khích vượt ngân sách): có ${upgrades.length} tin chỉ vượt trần hiện tại, ví dụ ${upgrades[0].listing.name} (+${money(upgrades[0].extraVnd)} · ${specification(upgrades[0].listing)} · vẫn cần tự xác minh tồn kho và phí).`,
-                              true,
-                            )}
-                        </>
-                      )}
-                      {query || source
-                        ? button("Xóa tìm kiếm & bộ lọc", () => {
-                            setQuery("");
-                            setSource("");
-                          })
-                        : button("Chỉnh nhu cầu", () => edit())}
-                    </>,
-                  )}
-              </>
-            )}
-            {tab === "compare" && (
-              <>
-                {txt("Đối chiếu cấu hình · tối đa 2 tin đăng")}
-                {selected.length === 0 &&
-                  txt("Chọn “So sánh” trên các thẻ máy để bắt đầu.")}
-                <ComparisonView
-                  items={selected
-                    .map((id) =>
-                      state.catalog.listings.find((v) => v.id === id),
-                    )
-                    .filter((v): v is Listing => !!v)}
-                  requirements={state.requirements}
-                  expanded={expanded}
-                  colors={c}
-                  reduceMotion={reduceMotion}
-                  onRemove={(id) =>
-                    setSelected((ids) => ids.filter((x) => x !== id))
-                  }
-                  onOpen={(v) => open(v)}
-                  onBrowse={() => setTab("explore")}
-                />
                 {button(
-                  "Lưu quyết định so sánh",
-                  () =>
-                    void save(
-                      state.catalog.listings.filter((v) =>
-                        selected.includes(v.id),
-                      ),
-                    ),
-                  false,
-                  selected.length === 0 || boot !== "ready",
+                  refreshing ? VI.refreshBusy : VI.refreshAction,
+                  () => void refresh(),
+                  true,
+                  refreshing || !state.endpoint,
                   undefined,
-                  pending,
+                  refreshing,
                 )}
-              </>
-            )}
-            {tab === "saved" && (
-              <>
-                {txt("Quyết định đã lưu · giá và cấu hình tại thời điểm lưu")}
-                {state.saved.length > 0 &&
-                  input(
-                    savedQuery,
-                    setSavedQuery,
-                    "Tìm quyết định đã lưu theo tên máy hoặc ngày",
-                  )}
-                {state.saved.length === 0 && txt("Chưa lưu quyết định nào.")}
-                {state.saved.length > 0 &&
-                  filteredSaved.length === 0 &&
-                  txt("Không có bản lưu khớp từ khóa tìm kiếm.")}
-              </>
-            )}
-            {tab === "settings" && (
-              <>
-                {card(
+              </View>
+              {boot === "failed" &&
+                card(
                   <>
-                    {txt("Kết nối cập nhật dữ liệu")}
-                    {txt(
-                      "Máy chủ đọc lại tệp nguồn mỗi lần ứng dụng kiểm tra. Kho dữ liệu hiện có không phải nguồn giá thời gian thực.",
-                      true,
-                    )}
-                    {input(
-                      endpoint,
-                      setEndpoint,
-                      "Địa chỉ dịch vụ HTTPS (hoặc http://127.0.0.1:8788 qua ADB)",
-                    )}
-                    {input(
-                      token,
-                      setToken,
-                      "Mã truy cập dịch vụ (không phải khóa nhà cung cấp AI)",
-                      false,
-                      true,
-                    )}
-                    {button("Lưu kết nối", () => {
-                      refreshAbort.current?.abort();
-                      cancel();
-                      void persist((s) => ({
-                        ...s,
-                        endpoint: endpoint.trim(),
-                        token,
-                      }));
-                    })}
+                    {txt(VI.bootFailedNotice)}
                     {button(
-                      "Ngắt kết nối",
+                      VI.exportRawData,
                       () => {
-                        cancel();
-                        refreshAbort.current?.abort();
-                        setEndpoint("");
-                        setToken("");
-                        setConnection("Dữ liệu đã lưu · chưa kết nối");
-                        void persist((s) => ({
-                          ...s,
-                          endpoint: "",
-                          token: "",
-                        }));
+                        void AsyncStorage.getItem(KEY)
+                          .then((raw) =>
+                            Share.share({
+                              message: raw ?? "Không đọc được dữ liệu",
+                            }),
+                          )
+                          .catch(() =>
+                            setNotice("Không đọc được dữ liệu gốc."),
+                          );
+                      },
+                      true,
+                    )}
+                    {button(
+                      VI.restoreInitialData,
+                      () => {
+                        void getStore()
+                          .update(() => INITIAL, true)
+                          .then((ok) => {
+                            if (ok) setBoot("ready");
+                          });
                       },
                       true,
                     )}
                   </>,
                 )}
-                {card(
+              {notice &&
+                card(
                   <>
-                    {txt("Dữ liệu & quyền riêng tư")}
-                    {txt(
-                      "Gemini Nano chạy qua Android AICore trên thiết bị tương thích. Không dùng khóa OpenAI hoặc gửi câu hỏi lên máy chủ. Tải mô hình cần mạng và dung lượng trống. Lịch sử lưu trên máy. Mã truy cập nguồn dữ liệu lưu trong bộ nhớ riêng ứng dụng.",
-                      true,
-                    )}
-                    {txt(
-                      "Nguồn phiên bản: " + state.catalog.revision.slice(0, 16),
-                      true,
-                    )}
-                    {button(
-                      "Xóa toàn bộ lịch sử",
-                      () =>
-                        setDeletion({
-                          label: `Xóa toàn bộ ${state.saved.length} quyết định đã lưu?`,
-                          run: () => persist((s) => ({ ...s, saved: [] })),
-                        }),
-                      true,
-                    )}
-                    {button(
-                      "Xuất quyết định đã lưu",
-                      () =>
-                        void Share.share({
-                          message: JSON.stringify(state.saved, null, 2),
-                        }),
-                      true,
-                    )}
+                    {txt(notice)}
+                    {button(VI.acknowledge, () => setNotice(""), true)}
                   </>,
                 )}
-              </>
-            )}
-          </ExpressiveSurface>
-        }
-      />
-      {selected.length > 0 && tab !== "compare" && (
+              {txt(connection, true)}
+              {(tab === "advisor" || tab === "explore") &&
+                card(
+                  <>
+                    <Text style={{ ...EXPRESSIVE_TYPE.section, color: c.text }}>
+                      Device Advisor
+                    </Text>
+                    {txt(
+                      "Điện thoại, tablet hoặc PC · lựa chọn đầy đủ theo ba mục đích và ba ưu tiên.",
+                      true,
+                    )}
+                    {button("Mở Device Advisor", () => {
+                      cancel();
+                      setDeviceAdvisorOpen(true);
+                    })}
+                  </>,
+                )}
+              {checkedAt &&
+                txt(
+                  "Kiểm tra máy chủ: " +
+                    new Date(checkedAt).toLocaleString("vi-VN"),
+                  true,
+                )}
+              {(tab === "advisor" || tab === "explore") && (
+                <>
+                  {tab === "advisor" &&
+                    card(
+                      <ExpressiveSurface
+                        key={state.revision}
+                        reduceMotion={reduceMotion}
+                      >
+                        <Text
+                          style={{
+                            ...EXPRESSIVE_TYPE.headline,
+                            color: c.text,
+                          }}
+                        >
+                          {VI.heroTitle}
+                        </Text>
+                        {txt(
+                          `${state.catalog.listings.length} tin đăng thực tế từ dữ liệu kho. Giá là quan sát lịch sử, không phải giá trực tiếp.`,
+                        )}
+                        {txt(
+                          `Trần chi: ${money(state.requirements.budget)} · ${state.requirements.minRam ? `RAM ≥ ${state.requirements.minRam} GB` : "RAM: chưa đặt yêu cầu"} · ${state.requirements.minStorage ? `Ổ ≥ ${state.requirements.minStorage} GB` : "Ổ: chưa đặt yêu cầu"}`,
+                        )}
+                        {txt(
+                          state.requirements.tasks.join(" · ") ||
+                            "Chưa chọn tác vụ",
+                          true,
+                        )}
+                        {button(VI.adjustNeeds, () => edit())}
+                        {button(
+                          VI.checkExternalQuote,
+                          () => {
+                            setQuoteError("");
+                            setQuoteModal(true);
+                          },
+                          true,
+                        )}
+                      </ExpressiveSurface>,
+                    )}
+                  {input(query, setQuery, VI.searchPlaceholder)}
+                  <ScrollView horizontal contentContainerStyle={{ gap: 8 }}>
+                    {[
+                      "",
+                      ...new Set(state.catalog.listings.map((v) => v.source)),
+                    ].map((s) => (
+                      <View key={s}>
+                        {button(
+                          s || "Mọi nguồn",
+                          () => setSource(s),
+                          source !== s,
+                          false,
+                          { selected: source === s, role: "radio" },
+                        )}
+                      </View>
+                    ))}
+                  </ScrollView>
+                  <View style={styles.row}>
+                    {button(
+                      sort === "price"
+                        ? "Sắp xếp: giá lịch sử"
+                        : "Sắp xếp: tên",
+                      () => setSort(sort === "price" ? "name" : "price"),
+                      true,
+                    )}
+                    {button(
+                      showExcluded ? "Ẩn máy không đạt" : "Hiện máy không đạt",
+                      () => setShowExcluded(!showExcluded),
+                      true,
+                    )}
+                  </View>
+                  {txt(
+                    `${visible.length} tin cần kiểm tra · ${rows.filter((x) => x.assessment.state === "excluded").length} không đạt yêu cầu đã biết`,
+                    true,
+                  )}
+                  {!visible.length &&
+                    card(
+                      <>
+                        {txt(
+                          query
+                            ? "Không tìm thấy tin khớp từ khóa."
+                            : source
+                              ? "Nguồn này không có tin đáp ứng bộ lọc."
+                              : connection.startsWith(
+                                    "Nguồn không truy cập được",
+                                  ) && !state.catalog.listings.length
+                                ? "Nguồn dữ liệu hiện không truy cập được và chưa có dữ liệu đã lưu."
+                                : "Không có tin đáp ứng các tiêu chí đã biết. Giữ nguyên ngân sách và yêu cầu.",
+                        )}
+                        {!query && !source && rows.length > 0 && (
+                          <>
+                            {txt(
+                              `Lý do loại: ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("ngân sách"))).length} vượt ngân sách · ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("RAM"))).length} thiếu RAM · ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("Ổ"))).length} thiếu ổ lưu trữ · ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("Hệ điều hành"))).length} lệch hệ điều hành.`,
+                              true,
+                            )}
+                            {upgrades.length > 0 &&
+                              txt(
+                                `Tham khảo trần chi (+5.000.000 ₫, không khuyến khích vượt ngân sách): có ${upgrades.length} tin chỉ vượt trần hiện tại, ví dụ ${upgrades[0].listing.name} (+${money(upgrades[0].extraVnd)} · ${specification(upgrades[0].listing)} · vẫn cần tự xác minh tồn kho và phí).`,
+                                true,
+                              )}
+                          </>
+                        )}
+                        {query || source
+                          ? button("Xóa tìm kiếm & bộ lọc", () => {
+                              setQuery("");
+                              setSource("");
+                            })
+                          : button("Chỉnh nhu cầu", () => edit())}
+                      </>,
+                    )}
+                </>
+              )}
+              {tab === "compare" && (
+                <>
+                  {txt("Đối chiếu cấu hình · tối đa 2 tin đăng")}
+                  {selected.length === 0 &&
+                    txt("Chọn “So sánh” trên các thẻ máy để bắt đầu.")}
+                  <ComparisonView
+                    items={selected
+                      .map((id) =>
+                        state.catalog.listings.find((v) => v.id === id),
+                      )
+                      .filter((v): v is Listing => !!v)}
+                    requirements={state.requirements}
+                    expanded={expanded}
+                    colors={c}
+                    reduceMotion={reduceMotion}
+                    onRemove={(id) =>
+                      setSelected((ids) => ids.filter((x) => x !== id))
+                    }
+                    onOpen={(v) => open(v)}
+                    onBrowse={() => setTab("explore")}
+                  />
+                  {button(
+                    "Lưu quyết định so sánh",
+                    () =>
+                      void save(
+                        state.catalog.listings.filter((v) =>
+                          selected.includes(v.id),
+                        ),
+                      ),
+                    false,
+                    selected.length === 0 || boot !== "ready",
+                    undefined,
+                    pending,
+                  )}
+                </>
+              )}
+              {tab === "saved" && (
+                <>
+                  {txt("Quyết định đã lưu · giá và cấu hình tại thời điểm lưu")}
+                  {state.saved.length > 0 &&
+                    input(
+                      savedQuery,
+                      setSavedQuery,
+                      "Tìm quyết định đã lưu theo tên máy hoặc ngày",
+                    )}
+                  {state.saved.length === 0 && txt("Chưa lưu quyết định nào.")}
+                  {state.saved.length > 0 &&
+                    filteredSaved.length === 0 &&
+                    txt("Không có bản lưu khớp từ khóa tìm kiếm.")}
+                </>
+              )}
+              {tab === "settings" && (
+                <>
+                  {card(
+                    <>
+                      {txt("Kết nối cập nhật dữ liệu")}
+                      {txt(
+                        "Máy chủ đọc lại tệp nguồn mỗi lần ứng dụng kiểm tra. Kho dữ liệu hiện có không phải nguồn giá thời gian thực.",
+                        true,
+                      )}
+                      {input(
+                        endpoint,
+                        setEndpoint,
+                        "Địa chỉ dịch vụ HTTPS (hoặc http://127.0.0.1:8788 qua ADB)",
+                      )}
+                      {input(
+                        token,
+                        setToken,
+                        "Mã truy cập dịch vụ (không phải khóa nhà cung cấp AI)",
+                        false,
+                        true,
+                      )}
+                      {button("Lưu kết nối", () => {
+                        refreshAbort.current?.abort();
+                        cancel();
+                        void persist((s) => ({
+                          ...s,
+                          endpoint: endpoint.trim(),
+                          token,
+                        }));
+                      })}
+                      {button(
+                        "Ngắt kết nối",
+                        () => {
+                          cancel();
+                          refreshAbort.current?.abort();
+                          setEndpoint("");
+                          setToken("");
+                          setConnection("Dữ liệu đã lưu · chưa kết nối");
+                          void persist((s) => ({
+                            ...s,
+                            endpoint: "",
+                            token: "",
+                          }));
+                        },
+                        true,
+                      )}
+                    </>,
+                  )}
+                  {card(
+                    <>
+                      {txt("Dữ liệu & quyền riêng tư")}
+                      {txt(
+                        "Gemini Nano chạy qua Android AICore trên thiết bị tương thích. Không dùng khóa OpenAI hoặc gửi câu hỏi lên máy chủ. Tải mô hình cần mạng và dung lượng trống. Lịch sử lưu trên máy. Mã truy cập nguồn dữ liệu lưu trong bộ nhớ riêng ứng dụng.",
+                        true,
+                      )}
+                      {txt(
+                        "Nguồn phiên bản: " +
+                          state.catalog.revision.slice(0, 16),
+                        true,
+                      )}
+                      {button(
+                        "Xóa toàn bộ lịch sử",
+                        () =>
+                          setDeletion({
+                            label: `Xóa toàn bộ ${state.saved.length} quyết định đã lưu?`,
+                            run: () => persist((s) => ({ ...s, saved: [] })),
+                          }),
+                        true,
+                      )}
+                      {button(
+                        "Xuất quyết định đã lưu",
+                        () =>
+                          void Share.share({
+                            message: JSON.stringify(state.saved, null, 2),
+                          }),
+                        true,
+                      )}
+                    </>,
+                  )}
+                </>
+              )}
+            </ExpressiveSurface>
+          }
+        />
+      )}
+      {!deviceAdvisorOpen && selected.length > 0 && tab !== "compare" && (
         <View style={{ padding: 12, backgroundColor: c.container }}>
           <ExpressiveSurface
             key={selected.join(":")}
@@ -1220,6 +1278,7 @@ function Adviser() {
             aria-selected={tab === id}
             onPress={() => {
               cancel();
+              setDeviceAdvisorOpen(false);
               setTab(id);
             }}
             style={{
@@ -1453,8 +1512,12 @@ function Adviser() {
                     (detail.gpu ? `\nCard đồ họa: ${detail.gpu}` : "") +
                     (detail.battery ? `\nPin: ${detail.battery}` : "") +
                     (detail.brand ? `\nThương hiệu: ${detail.brand}` : "") +
-                    (detail.priceOriginal ? `\nGiá niêm yết: ${money(detail.priceOriginal)}${detail.discountPercent ? ` (-${detail.discountPercent}%)` : ""}` : "") +
-                    (detail.installment ? `\nƯu đãi: ${detail.installment}` : ""),
+                    (detail.priceOriginal
+                      ? `\nGiá niêm yết: ${money(detail.priceOriginal)}${detail.discountPercent ? ` (-${detail.discountPercent}%)` : ""}`
+                      : "") +
+                    (detail.installment
+                      ? `\nƯu đãi: ${detail.installment}`
+                      : ""),
                   true,
                 )}
               </>,
@@ -1547,7 +1610,11 @@ function Adviser() {
             {!historical &&
               card(
                 <>
-                  {txt(localBridge ? "Gemini Nano · AI trên thiết bị" : "Trợ lý AI · FastAPI Backend")}
+                  {txt(
+                    localBridge
+                      ? "Gemini Nano · AI trên thiết bị"
+                      : "Trợ lý AI · FastAPI Backend",
+                  )}
                   {txt(
                     "Trạng thái: " +
                       (localBridge
@@ -1555,23 +1622,24 @@ function Adviser() {
                             available: "Sẵn sàng",
                             downloadable: "Có thể tải mô hình",
                             downloading: "Đang tải mô hình",
-                            unavailable: "Thiết bị chưa hỗ trợ hoặc AICore chưa sẵn sàng",
+                            unavailable:
+                              "Thiết bị chưa hỗ trợ hoặc AICore chưa sẵn sàng",
                           }[aiStatus]
                         : state.endpoint
                           ? `Đã kết nối máy chủ (${state.endpoint})`
                           : "Chưa kết nối máy chủ tư vấn"),
                     true,
                   )}
-                  {localBridge && (
+                  {localBridge &&
                     button(
                       "Kiểm tra AI trên máy",
                       () => {
                         void localStatus(localBridge).then(setAiStatus);
                       },
                       true,
-                    )
-                  )}
-                  {localBridge && aiStatus === "downloadable" &&
+                    )}
+                  {localBridge &&
+                    aiStatus === "downloadable" &&
                     button(
                       "Tải mô hình Gemini Nano",
                       () => {
@@ -1586,7 +1654,8 @@ function Adviser() {
                       },
                       true,
                     )}
-                  {localBridge && aiStatus === "downloading" &&
+                  {localBridge &&
+                    aiStatus === "downloading" &&
                     button(
                       "Hủy tải mô hình",
                       () => {

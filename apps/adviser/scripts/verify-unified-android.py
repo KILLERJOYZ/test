@@ -8,7 +8,7 @@ from pathlib import Path
 parser = argparse.ArgumentParser()
 parser.add_argument("--adb", required=True)
 parser.add_argument("--serial", required=True)
-parser.add_argument("--output", default="verification/unified-0.5.0")
+parser.add_argument("--output", default="verification/unified-0.5.1")
 args = parser.parse_args()
 output = Path(args.output)
 output.mkdir(parents=True, exist_ok=True)
@@ -24,17 +24,17 @@ for phase in ("launch", "restart"):
     for attempt in range(5):
         adb("shell", "uiautomator", "dump", "/sdcard/unified-smoke.xml")
         tree = adb("shell", "cat", "/sdcard/unified-smoke.xml").decode("utf-8")
-        if "Thiết bị hợp với bạn." in tree:
+        if "lựa." in tree:
             break
         time.sleep(1)
     else:
-        raise AssertionError("Unified app root did not appear")
+        raise AssertionError("M3 host app did not appear")
     (output / f"{phase}.xml").write_text(tree, encoding="utf-8")
     # Resizable emulators print a multi-display warning to stdout. Capture to a
     # device file and pull it, keeping that warning out of the PNG byte stream.
     adb("shell", "screencap", "-p", "/sdcard/unified-smoke.png")
     adb("pull", "/sdcard/unified-smoke.png", str(output / f"{phase}.png"))
-    observed.append({"phase": phase, "root": "unified full-category app", "existingDataRetained": True})
+    observed.append({"phase": phase, "root": "M3 host with Device Advisor feature", "existingDataRetained": True})
 package = adb("shell", "dumpsys", "package", "vn.lua.adviser").decode("utf-8")
 assert "versionName=0.5.0" in package
 (output / "native-smoke.json").write_text(json.dumps({"status": "passed", "serial": args.serial,

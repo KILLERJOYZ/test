@@ -17,7 +17,7 @@ const mocks = {
   './demo-storage': `const records=new Map();globalThis.deviceTestRecords=records;export const storageKind='test adapter';export const storage={getItem:async k=>records.get(k)??null,setItem:async(k,v)=>{records.set(k,v)},removeItem:async k=>records.delete(k)};`,
 };
 await mkdir('.expo/demo2-tests',{recursive:true});
-await build({entryPoints:['src/UnifiedAdvisorApp.tsx'],bundle:true,platform:'node',format:'cjs',outfile:'.expo/demo2-tests/app.cjs',external:['react'],plugins:[{name:'native-test-boundaries',setup(b){b.onResolve({filter:/.*/},args=>args.path in mocks?{path:args.path,namespace:'mock'}:undefined);b.onLoad({filter:/.*/,namespace:'mock'},args=>({contents:mocks[args.path],loader:'js',resolveDir:process.cwd()}));}}]});
+await build({entryPoints:['src/DeviceAdvisorApp.tsx'],bundle:true,platform:'node',format:'cjs',outfile:'.expo/demo2-tests/app.cjs',external:['react'],plugins:[{name:'native-test-boundaries',setup(b){b.onResolve({filter:/.*/},args=>args.path in mocks?{path:args.path,namespace:'mock'}:undefined);b.onLoad({filter:/.*/,namespace:'mock'},args=>({contents:mocks[args.path],loader:'js',resolveDir:process.cwd()}));}}]});
 const App=createRequire(import.meta.url)('../.expo/demo2-tests/app.cjs').default;
 let app;
 const text=()=>JSON.stringify(app.toJSON());

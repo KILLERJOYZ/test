@@ -191,7 +191,8 @@ function Field({
 }
 export default function DeviceAdvisorApp({
   onExit,
-}: { onExit?: () => void } = {}) {
+  asFeature = false,
+}: { onExit?: () => void; asFeature?: boolean } = {}) {
   const { colors, dark } = useAdvisorTheme();
   const LIGHT = legacyPalette(colors);
   const s = makeStyles(LIGHT);
@@ -499,8 +500,11 @@ export default function DeviceAdvisorApp({
           contentContainerStyle={s.page}
           keyboardShouldPersistTaps="handled"
         >
+          {asFeature && onExit && (
+            <Button title="Trở về ứng dụng" quiet onPress={onExit} />
+          )}
           <Text accessibilityRole="header" style={s.title}>
-            Thiết bị hợp với bạn.
+            {asFeature ? "Device Advisor" : "Thiết bị hợp với bạn."}
           </Text>
           <View style={s.nav}>
             {[

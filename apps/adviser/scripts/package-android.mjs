@@ -35,6 +35,7 @@ for (const name of names) {
 }
 const sourcePaths = [
   "index.js",
+  "src/AdviserApp.tsx",
   "src/UnifiedAdvisorApp.tsx",
   "src/DeviceAdvisorApp.tsx",
   "src/ReferenceExplorer.tsx",
@@ -71,7 +72,7 @@ const manifest = {
   sourceCommit: git("rev-parse", "HEAD"),
   sourceDirty: !!git("status", "--porcelain", "--", ...sourcePaths),
   dirtyWorkingTree: !!git("status", "--porcelain"),
-  entryPoint: "src/UnifiedAdvisorApp.tsx",
+  entryPoint: "src/AdviserApp.tsx",
   sourceSha256: Object.fromEntries(
     sourcePaths.map((p) => [p, hash(path.join(root, p))]),
   ),
@@ -79,7 +80,7 @@ const manifest = {
     fs.readFileSync(path.join(root, "src/reference-seed.json")),
   ).version,
   scope:
-    "Unified Phone / Tablet / PC adviser; signed offline catalog; evidence limits remain explicit.",
+    "M3 Adviser app with the complete Phone / Tablet / PC Device Advisor as an in-app feature.",
   nativeOutputModifiedAtUtc: fs.statSync(source).mtime.toISOString(),
   packagedAtUtc: new Date().toISOString(),
 };

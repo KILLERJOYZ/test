@@ -4,7 +4,7 @@ The active release is one Expo Android app for Phone, Tablet and PC, using the f
 
 - [Active application contract and setup](./apps/adviser/UNIFIED_APP.md)
 - [App source and build instructions](./apps/adviser/README.md)
-- [Unified 0.5.0 Android APK](./apps/adviser/artifacts/lua-adviser-0.5.0.apk)
+- [Unified 0.5.1 Android APK](./apps/adviser/artifacts/lua-adviser-0.5.1.apk)
 - [Self-contained web preview](./apps/adviser/dist/demo.html)
 - [Business requirements](./brd.md)
 - [Root-cause audit of the previous app confusion](./docs/audits/ENTRYPOINT_CONFUSION_ROOT_CAUSE_2026-11-14.md)

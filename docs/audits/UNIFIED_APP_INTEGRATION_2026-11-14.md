@@ -1,5 +1,7 @@
 # Consolidation following the entry-point audit
 
+> Superseded architecture: the user clarified that Device Advisor must be a feature inside the M3 app. Version 0.5.1 restores `AdviserApp` as the host and exposes the complete module through “Mở Device Advisor”, with host navigation and state retained. See the active application contract. The standalone-root description below records the earlier interpretation and is not the current startup contract.
+
 The active contract is [UNIFIED_APP.md](../../apps/adviser/UNIFIED_APP.md). Both entry points now select `UnifiedAdvisorApp`; the historical roots remain regression source. The integration is preserved on `agent-a/api`; the artifact manifest identifies its source commit separately from generated delivery files. The original verification was performed before committing, on a working tree based on `71dfdc6`.
 
 | Audit issue | Implemented resolution |
