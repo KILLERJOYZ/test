@@ -207,6 +207,22 @@ async function enrichProductDetail(page, rawProduct) {
       }
     });
 
+    // Gallery / Slider images on detail page
+    const galleryImgs = [];
+    $('.gallery-slide img, .swiper-slide img, .box-ksp img, .t-gallery img').each((_, el) => {
+      const src = $(el).attr('data-src') || $(el).attr('src');
+      if (src && !src.includes('svg') && !src.includes('logo') && !src.includes('icon')) {
+        const full = resolveUrl(BASE_URL, src);
+        if (full) galleryImgs.push(full);
+      }
+    });
+    if (galleryImgs.length > 0) {
+      rawProduct.images = [...new Set([...(rawProduct.images || []), ...galleryImgs])];
+      if (!rawProduct.thumbnail && rawProduct.images.length > 0) {
+        rawProduct.thumbnail = rawProduct.images[0];
+      }
+    }
+
     rawProduct.specs = { ...(rawProduct.specs || {}), ...specs };
     if (options.length > 0) {
       rawProduct.options = options;
@@ -233,6 +249,35 @@ async function crawlCellphones(browser, options = {}) {
     console.log(`[CellphoneS] Navigating to ${START_URL}...`);
     await page.goto(START_URL, { waitUntil: 'domcontentloaded', timeout: 40000 });
     await sleep(2500);
+
+    // Chiến thuật: Lựa chọn tiêu chí "Hàng mới về", đợi dữ liệu cập nhật rồi thực hiện thu thập
+    try {
+      console.log('[CellphoneS] Áp dụng chiến thuật: Lựa chọn tiêu chí "Hàng mới về"...');
+      const popupClose = await page.$('.modal-close, button.close, [aria-label="Close"], button:has-text("Bữa khác nha")');
+      if (popupClose) {
+        await popupClose.click().catch(() => {});
+        await sleep(500);
+      }
+
+      const hangMoiVeBtn = await page.evaluateHandle(() => {
+        const buttons = Array.from(document.querySelectorAll('button.btn-filter, .button__filter-parent, button'));
+        return buttons.find((b) => b.textContent && b.textContent.includes('Hàng mới về')) || null;
+      });
+
+      if (hangMoiVeBtn && hangMoiVeBtn.asElement()) {
+        await hangMoiVeBtn.asElement().click();
+        console.log('[CellphoneS] Đã click nút "Hàng mới về", đợi dữ liệu cập nhật...');
+        await sleep(2500);
+      } else {
+        console.log('[CellphoneS] Chuyển tới URL kèm ?new_arrival=true...');
+        await page.goto(`${START_URL}?new_arrival=true`, { waitUntil: 'domcontentloaded', timeout: 35000 });
+        await sleep(2000);
+      }
+    } catch (err) {
+      console.warn(`[CellphoneS] Chuyển tới URL ?new_arrival=true do: ${err.message}`);
+      await page.goto(`${START_URL}?new_arrival=true`, { waitUntil: 'domcontentloaded', timeout: 35000 });
+      await sleep(2000);
+    }
     await autoScroll(page, 4, 500);
 
     const mainHtml = await page.content();

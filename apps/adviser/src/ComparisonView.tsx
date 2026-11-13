@@ -38,6 +38,18 @@ export function ComparisonView({
       },
     ],
     ["CPU", (v: Listing) => v.cpu ?? "Chưa rõ"],
+    ["Thương hiệu", (v: Listing) => v.brand ?? "Chưa rõ"],
+    ["Card đồ họa", (v: Listing) => v.gpu ?? "Chưa rõ"],
+    ["Màn hình", (v: Listing) => v.screen ?? "Chưa rõ"],
+    ["Khối lượng", (v: Listing) => v.weight ?? "Chưa rõ"],
+    ["Pin", (v: Listing) => v.battery ?? "Chưa rõ"],
+    [
+      "Giá niêm yết / Ưu đãi",
+      (v: Listing) =>
+        v.priceOriginal
+          ? `${v.priceOriginal.toLocaleString("vi-VN")} ₫${v.discountPercent ? ` (-${v.discountPercent}%)` : ""}${v.installment ? ` · ${v.installment}` : ""}`
+          : "Chưa rõ",
+    ],
     [
       "Giá quan sát",
       (v: Listing) =>

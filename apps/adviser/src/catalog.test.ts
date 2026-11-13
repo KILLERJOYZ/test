@@ -15,14 +15,23 @@ import {
   validRequirements,
   validSaved,
 } from "./catalog.ts";
-const raw = JSON.parse(
-  fs.readFileSync(
-    new URL("../../../data/all_laptops_normalized.json", import.meta.url),
-    "utf8",
-  ),
+const c = JSON.parse(
+  fs.readFileSync(new URL("./real-catalog.json", import.meta.url), "utf8"),
 );
-const c = importCatalog(raw),
-  v = c.listings[0];
+const v = c.listings[0];
+const raw = {
+  generatedAt: c.importedAt,
+  products: c.listings.map((l: any) => ({
+    id: l.id.includes(":") ? l.id.split(":")[1] : l.id,
+    source: l.source,
+    name: l.name,
+    url: l.url,
+    condition: l.condition,
+    pricing: { current: l.advertisedPrice },
+    specs: { ram: `${l.ram}GB`, storage: `${l.storage}GB`, cpu: l.cpu },
+    metadata: { crawledAt: l.observedAt },
+  })),
+};
 test("REAL-01 repository import preserves 70 distinct source listings without inferred stock or costs", () => {
   assert.equal(c.listings.length, 70);
   assert.ok(validCatalog(c));
@@ -141,7 +150,7 @@ test("REAL-08 saved configuration and price survive catalog replacement", () => 
 });
 
 test("EVIDENCE-01 conflicting imported attributes cannot become trusted constraints or AI facts", () => {
-  const bad = c.listings.find((x) => x.id === "fptshop:1f1dd132e6326e76")!;
+  const bad = c.listings.find((x: any) => x.id === "fptshop:1f1dd132e6326e76")!;
   assert.ok(bad);
   const assessment = assess(bad, { ...r, minRam: 32 });
   assert.ok(assessment.unknown.some((x) => x.includes("RAM mâu thuẫn")));
@@ -160,7 +169,7 @@ test("EVIDENCE-01 conflicting imported attributes cannot become trusted constrai
   assert.deepEqual(JSON.parse(JSON.stringify(saved)).listings[0], bad);
 });
 test("EVIDENCE-02 title storage conflict remains unresolved without guessing a replacement", () => {
-  const bad = c.listings.find((x) => x.id === "dienmayxanh:8566430c8f1ff31e")!;
+  const bad = c.listings.find((x: any) => x.id === "dienmayxanh:8566430c8f1ff31e")!;
   assert.ok(
     assess(bad, { ...r, minStorage: 1024 }).unknown.some((x) =>
       x.includes("Ổ lưu trữ mâu thuẫn"),

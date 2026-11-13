@@ -52,9 +52,10 @@ CREATE TABLE IF NOT EXISTS public.laptops (
     weight VARCHAR(100),                              -- Khối lượng máy
     os VARCHAR(100),                                  -- Hệ điều hành
     
-    -- Dữ liệu truyền thông & phân loại
-    thumbnail TEXT,                                   -- Ảnh đại diện
-    images JSONB DEFAULT '[]'::jsonb,                 -- Danh sách URL ảnh sản phẩm
+    -- Dữ liệu hình ảnh & truyền thông
+    thumbnail TEXT,                                   -- URL ảnh đại diện chính
+    images JSONB DEFAULT '[]'::jsonb,                 -- Danh sách mảng URL các ảnh sản phẩm
+    media JSONB DEFAULT '{}'::jsonb,                  -- Đối tượng media tổng hợp {thumbnail, images}
     categories JSONB DEFAULT '[]'::jsonb,             -- Cây danh mục sản phẩm
     
     -- Đánh giá từ khách hàng

@@ -47,6 +47,7 @@ WITH source_data AS (
         os,
         thumbnail,
         images,
+        media,
         categories,
         rating_average,
         rating_count,

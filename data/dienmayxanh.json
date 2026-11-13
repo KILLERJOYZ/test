@@ -1,6 +1,6 @@
 {
   "source": "dienmayxanh",
-  "crawledAt": "2026-11-12T04:26:03.956Z",
+  "crawledAt": "2026-11-13T11:51:30.777Z",
   "totalCategories": 89,
   "totalProducts": 15,
   "categories": [
@@ -645,7 +645,7 @@
         "warranty": "1 tháng tại ĐMX",
         "storeCount": 1,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.900Z"
+        "crawledAt": "2026-11-13T11:51:30.724Z"
       }
     },
     {
@@ -754,7 +754,7 @@
         "warranty": "1 tháng tại ĐMX",
         "storeCount": 1,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.900Z"
+        "crawledAt": "2026-11-13T11:51:30.724Z"
       }
     },
     {
@@ -862,7 +862,7 @@
         "warranty": "1 tháng tại ĐMX",
         "storeCount": 1,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.900Z"
+        "crawledAt": "2026-11-13T11:51:30.724Z"
       }
     },
     {
@@ -971,7 +971,7 @@
         "warranty": "1 tháng tại ĐMX",
         "storeCount": 1,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.911Z"
+        "crawledAt": "2026-11-13T11:51:30.724Z"
       }
     },
     {
@@ -1084,115 +1084,7 @@
         "warranty": "1 tháng tại ĐMX",
         "storeCount": 1,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.912Z"
-      }
-    },
-    {
-      "id": "4fd6d2a03d14af3b",
-      "source": "dienmayxanh",
-      "sku": "311145",
-      "name": "Laptop HP Pavilion 15 eg3094TU - 8C5L5PA (i5 1335U, 8GB, 512GB, Full HD, Win11)",
-      "brand": "HP",
-      "model": "Pavilion 15 eg3094TU - 8C5L5PA",
-      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/hp-pavilion-15-eg3094tu-i5-8c5l5pa?pid=311145&isimei=1",
-      "condition": "used",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop đổi trả",
-          "slug": "may-doi-tra-laptop",
-          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 12300000,
-        "original": 19590000,
-        "discountPercent": 37,
-        "installment": "Trả chậm 0%",
-        "priceNote": "1 sản phẩm"
-      },
-      "specs": {
-        "cpu": "Intel Core i5 Raptor Lake - 1335U",
-        "ram": "8 GB",
-        "storage": "512 GB SSD NVMe PCIe",
-        "gpu": "Card tích hợp - Intel Iris Xe Graphics",
-        "screen": "15.6 inch, Full HD (1920 x 1080), 60 Hz",
-        "battery": "3-cell Li-ion, 41 Wh",
-        "weight": "1.69 kg",
-        "os": "Windows 11 Home SL",
-        "ports": "1 x USB Type-C (hỗ trợ USB, Power Delivery và DisplayPort) HDMI 2 x USB 3.2 Jack tai nghe 3.5 mm",
-        "rawSpecs": {
-          "CPU": "Intel Core i5 Raptor Lake - 1335U",
-          "RAM": "8 GB",
-          "Ổ cứng": "512 GB SSD NVMe PCIe",
-          "Màn hình": "Full HD",
-          "Hệ điều hành": "Windows 11 Home SL",
-          "Màu sắc": "Vàng",
-          "Công nghệ CPU": "Intel Core i5 Raptor Lake - 1335U",
-          "Số nhân": "10",
-          "Số luồng": "12",
-          "Tốc độ CPU": "1.30 GHz (Lên đến 4.60 GHz khi tải nặng)",
-          "Card màn hình": "Card tích hợp - Intel Iris Xe Graphics",
-          "Loại RAM": "DDR4 (1 khe 4 GB + 1 khe 4 GB)",
-          "Tốc độ Bus RAM": "3200 MHz",
-          "Hỗ trợ RAM tối đa": "16 GB",
-          "Kích thước màn hình": "15.6 inch",
-          "Độ phân giải": "Full HD (1920 x 1080)",
-          "Tấm nền": "IPS",
-          "Tần số quét": "60 Hz",
-          "Độ phủ màu": "45% NTSC",
-          "Công nghệ màn hình": "250 nits Chống chói Anti Glare",
-          "Cổng giao tiếp": "1 x USB Type-C (hỗ trợ USB, Power Delivery và DisplayPort) HDMI 2 x USB 3.2 Jack tai nghe 3.5 mm",
-          "Kết nối không dây": "Wi-Fi 6 (802.11ax) Bluetooth 5.2",
-          "Webcam": "HD webcam",
-          "Đèn bàn phím": "Không có đèn",
-          "Công nghệ âm thanh": "HP Audio Boost Realtek High Definition Audio Audio by B&O",
-          "Tản nhiệt": "Hãng không công bố",
-          "Thông tin Pin": "3-cell Li-ion, 41 Wh",
-          "Thời điểm ra mắt": "2023",
-          "Kích thước": "Dài 360.2 mm - Rộng 234 mm - Dày 18 mm - 1.69 kg",
-          "Chất liệu": "Vỏ kim loại - Nắp lưng bằng nhựa",
-          "Phụ kiện": "Thùng máy,Sạc Laptop HP"
-        }
-      },
-      "options": [
-        {
-          "type": "condition",
-          "label": "Đã sử dụng | Màu Vàng | Tại: Thành phố Hồ Chí Minh | BH: 1 tháng tại ĐMX",
-          "value": "HP Pavilion 15 eg3094TU i5 1335U/8GB/512GB/15.6 inchF/Win11/(8C5L5PA)/Vàng",
-          "price": 12300000,
-          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/hp-pavilion-15-eg3094tu-i5-8c5l5pa/detail?oldid=48453093&pid=311145&type=2",
-          "sku": "48453093",
-          "isSelected": true
-        }
-      ],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/311145/hp-pavilion-15-eg3094tu-i5-8c5l5pa-170225-103254-484-200x200.jpg",
-        "images": [
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/311145/hp-pavilion-15-eg3094tu-i5-8c5l5pa-170225-103254-484-200x200.jpg",
-          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/0_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804474407.jpg",
-          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/04/5_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804550631.jpg",
-          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/6_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804559913.jpg",
-          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/7_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804597359.jpg",
-          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/8_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804617280.jpg",
-          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/1_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804487080.jpg",
-          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/2_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804508137.jpg",
-          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/3_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804523551.jpg",
-          "https://cdnv2.tgdd.vn/posimageused/posused/2026/08/04/4_48122729_hppavilion15eg3094tui51335u8gb512gb15.6fwin118c5l5pavang_1785804538948.jpg"
-        ]
-      },
-      "metadata": {
-        "warranty": "1 tháng tại ĐMX",
-        "storeCount": 1,
-        "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.912Z"
+        "crawledAt": "2026-11-13T11:51:30.724Z"
       }
     },
     {
@@ -1300,7 +1192,7 @@
         "warranty": "1 tháng tại ĐMX",
         "storeCount": 1,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.912Z"
+        "crawledAt": "2026-11-13T11:51:30.737Z"
       }
     },
     {
@@ -1417,7 +1309,7 @@
         "warranty": "1 tháng tại ĐMX",
         "storeCount": 2,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.912Z"
+        "crawledAt": "2026-11-13T11:51:30.737Z"
       }
     },
     {
@@ -1556,7 +1448,7 @@
         "warranty": "1 tháng tại ĐMX",
         "storeCount": 4,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.912Z"
+        "crawledAt": "2026-11-13T11:51:30.738Z"
       }
     },
     {
@@ -1695,7 +1587,7 @@
         "warranty": "Chính hãng đến 31/08/2027",
         "storeCount": 4,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.913Z"
+        "crawledAt": "2026-11-13T11:51:30.738Z"
       }
     },
     {
@@ -1843,7 +1735,7 @@
         "warranty": "1 tháng tại ĐMX",
         "storeCount": 5,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.913Z"
+        "crawledAt": "2026-11-13T11:51:30.738Z"
       }
     },
     {
@@ -1962,7 +1854,147 @@
         "warranty": "Chính hãng đến 26/12/2026",
         "storeCount": 2,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.913Z"
+        "crawledAt": "2026-11-13T11:51:30.738Z"
+      }
+    },
+    {
+      "id": "a623f3d35fe66ea7",
+      "source": "dienmayxanh",
+      "sku": "325244",
+      "name": "Laptop Dell Inspiron 14 5440 - N4I7204W1 (Core 7 150U, 16GB, 512GB, Full HD+, OfficeHS, Win11)",
+      "brand": "Dell",
+      "model": "Inspiron 14 5440 - N4I7204W1",
+      "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/dell-inspiron-14-5440-core-7-n4i7204w1?pid=325244&isimei=1",
+      "condition": "used",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop đổi trả",
+          "slug": "may-doi-tra-laptop",
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 19870000,
+        "original": 29890000,
+        "discountPercent": 34,
+        "installment": "Trả chậm 0%",
+        "priceNote": "4 sản phẩm"
+      },
+      "specs": {
+        "cpu": "Intel Core 7 Raptor Lake - 150U",
+        "ram": "16 GB",
+        "storage": "512 GB SSD NVMe PCIe",
+        "gpu": "Card tích hợp - Intel Graphics",
+        "screen": "14 inch, Full HD+ (1920 x 1200), 60 Hz",
+        "battery": "4-cell Li-ion, 54 Wh",
+        "weight": "1.67 kg",
+        "os": "Windows 11 Home SL + Office Home & Student 2021 vĩnh viễn",
+        "ports": "HDMI 1 x USB Type-C 3.2 (hỗ trợ Power Delivery và DisplayPort 1.4) 2 x USB 3.2 Jack tai nghe 3.5 mm",
+        "rawSpecs": {
+          "CPU": "Intel Core 7 Raptor Lake - 150U",
+          "RAM": "16 GB",
+          "Ổ cứng": "512 GB SSD NVMe PCIe",
+          "Màn hình": "Full HD+",
+          "Phần mềm": "OfficeHS",
+          "Hệ điều hành": "Windows 11 Home SL + Office Home & Student 2021 vĩnh viễn",
+          "Màu sắc": "Xanh",
+          "Công nghệ CPU": "Intel Core 7 Raptor Lake - 150U",
+          "Số nhân": "10",
+          "Số luồng": "12",
+          "Tốc độ CPU": "1.80 GHz (Lên đến 5.40 GHz khi tải nặng)",
+          "Card màn hình": "Card tích hợp - Intel Graphics",
+          "Loại RAM": "DDR5 (1 khe 8 GB + 1 khe 8 GB)",
+          "Tốc độ Bus RAM": "5200 MHz",
+          "Hỗ trợ RAM tối đa": "32 GB",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "Full HD+ (1920 x 1200)",
+          "Tấm nền": "IPS",
+          "Tần số quét": "60 Hz",
+          "Độ phủ màu": "45% NTSC",
+          "Công nghệ màn hình": "250 nits Chống chói Anti Glare",
+          "Cổng giao tiếp": "HDMI 1 x USB Type-C 3.2 (hỗ trợ Power Delivery và DisplayPort 1.4) 2 x USB 3.2 Jack tai nghe 3.5 mm",
+          "Kết nối không dây": "Wi-Fi 6 (802.11ax) Bluetooth 5.2",
+          "Khe đọc thẻ nhớ": "SD",
+          "Webcam": "Full HD Webcam",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "Realtek Audio",
+          "Tản nhiệt": "Hãng không công bố",
+          "Thông tin Pin": "4-cell Li-ion, 54 Wh",
+          "Thời điểm ra mắt": "2023",
+          "Kích thước": "Dài 314 mm - Rộng 226.15 mm - Dày 18.07 mm - 1.67 kg",
+          "Chất liệu": "Vỏ nhựa",
+          "Phụ kiện": "Sách hướng dẫn,Thùng máy,Sạc Laptop Dell"
+        }
+      },
+      "options": [
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Xanh Dương | Tại: Tỉnh Tây Ninh | BH: Chính hãng đến 20/03/2027",
+          "value": "Dell Inspiron 14 5440 Core 7 150U/16GB/512GB/14 inchF/OfficeHS/Win11/(N4I7204W1)/Xanh",
+          "price": 19870000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/dell-inspiron-14-5440-core-7-n4i7204w1/detail?oldid=48306907&pid=325244&type=2",
+          "sku": "48306907",
+          "isSelected": true
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Xanh Dương | Tại: Thành phố Hà Nội | BH: Chính hãng đến 09/08/2027",
+          "value": "Dell Inspiron 14 5440 Core 7 150U/16GB/512GB/14 inchF/OfficeHS/Win11/(N4I7204W1)/Xanh",
+          "price": 22070000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/dell-inspiron-14-5440-core-7-n4i7204w1/detail?oldid=48570283&pid=325244&type=2",
+          "sku": "48570283",
+          "isSelected": false
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Xanh Dương | Tại: Tỉnh Nghệ An | BH: Chính hãng đến 14/08/2027",
+          "value": "Dell Inspiron 14 5440 Core 7 150U/16GB/512GB/14 inchF/OfficeHS/Win11/(N4I7204W1)/Xanh",
+          "price": 22180000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/dell-inspiron-14-5440-core-7-n4i7204w1/detail?oldid=48412638&pid=325244&type=2",
+          "sku": "48412638",
+          "isSelected": false
+        },
+        {
+          "type": "condition",
+          "label": "Đã sử dụng | Màu Xanh Dương | Tại: Thành phố Hồ Chí Minh | BH: Chính hãng đến 16/08/2027",
+          "value": "Dell Inspiron 14 5440 Core 7 150U/16GB/512GB/14 inchF/OfficeHS/Win11/(N4I7204W1)/Xanh",
+          "price": 22180000,
+          "url": "https://www.dienmayxanh.com/may-doi-tra/laptop/dell-inspiron-14-5440-core-7-n4i7204w1/detail?oldid=48567314&pid=325244&type=2",
+          "sku": "48567314",
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/325244/dell-inspiron-14-5440-core-7-n4i7204w1-thumb-638754948363791973-200x200.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/325244/dell-inspiron-14-5440-core-7-n4i7204w1-thumb-638754948363791973-200x200.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/15/0_48306907_dellinspiron145440core7150u16gb512gb14fofficehswin11n4i7204w1xanh_1786787047964.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/31/0_48379428_dellinspiron145440core7150u16gb512gb14fofficehswin11n4i7204w1xanh_1788158283701.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/29/0_48412638_dellinspiron145440core7150u16gb512gb14fofficehswin11n4i7204w1xanh_1788006666743.jpg",
+          "https://cdnv2.tgdd.vn/posimageused/posused/2026/09/14/0_48506529_dellinspiron145440core7150u16gb512gb14fofficehswin11n4i7204w1xanh_1789379497118.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/15/3_48306907_dellinspiron145440core7150u16gb512gb14fofficehswin11n4i7204w1xanh_1786787074663.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/15/4_48306907_dellinspiron145440core7150u16gb512gb14fofficehswin11n4i7204w1xanh_1786787078751.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/15/5_48306907_dellinspiron145440core7150u16gb512gb14fofficehswin11n4i7204w1xanh_1786787083660.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/15/6_48306907_dellinspiron145440core7150u16gb512gb14fofficehswin11n4i7204w1xanh_1786787091756.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/15/7_48306907_dellinspiron145440core7150u16gb512gb14fofficehswin11n4i7204w1xanh_1786787104749.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/15/1_48306907_dellinspiron145440core7150u16gb512gb14fofficehswin11n4i7204w1xanh_1786787053509.jpg",
+          "https://cdnv2.tgdd.vn/posimageused//posused/2026/08/15/2_48306907_dellinspiron145440core7150u16gb512gb14fofficehswin11n4i7204w1xanh_1786787064390.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": "Chính hãng đến 20/03/2027",
+        "storeCount": 4,
+        "defectNote": "Có trầy xước",
+        "crawledAt": "2026-11-13T11:51:30.738Z"
       }
     },
     {
@@ -2067,7 +2099,7 @@
         "warranty": "1 tháng tại ĐMX",
         "storeCount": 1,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.913Z"
+        "crawledAt": "2026-11-13T11:51:30.738Z"
       }
     },
     {
@@ -2174,7 +2206,7 @@
         "warranty": "Chính hãng đến 19/10/2028",
         "storeCount": 1,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.913Z"
+        "crawledAt": "2026-11-13T11:51:30.738Z"
       }
     },
     {
@@ -2294,7 +2326,7 @@
         "warranty": "Chính hãng đến 25/04/2027",
         "storeCount": 2,
         "defectNote": "Có trầy xước",
-        "crawledAt": "2026-11-12T04:26:03.913Z"
+        "crawledAt": "2026-11-13T11:51:30.738Z"
       }
     }
   ]

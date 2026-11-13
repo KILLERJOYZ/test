@@ -66,6 +66,11 @@ def fetch_unsynced_laptops(conn, limit: Optional[int] = None) -> List[Dict[str, 
     products = []
     for row in rows:
         # Chuẩn hóa cấu trúc để truyền vào hàm ingest_records của embedder
+        raw_images = row["images"] if isinstance(row["images"], list) else []
+        thumb = row["thumbnail"] or (raw_images[0] if raw_images else None)
+        if thumb and thumb not in raw_images:
+            raw_images.insert(0, thumb)
+
         p = {
             "id": row["id"],
             "source": row["source"],
@@ -93,9 +98,11 @@ def fetch_unsynced_laptops(conn, limit: Optional[int] = None) -> List[Dict[str, 
                 "weight": row["weight"],
                 "os": row["os"],
             },
+            "thumbnail": thumb,
+            "images": raw_images,
             "media": {
-                "thumbnail": row["thumbnail"],
-                "images": row["images"] if isinstance(row["images"], list) else [],
+                "thumbnail": thumb,
+                "images": raw_images,
             },
             "categories": row["categories"] if isinstance(row["categories"], list) else [],
             "rating": {

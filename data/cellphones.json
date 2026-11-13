@@ -1,6 +1,6 @@
 {
   "source": "cellphones",
-  "crawledAt": "2026-11-12T04:22:38.011Z",
+  "crawledAt": "2026-11-13T11:47:22.081Z",
   "totalCategories": 19,
   "totalProducts": 15,
   "categories": [
@@ -121,89 +121,6 @@
   ],
   "products": [
     {
-      "id": "7f2f820acd4a84f3",
-      "source": "cellphones",
-      "sku": "laptop-lenovo-loq-15irh11e-83y9003vvn",
-      "name": "Laptop Lenovo LOQ 15IRH11E 83Y9003VVN",
-      "brand": "Lenovo",
-      "model": "LOQ 15IRH11E 83Y9003VVN",
-      "url": "https://cellphones.com.vn/laptop-lenovo-loq-15irh11e-83y9003vvn.html",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://cellphones.com.vn/laptop.html",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 26990000,
-        "original": 36990000,
-        "discountPercent": 27,
-        "installment": "Trả góp 0%",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "Intel Core 5 205H, 8 lõi (4P + 4E) / 12 luồng, P-core 2.2 / 4.8GHz, E-core 1.6 / 3.6GHz, 12MB Intel Smart Cache",
-        "ram": "8GB",
-        "storage": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Hỗ trợ tối đa hai ổ đĩa, 2x SSD M.2, dung lượng lên đến 1TB)",
-        "gpu": "NVIDIA GeForce RTX 3050 6GB GDDR6, Boost Clock 1732MHz, TGP 75W, 142 AI TOPS",
-        "screen": "15.3 inches, 1920 x 1200 pixels (WUXGA)",
-        "battery": "60Wh, 135W Slim Tip (3-pin)",
-        "weight": null,
-        "os": "Windows 11 Home Single Language, English",
-        "ports": "1 x Cổng nguồn Slim Tip (hình chữ nhật) 1 x USB-A 10Gbps (công suất 4.5W) 1 x USB-C 5Gbps (USB PD 65–100W đầu vào / 15W đầu ra) 2 x USB-A 5Gbps (công suất 4.5W) 1 x HDMI 2.1 (tối đa 4K@60Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ-45",
-        "rawSpecs": {
-          "Loại card đồ họa": "NVIDIA GeForce RTX 3050 6GB GDDR6, Boost Clock 1732MHz, TGP 75W, 142 AI TOPS",
-          "Dung lượng RAM": "8GB",
-          "Loại RAM": "SODIMM DDR5-5200",
-          "Số khe ram": "2 khe (1 x 8GB, nâng cấp tối đa 32GB DDR5-5200)",
-          "Ổ cứng": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Hỗ trợ tối đa hai ổ đĩa, 2x SSD M.2, dung lượng lên đến 1TB)",
-          "Công nghệ màn hình": "Độ sáng 300 nits Màn hình chống chói Độ phủ màu 100% sRGB Giảm ánh sáng xanh",
-          "Hệ điều hành khi ra mắt": "Windows 11 Home Single Language, English",
-          "Loại CPU": "Intel Core 5 205H, 8 lõi (4P + 4E) / 12 luồng, P-core 2.2 / 4.8GHz, E-core 1.6 / 3.6GHz, 12MB Intel Smart Cache",
-          "Kích thước màn hình": "15.3 inches",
-          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
-          "Pin": "60Wh, 135W Slim Tip (3-pin)",
-          "Cổng giao tiếp": "1 x Cổng nguồn Slim Tip (hình chữ nhật) 1 x USB-A 10Gbps (công suất 4.5W) 1 x USB-C 5Gbps (USB PD 65–100W đầu vào / 15W đầu ra) 2 x USB-A 5Gbps (công suất 4.5W) 1 x HDMI 2.1 (tối đa 4K@60Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ-45"
-        }
-      },
-      "options": [
-        {
-          "type": "color",
-          "label": "Xám",
-          "value": "Xám",
-          "price": 26990000,
-          "url": "https://cellphones.com.vn/laptop-lenovo-loq-15irh11e-83y9003vvn.html?product_id=144020",
-          "sku": null,
-          "isSelected": false
-        }
-      ],
-      "promotions": [
-        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 3 km khác"
-      ],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_87.png",
-        "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_87.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/t/e/text_d_i_1__4_87.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.877Z"
-      }
-    },
-    {
       "id": "a7bab6632c13ea32",
       "source": "cellphones",
       "sku": "laptop-lenovo-ideapad-slim-3-14iwc11-83rq002pvn",
@@ -223,9 +140,9 @@
       ],
       "pricing": {
         "currency": "VND",
-        "current": 18990000,
+        "current": 18490000,
         "original": 22990000,
-        "discountPercent": 17,
+        "discountPercent": 20,
         "installment": "Trả góp 0%",
         "priceNote": null
       },
@@ -260,15 +177,13 @@
           "type": "color",
           "label": "Xám",
           "value": "Xám",
-          "price": 18990000,
+          "price": 18490000,
           "url": "https://cellphones.com.vn/laptop-lenovo-ideapad-slim-3-14iwc11-83rq002pvn.html?product_id=135164",
           "sku": null,
           "isSelected": false
         }
       ],
-      "promotions": [
-        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 3 km khác"
-      ],
+      "promotions": [],
       "rating": {
         "average": 5,
         "count": 1
@@ -284,88 +199,7 @@
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.878Z"
-      }
-    },
-    {
-      "id": "ad9773c67399899b",
-      "source": "cellphones",
-      "sku": "laptop-acer-swift-air-14-sfa14-i31-55nr",
-      "name": "Laptop Acer Swift Air 14 SFA14-I31-55NR",
-      "brand": "Acer",
-      "model": "Swift Air 14 SFA14-I31-55NR",
-      "url": "https://cellphones.com.vn/laptop-acer-swift-air-14-sfa14-i31-55nr.html",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://cellphones.com.vn/laptop.html",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 24990000,
-        "original": 24990000,
-        "discountPercent": null,
-        "installment": "Trả góp 0%",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "Intel Core 5 320 (6 lõi / 6 luồng, Tần số cơ bản của nhân hiệu năng cao 1.5 GHz, 3.0 up to 4.6 GHz, 6 MB Smart Cache)",
-        "ram": "12GB",
-        "storage": "512GB PCIe NVMe SSD (Nâng cấp tối đa 2TB)",
-        "gpu": "Intel Graphics",
-        "screen": "14 inches, 1920 x 1200 pixels (WUXGA)",
-        "battery": "70 Wh 3-cell Li-ion battery 3-pin 100 W PD PCR 50%, TCO 9.0 AC adapter",
-        "weight": null,
-        "os": "Windows 11 Home",
-        "ports": "2x USB-C (USB4 40Gbps, Thunderbolt 4, sạc 5V/3A) 1x USB-C (DC-in 20V/100W) 1x USB-A 3.2 Gen 1",
-        "rawSpecs": {
-          "Loại card đồ họa": "Intel Graphics",
-          "Dung lượng RAM": "12GB",
-          "Loại RAM": "LPDDR5X 7467 MT/s Onboard",
-          "Số khe ram": "Không nâng cấp",
-          "Ổ cứng": "512GB PCIe NVMe SSD (Nâng cấp tối đa 2TB)",
-          "Công nghệ màn hình": "Độ sáng 350 nits Tỉ lệ màn hình 16:10 Độ phủ màu 100% sRGB Góc nhìn 170° Màn hình LED-backlit TFT LCD",
-          "Hệ điều hành khi ra mắt": "Windows 11 Home",
-          "Loại CPU": "Intel Core 5 320 (6 lõi / 6 luồng, Tần số cơ bản của nhân hiệu năng cao 1.5 GHz, 3.0 up to 4.6 GHz, 6 MB Smart Cache)",
-          "Kích thước màn hình": "14 inches",
-          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
-          "Pin": "70 Wh 3-cell Li-ion battery 3-pin 100 W PD PCR 50%, TCO 9.0 AC adapter",
-          "Cổng giao tiếp": "2x USB-C (USB4 40Gbps, Thunderbolt 4, sạc 5V/3A) 1x USB-C (DC-in 20V/100W) 1x USB-A 3.2 Gen 1"
-        }
-      },
-      "options": [
-        {
-          "type": "color",
-          "label": "Hồng",
-          "value": "Hồng",
-          "price": 24990000,
-          "url": "https://cellphones.com.vn/laptop-acer-swift-air-14-sfa14-i31-55nr.html?product_id=139794",
-          "sku": null,
-          "isSelected": false
-        }
-      ],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_8.png",
-        "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_8.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_2_8.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.878Z"
+        "crawledAt": "2026-11-13T11:47:22.049Z"
       }
     },
     {
@@ -446,7 +280,492 @@
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.879Z"
+        "crawledAt": "2026-11-13T11:47:22.050Z"
+      }
+    },
+    {
+      "id": "60a7dca842d3ab30",
+      "source": "cellphones",
+      "sku": "laptop-asus-vivobook-go-14-e1404fa-eb1941w",
+      "name": "Laptop ASUS Vivobook Go 14 E1404FA-EB1941W",
+      "brand": "ASUS",
+      "model": "Vivobook Go 14 E1404FA-EB1941W",
+      "url": "https://cellphones.com.vn/laptop-asus-vivobook-go-14-e1404fa-eb1941w.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 18890000,
+        "original": 22990000,
+        "discountPercent": 18,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "AMD Ryzen 5 40 2.8GHz (6MB Cache, up to 4.3GHz, 4 lõi, 8 luồng)",
+        "ram": "8GB",
+        "storage": "512GB M.2 NVMe PCIe 3.0 SSD",
+        "gpu": "AMD Radeon Graphics",
+        "screen": "14 inches, 1920 x 1080 pixels (FullHD)",
+        "battery": "42WHrs, 3S1P, 3-cell Li-ion",
+        "weight": null,
+        "os": "Windows 11 Home",
+        "ports": "1 x USB-A 2.0 (tốc độ dữ liệu tối đa 480Mbps) 1 x USB-A 3.2 Gen 1 (tốc độ dữ liệu tối đa 5Gbps) 1 x USB-C 3.2 Gen 1 (tốc độ dữ liệu tối đa 5Gbps) 1 x HDMI 1.4 1 x Jack âm thanh 3.5 mm 1 x Cổng nguồn DC-in",
+        "rawSpecs": {
+          "Loại card đồ họa": "AMD Radeon Graphics",
+          "Dung lượng RAM": "8GB",
+          "Loại RAM": "8GB LPDDR5 on board",
+          "Ổ cứng": "512GB M.2 NVMe PCIe 3.0 SSD",
+          "Công nghệ màn hình": "Độ sáng 250 nits Độ phủ màu 45% NTSC Màn hình chống chói",
+          "Hệ điều hành khi ra mắt": "Windows 11 Home",
+          "Loại CPU": "AMD Ryzen 5 40 2.8GHz (6MB Cache, up to 4.3GHz, 4 lõi, 8 luồng)",
+          "Kích thước màn hình": "14 inches",
+          "Độ phân giải màn hình": "1920 x 1080 pixels (FullHD)",
+          "Pin": "42WHrs, 3S1P, 3-cell Li-ion",
+          "Cổng giao tiếp": "1 x USB-A 2.0 (tốc độ dữ liệu tối đa 480Mbps) 1 x USB-A 3.2 Gen 1 (tốc độ dữ liệu tối đa 5Gbps) 1 x USB-C 3.2 Gen 1 (tốc độ dữ liệu tối đa 5Gbps) 1 x HDMI 1.4 1 x Jack âm thanh 3.5 mm 1 x Cổng nguồn DC-in"
+        }
+      },
+      "options": [
+        {
+          "type": "color",
+          "label": "Đen",
+          "value": "Đen",
+          "price": 18890000,
+          "url": "https://cellphones.com.vn/laptop-asus-vivobook-go-14-e1404fa-eb1941w.html?product_id=142387",
+          "sku": null,
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1091_1.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1091_1.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_1091_1.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:47:22.051Z"
+      }
+    },
+    {
+      "id": "424c58ea8158e89f",
+      "source": "cellphones",
+      "sku": "laptop-asus-vivobook-16-x1607ca-mb399w",
+      "name": "Laptop ASUS Vivobook 16 X1607CA-MB399W",
+      "brand": "ASUS",
+      "model": "Vivobook 16 X1607CA-MB399W",
+      "url": "https://cellphones.com.vn/laptop-asus-vivobook-16-x1607ca-mb399w.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 28990000,
+        "original": 36490000,
+        "discountPercent": 21,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core Ultra 7 255H 2.0 GHz (24MB Cache, up to 5.1 GHz, 16 lõi, 16 luồng)",
+        "ram": "16GB",
+        "storage": "512GB M.2 NVMe PCIe 4.0 SSD",
+        "gpu": "Intel Graphics",
+        "screen": "16 inches, 1920 x 1200 pixels (WUXGA)",
+        "battery": "42WHrs, 3S1P, 3-cell Li-ion",
+        "weight": null,
+        "os": "Windows 11 Home",
+        "ports": "2 x USB-C 3.2 Gen 1 (5Gbps, hỗ trợ DisplayPort và Power Delivery) 2 x USB-A 3.2 Gen 1 (5Gbps) 1 x HDMI 1.4 1 x Jack tai nghe/mic 3.5 mm",
+        "rawSpecs": {
+          "Chip AI": "Intel AI Boost NPU up to 13TOPS",
+          "Loại card đồ họa": "Intel Graphics",
+          "Dung lượng RAM": "16GB",
+          "Loại RAM": "DDR5 on board",
+          "Ổ cứng": "512GB M.2 NVMe PCIe 4.0 SSD",
+          "Công nghệ màn hình": "Độ sáng 300 nits Độ phủ màu 45% NTSC Màn hình chống chói",
+          "Hệ điều hành khi ra mắt": "Windows 11 Home",
+          "Loại CPU": "Intel Core Ultra 7 255H 2.0 GHz (24MB Cache, up to 5.1 GHz, 16 lõi, 16 luồng)",
+          "Kích thước màn hình": "16 inches",
+          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
+          "Pin": "42WHrs, 3S1P, 3-cell Li-ion",
+          "Cổng giao tiếp": "2 x USB-C 3.2 Gen 1 (5Gbps, hỗ trợ DisplayPort và Power Delivery) 2 x USB-A 3.2 Gen 1 (5Gbps) 1 x HDMI 1.4 1 x Jack tai nghe/mic 3.5 mm"
+        }
+      },
+      "options": [
+        {
+          "type": "color",
+          "label": "Bạc",
+          "value": "Bạc",
+          "price": 28990000,
+          "url": "https://cellphones.com.vn/laptop-asus-vivobook-16-x1607ca-mb399w.html?product_id=137016",
+          "sku": null,
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_28.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_28.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_1_28.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:47:22.051Z"
+      }
+    },
+    {
+      "id": "9e49b480f8c710b6",
+      "source": "cellphones",
+      "sku": "laptop-dell-14-dc14250-dc4c5375w1",
+      "name": "Laptop Dell 14 DC14250 DC4C5375W1 - Bảo hành 2 năm",
+      "brand": "Dell",
+      "model": "14 DC14250 DC4C5375W1 - Bảo hành 2 năm",
+      "url": "https://cellphones.com.vn/laptop-dell-14-dc14250-dc4c5375w1.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 29990000,
+        "original": 31390000,
+        "discountPercent": 4,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core 5 120U (10 lõi, up to 5.0 GHz)",
+        "ram": "16GB",
+        "storage": "512GB M.2 PCIe NVMe (nâng cấp tối đa 1TB)",
+        "gpu": "Intel Graphics",
+        "screen": "14 inches, 1920 x 1200 pixels (FullHD+)",
+        "battery": "4-Cell Battery, 54WHr",
+        "weight": null,
+        "os": "Windows 11 Home Single Language, Microsoft Office Home 2024 + Microsoft 365 Basic 1 year",
+        "ports": "1x đầu đọc thẻ SD (SD Card Reader) 1x jack tai nghe/micro toàn cầu 3.5mm (Global Headset Jack) 2x USB-A 3.2 Gen 1 1x USB-C 3.2 Gen 2 1x HDMI 1.4",
+        "rawSpecs": {
+          "Loại card đồ họa": "Intel Graphics",
+          "Dung lượng RAM": "16GB",
+          "Loại RAM": "DDR5 5200 MT/s",
+          "Số khe ram": "2 khe rời (1 x 16 GB, tối đa 16GB)",
+          "Ổ cứng": "512GB M.2 PCIe NVMe (nâng cấp tối đa 1TB)",
+          "Công nghệ màn hình": "Độ phủ màu 45% NTSC Độ sáng 300 nits Màn hình chống chói",
+          "Hệ điều hành khi ra mắt": "Windows 11 Home Single Language, Microsoft Office Home 2024 + Microsoft 365 Basic 1 year",
+          "Loại CPU": "Intel Core 5 120U (10 lõi, up to 5.0 GHz)",
+          "Kích thước màn hình": "14 inches",
+          "Độ phân giải màn hình": "1920 x 1200 pixels (FullHD+)",
+          "Pin": "4-Cell Battery, 54WHr",
+          "Cổng giao tiếp": "1x đầu đọc thẻ SD (SD Card Reader) 1x jack tai nghe/micro toàn cầu 3.5mm (Global Headset Jack) 2x USB-A 3.2 Gen 1 1x USB-C 3.2 Gen 2 1x HDMI 1.4"
+        }
+      },
+      "options": [
+        {
+          "type": "color",
+          "label": "Bạc",
+          "value": "Bạc",
+          "price": null,
+          "url": "https://cellphones.com.vn/laptop-dell-14-dc14250-dc4c5375w1.html?product_id=135171",
+          "sku": null,
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_21.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_21.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_1_21.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:47:22.051Z"
+      }
+    },
+    {
+      "id": "ad9773c67399899b",
+      "source": "cellphones",
+      "sku": "laptop-acer-swift-air-14-sfa14-i31-55nr",
+      "name": "Laptop Acer Swift Air 14 SFA14-I31-55NR",
+      "brand": "Acer",
+      "model": "Swift Air 14 SFA14-I31-55NR",
+      "url": "https://cellphones.com.vn/laptop-acer-swift-air-14-sfa14-i31-55nr.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 24990000,
+        "original": 24990000,
+        "discountPercent": null,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core 5 320 (6 lõi / 6 luồng, Tần số cơ bản của nhân hiệu năng cao 1.5 GHz, 3.0 up to 4.6 GHz, 6 MB Smart Cache)",
+        "ram": "12GB",
+        "storage": "512GB PCIe NVMe SSD (Nâng cấp tối đa 2TB)",
+        "gpu": "Intel Graphics",
+        "screen": "14 inches, 1920 x 1200 pixels (WUXGA)",
+        "battery": "70 Wh 3-cell Li-ion battery 3-pin 100 W PD PCR 50%, TCO 9.0 AC adapter",
+        "weight": null,
+        "os": "Windows 11 Home",
+        "ports": "2x USB-C (USB4 40Gbps, Thunderbolt 4, sạc 5V/3A) 1x USB-C (DC-in 20V/100W) 1x USB-A 3.2 Gen 1",
+        "rawSpecs": {
+          "Loại card đồ họa": "Intel Graphics",
+          "Dung lượng RAM": "12GB",
+          "Loại RAM": "LPDDR5X 7467 MT/s Onboard",
+          "Số khe ram": "Không nâng cấp",
+          "Ổ cứng": "512GB PCIe NVMe SSD (Nâng cấp tối đa 2TB)",
+          "Công nghệ màn hình": "Độ sáng 350 nits Tỉ lệ màn hình 16:10 Độ phủ màu 100% sRGB Góc nhìn 170° Màn hình LED-backlit TFT LCD",
+          "Hệ điều hành khi ra mắt": "Windows 11 Home",
+          "Loại CPU": "Intel Core 5 320 (6 lõi / 6 luồng, Tần số cơ bản của nhân hiệu năng cao 1.5 GHz, 3.0 up to 4.6 GHz, 6 MB Smart Cache)",
+          "Kích thước màn hình": "14 inches",
+          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
+          "Pin": "70 Wh 3-cell Li-ion battery 3-pin 100 W PD PCR 50%, TCO 9.0 AC adapter",
+          "Cổng giao tiếp": "2x USB-C (USB4 40Gbps, Thunderbolt 4, sạc 5V/3A) 1x USB-C (DC-in 20V/100W) 1x USB-A 3.2 Gen 1"
+        }
+      },
+      "options": [
+        {
+          "type": "color",
+          "label": "Hồng",
+          "value": "Hồng",
+          "price": 24990000,
+          "url": "https://cellphones.com.vn/laptop-acer-swift-air-14-sfa14-i31-55nr.html?product_id=139794",
+          "sku": null,
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_8.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_8.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_2_8.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:47:22.051Z"
+      }
+    },
+    {
+      "id": "7f2f820acd4a84f3",
+      "source": "cellphones",
+      "sku": "laptop-lenovo-loq-15irh11e-83y9003vvn",
+      "name": "Laptop Lenovo LOQ 15IRH11E 83Y9003VVN",
+      "brand": "Lenovo",
+      "model": "LOQ 15IRH11E 83Y9003VVN",
+      "url": "https://cellphones.com.vn/laptop-lenovo-loq-15irh11e-83y9003vvn.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 26990000,
+        "original": 36990000,
+        "discountPercent": 27,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core 5 205H, 8 lõi (4P + 4E) / 12 luồng, P-core 2.2 / 4.8GHz, E-core 1.6 / 3.6GHz, 12MB Intel Smart Cache",
+        "ram": "8GB",
+        "storage": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Hỗ trợ tối đa hai ổ đĩa, 2x SSD M.2, dung lượng lên đến 1TB)",
+        "gpu": "NVIDIA GeForce RTX 3050 6GB GDDR6, Boost Clock 1732MHz, TGP 75W, 142 AI TOPS",
+        "screen": "15.3 inches, 1920 x 1200 pixels (WUXGA)",
+        "battery": "60Wh, 135W Slim Tip (3-pin)",
+        "weight": null,
+        "os": "Windows 11 Home Single Language, English",
+        "ports": "1 x Cổng nguồn Slim Tip (hình chữ nhật) 1 x USB-A 10Gbps (công suất 4.5W) 1 x USB-C 5Gbps (USB PD 65–100W đầu vào / 15W đầu ra) 2 x USB-A 5Gbps (công suất 4.5W) 1 x HDMI 2.1 (tối đa 4K@60Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ-45",
+        "rawSpecs": {
+          "Loại card đồ họa": "NVIDIA GeForce RTX 3050 6GB GDDR6, Boost Clock 1732MHz, TGP 75W, 142 AI TOPS",
+          "Dung lượng RAM": "8GB",
+          "Loại RAM": "SODIMM DDR5-5200",
+          "Số khe ram": "2 khe (1 x 8GB, nâng cấp tối đa 32GB DDR5-5200)",
+          "Ổ cứng": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Hỗ trợ tối đa hai ổ đĩa, 2x SSD M.2, dung lượng lên đến 1TB)",
+          "Công nghệ màn hình": "Độ sáng 300 nits Màn hình chống chói Độ phủ màu 100% sRGB Giảm ánh sáng xanh",
+          "Hệ điều hành khi ra mắt": "Windows 11 Home Single Language, English",
+          "Loại CPU": "Intel Core 5 205H, 8 lõi (4P + 4E) / 12 luồng, P-core 2.2 / 4.8GHz, E-core 1.6 / 3.6GHz, 12MB Intel Smart Cache",
+          "Kích thước màn hình": "15.3 inches",
+          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
+          "Pin": "60Wh, 135W Slim Tip (3-pin)",
+          "Cổng giao tiếp": "1 x Cổng nguồn Slim Tip (hình chữ nhật) 1 x USB-A 10Gbps (công suất 4.5W) 1 x USB-C 5Gbps (USB PD 65–100W đầu vào / 15W đầu ra) 2 x USB-A 5Gbps (công suất 4.5W) 1 x HDMI 2.1 (tối đa 4K@60Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ-45"
+        }
+      },
+      "options": [
+        {
+          "type": "color",
+          "label": "Xám",
+          "value": "Xám",
+          "price": 26990000,
+          "url": "https://cellphones.com.vn/laptop-lenovo-loq-15irh11e-83y9003vvn.html?product_id=144020",
+          "sku": null,
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_87.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_87.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/t/e/text_d_i_1__4_87.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:47:22.051Z"
+      }
+    },
+    {
+      "id": "296615accaeffb1c",
+      "source": "cellphones",
+      "sku": "laptop-msi-modern-14-h1m-014vn",
+      "name": "Laptop MSI Modern 14 H1M-014VN",
+      "brand": "MSI",
+      "model": "Modern 14 H1M-014VN",
+      "url": "https://cellphones.com.vn/laptop-msi-modern-14-h1m-014vn.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 22990000,
+        "original": 25490000,
+        "discountPercent": 10,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core 7 150U, 10 lõi (2 P-cores + 8 E-cores), 12 luồng, 12 MB Intel Smart Cache, Max Turbo Frequency 5.4 GHz",
+        "ram": "16GB",
+        "storage": "512GB*1 (1x M.2 SSD slot (NVMe PCIe Gen4) Max 2TB)",
+        "gpu": "Intel Graphics",
+        "screen": "14 inches, 1920 x 1200 pixels (FullHD+)",
+        "battery": "3-cell, 58 Whr",
+        "weight": null,
+        "os": "Windows 11 Home Single Language",
+        "ports": "1 x USB-C (USB4, DisplayPort, Power Delivery 3.0, tương thích Thunderbolt 4) 1 x USB-C (DisplayPort, Power Delivery 3.0) 3 x USB-A 3.2 Gen 1 1 x HDMI 2.1 (4K@60Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ451x Full Size SD Card Reader",
+        "rawSpecs": {
+          "Loại card đồ họa": "Intel Graphics",
+          "Dung lượng RAM": "16GB",
+          "Loại RAM": "LPDDR5 Onboard",
+          "Số khe ram": "Không hỗ trợ nâng cấp",
+          "Ổ cứng": "512GB*1 (1x M.2 SSD slot (NVMe PCIe Gen4) Max 2TB)",
+          "Công nghệ màn hình": "Độ phủ màu: 45% NTSC Màn hình chống chói (Anti-glare) Độ sáng: 350 nits",
+          "Hệ điều hành khi ra mắt": "Windows 11 Home Single Language",
+          "Loại CPU": "Intel Core 7 150U, 10 lõi (2 P-cores + 8 E-cores), 12 luồng, 12 MB Intel Smart Cache, Max Turbo Frequency 5.4 GHz",
+          "Kích thước màn hình": "14 inches",
+          "Độ phân giải màn hình": "1920 x 1200 pixels (FullHD+)",
+          "Pin": "3-cell, 58 Whr",
+          "Cổng giao tiếp": "1 x USB-C (USB4, DisplayPort, Power Delivery 3.0, tương thích Thunderbolt 4) 1 x USB-C (DisplayPort, Power Delivery 3.0) 3 x USB-A 3.2 Gen 1 1 x HDMI 2.1 (4K@60Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ451x Full Size SD Card Reader"
+        }
+      },
+      "options": [
+        {
+          "type": "color",
+          "label": "Xám",
+          "value": "Xám",
+          "price": 22990000,
+          "url": "https://cellphones.com.vn/laptop-msi-modern-14-h1m-014vn.html?product_id=135714",
+          "sku": null,
+          "isSelected": false
+        }
+      ],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_24.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_24.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_1_24.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:47:22.051Z"
       }
     },
     {
@@ -528,17 +847,17 @@
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.879Z"
+        "crawledAt": "2026-11-13T11:47:22.051Z"
       }
     },
     {
-      "id": "9e49b480f8c710b6",
+      "id": "116db43e6111b2b6",
       "source": "cellphones",
-      "sku": "laptop-dell-14-dc14250-dc4c5375w1",
-      "name": "Laptop Dell 14 DC14250 DC4C5375W1 - Bảo hành 2 năm",
-      "brand": "Dell",
-      "model": "14 DC14250 DC4C5375W1 - Bảo hành 2 năm",
-      "url": "https://cellphones.com.vn/laptop-dell-14-dc14250-dc4c5375w1.html",
+      "sku": "laptop-asus-expertbook-p1-p1503cvay-s73484w",
+      "name": "Laptop ASUS ExpertBook P1 P1503CVAY-S73484W",
+      "brand": "ASUS",
+      "model": "ExpertBook P1 P1503CVAY-S73484W",
+      "url": "https://cellphones.com.vn/laptop-asus-expertbook-p1-p1503cvay-s73484w.html",
       "condition": "new",
       "availability": "in_stock",
       "categories": [
@@ -551,116 +870,35 @@
       ],
       "pricing": {
         "currency": "VND",
-        "current": 29990000,
-        "original": 31390000,
-        "discountPercent": 4,
+        "current": 15490000,
+        "original": 16990000,
+        "discountPercent": 9,
         "installment": "Trả góp 0%",
         "priceNote": null
       },
       "specs": {
-        "cpu": "Intel Core 5 120U (10 lõi, up to 5.0 GHz)",
-        "ram": "16GB",
-        "storage": "512GB M.2 PCIe NVMe (nâng cấp tối đa 1TB)",
+        "cpu": "Intel Core 3 100U 1.2 GHz (10MB Cache, up to 4.7 GHz, 6 lõi, 8 luồng)",
+        "ram": "8GB",
+        "storage": "SSD 256GB M.2 2280 NVMe PCIe 3.0 Hỗ trợ mở rộng lưu trữ qua SSD Housing",
         "gpu": "Intel Graphics",
-        "screen": "14 inches, 1920 x 1200 pixels (FullHD+)",
-        "battery": "4-Cell Battery, 54WHr",
+        "screen": "15.6 inches, 1920 x 1080 pixels (FullHD)",
+        "battery": "63WHrs, 3S1P, 3-cell Li-ion",
         "weight": null,
-        "os": "Windows 11 Home Single Language, Microsoft Office Home 2024 + Microsoft 365 Basic 1 year",
-        "ports": "1x đầu đọc thẻ SD (SD Card Reader) 1x jack tai nghe/micro toàn cầu 3.5mm (Global Headset Jack) 2x USB-A 3.2 Gen 1 1x USB-C 3.2 Gen 2 1x HDMI 1.4",
+        "os": "Windows 11 Home",
+        "ports": "2 x USB-A 3.2 Gen 1 2 x USB-C 3.2 Gen 2 (hỗ trợ DisplayPort, Power Delivery) 1 x HDMI 1.4 (tối đa 3840 × 2160@30Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ-45 Gigabit Ethernet",
         "rawSpecs": {
           "Loại card đồ họa": "Intel Graphics",
-          "Dung lượng RAM": "16GB",
-          "Loại RAM": "DDR5 5200 MT/s",
-          "Số khe ram": "2 khe rời (1 x 16 GB, tối đa 16GB)",
-          "Ổ cứng": "512GB M.2 PCIe NVMe (nâng cấp tối đa 1TB)",
-          "Công nghệ màn hình": "Độ phủ màu 45% NTSC Độ sáng 300 nits Màn hình chống chói",
-          "Hệ điều hành khi ra mắt": "Windows 11 Home Single Language, Microsoft Office Home 2024 + Microsoft 365 Basic 1 year",
-          "Loại CPU": "Intel Core 5 120U (10 lõi, up to 5.0 GHz)",
-          "Kích thước màn hình": "14 inches",
-          "Độ phân giải màn hình": "1920 x 1200 pixels (FullHD+)",
-          "Pin": "4-Cell Battery, 54WHr",
-          "Cổng giao tiếp": "1x đầu đọc thẻ SD (SD Card Reader) 1x jack tai nghe/micro toàn cầu 3.5mm (Global Headset Jack) 2x USB-A 3.2 Gen 1 1x USB-C 3.2 Gen 2 1x HDMI 1.4"
-        }
-      },
-      "options": [
-        {
-          "type": "color",
-          "label": "Bạc",
-          "value": "Bạc",
-          "price": 29990000,
-          "url": "https://cellphones.com.vn/laptop-dell-14-dc14250-dc4c5375w1.html?product_id=135171",
-          "sku": null,
-          "isSelected": false
-        }
-      ],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_21.png",
-        "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_21.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_1_21.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.879Z"
-      }
-    },
-    {
-      "id": "296615accaeffb1c",
-      "source": "cellphones",
-      "sku": "laptop-msi-modern-14-h1m-014vn",
-      "name": "Laptop MSI Modern 14 H1M-014VN",
-      "brand": "MSI",
-      "model": "Modern 14 H1M-014VN",
-      "url": "https://cellphones.com.vn/laptop-msi-modern-14-h1m-014vn.html",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://cellphones.com.vn/laptop.html",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 22990000,
-        "original": 25490000,
-        "discountPercent": 10,
-        "installment": "Trả góp 0%",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "Intel Core 7 150U, 10 lõi (2 P-cores + 8 E-cores), 12 luồng, 12 MB Intel Smart Cache, Max Turbo Frequency 5.4 GHz",
-        "ram": "16GB",
-        "storage": "512GB*1 (1x M.2 SSD slot (NVMe PCIe Gen4) Max 2TB)",
-        "gpu": "Intel Graphics",
-        "screen": "14 inches, 1920 x 1200 pixels (FullHD+)",
-        "battery": "3-cell, 58 Whr",
-        "weight": null,
-        "os": "Windows 11 Home Single Language",
-        "ports": "1 x USB-C (USB4, DisplayPort, Power Delivery 3.0, tương thích Thunderbolt 4) 1 x USB-C (DisplayPort, Power Delivery 3.0) 3 x USB-A 3.2 Gen 1 1 x HDMI 2.1 (4K@60Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ451x Full Size SD Card Reader",
-        "rawSpecs": {
-          "Loại card đồ họa": "Intel Graphics",
-          "Dung lượng RAM": "16GB",
-          "Loại RAM": "LPDDR5 Onboard",
-          "Số khe ram": "Không hỗ trợ nâng cấp",
-          "Ổ cứng": "512GB*1 (1x M.2 SSD slot (NVMe PCIe Gen4) Max 2TB)",
-          "Công nghệ màn hình": "Độ phủ màu: 45% NTSC Màn hình chống chói (Anti-glare) Độ sáng: 350 nits",
-          "Hệ điều hành khi ra mắt": "Windows 11 Home Single Language",
-          "Loại CPU": "Intel Core 7 150U, 10 lõi (2 P-cores + 8 E-cores), 12 luồng, 12 MB Intel Smart Cache, Max Turbo Frequency 5.4 GHz",
-          "Kích thước màn hình": "14 inches",
-          "Độ phân giải màn hình": "1920 x 1200 pixels (FullHD+)",
-          "Pin": "3-cell, 58 Whr",
-          "Cổng giao tiếp": "1 x USB-C (USB4, DisplayPort, Power Delivery 3.0, tương thích Thunderbolt 4) 1 x USB-C (DisplayPort, Power Delivery 3.0) 3 x USB-A 3.2 Gen 1 1 x HDMI 2.1 (4K@60Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ451x Full Size SD Card Reader"
+          "Dung lượng RAM": "8GB",
+          "Loại RAM": "DDR4 SO-DIMM",
+          "Số khe ram": "Có thể nâng cấp; cần tháo vỏ máy (mặt dưới hoặc mặt trên)",
+          "Ổ cứng": "SSD 256GB M.2 2280 NVMe PCIe 3.0 Hỗ trợ mở rộng lưu trữ qua SSD Housing",
+          "Công nghệ màn hình": "Độ sáng 300 nits Màn hình chống chói Độ phủ màu 45% NTSC Góc nhìn: 170°/170° Thời gian phản hồi: 20 ms (Typ), 25 ms (Max) Độ tương phản tĩnh: 800:1",
+          "Hệ điều hành khi ra mắt": "Windows 11 Home",
+          "Loại CPU": "Intel Core 3 100U 1.2 GHz (10MB Cache, up to 4.7 GHz, 6 lõi, 8 luồng)",
+          "Kích thước màn hình": "15.6 inches",
+          "Độ phân giải màn hình": "1920 x 1080 pixels (FullHD)",
+          "Pin": "63WHrs, 3S1P, 3-cell Li-ion",
+          "Cổng giao tiếp": "2 x USB-A 3.2 Gen 1 2 x USB-C 3.2 Gen 2 (hỗ trợ DisplayPort, Power Delivery) 1 x HDMI 1.4 (tối đa 3840 × 2160@30Hz) 1 x Jack tai nghe/mic 3.5 mm 1 x RJ-45 Gigabit Ethernet"
         }
       },
       "options": [
@@ -668,39 +906,41 @@
           "type": "color",
           "label": "Xám",
           "value": "Xám",
-          "price": 22990000,
-          "url": "https://cellphones.com.vn/laptop-msi-modern-14-h1m-014vn.html?product_id=135714",
+          "price": 15490000,
+          "url": "https://cellphones.com.vn/laptop-asus-expertbook-p1-p1503cvay-s73484w.html?product_id=142545",
           "sku": null,
           "isSelected": false
         }
       ],
-      "promotions": [],
+      "promotions": [
+        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 1 km khác"
+      ],
       "rating": {
         "average": null,
         "count": null
       },
       "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_24.png",
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_22.png",
         "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_24.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_1_24.png"
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_22.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_2_22.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.879Z"
+        "crawledAt": "2026-11-13T11:47:22.051Z"
       }
     },
     {
-      "id": "60a7dca842d3ab30",
+      "id": "5ba5bb8151e3dced",
       "source": "cellphones",
-      "sku": "laptop-asus-vivobook-go-14-e1404fa-eb1941w",
-      "name": "Laptop ASUS Vivobook Go 14 E1404FA-EB1941W",
-      "brand": "ASUS",
-      "model": "Vivobook Go 14 E1404FA-EB1941W",
-      "url": "https://cellphones.com.vn/laptop-asus-vivobook-go-14-e1404fa-eb1941w.html",
+      "sku": "laptop-thunderobot-t-book-15a",
+      "name": "Laptop Thunderobot T-Book 15A",
+      "brand": "Thunderobot",
+      "model": "T-Book 15A",
+      "url": "https://cellphones.com.vn/laptop-thunderobot-t-book-15a.html",
       "condition": "new",
       "availability": "in_stock",
       "categories": [
@@ -713,34 +953,118 @@
       ],
       "pricing": {
         "currency": "VND",
-        "current": 18890000,
-        "original": 22990000,
-        "discountPercent": 18,
+        "current": 13590000,
+        "original": 14190000,
+        "discountPercent": 4,
         "installment": "Trả góp 0%",
         "priceNote": null
       },
       "specs": {
-        "cpu": "AMD Ryzen 5 40 2.8GHz (6MB Cache, up to 4.3GHz, 4 lõi, 8 luồng)",
+        "cpu": "AMD Ryzen 3 - 3200U (2 lõi / 4 luồng, 2.6 GHz / tối đa 3.5 GHz)",
         "ram": "8GB",
-        "storage": "512GB M.2 NVMe PCIe 3.0 SSD",
-        "gpu": "AMD Radeon Graphics",
-        "screen": "14 inches, 1920 x 1080 pixels (FullHD)",
-        "battery": "42WHrs, 3S1P, 3-cell Li-ion",
+        "storage": "512 GB PCIe SSD, PCIe 3.0 × 4",
+        "gpu": "AMD Radeon Vega 3 (Integrated GPU)",
+        "screen": "15.6 inches, 1920 x 1080 pixels (FullHD)",
+        "battery": "Lithium-ion Polymer, 11.4V, 4000mAh, 45.6Wh",
         "weight": null,
-        "os": "Windows 11 Home",
-        "ports": "1 x USB-A 2.0 (tốc độ dữ liệu tối đa 480Mbps) 1 x USB-A 3.2 Gen 1 (tốc độ dữ liệu tối đa 5Gbps) 1 x USB-C 3.2 Gen 1 (tốc độ dữ liệu tối đa 5Gbps) 1 x HDMI 1.4 1 x Jack âm thanh 3.5 mm 1 x Cổng nguồn DC-in",
+        "os": "Windows 11 Pro",
+        "ports": "1 x USB-A 2.0 2 x USB-A 3.0 1 x USB-C Full Function 1 x USB-C 2.0 (truyền dữ liệu) 1 x HDMI 1.4A 1 x Jack tai nghe/mic 3.5 mm 1 x RJ-45 (LAN 10/100/1000Mbps) Sạc USB-C PD 65W",
         "rawSpecs": {
-          "Loại card đồ họa": "AMD Radeon Graphics",
+          "Loại card đồ họa": "AMD Radeon Vega 3 (Integrated GPU)",
           "Dung lượng RAM": "8GB",
-          "Loại RAM": "8GB LPDDR5 on board",
-          "Ổ cứng": "512GB M.2 NVMe PCIe 3.0 SSD",
-          "Công nghệ màn hình": "Độ sáng 250 nits Độ phủ màu 45% NTSC Màn hình chống chói",
-          "Hệ điều hành khi ra mắt": "Windows 11 Home",
-          "Loại CPU": "AMD Ryzen 5 40 2.8GHz (6MB Cache, up to 4.3GHz, 4 lõi, 8 luồng)",
-          "Kích thước màn hình": "14 inches",
+          "Loại RAM": "DDR4 SODIMM",
+          "Ổ cứng": "512 GB PCIe SSD, PCIe 3.0 × 4",
+          "Công nghệ màn hình": "Độ sáng 300 nits (điển hình), tối thiểu 255 nits Độ phủ màu 45% NTSC Chăm sóc mắt, lọc ánh sáng xanh Số lượng màu: 6-bit + FRC Thời gian phản hồi: 20ms (điển hình), tối đa 25ms (Tr+Tf)",
+          "Hệ điều hành khi ra mắt": "Windows 11 Pro",
+          "Loại CPU": "AMD Ryzen 3 - 3200U (2 lõi / 4 luồng, 2.6 GHz / tối đa 3.5 GHz)",
+          "Kích thước màn hình": "15.6 inches",
           "Độ phân giải màn hình": "1920 x 1080 pixels (FullHD)",
-          "Pin": "42WHrs, 3S1P, 3-cell Li-ion",
-          "Cổng giao tiếp": "1 x USB-A 2.0 (tốc độ dữ liệu tối đa 480Mbps) 1 x USB-A 3.2 Gen 1 (tốc độ dữ liệu tối đa 5Gbps) 1 x USB-C 3.2 Gen 1 (tốc độ dữ liệu tối đa 5Gbps) 1 x HDMI 1.4 1 x Jack âm thanh 3.5 mm 1 x Cổng nguồn DC-in"
+          "Pin": "Lithium-ion Polymer, 11.4V, 4000mAh, 45.6Wh",
+          "Cổng giao tiếp": "1 x USB-A 2.0 2 x USB-A 3.0 1 x USB-C Full Function 1 x USB-C 2.0 (truyền dữ liệu) 1 x HDMI 1.4A 1 x Jack tai nghe/mic 3.5 mm 1 x RJ-45 (LAN 10/100/1000Mbps) Sạc USB-C PD 65W"
+        }
+      },
+      "options": [
+        {
+          "type": "color",
+          "label": "Xám",
+          "value": "Xám",
+          "price": 13590000,
+          "url": "https://cellphones.com.vn/laptop-thunderobot-t-book-15a.html?product_id=144922",
+          "sku": null,
+          "isSelected": false
+        }
+      ],
+      "promotions": [
+        "Giảm 5% tối đa 1.000.000đ cho thành viên S-Student, S-teacher và 1 km khác"
+      ],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_37.png",
+        "images": [
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_37.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_2_37.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:47:22.052Z"
+      }
+    },
+    {
+      "id": "77f5e8a48441dc9d",
+      "source": "cellphones",
+      "sku": "laptop-thunderobot-911s",
+      "name": "Laptop Thunderobot 911S",
+      "brand": "Thunderobot",
+      "model": "911S",
+      "url": "https://cellphones.com.vn/laptop-thunderobot-911s.html",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://cellphones.com.vn/laptop.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 24100000,
+        "original": 27190000,
+        "discountPercent": 11,
+        "installment": "Trả góp 0%",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core i5 - 13420H (8 lõi / 12 luồng, 2.10 GHz (Lên đến 4.60 GHz khi tải nặng))",
+        "ram": "16GB",
+        "storage": "512 GB M.2 2280 PCIe 4.0/3.0 x4",
+        "gpu": "NVIDIA GeForce RTX 3050 4 GB Intel UHD Graphics",
+        "screen": "15.6 inches, 1920 x 1080 pixels (FullHD)",
+        "battery": "Nguồn vào: 100–240V, 50–60Hz Nguồn ra: 20V, 7.5A Công suất adapter: 150W",
+        "weight": null,
+        "os": "Windows 11 Pro",
+        "ports": "1 x USB 2.0 1 x USB-A 3.2 Gen 1 1 x USB-A 3.2 Gen 2 1 x USB-C 3.2 Gen 2 1 x HDMI 2.0 (HDCP) 1 x Mini DisplayPort 1.4 1 x Jack tai nghe/mic 3.5 mm 1 x Jack mic riêng 1 x RJ-45 (LAN) 1 x Cổng nguồn DC-in",
+        "rawSpecs": {
+          "Chip AI": "2048 CUDA Cores",
+          "Loại card đồ họa": "NVIDIA GeForce RTX 3050 4 GB Intel UHD Graphics",
+          "Dung lượng RAM": "16GB",
+          "Loại RAM": "DDR4 3200 MHz",
+          "Số khe ram": "2 khe (Tối đa 16GB)",
+          "Ổ cứng": "512 GB M.2 2280 PCIe 4.0/3.0 x4",
+          "Công nghệ màn hình": "Độ sáng 250 nits Góc nhìn 85°/85°/85°/85° Độ tương phản 800:1 Giao diện: eDP 40-pin",
+          "Hệ điều hành khi ra mắt": "Windows 11 Pro",
+          "Loại CPU": "Intel Core i5 - 13420H (8 lõi / 12 luồng, 2.10 GHz (Lên đến 4.60 GHz khi tải nặng))",
+          "Kích thước màn hình": "15.6 inches",
+          "Độ phân giải màn hình": "1920 x 1080 pixels (FullHD)",
+          "Pin": "Nguồn vào: 100–240V, 50–60Hz Nguồn ra: 20V, 7.5A Công suất adapter: 150W",
+          "Cổng giao tiếp": "1 x USB 2.0 1 x USB-A 3.2 Gen 1 1 x USB-A 3.2 Gen 2 1 x USB-C 3.2 Gen 2 1 x HDMI 2.0 (HDCP) 1 x Mini DisplayPort 1.4 1 x Jack tai nghe/mic 3.5 mm 1 x Jack mic riêng 1 x RJ-45 (LAN) 1 x Cổng nguồn DC-in"
         }
       },
       "options": [
@@ -748,39 +1072,41 @@
           "type": "color",
           "label": "Đen",
           "value": "Đen",
-          "price": 18890000,
-          "url": "https://cellphones.com.vn/laptop-asus-vivobook-go-14-e1404fa-eb1941w.html?product_id=142387",
+          "price": 24100000,
+          "url": "https://cellphones.com.vn/laptop-thunderobot-911s.html?product_id=144908",
           "sku": null,
           "isSelected": false
         }
       ],
-      "promotions": [],
+      "promotions": [
+        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 1 km khác"
+      ],
       "rating": {
         "average": null,
         "count": null
       },
       "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1091_1.png",
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_11_32.png",
         "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1091_1.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_1091_1.png"
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_11_32.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/t/e/text_d_i_11_32.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.879Z"
+        "crawledAt": "2026-11-13T11:47:22.052Z"
       }
     },
     {
-      "id": "551bba251a755259",
+      "id": "192f802c029f4540",
       "source": "cellphones",
-      "sku": "laptop-acer-aspire-lite-14-al14-57p-59hb",
-      "name": "Laptop Acer Aspire Lite 14 AL14-57P-59HB",
-      "brand": "Acer",
-      "model": "Aspire Lite 14 AL14-57P-59HB",
-      "url": "https://cellphones.com.vn/laptop-acer-aspire-lite-14-al14-57p-59hb.html",
+      "sku": "laptop-thunderobot-aibook-14-air",
+      "name": "Laptop Thunderobot Aibook 14 Air",
+      "brand": "Thunderobot",
+      "model": "Aibook 14 Air",
+      "url": "https://cellphones.com.vn/laptop-thunderobot-aibook-14-air.html",
       "condition": "new",
       "availability": "in_stock",
       "categories": [
@@ -793,36 +1119,35 @@
       ],
       "pricing": {
         "currency": "VND",
-        "current": 22990000,
-        "original": 24990000,
-        "discountPercent": 8,
+        "current": 22190000,
+        "original": 23890000,
+        "discountPercent": 7,
         "installment": "Trả góp 0%",
         "priceNote": null
       },
       "specs": {
-        "cpu": "Intel Core 5 320 (6 lõi / 6 luồng, Tần số cơ bản của nhân hiệu năng cao 1.5 GHz, Công nghệ Turbo Boost Max 3.0 lên đến 4.6 GHz, 6 MB Smart Cache)",
+        "cpu": "AMD Ryzen 7 8745HS (8 nhân, 16 luồng), Cache L2: 8MB, Cache L3: 16MB",
         "ram": "16GB",
-        "storage": "512GB PCIe NVMe SSD (Nâng cấp tối đa 2TB)",
-        "gpu": "Intel Graphics",
-        "screen": "14 inches, 1920 x 1200 pixels (WUXGA)",
-        "battery": "50Wh (4330mAh, 11.55V, 3-cell Li-ion) Bộ sạc: USB-C 65W PD",
+        "storage": "512GB SSD",
+        "gpu": "AMD Radeon 780M",
+        "screen": "14 inches, 2880 x 1800 pixels",
+        "battery": "Lithium-ion polymer, 11.61V, 55Wh",
         "weight": null,
-        "os": "Windows 11 Home",
-        "ports": "2 x USB-C 3.2 Gen 1 (5Gbps, hỗ trợ DisplayPort 1.4, sạc USB 5V/3A, DC-in 65W) 1 x USB-A 3.2 Gen 1 1 x HDMI",
+        "os": "Windows 11 Pro",
+        "ports": "2 x USB-C 3.2 Gen 1 (Full Function) 2 x USB-A 3.2 Gen 1 1 x USB-A 2.0 1 x HDMI 1.4 1 x Jack tai nghe 3.5 mm",
         "rawSpecs": {
-          "Chip AI": "16 TOPS",
-          "Loại card đồ họa": "Intel Graphics",
+          "Loại card đồ họa": "AMD Radeon 780M",
           "Dung lượng RAM": "16GB",
-          "Loại RAM": "LPDDR5 6400 MT/s Onboard",
-          "Số khe ram": "Không nâng cấp",
-          "Ổ cứng": "512GB PCIe NVMe SSD (Nâng cấp tối đa 2TB)",
-          "Công nghệ màn hình": "Độ sáng 350 nits Độ phủ màu 45% NTSC Công nghệ màn hình Acer ComfyView, LED-backlit TFT LCD Tỉ lệ màn hình 16:10 Góc nhìn 170°",
-          "Hệ điều hành khi ra mắt": "Windows 11 Home",
-          "Loại CPU": "Intel Core 5 320 (6 lõi / 6 luồng, Tần số cơ bản của nhân hiệu năng cao 1.5 GHz, Công nghệ Turbo Boost Max 3.0 lên đến 4.6 GHz, 6 MB Smart Cache)",
+          "Loại RAM": "DDR5",
+          "Số khe ram": "2 khe (Nâng cấp tối đa 64GB)",
+          "Ổ cứng": "512GB SSD",
+          "Công nghệ màn hình": "Độ sáng 400 nits Độ phủ màu: 97% sRGB (điển hình), tối thiểu 95% sRGB 1.07 tỷ màu, 10-bit Màn hình chống chói Matte (AG 25%), độ cứng 3H Công nghệ màn hình: DC Dimming, Flicker Free Thời gian phản hồi: 20ms",
+          "Hệ điều hành khi ra mắt": "Windows 11 Pro",
+          "Loại CPU": "AMD Ryzen 7 8745HS (8 nhân, 16 luồng), Cache L2: 8MB, Cache L3: 16MB",
           "Kích thước màn hình": "14 inches",
-          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
-          "Pin": "50Wh (4330mAh, 11.55V, 3-cell Li-ion) Bộ sạc: USB-C 65W PD",
-          "Cổng giao tiếp": "2 x USB-C 3.2 Gen 1 (5Gbps, hỗ trợ DisplayPort 1.4, sạc USB 5V/3A, DC-in 65W) 1 x USB-A 3.2 Gen 1 1 x HDMI"
+          "Độ phân giải màn hình": "2880 x 1800 pixels",
+          "Pin": "Lithium-ion polymer, 11.61V, 55Wh",
+          "Cổng giao tiếp": "2 x USB-C 3.2 Gen 1 (Full Function) 2 x USB-A 3.2 Gen 1 1 x USB-A 2.0 1 x HDMI 1.4 1 x Jack tai nghe 3.5 mm"
         }
       },
       "options": [
@@ -830,39 +1155,41 @@
           "type": "color",
           "label": "Xám",
           "value": "Xám",
-          "price": 22990000,
-          "url": "https://cellphones.com.vn/laptop-acer-aspire-lite-14-al14-57p-59hb.html?product_id=139825",
+          "price": 22190000,
+          "url": "https://cellphones.com.vn/laptop-thunderobot-aibook-14-air.html?product_id=144913",
           "sku": null,
           "isSelected": false
         }
       ],
-      "promotions": [],
+      "promotions": [
+        "Giảm 5% tối đa 1.000.000đ cho thành viên S-Student, S-teacher và 1 km khác"
+      ],
       "rating": {
         "average": null,
         "count": null
       },
       "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_11.png",
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_35.png",
         "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_11.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_2_11.png"
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_35.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_2_35.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.879Z"
+        "crawledAt": "2026-11-13T11:47:22.052Z"
       }
     },
     {
-      "id": "424c58ea8158e89f",
+      "id": "80004790229116bb",
       "source": "cellphones",
-      "sku": "laptop-asus-vivobook-16-x1607ca-mb399w",
-      "name": "Laptop ASUS Vivobook 16 X1607CA-MB399W",
-      "brand": "ASUS",
-      "model": "Vivobook 16 X1607CA-MB399W",
-      "url": "https://cellphones.com.vn/laptop-asus-vivobook-16-x1607ca-mb399w.html",
+      "sku": "laptop-thunderobot-t-book-15n",
+      "name": "Laptop Thunderobot T-Book 15N",
+      "brand": "Thunderobot",
+      "model": "T-Book 15N",
+      "url": "https://cellphones.com.vn/laptop-thunderobot-t-book-15n.html",
       "condition": "new",
       "availability": "in_stock",
       "categories": [
@@ -875,35 +1202,34 @@
       ],
       "pricing": {
         "currency": "VND",
-        "current": 28990000,
-        "original": 36490000,
-        "discountPercent": 21,
+        "current": 18990000,
+        "original": 20990000,
+        "discountPercent": 10,
         "installment": "Trả góp 0%",
         "priceNote": null
       },
       "specs": {
-        "cpu": "Intel Core Ultra 7 255H 2.0 GHz (24MB Cache, up to 5.1 GHz, 16 lõi, 16 luồng)",
+        "cpu": "Intel Core i5 - 13420H (8 lõi / 12 luồng, P-core tối đa 4.6 GHz / E-core tối đa 3.4 GHz)",
         "ram": "16GB",
-        "storage": "512GB M.2 NVMe PCIe 4.0 SSD",
-        "gpu": "Intel Graphics",
-        "screen": "16 inches, 1920 x 1200 pixels (WUXGA)",
-        "battery": "42WHrs, 3S1P, 3-cell Li-ion",
+        "storage": "512 GB SSD",
+        "gpu": "Intel UHD Graphics",
+        "screen": "15.6 inches, 1920 x 1080 pixels (FullHD)",
+        "battery": "Lithium-ion Polymer, 3 cell, 54.29Wh, 11.55V, 4700mAh",
         "weight": null,
-        "os": "Windows 11 Home",
-        "ports": "2 x USB-C 3.2 Gen 1 (5Gbps, hỗ trợ DisplayPort và Power Delivery) 2 x USB-A 3.2 Gen 1 (5Gbps) 1 x HDMI 1.4 1 x Jack tai nghe/mic 3.5 mm",
+        "os": "Windows 11 Pro",
+        "ports": "1 x USB-A 2.0 1 x USB-A 3.2 Gen 1 5Gbps 2 x USB-C 3.2 Gen 1 5Gbps (PD, truyền dữ liệu, DC) 1 x HDMI 2.0 1 x Jack tai nghe 3.5 mm 1 x Cổng nguồn DC-in",
         "rawSpecs": {
-          "Chip AI": "Intel AI Boost NPU up to 13TOPS",
-          "Loại card đồ họa": "Intel Graphics",
+          "Loại card đồ họa": "Intel UHD Graphics",
           "Dung lượng RAM": "16GB",
-          "Loại RAM": "DDR5 on board",
-          "Ổ cứng": "512GB M.2 NVMe PCIe 4.0 SSD",
-          "Công nghệ màn hình": "Độ sáng 300 nits Độ phủ màu 45% NTSC Màn hình chống chói",
-          "Hệ điều hành khi ra mắt": "Windows 11 Home",
-          "Loại CPU": "Intel Core Ultra 7 255H 2.0 GHz (24MB Cache, up to 5.1 GHz, 16 lõi, 16 luồng)",
-          "Kích thước màn hình": "16 inches",
-          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
-          "Pin": "42WHrs, 3S1P, 3-cell Li-ion",
-          "Cổng giao tiếp": "2 x USB-C 3.2 Gen 1 (5Gbps, hỗ trợ DisplayPort và Power Delivery) 2 x USB-A 3.2 Gen 1 (5Gbps) 1 x HDMI 1.4 1 x Jack tai nghe/mic 3.5 mm"
+          "Loại RAM": "DDR4 SODIMM DDR4",
+          "Ổ cứng": "512 GB SSD",
+          "Công nghệ màn hình": "Độ sáng 280 nits (điển hình), tối thiểu 250 nits Độ phủ màu 45% NTSC (điển hình), tối thiểu 42% NTSC Màn hình Matte chống chói Số lượng màu: 6+2 bit Thời gian phản hồi 25ms",
+          "Hệ điều hành khi ra mắt": "Windows 11 Pro",
+          "Loại CPU": "Intel Core i5 - 13420H (8 lõi / 12 luồng, P-core tối đa 4.6 GHz / E-core tối đa 3.4 GHz)",
+          "Kích thước màn hình": "15.6 inches",
+          "Độ phân giải màn hình": "1920 x 1080 pixels (FullHD)",
+          "Pin": "Lithium-ion Polymer, 3 cell, 54.29Wh, 11.55V, 4700mAh",
+          "Cổng giao tiếp": "1 x USB-A 2.0 1 x USB-A 3.2 Gen 1 5Gbps 2 x USB-C 3.2 Gen 1 5Gbps (PD, truyền dữ liệu, DC) 1 x HDMI 2.0 1 x Jack tai nghe 3.5 mm 1 x Cổng nguồn DC-in"
         }
       },
       "options": [
@@ -911,372 +1237,41 @@
           "type": "color",
           "label": "Bạc",
           "value": "Bạc",
-          "price": 28990000,
-          "url": "https://cellphones.com.vn/laptop-asus-vivobook-16-x1607ca-mb399w.html?product_id=137016",
-          "sku": null,
-          "isSelected": false
-        }
-      ],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_28.png",
-        "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_28.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_1_28.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.879Z"
-      }
-    },
-    {
-      "id": "ae950aedb9a667e0",
-      "source": "cellphones",
-      "sku": "laptop-lenovo-ideapad-slim-3-14iph11-83uq003nvn",
-      "name": "Laptop Lenovo IdeaPad Slim 3 14IPH11 83UQ003NVN",
-      "brand": "Lenovo",
-      "model": "IdeaPad Slim 3 14IPH11 83UQ003NVN",
-      "url": "https://cellphones.com.vn/laptop-lenovo-ideapad-slim-3-14iph11-83uq003nvn.html",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://cellphones.com.vn/laptop.html",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 24990000,
-        "original": 27990000,
-        "discountPercent": 11,
-        "installment": "Trả góp 0%",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "Intel Core Ultra 5 322, 6 lõi (2P + 4LPE) / 6 luồng, Max Turbo up to 4.4GHz, 12MB Intel Smart Cache",
-        "ram": "16GB",
-        "storage": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Hai khe cắm M.2 2242 PCIe 4.0 x4, tối đa 1TB)",
-        "gpu": "Intel Graphics",
-        "screen": "14 inches, 1920 x 1200 pixels (WUXGA)",
-        "battery": "60Wh, 65W Round Tip (3-pin)",
-        "weight": null,
-        "os": "Windows 11 Home Single Language, English",
-        "ports": "2x USB-A (5Gbps) 1x USB-C (5Gbps, PD 45–65W, DisplayPort 1.2) 1x HDMI 1.4 1x jack tai nghe/micro 3.5mm 1x khe thẻ SD 1x cổng nguồn Round Tip",
-        "rawSpecs": {
-          "Chip AI": "Up to 46 TOPS",
-          "Loại card đồ họa": "Intel Graphics",
-          "Dung lượng RAM": "16GB",
-          "Loại RAM": "SODIMM DDR5-5600",
-          "Số khe ram": "1 khe, tối đa 16GB",
-          "Ổ cứng": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Hai khe cắm M.2 2242 PCIe 4.0 x4, tối đa 1TB)",
-          "Công nghệ màn hình": "Độ sáng 400 nits Màn hình chống chói Độ phủ màu 45% NTSC",
-          "Hệ điều hành khi ra mắt": "Windows 11 Home Single Language, English",
-          "Loại CPU": "Intel Core Ultra 5 322, 6 lõi (2P + 4LPE) / 6 luồng, Max Turbo up to 4.4GHz, 12MB Intel Smart Cache",
-          "Kích thước màn hình": "14 inches",
-          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
-          "Pin": "60Wh, 65W Round Tip (3-pin)",
-          "Cổng giao tiếp": "2x USB-A (5Gbps) 1x USB-C (5Gbps, PD 45–65W, DisplayPort 1.2) 1x HDMI 1.4 1x jack tai nghe/micro 3.5mm 1x khe thẻ SD 1x cổng nguồn Round Tip"
-        }
-      },
-      "options": [
-        {
-          "type": "color",
-          "label": "Xám",
-          "value": "Xám",
-          "price": 24990000,
-          "url": "https://cellphones.com.vn/laptop-lenovo-ideapad-slim-3-14iph11-83uq003nvn.html?product_id=132629",
+          "price": 18990000,
+          "url": "https://cellphones.com.vn/laptop-thunderobot-t-book-15n.html?product_id=144916",
           "sku": null,
           "isSelected": false
         }
       ],
       "promotions": [
-        "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (THECAO-PM-WIN11-PRO/DV.PM.42) và 4 km khác"
+        "Giảm 5% tối đa 1.000.000đ cho thành viên S-Student, S-teacher và 1 km khác"
       ],
       "rating": {
         "average": null,
         "count": null
       },
       "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_16_63.png",
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_36.png",
         "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_16_63.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/t/e/text_ng_n_16_63.png"
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_36.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_2_36.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.879Z"
+        "crawledAt": "2026-11-13T11:47:22.052Z"
       }
     },
     {
-      "id": "10cabab829dba00a",
+      "id": "b2eeeb2394852762",
       "source": "cellphones",
-      "sku": "laptop-asus-zenbook-14-ux3405ca-st1713w",
-      "name": "Laptop ASUS Zenbook 14 UX3405CA-ST1713W",
-      "brand": "ASUS",
-      "model": "Zenbook 14 UX3405CA-ST1713W",
-      "url": "https://cellphones.com.vn/laptop-asus-zenbook-14-ux3405ca-st1713w.html",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://cellphones.com.vn/laptop.html",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 32490000,
-        "original": 38990000,
-        "discountPercent": 17,
-        "installment": "Trả góp 0%",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "Intel Core Ultra 5 225H 1.7 GHz (18MB Cache, up to 4.9 GHz, 14 lõi, 14 luồng)",
-        "ram": "16GB",
-        "storage": "512GB M.2 NVMe PCIe 4.0 SSD",
-        "gpu": "Intel Arc Graphics",
-        "screen": "14 inches, 2880 x 1800 pixels",
-        "battery": "75WHrs, 2S2P, 4-cell Li-ion",
-        "weight": null,
-        "os": "Windows 11 Home",
-        "ports": "1x USB-A 3.2 Gen 1 (5Gbps) 2x Thunderbolt 4 (DisplayPort, Power Delivery, 40Gbps) 1x HDMI 2.1 TMDS 1x jack tai nghe/micro 3.5mm",
-        "rawSpecs": {
-          "Chip AI": "Intel AI Boost NPU up to 13TOPS",
-          "Loại card đồ họa": "Intel Arc Graphics",
-          "Dung lượng RAM": "16GB",
-          "Loại RAM": "LPDDR5X on board",
-          "Ổ cứng": "512GB M.2 NVMe PCIe 4.0 SSD",
-          "Công nghệ màn hình": "Độ sáng 500 nits (tối đa 1000 nits HDR) Thời gian phản hồi 0.2ms Độ phủ màu 100% DCI-P3 1.07 tỷ màu VESA DisplayHDR True Black 1000 Chống chói, giảm phản xạ Giảm 70% ánh sáng xanh Gamut Mapping SGS Eye Care Display",
-          "Hệ điều hành khi ra mắt": "Windows 11 Home",
-          "Loại CPU": "Intel Core Ultra 5 225H 1.7 GHz (18MB Cache, up to 4.9 GHz, 14 lõi, 14 luồng)",
-          "Kích thước màn hình": "14 inches",
-          "Độ phân giải màn hình": "2880 x 1800 pixels",
-          "Pin": "75WHrs, 2S2P, 4-cell Li-ion",
-          "Cổng giao tiếp": "1x USB-A 3.2 Gen 1 (5Gbps) 2x Thunderbolt 4 (DisplayPort, Power Delivery, 40Gbps) 1x HDMI 2.1 TMDS 1x jack tai nghe/micro 3.5mm"
-        }
-      },
-      "options": [
-        {
-          "type": "color",
-          "label": "Xanh",
-          "value": "Xanh",
-          "price": 32490000,
-          "url": "https://cellphones.com.vn/laptop-asus-zenbook-14-ux3405ca-st1713w.html?product_id=137234",
-          "sku": null,
-          "isSelected": false
-        }
-      ],
-      "promotions": [
-        "Nhận Voucher 500K -mua ngay Robot hút bụi lau nhà, Tivi, Tủ lạnh, Máy giặt (Voucher phát ngay về tin nhắn sau khi mua điện thoại, laptop) và 2 km khác"
-      ],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_72.png",
-        "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_72.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/t/e/text_d_i_1__4_72.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.879Z"
-      }
-    },
-    {
-      "id": "2f474c07edabe682",
-      "source": "cellphones",
-      "sku": "laptop-msi-modern-15-f1mg-1225vn",
-      "name": "Laptop MSI Modern 15 F1MG-1225VN",
-      "brand": "MSI",
-      "model": "Modern 15 F1MG-1225VN",
-      "url": "https://cellphones.com.vn/laptop-msi-modern-15-f1mg-1225vn.html",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://cellphones.com.vn/laptop.html",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 20990000,
-        "original": 21990000,
-        "discountPercent": 5,
-        "installment": "Trả góp 0%",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "Intel Core 5 120U (10 lõi (2 P-cores + 8 E-cores), 12 luồng, 5.0 GHz)",
-        "ram": "16GB",
-        "storage": "512GB",
-        "gpu": "Intel Graphics",
-        "screen": "15.6 inches, 1920 x 1080 pixels (FullHD)",
-        "battery": "3-Cell (46.8 Whrs)",
-        "weight": null,
-        "os": "Windows 11 Home Single Language 64-bit",
-        "ports": "1 x khe thẻ microSD 1 x RJ45 1 x USB-C (USB 3.2 Gen 2, DisplayPort, Power Delivery 3.0) 3 x USB 3.2 Gen 1 Type-A 1 x HDMI (4K@30Hz) 1 x Jack mic/tai nghe 3.5 mm",
-        "rawSpecs": {
-          "Loại card đồ họa": "Intel Graphics",
-          "Dung lượng RAM": "16GB",
-          "Loại RAM": "DDR4-3200",
-          "Số khe ram": "2 khe (1 x 16GB, nâng cấp tối đa 64GB)",
-          "Ổ cứng": "512GB",
-          "Công nghệ màn hình": "Màn hình chống chói Độ phủ màu 45% NTSC",
-          "Hệ điều hành khi ra mắt": "Windows 11 Home Single Language 64-bit",
-          "Loại CPU": "Intel Core 5 120U (10 lõi (2 P-cores + 8 E-cores), 12 luồng, 5.0 GHz)",
-          "Kích thước màn hình": "15.6 inches",
-          "Độ phân giải màn hình": "1920 x 1080 pixels (FullHD)",
-          "Pin": "3-Cell (46.8 Whrs)",
-          "Cổng giao tiếp": "1 x khe thẻ microSD 1 x RJ45 1 x USB-C (USB 3.2 Gen 2, DisplayPort, Power Delivery 3.0) 3 x USB 3.2 Gen 1 Type-A 1 x HDMI (4K@30Hz) 1 x Jack mic/tai nghe 3.5 mm"
-        }
-      },
-      "options": [
-        {
-          "type": "color",
-          "label": "Xám",
-          "value": "Xám",
-          "price": 20990000,
-          "url": "https://cellphones.com.vn/laptop-msi-modern-15-f1mg-1225vn.html?product_id=131847",
-          "sku": null,
-          "isSelected": false
-        }
-      ],
-      "promotions": [
-        "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (THECAO-PM-WIN11-PRO/DV.PM.42) và 3 km khác"
-      ],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_29.png",
-        "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_29.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_945_29.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.879Z"
-      }
-    },
-    {
-      "id": "f3bcf538cfbd31b5",
-      "source": "cellphones",
-      "sku": "laptop-lenovo-ideapad-slim-3-14ahp10-83k9004rvn",
-      "name": "Laptop Lenovo IdeaPad Slim 3 14AHP10 83K9004RVN",
-      "brand": "Lenovo",
-      "model": "IdeaPad Slim 3 14AHP10 83K9004RVN",
-      "url": "https://cellphones.com.vn/laptop-lenovo-ideapad-slim-3-14ahp10-83k9004rvn.html",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://cellphones.com.vn/laptop.html",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 22990000,
-        "original": 27990000,
-        "discountPercent": 18,
-        "installment": "Trả góp 0%",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "AMD Ryzen 7 155 (6 lõi / 12 luồng, 3 / 4.7GHz, 6MB L2 / 16MB L3)",
-        "ram": "8GB",
-        "storage": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Hỗ trợ tối đa hai ổ đĩa, 2x SSD M.2, dung lượng lên đến 1TB)",
-        "gpu": "AMD Radeon 740M Graphics",
-        "screen": "14 inches, 1920 x 1200 pixels (WUXGA)",
-        "battery": "50Wh, 65W Round Tip (3-pin)",
-        "weight": null,
-        "os": "Windows 11 Home Single Language, English + Microsoft 365 Basic + Office Home 2024",
-        "ports": "2 x USB-A 5Gbps (USB 3.2 Gen 1) 1 x USB-C 5Gbps (USB 3.2 Gen 1, USB PD 45–65W, DisplayPort 1.2) 1 x HDMI 1.4 1 x Jack tai nghe/mic 3.5 mm 1 x Khe đọc thẻ SD 1 x Cổng nguồn đầu tròn",
-        "rawSpecs": {
-          "Loại card đồ họa": "AMD Radeon 740M Graphics",
-          "Dung lượng RAM": "8GB",
-          "Loại RAM": "SODIMM DDR5-4800",
-          "Số khe ram": "1 khe (1 x 8GB, nâng cấp tối đa 16GB DDR5-4800)",
-          "Ổ cứng": "512GB SSD M.2 2242 PCIe 4.0x4 NVMe (Hỗ trợ tối đa hai ổ đĩa, 2x SSD M.2, dung lượng lên đến 1TB)",
-          "Công nghệ màn hình": "Độ sáng 300 nits Màn hình chống chói Độ phủ màu 45% NTSC",
-          "Hệ điều hành khi ra mắt": "Windows 11 Home Single Language, English + Microsoft 365 Basic + Office Home 2024",
-          "Loại CPU": "AMD Ryzen 7 155 (6 lõi / 12 luồng, 3 / 4.7GHz, 6MB L2 / 16MB L3)",
-          "Kích thước màn hình": "14 inches",
-          "Độ phân giải màn hình": "1920 x 1200 pixels (WUXGA)",
-          "Pin": "50Wh, 65W Round Tip (3-pin)",
-          "Cổng giao tiếp": "2 x USB-A 5Gbps (USB 3.2 Gen 1) 1 x USB-C 5Gbps (USB 3.2 Gen 1, USB PD 45–65W, DisplayPort 1.2) 1 x HDMI 1.4 1 x Jack tai nghe/mic 3.5 mm 1 x Khe đọc thẻ SD 1 x Cổng nguồn đầu tròn"
-        }
-      },
-      "options": [
-        {
-          "type": "color",
-          "label": "Xám",
-          "value": "Xám",
-          "price": 22990000,
-          "url": "https://cellphones.com.vn/laptop-lenovo-ideapad-slim-3-14ahp10-83k9004rvn.html?product_id=144026",
-          "sku": null,
-          "isSelected": false
-        }
-      ],
-      "promotions": [
-        "Nâng cấp Laptop - PC lên Windows 11 Pro chỉ với 1,690,000đ (THECAO-PM-WIN11-PRO/DV.PM.42) và 2 km khác"
-      ],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1099_4_.png",
-        "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1099_4_.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/g/r/group_1099_4_.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.879Z"
-      }
-    },
-    {
-      "id": "559a23b7a393bae6",
-      "source": "cellphones",
-      "sku": "macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-256gb",
-      "name": "MacBook Neo 13 inch A18 Pro 2026 6CPU 5GPU 8GB 256GB | Chính hãng Apple Việt Nam",
+      "sku": "mac-mini-m6-12cpu-12gpu-32gb-256gb-2026",
+      "name": "Apple Mac mini M6 12CPU 12GPU 32GB 256GB 2026 | Chính hãng Apple Việt Nam",
       "brand": "Apple",
-      "model": "MacBook Neo 13 inch A18 Pro 2026 6CPU 5GPU 8GB 256GB | Chính hãng Apple Việt Nam",
-      "url": "https://cellphones.com.vn/macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-256gb.html",
+      "model": "Mac mini M6 12CPU 12GPU 32GB 256GB 2026",
+      "url": "https://cellphones.com.vn/mac-mini-m6-12cpu-12gpu-32gb-256gb-2026.html",
       "condition": "new",
       "availability": "in_stock",
       "categories": [
@@ -1289,69 +1284,85 @@
       ],
       "pricing": {
         "currency": "VND",
-        "current": 18790000,
-        "original": 19490000,
-        "discountPercent": 4,
+        "current": 35990000,
+        "original": 35990000,
+        "discountPercent": null,
         "installment": "Trả góp 0%",
         "priceNote": null
       },
       "specs": {
-        "cpu": "Chip Apple A18 Pro CPU 6 lõi với 2 lõi hiệu năng và 4 lõi tiết kiệm điện",
-        "ram": "8GB",
-        "storage": "256GB",
-        "gpu": "GPU 5 lõi Công nghệ dò tia tốc độ cao bằng phần cứng Neural Engine 16 lõi Băng thông bộ nhớ 60GB/s",
-        "screen": "13 inches, 2408 x 1506 pixels",
-        "battery": "Thời gian xem video trực tuyến lên đến 16 giờ Thời gian duyệt web trên mạng không dây lên đến 11 giờ Pin lithium-ion 36.5 watt‑giờ tích hợp",
+        "cpu": "Chip Apple M6CPU 12 lõi với 2 lõi siêu xử lý, 4 lõi hiệu năng và 6 lõi tiết kiệm điện Neural Accelerators Công nghệ dò tia tốc độ cao bằng phần cứngBăng thông bộ nhớ 170GB/s",
+        "ram": "32GB",
+        "storage": "SSD 256GB",
+        "gpu": "GPU 12 lõi",
+        "screen": "Hỗ trợ tối đa 3 màn hình ngoài Độ phân giải tối đa 8K@60Hz hoặc 4K@240Hz Thunderbolt 4 hỗ trợ DisplayPort 1.4 Hỗ trợ VRR, HDR và âm thanh đa kênh",
+        "battery": null,
         "weight": null,
         "os": "macOS",
-        "ports": "Một cổng USB 3 (USB-C) hỗ trợ: Sạc / DisplayPort / USB 3 (lên đến 10Gb/s) Một cổng USB 2 (USB-C) hỗ trợ: Sạc / USB 2 (lên đến 480Mb/s) Jack cắm tai nghe 3,5 mm",
+        "ports": "Mặt trước 2x USB-C 3 (10Gbps) 1x jack tai nghe 3.5mm Mặt sau 1x Ethernet 2.5Gb (tùy chọn 10Gb) 1x HDMI 3x Thunderbolt 4/USB4 (DisplayPort, 40Gbps)",
         "rawSpecs": {
-          "Loại card đồ họa": "GPU 5 lõi Công nghệ dò tia tốc độ cao bằng phần cứng Neural Engine 16 lõi Băng thông bộ nhớ 60GB/s",
-          "Dung lượng RAM": "8GB",
-          "Ổ cứng": "256GB",
-          "Công nghệ màn hình": "Màn hình Liquid Retina Màn hình có đèn nền LED Mật độ 219 pixel mỗi inch Độ sáng 500 nit Hỗ trợ 1 tỷ màu Màu sRGBHỗ trợ một màn hình ngoài có độ phân giải gốc lên đến 4K ở tần số 60Hz",
+          "Chip AI": "Apple Intelligence là nền tảng sức mạnh cho Siri AI, phiên bản Siri hoàn toàn mới, cá nhân hơn, khả năng giao tiếp tốt hơn và mạnh mẽ hơn, cùng với các tính năng hữu ích trên các ứng dụng",
+          "Loại card đồ họa": "GPU 12 lõi",
+          "Dung lượng RAM": "32GB",
+          "Ổ cứng": "SSD 256GB",
+          "Công nghệ màn hình": "Hỗ trợ tối đa 3 màn hình ngoài Độ phân giải tối đa 8K@60Hz hoặc 4K@240Hz Thunderbolt 4 hỗ trợ DisplayPort 1.4 Hỗ trợ VRR, HDR và âm thanh đa kênh",
           "Hệ điều hành khi ra mắt": "macOS",
-          "Loại CPU": "Chip Apple A18 Pro CPU 6 lõi với 2 lõi hiệu năng và 4 lõi tiết kiệm điện",
-          "Kích thước màn hình": "13 inches",
-          "Độ phân giải màn hình": "2408 x 1506 pixels",
-          "Pin": "Thời gian xem video trực tuyến lên đến 16 giờ Thời gian duyệt web trên mạng không dây lên đến 11 giờ Pin lithium-ion 36.5 watt‑giờ tích hợp",
-          "Cổng giao tiếp": "Một cổng USB 3 (USB-C) hỗ trợ: Sạc / DisplayPort / USB 3 (lên đến 10Gb/s) Một cổng USB 2 (USB-C) hỗ trợ: Sạc / USB 2 (lên đến 480Mb/s) Jack cắm tai nghe 3,5 mm"
+          "Loại CPU": "Chip Apple M6CPU 12 lõi với 2 lõi siêu xử lý, 4 lõi hiệu năng và 6 lõi tiết kiệm điện Neural Accelerators Công nghệ dò tia tốc độ cao bằng phần cứngBăng thông bộ nhớ 170GB/s",
+          "Cổng giao tiếp": "Mặt trước 2x USB-C 3 (10Gbps) 1x jack tai nghe 3.5mm Mặt sau 1x Ethernet 2.5Gb (tùy chọn 10Gb) 1x HDMI 3x Thunderbolt 4/USB4 (DisplayPort, 40Gbps)"
         }
       },
       "options": [
         {
           "type": "configuration",
-          "label": "6CPU - 5GPU",
-          "value": "6CPU - 5GPU",
+          "label": "M6",
+          "value": "M6",
           "price": null,
-          "url": "https://cellphones.com.vn/macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-256gb.html",
+          "url": "https://cellphones.com.vn/mac-mini-m6-12cpu-12gpu-16gb-256gb-2026.html",
+          "sku": null,
+          "isSelected": false
+        },
+        {
+          "type": "configuration",
+          "label": "M6",
+          "value": "M6",
+          "price": null,
+          "url": "https://cellphones.com.vn/mac-mini-m6-12cpu-12gpu-16gb-512gb-2026.html",
+          "sku": null,
+          "isSelected": false
+        },
+        {
+          "type": "configuration",
+          "label": "M6",
+          "value": "M6",
+          "price": null,
+          "url": "https://cellphones.com.vn/mac-mini-m6-12cpu-12gpu-24gb-256gb-2026.html",
+          "sku": null,
+          "isSelected": false
+        },
+        {
+          "type": "configuration",
+          "label": "M6",
+          "value": "M6",
+          "price": null,
+          "url": "https://cellphones.com.vn/mac-mini-m6-12cpu-12gpu-24gb-512gb-2026.html",
+          "sku": null,
+          "isSelected": false
+        },
+        {
+          "type": "configuration",
+          "label": "M6",
+          "value": "M6",
+          "price": null,
+          "url": "https://cellphones.com.vn/mac-mini-m6-12cpu-12gpu-32gb-256gb-2026.html",
           "sku": null,
           "isSelected": true
         },
         {
           "type": "configuration",
-          "label": "6CPU - 5GPU",
-          "value": "6CPU - 5GPU",
+          "label": "Xem thêmphiên bản khác",
+          "value": "Xem thêmphiên bản khác",
           "price": null,
-          "url": "https://cellphones.com.vn/macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-512gb.html",
-          "sku": null,
-          "isSelected": false
-        },
-        {
-          "type": "color",
-          "label": "Hồng Phớt",
-          "value": "Hồng Phớt",
-          "price": 19390000,
-          "url": "https://cellphones.com.vn/macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-256gb.html?product_id=125878",
-          "sku": null,
-          "isSelected": false
-        },
-        {
-          "type": "color",
-          "label": "Xanh Indigo",
-          "value": "Xanh Indigo",
-          "price": 18790000,
-          "url": "https://cellphones.com.vn/macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-256gb.html?product_id=125877",
+          "url": null,
           "sku": null,
           "isSelected": false
         },
@@ -1359,40 +1370,31 @@
           "type": "color",
           "label": "Bạc",
           "value": "Bạc",
-          "price": 19190000,
-          "url": "https://cellphones.com.vn/macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-256gb.html?product_id=125875",
-          "sku": null,
-          "isSelected": false
-        },
-        {
-          "type": "color",
-          "label": "Vàng Citrus",
-          "value": "Vàng Citrus",
-          "price": 18790000,
-          "url": "https://cellphones.com.vn/macbook-neo-13-a18-pro-6-cpu-5-gpu-8gb-256gb.html?product_id=125876",
+          "price": 35990000,
+          "url": "https://cellphones.com.vn/mac-mini-m6-12cpu-12gpu-32gb-256gb-2026.html?product_id=142122",
           "sku": null,
           "isSelected": false
         }
       ],
       "promotions": [
-        "mua HUB TYPE C ORICO PW11-5P-GY 5 IN 1 PD-60W giá 129k (giá gốc 490k) và 3 km khác"
+        "Giảm đến 20% phụ kiện IT khi mua kèm Macmini/Mac Studio và 2 km khác"
       ],
       "rating": {
-        "average": 5,
-        "count": 2
+        "average": null,
+        "count": null
       },
       "media": {
-        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_13_19.png",
+        "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_6__8.png",
         "images": [
-          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_13_19.png",
-          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/m/a/macbook_13_19.png"
+          "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_6__8.png",
+          "https://cdn2.cellphones.com.vn/200x/media/catalog/product/m/a/macbook_6__8.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-12T04:22:37.880Z"
+        "crawledAt": "2026-11-13T11:47:22.052Z"
       }
     }
   ]

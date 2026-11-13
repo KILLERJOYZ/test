@@ -40,9 +40,30 @@ parsed AS (
         payload->'specs'->>'weight' AS weight,
         payload->'specs'->>'os' AS os,
 
-        -- Hình ảnh và danh mục
+        -- Hình ảnh và truyền thông
         COALESCE(payload->'media'->>'thumbnail', payload->>'thumbnail') AS thumbnail,
-        COALESCE(payload->'media'->'images', '[]'::jsonb) AS images,
+        CASE 
+            WHEN payload->'media'->'images' IS NOT NULL AND jsonb_typeof(payload->'media'->'images') = 'array' 
+                THEN payload->'media'->'images'
+            WHEN payload->'images' IS NOT NULL AND jsonb_typeof(payload->'images') = 'array' 
+                THEN payload->'images'
+            WHEN COALESCE(payload->'media'->>'thumbnail', payload->>'thumbnail') IS NOT NULL 
+                THEN jsonb_build_array(COALESCE(payload->'media'->>'thumbnail', payload->>'thumbnail'))
+            ELSE '[]'::jsonb
+        END AS images,
+        COALESCE(
+            payload->'media',
+            jsonb_build_object(
+                'thumbnail', COALESCE(payload->'media'->>'thumbnail', payload->>'thumbnail'),
+                'images', CASE 
+                    WHEN payload->'images' IS NOT NULL AND jsonb_typeof(payload->'images') = 'array' 
+                        THEN payload->'images'
+                    WHEN COALESCE(payload->'media'->>'thumbnail', payload->>'thumbnail') IS NOT NULL 
+                        THEN jsonb_build_array(COALESCE(payload->'media'->>'thumbnail', payload->>'thumbnail'))
+                    ELSE '[]'::jsonb
+                END
+            )
+        ) AS media,
         COALESCE(payload->'categories', '[]'::jsonb) AS categories,
 
         -- Đánh giá

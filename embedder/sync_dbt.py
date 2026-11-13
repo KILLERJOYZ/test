@@ -54,9 +54,33 @@ def normalize_dbt_row(row: Dict[str, Any]) -> Dict[str, Any]:
         "os": row.get("os"),
     }
 
+    raw_images = row.get("images")
+    if isinstance(raw_images, str):
+        try:
+            raw_images = json.loads(raw_images)
+        except Exception:
+            raw_images = []
+    elif not isinstance(raw_images, list):
+        raw_images = []
+
+    media_obj = row.get("media")
+    if isinstance(media_obj, str):
+        try:
+            media_obj = json.loads(media_obj)
+        except Exception:
+            media_obj = {}
+    elif not isinstance(media_obj, dict):
+        media_obj = {}
+
+    thumbnail = row.get("thumbnail") or row.get("image_url") or media_obj.get("thumbnail") or (raw_images[0] if raw_images else None)
+    if not raw_images and media_obj.get("images"):
+        raw_images = media_obj.get("images")
+    if thumbnail and thumbnail not in raw_images:
+        raw_images.insert(0, thumbnail)
+
     media = {
-        "thumbnail": row.get("thumbnail") or row.get("image_url"),
-        "images": [row.get("thumbnail")] if row.get("thumbnail") else [],
+        "thumbnail": thumbnail,
+        "images": raw_images,
     }
 
     categories = []

@@ -81,7 +81,7 @@ def step_1_run_crawler(
 ) -> Path:
     """
     Kích hoạt crawler Node.js (Puppeteer + Cheerio) để cào dữ liệu từ các trang bán lẻ.
-    Ghi dữ liệu vào data/all_laptops_normalized.json.
+    Ghi dữ liệu vào data/all_laptops_normalized.json (kèm URL thumbnail & gallery images).
     """
     output_file = DATA_DIR / "all_laptops_normalized.json"
 
@@ -283,7 +283,7 @@ def run_single_pipeline(
 
     conn = get_db_connection()
     try:
-        # Bước 1: Thu thập dữ liệu từ các phương thức crawler
+        # Bước 1: Thu thập dữ liệu từ các phương thức crawler (lưu URL ảnh trực tiếp)
         data_file = step_1_run_crawler(
             sources=sources,
             max_products=max_products,
@@ -319,7 +319,7 @@ def run_single_pipeline(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run the unified laptop crawler -> dbt -> Qdrant pipeline.")
-    parser.add_argument("--sources", type=str, default="all", help="Crawler sources (all, cellphones, fptshop, ...)")
+    parser.add_argument("--sources", type=str, default="all", help="Crawler sources (all, cellphones, fptshop, laptopaz, trungtran, ...)")
     parser.add_argument("--max-products", type=int, default=15, help="Max products per retailer")
     parser.add_argument("--skip-crawl", action="store_true", help="Skip web crawler and use existing data file")
 

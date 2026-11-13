@@ -20,7 +20,5 @@ models:
   storer_dbt:
     staging:
       +materialized: view
-      +schema: public
     marts:
       +materialized: incremental
-      +schema: public

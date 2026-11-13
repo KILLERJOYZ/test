@@ -740,7 +740,6 @@ function Demo() {
       <SafeAreaView style={{ flex: 1, backgroundColor: c.bg }}>
         <StatusBar
           barStyle={store.dark ? "light-content" : "dark-content"}
-          backgroundColor={c.bg}
         />
         <View
           style={{

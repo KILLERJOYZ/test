@@ -29,7 +29,7 @@ export function ExpressiveLoading({
         }),
       ]),
     );
-    const update = (state: string) => {
+    const update = (state: string | null | undefined) => {
       if (state === "active") loop.start();
       else {
         loop.stop();

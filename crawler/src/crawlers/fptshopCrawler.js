@@ -276,6 +276,22 @@ async function enrichProductDetail(page, rawProduct) {
         // Ignore invalid JSON-LD
       }
     });
+
+    // Gallery / Slider images on detail page
+    const galleryImgs = [];
+    $('.swiper-slide img, .product-slide img, .gallery-item img, [class*="slider"] img').each((_, el) => {
+      const src = $(el).attr('data-src') || $(el).attr('src');
+      if (src && !src.includes('/svg/') && !src.includes('logo') && !src.includes('icon')) {
+        const full = resolveUrl(BASE_URL, src);
+        if (full) galleryImgs.push(full);
+      }
+    });
+    if (galleryImgs.length > 0) {
+      rawProduct.images = [...new Set([...(rawProduct.images || []), ...galleryImgs])];
+      if (!rawProduct.thumbnail && rawProduct.images.length > 0) {
+        rawProduct.thumbnail = rawProduct.images[0];
+      }
+    }
   } catch (err) {
     console.warn(`[FPTShop] Warning enriching detail ${rawProduct.url}: ${err.message}`);
   }
@@ -297,6 +313,31 @@ async function crawlFptshop(browser, options = {}) {
   try {
     console.log(`[FPTShop] Navigating to ${START_URL}...`);
     await page.goto(START_URL, { waitUntil: 'networkidle2', timeout: 40000 });
+
+    // Chiến thuật: Ấn vào chữ "Nổi bật" và đợi dữ liệu cập nhật
+    try {
+      console.log('[FPTShop] Áp dụng chiến thuật: Ấn vào chữ "Nổi bật" và đợi dữ liệu cập nhật...');
+      const noiBatBtn = await page.evaluateHandle(() => {
+        const buttons = Array.from(document.querySelectorAll('button, a, div.cursor-pointer'));
+        return buttons.find((el) => {
+          const text = (el.textContent || '').trim();
+          return text === 'Nổi bật' || text.includes('Nổi bật');
+        }) || null;
+      });
+
+      if (noiBatBtn && noiBatBtn.asElement()) {
+        await noiBatBtn.asElement().click();
+        console.log('[FPTShop] Đã ấn "Nổi bật", đợi dữ liệu cập nhật...');
+        await sleep(2500);
+      } else {
+        console.log('[FPTShop] Chuyển tới URL ?sort=noi-bat...');
+        await page.goto(`${START_URL}?sort=noi-bat`, { waitUntil: 'networkidle2', timeout: 35000 });
+        await sleep(2000);
+      }
+    } catch (err) {
+      console.warn(`[FPTShop] Lỗi khi ấn "Nổi bật": ${err.message}`);
+    }
+
     await autoScroll(page, 4, 500);
 
     const mainHtml = await page.content();

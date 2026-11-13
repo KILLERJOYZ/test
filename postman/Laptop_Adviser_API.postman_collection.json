@@ -1,0 +1,468 @@
+{
+  "info": {
+    "_postman_id": "c8e2b834-8c88-4663-883a-d4352b21ea5f",
+    "name": "Laptop Adviser FastAPI Collection",
+    "description": "Bộ Test Case tự động kiểm thử toàn diện API FastAPI kết nối PostgreSQL và phục vụ Frontend apps/adviser.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8788",
+      "type": "string"
+    },
+    {
+      "key": "laptopId",
+      "value": "551bba251a755259",
+      "type": "string"
+    },
+    {
+      "key": "laptopId2",
+      "value": "ae950aedb9a667e0",
+      "type": "string"
+    },
+    {
+      "key": "catalogRevision",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Health & Diagnostics",
+      "item": [
+        {
+          "name": "TC01 - Health Check (PostgreSQL & AI status)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Database is connected\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.status).to.eql(\"ok\");",
+                  "    pm.expect(jsonData.db).to.eql(\"connected\");",
+                  "    pm.expect(jsonData.laptopCount).to.be.above(0);",
+                  "});",
+                  "",
+                  "pm.test(\"Response time is under 500ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/health",
+              "host": ["{{baseUrl}}"],
+              "path": ["health"]
+            },
+            "description": "Kiểm tra tình trạng sống của API, kết nối PostgreSQL và số lượng laptop hiện có."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "2. Catalog & Discovery",
+      "item": [
+        {
+          "name": "TC02 - Get Full Catalog (Frontend Sync)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Catalog structure matches Frontend validCatalog()\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property(\"catalog\");",
+                  "    pm.expect(jsonData.catalog.schemaVersion).to.eql(1);",
+                  "    pm.expect(jsonData.catalog).to.have.property(\"revision\");",
+                  "    pm.expect(jsonData.catalog.listings).to.be.an(\"array\");",
+                  "    pm.expect(jsonData.catalog.listings.length).to.be.above(0);",
+                  "    ",
+                  "    // Lưu revision để dùng cho TC08 (Hỏi AI)",
+                  "    pm.collectionVariables.set(\"catalogRevision\", jsonData.catalog.revision);",
+                  "    ",
+                  "    // Kiểm tra cấu trúc listing đầu tiên",
+                  "    const first = jsonData.catalog.listings[0];",
+                  "    pm.expect(first).to.have.property(\"id\");",
+                  "    pm.expect(first).to.have.property(\"name\");",
+                  "    pm.expect(first).to.have.property(\"source\");",
+                  "    pm.expect(first).to.have.property(\"url\");",
+                  "    pm.expect(first).to.have.property(\"advertisedPrice\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/catalog",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "catalog"]
+            },
+            "description": "Tải toàn bộ danh mục laptop từ PostgreSQL chuẩn hóa theo format Catalog của apps/adviser."
+          },
+          "response": []
+        },
+        {
+          "name": "TC03 - Query Laptops (Filter Source & Price)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Filtered results match criteria\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property(\"items\");",
+                  "    jsonData.items.forEach(item => {",
+                  "        pm.expect(item.source).to.eql(\"cellphones\");",
+                  "        if (item.advertisedPrice !== null) {",
+                  "            pm.expect(item.advertisedPrice).to.be.at.most(30000000);",
+                  "        }",
+                  "    });",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/laptops?source=cellphones&max_price=30000000&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "laptops"],
+              "query": [
+                {
+                  "key": "source",
+                  "value": "cellphones"
+                },
+                {
+                  "key": "max_price",
+                  "value": "30000000"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Lọc danh sách máy theo nguồn bán (cellphones) và trần ngân sách (30 triệu VND)."
+          },
+          "response": []
+        },
+        {
+          "name": "TC04 - Query Laptops (Search Keyword & Sort)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Items are sorted by price ascending\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    const items = jsonData.items;",
+                  "    for (let i = 0; i < items.length - 1; i++) {",
+                  "        const p1 = items[i].advertisedPrice ?? Infinity;",
+                  "        const p2 = items[i+1].advertisedPrice ?? Infinity;",
+                  "        pm.expect(p1).to.be.at.most(p2);",
+                  "    }",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/laptops?q=Lenovo&sort=price&limit=10",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "laptops"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "Lenovo"
+                },
+                {
+                  "key": "sort",
+                  "value": "price"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            },
+            "description": "Tìm kiếm theo từ khóa 'Lenovo' và sắp xếp tăng dần theo giá bán."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "3. Laptop Details",
+      "item": [
+        {
+          "name": "TC05 - Get Laptop Detail (Existing ID)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Correct laptop details returned\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"laptopId\"));",
+                  "    pm.expect(jsonData).to.have.property(\"name\");",
+                  "    pm.expect(jsonData).to.have.property(\"cpu\");",
+                  "    pm.expect(jsonData).to.have.property(\"ram\");",
+                  "    pm.expect(jsonData).to.have.property(\"storage\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/laptops/{{laptopId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "laptops", "{{laptopId}}"]
+            },
+            "description": "Lấy chi tiết cấu hình và giá của một laptop cụ thể theo ID."
+          },
+          "response": []
+        },
+        {
+          "name": "TC06 - Get Laptop Detail (Non-existing ID - 404)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 404 Not Found\", function () {",
+                  "    pm.response.to.have.status(404);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/laptops/non-existing-uuid-9999",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "laptops", "non-existing-uuid-9999"]
+            },
+            "description": "Kiểm tra xử lý lỗi khi yêu cầu ID không tồn tại trong cơ sở dữ liệu."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "4. Comparison & AI Advice",
+      "item": [
+        {
+          "name": "TC07 - Compare Two Laptops",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Comparison returns assessments for both laptops\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property(\"items\");",
+                  "    pm.expect(jsonData.items.length).to.be.at.most(2);",
+                  "    pm.expect(jsonData).to.have.property(\"assessments\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ids\": [\"{{laptopId}}\", \"{{laptopId2}}\"],\n  \"requirements\": {\n    \"budget\": 30000000,\n    \"minRam\": 16,\n    \"minStorage\": 512,\n    \"os\": \"Windows\",\n    \"tasks\": [\"Lập trình\", \"Văn phòng & học tập\"]\n  }\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/compare",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "compare"]
+            },
+            "description": "Đối chiếu 2 cấu hình laptop dựa trên bộ tiêu chuẩn yêu cầu (Requirements)."
+          },
+          "response": []
+        },
+        {
+          "name": "TC08 - Advice API (Ask Question & Get Facts/Proposal)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Advice response matches Frontend contract\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData).to.have.property(\"context\");",
+                  "    pm.expect(jsonData.context.focusId).to.eql(pm.collectionVariables.get(\"laptopId\"));",
+                  "    pm.expect(jsonData).to.have.property(\"text\");",
+                  "    pm.expect(jsonData.text).to.be.a(\"string\");",
+                  "    pm.expect(jsonData.mode).to.eql(\"provider\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": {\n    \"catalogRevision\": \"{{catalogRevision}}\",\n    \"decisionRevision\": 1,\n    \"focusId\": \"{{laptopId}}\",\n    \"requestId\": \"postman-req-101\"\n  },\n  \"requirements\": {\n    \"budget\": 25000000,\n    \"minRam\": 16,\n    \"minStorage\": 512,\n    \"os\": \"Windows\",\n    \"tasks\": [\"Lập trình\"]\n  },\n  \"message\": \"Máy này có đủ cấu hình làm lập trình không?\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/advice",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "advice"]
+            },
+            "description": "Gửi câu hỏi tư vấn về một laptop cụ thể và nhận phản hồi giải thích kèm đề xuất (proposal)."
+          },
+          "response": []
+        },
+        {
+          "name": "TC09 - Advice API (Stale Catalog Revision - 409 Conflict)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 409 Conflict\", function () {",
+                  "    pm.response.to.have.status(409);",
+                  "});",
+                  "",
+                  "pm.test(\"Returns STALE_CATALOG error code\", function () {",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.code).to.eql(\"STALE_CATALOG\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": {\n    \"catalogRevision\": \"stale-fake-revision-12345\",\n    \"decisionRevision\": 1,\n    \"focusId\": \"{{laptopId}}\",\n    \"requestId\": \"postman-req-stale-001\"\n  },\n  \"requirements\": {\n    \"budget\": 25000000,\n    \"minRam\": 16,\n    \"minStorage\": 512,\n    \"os\": \"Windows\",\n    \"tasks\": [\"Lập trình\"]\n  },\n  \"message\": \"Câu hỏi trên dữ liệu cũ\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/advice",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "advice"]
+            },
+            "description": "Kiểm tra chặn tư vấn khi catalogRevision của client không khớp với phiên bản dữ liệu hiện tại của máy chủ."
+          },
+          "response": []
+        },
+        {
+          "name": "TC10 - Advice API (Invalid Input Validation - 422 Unprocessable)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code is 422 or 400\", function () {",
+                  "    pm.expect([400, 422]).to.include(pm.response.code);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"context\": null,\n  \"requirements\": {\n    \"budget\": -5000\n  },\n  \"message\": \"\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/advice",
+              "host": ["{{baseUrl}}"],
+              "path": ["v1", "advice"]
+            },
+            "description": "Kiểm tra cơ chế xác thực dữ liệu đầu vào của FastAPI khi gửi payload không hợp lệ."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

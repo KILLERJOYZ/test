@@ -9,7 +9,9 @@
     "crawl:cellphones": "node index.js --source=cellphones",
     "crawl:thegioididong": "node index.js --source=thegioididong",
     "crawl:dienmayxanh": "node index.js --source=dienmayxanh",
-    "crawl:fptshop": "node index.js --source=fptshop"
+    "crawl:fptshop": "node index.js --source=fptshop",
+    "crawl:laptopaz": "node index.js --source=laptopaz",
+    "crawl:trungtran": "node index.js --source=trungtran"
   },
   "keywords": [
     "crawler",

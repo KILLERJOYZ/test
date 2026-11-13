@@ -76,6 +76,8 @@ logs/
 # =============================================================================
 # LOCAL DATABASES & VECTOR STORAGE (CSDL cục bộ và dữ liệu nhị phân)
 # =============================================================================
+data/images/
+**/data/images/
 *.duckdb
 *.duckdb.wal
 *.sqlite

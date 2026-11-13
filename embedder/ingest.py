@@ -92,10 +92,20 @@ def build_payload(product: Dict[str, Any], embedding_text: str) -> Dict[str, Any
     rating = product.get("rating") or {}
     media = product.get("media") or {}
 
-    thumbnail = media.get("thumbnail")
-    images = media.get("images") or []
-    if not thumbnail and images:
-        thumbnail = images[0]
+    raw_images = media.get("images") or product.get("images") or []
+    if isinstance(raw_images, str):
+        try:
+            raw_images = json.loads(raw_images)
+        except Exception:
+            raw_images = [raw_images]
+    if not isinstance(raw_images, list):
+        raw_images = []
+
+    thumbnail = media.get("thumbnail") or product.get("thumbnail") or (raw_images[0] if raw_images else None)
+    if thumbnail and thumbnail not in raw_images:
+        raw_images.insert(0, thumbnail)
+
+    images = [img for img in raw_images if isinstance(img, str) and img.strip()]
 
     return {
         "id": product.get("id"),
@@ -118,6 +128,11 @@ def build_payload(product: Dict[str, Any], embedding_text: str) -> Dict[str, Any
         "screen": specs.get("screen"),
         "os": specs.get("os"),
         "thumbnail": thumbnail,
+        "images": images,
+        "media": {
+            "thumbnail": thumbnail,
+            "images": images,
+        },
         "rating_average": rating.get("average"),
         "rating_count": rating.get("count"),
         "embedding_text": embedding_text,

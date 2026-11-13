@@ -8,10 +8,12 @@ Bộ thu thập dữ liệu (Web Crawler) các dòng máy tính xách tay (Lapto
 
 | Nguồn (`source`) | Đường dẫn gốc | Đặc tả bộ lọc & dữ liệu |
 | :--- | :--- | :--- |
-| `cellphones` | https://cellphones.com.vn/laptop | Định vị danh mục hãng (`Mac`, `Asus`, `Lenovo`, `MSI`, `Acer`, `HP`, `Dell`, `Gigabyte`, `LG`,...) & phân khúc; lấy giá bán, giá gốc, trả góp, thông số kỹ thuật chi tiết và các tuỳ chọn phiên bản/màu sắc. |
-| `thegioididong` | https://www.thegioididong.com/laptop | Định vị danh mục `/laptop-<hang-dong-may>`; lấy thông tin thẻ sản phẩm kết hợp JSON-LD và bảng cấu hình trên trang chi tiết. |
-| `dienmayxanh` | https://www.dienmayxanh.com/may-doi-tra/laptop | Định vị danh mục hãng & bộ lọc máy đổi trả (`/may-doi-tra/laptop-*`); lấy thông tin máy cũ/đổi trả, giá máy cũ, giá máy mới, mức tiết kiệm, số lượng máy và danh sách từng máy đổi trả kèm thời hạn bảo hành & tỉnh/thành có hàng. |
-| `fptshop` | https://fptshop.com.vn/may-tinh-xach-tay | Định vị danh mục nhu cầu (`Laptop AI`, `Gaming - Đồ hoạ`, `Sinh viên - Văn phòng`, `Mỏng nhẹ`,...) và thương hiệu; trích xuất giá, cấu hình rút gọn từ tiêu đề H1, bảng thông số và dữ liệu có cấu trúc JSON-LD. |
+| `cellphones` | https://cellphones.com.vn/laptop.html | Lựa chọn tiêu chí **"Hàng mới về"** (`?new_arrival=true`), đợi dữ liệu cập nhật rồi thu thập danh mục hãng & sản phẩm. |
+| `thegioididong` | https://www.thegioididong.com/laptop | Ấn vào **"Mới nhất"** ở mục "Sắp xếp theo" (`#o=3&pi=0`), đợi dữ liệu cập nhật rồi thu thập. |
+| `dienmayxanh` | https://www.dienmayxanh.com/may-doi-tra/laptop | Định vị danh mục hãng & bộ lọc máy đổi trả (`/may-doi-tra/laptop-*`); lấy thông tin máy cũ/đổi trả. |
+| `fptshop` | https://fptshop.com.vn/may-tinh-xach-tay | Ấn vào chữ **"Nổi bật"** (`?sort=noi-bat`), đợi dữ liệu cập nhật rồi thu thập. |
+| `laptopaz` | https://laptopaz.vn/laptop-moi.html | Chọn mục **"Sắp xếp theo"** -> **"Mới nhất"** (`?sort=new`), đợi dữ liệu cập nhật rồi thu thập. |
+| `trungtran` | https://trungtran.vn/laptop/?sort_r=hits | Ấn vào **"Sắp xếp"**, chọn radiobox **"Nổi bật nhất"** (`?sort_r=hits`), đợi dữ liệu cập nhật rồi thu thập. |
 
 ---
 
