@@ -1,0 +1,24 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {context,acceptContext,candidate,eligible,result,exactOffer,claims,resultState,STATES} from './contract_validation.mjs';
+const ctx={decisionId:'D1',runId:'R1',requestId:'Q1',profileRevision:1,catalogVersion:'c1',rulesVersion:'p1',offerContextHash:'h1',focusVariantIds:['v1'],origin:'detail'};
+const c={variantId:'v1',fit:'pass',offerValidity:'current',priceCompleteness:'complete',affordability:'within_budget',completeTotalVnd:20000000,reasonCodes:[],evidenceRefs:['F1']};
+test('U07-01 valid envelopes for every scoped result state',()=>{for(const state of STATES)assert.equal(result({context:ctx,state,candidates:state==='eligible'?[c]:[],excluded:[],unknowns:[]}).state,state);});
+test('U07-02 missing version extra authority invalid enum unsafe amount',()=>{assert.throws(()=>context({...ctx,catalogVersion:''}));assert.throws(()=>context({...ctx,price:1}));assert.throws(()=>candidate({...c,fit:'maybe'}));for(const amount of [-1,1.2,Number.MAX_SAFE_INTEGER+1,true])assert.throws(()=>candidate({...c,completeTotalVnd:amount}));});
+test('U07-03 fit alone cannot verify a partial price or stale offer',()=>{assert.equal(eligible({...c,priceCompleteness:'partial',completeTotalVnd:null,affordability:'unknown'}),false);assert.equal(eligible({...c,offerValidity:'expired'}),false);});
+test('U07-04 exact offer relationship rejects same-family substitute',()=>{assert.throws(()=>exactOffer({variantId:'v2',matchStatus:'accepted'},'v1'));assert.equal(exactOffer({variantId:'v1',matchStatus:'accepted'},'v1').variantId,'v1');});
+test('U07-05 result states retain distinct recovery meaning',()=>{const base={confirmed:true,sourceStatus:'success',fitStates:['pass'],verifiedCount:1,visibleCount:1};assert.equal(resultState({...base,fitStates:['fail']}),'no_fit');assert.equal(resultState({...base,verifiedCount:0}),'no_verified_affordable_offer');assert.equal(resultState({...base,visibleCount:0}),'filter_empty');assert.equal(resultState({...base,sourceStatus:'failed'}),'source_unavailable');assert.equal(resultState({...base,fitStates:['unknown']}),'evidence_unknown');});
+test('U07-06 all context dimensions reject stale responses',()=>{assert.equal(acceptContext(ctx,ctx),true);for(const key of ['profileRevision','catalogVersion','rulesVersion','offerContextHash','runId','requestId','decisionId','origin'])assert.throws(()=>acceptContext({...ctx,[key]:key==='profileRevision'?2:'changed'},ctx));assert.throws(()=>acceptContext({...ctx,focusVariantIds:['v2']},ctx));});
+test('U07-07 valid fact ID cannot authorize contradiction or invented URL',()=>{const facts=[{factId:'F1',variantId:'v1',verdict:'pass'}];assert.throws(()=>claims([{factId:'F1',variantId:'v1',verdict:'fail'}],facts));assert.throws(()=>claims([{factId:'F1',variantId:'v1',verdict:'pass',url:'https://invented.test'}],facts));assert.equal(claims(facts,facts).length,1);});
+import {needs,variant,offer,savedDecision} from './contract_validation.mjs';
+test('U07-02 domain shapes reject absent and unsafe authoritative fields',()=>{assert.throws(()=>needs({}));assert.throws(()=>variant({}));assert.throws(()=>offer({}));assert.throws(()=>savedDecision({}));});
+import {needs as validNeeds} from '../tests/fixtures/api-needs.mjs';
+test('U07-08 confirmed needs require typed unique disjoint uses',()=>{for(const bad of [{...validNeeds,orderedUses:[]},{...validNeeds,orderedUses:['study'],requiredTasks:['study']},{...validNeeds,requiredTasks:[42]},{...validNeeds,preferences:['portable','portable']}])assert.throws(()=>needs(bad));});
+
+import {requestNeedsContext} from './contract_validation.mjs';
+test('U07-09 request needs and context identify the same decision revision',()=>{assert.equal(requestNeedsContext(validNeeds,ctx),true);assert.throws(()=>requestNeedsContext({...validNeeds,decisionId:'other'},ctx),/stale_revision/);assert.throws(()=>requestNeedsContext({...validNeeds,profileRevision:2},ctx),/stale_revision/);});
+import {snapshot as historicalSnapshot} from '../tests/fixtures/api-history.mjs';
+test('U07-10 saved snapshots require valid dates versions and complete exact history',()=>{
+ const cases=[{variantIds:[],historicalConfigurations:[],observations:[]},{observations:[]},{observations:[historicalSnapshot.observations[0],historicalSnapshot.observations[0]]},{savedAt:'2026-02-30T00:00:00.000Z'},{savedAt:123},{catalogVersion:{}},{historicalConfigurations:[{variantId:'v1'}]},{observations:[{...historicalSnapshot.observations[0],observedAt:'2026-02-30T00:00:00.000Z'}]}];
+ assert.equal(savedDecision(historicalSnapshot),historicalSnapshot);
+ assert.ok(savedDecision({...historicalSnapshot,savedAt:'2024-02-29T10:00:00+07:00',observations:[{...historicalSnapshot.observations[0],totalVnd:null}]}));
+ for(const change of cases)assert.throws(()=>savedDecision({...historicalSnapshot,...change}),JSON.stringify(change));
+});

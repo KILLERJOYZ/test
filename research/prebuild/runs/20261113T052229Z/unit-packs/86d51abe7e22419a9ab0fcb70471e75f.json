@@ -1,0 +1,387 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "86d51abe7e22419a9ab0fcb70471e75f",
+  "selection": {
+    "task": "R00",
+    "pack": null,
+    "changed": null,
+    "all": false
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/test_validate.py": "bcf345283596abea2c9ee751d16e7d26d2ee761ca88f84d35cc50a575376d255",
+    "research/prebuild/tools/test_unit_runner.py": "21aba81335c93e443827937e30942fab2d4f759928db39690be77cbd7d23572a",
+    "research/prebuild/tools/validate.py": "aa1c3d526db1425a7017370343440ad48f466fe51a066145f0e0211e57ed323d",
+    "research/prebuild/tools/run_unit_packs.py": "609fd6b96fde3802c1ccdd95d2f0daad2b9d58b650a79e241a9dbe5b7d08725d",
+    "apps/adviser/src/domain.test.ts": "8c2ee9589ec50a9d8a4dcb1a37978a8af1045764ebee86abac6b15e91d8b0bbb",
+    "apps/adviser/src/picker.test.ts": "84fd4a72fb718438504a0af695ef7454a8cbddf2cd0f0dd4c4dc2dbad36a2dd1",
+    "apps/adviser/src/ai.test.ts": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98",
+    "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+    "apps/adviser/src/picker.ts": "cba7299a78345458efc631bed7b7531942ae879485537f243381179184ec881a",
+    "apps/adviser/src/ai.ts": "4be61db524594d02b9c407f8ca7c74ff677f9ed7d3054c9cc21afd56af652c49",
+    "research/prebuild/tools/test_plan_contract.py": "87d54f5508caa967a0874c7aab87e74f40ce5efb0fd6be72eee861f58d193253",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/artifact_contracts.py": "ed367de3dfbabd5d170a36ef447d9827025433b1598c5679228fed8e6b04b500"
+  },
+  "manifestHash": "4c04077695ff3b5f5f6328a2c6f590e50b0de973b4acccb374b84291820dff76",
+  "packs": [
+    {
+      "id": "U00",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U00-01",
+          "status": "passed"
+        },
+        {
+          "id": "U00-02",
+          "status": "passed"
+        },
+        {
+          "id": "U00-03",
+          "status": "passed"
+        },
+        {
+          "id": "U00-04",
+          "status": "passed"
+        },
+        {
+          "id": "U00-05",
+          "status": "passed"
+        },
+        {
+          "id": "U00-06",
+          "status": "passed"
+        },
+        {
+          "id": "U00-07",
+          "status": "passed"
+        },
+        {
+          "id": "U00-08",
+          "status": "passed"
+        },
+        {
+          "id": "U00-09",
+          "status": "passed"
+        },
+        {
+          "id": "U00-10",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/86d51abe7e22419a9ab0fcb70471e75f-validator_tests.log",
+        "research/prebuild/runs/20261113T052229Z/unit-packs/86d51abe7e22419a9ab0fcb70471e75f-unit_runner_tests.log"
+      ]
+    },
+    {
+      "id": "UBASE",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "UBASE-01",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-02",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-03",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-04",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-05",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-06",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-07",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-08",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-09",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-10",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-11",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-12",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-13",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-14",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-15",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-16",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-17",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-18",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/86d51abe7e22419a9ab0fcb70471e75f-baseline_domain.log"
+      ]
+    },
+    {
+      "id": "UPLAN",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "UPLAN-01",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-02",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-03",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-04",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-05",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-06",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-07",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-08",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-09",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-10",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/86d51abe7e22419a9ab0fcb70471e75f-plan_contract_tests.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U00-01",
+      "status": "passed"
+    },
+    {
+      "id": "U00-02",
+      "status": "passed"
+    },
+    {
+      "id": "U00-03",
+      "status": "passed"
+    },
+    {
+      "id": "U00-04",
+      "status": "passed"
+    },
+    {
+      "id": "U00-05",
+      "status": "passed"
+    },
+    {
+      "id": "U00-06",
+      "status": "passed"
+    },
+    {
+      "id": "U00-07",
+      "status": "passed"
+    },
+    {
+      "id": "U00-08",
+      "status": "passed"
+    },
+    {
+      "id": "U00-09",
+      "status": "passed"
+    },
+    {
+      "id": "U00-10",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-01",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-02",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-03",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-04",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-05",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-06",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-07",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-08",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-09",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-10",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-11",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-12",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-13",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-14",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-15",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-16",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-17",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-18",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-01",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-02",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-03",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-04",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-05",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-06",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-07",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-08",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-09",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-10",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U00": "95042f18890d9ed277020e7590ef7a7d7a93eeedca99d26d14f1323f51375136",
+    "UBASE": "757c1c6368f6d034fadbc695f7766e34a8b078000a522f465be3f671dc4a4edb",
+    "UPLAN": "ae5629b0086cbda3959ea7675a5bf7b61bad88a016a556ce09e1e0570b1c061c"
+  },
+  "fixtureHashes": {},
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/86d51abe7e22419a9ab0fcb70471e75f-validator_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/86d51abe7e22419a9ab0fcb70471e75f-unit_runner_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/86d51abe7e22419a9ab0fcb70471e75f-baseline_domain.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/86d51abe7e22419a9ab0fcb70471e75f-plan_contract_tests.log"
+  ],
+  "passed": 38,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

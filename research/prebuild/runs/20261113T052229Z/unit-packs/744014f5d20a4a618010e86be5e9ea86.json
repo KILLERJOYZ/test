@@ -1,0 +1,126 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "744014f5d20a4a618010e86be5e9ea86",
+  "selection": {
+    "task": "R07",
+    "pack": null,
+    "changed": null,
+    "all": false
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/contracts.test.mjs": "8102c0596f2a9d825510e3a7c3a1fe3b1aa065b2b0583056fd2f7bd4d488d057",
+    "research/prebuild/tools/contract_validation.mjs": "44dcb4954a79e62e4a227b6ae8fe1f1eb17829e52724dbb249bf0d9793bd4564",
+    "research/prebuild/tests/fixtures/api-needs.mjs": "2fc9151cb4c52865d1d236b651d345a20ef35081dcfffadfe1f89bad9a55dc8f",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+    "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+  },
+  "manifestHash": "f12fc727f531425c3f4e7344c814e923e08f86eea2598174a092447342ecd21b",
+  "packs": [
+    {
+      "id": "U07",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U07-01",
+          "status": "passed"
+        },
+        {
+          "id": "U07-02",
+          "status": "passed"
+        },
+        {
+          "id": "U07-03",
+          "status": "passed"
+        },
+        {
+          "id": "U07-04",
+          "status": "passed"
+        },
+        {
+          "id": "U07-05",
+          "status": "passed"
+        },
+        {
+          "id": "U07-06",
+          "status": "passed"
+        },
+        {
+          "id": "U07-07",
+          "status": "passed"
+        },
+        {
+          "id": "U07-08",
+          "status": "passed"
+        },
+        {
+          "id": "U07-09",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/744014f5d20a4a618010e86be5e9ea86-contract_tests.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U07-01",
+      "status": "passed"
+    },
+    {
+      "id": "U07-02",
+      "status": "passed"
+    },
+    {
+      "id": "U07-03",
+      "status": "passed"
+    },
+    {
+      "id": "U07-04",
+      "status": "passed"
+    },
+    {
+      "id": "U07-05",
+      "status": "passed"
+    },
+    {
+      "id": "U07-06",
+      "status": "passed"
+    },
+    {
+      "id": "U07-07",
+      "status": "passed"
+    },
+    {
+      "id": "U07-08",
+      "status": "passed"
+    },
+    {
+      "id": "U07-09",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U07": "2d74ac943bafa83cdb866ad986ac62053480a5d8567e35db30bf32e9f26f9038"
+  },
+  "fixtureHashes": {
+    "research/prebuild/tests/fixtures/api-needs.mjs": "2fc9151cb4c52865d1d236b651d345a20ef35081dcfffadfe1f89bad9a55dc8f"
+  },
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/744014f5d20a4a618010e86be5e9ea86-contract_tests.log"
+  ],
+  "passed": 9,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

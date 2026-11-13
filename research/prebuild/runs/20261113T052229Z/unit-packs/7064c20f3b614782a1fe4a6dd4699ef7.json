@@ -1,0 +1,436 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "7064c20f3b614782a1fe4a6dd4699ef7",
+  "selection": {
+    "task": null,
+    "pack": null,
+    "changed": [
+      "research/prebuild/tools/contract_validation.mjs",
+      "spikes/prebuild-contract/server.ts"
+    ],
+    "all": false
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/contracts.test.mjs": "8102c0596f2a9d825510e3a7c3a1fe3b1aa065b2b0583056fd2f7bd4d488d057",
+    "research/prebuild/tools/contract_validation.mjs": "44dcb4954a79e62e4a227b6ae8fe1f1eb17829e52724dbb249bf0d9793bd4564",
+    "research/prebuild/tests/fixtures/api-needs.mjs": "2fc9151cb4c52865d1d236b651d345a20ef35081dcfffadfe1f89bad9a55dc8f",
+    "spikes/prebuild-contract/policy.test.mjs": "51669f2495c859eaabda6e8868236f960e619cb2ab5877689900293c2fed85a5",
+    "spikes/prebuild-contract/repository.test.mjs": "91ba8ee4ba468376727acc2ae008992b1dc8940ef3b16e5153d577407b56c3d1",
+    "spikes/prebuild-contract/policy.ts": "8e064751c5da60cc8ff6b9dbc0d37c7d81bc4b06a46d3c8dd34ed9d6a0be2e94",
+    "spikes/prebuild-contract/repository.ts": "a1f296b128ceb1055c3de9c0c16f8ba5983e6aadab878f19dcd074d871b9c7e2",
+    "spikes/prebuild-contract/fixtures.mjs": "81252dd8f7b6cd6411f8b8979bd6765cc3f704689aa659e1698f358f0908bf54",
+    "research/prebuild/tools/eval.test.mjs": "99ef5505cd0828fe0eea8c4a4c37aae685b3f21581cf17946d03c3e930b43d0a",
+    "research/prebuild/tools/run_eval.mjs": "1f5e5d6a8950110b0a4f27f6ad943635e4d7375aec1de1a4ebfbfc3835b7b6a0",
+    "research/prebuild/tools/ai.test.mjs": "7dd1c86ba832d6c984e34312b4375085c839f69913dfb477806203082a8a3443",
+    "research/prebuild/tools/run_ai.mjs": "7bab31a9e7d923c61659149c746b0dde7483c4338b9b1aad430f8e89e0e19489",
+    "apps/adviser/src/ai.ts": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+    "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+  },
+  "manifestHash": "f12fc727f531425c3f4e7344c814e923e08f86eea2598174a092447342ecd21b",
+  "packs": [
+    {
+      "id": "U07",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U07-01",
+          "status": "passed"
+        },
+        {
+          "id": "U07-02",
+          "status": "passed"
+        },
+        {
+          "id": "U07-03",
+          "status": "passed"
+        },
+        {
+          "id": "U07-04",
+          "status": "passed"
+        },
+        {
+          "id": "U07-05",
+          "status": "passed"
+        },
+        {
+          "id": "U07-06",
+          "status": "passed"
+        },
+        {
+          "id": "U07-07",
+          "status": "passed"
+        },
+        {
+          "id": "U07-08",
+          "status": "passed"
+        },
+        {
+          "id": "U07-09",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/7064c20f3b614782a1fe4a6dd4699ef7-contract_tests.log"
+      ]
+    },
+    {
+      "id": "U08",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U08-01",
+          "status": "passed"
+        },
+        {
+          "id": "U08-02",
+          "status": "passed"
+        },
+        {
+          "id": "U08-03",
+          "status": "passed"
+        },
+        {
+          "id": "U08-04",
+          "status": "passed"
+        },
+        {
+          "id": "U08-05",
+          "status": "passed"
+        },
+        {
+          "id": "U08-06",
+          "status": "passed"
+        },
+        {
+          "id": "U08-07",
+          "status": "passed"
+        },
+        {
+          "id": "U08-08",
+          "status": "passed"
+        },
+        {
+          "id": "U08-09",
+          "status": "passed"
+        },
+        {
+          "id": "U08-10",
+          "status": "passed"
+        },
+        {
+          "id": "U08-11",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/7064c20f3b614782a1fe4a6dd4699ef7-spike_unit_tests.log"
+      ]
+    },
+    {
+      "id": "U09",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U09-01",
+          "status": "passed"
+        },
+        {
+          "id": "U09-02",
+          "status": "passed"
+        },
+        {
+          "id": "U09-03",
+          "status": "passed"
+        },
+        {
+          "id": "U09-04",
+          "status": "passed"
+        },
+        {
+          "id": "U09-05",
+          "status": "passed"
+        },
+        {
+          "id": "U09-06",
+          "status": "passed"
+        },
+        {
+          "id": "U09-07",
+          "status": "passed"
+        },
+        {
+          "id": "U09-08",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/7064c20f3b614782a1fe4a6dd4699ef7-eval_tests.log"
+      ]
+    },
+    {
+      "id": "U10",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U10-01",
+          "status": "passed"
+        },
+        {
+          "id": "U10-02",
+          "status": "passed"
+        },
+        {
+          "id": "U10-03",
+          "status": "passed"
+        },
+        {
+          "id": "U10-04",
+          "status": "passed"
+        },
+        {
+          "id": "U10-05",
+          "status": "passed"
+        },
+        {
+          "id": "U10-06",
+          "status": "passed"
+        },
+        {
+          "id": "U10-07",
+          "status": "passed"
+        },
+        {
+          "id": "U10-08",
+          "status": "passed"
+        },
+        {
+          "id": "U10-09",
+          "status": "passed"
+        },
+        {
+          "id": "U10-10",
+          "status": "passed"
+        },
+        {
+          "id": "U10-11",
+          "status": "passed"
+        },
+        {
+          "id": "U10-12",
+          "status": "passed"
+        },
+        {
+          "id": "U10-13",
+          "status": "passed"
+        },
+        {
+          "id": "U10-14",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/7064c20f3b614782a1fe4a6dd4699ef7-ai_controlled.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U07-01",
+      "status": "passed"
+    },
+    {
+      "id": "U07-02",
+      "status": "passed"
+    },
+    {
+      "id": "U07-03",
+      "status": "passed"
+    },
+    {
+      "id": "U07-04",
+      "status": "passed"
+    },
+    {
+      "id": "U07-05",
+      "status": "passed"
+    },
+    {
+      "id": "U07-06",
+      "status": "passed"
+    },
+    {
+      "id": "U07-07",
+      "status": "passed"
+    },
+    {
+      "id": "U07-08",
+      "status": "passed"
+    },
+    {
+      "id": "U07-09",
+      "status": "passed"
+    },
+    {
+      "id": "U08-01",
+      "status": "passed"
+    },
+    {
+      "id": "U08-02",
+      "status": "passed"
+    },
+    {
+      "id": "U08-03",
+      "status": "passed"
+    },
+    {
+      "id": "U08-04",
+      "status": "passed"
+    },
+    {
+      "id": "U08-05",
+      "status": "passed"
+    },
+    {
+      "id": "U08-06",
+      "status": "passed"
+    },
+    {
+      "id": "U08-07",
+      "status": "passed"
+    },
+    {
+      "id": "U08-08",
+      "status": "passed"
+    },
+    {
+      "id": "U08-09",
+      "status": "passed"
+    },
+    {
+      "id": "U08-10",
+      "status": "passed"
+    },
+    {
+      "id": "U08-11",
+      "status": "passed"
+    },
+    {
+      "id": "U09-01",
+      "status": "passed"
+    },
+    {
+      "id": "U09-02",
+      "status": "passed"
+    },
+    {
+      "id": "U09-03",
+      "status": "passed"
+    },
+    {
+      "id": "U09-04",
+      "status": "passed"
+    },
+    {
+      "id": "U09-05",
+      "status": "passed"
+    },
+    {
+      "id": "U09-06",
+      "status": "passed"
+    },
+    {
+      "id": "U09-07",
+      "status": "passed"
+    },
+    {
+      "id": "U09-08",
+      "status": "passed"
+    },
+    {
+      "id": "U10-01",
+      "status": "passed"
+    },
+    {
+      "id": "U10-02",
+      "status": "passed"
+    },
+    {
+      "id": "U10-03",
+      "status": "passed"
+    },
+    {
+      "id": "U10-04",
+      "status": "passed"
+    },
+    {
+      "id": "U10-05",
+      "status": "passed"
+    },
+    {
+      "id": "U10-06",
+      "status": "passed"
+    },
+    {
+      "id": "U10-07",
+      "status": "passed"
+    },
+    {
+      "id": "U10-08",
+      "status": "passed"
+    },
+    {
+      "id": "U10-09",
+      "status": "passed"
+    },
+    {
+      "id": "U10-10",
+      "status": "passed"
+    },
+    {
+      "id": "U10-11",
+      "status": "passed"
+    },
+    {
+      "id": "U10-12",
+      "status": "passed"
+    },
+    {
+      "id": "U10-13",
+      "status": "passed"
+    },
+    {
+      "id": "U10-14",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U07": "2d74ac943bafa83cdb866ad986ac62053480a5d8567e35db30bf32e9f26f9038",
+    "U08": "cfe9d319780edc5c717ced7b37d788893716e2df5b403862f409508feda0dd51",
+    "U09": "450819565c622ab26e4343df40d5471e28e195dc2723f32ac6a59b2901d3b95e",
+    "U10": "b631d29e65f3268fd4d849743fd25ff20ed620bf440eb590bf4661502907f5b4"
+  },
+  "fixtureHashes": {
+    "research/prebuild/tests/fixtures/api-needs.mjs": "2fc9151cb4c52865d1d236b651d345a20ef35081dcfffadfe1f89bad9a55dc8f"
+  },
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/7064c20f3b614782a1fe4a6dd4699ef7-contract_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/7064c20f3b614782a1fe4a6dd4699ef7-spike_unit_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/7064c20f3b614782a1fe4a6dd4699ef7-eval_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/7064c20f3b614782a1fe4a6dd4699ef7-ai_controlled.log"
+  ],
+  "passed": 42,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

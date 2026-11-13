@@ -1,0 +1,8 @@
+import assert from 'node:assert/strict';import {repository} from '../../../../spikes/prebuild-contract/repository.ts';import {variant,offer,snapshot} from '../../../../spikes/prebuild-contract/fixtures.mjs';import {publish} from '../../../../spikes/prebuild-contract/policy.ts';import {limiter} from '../../tools/run_ai.mjs';
+let disk=null;const r=repository({read:async()=>disk,write:async v=>{disk=structuredClone(v);}});await r.upsert(variant,offer);await r.save(snapshot);
+await r.upsert(variant,{...offer,costs:{...offer.costs,baseVnd:21000000},observedAt:'2026-11-14T00:00:00.000Z'});assert.equal(r.catalog().offers[0].costs.baseVnd,21000000);assert.equal(r.reopen('D1').observations[0].totalVnd,20000000);console.log('OPS-01 correction PASS');
+r.unavailable(true);assert.equal(r.catalog().status,'source_unavailable');assert.equal(r.reopen('D1').observations[0].totalVnd,20000000);r.unavailable(false);console.log('OPS-02 outage PASS');
+await r.evidence({id:'E1',version:1,text:'fact'});await r.evidence({id:'E1',version:2,withdrawn:true});assert.equal(r.index().length,0);assert.equal(r.catalog().variants[0].capability,'unknown');console.log('OPS-03 withdrawal PASS');
+assert.throws(()=>publish(offer,{reviewed:false,permitted:false}));console.log('OPS-04 unauthorized publish PASS');
+const cap=limiter(1,20);assert.equal(cap.reserve(20),true);assert.equal(cap.reserve(20),false);console.log('OPS-05 provider cap PASS');
+await r.upsert(variant,offer);assert.equal(r.history().length,2);assert.equal(r.catalog().offers[0].costs.baseVnd,20000000);assert.equal(r.reopen('D1').observations[0].totalVnd,20000000);console.log('OPS-06 rollback PASS');

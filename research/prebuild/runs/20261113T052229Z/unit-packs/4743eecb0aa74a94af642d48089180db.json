@@ -1,0 +1,115 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "4743eecb0aa74a94af642d48089180db",
+  "selection": {
+    "task": "R05",
+    "pack": null,
+    "changed": null,
+    "all": false
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/test_cases.py": "0cec64f3fdd2f3dbab19570102be904f45ef158dc715d2832fda8316ee69d747",
+    "research/prebuild/tools/build_cases.py": "9245c5871e43db6dff2135e1549cf89ee1d6ca925049dea999c1248dcd2b3203",
+    "research/prebuild/05-workload-policy.json": "c980754924f950837259f86e0894332cd9f7109b38e9dcc9c79189bc7d553fe6",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/artifact_contracts.py": "21ebb9cad1cc854fc9d41b5b7fc72a853a948398524148d99cb8c7fe45ff2d9e"
+  },
+  "manifestHash": "4c04077695ff3b5f5f6328a2c6f590e50b0de973b4acccb374b84291820dff76",
+  "packs": [
+    {
+      "id": "U05",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U05-01",
+          "status": "passed"
+        },
+        {
+          "id": "U05-02",
+          "status": "passed"
+        },
+        {
+          "id": "U05-03",
+          "status": "passed"
+        },
+        {
+          "id": "U05-04",
+          "status": "passed"
+        },
+        {
+          "id": "U05-05",
+          "status": "passed"
+        },
+        {
+          "id": "U05-06",
+          "status": "passed"
+        },
+        {
+          "id": "U05-07",
+          "status": "passed"
+        },
+        {
+          "id": "U05-08",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/4743eecb0aa74a94af642d48089180db-corpus_tests.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U05-01",
+      "status": "passed"
+    },
+    {
+      "id": "U05-02",
+      "status": "passed"
+    },
+    {
+      "id": "U05-03",
+      "status": "passed"
+    },
+    {
+      "id": "U05-04",
+      "status": "passed"
+    },
+    {
+      "id": "U05-05",
+      "status": "passed"
+    },
+    {
+      "id": "U05-06",
+      "status": "passed"
+    },
+    {
+      "id": "U05-07",
+      "status": "passed"
+    },
+    {
+      "id": "U05-08",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U05": "b2af811d14d5c7ee9b7926c0d642d918a3a464b149aaaee4f302c057e3c4c85e"
+  },
+  "fixtureHashes": {},
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/4743eecb0aa74a94af642d48089180db-corpus_tests.log"
+  ],
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

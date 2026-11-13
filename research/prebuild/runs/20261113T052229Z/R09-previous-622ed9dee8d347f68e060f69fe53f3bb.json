@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R09",
+  "checks": [
+    {
+      "id": "eval_tests",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "research/prebuild/tools/eval.test.mjs"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:54:17.018217+00:00",
+      "finishedAt": "2026-11-13T05:54:17.657894+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/11c110c454fc4dc582c72bf191a649c6-eval_tests.log",
+      "reason": null
+    },
+    {
+      "id": "eval_development",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "research/prebuild/tools/run_eval.mjs",
+        "--partition",
+        "development",
+        "--out",
+        "research/prebuild/09-retrieval-ranking-results.json"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:54:17.657913+00:00",
+      "finishedAt": "2026-11-13T05:54:17.843190+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "research",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R09-eval_development-20f73df2e292414798eb1d241c4c0d19.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "running",
+  "evidenceStatus": "partial",
+  "definitionHash": "0a779614a9b2e07ae62a1d2fd488606c033bde38a581b933ce1259ab34622152",
+  "inputHashes": {
+    "embedder/embeddings.py": "92394293c23fb443fd44930c9e660f47842fcb7913076bf9b76a7339fe9b7f14",
+    "embedder/search.py": "2e2fbae834d4eb47353186b9bbeb5c92aa8c68babe9d20a175b1c1047c070120",
+    "research/prebuild/05-evaluation-cases.json": "d664fd777b27de347813b85430c7c272e40e223cd8e68193fa83b9a0a78f7a6e",
+    "research/prebuild/08-integration-spike.md": "88f3b53a07285d592ec23903a31702c6b8fec44b278858df6f397e0b98ebcbc5"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U09",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/11c110c454fc4dc582c72bf191a649c6.json",
+      "reportHash": "61eecdb30707fee089e0d3464ee64b7167c5ec81da9084fbabf18304fb83fb09",
+      "definitionHash": "450819565c622ab26e4343df40d5471e28e195dc2723f32ac6a59b2901d3b95e",
+      "testedFileHashes": {
+        "research/prebuild/tools/eval.test.mjs": "148d489251b2099cd97eddb00c16198a942a627010703f25c49fd60531d4f9c0",
+        "research/prebuild/tools/run_eval.mjs": "2f0d2bdb695ecf340b575dd797a249adfbc9f0e437c41ae23a74f4f68995fc92",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "21ebb9cad1cc854fc9d41b5b7fc72a853a948398524148d99cb8c7fe45ff2d9e"
+      },
+      "passedCaseIds": [
+        "U09-01",
+        "U09-02",
+        "U09-03",
+        "U09-04",
+        "U09-05",
+        "U09-06",
+        "U09-07",
+        "U09-08"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/09-query-cases.json": "0a6c26d326684d12337c2ab4dc216fa0564961d33a291f1b8ff81b9cd6745933",
+    "research/prebuild/09-retrieval-ranking-results.json": "e94c7420a42fae9ae2d7cd42e1aed6b2ec9413214010817aa70c9850e2097e94",
+    "research/prebuild/09-retrieval-ranking-report.md": "db2111b8cbd0fbcdc170d7af11460d666ae120e7978020a65739b4f21a230e7f",
+    "research/prebuild/tools/run_eval.mjs": "2f0d2bdb695ecf340b575dd797a249adfbc9f0e437c41ae23a74f4f68995fc92",
+    "research/prebuild/tools/eval.test.mjs": "148d489251b2099cd97eddb00c16198a942a627010703f25c49fd60531d4f9c0",
+    "research/prebuild/09-holdout-usage.json": "a62dff87a9af49a58b13bfe4fe2d4ae776280842057b9b3b058d973a565ee004"
+  }
+}

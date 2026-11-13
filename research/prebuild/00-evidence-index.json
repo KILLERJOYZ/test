@@ -1,0 +1,603 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "E-R02-PICKER",
+      "taskId": "R02",
+      "kind": "observed",
+      "claim": "Visible ordered-purpose and budget headings; matching not exercised.",
+      "sourceRef": "https://www.bestlaptop.deals/laptop-picker",
+      "observedAt": "2026-11-13T05:32:53.060014+00:00",
+      "method": "web tool text fetch",
+      "versions": {
+        "retrievedAt": "2026-11-13T05:32:53.060014+00:00"
+      },
+      "sampleSize": 1,
+      "denominator": 1,
+      "limitations": [
+        "Researcher text inspection only; no interaction, price accuracy or permission established."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "public_source_access"
+      ]
+    },
+    {
+      "id": "E-R02-PRODUCT",
+      "taskId": "R02",
+      "kind": "observed",
+      "claim": "Visible configuration options, availability and history labels; historical data and checkout not verified.",
+      "sourceRef": "https://www.bestlaptop.deals/products/lenovo-yoga-7i-2-in-1-16-2025",
+      "observedAt": "2026-11-13T05:32:53.060014+00:00",
+      "method": "web tool text fetch",
+      "versions": {
+        "retrievedAt": "2026-11-13T05:32:53.060014+00:00"
+      },
+      "sampleSize": 1,
+      "denominator": 1,
+      "limitations": [
+        "Researcher text inspection only; no interaction, price accuracy or permission established."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "public_source_access"
+      ]
+    },
+    {
+      "id": "E-R02-CPS",
+      "taskId": "R02",
+      "kind": "observed",
+      "claim": "Visible needs categories and RAM/CPU filters; interactions not exercised.",
+      "sourceRef": "https://cellphones.com.vn/laptop.html",
+      "observedAt": "2026-11-13T05:32:53.060014+00:00",
+      "method": "web tool text fetch",
+      "versions": {
+        "retrievedAt": "2026-11-13T05:32:53.060014+00:00"
+      },
+      "sampleSize": 1,
+      "denominator": 1,
+      "limitations": [
+        "Researcher text inspection only; no interaction, price accuracy or permission established."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "public_source_access"
+      ]
+    },
+    {
+      "id": "E-R02-CPSDETAIL",
+      "taskId": "R02",
+      "kind": "observed",
+      "claim": "Visible SKU, RAM/storage and comparison label; checkout total not verified.",
+      "sourceRef": "https://cellphones.com.vn/laptop-lenovo-ideapad-slim-3-14iwc11-83rq002pvn.html",
+      "observedAt": "2026-11-13T05:32:53.060014+00:00",
+      "method": "web tool text fetch",
+      "versions": {
+        "retrievedAt": "2026-11-13T05:32:53.060014+00:00"
+      },
+      "sampleSize": 1,
+      "denominator": 1,
+      "limitations": [
+        "Researcher text inspection only; no interaction, price accuracy or permission established."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "public_source_access"
+      ]
+    },
+    {
+      "id": "E-R02-TGDD",
+      "taskId": "R02",
+      "kind": "observed",
+      "claim": "Fetch timed out; behavior unknown.",
+      "sourceRef": "https://www.thegioididong.com/laptop",
+      "observedAt": "2026-11-13T05:32:53.060014+00:00",
+      "method": "web tool text fetch",
+      "versions": {
+        "retrievedAt": "2026-11-13T05:32:53.060014+00:00"
+      },
+      "sampleSize": 1,
+      "denominator": 1,
+      "limitations": [
+        "Researcher text inspection only; no interaction, price accuracy or permission established."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "public_source_access"
+      ]
+    },
+    {
+      "id": "E-R03-CPS",
+      "taskId": "R03",
+      "kind": "observed",
+      "claim": "Readable operating-regulation heading; substantive reuse basis not established.",
+      "sourceRef": "https://cellphones.com.vn/tos",
+      "observedAt": "2026-11-13T05:32:53.060014+00:00",
+      "method": "web tool text fetch",
+      "versions": {
+        "retrievedAt": "2026-11-13T05:32:53.060014+00:00"
+      },
+      "sampleSize": 1,
+      "denominator": 1,
+      "limitations": [
+        "Researcher text inspection only; no interaction, price accuracy or permission established."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "public_source_access"
+      ]
+    },
+    {
+      "id": "E-R03-TGDD",
+      "taskId": "R03",
+      "kind": "observed",
+      "claim": "Fetch timed out.",
+      "sourceRef": "https://www.thegioididong.com/tos",
+      "observedAt": "2026-11-13T05:32:53.060014+00:00",
+      "method": "web tool text fetch",
+      "versions": {
+        "retrievedAt": "2026-11-13T05:32:53.060014+00:00"
+      },
+      "sampleSize": 1,
+      "denominator": 1,
+      "limitations": [
+        "Researcher text inspection only; no interaction, price accuracy or permission established."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "public_source_access"
+      ]
+    },
+    {
+      "id": "E-R03-FPT",
+      "taskId": "R03",
+      "kind": "observed",
+      "claim": "Tool could not access attempted URL.",
+      "sourceRef": "https://fptshop.com.vn/dieu-khoan-su-dung",
+      "observedAt": "2026-11-13T05:32:53.060014+00:00",
+      "method": "web tool text fetch",
+      "versions": {
+        "retrievedAt": "2026-11-13T05:32:53.060014+00:00"
+      },
+      "sampleSize": 1,
+      "denominator": 1,
+      "limitations": [
+        "Researcher text inspection only; no interaction, price accuracy or permission established."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "public_source_access"
+      ]
+    },
+    {
+      "id": "E-R03-DMX",
+      "taskId": "R03",
+      "kind": "observed",
+      "claim": "Fetch returned 502.",
+      "sourceRef": "https://www.dienmayxanh.com/dieu-khoan-su-dung",
+      "observedAt": "2026-11-13T05:32:53.060014+00:00",
+      "method": "web tool text fetch",
+      "versions": {
+        "retrievedAt": "2026-11-13T05:32:53.060014+00:00"
+      },
+      "sampleSize": 1,
+      "denominator": 1,
+      "limitations": [
+        "Researcher text inspection only; no interaction, price accuracy or permission established."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "public_source_access"
+      ]
+    },
+    {
+      "id": "E-R03-PSREF",
+      "taskId": "R03",
+      "kind": "observed",
+      "claim": "Fetch returned no readable lines; exact-model evidence unavailable.",
+      "sourceRef": "https://psref.lenovo.com/",
+      "observedAt": "2026-11-13T05:32:53.060014+00:00",
+      "method": "web tool text fetch",
+      "versions": {
+        "retrievedAt": "2026-11-13T05:32:53.060014+00:00"
+      },
+      "sampleSize": 1,
+      "denominator": 1,
+      "limitations": [
+        "Researcher text inspection only; no interaction, price accuracy or permission established."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "public_source_access"
+      ]
+    },
+    {
+      "id": "E-R06-REGRESSIONS",
+      "taskId": "R06",
+      "kind": "observed",
+      "claim": "Controlled current helper regressions pass; original Git persistence handlers fail desired behavior for FLOW-01-03; restoration regression fails before and passes after.",
+      "sourceRef": "apps/adviser/src/decision-state.test.ts",
+      "observedAt": "2026-11-13T05:46:03.926782+00:00",
+      "method": "Node unit tests, injected storage and deferred promises; original Git blob AST extraction",
+      "versions": {
+        "baselineCommit": "d2f26ee62e50d661e30bc2aa271ae061f9e4e823"
+      },
+      "sampleSize": 15,
+      "denominator": 15,
+      "limitations": [
+        "No native/device or participant acceptance.",
+        "Original-handler desired regressions were added retrospectively; baseline source diagnostic was preserved before changes."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "FLOW-01",
+        "FLOW-02",
+        "FLOW-03",
+        "FLOW-04",
+        "U06"
+      ]
+    },
+    {
+      "id": "E-R12-SANDBOX",
+      "taskId": "R12",
+      "kind": "observed",
+      "claim": "Six injected repository/policy/cap probes passed; no production controls established.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R12-sandbox.log",
+      "observedAt": "2026-11-13T06:01:11.539504+00:00",
+      "method": "Node assertions against actual spike repository/policy and cap limiter",
+      "versions": {
+        "datasetKind": "synthetic"
+      },
+      "sampleSize": 6,
+      "denominator": 6,
+      "limitations": [
+        "No production RBAC, backup or live provider."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "OPS-01",
+        "OPS-02",
+        "OPS-03",
+        "OPS-04",
+        "OPS-05",
+        "OPS-06"
+      ]
+    },
+    {
+      "id": "E-R00-LOCAL",
+      "taskId": "R00",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R00.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "c60c7aa350911974418e4778830b400bf07453f7cfbe8e516efe716f556e4300"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R00"
+      ]
+    },
+    {
+      "id": "E-R01-LOCAL",
+      "taskId": "R01",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R01.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "7c03409fa7ff589805912fd56519ef19c54a5f29ca904a9776c5034c58370d9d"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R01"
+      ]
+    },
+    {
+      "id": "E-R02-LOCAL",
+      "taskId": "R02",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R02.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "f6a20d1adc94d1cc7f1c940d96781da5781033b66f22d45248e00acc58db05f8"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R02"
+      ]
+    },
+    {
+      "id": "E-R03-LOCAL",
+      "taskId": "R03",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R03.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "4120664223d438254aa2b64860e1f0737b7760081901fe7456df1927a5bdfd49"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R03"
+      ]
+    },
+    {
+      "id": "E-R04-LOCAL",
+      "taskId": "R04",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R04.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "26fa5477b313aa894768b4aca9af34b6a93c6f03fd7ae439920083c8897950e8"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R04"
+      ]
+    },
+    {
+      "id": "E-R05-LOCAL",
+      "taskId": "R05",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R05.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "1e9a1feb92f8f08619cd0f6cca461fd266d9577b6be6c684d3f921f4cd508928"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R05"
+      ]
+    },
+    {
+      "id": "E-R06-LOCAL",
+      "taskId": "R06",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R06.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "b70ae500532172f47e9b0dba89dcc58ae701fe3cbfc84a72e28601c27483a02a"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R06"
+      ]
+    },
+    {
+      "id": "E-R07-LOCAL",
+      "taskId": "R07",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R07.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "11b4129aa5205ff88d77a56b563b90d15fa14bb8ec058087611941b53cadb5ef"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R07"
+      ]
+    },
+    {
+      "id": "E-R08-LOCAL",
+      "taskId": "R08",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R08.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "46cb3a87d03f31d572f469cd07a080096b72c3dc2095bf9e73d643edb082e699"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R08"
+      ]
+    },
+    {
+      "id": "E-R09-LOCAL",
+      "taskId": "R09",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R09.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "0a779614a9b2e07ae62a1d2fd488606c033bde38a581b933ce1259ab34622152"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R09"
+      ]
+    },
+    {
+      "id": "E-R10-LOCAL",
+      "taskId": "R10",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R10.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "93b48be91ea28d8c8b45e0011138de0d4a63a953ad3ddd0f0d5f7b933cd20b7a"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R10"
+      ]
+    },
+    {
+      "id": "E-R11-LOCAL",
+      "taskId": "R11",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R11.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "fdfd8da6a20b8de18971210478c1714af2b26d9ec65d0725be64889f3ad6d713"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R11"
+      ]
+    },
+    {
+      "id": "E-R12-LOCAL",
+      "taskId": "R12",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R12.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "949b1a940ea0ef1651d1ea1b6182e9df8f0d85d6e9bd6893260848d5b04a3444"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R12"
+      ]
+    },
+    {
+      "id": "E-R13-LOCAL",
+      "taskId": "R13",
+      "kind": "observed",
+      "claim": "Local task execution record and declared artifacts; external sufficiency remains partial.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R13.json",
+      "observedAt": "2026-11-13T06:07:21.354384+00:00",
+      "method": "Executed local checks and artifact inspection; see individual run logs",
+      "versions": {
+        "definitionHash": "b53416bcd28fb208aa8d67cf602c483832ffca7318dfd1b77b3986ca9033b427"
+      },
+      "sampleSize": null,
+      "denominator": null,
+      "limitations": [
+        "No inferred participant, provider, permission, physical-device or gate acceptance."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R13"
+      ]
+    },
+    {
+      "id": "E-R12-HISTORY-RETEST",
+      "taskId": "R12",
+      "kind": "observed",
+      "claim": "Six sandbox operations still pass after hard-constraint and history/restore fixes.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R12-sandbox-history-retest.log",
+      "observedAt": "2026-11-13T06:29:41.486497+00:00",
+      "method": "Node assertions using current spike adapters",
+      "versions": {
+        "datasetKind": "synthetic"
+      },
+      "sampleSize": 6,
+      "denominator": 6,
+      "limitations": [
+        "No production controls or empirical validation."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R12"
+      ]
+    },
+    {
+      "id": "E-R12-SAVED-CONTRACT",
+      "taskId": "R12",
+      "kind": "observed",
+      "claim": "Six operations probes pass after stricter saved-history validation and canonical fixture correction.",
+      "sourceRef": "research/prebuild/runs/20261113T052229Z/R12-saved-contract-retest.log",
+      "observedAt": "2026-11-13T06:37:45.128047+00:00",
+      "method": "Node assertions against current synthetic adapters",
+      "versions": {
+        "datasetKind": "synthetic"
+      },
+      "sampleSize": 6,
+      "denominator": 6,
+      "limitations": [
+        "No production controls or empirical evidence."
+      ],
+      "reviewerRef": null,
+      "supports": [
+        "R12"
+      ]
+    }
+  ]
+}

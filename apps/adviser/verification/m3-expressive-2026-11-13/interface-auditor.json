@@ -1,0 +1,133 @@
+{
+  "interface_description_summary": "Current Android-oriented AdviserApp inspected through source and production web preview: requirements modal, catalog recovery, comparison, detail AI, saves and settings.",
+  "smells_detected": [
+    {
+      "id": "silent-errors",
+      "name": "Silent Errors",
+      "category": "feedback",
+      "severity": "critical",
+      "matched_symptoms": [
+        "Invalid budget has no visible feedback inside the open form.",
+        "Detail save acknowledgement is absent from the active detail modal."
+      ],
+      "message": "UX-01: background notices do not provide usable feedback at the point of action.",
+      "recipe_summary": "Scope feedback to the active interaction.",
+      "recipe_steps": [
+        {
+          "step": 1,
+          "action": "Place feedback locally",
+          "detail": "Render budget validation beside the input inside the modal."
+        },
+        {
+          "step": 2,
+          "action": "Announce and focus",
+          "detail": "Expose invalid state and move accessibility focus appropriately."
+        },
+        {
+          "step": 3,
+          "action": "Verify recovery",
+          "detail": "Test invalid values and failed saves without requiring users to close the modal."
+        }
+      ],
+      "time_estimate": null,
+      "related_principles": [
+        "error-prevention-in-forms",
+        "feedback"
+      ],
+      "before_example": "Submit 0; the modal remains open with no error.",
+      "after_example": "The same modal identifies the invalid budget and preserves all other choices."
+    },
+    {
+      "id": "contrast-blindness",
+      "name": "Contrast Blindness",
+      "category": "accessibility",
+      "severity": "critical",
+      "matched_symptoms": [
+        "Selection is conveyed only by fill color on requirements options.",
+        "Essential input and dark web focus cues are below 3:1."
+      ],
+      "message": "UX-03/04: selected state is missing from option semantics; essential boundaries/focus are insufficiently distinguishable. Normal text contrast passes.",
+      "recipe_summary": "Add semantic selection and separate accessible outline/focus roles.",
+      "recipe_steps": [
+        {
+          "step": 1,
+          "action": "Expose state",
+          "detail": "Use checked/selected semantics and visible check indicators."
+        },
+        {
+          "step": 2,
+          "action": "Fix essential cue colors",
+          "detail": "Use independently tested outline and focus roles, without treating decorative dividers as controls."
+        },
+        {
+          "step": 3,
+          "action": "Verify across modes",
+          "detail": "Measure role pair contrast, then inspect keyboard and TalkBack states in both themes."
+        }
+      ],
+      "time_estimate": null,
+      "related_principles": [
+        "accessibility",
+        "consistency-and-standards"
+      ],
+      "before_example": "Identical option labels; color alone identifies selection.",
+      "after_example": "Checked state is announced and visible; essential field/focus cues achieve 3:1."
+    },
+    {
+      "id": "dead-end-states",
+      "name": "Dead-End States",
+      "category": "feedback",
+      "severity": "warning",
+      "matched_symptoms": [
+        "A search with no matches is described as a requirements mismatch.",
+        "The empty state offers changing requirements rather than clearing the active search."
+      ],
+      "message": "UX-05: recovery exists but is directed at the wrong cause; the user can manually clear the input, so this is not a complete dead end.",
+      "recipe_summary": "Offer recovery specific to the empty-state cause.",
+      "recipe_steps": [
+        {
+          "step": 1,
+          "action": "Distinguish causes",
+          "detail": "Compute empty-search, source/filter-empty and no-eligible states separately."
+        },
+        {
+          "step": 2,
+          "action": "Provide direct recovery",
+          "detail": "Expose clear-search/clear-filter actions near the message."
+        },
+        {
+          "step": 3,
+          "action": "Preserve needs",
+          "detail": "Verify cleared search restores results without modifying requirements."
+        }
+      ],
+      "time_estimate": null,
+      "related_principles": [
+        "mental-model",
+        "recognition-rather-than-recall"
+      ],
+      "before_example": "No search matches leads to Chỉnh nhu cầu.",
+      "after_example": "No search matches leads to Xóa tìm kiếm with confirmed needs unchanged."
+    }
+  ],
+  "smells_suspected": [
+    {
+      "id": "overloaded-screen",
+      "name": "Overloaded Screen",
+      "category": "efficiency",
+      "reason": "Dense repeated cards and stacked comparison suggest scanning cost. No buyer testing or observed abandonment establishes overload; do not use a fixed seven-item threshold as proof."
+    }
+  ],
+  "clean_areas": [
+    "Navigation uses five readable destination labels; the item count alone is not a mystery-navigation defect.",
+    "Price age, unknown total cost and unverified suitability are explicit.",
+    "Core text contrast passes in the measured light and dark palettes."
+  ],
+  "priority_order": [
+    "silent-errors",
+    "contrast-blindness",
+    "dead-end-states"
+  ],
+  "api_enriched": false,
+  "api_note": "UXUI_API_KEY was absent. Internal-knowledge review only; no paid API or complete live taxonomy audit was performed. See https://uxuiprinciples.com/en/checkout for optional enrichment. Remediation steps are authored from observed evidence; time estimates are null because no API estimates were retrieved."
+}

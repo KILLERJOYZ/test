@@ -1,0 +1,86 @@
+{
+  "interface_type": "ai-suggestion",
+  "interface_note": "Detail-scoped question input returns checked-fact selections and optional requirement proposals. No autonomous purchases or deletions. Native successful inference was unavailable; browser unavailable-state behavior and source/test contracts were inspected. Score is a limited heuristic tally, not model-quality measurement.",
+  "overall_score": 79,
+  "band": "good",
+  "findings": [
+    {
+      "id": "AI-01",
+      "principle": {
+        "code": null,
+        "slug": "ai-capability-disclosure",
+        "title": "AI Capability Disclosure",
+        "chapter": "AI and Intelligent Interfaces"
+      },
+      "severity": "warning",
+      "message": "The UI reports AI unavailable but still enables Hỏi AI; browser submission fails with LOCAL_AI_UNAVAILABLE. The disable condition only considers busy and boot state.",
+      "remediation": "Gate generation on actual availability, provide download/recheck actions where appropriate, and leave source facts usable without AI.",
+      "business_impact": null
+    },
+    {
+      "id": "AI-02",
+      "principle": {
+        "code": null,
+        "slug": "ai-accuracy-communication",
+        "title": "AI Accuracy Communication",
+        "chapter": "AI and Intelligent Interfaces"
+      },
+      "severity": "warning",
+      "message": "The UI describes facts as checked, but imported title and structured fields conflict for sampled listings (Acer 512GB versus storage 2048; MacBook 8GB title versus ram 256). Contract-valid fact selection does not resolve source accuracy.",
+      "remediation": "Identify contradictory attributes, withhold an unsupported value from AI assertions/filter conclusions, and label unresolved evidence specifically. Do not invent numeric confidence or choose a title value without source review.",
+      "business_impact": null
+    },
+    {
+      "id": "AI-03",
+      "principle": {
+        "code": null,
+        "slug": "contextual-ai-help",
+        "title": "Contextual AI Help",
+        "chapter": "AI and Intelligent Interfaces"
+      },
+      "severity": "warning",
+      "message": "The fallback exposes raw Error: LOCAL_AI_UNAVAILABLE and directs users to facts below, while the facts are above the AI panel.",
+      "remediation": "Use a plain-language reason, a status-appropriate next action, and an accurate link or scroll action to the facts. Retain the user's question and existing requirements.",
+      "business_impact": null
+    }
+  ],
+  "strengths": [
+    {
+      "principle": {
+        "code": "S.1.3.01",
+        "slug": "ai-transparency",
+        "title": "AI Transparency"
+      },
+      "message": "AI is explicitly named and on-device processing is disclosed; the interface explains its limited fact-selection/proposal role."
+    },
+    {
+      "principle": {
+        "code": null,
+        "slug": "ai-user-control",
+        "title": "AI User Control"
+      },
+      "message": "Source offers cancel and sends proposals into a draft for review; only confirm commits requirements."
+    },
+    {
+      "principle": {
+        "code": null,
+        "slug": "automation-bias-prevention",
+        "title": "Automation Bias Prevention"
+      },
+      "message": "Historical-price and suitability caveats remain visible. Unsupported generated prose is rejected in source and unit checks."
+    }
+  ],
+  "trust_assessment": {
+    "disclosure": "clear",
+    "override_path": "clear",
+    "accuracy_signals": "partial",
+    "consent": "explicit"
+  },
+  "priority_fixes": [
+    "AI-02",
+    "AI-01",
+    "AI-03"
+  ],
+  "api_enriched": false,
+  "api_note": "UXUI_API_KEY was absent. Internal-knowledge review only; no paid API or complete live taxonomy audit was performed. See https://uxuiprinciples.com/en/checkout for optional enrichment."
+}

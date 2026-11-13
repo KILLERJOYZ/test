@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R02",
+  "inputs": [
+    {
+      "ref": "research/project-research.md",
+      "sha256": "c138f2a551a618b4456c2dd60ead26c6d7eaee5d3e4b20a6d10754ba1c4dd1af"
+    },
+    {
+      "ref": "research/sources.md",
+      "sha256": "74136ca5e1720595cb92abdfbea8f0638a82e598141833b25e5135aace5c534a"
+    },
+    {
+      "ref": "research/mobile-interface-strategy.md",
+      "sha256": "d2a8de7480774262643ea0a4510a077cb7314d59bc052aec1c23092d8d807bc2"
+    },
+    {
+      "ref": "docs/planning/APP_FLOW.md",
+      "sha256": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640"
+    }
+  ],
+  "data": {
+    "taskIds": [
+      "needs_budget",
+      "exact_variant",
+      "price_conditions",
+      "compare_return"
+    ],
+    "entries": [
+      {
+        "id": "reference-needs_budget",
+        "sourceUrl": "https://www.bestlaptop.deals/laptop-picker",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "needs_budget",
+        "status": "observed",
+        "observations": [
+          "Visible ordered-purpose and budget headings; matching not exercised."
+        ],
+        "evidenceRefs": [
+          "E-R02-PICKER",
+          "E-R02-PRODUCT"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      },
+      {
+        "id": "reference-exact_variant",
+        "sourceUrl": "https://www.bestlaptop.deals/laptop-picker",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "exact_variant",
+        "status": "observed",
+        "observations": [
+          "Visible configuration options, availability and history labels; historical data and checkout not verified."
+        ],
+        "evidenceRefs": [
+          "E-R02-PICKER",
+          "E-R02-PRODUCT"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      },
+      {
+        "id": "reference-price_conditions",
+        "sourceUrl": "https://www.bestlaptop.deals/laptop-picker",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "price_conditions",
+        "status": "observed",
+        "observations": [
+          "Visible configuration options, availability and history labels; historical data and checkout not verified."
+        ],
+        "evidenceRefs": [
+          "E-R02-PICKER",
+          "E-R02-PRODUCT"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      },
+      {
+        "id": "reference-compare_return",
+        "sourceUrl": "https://www.bestlaptop.deals/laptop-picker",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "compare_return",
+        "status": "not_run",
+        "observations": [],
+        "evidenceRefs": [
+          "E-R02-PICKER",
+          "E-R02-PRODUCT"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      },
+      {
+        "id": "cellphones-needs_budget",
+        "sourceUrl": "https://cellphones.com.vn/laptop.html",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "needs_budget",
+        "status": "observed",
+        "observations": [
+          "Visible needs categories and RAM/CPU filters; interactions not exercised."
+        ],
+        "evidenceRefs": [
+          "E-R02-CPS",
+          "E-R02-CPSDETAIL"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      },
+      {
+        "id": "cellphones-exact_variant",
+        "sourceUrl": "https://cellphones.com.vn/laptop.html",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "exact_variant",
+        "status": "observed",
+        "observations": [
+          "Visible SKU, RAM/storage and comparison label; checkout total not verified."
+        ],
+        "evidenceRefs": [
+          "E-R02-CPS",
+          "E-R02-CPSDETAIL"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      },
+      {
+        "id": "cellphones-price_conditions",
+        "sourceUrl": "https://cellphones.com.vn/laptop.html",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "price_conditions",
+        "status": "not_run",
+        "observations": [],
+        "evidenceRefs": [
+          "E-R02-CPS",
+          "E-R02-CPSDETAIL"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      },
+      {
+        "id": "cellphones-compare_return",
+        "sourceUrl": "https://cellphones.com.vn/laptop.html",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "compare_return",
+        "status": "not_run",
+        "observations": [],
+        "evidenceRefs": [
+          "E-R02-CPS",
+          "E-R02-CPSDETAIL"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      },
+      {
+        "id": "tgdd-needs_budget",
+        "sourceUrl": "https://www.thegioididong.com/laptop",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "needs_budget",
+        "status": "inaccessible",
+        "observations": [],
+        "evidenceRefs": [
+          "E-R02-TGDD"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      },
+      {
+        "id": "tgdd-exact_variant",
+        "sourceUrl": "https://www.thegioididong.com/laptop",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "exact_variant",
+        "status": "inaccessible",
+        "observations": [],
+        "evidenceRefs": [
+          "E-R02-TGDD"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      },
+      {
+        "id": "tgdd-price_conditions",
+        "sourceUrl": "https://www.thegioididong.com/laptop",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "price_conditions",
+        "status": "inaccessible",
+        "observations": [],
+        "evidenceRefs": [
+          "E-R02-TGDD"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      },
+      {
+        "id": "tgdd-compare_return",
+        "sourceUrl": "https://www.thegioididong.com/laptop",
+        "observedAt": "2026-11-13T05:32:53.060014+00:00",
+        "method": "web text fetch; no interactive walkthrough",
+        "taskId": "compare_return",
+        "status": "inaccessible",
+        "observations": [],
+        "evidenceRefs": [
+          "E-R02-TGDD"
+        ],
+        "timingMs": null,
+        "participantSuccessCount": 0,
+        "limitations": "Visible content only; no task completion or algorithm verification."
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "H-R02-01",
+        "claim": "Keep exact configuration attached when returning from comparison.",
+        "status": "proposed"
+      },
+      {
+        "id": "H-R02-02",
+        "claim": "Separate price labels from verified payable totals.",
+        "status": "proposed"
+      }
+    ]
+  },
+  "evidenceRefs": [
+    "E-R02-PICKER",
+    "E-R02-PRODUCT",
+    "E-R02-CPS",
+    "E-R02-CPSDETAIL",
+    "E-R02-TGDD"
+  ],
+  "gaps": [
+    {
+      "id": "GAP-R02-001",
+      "reason": "Text inspection cannot exercise selection, comparison/return or checkout; TGDD fetch timed out.",
+      "nextAction": "Inspect interactive flows or obtain documented source access as applicable; retain unknown outcomes."
+    }
+  ]
+}

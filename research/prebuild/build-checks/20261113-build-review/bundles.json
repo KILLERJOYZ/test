@@ -1,0 +1,29 @@
+[
+  {
+    "name": "web-build",
+    "command": [
+      "npm.cmd",
+      "run",
+      "build"
+    ],
+    "exitCode": 0,
+    "startedAt": "2026-11-13T06:44:10.933320+00:00",
+    "finishedAt": "2026-11-13T06:44:20.446807+00:00",
+    "log": "research\\prebuild\\build-checks\\20261113-build-review\\web-build.log"
+  },
+  {
+    "name": "expo-android-export",
+    "command": [
+      "npm.cmd",
+      "run",
+      "export:android",
+      "--",
+      "--output-dir",
+      "../../research/prebuild/build-checks/20261113-build-review/android-export"
+    ],
+    "exitCode": 0,
+    "startedAt": "2026-11-13T06:44:20.446943+00:00",
+    "finishedAt": "2026-11-13T06:44:45.599456+00:00",
+    "log": "research\\prebuild\\build-checks\\20261113-build-review\\expo-android-export.log"
+  }
+]

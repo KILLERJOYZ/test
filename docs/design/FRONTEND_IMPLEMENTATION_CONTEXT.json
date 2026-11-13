@@ -1,0 +1,50 @@
+{
+  "component_type": "form",
+  "component_note": "Planning context for the first needs-form implementation slice, including shared primitives and motion. Full frontend scope and later components are in FRONTEND_IMPLEMENTATION_PLAN.md and FRONTEND_MOTION_SPEC.md. This is an internally authored prompt package; no components were generated. File/handler line limits below are practical guardrails, not empirical UX laws.",
+  "tech_stack": "Expo SDK 54 + React Native 0.81.5 + React 19.1 + TypeScript; SDK-compatible Reanimated native adapter; React Native Web/HTML-CSS preview",
+  "principles_applied": [
+    {
+      "code": "F.1.1.02",
+      "slug": "cognitive-load",
+      "title": "Cognitive Load",
+      "relevance": "The requirements form must keep budget, constraints and tasks understandable while preserving current confirmation semantics.",
+      "ai_summary": "Group related fields and make the next action and recovery path clear. No universal seven-item limit or conversion improvement is assumed."
+    },
+    {
+      "code": "I.1.1.03",
+      "slug": "error-prevention-in-forms-law",
+      "title": "Error Prevention in Forms",
+      "relevance": "The current form hides invalid-input and persistence feedback outside its modal.",
+      "ai_summary": "Show validation and failed-save feedback where users can act on it, retain the draft, and preserve committed requirements until a successful explicit confirmation."
+    },
+    {
+      "code": "I.2.2.02",
+      "slug": "fitts-law",
+      "title": "Fitts's Law",
+      "relevance": "Animated controls must remain reachable with stable hit regions and readable state indicators.",
+      "ai_summary": "Use the project's minimum 48 by 48 dp effective targets and keep visual transforms inside stationary interactive regions."
+    }
+  ],
+  "vibe_coding_prompts": [
+    {
+      "principle_slug": "cognitive-load",
+      "component_match": "form",
+      "prompt": "You are a React Native frontend engineer implementing an accessible Android requirements form.\n\nCreate the first animated needs slice specified by FE-01/02/06/08. Use the project's 48 by 48 dp target requirement and WCAG's 4.5:1 normal-text/3:1 essential-control contrast thresholds as verifiable constraints (https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html and https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html). These thresholds do not predict conversion.\n\nRequirements:\n- Use the existing Expo SDK 54 / React Native 0.81.5 / TypeScript app, its current Requirements fields and serial store contract.\n- Group budget, mandatory specifications and tasks; show one explicit confirmation action and a working Cancel path.\n- Use labelled radio choices for single selections and checked multi-select task controls, with visible non-color indicators.\n- Display validation and persistence errors inside the active modal; retain the draft, focus the invalid field and announce the error once.\n- Share tokens with the preview. Verify compact/expanded windows, IME, Vietnamese text, long VND values and 2.0x font settings.\n- Use the shared motion adapter for press/selection and successful confirmation. Keep semantic state immediate and targets stationary.\n- Honor reduced-motion changes at startup, during animation and after resume; state commits never depend on animation completion.\n\nConstraints:\n- Limit any newly extracted component file to 250 nonblank lines; split focused components/handlers when necessary. This is a maintainability guardrail, not a research threshold.\n- Don't modify files outside the active FE task's declared source/config/test scope; preserve unrelated working-tree changes.\n- Do not change eligibility, exact price/evidence facts, saved history or confirmed requirements as a visual side effect."
+    },
+    {
+      "principle_slug": "error-prevention-in-forms-law",
+      "component_match": "form",
+      "prompt": "You are a React Native frontend engineer implementing recoverable form interactions.\n\nCreate validation, persistence and animation behavior that can be verified through FE-T01/02/09/10. The project's Material acceptance contract requires visible error states, accessible controls of at least 48 dp, and full operability when Android animations are disabled (brd.md AC-UX02–04; https://reactnative.dev/docs/0.81/accessibilityinfo).\n\nRequirements:\n- Validate using existing domain boundaries rather than a new UI-only range.\n- Handle zero, empty, decimal, excessive and nonnumeric budgets, plus write rejection and retry.\n- Keep draft, pending and committed states distinct; accept only one pending confirmation for the same operation.\n- Put success/failure acknowledgement on the surface that triggered the action.\n- Drive animation from authoritative state; reverse/cancel obsolete motion without firing a business callback.\n- Test radio/checkbox semantic state and the no-motion path; use native TalkBack/IME checks for device behavior.\n\nConstraints:\n- Keep each newly extracted state-transition handler within 30 nonblank lines by extracting named helpers, without obscuring ordering. This is a maintainability choice.\n- Don't modify unrelated files or replace the current AdviserApp with the older demo runtime.\n- Never close the form or play committed-success feedback after a failed write."
+    }
+  ],
+  "assembled_context": "Building: current AdviserApp needs form and reusable animated controls.\n\nYou are a React Native frontend engineer implementing an accessible Android requirements form.\n\nCreate the first animated needs slice specified by FE-01/02/06/08. Use the project's 48 by 48 dp target requirement and WCAG's 4.5:1 normal-text/3:1 essential-control contrast thresholds as verifiable constraints (https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html and https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html). These thresholds do not predict conversion.\n\nRequirements:\n- Use the existing Expo SDK 54 / React Native 0.81.5 / TypeScript app, its current Requirements fields and serial store contract.\n- Group budget, mandatory specifications and tasks; show one explicit confirmation action and a working Cancel path.\n- Use labelled radio choices for single selections and checked multi-select task controls, with visible non-color indicators.\n- Display validation and persistence errors inside the active modal; retain the draft, focus the invalid field and announce the error once.\n- Share tokens with the preview. Verify compact/expanded windows, IME, Vietnamese text, long VND values and 2.0x font settings.\n- Use the shared motion adapter for press/selection and successful confirmation. Keep semantic state immediate and targets stationary.\n- Honor reduced-motion changes at startup, during animation and after resume; state commits never depend on animation completion.\n\nConstraints:\n- Limit any newly extracted component file to 250 nonblank lines; split focused components/handlers when necessary. This is a maintainability guardrail, not a research threshold.\n- Don't modify files outside the active FE task's declared source/config/test scope; preserve unrelated working-tree changes.\n- Do not change eligibility, exact price/evidence facts, saved history or confirmed requirements as a visual side effect.\n\n---\n\nYou are a React Native frontend engineer implementing recoverable form interactions.\n\nCreate validation, persistence and animation behavior that can be verified through FE-T01/02/09/10. The project's Material acceptance contract requires visible error states, accessible controls of at least 48 dp, and full operability when Android animations are disabled (brd.md AC-UX02–04; https://reactnative.dev/docs/0.81/accessibilityinfo).\n\nRequirements:\n- Validate using existing domain boundaries rather than a new UI-only range.\n- Handle zero, empty, decimal, excessive and nonnumeric budgets, plus write rejection and retry.\n- Keep draft, pending and committed states distinct; accept only one pending confirmation for the same operation.\n- Put success/failure acknowledgement on the surface that triggered the action.\n- Drive animation from authoritative state; reverse/cancel obsolete motion without firing a business callback.\n- Test radio/checkbox semantic state and the no-motion path; use native TalkBack/IME checks for device behavior.\n\nConstraints:\n- Keep each newly extracted state-transition handler within 30 nonblank lines by extracting named helpers, without obscuring ordering. This is a maintainability choice.\n- Don't modify unrelated files or replace the current AdviserApp with the older demo runtime.\n- Never close the form or play committed-success feedback after a failed write.\n\nUX guardrails:\n- The active modal contains its errors and acknowledgement.\n- Choices have checked/selected semantics and non-color indicators.\n- Targets remain at least 48 by 48 dp while inner visuals animate.\n- Draft confirmation and persistence determine truth; motion follows.\n- Reduced motion has the same state, evidence and recovery behavior.",
+  "ux_guardrails": [
+    "Keep field and persistence feedback inside the active form or detail surface.",
+    "Expose checked/selected state through correct semantics and a non-color indicator.",
+    "Keep an effective stationary 48 by 48 dp hit region for interactive controls.",
+    "Change confirmed needs only after explicit confirmation and successful persistence, independently of animation callbacks.",
+    "Honor motion preferences live and retain equivalent state, feedback, cancellation and focus behavior without movement."
+  ],
+  "api_enriched": false,
+  "api_note": "No UXUI_API_KEY was configured during the preceding audit; no API was used for this planning context. Prompts are internally authored from observed code, the audit and official guidance. Optional enrichment: https://uxuiprinciples.com/en/checkout."
+}

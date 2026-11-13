@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-13",
+  "algorithm": "sha256",
+  "files": [
+    {
+      "file": "apps/adviser/index.js",
+      "sha256": "02230bdf44adb4d533c8f93fa41370f33aee3e8f75de932f57ef7c60cdc3f89b"
+    },
+    {
+      "file": "apps/adviser/src/main.web.tsx",
+      "sha256": "6a621e322b032b4c950579e8dff281d486e22ada6e60d4dc880defa0c0bf0140"
+    },
+    {
+      "file": "apps/adviser/src/AdviserApp.tsx",
+      "sha256": "5b88e0698c857ccace3201bc8220a784d485d40e6cdc76fbb12a2c1d38754945"
+    },
+    {
+      "file": "apps/adviser/src/catalog.ts",
+      "sha256": "d8ac699cc37ec22e22e98c8ed8c4fc23fb3eb134db402c354d4812c0eccc8544"
+    },
+    {
+      "file": "apps/adviser/src/real-catalog.json",
+      "sha256": "4d023d9e96bb45baf63ac0dc68ad93699cf6b0500911f75dc6f6a7b42795642b"
+    },
+    {
+      "file": "apps/adviser/src/web.css",
+      "sha256": "fb06999f564bfa6a1f4ecdc5317188a4080ee172e42b58a93d8862482ef85a5f"
+    },
+    {
+      "file": "apps/adviser/src/design-tokens.ts",
+      "sha256": "13ad0d7c5c5216c697c6ec4645fb3efa0951ade80ffa0fe38abcefafcc7e238c"
+    },
+    {
+      "file": ".agents/skills/uxui-evaluator/SKILL.md",
+      "sha256": "3b7ee903bffc14c898f5c37526ddeecc1015ac84c7f0c585bf7c23acba606771"
+    },
+    {
+      "file": ".agents/skills/interface-auditor/SKILL.md",
+      "sha256": "820564d83f56bd08241b9f409717a8ef098b3334e6fc55ab0724ac24014f18af"
+    },
+    {
+      "file": ".agents/skills/ai-interface-reviewer/SKILL.md",
+      "sha256": "b881f97148267eafde0c81730c9b8598e46818a075f38392661062ffb92bce41"
+    },
+    {
+      "file": ".agents/skills/flow-checker/SKILL.md",
+      "sha256": "2a102cd9ceb2622d9d14c9f8c83e041c041e702b147e908222cf8ac2b6eba128"
+    },
+    {
+      "file": ".agents/skills/vibe-coding-advisor/SKILL.md",
+      "sha256": "1c5feb503d56ed5acb01a02f24184545664b0302f343b7a4e94ecee5551157f4"
+    }
+  ]
+}

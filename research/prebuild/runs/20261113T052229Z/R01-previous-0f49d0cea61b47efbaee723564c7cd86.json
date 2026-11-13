@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R01",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R01"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:31:01.848142+00:00",
+      "finishedAt": "2026-11-13T05:31:02.593353+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R01-artifact-e84cdbfad2784e71afeda11974a96b42.log",
+      "reason": null
+    },
+    {
+      "id": "buyer_evidence_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_buyer_evidence.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:33:18.352583+00:00",
+      "finishedAt": "2026-11-13T05:33:18.906271+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/4b1c4c988eb542bfa61e0bbfcdb67abd-buyer_evidence_tests.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R01"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:33:18.352583+00:00",
+      "finishedAt": "2026-11-13T05:33:19.064215+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R01-artifact-c31d485abe574382834bdc6f6b11abd3.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "7c03409fa7ff589805912fd56519ef19c54a5f29ca904a9776c5034c58370d9d",
+  "inputHashes": {
+    "research/onboarding-question-bank.json": "8201e56d88b8d966837057729773528f950b8fab0d866e0c8bf1c4a1c725fb37",
+    "research/business-needs-and-feature-inventory.md": "5a8f5cc65a8851c1f92784c0382738d084f30bc10507e9851b1396d87bcfec5f",
+    "research/prebuild/00-scope-and-decisions.md": "eda345ed8c0d8f9391934bd224446bb9b537bd0005d03128b46bbb3c64a62824"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U01",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/4b1c4c988eb542bfa61e0bbfcdb67abd.json",
+      "reportHash": "a85be9f669cc7da5b4e3d4d31576a44b0335a7e3cf7117883471e9046f9334c9",
+      "definitionHash": "29bb09dd7d9cf396278090c2cc52a0228420622ef2b06db4921fa479704c3ab2",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_buyer_evidence.py": "cd4cb95e08cfadc7e03be0f134a8ae0f59f60d6a070a0a3a67399ace2c213279",
+        "research/prebuild/tools/validate.py": "aa1c3d526db1425a7017370343440ad48f466fe51a066145f0e0211e57ed323d",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "21ebb9cad1cc854fc9d41b5b7fc72a853a948398524148d99cb8c7fe45ff2d9e"
+      },
+      "passedCaseIds": [
+        "U01-01",
+        "U01-02",
+        "U01-03",
+        "U01-04",
+        "U01-05"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/01-buyer-protocol.json": "c59e797101f0c26169de20534ac87ffed89e11a5061f0efdbe660c95ecd5ae09",
+    "research/prebuild/01-buyer-observations.json": "68a445a08cdde24e52455dc86e37eebf76384ebab95da3e222257916a64fa456",
+    "research/prebuild/01-buyer-research.md": "1c1a16f54ddfb8b23656299e3f26424fe0a00b2163f386c5562c6a42db7e6d80",
+    "research/prebuild/tools/test_buyer_evidence.py": "cd4cb95e08cfadc7e03be0f134a8ae0f59f60d6a070a0a3a67399ace2c213279"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "budgetInvalid": null,
+  "dialogContainsError": false,
+  "errorExistsInBackground": false,
+  "selectionControls": [
+    {
+      "checked": null,
+      "label": "Chưa rõ",
+      "pressed": null,
+      "selected": null
+    },
+    {
+      "checked": null,
+      "label": "8 GB",
+      "pressed": null,
+      "selected": null
+    },
+    {
+      "checked": null,
+      "label": "16 GB",
+      "pressed": null,
+      "selected": null
+    },
+    {
+      "checked": null,
+      "label": "32 GB",
+      "pressed": null,
+      "selected": null
+    },
+    {
+      "checked": null,
+      "label": "64 GB",
+      "pressed": null,
+      "selected": null
+    },
+    {
+      "checked": null,
+      "label": "Chưa rõ",
+      "pressed": null,
+      "selected": null
+    },
+    {
+      "checked": null,
+      "label": "256 GB",
+      "pressed": null,
+      "selected": null
+    },
+    {
+      "checked": null,
+      "label": "512 GB",
+      "pressed": null,
+      "selected": null
+    },
+    {
+      "checked": null,
+      "label": "1024 GB",
+      "pressed": null,
+      "selected": null
+    }
+  ]
+}

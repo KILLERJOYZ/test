@@ -58,3 +58,12 @@ test("HTTP service rejects contradictory output, preserves revision, supports pr
     await new Promise((resolve) => server.close(resolve));
   }
 });
+import {makeAiContext,explain} from '../../apps/adviser/src/ai.ts';
+import {OFFERS,PRODUCTS} from '../../apps/adviser/src/domain.ts';
+test('HTTP contextual AI preserves focus and echoes full context',async()=>{
+ let captured;
+ const server=createServer({provider:async(_,input)=>{captured=input;return {claims:input.allowedClaims.filter(c=>c.productId==='p4'&&c.kind==='limitation')};}});
+ await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+ try{const context=makeAiContext(needs,OFFERS,'focus-request',['p4'],'detail');const response=await explain(`http://127.0.0.1:${server.address().port}`,'Explain this',needs,OFFERS,{context});assert.deepEqual(captured.context,context);assert.ok(captured.allowedClaims.every(c=>c.productId==='p4'));assert.ok(response.text.includes(PRODUCTS.find(p=>p.id==='p4').name));}
+ finally{await new Promise(resolve=>server.close(resolve));}
+});

@@ -1,0 +1,1991 @@
+{
+  "schemaVersion": 1,
+  "planVersion": "2.1",
+  "pathBase": "repository_root",
+  "status": "Unit pack contracts specified; only existing test files are runnable before their owning tasks implement the planned files.",
+  "unitFrameworks": {
+    "python": "stdlib unittest",
+    "node": "node:test + node:assert/strict with existing Node type stripping"
+  },
+  "unitRules": [
+    "No network, sockets, real AI, database service, ADB, real clock sleeps or shared user files.",
+    "Inject boundaries; use temporary directories only for filesystem-unit behavior. Use frozen small synthetic fixtures and literal independent expected values.",
+    "All required case IDs must execute; zero discovered tests, missing cases, failed assertions or skipped required cases prevent success.",
+    "Case counts are behavior coverage, not a claim of exhaustive correctness or production readiness."
+  ],
+  "sharedFixtureContract": {
+    "root": "research/prebuild/tests/fixtures/",
+    "datasetKind": "synthetic",
+    "seed": 20261113,
+    "moneyExample": {
+      "baseVnd": 20000000,
+      "shippingVnd": 200000,
+      "mandatoryExtraFeesVnd": 300000,
+      "discountVnd": 500000,
+      "totalEligibleVnd": 20000000,
+      "totalWithoutDiscountVnd": 20500000
+    },
+    "rule": "Create only fixtures needed by implemented packs; label provenance and keep golden expectations independent of tested code."
+  },
+  "runner": {
+    "path": "research/prebuild/tools/run_unit_packs.py",
+    "createdByTask": "R00",
+    "selectors": [
+      "--task R04",
+      "--pack U04",
+      "--changed <repository-relative paths>",
+      "--all"
+    ],
+    "exits": {
+      "0": "All selected required packs/cases executed and passed.",
+      "1": "Failure, invalid selection/report, zero-test suite or skipped/missing required discovered case.",
+      "2": "Incomplete because selected planned pack/tool is unavailable; report not_run, never pass."
+    },
+    "report": "research/prebuild/runs/<runId>/unit-packs/<invocationId>.json",
+    "reportFields": [
+      "runId",
+      "invocationId",
+      "selection",
+      "testedFileHashes",
+      "manifestHash",
+      "packs",
+      "cases",
+      "passed",
+      "failed",
+      "skipped",
+      "notRun",
+      "exitCode",
+      "limitations",
+      "commandVersions",
+      "packDefinitionHashes",
+      "fixtureHashes",
+      "logs"
+    ],
+    "selectionRule": "Use tracker.requiredUnitPacks for --task; --changed uses changeImpact rules and testFiles, subject to activationRule. Include existing baseline for affected app behavior. Unknown executable paths require an explicit owner/pack mapping before task completion.",
+    "resultRule": "Execute argument arrays without shell concatenation. Parse actual test results and case-name mappings; nonzero exit never becomes pass. --all reports every catalog pack including absent planned packs. R14 can summarize incomplete results without approving gates. Exit 1 takes precedence if failures and unavailable packs coexist. Include every failed/skipped/not_run required case, rather than only aggregate exit status.",
+    "activationRule": "For --task, required packs must be implemented and run. For --changed, also run impacted existing/implemented packs and packs owned by the current task. A future dependent pack whose creator has not run is deferred with not_run/deferred_owner, not a producer failure or pass. Its owner must execute it against current hashes before becoming done. --all includes every planned pack and returns incomplete when any is absent.",
+    "freshnessRule": "Whole manifest hash is provenance. Reuse compares consumed pack definitions, tests, source and fixture hashes, not unrelated later catalog entries."
+  },
+  "changeImpact": [
+    {
+      "patterns": [
+        "docs/planning/PREBUILD*",
+        "research/prebuild/RESEARCH_TEMPLATES.md",
+        "research/prebuild/tools/plan_contracts.py",
+        "research/prebuild/tools/test_plan_contract.py"
+      ],
+      "unitPacks": [
+        "UPLAN"
+      ],
+      "nonUnit": [],
+      "note": "Any changed executable assertions/state rules additionally select their owning runtime packs."
+    },
+    {
+      "patterns": [
+        "research/prebuild/tools/validate.py",
+        "research/prebuild/tools/run_unit_packs.py"
+      ],
+      "unitPacks": [
+        "U00",
+        "U01",
+        "U02",
+        "U03",
+        "U11",
+        "U12",
+        "U14"
+      ],
+      "nonUnit": []
+    },
+    {
+      "patterns": [
+        "research/prebuild/tools/audit_catalog.py",
+        "research/prebuild/04-*",
+        "data/*.json"
+      ],
+      "unitPacks": [
+        "U04",
+        "U05",
+        "U08",
+        "U09"
+      ],
+      "nonUnit": [
+        "I-SPIKE"
+      ]
+    },
+    {
+      "patterns": [
+        "research/prebuild/tools/build_cases.py",
+        "research/prebuild/05-*"
+      ],
+      "unitPacks": [
+        "U05",
+        "U08",
+        "U09"
+      ],
+      "nonUnit": [
+        "I-SPIKE"
+      ]
+    },
+    {
+      "patterns": [
+        "apps/adviser/src/domain.ts",
+        "apps/adviser/src/picker.ts"
+      ],
+      "unitPacks": [
+        "UBASE",
+        "U05",
+        "U06",
+        "U07",
+        "U08",
+        "U10"
+      ],
+      "nonUnit": [
+        "I-HTTP",
+        "I-SPIKE"
+      ]
+    },
+    {
+      "patterns": [
+        "apps/adviser/src/decision-state*",
+        "apps/adviser/src/AndroidApp.tsx"
+      ],
+      "unitPacks": [
+        "UBASE",
+        "U06"
+      ],
+      "nonUnit": [
+        "BUILD-TYPES",
+        "DEVICE"
+      ]
+    },
+    {
+      "patterns": [
+        "apps/adviser/src/ai.ts",
+        "services/demo-ai/*",
+        "research/prebuild/tools/run_ai.mjs"
+      ],
+      "unitPacks": [
+        "UBASE",
+        "U10"
+      ],
+      "nonUnit": [
+        "I-HTTP"
+      ]
+    },
+    {
+      "patterns": [
+        "research/prebuild/tools/contract_validation.mjs",
+        "research/prebuild/07-*"
+      ],
+      "unitPacks": [
+        "U07",
+        "U08",
+        "U10"
+      ],
+      "nonUnit": [
+        "I-SPIKE"
+      ]
+    },
+    {
+      "patterns": [
+        "spikes/prebuild-contract/*"
+      ],
+      "unitPacks": [
+        "U07",
+        "U08",
+        "U09"
+      ],
+      "nonUnit": [
+        "I-SPIKE"
+      ]
+    },
+    {
+      "patterns": [
+        "research/prebuild/tools/run_eval.mjs",
+        "research/prebuild/09-*"
+      ],
+      "unitPacks": [
+        "U05",
+        "U09"
+      ],
+      "nonUnit": []
+    },
+    {
+      "patterns": [
+        "research/prebuild/11-*"
+      ],
+      "unitPacks": [
+        "U11"
+      ],
+      "nonUnit": [
+        "DEVICE"
+      ]
+    },
+    {
+      "patterns": [
+        "research/prebuild/12-*"
+      ],
+      "unitPacks": [
+        "U12",
+        "U14"
+      ],
+      "nonUnit": []
+    },
+    {
+      "patterns": [
+        "research/prebuild/tools/cost_model.py",
+        "research/prebuild/13-*"
+      ],
+      "unitPacks": [
+        "U13",
+        "U14"
+      ],
+      "nonUnit": []
+    },
+    {
+      "patterns": [
+        "research/prebuild/tools/readiness.py",
+        "research/prebuild/14-*"
+      ],
+      "unitPacks": [
+        "U14"
+      ],
+      "nonUnit": []
+    },
+    {
+      "patterns": [
+        "docs/planning/APP_FLOW*.md",
+        "research/prebuild/flow-review/*"
+      ],
+      "unitPacks": [
+        "UPLAN",
+        "U06",
+        "U10"
+      ],
+      "nonUnit": [
+        "DEVICE"
+      ],
+      "note": "Source-behavior diagnostic is reproducible research, not a defect-fix acceptance suite. Future regression packs activate with their owning tasks. Native checks required only for relevant behavioral changes."
+    }
+  ],
+  "nonUnitChecks": [
+    {
+      "id": "I-HTTP",
+      "level": "integration",
+      "commandIds": [
+        "baseline_service"
+      ],
+      "scope": "Real loopback HTTP with injected provider; extend boundary tests when service/AI contract changes."
+    },
+    {
+      "id": "I-SPIKE",
+      "level": "integration",
+      "commandIds": [
+        "spike_tests"
+      ],
+      "scope": "Service/client and actual save/reopen/index adapter boundaries; record actual adapter mode."
+    },
+    {
+      "id": "BUILD-TYPES",
+      "level": "build",
+      "commandIds": [
+        "baseline_types"
+      ],
+      "scope": "Type-check; cannot replace runtime assertions."
+    },
+    {
+      "id": "DEVICE",
+      "level": "device",
+      "commandIds": [
+        "android_devices",
+        "android_inspect"
+      ],
+      "scope": "Available entry checks only; full named-device journey/accessibility protocol remains required."
+    },
+    {
+      "id": "LIVE-AI",
+      "level": "live",
+      "commandIds": [
+        "ai_live"
+      ],
+      "scope": "Authorized real-provider run; never part of offline unit success."
+    }
+  ],
+  "packs": [
+    {
+      "id": "UPLAN",
+      "title": "Plan/test-pack contract guard",
+      "level": "unit",
+      "availability": "existing",
+      "createdByTask": null,
+      "testFiles": [
+        "research/prebuild/tools/test_plan_contract.py"
+      ],
+      "commandIds": [
+        "plan_contract_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/plan_contracts.py"
+      ],
+      "caseIdConvention": "Python method includes UPLAN_XX.",
+      "cases": [
+        {
+          "id": "UPLAN-01",
+          "given": "valid minimal task/pack graph",
+          "when": "validate catalog",
+          "then": "No errors.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UPLAN-02",
+          "given": "unknown/missing task pack",
+          "when": "validate task coverage",
+          "then": "Reject uncovered task or nonexistent pack.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UPLAN-03",
+          "given": "integration command labelled unit",
+          "when": "validate command classification",
+          "then": "Reject misclassification.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UPLAN-04",
+          "given": "pack claims missing command/test file ownership",
+          "when": "validate references",
+          "then": "Reject invalid command or undeclared planned test output.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UPLAN-05",
+          "given": "cyclic dependency or pack created after consuming task",
+          "when": "validate availability",
+          "then": "Reject cycle/order violation.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UPLAN-06",
+          "given": "duplicate/empty case IDs or missing expected assertion",
+          "when": "validate case catalog",
+          "then": "Reject incomplete pack definition.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UPLAN-07",
+          "given": "declared test path escapes repo root",
+          "when": "validate output safety",
+          "then": "Reject path.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UPLAN-08",
+          "given": "integration/device/live metadata requests outside dependencies",
+          "when": "validate non-unit ownership",
+          "then": "Reject missing owner/reference; never count it as unit evidence.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UPLAN-09",
+          "given": "real repository task/test manifests",
+          "when": "validate current specification",
+          "then": "No consistency errors.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UPLAN-10",
+          "given": "implemented pack with missing test file",
+          "when": "validate availability against repo",
+          "then": "Reject falsely implemented pack.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden"
+    },
+    {
+      "id": "UBASE",
+      "title": "Existing app/domain regression",
+      "level": "unit",
+      "availability": "existing",
+      "createdByTask": null,
+      "testFiles": [
+        "apps/adviser/src/domain.test.ts",
+        "apps/adviser/src/picker.test.ts",
+        "apps/adviser/src/ai.test.ts"
+      ],
+      "commandIds": [
+        "baseline_domain"
+      ],
+      "sut": [
+        "apps/adviser/src/domain.ts",
+        "apps/adviser/src/picker.ts",
+        "apps/adviser/src/ai.ts"
+      ],
+      "caseIdConvention": "Existing test-name aliases; preserve assertions and source names.",
+      "cases": [
+        {
+          "id": "UBASE-01",
+          "existingTestName": "fixture identities and references stay exact",
+          "testFile": "apps/adviser/src/domain.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: fixture identities and references stay exact",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-02",
+          "existingTestName": "exact budget passes, one dong less excludes it",
+          "testFile": "apps/adviser/src/domain.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: exact budget passes, one dong less excludes it",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-03",
+          "existingTestName": "conditional discount does not become a certain saving",
+          "testFile": "apps/adviser/src/domain.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: conditional discount does not become a certain saving",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-04",
+          "existingTestName": "missing shipping and invalid money cannot produce a full total",
+          "testFile": "apps/adviser/src/domain.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: missing shipping and invalid money cannot produce a full total",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-05",
+          "existingTestName": "expired and unavailable offers never count as current",
+          "testFile": "apps/adviser/src/domain.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: expired and unavailable offers never count as current",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-06",
+          "existingTestName": "many VMs require the fixture memory rule; unknown does not pass",
+          "testFile": "apps/adviser/src/domain.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: many VMs require the fixture memory rule; unknown does not pass",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-07",
+          "existingTestName": "no-fit does not relax the cap; soft weights do not override it",
+          "testFile": "apps/adviser/src/domain.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: no-fit does not relax the cap; soft weights do not override it",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-08",
+          "existingTestName": "ranking is deterministic and same-family variants keep separate offers",
+          "testFile": "apps/adviser/src/domain.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: ranking is deterministic and same-family variants keep separate offers",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-09",
+          "existingTestName": "ordered task tradeoff changes ranking only within hard eligible set",
+          "testFile": "apps/adviser/src/picker.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: ordered task tradeoff changes ranking only within hard eligible set",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-10",
+          "existingTestName": "mandatory extra VM survives ranking order and budget stays exact",
+          "testFile": "apps/adviser/src/picker.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: mandatory extra VM survives ranking order and budget stays exact",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-11",
+          "existingTestName": "filter empty differs from genuine no fit and clearing keeps profile",
+          "testFile": "apps/adviser/src/picker.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: filter empty differs from genuine no fit and clearing keeps profile",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-12",
+          "existingTestName": "unknown VM and unconfirmed order do not produce suitable shortlist",
+          "testFile": "apps/adviser/src/picker.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: unknown VM and unconfirmed order do not produce suitable shortlist",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-13",
+          "existingTestName": "migration does not invent confirmed order and future schema is preserved",
+          "testFile": "apps/adviser/src/picker.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: migration does not invent confirmed order and future schema is preserved",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-14",
+          "existingTestName": "corrupt saved record is isolated and offers cannot change variant identity",
+          "testFile": "apps/adviser/src/picker.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: corrupt saved record is isolated and offers cannot change variant identity",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-15",
+          "existingTestName": "malformed historic entries cannot crash healthy decision recovery",
+          "testFile": "apps/adviser/src/picker.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: malformed historic entries cannot crash healthy decision recovery",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-16",
+          "existingTestName": "valid fact ID with contradictory compatibility still fails",
+          "testFile": "apps/adviser/src/ai.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: valid fact ID with contradictory compatibility still fails",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-17",
+          "existingTestName": "model patches cannot include prices, products, unauthorized fields or duplicate uses",
+          "testFile": "apps/adviser/src/ai.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: model patches cannot include prices, products, unauthorized fields or duplicate uses",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "UBASE-18",
+          "existingTestName": "provider absence is explicit and stale revisions rejected",
+          "testFile": "apps/adviser/src/ai.test.ts",
+          "given": "Existing deterministic fixture scenario",
+          "when": "Run existing test: provider absence is explicit and stale revisions rejected",
+          "then": "Preserve its independently specified assertions; inspect linked source for exact fixture values.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; existing fetch test uses injected responses"
+    },
+    {
+      "id": "U00",
+      "title": "Execution, validation and unit runner",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R00",
+      "testFiles": [
+        "research/prebuild/tools/test_validate.py",
+        "research/prebuild/tools/test_unit_runner.py"
+      ],
+      "commandIds": [
+        "validator_tests",
+        "unit_runner_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/validate.py",
+        "research/prebuild/tools/run_unit_packs.py"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U00-01",
+          "given": "valid partial-evidence task",
+          "when": "validate artifact and task state",
+          "then": "Accept structure; retain evidenceStatus=partial and gate=pending.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U00-02",
+          "given": "dependency cycle, unknown dependency, or path outside root",
+          "when": "validate tracker/output paths",
+          "then": "Reject each invalid graph/reference/path; never traverse outside root.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U00-03",
+          "given": "resumed task with configured limits and existing records",
+          "when": "bootstrap/resume",
+          "then": "Preserve supplied values and run history; do not reset caps or statuses.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U00-04",
+          "given": "only unrelated index records appended",
+          "when": "compute staleness",
+          "then": "Do not invalidate unaffected tasks; changing a consumed key/hash does invalidate its consumer.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U00-05",
+          "given": "required output/check absent or a fake pass without execution",
+          "when": "validate done task",
+          "then": "Reject done; missing output and not_run are not successful checks.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U00-06",
+          "given": "selected suite discovers zero tests, omits a required case, or skips a critical case",
+          "when": "assess runner result",
+          "then": "Return failure/incomplete, never pass from exit code alone.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U00-07",
+          "given": "one child test process fails or times out",
+          "when": "aggregate multiple pack results",
+          "then": "Preserve failure/nonzero outcome and diagnostics; later passes cannot erase it.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U00-08",
+          "given": "planned selected pack file absent",
+          "when": "select/run task packs",
+          "then": "Record not_run and exit 2; task cannot finish its required unit command.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U00-09",
+          "given": "same catalog/core inputs with new runtime timestamps",
+          "when": "fingerprint task and resume",
+          "then": "Definition hash stable; meaningful code/case/config changes invalidate affected results.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U00-10",
+          "given": "declared environment/tool unavailable",
+          "when": "record check",
+          "then": "Keep not_run reason; no product pass or fabricated environment test.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U01",
+      "title": "Buyer evidence integrity",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R01",
+      "testFiles": [
+        "research/prebuild/tools/test_buyer_evidence.py"
+      ],
+      "commandIds": [
+        "buyer_evidence_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/validate.py"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U01-01",
+          "given": "empty observations and collectedCount=0",
+          "when": "validate buyer artifact",
+          "then": "Accept partial evidence; no demand or usability success claim.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U01-02",
+          "given": "duplicate participant IDs or count inconsistent with real records",
+          "when": "validate participant totals",
+          "then": "Reject inflated counts and invalid references.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U01-03",
+          "given": "synthetic/hypothesis rows mixed with participants",
+          "when": "calculate observed counts",
+          "then": "Exclude synthetic rows; reject their use as real interview evidence.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U01-04",
+          "given": "cohort quota not met and negative observations present",
+          "when": "summarize/check evidence",
+          "then": "Retain gaps and negative findings; never mark sufficient just from targetCount.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U01-05",
+          "given": "question lacks a decision effect or explicit hypothesis",
+          "when": "validate protocol mapping",
+          "then": "Reject unmapped question; accept a clearly labelled hypothesis without inventing evidence.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U02",
+      "title": "Journey evidence integrity",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R02",
+      "testFiles": [
+        "research/prebuild/tools/test_journey_evidence.py"
+      ],
+      "commandIds": [
+        "journey_evidence_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/validate.py"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U02-01",
+          "given": "source inaccessible with an attempted method recorded",
+          "when": "validate matrix row",
+          "then": "Accept unknown/inaccessible; do not infer feature absence.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U02-02",
+          "given": "advertised feature relabelled observed without observation",
+          "when": "validate provenance",
+          "then": "Reject observed classification.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U02-03",
+          "given": "researcher walkthrough given participant success counts",
+          "when": "validate results",
+          "then": "Reject participant inference; preserve researcher-only evidence.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U02-04",
+          "given": "missing URL/date/task identity or unobserved timing",
+          "when": "validate comparable task row",
+          "then": "Reject unsupported observed/timing claims; allow explicit unknown fields in unobserved rows.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U02-05",
+          "given": "same task has both observed and blocked source rows",
+          "when": "aggregate matrix",
+          "then": "Count observed subset separately; preserve access gaps.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U03",
+      "title": "Source-use scope",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R03",
+      "testFiles": [
+        "research/prebuild/tools/test_source_register.py"
+      ],
+      "commandIds": [
+        "source_register_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/validate.py"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U03-01",
+          "given": "documented research access but unresolved redistribution",
+          "when": "validate per-use states",
+          "then": "Keep production use unresolved; do not inherit research permission.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U03-02",
+          "given": "public URL/robots access with no applicable terms evidence",
+          "when": "validate permission claim",
+          "then": "Reject documented production basis; unresolved remains valid.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U03-03",
+          "given": "prohibited or expired permission for intended use",
+          "when": "select/validate source readiness",
+          "then": "Exclude that use from ready source set; preserve explanation and dates.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U03-04",
+          "given": "documented source use with explicit scope/evidence/date",
+          "when": "validate scoped basis",
+          "then": "Accept only that named use, never all images/reviews/AI purposes.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U03-05",
+          "given": "source input contains credential values/private contract payload",
+          "when": "validate serialized artifact/redaction",
+          "then": "Reject sensitive values; allow env-name or restricted reference only.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U04",
+      "title": "Catalog, identity and money audit",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R04",
+      "testFiles": [
+        "research/prebuild/tools/test_audit_catalog.py"
+      ],
+      "commandIds": [
+        "audit_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/audit_catalog.py"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U04-01",
+          "given": "synthetic fixture has 2 new + 1 used + 1 unknown condition rows",
+          "when": "audit counts",
+          "then": "Report four rows and the exact condition counts; no hardcoded production snapshot count.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U04-02",
+          "given": "same family name but different RAM/part number",
+          "when": "map canonical candidates",
+          "then": "Keep identities separate or unresolved; never merge solely on name.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U04-03",
+          "given": "duplicate source ID and overlapping input snapshots",
+          "when": "audit duplicate identities",
+          "then": "Report duplicates and preserve raw input; do not silently double-count reviewed variants.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U04-04",
+          "given": "base 20000000, shipping 200000, extra fee 300000, confirmed discount 500000",
+          "when": "compute complete total",
+          "then": "Return exactly 20000000 VND; avoid charging included fees twice.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U04-05",
+          "given": "same offer with unconfirmed discount or missing shipping",
+          "when": "compute price contexts",
+          "then": "Unconfirmed discount yields guaranteed total 20500000; missing mandatory shipping yields complete total null.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U04-06",
+          "given": "negative/fractional/bool/unsafe integer money",
+          "when": "validate monetary fields",
+          "then": "Reject values; null remains unknown rather than zero.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U04-07",
+          "given": "availability inferred from listing price",
+          "when": "audit stock provenance",
+          "then": "Retain inferred/unknown classification; do not mark independently observed current stock.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U04-08",
+          "given": "same input/config twice and input object frozen",
+          "when": "run audit",
+          "then": "Stable counts/IDs; no source-file or input mutation; ignore run timestamps in comparison.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U05",
+      "title": "Workload rules and corpus isolation",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R05",
+      "testFiles": [
+        "research/prebuild/tools/test_cases.py"
+      ],
+      "commandIds": [
+        "corpus_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/build_cases.py",
+        "research/prebuild/05-workload-policy.json"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U05-01",
+          "given": "configured group quotas and seed",
+          "when": "construct cases",
+          "then": "Exactly 120 cases and 80/40 disjoint stratified split with unique stable IDs.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U05-02",
+          "given": "same input/seed and reordered dictionary keys",
+          "when": "construct/fingerprint corpus",
+          "then": "Identical canonical cases/partition hashes; timestamps do not change frozen content.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U05-03",
+          "given": "duplicate case or overlapping partition membership",
+          "when": "validate corpus",
+          "then": "Reject overlap/duplicates and incorrect group totals.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U05-04",
+          "given": "real workload lacks applicable evidence",
+          "when": "build expected outcome",
+          "then": "Leave suitability unknown; synthetic thresholds cannot certify real hardware.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U05-05",
+          "given": "eligible fixed total exactly B then budget B-1",
+          "when": "evaluate independent expected fixture",
+          "then": "Exact ceiling passes; one-dong-lower ceiling fails affordability.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U05-06",
+          "given": "soft preference or use order changes while hard requirement fails",
+          "when": "evaluate eligibility/ranking fixture",
+          "then": "Failed candidate stays ineligible; ranking can only reorder eligible candidates.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U05-07",
+          "given": "consumed holdout and later diagnostic execution",
+          "when": "record usage",
+          "then": "Append consumption record; do not mutate frozen corpus or label diagnostic rerun fresh confirmation.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U05-08",
+          "given": "attempt to generate expected labels by invoking tested ranker",
+          "when": "check fixture/oracle construction",
+          "then": "Use explicit charge/rule inputs and independent literals; never let implementation define its own expected answer.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U06",
+      "title": "Client decision transitions",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R06",
+      "testFiles": [
+        "apps/adviser/src/decision-state.test.ts"
+      ],
+      "commandIds": [
+        "decision_state_tests"
+      ],
+      "sut": [
+        "apps/adviser/src/decision-state.ts",
+        "apps/adviser/src/picker.ts"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U06-01",
+          "given": "confirmed profile plus edited draft",
+          "when": "cancel draft",
+          "then": "Committed profile/revision unchanged; nested draft arrays cannot mutate original.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U06-02",
+          "given": "valid confirmed edit and successful fake persistence",
+          "when": "apply edit",
+          "then": "Commit exactly once and advance revision once; invalidate derived results.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U06-03",
+          "given": "invalid edit or rejected/failed persistence",
+          "when": "apply edit",
+          "then": "Preserve prior profile/revision; no saved/success acknowledgement.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U06-04",
+          "given": "draft screen/weight filters applied then cancelled/cleared",
+          "when": "transition filters",
+          "then": "Cancel preserves active filters; clear restores eligible set without changing needs/budget.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U06-05",
+          "given": "two selected exact IDs then third selection",
+          "when": "toggle comparison",
+          "then": "Keep max two distinct IDs and explicit rejection/removal behavior; no silent replacement.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U06-06",
+          "given": "old request/revision result after a newer confirmation",
+          "when": "accept async result",
+          "then": "Ignore stale result; cancellation cannot commit a late proposal.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U06-07",
+          "given": "saved old observations and newer catalog values",
+          "when": "reopen decision",
+          "then": "Keep historical dates/prices and exact variant IDs; current values are separate.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U06-08",
+          "given": "VM task removed or primary tasks reordered",
+          "when": "update tasks",
+          "then": "Maintain required tasks and hard budget; reset inapplicable clarification without inventing confirmation.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U06-09",
+          "given": "Two actions captured the same committed store; the first write is delayed.",
+          "when": "Queue a theme update and a save, then complete both writes.",
+          "then": "Both acknowledged changes survive. Reduce each mutation against the latest committed state when dequeued; do not enqueue stale full-store snapshots.",
+          "required": true,
+          "critical": true,
+          "findingRef": "docs/planning/APP_FLOW_DEEP_RESEARCH.md#flow-01"
+        },
+        {
+          "id": "U06-10",
+          "given": "Initial storage read rejects, or corrupt current bytes coexist with an old recovery backup.",
+          "when": "Attempt a write before successful retry/recovery; request export.",
+          "then": "Block normal writes while storage readiness is unresolved. Export the exact current recoverable bytes, not an unrelated older backup; preserve old data on retry failure.",
+          "required": true,
+          "critical": true,
+          "findingRef": "docs/planning/APP_FLOW_DEEP_RESEARCH.md#flow-02"
+        },
+        {
+          "id": "U06-11",
+          "given": "A normal write is in flight when delete-all or reset is requested.",
+          "when": "Complete operations in both delayed-write orders.",
+          "then": "Delete/reset participates in the same coordinator or invalidates the earlier generation; no old decision reappears after acknowledgement or restart.",
+          "required": true,
+          "critical": true,
+          "findingRef": "docs/planning/APP_FLOW_DEEP_RESEARCH.md#flow-03"
+        },
+        {
+          "id": "U06-12",
+          "given": "Saved records contain negative amounts, invalid dates/versions, mismatched observation IDs or duplicate ordered uses.",
+          "when": "Restore or migrate stored data.",
+          "then": "Reject/quarantine invalid records with recoverable originals and precise warnings; confirmed needs satisfy normal validation, observations reference the selected exact variants.",
+          "required": true,
+          "critical": true,
+          "findingRef": "docs/planning/APP_FLOW_DEEP_RESEARCH.md#flow-04"
+        },
+        {
+          "id": "U06-13",
+          "given": "Detail opened from Search or Compare; picker at step 2; filters have uncommitted edits.",
+          "when": "Close AI, press picker Back/close, or cancel filters through pure transition handlers.",
+          "then": "Return to the recorded origin and focused variant; step Back preserves draft, dismiss does not commit. Native modal dispatch/focus still require DEVICE evidence.",
+          "required": true,
+          "critical": true,
+          "findingRef": "docs/planning/APP_FLOW_DEEP_RESEARCH.md#flow-07"
+        },
+        {
+          "id": "U06-14",
+          "given": "Confirm or save receives repeated taps while the same action is pending.",
+          "when": "Resolve the write once, then issue a separate new action.",
+          "then": "One pending action produces one acknowledgement/revision/snapshot; independent saves receive collision-safe distinct IDs using injected ID/clock sources.",
+          "required": true,
+          "critical": true,
+          "findingRef": "docs/planning/APP_FLOW_DEEP_RESEARCH.md#flow-01"
+        },
+        {
+          "id": "U06-15",
+          "given": "Queued updater throws before writing",
+          "when": "Process it then enqueue a valid mutation",
+          "then": "Failed updater returns false; later valid write executes; no unhandled rejection or poisoned queue.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U07",
+      "title": "API payload and semantic contracts",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R07",
+      "testFiles": [
+        "research/prebuild/tools/contracts.test.mjs"
+      ],
+      "commandIds": [
+        "contract_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/contract_validation.mjs",
+        "research/prebuild/tests/fixtures/api-needs.mjs",
+        "research/prebuild/tests/fixtures/api-history.mjs"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U07-01",
+          "given": "valid request/response examples for all scoped states",
+          "when": "runtime validate payload",
+          "then": "Accept examples with explicit identity/version/state fields.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U07-02",
+          "given": "missing/invalid version, extra authoritative field, wrong enum or unsafe amount",
+          "when": "validate payload",
+          "then": "Reject schema/type errors rather than defaulting to valid values.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U07-03",
+          "given": "fit=pass with partial price or stale offer",
+          "when": "derive verified affordability",
+          "then": "Do not label verified eligible; maintain independent state reasons.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U07-04",
+          "given": "offer variant differs from requested exact ID",
+          "when": "validate relationship",
+          "then": "Reject mismatch even when family and price look similar.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U07-05",
+          "given": "no_fit, no_verified_affordable_offer, filter_empty and source_unavailable examples",
+          "when": "validate/result-map",
+          "then": "Preserve distinct states and recovery meaning.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U07-06",
+          "given": "same request ID but changed profile/catalog/rules version",
+          "when": "accept result envelope",
+          "then": "Reject stale context; matching runId alone is insufficient.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U07-07",
+          "given": "real fact ID paired with contradictory verdict or invented URL",
+          "when": "validate claims",
+          "then": "Reject semantics despite valid-looking references.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U07-08",
+          "given": "Confirmed needs have empty, non-string, duplicate or overlapping uses/preferences",
+          "when": "Validate the request needs",
+          "then": "Reject invalid confirmed needs; only unconfirmed drafts may have no ordered use.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U07-09",
+          "given": "Needs and context identify different decisions or profile revisions",
+          "when": "Validate the evaluation request",
+          "then": "Reject with stale_revision before evaluating another decision.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U07-10",
+          "given": "Saved history has empty/mismatched selection, malformed versions/configurations or invalid calendar dates",
+          "when": "Validate at the runtime save/restore boundary",
+          "then": "Reject malformed history; retain valid exact configurations, unknown amounts and genuine dated observations.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U08",
+      "title": "Spike policy and repository units",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R08",
+      "testFiles": [
+        "spikes/prebuild-contract/policy.test.mjs",
+        "spikes/prebuild-contract/repository.test.mjs"
+      ],
+      "commandIds": [
+        "spike_unit_tests"
+      ],
+      "sut": [
+        "spikes/prebuild-contract/policy.ts",
+        "spikes/prebuild-contract/repository.ts",
+        "spikes/prebuild-contract/fixtures.mjs"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U08-01",
+          "given": "fixed exact variant/offer and complete total at budget",
+          "when": "evaluate policy",
+          "then": "Eligible result with correct reason/evidence/version; B-1 becomes over budget.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-02",
+          "given": "unknown critical workload evidence",
+          "when": "evaluate policy",
+          "then": "Return unknown/clarification, never automatic pass.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-03",
+          "given": "expired, suspended, withdrawn or incomplete cheapest offer",
+          "when": "choose buying candidate",
+          "then": "It cannot win verified-lowest-total; alternative or no verified offer is explicit.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-04",
+          "given": "raw source retry and one changed observation",
+          "when": "upsert into injected in-memory repository",
+          "then": "Stable identity, no duplicates; preserve original historical observation.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-05",
+          "given": "save/read returns nested records",
+          "when": "mutate returned object",
+          "then": "Stored snapshot stays unchanged; preserve exact identities and saved date.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-06",
+          "given": "injected write failure or unsupported stored schema",
+          "when": "save/restore",
+          "then": "No success acknowledgement or destructive overwrite; return recoverable failure.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-07",
+          "given": "evidence update/withdrawal",
+          "when": "reconcile dependent result/index adapter",
+          "then": "Remove unsupported current claim, retain history and new version.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-08",
+          "given": "repository unavailable versus successful empty query",
+          "when": "read catalog",
+          "then": "Return source_unavailable versus no_match; do not conflate.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-09",
+          "given": "synthetic/crawled draft presented as production",
+          "when": "validate publication path",
+          "then": "Reject implicit promotion without explicit reviewed/permitted publication context.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-10",
+          "given": "Variant lacks explicit capability state",
+          "when": "Evaluate fit before offers/ranking",
+          "then": "Keep capability unknown; never default absent capability to pass.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-11",
+          "given": "Discount is confirmed but its amount is null",
+          "when": "Compute verified payable total",
+          "then": "Keep complete total and affordability unknown; do not coerce null to zero.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-12",
+          "given": "Known RAM fails an explicit hard minimum despite a soft preference",
+          "when": "Evaluate or restore/save through the production-used spike adapter",
+          "then": "Return no_fit; hard failure precedes price/ranking.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-13",
+          "given": "Hard constraint evidence or operator is missing/unsupported",
+          "when": "Evaluate or restore/save through the production-used spike adapter",
+          "then": "Return evidence_unknown rather than passing the requirement.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-14",
+          "given": "Supported schema contains malformed persisted collections",
+          "when": "Evaluate or restore/save through the production-used spike adapter",
+          "then": "Reject recoverably before replacing committed state or index.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U08-15",
+          "given": "A new saved revision and a retry of an older snapshot",
+          "when": "Evaluate or restore/save through the production-used spike adapter",
+          "then": "Retain both dated snapshots; latest reopen stays current; restart preserves history.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U09",
+      "title": "Retrieval metrics and experiment fairness",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R09",
+      "testFiles": [
+        "research/prebuild/tools/eval.test.mjs"
+      ],
+      "commandIds": [
+        "eval_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/run_eval.mjs"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U09-01",
+          "given": "relevance {A,B}, results {A,C}, plus one unjudged query",
+          "when": "calculate recall",
+          "then": "Recall 1/2 for adjudicated query; unjudged query excluded from denominator and counted unknown.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U09-02",
+          "given": "returned similar-family variant but wrong exact ID",
+          "when": "score match",
+          "then": "No exact-match credit.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U09-03",
+          "given": "two arms use different catalog or hard-eligibility policy hashes",
+          "when": "compare arms",
+          "then": "Reject unfair aggregate comparison.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U09-04",
+          "given": "vector arm unavailable",
+          "when": "aggregate results",
+          "then": "Record not_run; never use zero latency or fabricated score as measurement.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U09-05",
+          "given": "same corpus/config repeats development run",
+          "when": "aggregate/store",
+          "then": "Reproducible deterministic outputs; preserve separate run records.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U09-06",
+          "given": "heldout already used to change policy",
+          "when": "request fresh qualification on same partition",
+          "then": "Refuse fresh-confirmation label; allow explicitly diagnostic use.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U09-07",
+          "given": "failed requests/retries and empty denominator",
+          "when": "summarize metrics",
+          "then": "Include failures/usage; return undefined/null rate with reason, never divide by zero or drop failures.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U09-08",
+          "given": "candidate violates budget despite high embedding score",
+          "when": "score useful recommendations",
+          "then": "Record integrity failure; relevance cannot compensate.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U10",
+      "title": "AI authority and bounded runner",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R10",
+      "testFiles": [
+        "research/prebuild/tools/ai.test.mjs"
+      ],
+      "commandIds": [
+        "ai_controlled"
+      ],
+      "sut": [
+        "research/prebuild/tools/run_ai.mjs",
+        "apps/adviser/src/ai.ts"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U10-01",
+          "given": "missing config, null cap or absent authorization",
+          "when": "attempt live mode",
+          "then": "No provider invocation; explicit unavailable/disabled result.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U10-02",
+          "given": "provider error or deadline expires using injected fake clock",
+          "when": "request advice",
+          "then": "Checked deterministic fallback and truthful mode; no real sleep/network.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U10-03",
+          "given": "oversized or malformed output",
+          "when": "parse response",
+          "then": "Reject before exposing unchecked content.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U10-04",
+          "given": "patch has forbidden fields, duplicate tasks or unsafe amount",
+          "when": "validate patch",
+          "then": "Reject; no change to committed needs.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U10-05",
+          "given": "invented price/identity/URL or contradictory valid fact ID",
+          "when": "validate explanation",
+          "then": "Reject claim or use deterministic fallback; never render as verified.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U10-06",
+          "given": "stale revision, cancelled request or out-of-order responses",
+          "when": "resolve injected promises",
+          "then": "No stale state commit; newest valid context wins.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U10-07",
+          "given": "request/cost cap exhausted and two concurrent reservations",
+          "when": "reserve next call",
+          "then": "No over-cap invocation; reservations cannot race past the cap.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U10-08",
+          "given": "unknown required price/conversion or missing usage",
+          "when": "calculate cost/budget eligibility",
+          "then": "Keep cost unknown; do not invent zero or bypass spending limits.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U10-09",
+          "given": "fake-provider success",
+          "when": "record evidence mode",
+          "then": "Controlled result cannot satisfy live-provider acceptance.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U10-10",
+          "given": "valid proposed material edit",
+          "when": "review/cancel/confirm",
+          "then": "Only explicit confirmation permits revision change; cancellation preserves current profile.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U10-11",
+          "given": "Creative needs at 30 million VND rank p5/p12; fixture insertion order yields p2/p4.",
+          "when": "Generate a deterministic explanation for the current result or focused variant.",
+          "then": "Use the same evaluated run and explicit focused IDs as the UI; no substitution by catalog insertion order or unrequested recommendation.",
+          "required": true,
+          "critical": true,
+          "findingRef": "docs/planning/APP_FLOW_DEEP_RESEARCH.md#flow-05"
+        },
+        {
+          "id": "U10-12",
+          "given": "A request begins before an offer/catalog/rule revision changes while profile revision stays constant.",
+          "when": "Deliver the old response after new evidence is committed.",
+          "then": "Reject the old context using request/run, profile, catalog, rule and offer-context identities; never display its stale price as current.",
+          "required": true,
+          "critical": true,
+          "findingRef": "docs/planning/APP_FLOW_DEEP_RESEARCH.md#flow-06"
+        },
+        {
+          "id": "U10-13",
+          "given": "An AI request is pending and cancellation, backgrounding or screen dismissal occurs.",
+          "when": "Cancel locally and complete the fake provider later.",
+          "then": "Suppress output and propagate abort where supported; clean listeners/timers, preserve actual incurred usage and do not promise a provider-side refund.",
+          "required": true,
+          "critical": true,
+          "findingRef": "docs/planning/APP_FLOW_DEEP_RESEARCH.md#flow-08"
+        },
+        {
+          "id": "U10-14",
+          "given": "AI opens from one exact variant, two compared variants or a shortlist.",
+          "when": "Create request context and validate returned claims.",
+          "then": "Carry origin and focused variant IDs; explanations stay within the requested context. A valid fact for an unrelated variant is not an answer to this request.",
+          "required": true,
+          "critical": true,
+          "findingRef": "docs/planning/APP_FLOW_DEEP_RESEARCH.md#flow-07"
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U11",
+      "title": "Android evidence and timing integrity",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R11",
+      "testFiles": [
+        "research/prebuild/tools/test_android_evidence.py"
+      ],
+      "commandIds": [
+        "android_evidence_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/validate.py"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U11-01",
+          "given": "emulator/historical screenshot with no phone execution",
+          "when": "validate physical acceptance",
+          "then": "Keep physicalDeviceValidated=false; reject claimed phone pass.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U11-02",
+          "given": "case not executed or only adb inspect performed",
+          "when": "validate journey/accessibility result",
+          "then": "No inferred journey/TalkBack success.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U11-03",
+          "given": "timing samples with failures and fewer than proposed minimum",
+          "when": "validate timing summary",
+          "then": "Retain failures/count/limitations; do not claim full protocol completion.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U11-04",
+          "given": "summary percentile without raw samples/build/device context",
+          "when": "validate performance evidence",
+          "then": "Reject unsupported summary; unknown timing is valid not_run.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U11-05",
+          "given": "new build differs from evidence build hash",
+          "when": "assess freshness",
+          "then": "Mark affected execution stale, preserve original record.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U11-06",
+          "given": "actual named-target results and explicit not_run cases",
+          "when": "validate mixed evidence",
+          "then": "Accept structurally while retaining partial sufficiency.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U12",
+      "title": "Operations evidence and state transitions",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R12",
+      "testFiles": [
+        "research/prebuild/tools/test_operations_evidence.py"
+      ],
+      "commandIds": [
+        "operations_evidence_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/validate.py"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U12-01",
+          "given": "six complete scenario definitions with tabletop mode",
+          "when": "validate report",
+          "then": "Accept design evidence only; not implemented production controls.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U12-02",
+          "given": "unauthorized publish/revoked role expected to succeed",
+          "when": "validate expected transition",
+          "then": "Reject contradictory access policy scenario.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U12-03",
+          "given": "source outage with stale saved observations",
+          "when": "validate recovery/user state",
+          "then": "No refreshed-price claim; distinguish unavailable source from empty inventory.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U12-04",
+          "given": "withdrawal or rollback erases prior evidence/revisions",
+          "when": "validate lifecycle",
+          "then": "Reject history destruction; require current-claim suspension and compatible recovery check.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U12-05",
+          "given": "provider cap/retention/restore target missing but claimed approved",
+          "when": "validate operating readiness",
+          "then": "Leave unresolved; reject unsupported accepted setting.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U12-06",
+          "given": "sandbox observation explicitly referenced",
+          "when": "validate claim scope",
+          "then": "Accept only tested boundary; no extrapolation to production RBAC/backup.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U13",
+      "title": "Cost arithmetic and uncertainty",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R13",
+      "testFiles": [
+        "research/prebuild/tools/test_cost_model.py"
+      ],
+      "commandIds": [
+        "cost_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/cost_model.py"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U13-01",
+          "given": "two successful calls plus one charged retry at 20 VND each",
+          "when": "calculate incurred cost",
+          "then": "Return 60 VND, not 40.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U13-02",
+          "given": "mandatory rate or staff capacity null",
+          "when": "calculate complete scenario",
+          "then": "Known subtotal may exist; complete cost/capacity verdict remains null with missing components.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U13-03",
+          "given": "zero/missing useful-session denominator",
+          "when": "calculate per-useful-session cost",
+          "then": "Return null with reason; no divide-by-zero or invented success count.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U13-04",
+          "given": "mixed currency without dated conversion",
+          "when": "sum inputs",
+          "then": "Reject complete total; with explicit fixture rate convert exactly under declared rounding.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U13-05",
+          "given": "negative/unsafe usage or fractional money where integer required",
+          "when": "validate cost inputs",
+          "then": "Reject invalid values; distinguish zero observed usage from unknown.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U13-06",
+          "given": "low/base/high scenarios share input data",
+          "when": "calculate twice and mutate output",
+          "then": "Deterministic results; no mutation of source assumptions.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U13-07",
+          "given": "one-time build cost mixed into recurring session expense",
+          "when": "calculate components",
+          "then": "Keep categories separate and expose allocation assumption explicitly.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    },
+    {
+      "id": "U14",
+      "title": "Readiness, scope and backlog integrity",
+      "level": "unit",
+      "availability": "to_implement",
+      "createdByTask": "R14",
+      "testFiles": [
+        "research/prebuild/tools/test_readiness.py"
+      ],
+      "commandIds": [
+        "readiness_tests"
+      ],
+      "sut": [
+        "research/prebuild/tools/readiness.py"
+      ],
+      "caseIdConvention": "Use case ID (hyphens replaced by underscores in Python) in test name; multiple subtests may share one case ID.",
+      "cases": [
+        {
+          "id": "U14-01",
+          "given": "all automation done but interview/live/device evidence partial",
+          "when": "assess readiness",
+          "then": "Gate stays pending/revise; automation success does not imply sufficient evidence.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U14-02",
+          "given": "explicit D1 deferral with named scope",
+          "when": "assess G3/G4 impact",
+          "then": "Defer only that capability; do not certify live AI or unrelated unmet requirements.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U14-03",
+          "given": "unresolved S0/S1 in accepted scope",
+          "when": "assess gate",
+          "then": "Not ready; a simple waiver string cannot pass it.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U14-04",
+          "given": "accepted gate flag lacks actual decision reference or applicable evidence",
+          "when": "validate gate",
+          "then": "Reject inconsistent accepted flag; pending report itself remains valid.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U14-05",
+          "given": "valid pending/insufficient gate versus malformed acceptance",
+          "when": "map validator exit",
+          "then": "Pending returns 2; false/malformed accepted claim returns 1; actual valid accept returns 0.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U14-06",
+          "given": "backlog item lacks requirement, dependency, module/contract, exception or acceptance test",
+          "when": "validate item",
+          "then": "Reject ready/accepted item until concrete fields exist.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U14-07",
+          "given": "earlier task blocked and no ordinary task runnable",
+          "when": "build final readiness pack",
+          "then": "Include blocker/next action; do not omit failed tasks or pretend all complete.",
+          "required": true,
+          "critical": true
+        },
+        {
+          "id": "U14-08",
+          "given": "new applicable decision/evidence arrives",
+          "when": "reassess scoped readiness",
+          "then": "Reopen affected conclusions only; preserve previous decision history.",
+          "required": true,
+          "critical": true
+        }
+      ],
+      "network": "forbidden; inject provider/clock/storage where needed"
+    }
+  ],
+  "flowResearch": "docs/planning/APP_FLOW_DEEP_RESEARCH.md",
+  "currentResearchChecks": [
+    {
+      "id": "FLOW-PROBE",
+      "level": "diagnostic",
+      "command": "node --experimental-strip-types research/prebuild/flow-review/probe_current_flow.mjs",
+      "output": "research/prebuild/flow-review/current-flow-observations.json",
+      "purpose": "Reproduce FLOW-01–FLOW-06 against hashed original source with injected dependencies. Successful assertions confirm flaws, not acceptance. Archive current results and migrate to desired-behavior regression tests during fixes; do not require defects to persist."
+    }
+  ]
+}

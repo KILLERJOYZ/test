@@ -52,7 +52,8 @@ import {
   validOffers,
 } from "./picker";
 import type { Needs, Filters, Snapshot, Store } from "./picker";
-import { explain, interpret, localExplanation } from "./ai";
+import { createPersistence, createDecisionIds, cloneDraft, confirmNeeds, toggleComparison, filterDraft, requestIsCurrent, reopenDecision, pickerBack, chatOrigin, recoveryBytes } from "./decision-state";
+import { explain, interpret, localExplanation, makeAiContext, aiContextCurrent, proposeNeeds } from "./ai";
 import type { NeedsPatch } from "./ai";
 
 import { LIGHT, DARK, SHAPE, MOTION } from "./design-tokens";
@@ -417,9 +418,19 @@ function Demo() {
   const [editOffer, setEditOffer] = useState("o1");
   const [editPrice, setEditPrice] = useState("18700000");
   const [policyReport, setPolicyReport] = useState("");
+  const chatReturn = useRef(chatOrigin(null, "p1", "home"));
+  const decisionIds = useRef(createDecisionIds(Date.now));
   const revision = useRef(0);
   const requestId = useRef(0);
-  const saving = useRef(Promise.resolve());
+  const aiAbort = useRef<AbortController | null>(null);
+  useEffect(() => () => aiAbort.current?.abort(), []);
+  const persistence = useRef<ReturnType<typeof createPersistence> | null>(null);
+  const faultRef = useRef(fault);
+  faultRef.current = fault;
+  if (!persistence.current) persistence.current = createPersistence(INITIAL_STORE, async next => {
+    if (faultRef.current === "storage") throw Error("Mô phỏng lỗi ghi");
+    await AsyncStorage.setItem(KEY, JSON.stringify(next));
+  }, setStore);
   const { width, fontScale } = useWindowDimensions();
   const wide = width >= 700;
   const c = store.dark ? DARK : LIGHT;
@@ -438,6 +449,7 @@ function Demo() {
             if (result.warnings.length || JSON.parse(raw).version === 1)
               await AsyncStorage.setItem(`${KEY}-recovery`, raw);
             if (active) {
+              persistence.current!.hydrate(result.store, "ready");
               setStore(result.store);
               setServiceDraft(result.store.serviceUrl);
               revision.current = result.store.needs.revision;
@@ -445,13 +457,14 @@ function Demo() {
             }
           } catch (e) {
             if (active) {
+              persistence.current!.hydrate(INITIAL_STORE, "recovery_required");
               setRawRecovery(raw);
               setStorageError(String(e));
             }
           }
-        }
+        } else if (active) persistence.current!.hydrate(INITIAL_STORE, "ready");
       })
-      .catch((e) => active && setStorageError(String(e)))
+      .catch((e) => { if (active) { persistence.current!.hydrate(INITIAL_STORE, "read_failed"); setStorageError(String(e)); } })
       .finally(() => active && setReady(true));
     return () => {
       active = false;
@@ -470,6 +483,7 @@ function Demo() {
       if (sheet) {
         setSheet(null);
         requestId.current++;
+        aiAbort.current?.abort();
         setAiBusy(false);
         return true;
       }
@@ -485,41 +499,20 @@ function Demo() {
     const sub = AppState.addEventListener("change", (s) => {
       if (s !== "active") {
         requestId.current++;
+        aiAbort.current?.abort();
         setAiBusy(false);
       }
     });
     return () => sub.remove();
   }, []);
-  const persist = async (next: Store) => {
-    if (rawRecovery) {
-      notify("Hãy xuất hoặc đặt lại dữ liệu cần phục hồi trước khi ghi.");
-      return false;
-    }
-    let success = false;
-    const operation = saving.current.then(async () => {
-      try {
-        if (fault === "storage") throw Error("Mô phỏng lỗi ghi");
-        await AsyncStorage.setItem(KEY, JSON.stringify(next));
-        setStore(next);
-        setStorageError("");
-        success = true;
-      } catch (e) {
-        setStorageError(
-          "Không ghi được dữ liệu. Bản lưu trước vẫn được giữ. " + String(e),
-        );
-        notify("Lưu thất bại. Vui lòng thử lại.");
-      }
-    });
-    saving.current = operation;
-    await operation;
+  const persist = async (update: (latest: Store) => Store, actionId?: string) => {
+    const success = await persistence.current!.mutate(update, actionId);
+    if (success) setStorageError("");
+    else { setStorageError("Không ghi được dữ liệu hoặc dữ liệu chưa sẵn sàng. Bản trước được giữ."); notify("Lưu thất bại. Vui lòng thử lại hoặc phục hồi dữ liệu."); }
     return success;
   };
   const openPicker = () => {
-    setDraft({
-      ...store.needs,
-      primaryUseOrder: [...store.needs.primaryUseOrder],
-      additionalRequiredTaskIds: [...store.needs.additionalRequiredTaskIds],
-    });
+    setDraft(cloneDraft(store.needs));
     setBudgetText(String(store.needs.budget));
     setStep(0);
     setSheet("picker");
@@ -535,9 +528,10 @@ function Demo() {
       notify(errors.join("\n"));
       return false;
     }
-    if (await persist({ ...store, needs: next })) {
-      revision.current = next.revision;
+    if (await persist(latest => confirmNeeds(latest, p), "confirm-" + JSON.stringify(p))) {
+      revision.current = persistence.current!.current().needs.revision;
       requestId.current++;
+        aiAbort.current?.abort();
       setAiBusy(false);
       setFilters(EMPTY_FILTERS);
       setExpanded(false);
@@ -557,21 +551,18 @@ function Demo() {
     setProductId(id);
     setSheet("detail");
   };
-  const compareToggle = (id: string) =>
-    setSelected((prev) =>
-      prev.includes(id)
-        ? prev.filter((i) => i !== id)
-        : prev.length < 2
-          ? [...prev, id]
-          : (notify("Bỏ một máy trước khi chọn máy khác."), prev),
-    );
+  const compareToggle = (id:string) => setSelected(prev => {
+    const result=toggleComparison(prev,id);
+    if(result.rejected)notify("Bỏ một máy trước khi chọn máy khác.");
+    return result.ids;
+  });
   const save = async (ids: string[]) => {
-    if (!store.needs.useOrderConfirmed) {
+    if (validateNeeds(store.needs).length || ids.length < 1 || ids.length > 2 || new Set(ids).size !== ids.length || ids.some(id => !PRODUCTS.some(p => p.id === id))) {
       notify("Xác nhận hồ sơ nhu cầu trước khi lưu quyết định.");
       return;
     }
     const snapshot: Snapshot = {
-      id: `d-${Date.now()}`,
+      id: decisionIds.current(persistence.current!.current().saved.map(d => d.id)),
       name: `Phương án ${store.saved.length + 1}`,
       needs: JSON.parse(JSON.stringify(store.needs)),
       productIds: ids,
@@ -587,7 +578,7 @@ function Demo() {
         };
       }),
     };
-    if (await persist({ ...store, saved: [snapshot, ...store.saved] }))
+    if (await persist(latest => ({ ...latest, saved: [snapshot, ...latest.saved] }), "save-" + JSON.stringify([ids, store.needs.revision])))
       notify("Đã lưu quyết định trên thiết bị.");
   };
   const share = async (d: Snapshot) => {
@@ -601,6 +592,12 @@ function Demo() {
   const ask = async (kind: "explain" | "interpret") => {
     const ticket = ++requestId.current;
     const rev = revision.current;
+    aiAbort.current?.abort();
+    const controller=new AbortController();aiAbort.current=controller;
+    const focus=chatReturn.current.sheet==='detail'?[chatReturn.current.productId]:chatReturn.current.tab==='compare'?selected:results.visible.slice(0,2).map(p=>p.id);
+    const context=makeAiContext(store.needs,store.offers,String(ticket),focus,chatReturn.current.sheet || chatReturn.current.tab,history?.id || "local-current");
+    const current=()=>aiContextCurrent(context,persistence.current!.current().needs,persistence.current!.current().offers,String(requestId.current));
+    const options={context,signal:controller.signal};
     setAiBusy(true);
     setPatch(null);
     setAnswer("");
@@ -609,8 +606,8 @@ function Demo() {
       if (fault === "timeout") throw Error("Mô phỏng hết thời gian");
       if (fault === "invalid") throw Error("Mô phỏng phản hồi không hợp lệ");
       if (kind === "interpret") {
-        const result = await interpret(store.serviceUrl, message, store.needs);
-        if (ticket === requestId.current && rev === revision.current) {
+        const result = await interpret(store.serviceUrl, message, store.needs, options);
+        if (current() && requestIsCurrent(ticket, requestId.current, rev, revision.current)) {
           setPatch(result);
           setAiMode("Đề xuất AI · cần xác nhận");
         }
@@ -620,16 +617,17 @@ function Demo() {
           message,
           store.needs,
           store.offers,
+          options,
         );
-        if (ticket === requestId.current && rev === revision.current) {
+        if (current() && requestIsCurrent(ticket, requestId.current, rev, revision.current)) {
           setAnswer(result.text);
           setAiMode(result.mode);
         }
       }
     } catch (e) {
-      if (ticket === requestId.current) {
+      if (current() && !controller.signal.aborted) {
         setAnswer(
-          localExplanation(store.needs, store.offers) + "\n\n" + String(e),
+          localExplanation(store.needs, store.offers, context.focusVariantIds) + "\n\n" + String(e),
         );
         setAiMode("Giải thích xác định · dự phòng");
       }
@@ -639,6 +637,7 @@ function Demo() {
   };
   const taskName = (id: string) => TASKS.find((t) => t.id === id)?.name || id;
   const openChat = () => {
+    chatReturn.current = chatOrigin(sheet, productId, tab);
     setAnswer("");
     setPatch(null);
     setSheet("chat");
@@ -1170,13 +1169,14 @@ function Demo() {
                   <Row>
                     <Chip
                       onPress={async () => {
-                        if (await persist({ ...store, needs: d.needs })) {
+                        if (await persist(latest => reopenDecision(latest, d))) {
                           revision.current = d.needs.revision;
                           setSelected(d.productIds.slice(0, 2));
                           setFilters(EMPTY_FILTERS);
                           setHistory(d);
                           setTab("home");
                           requestId.current++;
+        aiAbort.current?.abort();
                         }
                       }}
                     >
@@ -1186,10 +1186,10 @@ function Demo() {
                     <Chip
                       onPress={async () => {
                         if (
-                          await persist({
-                            ...store,
-                            saved: store.saved.filter((x) => x.id !== d.id),
-                          })
+                          await persist(latest => ({
+                            ...latest,
+                            saved: latest.saved.filter((x) => x.id !== d.id),
+                          }))
                         )
                           notify("Đã xóa phương án.");
                       }}
@@ -1209,13 +1209,13 @@ function Demo() {
                 <Row>
                   <Chip
                     selected={!store.dark}
-                    onPress={() => persist({ ...store, dark: false })}
+                    onPress={() => persist(latest => ({ ...latest, dark: false }))}
                   >
                     Sáng
                   </Chip>
                   <Chip
                     selected={store.dark}
-                    onPress={() => persist({ ...store, dark: true })}
+                    onPress={() => persist(latest => ({ ...latest, dark: true }))}
                   >
                     Tối
                   </Chip>
@@ -1241,7 +1241,7 @@ function Demo() {
                 </Button>
                 <Button
                   secondary
-                  onPress={() => persist({ ...store, saved: [] })}
+                  onPress={() => persist(latest => ({ ...latest, saved: [] }))}
                 >
                   Xóa mọi phương án đã lưu
                 </Button>
@@ -1253,15 +1253,15 @@ function Demo() {
                       return;
                     }
                     try {
+                      const reset = await persistence.current!.mutate(() => INITIAL_STORE, "reset", async latest => {
                       await AsyncStorage.setItem(
                         `${KEY}-recovery`,
-                        rawRecovery || JSON.stringify(store),
-                      );
-                      await AsyncStorage.setItem(
-                        KEY,
-                        JSON.stringify(INITIAL_STORE),
+                        rawRecovery || JSON.stringify(latest),
                       );
                       await AsyncStorage.removeItem("lua-demo-v1");
+                      await AsyncStorage.setItem(KEY, JSON.stringify(INITIAL_STORE));
+                      }, true);
+                      if (!reset) throw Error("Reset failed");
                       setRawRecovery("");
                       setStorageError("");
                       setStore(INITIAL_STORE);
@@ -1271,6 +1271,7 @@ function Demo() {
                       setHistory(null);
                       setFilters(EMPTY_FILTERS);
                       requestId.current++;
+        aiAbort.current?.abort();
                       notify(
                         "Đã đặt lại demo. Bản trước có trong bản sao phục hồi.",
                       );
@@ -1285,9 +1286,10 @@ function Demo() {
                   secondary
                   onPress={async () => {
                     try {
-                      const recovery = await AsyncStorage.getItem(
+                      const backup = rawRecovery ? null : await AsyncStorage.getItem(
                         `${KEY}-recovery`,
                       );
+                      const recovery = recoveryBytes(rawRecovery, backup);
                       if (recovery) await Share.share({ message: recovery });
                       else notify("Chưa có bản phục hồi.");
                     } catch {
@@ -1301,11 +1303,14 @@ function Demo() {
                   secondary
                   onPress={async () => {
                     try {
+                      const deleted = await persistence.current!.mutate(() => INITIAL_STORE, "delete-all", async () => {
                       await AsyncStorage.multiRemove([
                         KEY,
                         `${KEY}-recovery`,
                         "lua-demo-v1",
                       ]);
+                      }, true);
+                      if (!deleted) throw Error("Delete failed");
                       setStore(INITIAL_STORE);
                       setRawRecovery("");
                       setStorageError("");
@@ -1313,6 +1318,7 @@ function Demo() {
                       setHistory(null);
                       revision.current = 0;
                       requestId.current++;
+        aiAbort.current?.abort();
                       notify("Đã xóa dữ liệu ứng dụng, gồm bản phục hồi.");
                     } catch {
                       notify("Xóa dữ liệu chưa hoàn tất.");
@@ -1342,10 +1348,10 @@ function Demo() {
                       notify("Nhập URL http(s) hợp lệ.");
                       return;
                     }
-                    persist({
-                      ...store,
+                    persist(latest => ({
+                      ...latest,
                       serviceUrl: serviceDraft.replace(/\/$/, ""),
-                    });
+                    }));
                   }}
                 >
                   Lưu địa chỉ dịch vụ
@@ -1392,7 +1398,7 @@ function Demo() {
                       notify("Giá không hợp lệ; chính sách chưa được áp dụng.");
                       return;
                     }
-                    if (await persist({ ...store, offers }))
+                    if (await persist(latest => ({ ...latest, offers })))
                       notify("Đã kiểm tra và cập nhật bộ giá mẫu.");
                   }}
                 >
@@ -1400,7 +1406,7 @@ function Demo() {
                 </Button>
                 <Button
                   secondary
-                  onPress={() => persist({ ...store, offers: OFFERS })}
+                  onPress={() => persist(latest => ({ ...latest, offers: OFFERS }))}
                 >
                   Khôi phục bộ giá đã duyệt
                 </Button>
@@ -1542,7 +1548,7 @@ function Demo() {
             ]
           }
           onClose={() => setSheet(null)}
-          onBack={() => (step > 0 ? setStep(step - 1) : setSheet(null))}
+          onBack={() => { const back=pickerBack(step); back===null ? setSheet(null) : setStep(back); }}
         >
           <Caption>
             BƯỚC {step + 1}/3 · {draft.primaryUseOrder.length}/3 mục đích chính
@@ -2060,8 +2066,10 @@ function Demo() {
           title="Cùng làm rõ lựa chọn ✦"
           onClose={() => {
             requestId.current++;
+        aiAbort.current?.abort();
             setAiBusy(false);
-            setSheet(null);
+            setProductId(chatReturn.current.productId);
+            setSheet(chatReturn.current.sheet);
           }}
         >
           <Caption>{aiMode}</Caption>
@@ -2096,6 +2104,7 @@ function Demo() {
                 secondary
                 onPress={() => {
                   requestId.current++;
+        aiAbort.current?.abort();
                   setAiBusy(false);
                   setAiMode("Đã hủy yêu cầu");
                 }}
@@ -2120,15 +2129,7 @@ function Demo() {
               </Label>
               <Button
                 onPress={() => {
-                  setDraft({
-                    ...store.needs,
-                    ...patch,
-                    tasks: [
-                      ...patch.primaryUseOrder,
-                      ...patch.additionalRequiredTaskIds,
-                    ],
-                    useOrderConfirmed: false,
-                  });
+                  setDraft(proposeNeeds(store.needs,patch));
                   setBudgetText(String(patch.budget));
                   setStep(2);
                   setSheet("picker");

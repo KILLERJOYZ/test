@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R13",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R13"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:01:12.555784+00:00",
+      "finishedAt": "2026-11-13T06:01:13.552376+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-artifact-7d25c853dc974fcda9c1ffc99d829268.log",
+      "reason": null
+    },
+    {
+      "id": "cost_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_cost_model.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:33.019221+00:00",
+      "finishedAt": "2026-11-13T06:03:33.562299+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/babd8a36b6a1452181798c405a6c2ab9-cost_tests.log",
+      "reason": null
+    },
+    {
+      "id": "cost_run",
+      "command": [
+        "python",
+        "research/prebuild/tools/cost_model.py",
+        "--input",
+        "research/prebuild/13-cost-inputs.json",
+        "--out",
+        "research/prebuild/13-cost-results.json"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:33.562319+00:00",
+      "finishedAt": "2026-11-13T06:03:33.764290+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "research",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-cost_run-642a75edf5fb4f7c8d6c1c612cdbd897.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "running",
+  "evidenceStatus": "partial",
+  "definitionHash": "b53416bcd28fb208aa8d67cf602c483832ffca7318dfd1b77b3986ca9033b427",
+  "inputHashes": {
+    "research/prebuild/09-retrieval-ranking-results.json": "b14f7076af72216429d4f8c12156a0070bd2df1012b6aa3e2395cf6a2dc9792b",
+    "research/prebuild/10-ai-evaluation.json": "99e3c30dd7772ca06f1a443fb4181103660ed160031719f8e6615195c1950f7f",
+    "research/prebuild/12-operations-scenarios.json": "ffd49c5f7313d7cb80826842501f7a5171faaf4c557fee30697959a6505a0d5b"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U13",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/babd8a36b6a1452181798c405a6c2ab9.json",
+      "reportHash": "3d2592ff0caa7d1764ad248bbea321eb09bce56ebd530216b0b4d56398e133ac",
+      "definitionHash": "22f881b111614ed72a7f29687aa4c2f6348308612675bf0ba3581403dfc48ab4",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_cost_model.py": "479d07035cd2f06e0ceb3b734b017a7d7706207f694a9df0d98620e457000949",
+        "research/prebuild/tools/cost_model.py": "2a6b8182b431fde649832a224beef88f06ffd462c180a87f8c4fb626d48ab63a",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "U13-01",
+        "U13-02",
+        "U13-03",
+        "U13-04",
+        "U13-05",
+        "U13-06",
+        "U13-07"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/13-cost-inputs.json": "69ce43dbc76d6d77eb297a1d47853ba1fddedcdc6c91b4f5a169957e1055c1c4",
+    "research/prebuild/13-cost-results.json": "8a1fdf2e380cbbd09a0adb9719a99688365def741eca3b7088d362c7c46a9676",
+    "research/prebuild/13-cost-capacity-and-estimate.md": "47def55e7739d350906d7cd8daf2a664dda56faa56c4ced86efde0150f67103d",
+    "research/prebuild/tools/cost_model.py": "2a6b8182b431fde649832a224beef88f06ffd462c180a87f8c4fb626d48ab63a",
+    "research/prebuild/tools/test_cost_model.py": "479d07035cd2f06e0ceb3b734b017a7d7706207f694a9df0d98620e457000949"
+  },
+  "commandDefinitionHashes": {
+    "cost_tests": "c427bfa6e8191fe93dad14239343dc68cc9afa9b7b18b67d903ae3cd13b754f6",
+    "cost_run": "336dfdd5f8d99830ecba21aa3ae19a008da28aaaf1efe0be3d36b5ca26a01eae"
+  }
+}

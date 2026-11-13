@@ -1,0 +1,177 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "e866181a0f394124a3167a0b49686690",
+  "selection": {
+    "task": "R08",
+    "pack": null,
+    "changed": null,
+    "all": false
+  },
+  "testedFileHashes": {
+    "spikes/prebuild-contract/policy.test.mjs": "7d2ec850ceab1a920b37204feb93eb8ac1daf410bfe9b2692f244516e135462c",
+    "spikes/prebuild-contract/repository.test.mjs": "4ec3fad7b715c604be5b1e0c3073cd744b30b53d4ec008202bfb513402a25bba",
+    "spikes/prebuild-contract/policy.ts": "24e818099990e0a2319b4a972bf041d6e599abb291e2f1500a649c11f8ad9e7c",
+    "spikes/prebuild-contract/repository.ts": "5d54ca0e06eecb321ddac58a38a940f2981e21923afd8b70ab23280434b81363",
+    "spikes/prebuild-contract/fixtures.mjs": "f59dd852b3e2f6b9fa717103f7382856b3dad54be580903c01db306c82f9e79e",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+    "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+  },
+  "manifestHash": "5f67b8e5877128fb79a4551e1f32028d770cefe7e2be709443d6aab09d03b27e",
+  "packs": [
+    {
+      "id": "U08",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U08-01",
+          "status": "passed"
+        },
+        {
+          "id": "U08-02",
+          "status": "passed"
+        },
+        {
+          "id": "U08-03",
+          "status": "passed"
+        },
+        {
+          "id": "U08-04",
+          "status": "passed"
+        },
+        {
+          "id": "U08-05",
+          "status": "passed"
+        },
+        {
+          "id": "U08-06",
+          "status": "passed"
+        },
+        {
+          "id": "U08-07",
+          "status": "passed"
+        },
+        {
+          "id": "U08-08",
+          "status": "passed"
+        },
+        {
+          "id": "U08-09",
+          "status": "passed"
+        },
+        {
+          "id": "U08-10",
+          "status": "passed"
+        },
+        {
+          "id": "U08-11",
+          "status": "passed"
+        },
+        {
+          "id": "U08-12",
+          "status": "passed"
+        },
+        {
+          "id": "U08-13",
+          "status": "passed"
+        },
+        {
+          "id": "U08-14",
+          "status": "passed"
+        },
+        {
+          "id": "U08-15",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/e866181a0f394124a3167a0b49686690-spike_unit_tests.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U08-01",
+      "status": "passed"
+    },
+    {
+      "id": "U08-02",
+      "status": "passed"
+    },
+    {
+      "id": "U08-03",
+      "status": "passed"
+    },
+    {
+      "id": "U08-04",
+      "status": "passed"
+    },
+    {
+      "id": "U08-05",
+      "status": "passed"
+    },
+    {
+      "id": "U08-06",
+      "status": "passed"
+    },
+    {
+      "id": "U08-07",
+      "status": "passed"
+    },
+    {
+      "id": "U08-08",
+      "status": "passed"
+    },
+    {
+      "id": "U08-09",
+      "status": "passed"
+    },
+    {
+      "id": "U08-10",
+      "status": "passed"
+    },
+    {
+      "id": "U08-11",
+      "status": "passed"
+    },
+    {
+      "id": "U08-12",
+      "status": "passed"
+    },
+    {
+      "id": "U08-13",
+      "status": "passed"
+    },
+    {
+      "id": "U08-14",
+      "status": "passed"
+    },
+    {
+      "id": "U08-15",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U08": "3fc8d51af66d7dbb001588b67ce3153ff0aaeea9f8b51e1fa27cb5d6661707e8"
+  },
+  "fixtureHashes": {
+    "research/prebuild/tests/fixtures/api-history.mjs": "eb69a001a8d393b777bcede3bc5033a45985825a76149bd3c55b2adf064668d9",
+    "research/prebuild/tests/fixtures/api-needs.mjs": "2fc9151cb4c52865d1d236b651d345a20ef35081dcfffadfe1f89bad9a55dc8f"
+  },
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/e866181a0f394124a3167a0b49686690-spike_unit_tests.log"
+  ],
+  "passed": 15,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

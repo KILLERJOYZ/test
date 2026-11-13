@@ -1,0 +1,236 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R13",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R13"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:01:12.555784+00:00",
+      "finishedAt": "2026-11-13T06:01:13.552376+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-artifact-7d25c853dc974fcda9c1ffc99d829268.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R13"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:04:22.281941+00:00",
+      "finishedAt": "2026-11-13T06:04:23.144273+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-artifact-3d87474ba1584e2a95a849207d30107f.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R13"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:07:12.787719+00:00",
+      "finishedAt": "2026-11-13T06:07:13.641807+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-artifact-18fd7049a4154df7b3bb47bf9d44c174.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R13"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:09:59.073420+00:00",
+      "finishedAt": "2026-11-13T06:09:59.941467+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-artifact-e7db4f3d670a4ba18afe7b2acafed1f6.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R13"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:17:00.119615+00:00",
+      "finishedAt": "2026-11-13T06:17:00.978548+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-artifact-3716e3ec03e94cb48a235431071c1482.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R13"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:22:50.533990+00:00",
+      "finishedAt": "2026-11-13T06:22:51.380159+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-artifact-95a16c80a716487ab2e57612041fdd5b.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R13"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:28:54.967302+00:00",
+      "finishedAt": "2026-11-13T06:28:55.815849+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-artifact-727ec2179f654ac3b6a7d091557d9918.log",
+      "reason": null
+    },
+    {
+      "id": "cost_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_cost_model.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:29:42.637269+00:00",
+      "finishedAt": "2026-11-13T06:29:43.207201+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/a7dcf8f72a0b4519952b8db189839a8b-cost_tests.log",
+      "reason": null
+    },
+    {
+      "id": "cost_run",
+      "command": [
+        "python",
+        "research/prebuild/tools/cost_model.py",
+        "--input",
+        "research/prebuild/13-cost-inputs.json",
+        "--out",
+        "research/prebuild/13-cost-results.json"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:29:43.207221+00:00",
+      "finishedAt": "2026-11-13T06:29:43.402311+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "research",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-cost_run-ad5e08e1f87b4786b8486bbdeecba3b2.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R13"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:29:42.637269+00:00",
+      "finishedAt": "2026-11-13T06:29:43.502997+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-artifact-df9921e0847a4a5d8ce5e8c42b43023a.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "b53416bcd28fb208aa8d67cf602c483832ffca7318dfd1b77b3986ca9033b427",
+  "inputHashes": {
+    "research/prebuild/09-retrieval-ranking-results.json": "1cfac3e82f63674875c877e184cb0ad7508a2b676116555afd29355d5e87e3cd",
+    "research/prebuild/10-ai-evaluation.json": "d8ae94cc9fa956792c3a20edfe3189b36fe5ee33fe08029f0d3f33c1a9052e5f",
+    "research/prebuild/12-operations-scenarios.json": "1469d50d7c72d1bc72f5adb6c9180b3eaecdf753c2b8396ead46b9632be64216"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U13",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/a7dcf8f72a0b4519952b8db189839a8b.json",
+      "reportHash": "5bd78162d806bdfed5dcbb9a4e3984de9d39399f9b45c6072051062ca03ee4a1",
+      "definitionHash": "22f881b111614ed72a7f29687aa4c2f6348308612675bf0ba3581403dfc48ab4",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_cost_model.py": "479d07035cd2f06e0ceb3b734b017a7d7706207f694a9df0d98620e457000949",
+        "research/prebuild/tools/cost_model.py": "2a6b8182b431fde649832a224beef88f06ffd462c180a87f8c4fb626d48ab63a",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "U13-01",
+        "U13-02",
+        "U13-03",
+        "U13-04",
+        "U13-05",
+        "U13-06",
+        "U13-07"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/13-cost-inputs.json": "e328136bc5da3624db6348048f0e3c7659a6939d4872e59066ca1c3ca0e0ed87",
+    "research/prebuild/13-cost-results.json": "bc6b7cbd6a8110e37d9e6f94d78b670003a772308834552612356f00eb326033",
+    "research/prebuild/13-cost-capacity-and-estimate.md": "47def55e7739d350906d7cd8daf2a664dda56faa56c4ced86efde0150f67103d",
+    "research/prebuild/tools/cost_model.py": "2a6b8182b431fde649832a224beef88f06ffd462c180a87f8c4fb626d48ab63a",
+    "research/prebuild/tools/test_cost_model.py": "479d07035cd2f06e0ceb3b734b017a7d7706207f694a9df0d98620e457000949"
+  },
+  "commandDefinitionHashes": {
+    "cost_tests": "c427bfa6e8191fe93dad14239343dc68cc9afa9b7b18b67d903ae3cd13b754f6",
+    "cost_run": "336dfdd5f8d99830ecba21aa3ae19a008da28aaaf1efe0be3d36b5ca26a01eae"
+  }
+}

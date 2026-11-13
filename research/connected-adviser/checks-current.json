@@ -1,0 +1,52 @@
+[
+  {
+    "name": "types-current",
+    "command": [
+      "npm.cmd",
+      "--prefix",
+      "apps/adviser",
+      "run",
+      "check"
+    ],
+    "startedAt": "2026-11-13T08:55:35.932318+00:00",
+    "finishedAt": "2026-11-13T08:55:40.148338+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "app-tests-current",
+    "command": [
+      "npm.cmd",
+      "--prefix",
+      "apps/adviser",
+      "test"
+    ],
+    "startedAt": "2026-11-13T08:55:40.148421+00:00",
+    "finishedAt": "2026-11-13T08:55:41.281948+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "service-current",
+    "command": [
+      "node",
+      "--experimental-strip-types",
+      "--test",
+      "services/adviser/server.test.mjs"
+    ],
+    "startedAt": "2026-11-13T08:55:41.282020+00:00",
+    "finishedAt": "2026-11-13T08:55:41.780494+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "web-current",
+    "command": [
+      "npm.cmd",
+      "--prefix",
+      "apps/adviser",
+      "run",
+      "build"
+    ],
+    "startedAt": "2026-11-13T08:55:41.780562+00:00",
+    "finishedAt": "2026-11-13T08:55:52.073178+00:00",
+    "exitCode": 0
+  }
+]

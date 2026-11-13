@@ -1,0 +1,90 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "7d55f97318e64b2fafbe5c458b3e90ba",
+  "selection": {
+    "task": "R03",
+    "pack": null,
+    "changed": null,
+    "all": false
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/test_source_register.py": "1e8d8ca5c78dcf4eefb827de2a956047c4e662de15a4f8a1a352eae090f28caf",
+    "research/prebuild/tools/validate.py": "aa1c3d526db1425a7017370343440ad48f466fe51a066145f0e0211e57ed323d",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/artifact_contracts.py": "21ebb9cad1cc854fc9d41b5b7fc72a853a948398524148d99cb8c7fe45ff2d9e"
+  },
+  "manifestHash": "4c04077695ff3b5f5f6328a2c6f590e50b0de973b4acccb374b84291820dff76",
+  "packs": [
+    {
+      "id": "U03",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U03-01",
+          "status": "passed"
+        },
+        {
+          "id": "U03-02",
+          "status": "passed"
+        },
+        {
+          "id": "U03-03",
+          "status": "passed"
+        },
+        {
+          "id": "U03-04",
+          "status": "passed"
+        },
+        {
+          "id": "U03-05",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/7d55f97318e64b2fafbe5c458b3e90ba-source_register_tests.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U03-01",
+      "status": "passed"
+    },
+    {
+      "id": "U03-02",
+      "status": "passed"
+    },
+    {
+      "id": "U03-03",
+      "status": "passed"
+    },
+    {
+      "id": "U03-04",
+      "status": "passed"
+    },
+    {
+      "id": "U03-05",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U03": "fa9f26f9f8e5fa3eeef07a0b40d7e2cc1228eea03a6a16660ab0f850e32573d2"
+  },
+  "fixtureHashes": {},
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/7d55f97318e64b2fafbe5c458b3e90ba-source_register_tests.log"
+  ],
+  "passed": 5,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

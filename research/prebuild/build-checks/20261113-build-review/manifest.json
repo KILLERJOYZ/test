@@ -1,0 +1,188 @@
+{
+  "createdAt": "2026-11-13T07:51:00.507110+00:00",
+  "branch": "agent-a/api",
+  "head": "d2f26ee62e50d661e30bc2aa271ae061f9e4e823",
+  "workingTreeDirty": true,
+  "sourceHashes": {
+    "apps/adviser/src/ai.test.ts": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98",
+    "apps/adviser/src/ai.ts": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf",
+    "apps/adviser/src/AndroidApp.tsx": "f60ecd7062c3cedacb9a1905fca658a791aec2b228b38e5d0720054334f726d1",
+    "apps/adviser/src/App.tsx": "cb4ba55391d55dc38135cf6bc924286ecfbf7513fe3183ddb247427aba91551f",
+    "apps/adviser/src/decision-state.test.ts": "c58ee182528928d4bee031926746557f2733ad9b2deced6cd1db245e45a14858",
+    "apps/adviser/src/decision-state.ts": "d1ee7a85245717b3bfe577a4a217f0e639e7f64aa215c1a4e8f48be3085658d9",
+    "apps/adviser/src/design-tokens.css": "884f572719d0eb7947534cbd9371bae36a8f69386594f6c7648b942886b1dab9",
+    "apps/adviser/src/design-tokens.ts": "13ad0d7c5c5216c697c6ec4645fb3efa0951ade80ffa0fe38abcefafcc7e238c",
+    "apps/adviser/src/domain.test.ts": "8c2ee9589ec50a9d8a4dcb1a37978a8af1045764ebee86abac6b15e91d8b0bbb",
+    "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+    "apps/adviser/src/icons.tsx": "77341b85b4acf62a67761e77d20bce78c99c58a4742102acc67afe70cdf65a44",
+    "apps/adviser/src/icons.web.tsx": "22ea3a77af5a33cd8b0be5a064bae0011eb49e2ad24526e9004dd05b5ffc3205",
+    "apps/adviser/src/main.web.tsx": "22eabf1aac3983fd8527c8f87729decc3da2a3b30976d32b613a7870eb4069c4",
+    "apps/adviser/src/picker.test.ts": "84fd4a72fb718438504a0af695ef7454a8cbddf2cd0f0dd4c4dc2dbad36a2dd1",
+    "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+    "apps/adviser/src/qa.web.tsx": "3e1f1cfcdd8edf527838fc7229e105f3f6be5f21eef94b9fe82a9a37b1eb7ceb",
+    "apps/adviser/src/web.css": "fb06999f564bfa6a1f4ecdc5317188a4080ee172e42b58a93d8862482ef85a5f",
+    "apps/adviser/package.json": "2903e0acfd059497b9825b892b84f600bbac9d834cea55eb7aee2c654d1c4495",
+    "apps/adviser/package-lock.json": "90c42380ffaf3cec4b5560dbb62e326c334471965e6e80fcfe05dd6338f58f51",
+    "apps/adviser/app.json": "17142a4213df85eefbb87e8f8e97a3caf15933ed41e48acb5eaa0c4e2aa2e291",
+    "apps/adviser/index.js": "34edab2f1b0e4275ef33cc2ca83fdf93ac7710b765df131d4e73e88178f66bcf",
+    "apps/adviser/scripts/build-android.ps1": "9012dc2513c31249c0c3cf853d8e6cc9f569976de55f9dfa233a0bd9797f4715",
+    "apps/adviser/android/app/build.gradle": "e878f9042a0f6edced141e7e16df1339d99c63b123e79e0b2b8162ffbf316680",
+    "apps/adviser/android/gradle.properties": "815512557a44f1e92bf4e2c139a0017e4e0c00fbfc7a60d7b777a4f0fa4ae765",
+    "apps/adviser/android/gradle/wrapper/gradle-wrapper.properties": "7e0821d895908883350587c74476b717016ab416320c44dc82a10def916c6fb5",
+    "services/demo-ai/server.mjs": "505750b50566ccf7cd4a549a55b949dbd929efc1c300ef01cf02e69af0cd5c01",
+    "docs/planning/PREBUILD_RESEARCH_TRACKER.json": "a8eec6fd3ffec7f424620bc5bcef2edfac475fc6cef537f21a655e94dde03290",
+    "research/prebuild/14-build-readiness.json": "82909d36dd72b5b0edc2663347ac97dd6fe6d5196e6c059e745591b18f68641b",
+    "research/prebuild/14-production-backlog.json": "b0ff447d89afb6706434220a3eec6726ec79b4c50993981fc53b55799a55267f"
+  },
+  "unitReport": "research/prebuild/runs/20261113T052229Z/unit-packs/af801a6ad1cb4fa1ba1c4c9bf8ee650a.json",
+  "unitReportSha256": "58f942ca263f3002dfa8a6f1bf9252bea925c7b9344fe4d7715c3da6b8a84adb",
+  "unitSummary": {
+    "packs": 17,
+    "requiredPassed": 158,
+    "failed": 0,
+    "skipped": 0,
+    "notRun": 0,
+    "actualDiscoveredTests": 165
+  },
+  "nativeBuild": {
+    "command": [
+      "E:\\test\\apps\\adviser\\android\\gradlew.bat",
+      "assembleRelease",
+      "-PreactNativeArchitectures=arm64-v8a,x86_64",
+      "--max-workers=2",
+      "--console=plain",
+      "--offline",
+      "--no-daemon"
+    ],
+    "exitCode": 0,
+    "startedAt": "2026-11-13T07:47:37.243388+00:00",
+    "finishedAt": "2026-11-13T07:49:16.396653+00:00",
+    "previousApkSha256": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+    "apkSha256": "a35e955ceb16f6ca437a40dee22c685d587c9ed78d4df0b21f5f47a55690b9e2",
+    "log": "research\\prebuild\\build-checks\\20261113-build-review\\native-release.log"
+  },
+  "checks": [
+    {
+      "name": "unit-packs",
+      "command": [
+        "python",
+        "research/prebuild/tools/run_unit_packs.py",
+        "--all"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-11-13T06:44:10.932614+00:00",
+      "finishedAt": "2026-11-13T06:44:17.038694+00:00",
+      "log": "research\\prebuild\\build-checks\\20261113-build-review\\unit-packs.log"
+    },
+    {
+      "name": "artifacts",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--all"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-11-13T06:44:17.038809+00:00",
+      "finishedAt": "2026-11-13T06:44:17.892004+00:00",
+      "log": "research\\prebuild\\build-checks\\20261113-build-review\\artifacts.log"
+    },
+    {
+      "name": "gate-g4",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--gate",
+        "G4"
+      ],
+      "exitCode": 2,
+      "startedAt": "2026-11-13T06:44:17.892106+00:00",
+      "finishedAt": "2026-11-13T06:44:18.798299+00:00",
+      "log": "research\\prebuild\\build-checks\\20261113-build-review\\gate-g4.log"
+    },
+    {
+      "name": "service-http",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "services/demo-ai/server.test.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-11-13T06:44:18.798440+00:00",
+      "finishedAt": "2026-11-13T06:44:19.281382+00:00",
+      "log": "research\\prebuild\\build-checks\\20261113-build-review\\service-http.log"
+    },
+    {
+      "name": "spike-http",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "spikes/prebuild-contract/contract.test.mjs"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-11-13T06:44:19.281474+00:00",
+      "finishedAt": "2026-11-13T06:44:19.822877+00:00",
+      "log": "research\\prebuild\\build-checks\\20261113-build-review\\spike-http.log"
+    }
+  ],
+  "bundles": [
+    {
+      "name": "web-build",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-11-13T06:44:10.933320+00:00",
+      "finishedAt": "2026-11-13T06:44:20.446807+00:00",
+      "log": "research\\prebuild\\build-checks\\20261113-build-review\\web-build.log"
+    },
+    {
+      "name": "expo-android-export",
+      "command": [
+        "npm.cmd",
+        "run",
+        "export:android",
+        "--",
+        "--output-dir",
+        "../../research/prebuild/build-checks/20261113-build-review/android-export"
+      ],
+      "exitCode": 0,
+      "startedAt": "2026-11-13T06:44:20.446943+00:00",
+      "finishedAt": "2026-11-13T06:44:45.599456+00:00",
+      "log": "research\\prebuild\\build-checks\\20261113-build-review\\expo-android-export.log"
+    }
+  ],
+  "evidenceHashes": {
+    "adb-devices.log": "9de358663219c919aa87a6d917d17c72b36cc1314b74e42bfe13057eaf5a82e3",
+    "apk-badging.log": "1ed4f6d239f3c675c0638b334405664fe830c6fee3e984b863d9aeedb35facd2",
+    "apk-signature-exit.txt": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "apk-signature.log": "8a333bbbc68d6087974497380c0bc256b60ddb220c217dbb3055a5069856141e",
+    "artifacts.log": "5c969e7d1c5605ee58e8626ccba2efef1be03e17d74ec6ac3e858adf6c2c3d02",
+    "BUILD_REVIEW.md": "2ff09953b09d5da4667c39bd4a74bfedf14242b0e9ef57ac2ed44377c259c188",
+    "bundles.json": "e8b2c3aa130ca924d5401e21bb46cfdb73bc1e556e6651e485ac98e4e51a6423",
+    "checks.json": "8d33743492f7e65b912504600cdc0603f3588ce08b7390b3f03b3985c8829e8b",
+    "dependency-check-exit.txt": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+    "dependency-check.log": "e1dd64d5cdc32bb8d9de45b145444a634096309b0b760945109ce3b1bd3b62c8",
+    "expo-android-export.log": "980de72aa583ee1695c9866b0d3fd252258332ee8e9fff768764350d7b130623",
+    "gate-g4.log": "890ea4fc4a03651d26dcb0e7c8c4922c728d66b6b631e73c3ad6f83e83656678",
+    "git-status-before.txt": "33e38bd4a845b307a43bbc63940f9120d57a1dd0796eea684de8be9f07031264",
+    "native-launch-error.log": "5339276b7a9ebb76fea58e8ad823562db4d21342cf2426c7387ec5cf2c847c42",
+    "native-release.json": "bc2420308f77c68554133ae7a2f7e7b7e79abe509a0ef071d59ab5a3dba664da",
+    "native-release.log": "55a71a0268110928db34157dfb4d36b0fe713dc3ee52443674a9f7657e2f05de",
+    "previous-app-release.apk": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+    "service-http.log": "8d665136810ebc7ecd448271c784890385c74f1d45f27e5ce54668f743408d4a",
+    "spike-http.log": "b9e2e6228f06e76fc85906c97f4dc280c2c24716aaef9b63de9f1ea89b1d6003",
+    "unit-packs.log": "cf3ed4321f5f511e1ea84c101289a46a71b90003835896340b3ac0cdaf171ec9",
+    "web-build.log": "2e0cbff00408183dfb78e4d3bbeed34fd78e42ea708b6db9abcc8e89d6eee818"
+  },
+  "limitations": [
+    "Cached offline native build; not clean-machine reproduction",
+    "No Android target connected or device cases executed",
+    "Debug signing; no production AAB",
+    "Offline dependency check is limited",
+    "G1-G4 remain pending; no production approval"
+  ]
+}

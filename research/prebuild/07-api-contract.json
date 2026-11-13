@@ -1,0 +1,801 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "L\u1ef1a bounded research decision API",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8791"
+    }
+  ],
+  "paths": {
+    "/research/v1/runs": {
+      "post": {
+        "summary": "Bounded research contract; synthetic mode only",
+        "responses": {
+          "200": {
+            "description": "Checked response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "stale_revision"
+          },
+          "503": {
+            "description": "source_unavailable"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "needs",
+                  "context"
+                ],
+                "properties": {
+                  "needs": {
+                    "$ref": "#/components/schemas/Needs"
+                  },
+                  "context": {
+                    "$ref": "#/components/schemas/RequestContext"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/research/v1/variants/{variantId}": {
+      "get": {
+        "summary": "Bounded research contract; synthetic mode only",
+        "responses": {
+          "200": {
+            "description": "Checked response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Variant"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "stale_revision"
+          },
+          "503": {
+            "description": "source_unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "variantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ]
+      }
+    },
+    "/research/v1/variants/{variantId}/offers": {
+      "get": {
+        "summary": "Bounded research contract; synthetic mode only",
+        "responses": {
+          "200": {
+            "description": "Checked response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Offer"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "stale_revision"
+          },
+          "503": {
+            "description": "source_unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "variantId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ]
+      }
+    },
+    "/research/v1/comparisons": {
+      "post": {
+        "summary": "Bounded research contract; synthetic mode only",
+        "responses": {
+          "200": {
+            "description": "Checked response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "stale_revision"
+          },
+          "503": {
+            "description": "source_unavailable"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "needs",
+                  "context"
+                ],
+                "properties": {
+                  "needs": {
+                    "$ref": "#/components/schemas/Needs"
+                  },
+                  "context": {
+                    "$ref": "#/components/schemas/RequestContext"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/research/v1/decisions": {
+      "post": {
+        "summary": "Bounded research contract; synthetic mode only",
+        "responses": {
+          "200": {
+            "description": "Checked response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavedDecision"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "stale_revision"
+          },
+          "503": {
+            "description": "source_unavailable"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "snapshot"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "snapshot": {
+                    "$ref": "#/components/schemas/SavedDecision"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/research/v1/decisions/{decisionId}": {
+      "get": {
+        "summary": "Bounded research contract; synthetic mode only",
+        "responses": {
+          "200": {
+            "description": "Checked response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SavedDecision"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "stale_revision"
+          },
+          "503": {
+            "description": "source_unavailable"
+          }
+        },
+        "parameters": [
+          {
+            "name": "decisionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Needs": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "decisionId",
+          "profileRevision",
+          "confirmed",
+          "budgetVnd",
+          "budgetScope",
+          "orderedUses",
+          "requiredTasks",
+          "hardConstraints",
+          "preferences"
+        ],
+        "properties": {
+          "decisionId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "profileRevision": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "confirmed": {
+            "type": "boolean"
+          },
+          "budgetVnd": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "budgetScope": {
+            "const": "device-delivered"
+          },
+          "orderedUses": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "maxItems": 3
+          },
+          "requiredTasks": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "hardConstraints": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "preferences": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "maxItems": 2
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "confirmed": {
+                  "const": true
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "orderedUses": {
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      },
+      "Variant": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "variantId",
+          "familyId",
+          "exactConfiguration",
+          "condition",
+          "publicationState"
+        ],
+        "properties": {
+          "variantId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "familyId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "exactConfiguration": {
+            "type": "object",
+            "minProperties": 1
+          },
+          "condition": {
+            "enum": [
+              "new",
+              "used",
+              "refurbished",
+              "unknown"
+            ]
+          },
+          "publicationState": {
+            "enum": [
+              "draft",
+              "reviewed",
+              "published",
+              "withdrawn"
+            ]
+          }
+        }
+      },
+      "Offer": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "offerId",
+          "variantId",
+          "matchStatus",
+          "sellerId",
+          "datasetKind",
+          "costs",
+          "discountEligibility",
+          "validity",
+          "observedAt",
+          "evidenceRefs"
+        ],
+        "properties": {
+          "offerId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "variantId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "matchStatus": {
+            "enum": [
+              "accepted",
+              "unresolved",
+              "rejected"
+            ]
+          },
+          "sellerId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "datasetKind": {
+            "enum": [
+              "synthetic",
+              "crawled_draft",
+              "reviewed_research",
+              "production"
+            ]
+          },
+          "costs": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "baseVnd",
+              "shippingVnd",
+              "mandatoryExtraFeesVnd",
+              "discountVnd"
+            ],
+            "properties": {
+              "baseVnd": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "shippingVnd": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "mandatoryExtraFeesVnd": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "discountVnd": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            }
+          },
+          "discountEligibility": {
+            "enum": [
+              "confirmed",
+              "ineligible",
+              "unknown"
+            ]
+          },
+          "validity": {
+            "enum": [
+              "current",
+              "stale",
+              "expired",
+              "unavailable",
+              "suspended",
+              "unknown"
+            ]
+          },
+          "observedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "evidenceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        }
+      },
+      "Candidate": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "variantId",
+          "fit",
+          "offerValidity",
+          "priceCompleteness",
+          "affordability",
+          "completeTotalVnd",
+          "reasonCodes",
+          "evidenceRefs"
+        ],
+        "properties": {
+          "variantId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fit": {
+            "enum": [
+              "pass",
+              "fail",
+              "unknown"
+            ]
+          },
+          "offerValidity": {
+            "enum": [
+              "current",
+              "stale",
+              "expired",
+              "unavailable",
+              "suspended",
+              "unknown"
+            ]
+          },
+          "priceCompleteness": {
+            "enum": [
+              "complete",
+              "partial",
+              "conditional"
+            ]
+          },
+          "affordability": {
+            "enum": [
+              "within_budget",
+              "over_budget",
+              "unknown"
+            ]
+          },
+          "completeTotalVnd": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "reasonCodes": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "evidenceRefs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        }
+      },
+      "RequestContext": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "decisionId",
+          "runId",
+          "requestId",
+          "catalogVersion",
+          "rulesVersion",
+          "offerContextHash",
+          "origin",
+          "profileRevision",
+          "focusVariantIds"
+        ],
+        "properties": {
+          "decisionId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "runId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "requestId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "catalogVersion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rulesVersion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "offerContextHash": {
+            "type": "string",
+            "minLength": 1
+          },
+          "origin": {
+            "type": "string",
+            "minLength": 1
+          },
+          "profileRevision": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "focusVariantIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          }
+        }
+      },
+      "Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "context",
+          "state",
+          "candidates",
+          "excluded",
+          "unknowns"
+        ],
+        "properties": {
+          "context": {
+            "$ref": "#/components/schemas/RequestContext"
+          },
+          "state": {
+            "enum": [
+              "needs_clarification",
+              "evidence_unknown",
+              "eligible",
+              "no_fit",
+              "no_verified_affordable_offer",
+              "filter_empty",
+              "source_unavailable",
+              "stale_revision"
+            ]
+          },
+          "candidates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Candidate"
+            }
+          },
+          "excluded": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Candidate"
+            }
+          },
+          "unknowns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Candidate"
+            }
+          }
+        }
+      },
+      "SavedDecision": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schemaVersion",
+          "needs",
+          "variantIds",
+          "historicalConfigurations",
+          "observations",
+          "savedAt",
+          "catalogVersion",
+          "rulesVersion"
+        ],
+        "properties": {
+          "schemaVersion": {
+            "const": 1
+          },
+          "needs": {
+            "$ref": "#/components/schemas/Needs"
+          },
+          "variantIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true,
+            "minItems": 1,
+            "maxItems": 2
+          },
+          "historicalConfigurations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Variant"
+            },
+            "minItems": 1,
+            "maxItems": 2
+          },
+          "observations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "variantId",
+                "totalVnd",
+                "observedAt"
+              ],
+              "properties": {
+                "variantId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "totalVnd": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "observedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "offerId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "sellerId": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "minItems": 1,
+            "maxItems": 2
+          },
+          "savedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "catalogVersion": {
+            "type": "string",
+            "minLength": 1
+          },
+          "rulesVersion": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  },
+  "x-research": {
+    "inputs": [
+      {
+        "ref": "services/demo-ai/server.mjs",
+        "sha256": "505750b50566ccf7cd4a549a55b949dbd929efc1c300ef01cf02e69af0cd5c01"
+      },
+      {
+        "ref": "apps/adviser/src/ai.ts",
+        "sha256": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf"
+      },
+      {
+        "ref": "apps/adviser/src/picker.ts",
+        "sha256": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943"
+      },
+      {
+        "ref": "docs/planning/APP_FLOW_DEEP_RESEARCH.md",
+        "sha256": "83977fa9832f9a0ba97e1f33a5a6b43597c79186b2b70445054565500942983a"
+      }
+    ],
+    "evidenceRefs": [],
+    "datasetKind": "synthetic",
+    "architectureDecision": "research/prebuild/07-architecture-decision.md",
+    "notProductionAuthorization": true,
+    "semanticInvariants": [
+      "orderedUses and requiredTasks are disjoint",
+      "Needs decisionId/profileRevision match RequestContext; otherwise HTTP 409 stale_revision",
+      "Historical configurations and observations cover each selected exact ID once",
+      "Calendar timestamps must be genuine instants; normalized invalid dates are rejected"
+    ]
+  }
+}

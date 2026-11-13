@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R14",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R14"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:10:47.814926+00:00",
+      "finishedAt": "2026-11-13T06:10:50.347182+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-artifact-9b4db69c002b4b7c8b0a9d14e1032553.log",
+      "reason": null
+    },
+    {
+      "id": "final_types",
+      "command": [
+        "npm.cmd",
+        "--prefix",
+        "apps/adviser",
+        "run",
+        "check"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:11:48.085827+00:00",
+      "finishedAt": "2026-11-13T06:11:51.774234+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "build",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/final_types.log",
+      "reason": null
+    },
+    {
+      "id": "final_service_http",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "services/demo-ai/server.test.mjs"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:11:51.774369+00:00",
+      "finishedAt": "2026-11-13T06:11:52.211468+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "integration",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/final_service_http.log",
+      "reason": null
+    },
+    {
+      "id": "final_spike_http",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "spikes/prebuild-contract/contract.test.mjs"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:11:52.211571+00:00",
+      "finishedAt": "2026-11-13T06:11:52.692695+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "integration",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/final_spike_http.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R14"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:17:01.308099+00:00",
+      "finishedAt": "2026-11-13T06:17:03.692515+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-artifact-4cdd6ca9409b47aba89fb74484deabaa.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R14"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:23:41.704213+00:00",
+      "finishedAt": "2026-11-13T06:23:44.227133+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-artifact-6c11b39ea1b34db7b890de577fbddeef.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R14"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:29:43.862204+00:00",
+      "finishedAt": "2026-11-13T06:29:46.387747+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-artifact-014887d7151e408f99364b3a69cc8dfe.log",
+      "reason": null
+    },
+    {
+      "id": "readiness_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_readiness.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:37:47.431691+00:00",
+      "finishedAt": "2026-11-13T06:37:48.296634+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/94fc550c473f4a6083df462b0555c3a7-readiness_tests.log",
+      "reason": null
+    },
+    {
+      "id": "plan_contract_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_plan_contract.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:37:47.431691+00:00",
+      "finishedAt": "2026-11-13T06:37:48.296662+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/94fc550c473f4a6083df462b0555c3a7-plan_contract_tests.log",
+      "reason": null
+    },
+    {
+      "id": "all_artifacts",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--all"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:37:48.296677+00:00",
+      "finishedAt": "2026-11-13T06:37:49.067303+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-all_artifacts-b04b440e3ce649508a4dbfd73f2c39bf.log",
+      "reason": null
+    },
+    {
+      "id": "gate_g4",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--gate",
+        "G4"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:37:49.067406+00:00",
+      "finishedAt": "2026-11-13T06:37:49.806286+00:00",
+      "exitCode": 2,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-gate_g4-b3680db32df74d79afaa6971942f9edf.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R14"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:37:47.431691+00:00",
+      "finishedAt": "2026-11-13T06:37:49.947025+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-artifact-5d9078d7bf064f1dadfc29c09bd21802.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "0a6e7bbf0c44e11aeceec09c9cc2e29d35296dc87fc560157f2e7df851989135",
+  "inputHashes": {
+    "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
+    "docs/planning/IMPLEMENTATION_PLAN.md": "fce922177d44307433c03f43a9298a6bc494253615de3c37623a3701ff9f8895"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U14",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/94fc550c473f4a6083df462b0555c3a7.json",
+      "reportHash": "8edf21d5febf16f06a88032688af7bddd8dad1c346218ea4576f7648122bee76",
+      "definitionHash": "4fc315ee16dc01fa3d0cf34edaae1e0d9ac7efe37c11bb9f0197da1c938faa09",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_readiness.py": "fcab0adf8de15b26b79265d32c7155d873ebb9183371cd9e50b6e2db44c8b123",
+        "research/prebuild/tools/readiness.py": "143e01051ea6fcddd0bba3115c01c445cfa14ed41513396abe9540695196d0ca",
+        "research/prebuild/tools/test_plan_contract.py": "87d54f5508caa967a0874c7aab87e74f40ce5efb0fd6be72eee861f58d193253",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "U14-01",
+        "U14-02",
+        "U14-03",
+        "U14-04",
+        "U14-05",
+        "U14-06",
+        "U14-07",
+        "U14-08"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    },
+    {
+      "packId": "UPLAN",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/94fc550c473f4a6083df462b0555c3a7.json",
+      "reportHash": "8edf21d5febf16f06a88032688af7bddd8dad1c346218ea4576f7648122bee76",
+      "definitionHash": "ae5629b0086cbda3959ea7675a5bf7b61bad88a016a556ce09e1e0570b1c061c",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_readiness.py": "fcab0adf8de15b26b79265d32c7155d873ebb9183371cd9e50b6e2db44c8b123",
+        "research/prebuild/tools/readiness.py": "143e01051ea6fcddd0bba3115c01c445cfa14ed41513396abe9540695196d0ca",
+        "research/prebuild/tools/test_plan_contract.py": "87d54f5508caa967a0874c7aab87e74f40ce5efb0fd6be72eee861f58d193253",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "UPLAN-01",
+        "UPLAN-02",
+        "UPLAN-03",
+        "UPLAN-04",
+        "UPLAN-05",
+        "UPLAN-06",
+        "UPLAN-07",
+        "UPLAN-08",
+        "UPLAN-09",
+        "UPLAN-10"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "commandDefinitionHashes": {
+    "plan_contract_tests": "c7bd38d894915c144febb0f7586152ab5b0d5e42b878553d9afc4d067b38e75b",
+    "readiness_tests": "d1a5dee4dc1dde547a6b047b7c9237812fc7d68d24b6010640ec9e885b6a4a7d",
+    "all_artifacts": "b5e701da4d43bd76758e7b2c6f26f014a9edba8efe2d1f8e5b3f6855d48c5e34",
+    "gate_g4": "d7e52bc3d99d1674f45772d56a010c2943bfc24d1c66f0af2bacaa3a2761216c"
+  },
+  "outputHashes": {
+    "research/prebuild/14-build-readiness.json": "82909d36dd72b5b0edc2663347ac97dd6fe6d5196e6c059e745591b18f68641b",
+    "research/prebuild/14-build-readiness.md": "6672c4ce83aa7701a5afde1533c2f9c39e6e1387a2d855494a866302b1467888",
+    "research/prebuild/14-production-backlog.json": "b0ff447d89afb6706434220a3eec6726ec79b4c50993981fc53b55799a55267f",
+    "research/prebuild/tools/test_readiness.py": "fcab0adf8de15b26b79265d32c7155d873ebb9183371cd9e50b6e2db44c8b123",
+    "research/prebuild/tools/readiness.py": "143e01051ea6fcddd0bba3115c01c445cfa14ed41513396abe9540695196d0ca"
+  },
+  "finalUnitReportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/ca4a7a5795d844da9aa1572d7c75af5d.json",
+  "finalUnitReportHash": "31a7861848a319f5f8356d50eb524e7cd89be3f4cacca3ab96da2adb9f0766e8"
+}

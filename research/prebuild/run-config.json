@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "timezone": "Asia/Saigon",
+  "baseline": {
+    "commit": "d2f26ee62e50d661e30bc2aa271ae061f9e4e823",
+    "inspectedRefs": {
+      "main": "bd03eeeb0a1dfa3d0ac1e61a2705fdda5cb71436"
+    },
+    "inputHashes": {
+      "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
+      "docs/planning/APP_FLOW.md": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640",
+      "docs/planning/APP_FLOW_DEEP_RESEARCH.md": "83977fa9832f9a0ba97e1f33a5a6b43597c79186b2b70445054565500942983a",
+      "docs/planning/REPOSITORY_RESEARCH_2026-11-13.md": "62364e0983aaf9a30145b98a19d0731ebcc4288f7e0f7686107a6fa436ffadb7",
+      "docs/planning/IMPLEMENTATION_PLAN.md": "fce922177d44307433c03f43a9298a6bc494253615de3c37623a3701ff9f8895",
+      "docs/planning/project-traceability.json": "46423b863cbe3793bfbd3343d823ccd386a65bc184eb4ec2f9760ca0c951a92c",
+      "research/prebuild/RESEARCH_TEMPLATES.md": "afa7110b2502a4f0b0adab047ffe9114e15167008d246a5f364f4b10a5ae5c49"
+    }
+  },
+  "scope": {
+    "platform": "Android/Expo/TypeScript",
+    "market": "Vietnam/VND",
+    "category": "new laptops",
+    "includedRequirementIds": [
+      "U01",
+      "U02",
+      "U03",
+      "U04",
+      "U05",
+      "U07",
+      "U08"
+    ],
+    "excludedIds": [
+      "U06",
+      "U19"
+    ],
+    "decisionRefs": [
+      "docs/planning/project-traceability.json#/deliveryScope"
+    ],
+    "productionScopeStatus": "provisional"
+  },
+  "seed": 20261113,
+  "corpus": {
+    "profileCount": 120,
+    "development": 80,
+    "heldout": 40,
+    "groupCounts": {
+      "ordinary": 50,
+      "price_budget": 20,
+      "identity_condition": 15,
+      "unknown_no_fit": 15,
+      "freshness": 10,
+      "revision": 10
+    }
+  },
+  "retrieval": {
+    "queryCount": 60,
+    "development": 40,
+    "heldout": 20,
+    "k": 10
+  },
+  "ai": {
+    "provider": null,
+    "model": null,
+    "keyEnvName": null,
+    "maxRequests": null,
+    "maxCostVnd": null,
+    "authorizationRef": null,
+    "priceEvidenceRef": null,
+    "spendingMechanism": null
+  },
+  "thresholds": {
+    "status": "proposed",
+    "coverage": 0.8,
+    "recallAt10": 0.9,
+    "usability": 0.8
+  },
+  "externalInputs": [
+    {
+      "id": "buyers",
+      "status": "unavailable",
+      "evidenceRef": null,
+      "nextAction": "Recruit consented participants using R01 protocol."
+    },
+    {
+      "id": "source_rights",
+      "status": "unavailable",
+      "evidenceRef": null,
+      "nextAction": "Obtain documented per-use source basis."
+    },
+    {
+      "id": "live_ai",
+      "status": "unavailable",
+      "evidenceRef": null,
+      "nextAction": "Configure access and authorize numeric request/cost limits."
+    },
+    {
+      "id": "physical_device",
+      "status": "unavailable",
+      "evidenceRef": null,
+      "nextAction": "Select authorized named phone for D01-D08."
+    },
+    {
+      "id": "gate_review",
+      "status": "unavailable",
+      "evidenceRef": null,
+      "nextAction": "Accountable owner reviews concrete readiness evidence."
+    }
+  ]
+}

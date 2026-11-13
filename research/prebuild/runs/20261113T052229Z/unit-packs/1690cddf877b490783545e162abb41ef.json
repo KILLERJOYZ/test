@@ -1,0 +1,117 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "1690cddf877b490783545e162abb41ef",
+  "selection": {
+    "task": "R09",
+    "pack": null,
+    "changed": null,
+    "all": false
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/eval.test.mjs": "99ef5505cd0828fe0eea8c4a4c37aae685b3f21581cf17946d03c3e930b43d0a",
+    "research/prebuild/tools/run_eval.mjs": "1f5e5d6a8950110b0a4f27f6ad943635e4d7375aec1de1a4ebfbfc3835b7b6a0",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+    "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+  },
+  "manifestHash": "66310a461e03f9b04fec602ae55b3e482a8fb0293f0cb18c553c441e57910681",
+  "packs": [
+    {
+      "id": "U09",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U09-01",
+          "status": "passed"
+        },
+        {
+          "id": "U09-02",
+          "status": "passed"
+        },
+        {
+          "id": "U09-03",
+          "status": "passed"
+        },
+        {
+          "id": "U09-04",
+          "status": "passed"
+        },
+        {
+          "id": "U09-05",
+          "status": "passed"
+        },
+        {
+          "id": "U09-06",
+          "status": "passed"
+        },
+        {
+          "id": "U09-07",
+          "status": "passed"
+        },
+        {
+          "id": "U09-08",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/1690cddf877b490783545e162abb41ef-eval_tests.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U09-01",
+      "status": "passed"
+    },
+    {
+      "id": "U09-02",
+      "status": "passed"
+    },
+    {
+      "id": "U09-03",
+      "status": "passed"
+    },
+    {
+      "id": "U09-04",
+      "status": "passed"
+    },
+    {
+      "id": "U09-05",
+      "status": "passed"
+    },
+    {
+      "id": "U09-06",
+      "status": "passed"
+    },
+    {
+      "id": "U09-07",
+      "status": "passed"
+    },
+    {
+      "id": "U09-08",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U09": "450819565c622ab26e4343df40d5471e28e195dc2723f32ac6a59b2901d3b95e"
+  },
+  "fixtureHashes": {
+    "research/prebuild/tests/fixtures/api-needs.mjs": "2fc9151cb4c52865d1d236b651d345a20ef35081dcfffadfe1f89bad9a55dc8f"
+  },
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/1690cddf877b490783545e162abb41ef-eval_tests.log"
+  ],
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

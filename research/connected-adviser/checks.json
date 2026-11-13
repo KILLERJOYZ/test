@@ -1,0 +1,87 @@
+[
+  {
+    "name": "types",
+    "command": [
+      "npm.cmd",
+      "--prefix",
+      "apps/adviser",
+      "run",
+      "check"
+    ],
+    "startedAt": "2026-11-13T08:20:22.940592+00:00",
+    "finishedAt": "2026-11-13T08:20:26.797284+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "app-tests",
+    "command": [
+      "npm.cmd",
+      "--prefix",
+      "apps/adviser",
+      "test"
+    ],
+    "startedAt": "2026-11-13T08:20:26.797388+00:00",
+    "finishedAt": "2026-11-13T08:20:27.902511+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "adviser-http",
+    "command": [
+      "node",
+      "--experimental-strip-types",
+      "--test",
+      "services/adviser/server.test.mjs"
+    ],
+    "startedAt": "2026-11-13T08:20:27.902590+00:00",
+    "finishedAt": "2026-11-13T08:20:28.378771+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "baseline-packs",
+    "command": [
+      "python",
+      "research/prebuild/tools/run_unit_packs.py",
+      "--all"
+    ],
+    "startedAt": "2026-11-13T08:20:28.378848+00:00",
+    "finishedAt": "2026-11-13T08:20:34.175418+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "old-service-http",
+    "command": [
+      "node",
+      "--experimental-strip-types",
+      "--test",
+      "services/demo-ai/server.test.mjs"
+    ],
+    "startedAt": "2026-11-13T08:20:34.175483+00:00",
+    "finishedAt": "2026-11-13T08:20:34.610180+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "spike-http",
+    "command": [
+      "node",
+      "--experimental-strip-types",
+      "--test",
+      "spikes/prebuild-contract/contract.test.mjs"
+    ],
+    "startedAt": "2026-11-13T08:20:34.610264+00:00",
+    "finishedAt": "2026-11-13T08:20:35.160866+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "web-build",
+    "command": [
+      "npm.cmd",
+      "--prefix",
+      "apps/adviser",
+      "run",
+      "build"
+    ],
+    "startedAt": "2026-11-13T08:20:35.161033+00:00",
+    "finishedAt": "2026-11-13T08:20:42.902586+00:00",
+    "exitCode": 0
+  }
+]

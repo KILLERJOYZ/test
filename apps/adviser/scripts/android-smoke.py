@@ -32,7 +32,12 @@ def tap(label, index=0, scroll=True):
             n=choices[index];x1,y1,x2,y2=map(int,re.findall(r'\d+',n.get('bounds')))
             if x2>x1 and y2>y1:
                 adb('shell','input','tap',(x1+x2)//2,(y1+y2)//2);time.sleep(.35);return
-        adb('shell','input','swipe','540','1800','540','650','350');time.sleep(.25)
+        candidates=[n for n in dump().iter('node') if n.get('scrollable')=='true' and 'Horizontal' not in n.get('class','')]
+        def area(n):
+            a,b,c,d=map(int,re.findall(r'\d+',n.get('bounds')));return (c-a)*(d-b)
+        screen=max(candidates,key=area) if candidates else next(dump().iter('node'))
+        left,upper,right,lower=map(int,re.findall(r'\d+',screen.get('bounds')))
+        adb('shell','input','swipe',(left+right)//2,upper+int((lower-upper)*.8),(left+right)//2,upper+int((lower-upper)*.3),'350');time.sleep(.25)
     raise AssertionError('Not found: '+label+'; visible: '+str(texts()))
 def assert_text(fragment):
     found=texts()

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": [
+    "persistent navigation",
+    "native checked semantics",
+    "inline invalid budget",
+    "cancel draft",
+    "search recovery",
+    "two-item comparison",
+    "modal save acknowledgement",
+    "delete cancel and confirm"
+  ],
+  "serial": "emulator-5554"
+}

@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "kind": "source_behavior_reproduction",
+  "reviewedDate": "2026-11-13",
+  "method": "Original exported functions and AST-extracted original closures, with injected in-memory dependencies.",
+  "limitations": [
+    "No mounted React or native Android execution.",
+    "Injected ordering proves permitted interleavings, not frequency.",
+    "Passing diagnostic assertions confirm current flaws; they do not accept or fix them.",
+    "No network or user storage access."
+  ],
+  "sourceHashes": {
+    "apps/adviser/src/AndroidApp.tsx": "0e248bf254701eca3824002f23462a0280d1ee1fc07ed02d3051758474262122",
+    "apps/adviser/src/picker.ts": "cba7299a78345458efc631bed7b7531942ae879485537f243381179184ec881a",
+    "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+    "apps/adviser/src/ai.ts": "4be61db524594d02b9c407f8ca7c74ff677f9ed7d3054c9cc21afd56af652c49",
+    "research/prebuild/flow-review/probe_current_flow.mjs": "cd1ee7f3fd9e790b70dd80135247799062d87c38c52c5459a86e9ef8c01f879f"
+  },
+  "observations": [
+    {
+      "id": "FLOW-01",
+      "observed": {
+        "acknowledgements": [
+          true,
+          true
+        ],
+        "finalDark": false,
+        "finalSavedCount": 1,
+        "conclusion": "The acknowledged theme update is overwritten by the later stale whole-store snapshot."
+      }
+    },
+    {
+      "id": "FLOW-02",
+      "observed": {
+        "ready": true,
+        "readErrorRecorded": true,
+        "rawRecoveryPresent": false,
+        "subsequentWriteAllowed": true
+      }
+    },
+    {
+      "id": "FLOW-03",
+      "observed": {
+        "adapterOperationOrder": [
+          "write1",
+          "delete",
+          "write2"
+        ],
+        "deletedBeforeQueuedWriteExecuted": true,
+        "savedIdsAfterPendingWrite": [
+          "old-decision"
+        ]
+      }
+    },
+    {
+      "id": "FLOW-04",
+      "observed": {
+        "acceptedInvalidSnapshot": {
+          "id": "snapshot",
+          "name": "Fixture",
+          "needs": {
+            "budget": 30000000,
+            "tasks": [
+              "study"
+            ],
+            "priorities": [],
+            "vm": "unknown",
+            "primaryUseOrder": [
+              "study"
+            ],
+            "additionalRequiredTaskIds": [],
+            "useOrderConfirmed": true,
+            "revision": 1,
+            "budgetScope": "device-delivered"
+          },
+          "productIds": [
+            "p1"
+          ],
+          "savedAt": "invalid-date",
+          "observations": [
+            {
+              "productId": "not-a-selected-variant",
+              "total": -1,
+              "seller": 42
+            }
+          ]
+        },
+        "warnings": [],
+        "restoredConfirmedNeedsFailValidation": true
+      }
+    },
+    {
+      "id": "FLOW-05",
+      "observed": {
+        "needs": {
+          "budget": 30000000,
+          "tasks": [
+            "creative"
+          ],
+          "priorities": [],
+          "vm": "unknown",
+          "primaryUseOrder": [
+            "creative"
+          ],
+          "additionalRequiredTaskIds": [],
+          "useOrderConfirmed": true,
+          "revision": 1,
+          "budgetScope": "device-delivered"
+        },
+        "firstTwoRanked": [
+          "p5",
+          "p12"
+        ],
+        "fallbackMentioned": [
+          "p2",
+          "p4"
+        ]
+      }
+    },
+    {
+      "id": "FLOW-06",
+      "observed": {
+        "responseAcceptedAfterOfferEdit": true,
+        "displayed": "Néo Air 14 đạt các quy tắc tác vụ mô phỏng; tổng 18.900.000 ₫ nằm trong trần 30.000.000 ₫. Chưa có kiểm chứng phần cứng thực tế.",
+        "currentText": "Néo Air 14 đạt các quy tắc tác vụ mô phỏng; tổng 19.100.000 ₫ nằm trong trần 30.000.000 ₫. Chưa có kiểm chứng phần cứng thực tế.",
+        "eventOrder": [
+          "offer edit started",
+          "AI requested old offers",
+          "offer edit committed",
+          "AI response accepted"
+        ],
+        "requestFields": [
+          "text",
+          "needs",
+          "offers"
+        ],
+        "selectionContextSent": false,
+        "revisionGuardUnchanged": true
+      }
+    }
+  ]
+}

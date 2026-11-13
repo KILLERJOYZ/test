@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R01",
+  "inputs": [
+    {
+      "ref": "research/onboarding-question-bank.json",
+      "sha256": "8201e56d88b8d966837057729773528f950b8fab0d866e0c8bf1c4a1c725fb37"
+    },
+    {
+      "ref": "research/business-needs-and-feature-inventory.md",
+      "sha256": "5a8f5cc65a8851c1f92784c0382738d084f30bc10507e9851b1396d87bcfec5f"
+    },
+    {
+      "ref": "research/prebuild/00-scope-and-decisions.md",
+      "sha256": "eda345ed8c0d8f9391934bd224446bb9b537bd0005d03128b46bbb3c64a62824"
+    }
+  ],
+  "data": {
+    "collectedCount": 0,
+    "participants": [],
+    "observations": [],
+    "hypotheses": [
+      {
+        "id": "H-R01-01",
+        "claim": "Users understand draft versus confirmed needs.",
+        "status": "untested"
+      },
+      {
+        "id": "H-R01-02",
+        "claim": "Users distinguish device fit from complete affordable offer.",
+        "status": "untested"
+      },
+      {
+        "id": "H-R01-03",
+        "claim": "Historical prices and AI proposals are understood.",
+        "status": "untested"
+      }
+    ],
+    "cohortCounts": {
+      "student": 0,
+      "office": 0,
+      "developer": 0
+    },
+    "negativeFindings": []
+  },
+  "evidenceRefs": [],
+  "gaps": [
+    {
+      "id": "GAP-R01-001",
+      "reason": "No authorized participant observation records supplied or found.",
+      "nextAction": "Recruit four recent or active laptop buyers in each cohort; obtain consent and record anonymized task outcomes."
+    }
+  ]
+}

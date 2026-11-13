@@ -253,7 +253,7 @@ export function validOffers(value: unknown): value is Offer[] {
     )
   );
 }
-function validStoredNeeds(p: any): p is Needs {
+export function validStoredNeeds(p: any): p is Needs {
   return (
     !!p &&
     Array.isArray(p.tasks) &&
@@ -271,6 +271,10 @@ function validStoredNeeds(p: any): p is Needs {
     p.primaryUseOrder.length <= 3 &&
     p.priorities.length <= 2 &&
     p.priorities.every((id: string) => PRIORITIES.some((t) => t.id === id)) &&
+    new Set([...p.primaryUseOrder, ...p.additionalRequiredTaskIds]).size ===
+      p.primaryUseOrder.length + p.additionalRequiredTaskIds.length &&
+    new Set(p.priorities).size === p.priorities.length &&
+    (!p.useOrderConfirmed || validateNeeds(p).length === 0) &&
     new Set(p.tasks).size === p.tasks.length &&
     p.tasks.length ===
       p.primaryUseOrder.length + p.additionalRequiredTaskIds.length &&
@@ -301,6 +305,23 @@ function migrateProfile(p: Profile): Needs {
     revision: 0,
     budgetScope: "device-delivered",
   };
+}
+export function validSnapshot(d: any): d is Snapshot {
+  return !!d && typeof d.id === "string" && d.id.length > 0 &&
+    typeof d.name === "string" && d.name.length > 0 &&
+    validStoredNeeds(d.needs) &&
+    Array.isArray(d.productIds) && d.productIds.length > 0 && d.productIds.length <= 2 &&
+    new Set(d.productIds).size === d.productIds.length &&
+    d.productIds.every((id: unknown) => typeof id === "string" && PRODUCTS.some(p => p.id === id)) &&
+    typeof d.savedAt === "string" && /^\d{4}-\d{2}-\d{2}T/.test(d.savedAt) &&
+    Number.isFinite(Date.parse(d.savedAt)) && new Date(d.savedAt).toISOString() === d.savedAt &&
+    typeof d.datasetVersion === "string" && d.datasetVersion.length > 0 &&
+    typeof d.policyVersion === "string" && d.policyVersion.length > 0 &&
+    Array.isArray(d.observations) && d.observations.length === d.productIds.length &&
+    new Set(d.observations.map((o: any) => o?.productId)).size === d.observations.length &&
+    d.observations.every((o: any) => !!o && d.productIds.includes(o.productId) &&
+      (o.total === null || (Number.isSafeInteger(o.total) && o.total >= 0)) &&
+      (o.seller === null || typeof o.seller === "string"));
 }
 export function restore(raw: string): { store: Store; warnings: string[] } {
   const value = JSON.parse(raw);
@@ -356,21 +377,7 @@ export function restore(raw: string): { store: Store; warnings: string[] } {
   )
     throw Error("Dữ liệu không hợp lệ. Hãy xuất bản gốc trước khi đặt lại.");
   const saved = value.saved.filter((d: any) => {
-    const ok =
-      !!d &&
-      typeof d.id === "string" &&
-      typeof d.name === "string" &&
-      validStoredNeeds(d.needs) &&
-      Array.isArray(d.productIds) &&
-      d.productIds.every((id: string) => PRODUCTS.some((p) => p.id === id)) &&
-      typeof d.savedAt === "string" &&
-      Array.isArray(d.observations) &&
-      d.observations.every(
-        (o: any) =>
-          !!o &&
-          typeof o.productId === "string" &&
-          (o.total === null || Number.isSafeInteger(o.total)),
-      );
+    const ok = validSnapshot(d);
     if (!ok)
       warnings.push(
         "Một bản lưu hỏng đã được cô lập; bản gốc vẫn có trong bản sao phục hồi.",

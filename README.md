@@ -1,14 +1,18 @@
 # Lựa — Vietnam-first device adviser
 
-An Expo Android implementation demo and the research/planning package for a needs-based laptop, phone and PC buying adviser.
+An Expo Android laptop adviser using the repository’s real retailer listings, with search, requirements, comparison, historical decisions, service refresh and on-device Gemini Nano AI.
 
 - [Open the self-contained frontend demo](./apps/adviser/dist/demo.html)
 - [Expo Android source, debug/build instructions and limitations](./apps/adviser/README.md)
 - [Business requirements document](./brd.md)
 - [Demo-first implementation plan](./docs/planning/IMPLEMENTATION_PLAN.md)
+- [App flow diagrams: current demo and proposed full application](./docs/planning/APP_FLOW.md)
+- [Deep app-flow research: state, failure paths and regression cases](./docs/planning/APP_FLOW_DEEP_RESEARCH.md)
+- [Repository research and production gaps — 13 November 2026](./docs/planning/REPOSITORY_RESEARCH_2026-11-13.md)
+- [Codex execution specification for pre-build research](./docs/planning/PREBUILD_RESEARCH_PLAN.md)
 - [Research index](./research/README.md)
 
-The app uses Expo / React Native Android with Material 3 Expressive design, fictional products/prices, deterministic recommendations and an optional bounded server-side AI adapter. HTML/CSS provides a design preview. See the app verification record for tested Android artifacts and remaining live-provider/physical-device evidence. The uppercase planning BRD is retained as an upstream historical reference; the selected requirement source is lowercase brd.md.
+Version 0.4.0 launches the connected adviser rather than the former synthetic demo. Its 70 repository listings are dated real observations: identity, current stock, full payable price and workload suitability remain unverified where evidence is missing. The service synchronizes repository-file changes; it does not crawl retailers. Gemini Nano inference is local and needs a compatible AICore device/model, without an OpenAI key. See [connected service setup](./services/adviser/README.md) and [implementation evidence](./research/connected-adviser/IMPLEMENTATION.md). Older research reports describe the earlier demo and remain historical.
 
 ## Install and run the Android demo
 
@@ -28,7 +32,7 @@ Start an emulator in Android Studio Device Manager before running the command. Y
 
 ### Install the existing APK
 
-The release APK is checked into GitHub at `apps/adviser/artifacts/lua-adviser-demo.apk`. With Android Platform Tools installed and an authorized phone or running emulator, use this from the repository root:
+The local release handoff is `apps/adviser/artifacts/lua-adviser-demo.apk`. `npm run build:android` refreshes it from the native release output and writes `lua-adviser-demo.manifest.json` with its SHA-256. With Android Platform Tools installed and an authorized phone or running emulator, use this from the repository root:
 
 ```powershell
 $adb = "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe"
@@ -68,4 +72,4 @@ The build script generates the Expo Android project when needed. The first build
 - If Expo Go reports an SDK mismatch, install the SDK 54-compatible Android version from [expo.dev/go](https://expo.dev/go).
 - If the app cannot reach Metro, put the phone and computer on the same network or wait for the emulator to finish booting before retrying.
 - If Gradle cannot find Java or Android SDK, set `JAVA_HOME` and `ANDROID_HOME`, open a new PowerShell window, and retry the build.
-- The APK uses a debug signing key and is for development/demo use, not Play Store distribution. All products, configurations, sellers and prices are fictional. Optional live AI requires the separate server described in the [app README](./apps/adviser/README.md#optional-live-ai); without it, the app uses its labelled deterministic fallback.
+- The APK still uses a development signing key. Version 0.4.0 uses real, dated repository listings and on-device Gemini Nano through AICore on compatible devices. Source refresh uses the separate catalog service; prices are historical observations, not verified live checkout amounts. See the [current app instructions](./apps/adviser/README.md).

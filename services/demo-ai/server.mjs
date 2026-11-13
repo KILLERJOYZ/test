@@ -6,6 +6,7 @@ import {
   validatePatch,
 } from "../../apps/adviser/src/ai.ts";
 import { validateNeeds, validOffers } from "../../apps/adviser/src/picker.ts";
+import { context as validateContext } from "../../research/prebuild/tools/contract_validation.mjs";
 import { OFFERS } from "../../apps/adviser/src/domain.ts";
 
 export function createServer({ provider = callProvider } = {}) {
@@ -74,6 +75,8 @@ export function createServer({ provider = callProvider } = {}) {
       if (structural.length) throw Error("INVALID_INPUT");
       const offers = data.offers ?? OFFERS;
       if (!validOffers(offers)) throw Error("INVALID_INPUT");
+      if(data.context){validateContext(data.context);if(data.context.profileRevision!==n.revision)throw Error("INVALID_INPUT");}
+      const focused = data.context?.focusVariantIds;
       calls++;
       const isPatch = req.url === "/demo/needs/interpret";
       const instructions = isPatch
@@ -82,16 +85,18 @@ export function createServer({ provider = callProvider } = {}) {
       const value = await provider(instructions, {
         text: data.text,
         needs: n,
-        ...(!isPatch ? { allowedClaims: allowedClaims(n, offers) } : {}),
+        ...(data.context ? {context:data.context}:{}),
+        ...(!isPatch ? { allowedClaims: allowedClaims(n, offers).filter(c=>!focused||focused.includes(c.productId)) } : {}),
       });
       if (isPatch) {
         const patch = validatePatch(value.patch, n);
-        send(200, { mode: "live", profileRevision: n.revision, patch });
+        send(200, { mode: "live", profileRevision: n.revision, ...(data.context ? {context:data.context}:{}), patch });
       } else {
-        renderClaims(value.claims, n, offers);
+        renderClaims(value.claims, n, offers, focused);
         send(200, {
           mode: "live",
           profileRevision: n.revision,
+          ...(data.context ? {context:data.context}:{}),
           claims: value.claims,
         });
       }

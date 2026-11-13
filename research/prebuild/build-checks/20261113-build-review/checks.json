@@ -1,0 +1,65 @@
+[
+  {
+    "name": "unit-packs",
+    "command": [
+      "python",
+      "research/prebuild/tools/run_unit_packs.py",
+      "--all"
+    ],
+    "exitCode": 0,
+    "startedAt": "2026-11-13T06:44:10.932614+00:00",
+    "finishedAt": "2026-11-13T06:44:17.038694+00:00",
+    "log": "research\\prebuild\\build-checks\\20261113-build-review\\unit-packs.log"
+  },
+  {
+    "name": "artifacts",
+    "command": [
+      "python",
+      "research/prebuild/tools/validate.py",
+      "--all"
+    ],
+    "exitCode": 0,
+    "startedAt": "2026-11-13T06:44:17.038809+00:00",
+    "finishedAt": "2026-11-13T06:44:17.892004+00:00",
+    "log": "research\\prebuild\\build-checks\\20261113-build-review\\artifacts.log"
+  },
+  {
+    "name": "gate-g4",
+    "command": [
+      "python",
+      "research/prebuild/tools/validate.py",
+      "--gate",
+      "G4"
+    ],
+    "exitCode": 2,
+    "startedAt": "2026-11-13T06:44:17.892106+00:00",
+    "finishedAt": "2026-11-13T06:44:18.798299+00:00",
+    "log": "research\\prebuild\\build-checks\\20261113-build-review\\gate-g4.log"
+  },
+  {
+    "name": "service-http",
+    "command": [
+      "node",
+      "--experimental-strip-types",
+      "--test",
+      "services/demo-ai/server.test.mjs"
+    ],
+    "exitCode": 0,
+    "startedAt": "2026-11-13T06:44:18.798440+00:00",
+    "finishedAt": "2026-11-13T06:44:19.281382+00:00",
+    "log": "research\\prebuild\\build-checks\\20261113-build-review\\service-http.log"
+  },
+  {
+    "name": "spike-http",
+    "command": [
+      "node",
+      "--experimental-strip-types",
+      "--test",
+      "spikes/prebuild-contract/contract.test.mjs"
+    ],
+    "exitCode": 0,
+    "startedAt": "2026-11-13T06:44:19.281474+00:00",
+    "finishedAt": "2026-11-13T06:44:19.822877+00:00",
+    "log": "research\\prebuild\\build-checks\\20261113-build-review\\spike-http.log"
+  }
+]

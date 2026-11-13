@@ -1,0 +1,2554 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R09",
+  "inputs": [
+    {
+      "ref": "apps/adviser/src/domain.ts",
+      "sha256": "354e41010c5a7b1da8f4413aaca67f9e44d87647c2d3f6af5603c0583d2c81b1"
+    },
+    {
+      "ref": "apps/adviser/src/picker.ts",
+      "sha256": "14d40ac999a997ad4275daefe126570aabae8fed8c897b7ba581b5924357e133"
+    },
+    {
+      "ref": "research/prebuild/05-evaluation-cases.json",
+      "sha256": "7cbd6ed3cd599c89a8a21a601ff596bba74ab98e88f814349d4a670fd6659bfd"
+    }
+  ],
+  "data": {
+    "runs": [
+      {
+        "id": "2026-11-13T05:54:17.820Z",
+        "partition": "development",
+        "classification": "development",
+        "rows": [
+          {
+            "id": "lexical-Q-exact-1",
+            "arm": "lexical",
+            "caseId": "Q-exact-1",
+            "partition": "development",
+            "inputHash": "7d6ffe1878077cf88f325cb9106b733ff86cc06fc13f15571fc086897c825f4d",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p1"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 13.27239999999999,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-2",
+            "arm": "lexical",
+            "caseId": "Q-exact-2",
+            "partition": "development",
+            "inputHash": "23c38ba9f34fc66632cabf2f96c1c54c3353eb766acd99387299c83a5085e9fc",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p2",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p2"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.11880000000000734,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-3",
+            "arm": "lexical",
+            "caseId": "Q-exact-3",
+            "partition": "development",
+            "inputHash": "4f54d5843ab9cc591b4049345402c62627f797626bc932a5d8d0504406244fc2",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p3",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p3"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.06090000000000373,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-4",
+            "arm": "lexical",
+            "caseId": "Q-exact-4",
+            "partition": "development",
+            "inputHash": "c4e241d12a86995014f3d02ff57717a172c150105a68ca4dd7480831a35080ee",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p4",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p4"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.08950000000000102,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-5",
+            "arm": "lexical",
+            "caseId": "Q-exact-5",
+            "partition": "development",
+            "inputHash": "449acc0bb7bf2670b7019d6297fbe4d9a5285eb67854c1ea9709f3b201d50bb4",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p5",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p6"
+            ],
+            "expected": [
+              "p5"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.04619999999999891,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-6",
+            "arm": "lexical",
+            "caseId": "Q-exact-6",
+            "partition": "development",
+            "inputHash": "ae471f4f3fa50ac891c084c696f177a832ba700fc5c87336b398beac1b00803b",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p6",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5"
+            ],
+            "expected": [
+              "p6"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.05349999999999966,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-7",
+            "arm": "lexical",
+            "caseId": "Q-exact-7",
+            "partition": "development",
+            "inputHash": "4c83c68361771dbf7edfdfceee3cb940d84e0f5c3a546fe46290fb2ae8eb89e3",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p7"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 0,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 0
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.04039999999999111,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-8",
+            "arm": "lexical",
+            "caseId": "Q-exact-8",
+            "partition": "development",
+            "inputHash": "ec65ec21cc9f2194da3c7e2b0313fe46afc29384296ab209752b14a558008156",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p8"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 0,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 0
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.057999999999992724,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-9",
+            "arm": "lexical",
+            "caseId": "Q-exact-9",
+            "partition": "development",
+            "inputHash": "37604cafe46e4610525b2a86e3b7f87c86f3f712ea1ca2917c1fc78dc978a45a",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p9"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 0,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 0
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.06439999999999202,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-10",
+            "arm": "lexical",
+            "caseId": "Q-exact-10",
+            "partition": "development",
+            "inputHash": "3b017a8bfc07af2a6a0b1bcea2746ddf5146b1dcbfae190ba3a5416b9fb66461",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p10",
+              "p1",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p10"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.050699999999991974,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-11",
+            "arm": "lexical",
+            "caseId": "Q-exact-11",
+            "partition": "development",
+            "inputHash": "5bfe595854fc923625cd6da4c509d97e6a594662b466d72e60c282408ebdd2db",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p10",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p11"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.06409999999999627,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-12",
+            "arm": "lexical",
+            "caseId": "Q-exact-12",
+            "partition": "development",
+            "inputHash": "b48ff7029defad37ca297767b0e2b57fb2b186c3e61d2bcf89ad002f9bffea77",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p12",
+              "p1",
+              "p10",
+              "p11",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p12"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.03920000000000812,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-13",
+            "arm": "lexical",
+            "caseId": "Q-exact-13",
+            "partition": "development",
+            "inputHash": "68e118d580e9bae713612de1a63b650d26305cb29867babe88eea08b6063e92b",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p1"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.04980000000000473,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-14",
+            "arm": "lexical",
+            "caseId": "Q-exact-14",
+            "partition": "development",
+            "inputHash": "69b9d4a6ee86170f91fa53936b904853ce24f9fc2aabae9be5381489b4403c68",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p2",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p2"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.04370000000000118,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-15",
+            "arm": "lexical",
+            "caseId": "Q-exact-15",
+            "partition": "development",
+            "inputHash": "2af7c08e1ddbeee01223a80da2171e139f33655be6b37bb920474cb2949831d5",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p3",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p3"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.04650000000000887,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-16",
+            "arm": "lexical",
+            "caseId": "Q-exact-16",
+            "partition": "development",
+            "inputHash": "26ef784b0f2559334b3c32fb2c609f3e8547d2d9766c22e3f46e0325359830a6",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p4",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p4"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.06879999999999598,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-17",
+            "arm": "lexical",
+            "caseId": "Q-exact-17",
+            "partition": "development",
+            "inputHash": "1bc6a6afbfe6c038599c1f073e3eeacf669d5c2d11a6af4578b176c7e33ca541",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p5",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p6"
+            ],
+            "expected": [
+              "p5"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.05580000000000496,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-18",
+            "arm": "lexical",
+            "caseId": "Q-exact-18",
+            "partition": "development",
+            "inputHash": "4dca781af3edd27955a60dd51330d90702370b617d1e4f09c22170b064692432",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p6",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5"
+            ],
+            "expected": [
+              "p6"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.10479999999999734,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-19",
+            "arm": "lexical",
+            "caseId": "Q-exact-19",
+            "partition": "development",
+            "inputHash": "4f46f6b1fac8dd350acb6fda3ed86d2e1d1cf6e4dd12ce469a86a5cd24c5fb2f",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p7"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 0,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 0
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.04449999999999932,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-exact-20",
+            "arm": "lexical",
+            "caseId": "Q-exact-20",
+            "partition": "development",
+            "inputHash": "90d1456f7de9840f390d29d73354d969410350d2589743bc681198ca352a66bf",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": [
+              "p8"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 0,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 0
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.05509999999999593,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-task-1",
+            "arm": "lexical",
+            "caseId": "Q-task-1",
+            "partition": "development",
+            "inputHash": "2819e28a8e1550e353719f8fb7f679d541b92262d9ee850d7d8a842022f202ea",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.18939999999999202,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-task-2",
+            "arm": "lexical",
+            "caseId": "Q-task-2",
+            "partition": "development",
+            "inputHash": "625db6e398cec6563a370eb6bc4955472fad3db5a9dc2d195e8358c9ffaf35b6",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.09890000000000043,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-task-3",
+            "arm": "lexical",
+            "caseId": "Q-task-3",
+            "partition": "development",
+            "inputHash": "b2acf2ac16e7622553b6175afc78a263bec18d2b04f76c0e0ca1a4b7a74725a8",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.08630000000000848,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-task-4",
+            "arm": "lexical",
+            "caseId": "Q-task-4",
+            "partition": "development",
+            "inputHash": "a6ddff99cac1a3015b5430625a26ea6c36b972ecd407d4cea8a25c2fdec05fa2",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.09499999999999886,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-task-5",
+            "arm": "lexical",
+            "caseId": "Q-task-5",
+            "partition": "development",
+            "inputHash": "3fd2a8baf4aa52b0558cc2878576891716cc77c61f7ab83e0c5729c154e5bb08",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.792900000000003,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-task-6",
+            "arm": "lexical",
+            "caseId": "Q-task-6",
+            "partition": "development",
+            "inputHash": "ad45f8e19a9b3889f394566a77710a610e474411828d9079bfd2b121feba1cc4",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.13110000000000355,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-task-7",
+            "arm": "lexical",
+            "caseId": "Q-task-7",
+            "partition": "development",
+            "inputHash": "65cf32770fbc3ad2ad3337fae1e5c0540d28f77d31139e64579ffc8da73589cc",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.1478000000000037,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-task-8",
+            "arm": "lexical",
+            "caseId": "Q-task-8",
+            "partition": "development",
+            "inputHash": "31cfdadd660d170562d835a4f0f062fdda3a65aca115d45a37a8c52c306972eb",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.08299999999999841,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-task-9",
+            "arm": "lexical",
+            "caseId": "Q-task-9",
+            "partition": "development",
+            "inputHash": "6128d5f08039666b3be175387b394cc36888d26007045445250ffeb4e79274bd",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.07389999999999475,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-task-10",
+            "arm": "lexical",
+            "caseId": "Q-task-10",
+            "partition": "development",
+            "inputHash": "f96fee3be46012b9ce1fffc9080a243d63288ddbb22f58b819f455cb2de84b3d",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.07750000000000057,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-typo-1",
+            "arm": "lexical",
+            "caseId": "Q-typo-1",
+            "partition": "development",
+            "inputHash": "fbfb62b769d95e0e486ea3f114555db6418685e519c5d7698c64023ad90545a0",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.04639999999999134,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-typo-2",
+            "arm": "lexical",
+            "caseId": "Q-typo-2",
+            "partition": "development",
+            "inputHash": "b332dc3cc0edbffd0709115cf735aae82b8bfb18eb295f5de67bd6626e59673c",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p2",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.06829999999999359,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-typo-3",
+            "arm": "lexical",
+            "caseId": "Q-typo-3",
+            "partition": "development",
+            "inputHash": "da4022f05f963faa209e75d41f3092894408e15fce079cbd2b7f27c7914613f8",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p3",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.052399999999991564,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-typo-4",
+            "arm": "lexical",
+            "caseId": "Q-typo-4",
+            "partition": "development",
+            "inputHash": "32e7a92a911a81f8372d3b26b8972e189bfac042d7cf1f9a6faa7aba356c6b25",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p4",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.06319999999999482,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-typo-5",
+            "arm": "lexical",
+            "caseId": "Q-typo-5",
+            "partition": "development",
+            "inputHash": "bad2d4b5b215e8466b8a3f1e2ac2f42d8e1b6312c5675e86d96d7be61755029b",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p5",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.06049999999999045,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-typo-6",
+            "arm": "lexical",
+            "caseId": "Q-typo-6",
+            "partition": "development",
+            "inputHash": "cc3f3272086cc5e931e7b316271b5b23d8729f86dd2261e4d328ff3fe287f448",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p6",
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.05489999999998929,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-typo-7",
+            "arm": "lexical",
+            "caseId": "Q-typo-7",
+            "partition": "development",
+            "inputHash": "cbc95a2bddaa894fe300a3087dc04686eb2814a7b72b0f15f3ac182aea3c8df1",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p1",
+              "p10",
+              "p11",
+              "p12",
+              "p2",
+              "p3",
+              "p4",
+              "p5",
+              "p6"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.046999999999997044,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-unsupported-1",
+            "arm": "lexical",
+            "caseId": "Q-unsupported-1",
+            "partition": "development",
+            "inputHash": "d29e5e4ab7c914ce4ad72c762dbf87381933cd6da15331f01bfeacd088059cdd",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.015900000000002024,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-unsupported-2",
+            "arm": "lexical",
+            "caseId": "Q-unsupported-2",
+            "partition": "development",
+            "inputHash": "60e57fa180073a15b16b21869a75c6d22d8183e4b21b0dda66ab719202d3d9a0",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.014200000000002433,
+            "result": "pass"
+          },
+          {
+            "id": "lexical-Q-unsupported-3",
+            "arm": "lexical",
+            "caseId": "Q-unsupported-3",
+            "partition": "development",
+            "inputHash": "1a010e9068ed19c68499218be11596d7f146d3cfd41a3e60b02de55c0c4c6fc0",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.017300000000005866,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-1",
+            "arm": "workload",
+            "caseId": "Q-exact-1",
+            "partition": "development",
+            "inputHash": "7d6ffe1878077cf88f325cb9106b733ff86cc06fc13f15571fc086897c825f4d",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p1"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.2968999999999937,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-2",
+            "arm": "workload",
+            "caseId": "Q-exact-2",
+            "partition": "development",
+            "inputHash": "23c38ba9f34fc66632cabf2f96c1c54c3353eb766acd99387299c83a5085e9fc",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p2"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.04980000000000473,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-3",
+            "arm": "workload",
+            "caseId": "Q-exact-3",
+            "partition": "development",
+            "inputHash": "4f54d5843ab9cc591b4049345402c62627f797626bc932a5d8d0504406244fc2",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p3"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.06100000000000705,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-4",
+            "arm": "workload",
+            "caseId": "Q-exact-4",
+            "partition": "development",
+            "inputHash": "c4e241d12a86995014f3d02ff57717a172c150105a68ca4dd7480831a35080ee",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p4"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.05660000000000309,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-5",
+            "arm": "workload",
+            "caseId": "Q-exact-5",
+            "partition": "development",
+            "inputHash": "449acc0bb7bf2670b7019d6297fbe4d9a5285eb67854c1ea9709f3b201d50bb4",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p5"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.033999999999991815,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-6",
+            "arm": "workload",
+            "caseId": "Q-exact-6",
+            "partition": "development",
+            "inputHash": "ae471f4f3fa50ac891c084c696f177a832ba700fc5c87336b398beac1b00803b",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p6"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.033900000000002706,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-7",
+            "arm": "workload",
+            "caseId": "Q-exact-7",
+            "partition": "development",
+            "inputHash": "4c83c68361771dbf7edfdfceee3cb940d84e0f5c3a546fe46290fb2ae8eb89e3",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p7"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 0,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 0
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.039599999999992974,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-8",
+            "arm": "workload",
+            "caseId": "Q-exact-8",
+            "partition": "development",
+            "inputHash": "ec65ec21cc9f2194da3c7e2b0313fe46afc29384296ab209752b14a558008156",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p8"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 0,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 0
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.04729999999999279,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-9",
+            "arm": "workload",
+            "caseId": "Q-exact-9",
+            "partition": "development",
+            "inputHash": "37604cafe46e4610525b2a86e3b7f87c86f3f712ea1ca2917c1fc78dc978a45a",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p9"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 0,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 0
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.04829999999999757,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-10",
+            "arm": "workload",
+            "caseId": "Q-exact-10",
+            "partition": "development",
+            "inputHash": "3b017a8bfc07af2a6a0b1bcea2746ddf5146b1dcbfae190ba3a5416b9fb66461",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p10"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.034300000000001774,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-11",
+            "arm": "workload",
+            "caseId": "Q-exact-11",
+            "partition": "development",
+            "inputHash": "5bfe595854fc923625cd6da4c509d97e6a594662b466d72e60c282408ebdd2db",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p11"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.034300000000001774,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-12",
+            "arm": "workload",
+            "caseId": "Q-exact-12",
+            "partition": "development",
+            "inputHash": "b48ff7029defad37ca297767b0e2b57fb2b186c3e61d2bcf89ad002f9bffea77",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p12"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.057900000000003615,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-13",
+            "arm": "workload",
+            "caseId": "Q-exact-13",
+            "partition": "development",
+            "inputHash": "68e118d580e9bae713612de1a63b650d26305cb29867babe88eea08b6063e92b",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p1"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.039599999999992974,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-14",
+            "arm": "workload",
+            "caseId": "Q-exact-14",
+            "partition": "development",
+            "inputHash": "69b9d4a6ee86170f91fa53936b904853ce24f9fc2aabae9be5381489b4403c68",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p2"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.033699999999996066,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-15",
+            "arm": "workload",
+            "caseId": "Q-exact-15",
+            "partition": "development",
+            "inputHash": "2af7c08e1ddbeee01223a80da2171e139f33655be6b37bb920474cb2949831d5",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p3"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.3680999999999983,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-16",
+            "arm": "workload",
+            "caseId": "Q-exact-16",
+            "partition": "development",
+            "inputHash": "26ef784b0f2559334b3c32fb2c609f3e8547d2d9766c22e3f46e0325359830a6",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p4"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.029899999999997817,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-17",
+            "arm": "workload",
+            "caseId": "Q-exact-17",
+            "partition": "development",
+            "inputHash": "1bc6a6afbfe6c038599c1f073e3eeacf669d5c2d11a6af4578b176c7e33ca541",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p5"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.047100000000000364,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-18",
+            "arm": "workload",
+            "caseId": "Q-exact-18",
+            "partition": "development",
+            "inputHash": "4dca781af3edd27955a60dd51330d90702370b617d1e4f09c22170b064692432",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p6"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 1,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 1
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.02420000000000755,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-19",
+            "arm": "workload",
+            "caseId": "Q-exact-19",
+            "partition": "development",
+            "inputHash": "4f46f6b1fac8dd350acb6fda3ed86d2e1d1cf6e4dd12ce469a86a5cd24c5fb2f",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p7"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 0,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 0
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.030799999999999272,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-exact-20",
+            "arm": "workload",
+            "caseId": "Q-exact-20",
+            "partition": "development",
+            "inputHash": "90d1456f7de9840f390d29d73354d969410350d2589743bc681198ca352a66bf",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": [
+              "p8"
+            ],
+            "labelProvenance": "synthetic_rule",
+            "metric": {
+              "numerator": 0,
+              "denominator": 1,
+              "unknown": 0,
+              "recall": 0
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.03130000000001587,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-task-1",
+            "arm": "workload",
+            "caseId": "Q-task-1",
+            "partition": "development",
+            "inputHash": "2819e28a8e1550e353719f8fb7f679d541b92262d9ee850d7d8a842022f202ea",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.03160000000002583,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-task-2",
+            "arm": "workload",
+            "caseId": "Q-task-2",
+            "partition": "development",
+            "inputHash": "625db6e398cec6563a370eb6bc4955472fad3db5a9dc2d195e8358c9ffaf35b6",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.030500000000017735,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-task-3",
+            "arm": "workload",
+            "caseId": "Q-task-3",
+            "partition": "development",
+            "inputHash": "b2acf2ac16e7622553b6175afc78a263bec18d2b04f76c0e0ca1a4b7a74725a8",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.023300000000006094,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-task-4",
+            "arm": "workload",
+            "caseId": "Q-task-4",
+            "partition": "development",
+            "inputHash": "a6ddff99cac1a3015b5430625a26ea6c36b972ecd407d4cea8a25c2fdec05fa2",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.02199999999999136,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-task-5",
+            "arm": "workload",
+            "caseId": "Q-task-5",
+            "partition": "development",
+            "inputHash": "3fd2a8baf4aa52b0558cc2878576891716cc77c61f7ab83e0c5729c154e5bb08",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.020999999999986585,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-task-6",
+            "arm": "workload",
+            "caseId": "Q-task-6",
+            "partition": "development",
+            "inputHash": "ad45f8e19a9b3889f394566a77710a610e474411828d9079bfd2b121feba1cc4",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.021100000000018326,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-task-7",
+            "arm": "workload",
+            "caseId": "Q-task-7",
+            "partition": "development",
+            "inputHash": "65cf32770fbc3ad2ad3337fae1e5c0540d28f77d31139e64579ffc8da73589cc",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.021200000000021646,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-task-8",
+            "arm": "workload",
+            "caseId": "Q-task-8",
+            "partition": "development",
+            "inputHash": "31cfdadd660d170562d835a4f0f062fdda3a65aca115d45a37a8c52c306972eb",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.02049999999999841,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-task-9",
+            "arm": "workload",
+            "caseId": "Q-task-9",
+            "partition": "development",
+            "inputHash": "6128d5f08039666b3be175387b394cc36888d26007045445250ffeb4e79274bd",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.03149999999999409,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-task-10",
+            "arm": "workload",
+            "caseId": "Q-task-10",
+            "partition": "development",
+            "inputHash": "f96fee3be46012b9ce1fffc9080a243d63288ddbb22f58b819f455cb2de84b3d",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.022700000000014597,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-typo-1",
+            "arm": "workload",
+            "caseId": "Q-typo-1",
+            "partition": "development",
+            "inputHash": "fbfb62b769d95e0e486ea3f114555db6418685e519c5d7698c64023ad90545a0",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.022799999999989495,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-typo-2",
+            "arm": "workload",
+            "caseId": "Q-typo-2",
+            "partition": "development",
+            "inputHash": "b332dc3cc0edbffd0709115cf735aae82b8bfb18eb295f5de67bd6626e59673c",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.021200000000021646,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-typo-3",
+            "arm": "workload",
+            "caseId": "Q-typo-3",
+            "partition": "development",
+            "inputHash": "da4022f05f963faa209e75d41f3092894408e15fce079cbd2b7f27c7914613f8",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.021500000000003183,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-typo-4",
+            "arm": "workload",
+            "caseId": "Q-typo-4",
+            "partition": "development",
+            "inputHash": "32e7a92a911a81f8372d3b26b8972e189bfac042d7cf1f9a6faa7aba356c6b25",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.030399999999985994,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-typo-5",
+            "arm": "workload",
+            "caseId": "Q-typo-5",
+            "partition": "development",
+            "inputHash": "bad2d4b5b215e8466b8a3f1e2ac2f42d8e1b6312c5675e86d96d7be61755029b",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.02209999999999468,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-typo-6",
+            "arm": "workload",
+            "caseId": "Q-typo-6",
+            "partition": "development",
+            "inputHash": "cc3f3272086cc5e931e7b316271b5b23d8729f86dd2261e4d328ff3fe287f448",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.021100000000018326,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-typo-7",
+            "arm": "workload",
+            "caseId": "Q-typo-7",
+            "partition": "development",
+            "inputHash": "cbc95a2bddaa894fe300a3087dc04686eb2814a7b72b0f15f3ac182aea3c8df1",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [
+              "p11",
+              "p1",
+              "p4",
+              "p6",
+              "p2",
+              "p3",
+              "p12",
+              "p10",
+              "p5"
+            ],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.020900000000011687,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-unsupported-1",
+            "arm": "workload",
+            "caseId": "Q-unsupported-1",
+            "partition": "development",
+            "inputHash": "d29e5e4ab7c914ce4ad72c762dbf87381933cd6da15331f01bfeacd088059cdd",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.007100000000008322,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-unsupported-2",
+            "arm": "workload",
+            "caseId": "Q-unsupported-2",
+            "partition": "development",
+            "inputHash": "60e57fa180073a15b16b21869a75c6d22d8183e4b21b0dda66ab719202d3d9a0",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.007399999999989859,
+            "result": "pass"
+          },
+          {
+            "id": "workload-Q-unsupported-3",
+            "arm": "workload",
+            "caseId": "Q-unsupported-3",
+            "partition": "development",
+            "inputHash": "1a010e9068ed19c68499218be11596d7f146d3cfd41a3e60b02de55c0c4c6fc0",
+            "snapshotHash": "f60f985fbe7207b47579e5f9304b829a270cbf28a8ef27984ddd569d4f1b7245",
+            "policyHash": "cf1a2ad74f1c64f89fe32c526f736433f3f59290434c645098c9f52df8709778",
+            "returnedIds": [],
+            "expected": null,
+            "labelProvenance": "unknown",
+            "metric": {
+              "numerator": 0,
+              "denominator": 0,
+              "unknown": 1,
+              "recall": null
+            },
+            "integrityFailures": [],
+            "latencyMs": 0.0069000000000016826,
+            "result": "pass"
+          }
+        ],
+        "summary": {
+          "attempts": 80,
+          "failures": 0,
+          "unknown": 40,
+          "numerator": 30,
+          "denominator": 40,
+          "rate": 0.375
+        },
+        "unavailableArms": [
+          {
+            "arm": "vector",
+            "status": "not_run",
+            "reason": "Provider credentials/approved corpus and comparable vector adapter not configured; existing Python search requires Qdrant.",
+            "latencyMs": null,
+            "metric": null
+          }
+        ]
+      }
+    ]
+  },
+  "evidenceRefs": [],
+  "gaps": [
+    {
+      "id": "GAP-R09-UTILITY",
+      "reason": "Synthetic invariant/identity metrics only; no confirmed hardware or buyer utility.",
+      "nextAction": "Adjudicate real heldout labels before qualification."
+    }
+  ]
+}

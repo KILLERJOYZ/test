@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R03",
+  "inputs": [
+    {
+      "ref": "crawler/index.js",
+      "sha256": "9716f200113cf99b8ad77794c69f1dcaa2798c271c1618eead62957982062d80"
+    },
+    {
+      "ref": "crawler/README.md",
+      "sha256": "18b2b5be48b4b54f449694a18d30433c630ad0cd934f35c4271d1325d4df9aa4"
+    },
+    {
+      "ref": "research/sources.md",
+      "sha256": "74136ca5e1720595cb92abdfbea8f0638a82e598141833b25e5135aace5c534a"
+    },
+    {
+      "ref": "brd.md",
+      "sha256": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712"
+    }
+  ],
+  "data": {
+    "sources": [
+      {
+        "id": "cellphones",
+        "accessRoute": "https://cellphones.com.vn/tos",
+        "coverage": "Four crawler retailers; PSREF candidate exact-model reference. Coverage unverified.",
+        "uses": [
+          {
+            "purpose": "research_collection",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-CPS"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "storage_history",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-CPS"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "display_redistribution",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-CPS"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "images_reviews",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-CPS"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "ai_processing",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-CPS"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          }
+        ],
+        "cadence": null,
+        "retention": null,
+        "evidenceRefs": [
+          "E-R03-CPS"
+        ],
+        "unresolved": [
+          "Applicable source agreement or explicit terms",
+          "Exact variant and workload evidence",
+          "Refresh cadence and retention limits"
+        ]
+      },
+      {
+        "id": "thegioididong",
+        "accessRoute": "https://www.thegioididong.com/tos",
+        "coverage": "Four crawler retailers; PSREF candidate exact-model reference. Coverage unverified.",
+        "uses": [
+          {
+            "purpose": "research_collection",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-TGDD"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "storage_history",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-TGDD"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "display_redistribution",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-TGDD"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "images_reviews",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-TGDD"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "ai_processing",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-TGDD"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          }
+        ],
+        "cadence": null,
+        "retention": null,
+        "evidenceRefs": [
+          "E-R03-TGDD"
+        ],
+        "unresolved": [
+          "Applicable source agreement or explicit terms",
+          "Exact variant and workload evidence",
+          "Refresh cadence and retention limits"
+        ]
+      },
+      {
+        "id": "fptshop",
+        "accessRoute": "https://fptshop.com.vn/dieu-khoan-su-dung",
+        "coverage": "Four crawler retailers; PSREF candidate exact-model reference. Coverage unverified.",
+        "uses": [
+          {
+            "purpose": "research_collection",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-FPT"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "storage_history",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-FPT"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "display_redistribution",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-FPT"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "images_reviews",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-FPT"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "ai_processing",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-FPT"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          }
+        ],
+        "cadence": null,
+        "retention": null,
+        "evidenceRefs": [
+          "E-R03-FPT"
+        ],
+        "unresolved": [
+          "Applicable source agreement or explicit terms",
+          "Exact variant and workload evidence",
+          "Refresh cadence and retention limits"
+        ]
+      },
+      {
+        "id": "dienmayxanh",
+        "accessRoute": "https://www.dienmayxanh.com/dieu-khoan-su-dung",
+        "coverage": "Four crawler retailers; PSREF candidate exact-model reference. Coverage unverified.",
+        "uses": [
+          {
+            "purpose": "research_collection",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-DMX"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "storage_history",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-DMX"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "display_redistribution",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-DMX"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "images_reviews",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-DMX"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "ai_processing",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-DMX"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          }
+        ],
+        "cadence": null,
+        "retention": null,
+        "evidenceRefs": [
+          "E-R03-DMX"
+        ],
+        "unresolved": [
+          "Applicable source agreement or explicit terms",
+          "Exact variant and workload evidence",
+          "Refresh cadence and retention limits"
+        ]
+      },
+      {
+        "id": "lenovo_psref",
+        "accessRoute": "https://psref.lenovo.com/",
+        "coverage": "Four crawler retailers; PSREF candidate exact-model reference. Coverage unverified.",
+        "uses": [
+          {
+            "purpose": "research_collection",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-PSREF"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "storage_history",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-PSREF"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "display_redistribution",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-PSREF"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "images_reviews",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-PSREF"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          },
+          {
+            "purpose": "ai_processing",
+            "status": "unresolved",
+            "evidenceRefs": [
+              "E-R03-PSREF"
+            ],
+            "scope": "No documented grant established by this inspection.",
+            "expiresAt": null,
+            "ready": false
+          }
+        ],
+        "cadence": null,
+        "retention": null,
+        "evidenceRefs": [
+          "E-R03-PSREF"
+        ],
+        "unresolved": [
+          "Applicable source agreement or explicit terms",
+          "Exact variant and workload evidence",
+          "Refresh cadence and retention limits"
+        ]
+      }
+    ],
+    "selectedRoute": "Audit existing local snapshots as crawled_draft; no new crawl or production publication.",
+    "workloadEvidenceRoute": "Exact manufacturer SKU plus application requirements and independently reviewed workload evidence remain required."
+  },
+  "evidenceRefs": [
+    "E-R03-CPS",
+    "E-R03-TGDD",
+    "E-R03-FPT",
+    "E-R03-DMX",
+    "E-R03-PSREF"
+  ],
+  "gaps": [
+    {
+      "id": "GAP-R03-001",
+      "reason": "No source-use agreement or production license established. Some attempted primary pages were inaccessible.",
+      "nextAction": "Inspect interactive flows or obtain documented source access as applicable; retain unknown outcomes."
+    }
+  ]
+}

@@ -1,0 +1,532 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "e6147a54a1ee487f982b23cecdd6f04d",
+  "selection": {
+    "task": null,
+    "pack": null,
+    "changed": [
+      "research/prebuild/tools/validate.py",
+      "research/prebuild/tools/run_unit_packs.py"
+    ],
+    "all": false
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/test_validate.py": "5fff8a906e9b8be518dbf8c52465386ea6ed96ae29c0c7bed382b3ebf4c67661",
+    "research/prebuild/tools/test_unit_runner.py": "350f078a44a9fe4cc22d8aa116ca3e2c95e26c7011b59d7bf5e2c0369ec0c7f7",
+    "research/prebuild/tools/validate.py": "6cadceb083c6ce14fb6cd214bcf73187dd7e2a1fc77b1d3b8efa5a05f984fdb5",
+    "research/prebuild/tools/run_unit_packs.py": "a1877f60d4899bf1bc6fa27144030cab5945a9c3bb1ce87301a7f435505dcc07"
+  },
+  "manifestHash": "4c04077695ff3b5f5f6328a2c6f590e50b0de973b4acccb374b84291820dff76",
+  "packs": [
+    {
+      "id": "U00",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U00-01",
+          "status": "passed"
+        },
+        {
+          "id": "U00-02",
+          "status": "passed"
+        },
+        {
+          "id": "U00-03",
+          "status": "passed"
+        },
+        {
+          "id": "U00-04",
+          "status": "passed"
+        },
+        {
+          "id": "U00-05",
+          "status": "passed"
+        },
+        {
+          "id": "U00-06",
+          "status": "passed"
+        },
+        {
+          "id": "U00-07",
+          "status": "passed"
+        },
+        {
+          "id": "U00-08",
+          "status": "passed"
+        },
+        {
+          "id": "U00-09",
+          "status": "passed"
+        },
+        {
+          "id": "U00-10",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/e6147a54a1ee487f982b23cecdd6f04d-validator_tests.log",
+        "research/prebuild/runs/20261113T052229Z/unit-packs/e6147a54a1ee487f982b23cecdd6f04d-unit_runner_tests.log"
+      ]
+    },
+    {
+      "id": "U01",
+      "exitCode": 2,
+      "cases": [
+        {
+          "id": "U01-01",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U01-02",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U01-03",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U01-04",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U01-05",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "id": "U02",
+      "exitCode": 2,
+      "cases": [
+        {
+          "id": "U02-01",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U02-02",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U02-03",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U02-04",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U02-05",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "id": "U03",
+      "exitCode": 2,
+      "cases": [
+        {
+          "id": "U03-01",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U03-02",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U03-03",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U03-04",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U03-05",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "id": "U11",
+      "exitCode": 2,
+      "cases": [
+        {
+          "id": "U11-01",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U11-02",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U11-03",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U11-04",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U11-05",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U11-06",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "id": "U12",
+      "exitCode": 2,
+      "cases": [
+        {
+          "id": "U12-01",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U12-02",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U12-03",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U12-04",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U12-05",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U12-06",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "id": "U14",
+      "exitCode": 2,
+      "cases": [
+        {
+          "id": "U14-01",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U14-02",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U14-03",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U14-04",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U14-05",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U14-06",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U14-07",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U14-08",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        }
+      ],
+      "logs": []
+    }
+  ],
+  "cases": [
+    {
+      "id": "U00-01",
+      "status": "passed"
+    },
+    {
+      "id": "U00-02",
+      "status": "passed"
+    },
+    {
+      "id": "U00-03",
+      "status": "passed"
+    },
+    {
+      "id": "U00-04",
+      "status": "passed"
+    },
+    {
+      "id": "U00-05",
+      "status": "passed"
+    },
+    {
+      "id": "U00-06",
+      "status": "passed"
+    },
+    {
+      "id": "U00-07",
+      "status": "passed"
+    },
+    {
+      "id": "U00-08",
+      "status": "passed"
+    },
+    {
+      "id": "U00-09",
+      "status": "passed"
+    },
+    {
+      "id": "U00-10",
+      "status": "passed"
+    },
+    {
+      "id": "U01-01",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U01-02",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U01-03",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U01-04",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U01-05",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U02-01",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U02-02",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U02-03",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U02-04",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U02-05",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U03-01",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U03-02",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U03-03",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U03-04",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U03-05",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U11-01",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U11-02",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U11-03",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U11-04",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U11-05",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U11-06",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U12-01",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U12-02",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U12-03",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U12-04",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U12-05",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U12-06",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U14-01",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U14-02",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U14-03",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U14-04",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U14-05",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U14-06",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U14-07",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U14-08",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U00": "95042f18890d9ed277020e7590ef7a7d7a93eeedca99d26d14f1323f51375136",
+    "U01": "29bb09dd7d9cf396278090c2cc52a0228420622ef2b06db4921fa479704c3ab2",
+    "U02": "132b112d3359a27fb21ebc5a9efd0ebaabb6c4edfd20c61c93324132c0a18aab",
+    "U03": "fa9f26f9f8e5fa3eeef07a0b40d7e2cc1228eea03a6a16660ab0f850e32573d2",
+    "U11": "cb19053089875bff0d0cadbb028f3b353186dbea27b9bc5497f16b10e7338ab2",
+    "U12": "51a3f46831cacbafe1425ad5225cb60c75a3938e79295dd737523a15ce788966",
+    "U14": "4fc315ee16dc01fa3d0cf34edaae1e0d9ac7efe37c11bb9f0197da1c938faa09"
+  },
+  "fixtureHashes": {},
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/e6147a54a1ee487f982b23cecdd6f04d-validator_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/e6147a54a1ee487f982b23cecdd6f04d-unit_runner_tests.log"
+  ],
+  "passed": 10,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 35,
+  "exitCode": 2
+}
