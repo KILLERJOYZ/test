@@ -13,13 +13,12 @@ from typing import Any, Protocol
 
 import psycopg
 from qdrant_client import QdrantClient
-from qdrant_client.models import FieldCondition, Filter, MatchAny
 
 from flow import (
-    COLLECTION,
     open_qdrant_server,
     search_offers,
 )
+from qdrant_client.models import FieldCondition, Filter, MatchAny
 
 DEFAULT_URL = "postgresql://lua:lua@127.0.0.1:54329/lua"
 DEFAULT_QDRANT = "http://127.0.0.1:6335"
@@ -76,10 +75,12 @@ def search_evidence(
 
     embedder = LocalHashEmbedder()
     response = client.query_points(
-        collection_name=COLLECTION,
+        collection_name="lua_evidence",
         query=embedder.embed_query(text),
         query_filter=Filter(
-            must=[FieldCondition(key="variant_id", match=MatchAny(any=variant_ids))]
+            must=[
+                FieldCondition(key="variant_id", match=MatchAny(any=variant_ids)),
+            ]
         ),
         limit=limit,
         score_threshold=EVIDENCE_SCORE_FLOOR,
@@ -90,8 +91,6 @@ def search_evidence(
         payload = point.payload or {}
         claim = str(payload.get("claim") or "")
         if tokens and not any(token in claim.casefold() for token in tokens):
-            continue
-        if payload.get("variant_id") not in variant_ids:
             continue
         hits.append(
             {

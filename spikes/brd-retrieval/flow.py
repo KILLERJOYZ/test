@@ -22,11 +22,11 @@ from embedder.embeddings import LocalHashEmbedder
 SCHEMA_PATH = Path(__file__).resolve().parent / "schema.sql"
 DATA_PATH = ROOT / "data" / "all_laptops_normalized.json"
 COLLECTION = "lua_evidence"
+NAMESPACE = uuid.UUID("6f0c1a2e-4b7d-4e5a-9c1f-8a2b3c4d5e6f")
 DATASET_KIND = "crawled_draft"
 PUBLICATION_STATE = "draft"
 PERMITTED_USE = "demo_flow_only"
 CLAIM_FIELDS = ("cpu", "ram", "storage", "gpu", "screen")
-NAMESPACE = uuid.UUID("6f0c1a2e-4b7d-4e5a-9c1f-8a2b3c4d5e6f")
 
 
 def point_id(evidence_id: str) -> str:
