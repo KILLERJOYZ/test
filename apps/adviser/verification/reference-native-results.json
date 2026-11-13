@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "steps": [
+    "T\u00ecm m\u00e1y ph\u00f9 h\u1ee3p v\u1edbi t\u00f4i",
+    "Ti\u1ebfp t\u1ee5c: ng\u00e2n s\u00e1ch",
+    "Ti\u1ebfp t\u1ee5c: \u01b0u ti\u00ean",
+    "Ki\u1ec3m tra l\u1ef1a ch\u1ecdn",
+    "X\u00e1c nh\u1eadn v\u00e0 xem g\u1ee3i \u00fd",
+    "Chi ti\u1ebft v\u00e0 ngu\u1ed3n d\u1eef li\u1ec7u",
+    "real reference detail opened"
+  ],
+  "device": "Resizable_Experimental / emulator port 5560",
+  "package": "vn.lua.adviser",
+  "scope": "Installed release app; actual Expo SQLite first import and guided-reference navigation; no TalkBack or physical-phone certification"
+}

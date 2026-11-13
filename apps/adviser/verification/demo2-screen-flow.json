@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "checks": [
+    "first-launch shared results",
+    "separate tasks screen",
+    "separate budget screen",
+    "separate preferences screen",
+    "review before results",
+    "review edit preserves input",
+    "confirmed recommendations",
+    "cancel preserves confirmed result",
+    "saved screen isolation",
+    "recommendations navigation",
+    "restart restores confirmed result",
+    "reference detail",
+    "real decision save",
+    "saved reference reopen",
+    "reference paired comparison",
+    "saved reference delete",
+    "mandatory RAM review",
+    "mandatory OS review"
+  ],
+  "boundary": "React component test with mocked native/storage adapters; not Android device acceptance"
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "date": "2026-11-12",
+  "date": "2026-11-13",
   "status": "Expo Android demo implemented; release APK built; acceptance evidence and limitations recorded; production and live-provider acceptance pending",
   "source": {
     "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/12dppW4eD3ej3eNVrsff2c4afLkCRoGLh4WWpfufvVGA/edit?gid=0",
@@ -18,7 +18,8 @@
   },
   "documents": {
     "brd": "../../brd.md",
-    "implementation": "./IMPLEMENTATION_PLAN.md"
+    "implementation": "./IMPLEMENTATION_PLAN.md",
+    "integrationResearch": "./ANDROID_ADVISOR_INTEGRATION_RESEARCH.md"
   },
   "features": [
     {
@@ -30,20 +31,34 @@
       "sourcePriority": "Làm trước tiên",
       "approvalStatus": "proposed; Chốt làm blank at source read",
       "plannedStages": "D0/D1/P",
-      "demoCoverage": "Partial existing browser wizard; ordered-use picker, refinement, task evidence and migration extensions planned",
+      "demoCoverage": "Synthetic Android ordered-use picker, review, refinement, task evidence and migration implemented; see androidDemoEvidence for acceptance limitations",
       "implementationPackages": [
         "DEMO-03",
         "DEMO-04",
         "DEMO-05",
         "DEMO-10",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-01",
+        "LUA-INT-02",
+        "LUA-INT-03",
+        "LUA-INT-04",
+        "LUA-INT-05",
+        "LUA-INT-06",
+        "LUA-INT-07",
+        "LUA-INT-08",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-D03",
         "T-D05",
         "T-D09",
         "T-P01",
-        "T-P05"
+        "T-P05",
+        "T-INT-01",
+        "T-INT-02",
+        "T-INT-05",
+        "T-INT-06",
+        "T-INT-07"
       ],
       "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
@@ -54,7 +69,7 @@
       ],
       "detailStatus": "core use case with detailed criteria",
       "frontendReviewEvidence": "../../apps/adviser/VERIFICATION.md",
-      "pickerExtensionStatus": "planned; not implemented or verified",
+      "pickerExtensionStatus": "synthetic Android behavior implemented; offline catalog/local-AI integration planned; production acceptance pending",
       "sourceBrdUrgency": 1,
       "androidDemoEvidence": "../../apps/adviser/VERIFICATION.md"
     },
@@ -70,13 +85,20 @@
       "demoCoverage": "Partial: bounded synthetic catalog search",
       "implementationPackages": [
         "DEMO-05",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-02",
+        "LUA-INT-04",
+        "LUA-INT-05",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D04",
         "T-D05",
         "T-P01",
-        "T-P02"
+        "T-P02",
+        "T-INT-01",
+        "T-INT-04",
+        "T-INT-07"
       ],
       "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
@@ -103,12 +125,19 @@
       "implementationPackages": [
         "DEMO-06",
         "REAL-02",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-02",
+        "LUA-INT-04",
+        "LUA-INT-05",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D04",
         "T-P01",
-        "T-P04"
+        "T-P04",
+        "T-INT-01",
+        "T-INT-03",
+        "T-INT-07"
       ],
       "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
@@ -134,13 +163,21 @@
       "demoCoverage": "Partial: synthetic two-variant comparison",
       "implementationPackages": [
         "DEMO-06",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-02",
+        "LUA-INT-03",
+        "LUA-INT-04",
+        "LUA-INT-05",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D02",
         "T-D05",
         "T-P01",
-        "T-P05"
+        "T-P05",
+        "T-INT-01",
+        "T-INT-02",
+        "T-INT-07"
       ],
       "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
@@ -166,11 +203,19 @@
       "demoCoverage": "Simulation only: sample offer summary, no retailer handoff",
       "implementationPackages": [
         "DEMO-06",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-02",
+        "LUA-INT-04",
+        "LUA-INT-05",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D04",
-        "T-P02"
+        "T-P02",
+        "T-INT-01",
+        "T-INT-03",
+        "T-INT-04",
+        "T-INT-07"
       ],
       "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
@@ -225,12 +270,18 @@
       "demoCoverage": "Partial: local save, restore and delete; sharing in P",
       "implementationPackages": [
         "DEMO-07",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-03",
+        "LUA-INT-05",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D06",
         "T-P01",
-        "T-P06"
+        "T-P06",
+        "T-INT-02",
+        "T-INT-04",
+        "T-INT-07"
       ],
       "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
@@ -258,13 +309,23 @@
         "DEMO-05",
         "DEMO-07",
         "REAL-03",
-        "REAL-04"
+        "REAL-04",
+        "LUA-INT-03",
+        "LUA-INT-05",
+        "LUA-INT-07",
+        "LUA-INT-08",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-D06",
         "T-D07",
         "T-P01",
-        "T-P06"
+        "T-P06",
+        "T-INT-02",
+        "T-INT-04",
+        "T-INT-05",
+        "T-INT-07",
+        "T-INT-08"
       ],
       "implementationStatus": "Expo Android synthetic demo implemented; see androidDemoEvidence; production acceptance pending",
       "acceptanceCriteriaIds": [
@@ -530,13 +591,17 @@
       "implementationPackages": [
         "DEMO-03",
         "REAL-01",
-        "REAL-02"
+        "REAL-02",
+        "LUA-INT-04",
+        "LUA-INT-05"
       ],
       "verificationIds": [
         "T-D04",
         "T-R01",
         "T-R02",
-        "T-P03"
+        "T-P03",
+        "T-INT-03",
+        "T-INT-04"
       ],
       "implementationStatus": "not started; planning artifact only",
       "acceptanceCriteriaIds": [
@@ -562,12 +627,16 @@
       "implementationPackages": [
         "DEMO-03",
         "REAL-01",
-        "REAL-02"
+        "REAL-02",
+        "LUA-INT-04",
+        "LUA-INT-05"
       ],
       "verificationIds": [
         "T-D04",
         "T-R02",
-        "T-P03"
+        "T-P03",
+        "T-INT-03",
+        "T-INT-04"
       ],
       "implementationStatus": "not started; planning artifact only",
       "acceptanceCriteriaIds": [
@@ -594,13 +663,17 @@
         "DEMO-03",
         "DEMO-04",
         "REAL-01",
-        "REAL-02"
+        "REAL-02",
+        "LUA-INT-04",
+        "LUA-INT-05"
       ],
       "verificationIds": [
         "T-D02",
         "T-D04",
         "T-R02",
-        "T-P02"
+        "T-P02",
+        "T-INT-03",
+        "T-INT-04"
       ],
       "implementationStatus": "not started; planning artifact only",
       "acceptanceCriteriaIds": [
@@ -660,12 +733,20 @@
       "implementationPackages": [
         "DEMO-03",
         "DEMO-04",
-        "REAL-02"
+        "REAL-02",
+        "LUA-INT-01",
+        "LUA-INT-02",
+        "LUA-INT-03",
+        "LUA-INT-04",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D03",
         "T-P03",
-        "T-P05"
+        "T-P05",
+        "T-INT-01",
+        "T-INT-03",
+        "T-INT-06"
       ],
       "implementationStatus": "not started; planning artifact only",
       "acceptanceCriteriaIds": [
@@ -692,14 +773,23 @@
         "DEMO-04",
         "DEMO-09",
         "DEMO-10",
-        "REAL-02"
+        "REAL-02",
+        "LUA-INT-02",
+        "LUA-INT-04",
+        "LUA-INT-07",
+        "LUA-INT-08",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-D02",
         "T-D03",
         "T-D09",
         "T-P03",
-        "T-P05"
+        "T-P05",
+        "T-INT-01",
+        "T-INT-03",
+        "T-INT-05",
+        "T-INT-06"
       ],
       "implementationStatus": "not started; planning artifact only",
       "acceptanceCriteriaIds": [
@@ -754,13 +844,21 @@
         "DEMO-08",
         "DEMO-09",
         "REAL-02",
-        "REAL-04"
+        "REAL-04",
+        "LUA-INT-05",
+        "LUA-INT-06",
+        "LUA-INT-07",
+        "LUA-INT-08",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-D08",
         "T-D09",
         "T-P07",
-        "T-P08"
+        "T-P08",
+        "T-INT-04",
+        "T-INT-05",
+        "T-INT-08"
       ],
       "implementationStatus": "not started; planning artifact only",
       "acceptanceCriteriaIds": [
@@ -1011,12 +1109,17 @@
       "implementationPackages": [
         "DEMO-03",
         "DEMO-04",
-        "REAL-02"
+        "REAL-02",
+        "LUA-INT-02",
+        "LUA-INT-04",
+        "LUA-INT-05"
       ],
       "verificationIds": [
         "T-D04",
         "T-R02",
-        "T-P02"
+        "T-P02",
+        "T-INT-01",
+        "T-INT-03"
       ]
     },
     {
@@ -1024,12 +1127,18 @@
       "implementationPackages": [
         "DEMO-04",
         "DEMO-05",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-02",
+        "LUA-INT-03",
+        "LUA-INT-04",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D02",
         "T-D03",
-        "T-P05"
+        "T-P05",
+        "T-INT-01",
+        "T-INT-06"
       ]
     },
     {
@@ -1038,11 +1147,18 @@
         "DEMO-03",
         "DEMO-04",
         "DEMO-05",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-02",
+        "LUA-INT-03",
+        "LUA-INT-04",
+        "LUA-INT-07",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D03",
-        "T-P05"
+        "T-P05",
+        "T-INT-01",
+        "T-INT-06"
       ]
     },
     {
@@ -1050,12 +1166,17 @@
       "implementationPackages": [
         "DEMO-04",
         "DEMO-06",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-02",
+        "LUA-INT-04",
+        "LUA-INT-05"
       ],
       "verificationIds": [
         "T-D02",
         "T-D04",
-        "T-P02"
+        "T-P02",
+        "T-INT-01",
+        "T-INT-03"
       ]
     },
     {
@@ -1063,12 +1184,17 @@
       "implementationPackages": [
         "DEMO-04",
         "DEMO-06",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-02",
+        "LUA-INT-04",
+        "LUA-INT-05"
       ],
       "verificationIds": [
         "T-D04",
         "T-P02",
-        "T-P08"
+        "T-P08",
+        "T-INT-01",
+        "T-INT-03"
       ]
     },
     {
@@ -1076,12 +1202,17 @@
       "implementationPackages": [
         "DEMO-03",
         "DEMO-07",
-        "REAL-04"
+        "REAL-04",
+        "LUA-INT-04",
+        "LUA-INT-05",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-D04",
         "T-D06",
-        "T-P08"
+        "T-P08",
+        "T-INT-04",
+        "T-INT-08"
       ]
     },
     {
@@ -1089,11 +1220,19 @@
       "implementationPackages": [
         "DEMO-09",
         "DEMO-10",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-02",
+        "LUA-INT-03",
+        "LUA-INT-06",
+        "LUA-INT-07",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D09",
-        "T-P05"
+        "T-P05",
+        "T-INT-02",
+        "T-INT-05",
+        "T-INT-06"
       ]
     },
     {
@@ -1101,23 +1240,31 @@
       "implementationPackages": [
         "DEMO-06",
         "REAL-01",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-02",
+        "LUA-INT-04",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D04",
         "T-R02",
-        "T-P05"
+        "T-P05",
+        "T-INT-01",
+        "T-INT-03",
+        "T-INT-06"
       ]
     },
     {
       "id": "BR-09",
       "implementationPackages": [
         "REAL-01",
-        "REAL-02"
+        "REAL-02",
+        "LUA-INT-04"
       ],
       "verificationIds": [
         "T-R01",
-        "T-R02"
+        "T-R02",
+        "T-INT-03"
       ]
     },
     {
@@ -1137,12 +1284,21 @@
         "DEMO-05",
         "DEMO-06",
         "DEMO-07",
-        "REAL-03"
+        "REAL-03",
+        "LUA-INT-02",
+        "LUA-INT-03",
+        "LUA-INT-05",
+        "LUA-INT-08",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-D05",
         "T-D06",
-        "T-P01"
+        "T-P01",
+        "T-INT-01",
+        "T-INT-02",
+        "T-INT-04",
+        "T-INT-08"
       ]
     },
     {
@@ -1150,22 +1306,35 @@
       "implementationPackages": [
         "DEMO-05",
         "DEMO-07",
-        "REAL-04"
+        "REAL-04",
+        "LUA-INT-03",
+        "LUA-INT-05",
+        "LUA-INT-07",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-D06",
         "T-D07",
-        "T-P06"
+        "T-P06",
+        "T-INT-02",
+        "T-INT-04",
+        "T-INT-05",
+        "T-INT-08"
       ]
     },
     {
       "id": "BR-13",
       "implementationPackages": [
-        "REAL-02"
+        "REAL-02",
+        "LUA-INT-04",
+        "LUA-INT-05",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-P03",
-        "T-P04"
+        "T-P04",
+        "T-INT-03",
+        "T-INT-08"
       ]
     },
     {
@@ -1180,12 +1349,17 @@
       "implementationPackages": [
         "DEMO-03",
         "DEMO-07",
-        "REAL-02"
+        "REAL-02",
+        "LUA-INT-04",
+        "LUA-INT-05",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-D04",
         "T-R02",
-        "T-P03"
+        "T-P03",
+        "T-INT-03",
+        "T-INT-08"
       ]
     },
     {
@@ -1207,24 +1381,33 @@
       "implementationPackages": [
         "DEMO-01",
         "DEMO-02",
-        "DEMO-04"
+        "DEMO-04",
+        "LUA-INT-02",
+        "LUA-INT-06",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D01",
-        "T-D02"
+        "T-D02",
+        "T-INT-01",
+        "T-INT-05",
+        "T-INT-07"
       ]
     },
     {
       "id": "NFR-02",
       "implementationPackages": [
         "DEMO-02",
-        "DEMO-08"
+        "DEMO-08",
+        "LUA-INT-03",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D01",
         "T-D07",
         "T-D05",
-        "T-D08"
+        "T-D08",
+        "T-INT-07"
       ],
       "acceptanceCriteriaIds": [
         "AC-UX01",
@@ -1238,13 +1421,16 @@
       "id": "NFR-03",
       "implementationPackages": [
         "DEMO-02",
-        "DEMO-08"
+        "DEMO-08",
+        "LUA-INT-03",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D07",
         "T-D01",
         "T-D05",
-        "T-D08"
+        "T-D08",
+        "T-INT-07"
       ],
       "acceptanceCriteriaIds": [
         "AC-UX01",
@@ -1258,22 +1444,32 @@
       "id": "NFR-04",
       "implementationPackages": [
         "DEMO-08",
-        "REAL-04"
+        "REAL-04",
+        "LUA-INT-02",
+        "LUA-INT-05",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D08",
-        "T-P07"
+        "T-P07",
+        "T-INT-01",
+        "T-INT-07"
       ]
     },
     {
       "id": "NFR-05",
       "implementationPackages": [
         "DEMO-08",
-        "REAL-04"
+        "REAL-04",
+        "LUA-INT-05",
+        "LUA-INT-06",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D08",
-        "T-P07"
+        "T-P07",
+        "T-INT-05",
+        "T-INT-07"
       ]
     },
     {
@@ -1281,13 +1477,21 @@
       "implementationPackages": [
         "DEMO-09",
         "DEMO-10",
-        "REAL-04"
+        "REAL-04",
+        "LUA-INT-02",
+        "LUA-INT-05",
+        "LUA-INT-06",
+        "LUA-INT-07",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D08",
         "T-D09",
         "T-P07",
-        "T-P08"
+        "T-P08",
+        "T-INT-04",
+        "T-INT-05",
+        "T-INT-07"
       ]
     },
     {
@@ -1295,24 +1499,38 @@
       "implementationPackages": [
         "DEMO-09",
         "REAL-02",
-        "REAL-04"
+        "REAL-04",
+        "LUA-INT-04",
+        "LUA-INT-05",
+        "LUA-INT-07",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-D09",
         "T-P03",
-        "T-P06"
+        "T-P06",
+        "T-INT-03",
+        "T-INT-04",
+        "T-INT-05",
+        "T-INT-08"
       ]
     },
     {
       "id": "NFR-08",
       "implementationPackages": [
         "DEMO-07",
-        "REAL-04"
+        "REAL-04",
+        "LUA-INT-03",
+        "LUA-INT-05",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-D06",
         "T-P06",
-        "T-P08"
+        "T-P08",
+        "T-INT-02",
+        "T-INT-04",
+        "T-INT-08"
       ]
     },
     {
@@ -1320,12 +1538,20 @@
       "implementationPackages": [
         "DEMO-09",
         "REAL-04",
-        "PILOT-01"
+        "PILOT-01",
+        "LUA-INT-06",
+        "LUA-INT-07",
+        "LUA-INT-08",
+        "LUA-INT-09"
       ],
       "verificationIds": [
         "T-D08",
         "T-D09",
-        "T-P07"
+        "T-P07",
+        "T-INT-05",
+        "T-INT-06",
+        "T-INT-07",
+        "T-INT-08"
       ]
     },
     {
@@ -1333,13 +1559,20 @@
       "implementationPackages": [
         "DEMO-02",
         "DEMO-05",
-        "DEMO-06"
+        "DEMO-06",
+        "LUA-INT-02",
+        "LUA-INT-03",
+        "LUA-INT-07",
+        "LUA-INT-08"
       ],
       "verificationIds": [
         "T-D01",
         "T-D05",
         "T-D07",
-        "T-D08"
+        "T-D08",
+        "T-INT-01",
+        "T-INT-02",
+        "T-INT-07"
       ],
       "acceptanceCriteriaIds": [
         "AC-UX01",
@@ -1350,7 +1583,7 @@
       ]
     }
   ],
-  "documentVersion": "3.2",
+  "documentVersion": "3.3",
   "acceptanceCriteria": [
     {
       "id": "AC-U01-01",
@@ -2304,8 +2537,9 @@
         "PREP-01"
       ],
       "exitGate": null,
-      "status": "planned; not executed",
-      "externalDependencies": []
+      "status": "Android host and release APK implemented; recorded emulator evidence; package acceptance pending",
+      "externalDependencies": [],
+      "evidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "DEMO-02",
@@ -2313,8 +2547,9 @@
         "DEMO-01"
       ],
       "exitGate": "G1",
-      "status": "planned; not executed",
-      "externalDependencies": []
+      "status": "Android components and typed flow implemented; physical/accessibility coverage and G1 acceptance pending",
+      "externalDependencies": [],
+      "evidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "DEMO-03",
@@ -2322,8 +2557,9 @@
         "PREP-01"
       ],
       "exitGate": null,
-      "status": "planned; not executed",
-      "externalDependencies": []
+      "status": "Synthetic fixtures and validation implemented; production data outside this package",
+      "externalDependencies": [],
+      "evidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "DEMO-04",
@@ -2331,8 +2567,9 @@
         "DEMO-03"
       ],
       "exitGate": null,
-      "status": "planned; not executed",
-      "externalDependencies": []
+      "status": "Synthetic money, eligibility, ranking and reasons implemented; production suitability unverified",
+      "externalDependencies": [],
+      "evidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "DEMO-05",
@@ -2341,8 +2578,9 @@
         "DEMO-04"
       ],
       "exitGate": null,
-      "status": "planned; not executed",
-      "externalDependencies": []
+      "status": "Synthetic Android picker, search, review and refinement implemented; complete acceptance pending",
+      "externalDependencies": [],
+      "evidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "DEMO-06",
@@ -2350,8 +2588,9 @@
         "DEMO-05"
       ],
       "exitGate": null,
-      "status": "planned; not executed",
-      "externalDependencies": []
+      "status": "Synthetic Android detail, comparison and sample offers implemented; complete acceptance pending",
+      "externalDependencies": [],
+      "evidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "DEMO-07",
@@ -2359,8 +2598,9 @@
         "DEMO-06"
       ],
       "exitGate": null,
-      "status": "planned; not executed",
-      "externalDependencies": []
+      "status": "Local saved decisions, migration and recovery implemented; complete acceptance pending",
+      "externalDependencies": [],
+      "evidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "DEMO-08",
@@ -2370,8 +2610,9 @@
         "DEMO-07"
       ],
       "exitGate": "G2",
-      "status": "planned; not executed",
-      "externalDependencies": []
+      "status": "Release/emulator and automated evidence recorded; physical/accessibility/performance and G2 acceptance pending",
+      "externalDependencies": [],
+      "evidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "DEMO-09",
@@ -2380,10 +2621,11 @@
         "DEMO-04"
       ],
       "exitGate": null,
-      "status": "planned; not executed",
+      "status": "Bounded service and controlled-provider tests implemented; real-provider D1 evidence pending",
       "externalDependencies": [
         "AI provider access, settings and usage budget"
-      ]
+      ],
+      "evidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "DEMO-10",
@@ -2392,8 +2634,9 @@
         "DEMO-09"
       ],
       "exitGate": null,
-      "status": "planned; not executed",
-      "externalDependencies": []
+      "status": "Reviewed AI proposals and validated fallback implemented; real-provider D1 evidence pending",
+      "externalDependencies": [],
+      "evidence": "../../apps/adviser/VERIFICATION.md"
     },
     {
       "id": "REVIEW-01",
@@ -2459,9 +2702,239 @@
       "exitGate": "G5",
       "status": "planned; not executed",
       "externalDependencies": []
+    },
+    {
+      "id": "LUA-INT-01",
+      "title": "Baseline and integration decisions",
+      "dependsOn": [],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": [],
+      "ownerRole": "Product and technical lead",
+      "effortDeveloperDays": {
+        "min": 1,
+        "max": 2
+      },
+      "verificationIds": [],
+      "decomposesPackages": [
+        "PREP-01",
+        "DEMO-01",
+        "DEMO-02"
+      ],
+      "planSection": "IMPLEMENTATION_PLAN.md#255-work-packages-dependencies-and-estimates"
+    },
+    {
+      "id": "LUA-INT-02",
+      "title": "Explicit domain, catalog and provider contracts",
+      "dependsOn": [
+        "LUA-INT-01"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": [],
+      "ownerRole": "Domain and client",
+      "effortDeveloperDays": {
+        "min": 2,
+        "max": 3
+      },
+      "verificationIds": [
+        "T-INT-01"
+      ],
+      "decomposesPackages": [
+        "DEMO-03",
+        "DEMO-04",
+        "DEMO-05"
+      ],
+      "planSection": "IMPLEMENTATION_PLAN.md#255-work-packages-dependencies-and-estimates"
+    },
+    {
+      "id": "LUA-INT-03",
+      "title": "Partial patches, provenance and durable sessions",
+      "dependsOn": [
+        "LUA-INT-02"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": [],
+      "ownerRole": "Client and domain",
+      "effortDeveloperDays": {
+        "min": 2,
+        "max": 3
+      },
+      "verificationIds": [
+        "T-INT-02"
+      ],
+      "decomposesPackages": [
+        "DEMO-05",
+        "DEMO-07",
+        "DEMO-10"
+      ],
+      "planSection": "IMPLEMENTATION_PLAN.md#255-work-packages-dependencies-and-estimates"
+    },
+    {
+      "id": "LUA-INT-04",
+      "title": "Reviewed catalog schemas and snapshot exporter",
+      "dependsOn": [
+        "LUA-INT-02"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": [
+        "Data reviewer; G4 before real publication"
+      ],
+      "ownerRole": "Data and domain",
+      "effortDeveloperDays": {
+        "min": 3,
+        "max": 5
+      },
+      "verificationIds": [
+        "T-INT-03"
+      ],
+      "decomposesPackages": [
+        "REAL-01",
+        "REAL-02"
+      ],
+      "planSection": "IMPLEMENTATION_PLAN.md#255-work-packages-dependencies-and-estimates"
+    },
+    {
+      "id": "LUA-INT-05",
+      "title": "SQLite, atomic import and foreground refresh",
+      "dependsOn": [
+        "LUA-INT-03",
+        "LUA-INT-04"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": [],
+      "ownerRole": "Client and data",
+      "effortDeveloperDays": {
+        "min": 3,
+        "max": 5
+      },
+      "verificationIds": [
+        "T-INT-04"
+      ],
+      "decomposesPackages": [
+        "REAL-03",
+        "REAL-04"
+      ],
+      "planSection": "IMPLEMENTATION_PLAN.md#255-work-packages-dependencies-and-estimates"
+    },
+    {
+      "id": "LUA-INT-06",
+      "title": "Native Nano feasibility and version matrix",
+      "dependsOn": [
+        "LUA-INT-01"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": [
+        "Supported physical Nano device"
+      ],
+      "ownerRole": "Native lead",
+      "effortDeveloperDays": {
+        "min": 2,
+        "max": 4
+      },
+      "verificationIds": [
+        "T-INT-05"
+      ],
+      "decomposesPackages": [
+        "DEMO-01",
+        "DEMO-02",
+        "DEMO-09"
+      ],
+      "planSection": "IMPLEMENTATION_PLAN.md#255-work-packages-dependencies-and-estimates",
+      "completionNote": "A documented no-go completes the feasibility investigation only; Nano integration remains deferred."
+    },
+    {
+      "id": "LUA-INT-07",
+      "title": "Native extraction, routing and review",
+      "dependsOn": [
+        "LUA-INT-03",
+        "LUA-INT-06"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": [
+        "LUA-INT-06 must have a successful feasibility outcome; independently labelled Vietnamese cases"
+      ],
+      "ownerRole": "Native, client and AI",
+      "effortDeveloperDays": {
+        "min": 3,
+        "max": 5
+      },
+      "verificationIds": [
+        "T-INT-02",
+        "T-INT-05"
+      ],
+      "decomposesPackages": [
+        "DEMO-09",
+        "DEMO-10"
+      ],
+      "planSection": "IMPLEMENTATION_PLAN.md#255-work-packages-dependencies-and-estimates"
+    },
+    {
+      "id": "LUA-INT-08",
+      "title": "Language, release and device evaluation",
+      "dependsOn": [
+        "LUA-INT-05"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": [
+        "Labelled held-out cases; representative physical/accessibility targets"
+      ],
+      "ownerRole": "QA and data/AI reviewers",
+      "effortDeveloperDays": {
+        "min": 4,
+        "max": 6
+      },
+      "verificationIds": [
+        "T-INT-06",
+        "T-INT-07"
+      ],
+      "decomposesPackages": [
+        "DEMO-08",
+        "REVIEW-01",
+        "REAL-04"
+      ],
+      "planSection": "IMPLEMENTATION_PLAN.md#255-work-packages-dependencies-and-estimates",
+      "conditionalDependencies": [
+        {
+          "packageId": "LUA-INT-07",
+          "when": "Nano-enabled evaluation scope"
+        }
+      ]
+    },
+    {
+      "id": "LUA-INT-09",
+      "title": "Rollout, rollback and gate decision pack",
+      "dependsOn": [
+        "LUA-INT-08"
+      ],
+      "exitGate": null,
+      "status": "planned; not executed",
+      "externalDependencies": [
+        "Applicable G3/G4 readiness before real-data pilot; G5 before wider release"
+      ],
+      "ownerRole": "Product, QA and operations",
+      "effortDeveloperDays": {
+        "min": 1,
+        "max": 2
+      },
+      "verificationIds": [
+        "T-INT-08"
+      ],
+      "decomposesPackages": [
+        "REAL-04",
+        "PILOT-01"
+      ],
+      "planSection": "IMPLEMENTATION_PLAN.md#255-work-packages-dependencies-and-estimates",
+      "completionNote": "Core-only scope may proceed after explicit Nano deferral and applicable stage decisions; this is not full Nano or three-category completion."
     }
   ],
-  "reviewNote": "Use lowercase brd.md attachment baseline and its urgency values. The superseded uppercase workspace document is archived. 36 parent journeys and 67 criteria remain in the corrected baseline (62 source criteria plus 5 confirmed design criteria). Native app implementation and evidence are in progress.",
+  "reviewNote": "Use lowercase brd.md v3.2 and implementation plan v3.3. The 36 parent journeys and 67 acceptance criteria retain their identities, priorities and approval states. The integration workstream adds planned delivery and verification mappings; existing Android evidence remains bounded by its verification record and no gate is accepted by this revision.",
   "frontendReviewBuild": {
     "date": "2026-11-11",
     "status": "partial browser frontend implemented; native and live AI gates pending",
@@ -2554,5 +3027,285 @@
     "liveAI": false,
     "providerAdapterImplemented": true,
     "engineeringStatus": "release APK built and emulator core flow checked; see manifest for passed tests and remaining formal acceptance evidence"
+  },
+  "integrationWorkstream": {
+    "version": "3.3",
+    "date": "2026-11-12",
+    "status": "planned; not implemented or verified",
+    "plan": "./IMPLEMENTATION_PLAN.md#25-offline-advisor-and-optional-on-device-ai-integration--v33",
+    "research": "./ANDROID_ADVISOR_INTEGRATION_RESEARCH.md",
+    "baselineCommit": "828c5f8",
+    "sourceSpreadsheetModifiedThisRevision": false,
+    "newParentJourneys": 0,
+    "newBusinessAcceptanceCriteria": 0,
+    "existingGateMeaningsPreserved": true,
+    "boundedScope": "Laptop offline catalog/session integration with optional capability- and quality-gated Nano",
+    "intakePolicy": "1-3 ordered uses and up to two soft preferences; alternate exactly-three/three policy requires a documented scope revision",
+    "aiPolicy": "Local failure returns to form/templates; server mode requires explicit selection/send; Nano does not automatically satisfy server D1",
+    "workPackageIds": [
+      "LUA-INT-01",
+      "LUA-INT-02",
+      "LUA-INT-03",
+      "LUA-INT-04",
+      "LUA-INT-05",
+      "LUA-INT-06",
+      "LUA-INT-07",
+      "LUA-INT-08",
+      "LUA-INT-09"
+    ],
+    "decisionIds": [
+      "INT-DEC-01",
+      "INT-DEC-02",
+      "INT-DEC-03",
+      "INT-DEC-04",
+      "INT-DEC-05",
+      "INT-DEC-06",
+      "INT-DEC-07",
+      "INT-DEC-08"
+    ],
+    "verificationGroups": [
+      {
+        "id": "T-INT-01",
+        "title": "Snapshot/domain parity and mandatory eligibility",
+        "status": "planned; not executed",
+        "attachmentAcceptanceIds": [
+          "AT-03",
+          "AT-04",
+          "AT-05",
+          "AT-07",
+          "AT-14"
+        ],
+        "planSection": "IMPLEMENTATION_PLAN.md#257-integration-verification-and-quality-gates"
+      },
+      {
+        "id": "T-INT-02",
+        "title": "Patch, migration, session and race correctness",
+        "status": "planned; not executed",
+        "attachmentAcceptanceIds": [
+          "AT-08",
+          "AT-13"
+        ],
+        "planSection": "IMPLEMENTATION_PLAN.md#257-integration-verification-and-quality-gates"
+      },
+      {
+        "id": "T-INT-03",
+        "title": "Catalog identity, evidence and publication validation",
+        "status": "planned; not executed",
+        "attachmentAcceptanceIds": [
+          "AT-04",
+          "AT-07",
+          "AT-10",
+          "AT-11"
+        ],
+        "planSection": "IMPLEMENTATION_PLAN.md#257-integration-verification-and-quality-gates"
+      },
+      {
+        "id": "T-INT-04",
+        "title": "Offline storage, atomic refresh and recovery",
+        "status": "planned; not executed",
+        "attachmentAcceptanceIds": [
+          "AT-01",
+          "AT-12",
+          "AT-13"
+        ],
+        "planSection": "IMPLEMENTATION_PLAN.md#257-integration-verification-and-quality-gates"
+      },
+      {
+        "id": "T-INT-05",
+        "title": "Native runtime, explicit routing and lifecycle",
+        "status": "planned; not executed",
+        "attachmentAcceptanceIds": [
+          "AT-08",
+          "AT-09",
+          "AT-15"
+        ],
+        "planSection": "IMPLEMENTATION_PLAN.md#257-integration-verification-and-quality-gates"
+      },
+      {
+        "id": "T-INT-06",
+        "title": "Vietnamese extraction and reviewed ranking evaluation",
+        "status": "planned; not executed",
+        "attachmentAcceptanceIds": [
+          "AT-06",
+          "AT-10",
+          "AT-14",
+          "AT-15"
+        ],
+        "planSection": "IMPLEMENTATION_PLAN.md#257-integration-verification-and-quality-gates"
+      },
+      {
+        "id": "T-INT-07",
+        "title": "Complete release journey, accessibility and measured performance",
+        "status": "planned; not executed",
+        "attachmentAcceptanceIds": [
+          "AT-01",
+          "AT-09"
+        ],
+        "planSection": "IMPLEMENTATION_PLAN.md#257-integration-verification-and-quality-gates"
+      },
+      {
+        "id": "T-INT-08",
+        "title": "Flags, rollout, rollback and scoped recovery",
+        "status": "planned; not executed",
+        "attachmentAcceptanceIds": [
+          "AT-12",
+          "AT-13",
+          "AT-15"
+        ],
+        "planSection": "IMPLEMENTATION_PLAN.md#257-integration-verification-and-quality-gates"
+      }
+    ],
+    "effortDeveloperDays": {
+      "min": 21,
+      "max": 35,
+      "includes": "bounded laptop integration with Nano if feasible",
+      "excludes": [
+        "broader Expo/RN migration",
+        "data editorial and licensing work",
+        "hardware acquisition and waiting/recruitment",
+        "category expansion",
+        "LiteRT-LM"
+      ],
+      "notAdditiveTo": "overlapping REAL-02/03/04 package estimates"
+    },
+    "scopeConditions": [
+      "LUA-INT-04/05 may use synthetic bundles before production readiness; real publication requires G4.",
+      "LUA-INT-08 requires LUA-INT-07 only for Nano-enabled scope; 08/09 can assess explicitly core-only scope after Nano deferral.",
+      "AT-01 for all categories and AT-02 remain expansion obligations; the bounded laptop run cannot establish full attachment completion.",
+      "Source observations and unit tests do not accept G1-G5; unchanged acceptance and approval records govern."
+    ],
+    "expansionMilestones": [
+      {
+        "name": "Phone and Tablet advisor",
+        "status": "future; separately scoped and estimated",
+        "parentRequirementIds": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "A02",
+          "A03",
+          "A04",
+          "A06",
+          "A07"
+        ],
+        "attachmentAcceptanceIds": [
+          "AT-01",
+          "AT-02",
+          "AT-04",
+          "AT-06",
+          "AT-11",
+          "AT-14"
+        ]
+      },
+      {
+        "name": "Prebuilt desktop; component solving separately under U13/A14",
+        "status": "future; separately scoped and estimated",
+        "parentRequirementIds": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U13",
+          "A14"
+        ]
+      },
+      {
+        "name": "Optional AI reason organization",
+        "status": "future; quality-gated",
+        "parentRequirementIds": [
+          "U01",
+          "U03",
+          "U04",
+          "A07"
+        ]
+      },
+      {
+        "name": "Optional LiteRT-LM",
+        "status": "future; model/device experiment required",
+        "parentRequirementIds": [
+          "U01",
+          "A07",
+          "A09"
+        ]
+      }
+    ],
+    "demo2Evidence": {
+      "record": "../../apps/adviser/DEMO_2.md",
+      "status": "bounded synthetic prototype implemented; full integration acceptance pending",
+      "implemented": [
+        "explicit snapshot input to existing evaluator",
+        "validated embedded catalog activation and rollback",
+        "confirmed deterministic budget proposals",
+        "profile/catalog revision checks",
+        "independent persisted demo session",
+        "exact detail and comparison"
+      ],
+      "notImplemented": [
+        "SQLite",
+        "native Nano",
+        "authenticated remote synchronization",
+        "reviewed real data",
+        "Phone/Tablet"
+      ],
+      "automatedTests": 22
+    },
+    "realReferencePrototype": {
+      "record": "../../apps/adviser/REAL_REFERENCE_DEMO.md",
+      "databaseEvidence": "../../apps/adviser/verification/reference-database.json",
+      "status": "collected-reference prototype implemented; live offers and production acceptance unverified",
+      "rows": 70,
+      "sources": 4,
+      "storage": "normalized SQLite on Android; seed export on web",
+      "domainTests": 28,
+      "componentFlowChecks": 16
+    },
+    "recommendationEngine": {
+      "document": "../../apps/adviser/RECOMMENDATION_MODULE.md",
+      "status": "deterministic laptop core implemented; actual suitability evidence and broader integration acceptance pending",
+      "sourceSections": [
+        "Device Advisor 5-9",
+        "Device Advisor 14"
+      ],
+      "ruleVersion": "advisor-rules-1",
+      "scoringVersion": "advisor-utility-intervals-1",
+      "appTests": 40,
+      "componentChecks": 18
+    }
+  },
+  "deviceAdvisorFullSystem": {
+    "scopeAuthorization": "User requested full Device Advisor implementation and all attachment options; 13 November 2026",
+    "journeys": [
+      "U01",
+      "U02",
+      "U03",
+      "U04",
+      "U05",
+      "U07",
+      "U08"
+    ],
+    "support": [
+      "A02",
+      "A03",
+      "A04",
+      "A06",
+      "A07",
+      "A09"
+    ],
+    "categories": [
+      "Phone",
+      "Tablet",
+      "PC.LAPTOP",
+      "PC.DESKTOP"
+    ],
+    "purposes": 19,
+    "priorities": 10,
+    "selectionPolicy": "exactly three ordered purposes and three ordered priorities",
+    "implementation": "../../apps/adviser/DEVICE_ADVISOR_SYSTEM.md",
+    "evidence": "../../apps/adviser/verification/device-system-build.json",
+    "dataMode": "75 real reference observations, missing prices/stock/compatibility remain unknown",
+    "acceptance": "No source approval or G0-G5 acceptance change; physical Nano, quality and production operations pending"
   }
 }

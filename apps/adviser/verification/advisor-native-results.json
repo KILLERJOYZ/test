@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "steps": [
+    "\u0110i\u1ec1u ch\u1ec9nh nhu c\u1ea7u",
+    "Ti\u1ebfp t\u1ee5c: ng\u00e2n s\u00e1ch",
+    "Ti\u1ebfp t\u1ee5c: \u01b0u ti\u00ean",
+    "RAM t\u1ed1i thi\u1ec3u 32 GB",
+    "B\u1eaft bu\u1ed9c Windows",
+    "Ki\u1ec3m tra l\u1ef1a ch\u1ecdn",
+    "X\u00e1c nh\u1eadn v\u00e0 xem g\u1ee3i \u00fd",
+    "Chi ti\u1ebft v\u00e0 ngu\u1ed3n d\u1eef li\u1ec7u",
+    "engine-backed real reference detail opened after explicit constraints review"
+  ],
+  "device": "Resizable_Experimental / port 5560",
+  "package": "vn.lua.adviser",
+  "scope": "Installed release app, persisted real SQLite reference catalog and explicit RAM/OS review; physical phone and TalkBack unverified"
+}

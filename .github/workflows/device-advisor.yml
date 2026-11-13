@@ -1,0 +1,40 @@
+name: Device Advisor checks
+on:
+  workflow_dispatch:
+  push:
+    paths: ['apps/adviser/**', 'tools/catalog/**', 'data/**', '.github/workflows/device-advisor.yml']
+  pull_request:
+    paths: ['apps/adviser/**', 'tools/catalog/**', 'data/**', '.github/workflows/device-advisor.yml']
+jobs:
+  domain-and-catalog:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/adviser
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/adviser/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+      - run: npm run test:device-system
+      - run: npm run test:demo2
+      - run: npm run catalog:prepare
+      - run: npm run test:catalog-system
+      - run: npm run reference:database
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: device-advisor-verification
+          path: |
+            apps/adviser/.expo/catalog-tests/results.json
+            apps/adviser/.expo/demo2-tests/device-system-results.json
+            apps/adviser/artifacts/lua-reference.sqlite
+            apps/adviser/dist/demo.html

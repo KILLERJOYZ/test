@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "checks": 10,
+  "crypto": "real RSA SHA256",
+  "transport": "local HTTP",
+  "database": "actual SQLite through Expo API adapter",
+  "nativeCryptography": "separate Android runtime smoke required"
+}

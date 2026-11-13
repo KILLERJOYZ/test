@@ -1,0 +1,13 @@
+{
+  "artifact": "artifacts\\lua-adviser-demo2.apk",
+  "sha256": "2e5510ecd5348db27c84a317bbaf46190b0db3db35cf6ac3debcb58a8c896a93",
+  "androidReleaseBuild": "passed",
+  "sqliteNativeLibraryAndDex": "present for arm64-v8a and x86_64",
+  "typescript": "passed",
+  "domainTests": 22,
+  "componentFlowChecks": 11,
+  "htmlBuild": "passed",
+  "deviceInteraction": "not performed for visual refresh",
+  "nano": "not integrated",
+  "revision": "Selection card visual refresh"
+}

@@ -1,3 +1,3 @@
 import {registerRootComponent} from 'expo';
-import App from './src/AdviserApp';
+import App from './src/DemoLauncher';
 registerRootComponent(App);

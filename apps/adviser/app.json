@@ -1,25 +1,37 @@
 {
   "expo": {
-    "name": "Lựa · Adviser",
+    "name": "Lựa · Device Advisor",
     "slug": "lua-adviser",
-    "version": "0.4.0",
+    "version": "0.3.0",
     "platforms": [
       "android"
     ],
     "orientation": "default",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "plugins": ["./plugins/with-local-network.cjs", "./plugins/with-local-ai.cjs"],
     "android": {
       "package": "vn.lua.adviser",
-      "versionCode": 2,
+      "versionCode": 1,
       "edgeToEdgeEnabled": true,
-      "permissions": [],
-      "blockedPermissions": ["android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.SYSTEM_ALERT_WINDOW"]
+      "permissions": []
     },
     "extra": {
-      "dataset": "repository-real-listings",
-      "aiMode": "on-device-gemini-nano"
-    }
+      "dataset": "manufacturer-retailer-reference-v1",
+      "aiMode": "optional-on-device"
+    },
+    "plugins": [
+      "expo-sqlite",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 26,
+            "kotlinVersion": "2.3.21"
+          }
+        }
+      ],
+      "./plugins/with-advisor-network.cjs",
+      "./plugins/with-advisor-ksp.cjs"
+    ]
   }
 }

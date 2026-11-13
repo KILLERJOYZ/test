@@ -12,6 +12,8 @@ import type { Profile, Product, Offer } from "./domain.ts";
 export const POLICY_VERSION = "picker-experiment-3-2-1-v2";
 export const DATA_VERSION = "synthetic-android-v2";
 export type Needs = Profile & {
+  deviceProfile?: import("./device-profile.ts").DeviceProfile;
+  advisor?: import("./advisor-engine.ts").AdvisorConstraints;
   primaryUseOrder: string[];
   additionalRequiredTaskIds: string[];
   useOrderConfirmed: boolean;
@@ -71,6 +73,21 @@ const QUALITY: Record<string, Record<string, number>> = Object.fromEntries(
 );
 export function validateNeeds(p: Needs, requireConfirmation = true): string[] {
   const errors: string[] = [];
+  if (p.advisor) {
+    if (
+      p.advisor.minimumRamGiB !== undefined &&
+      (!Number.isSafeInteger(p.advisor.minimumRamGiB) ||
+        p.advisor.minimumRamGiB <= 0)
+    )
+      errors.push("RAM tối thiểu không hợp lệ.");
+    if (
+      p.advisor.requiredAccessoriesVnd !== undefined &&
+      p.advisor.requiredAccessoriesVnd !== null &&
+      (!Number.isSafeInteger(p.advisor.requiredAccessoriesVnd) ||
+        p.advisor.requiredAccessoriesVnd < 0)
+    )
+      errors.push("Chi phí phụ kiện không hợp lệ.");
+  }
   if (!Number.isSafeInteger(p.budget) || p.budget <= 0)
     errors.push("Nhập trần ngân sách VND hợp lệ.");
   if (p.primaryUseOrder.length < 1 || p.primaryUseOrder.length > 3)
@@ -132,7 +149,11 @@ export function taskChecks(p: Product, needs: Needs) {
     };
   });
 }
-export function rank(needs: Needs, offers: Offer[] = OFFERS) {
+export function rank(
+  needs: Needs,
+  offers: Offer[] = OFFERS,
+  products: Product[] = PRODUCTS,
+) {
   const score = (p: Product) => {
     const weights = [3, 2, 1];
     const denominator = weights
@@ -151,18 +172,21 @@ export function rank(needs: Needs, offers: Offer[] = OFFERS) {
     (needs.priorities.includes("value")
       ? -total(bestOffer(p.id, offers)!)! / 30000000
       : 0);
-  return PRODUCTS.filter((p) => fit(p, needs, offers).eligible).sort(
-    (a, b) =>
-      score(b) - score(a) ||
-      preference(b) - preference(a) ||
-      total(bestOffer(a.id, offers)!)! - total(bestOffer(b.id, offers)!)! ||
-      a.id.localeCompare(b.id),
-  );
+  return products
+    .filter((p) => fit(p, needs, offers).eligible)
+    .sort(
+      (a, b) =>
+        score(b) - score(a) ||
+        preference(b) - preference(a) ||
+        total(bestOffer(a.id, offers)!)! - total(bestOffer(b.id, offers)!)! ||
+        a.id.localeCompare(b.id),
+    );
 }
 export function evaluate(
   needs: Needs,
   filters: Filters = EMPTY_FILTERS,
   offers: Offer[] = OFFERS,
+  products: Product[] = PRODUCTS,
 ) {
   const errors = validateNeeds(needs);
   if (errors.length)
@@ -172,7 +196,7 @@ export function evaluate(
       visible: [] as Product[],
       errors,
     };
-  const eligible = rank(needs, offers);
+  const eligible = rank(needs, offers, products);
   const visible = eligible.filter(
     (p) =>
       (filters.screenMin === null || SCREEN[p.id] >= filters.screenMin) &&

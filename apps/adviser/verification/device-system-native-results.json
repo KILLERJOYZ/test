@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "emulator": "Resizable_Experimental",
+  "serial": "127.0.0.1:5561",
+  "android": "17",
+  "api": 37,
+  "physicalDevice": false,
+  "catalogVersion": "535d33d05b4be03f",
+  "rows": 75,
+  "checks": [
+    "Phone guided journey through three ordered purposes, budget, three priorities, OS/form, three UNKNOWN questions and review",
+    "shared result surface after confirmation",
+    "final APK restart restores confirmed profile",
+    "bundled catalog upgrade preserves confirmed profile and saved history",
+    "real RSA SHA256 signature verification and SQLite activation of device-system-native-update-2",
+    "native catalog rollback to 535d33d05b4be03f",
+    "AICore unsupported with forms available",
+    "real phone reference detail and dated saved decision"
+  ],
+  "nanoGeneration": "not performed; emulator reports unsupported",
+  "evidenceNote": "Full guided flow ran before final metadata and header refinements; final APK reinstalled and restart, catalog migration, signed sync, rollback, detail and save were checked again."
+}

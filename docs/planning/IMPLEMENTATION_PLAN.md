@@ -1,7 +1,14 @@
 # Demo-first implementation plan
 ## Vietnam-first AI device buying adviser
 
-Version 3.2 — 12 November 2026 — Draft for review. Companion: [BRD](../../brd.md). [Traceability register](./project-traceability.json). This is an execution plan, not a record of completed builds or tests.
+Version 3.4 — 13 November 2026 — Draft for review. Companion: [BRD](../../brd.md). [Traceability register](./project-traceability.json). This is an execution plan; implementation and acceptance claims require the linked evidence records.
+
+
+**Current implementation direction (13 November):** the user requested the full Device Advisor system after reviewing missing attachment options. Section 26 records this authorized expansion: Phone, Tablet and PC (laptop/prebuilt desktop), exactly three ordered purposes and three ordered priorities, separate intake screens and the shared result surface. It supersedes INT-DEC-02/03's earlier bounded-demo policy for Demo 2. Original parent journey IDs, spreadsheet approvals and G0–G5 remain unchanged. Historical delivery notes below describe their dated builds; see §26 and the linked verification record for the current implementation.
+
+Version 3.3 incorporates the [Android advisor integration research](./ANDROID_ADVISOR_INTEGRATION_RESEARCH.md) into the execution baseline. Section 25 defines the incremental offline catalog, TypeScript domain/session and optional Gemini Nano work, with package dependencies, estimates, verification and rollout conditions. Sections 6, 12, 15, 16 and 19 are reconciled with that architecture. Existing U/A/BR/NFR IDs and G0–G5 retain their meanings; this planning update does not accept a gate or approve the attachment's different selection counts/category scope.
+
+Reading order for the next increment: current status in §4.1 → execution sequence in §12 → integration contract and backlog in §25. Sections 3–5 and 14 retain the original demo completion contract; reuse delivered work and address its remaining evidence gaps rather than restarting it.
 
 Frontend follow-up, 13 November 2026: the [Material 3 Expressive frontend implementation plan](./FRONTEND_IMPLEMENTATION_PLAN.md) turns the current frontend audit into FE-00–15, with dependencies, estimates and acceptance cases. Its [animation specification](../design/FRONTEND_MOTION_SPEC.md) defines shared springs, per-interaction animation, reduced motion and native evidence. These are planned work for the active `AdviserApp.tsx`; they do not mark prior gaps or stage gates accepted.
 
@@ -15,9 +22,9 @@ Version 3.1 corrects the source to the user-supplied lowercase brd.md. Demo incl
 
 Version 3.0 applies Android-only React Native delivery and HTML/CSS design previews. Android feasibility, Expressive review and Android package/device evidence replace former dual-platform work. brd.md §11.1 and plan §24 define design acceptance. Historical effort ranges need re-estimation.
 
-Version 2.1 adds the explicit U01 laptop-picker delivery contract in section 23, including ordered uses, refinement, compromise handling and A06/A07 simulation. These are pending extensions to the existing browser frontend and to the future native demo. See the [research and implementation gap assessment](../../research/laptop-picker-research.md).
+Historical version 2.1 added the U01 laptop-picker contract in §23. Its synthetic behavior is now implemented in the Android demo; current coverage and outstanding acceptance are recorded in §4.1 and the verification record. The [earlier gap assessment](../../research/laptop-picker-research.md) remains historical context.
 
-Version 2.0 adds work-package completion contracts, state/API boundaries, native control checks, failure handling, evidence procedures, release/rollback operations and the demo script. Read sections 1–5 for scope and sequence, 6–12 for architecture and stages, and 13–22 for execution detail. Proposed script names, endpoints and evidence paths below are to be created during implementation; none is asserted to exist yet.
+Historical version 2.0 added work-package completion contracts, state/API boundaries, native checks, failure handling and release procedures. Current commands, endpoints and artifacts are identified in the app README and §4.1; other paths and contracts remain proposed unless evidence is linked.
 
 Frontend progress note, 11 November 2026: a [browser-reviewable React Native Web prototype](../../apps/adviser/README.md) now demonstrates a subset of the D0 interaction. Its [verification record](../../apps/adviser/VERIFICATION.md) is frontend evidence only. It has no native app hosts or real AI provider integration and does not pass G1/G2/G3. Script names in this plan remain proposed unless explicitly documented in that prototype's README.
 
@@ -44,7 +51,7 @@ G3 requires D0 and D1 unless a D1 deferral is explicitly recorded. With no model
 
 ## 3. First executable slice
 
-The first implementation work is a single React Native Android screen containing an exact VND ceiling input, multiple task choices and a command to show the resulting typed profile. Use a typed TypeScript domain contract and verify displayed values and events in the installed Android app.
+This is the original native-feasibility completion contract. The app now exceeds this initial screen slice; use §4.1 to identify remaining evidence and §12 for the next work. The slice contains an exact VND ceiling input, multiple task choices and a command to show the resulting typed profile, with displayed values/events verified in the installed Android app.
 
 1. Inventory the local Node/package manager, JDK, Android SDK/Gradle, emulator, physical Android device access, signing setup and build capabilities without assuming they exist.
 2. Select compatible React Native, Android toolchain and component-library versions. Initialize an Android host from a supported template, build/install the release variant and commit the lockfile/version matrix.
@@ -73,6 +80,21 @@ Role names below represent responsibilities rather than assumed staff headcount.
 | REVIEW-01 | Run the scripted demo and exploratory buyer sessions; reconcile findings, cost and production proposal | DEMO-08; DEMO-10 unless an explicit D1 deferral is accepted | Product + design + QA | T-D10 and G3 decision |
 
 DEMO-03/04 can proceed while native feasibility is investigated. DEMO-09 can begin after its inputs stabilize, but final D1 integration depends on the client flow. Do not build all screens before G1. Do not start live retailer ingestion, public accounts or a production admin portal to unblock a fixture demo.
+
+### 4.1 Current delivery baseline and remaining work
+
+Status basis: source/research review at commit `828c5f8`, the [Android verification record](../../apps/adviser/VERIFICATION.md), and the 12 November research baseline checks. Package contracts above remain acceptance obligations; an implemented subset does not imply gate acceptance.
+
+| Existing package | Reusable implementation/evidence | Remaining acceptance or integration work |
+|---|---|---|
+| PREP-01 / DEMO-01/02 | Expo SDK 54 / RN 0.81.5 host, release APK, emulator control/interaction evidence and Expressive tokens | Named owners, complete physical-device/accessibility matrix and G1 decision; Nano requires its own dependency spike |
+| DEMO-03/04 | 12 synthetic variants, 18 offers, integer totals, eligibility, deterministic ranking and evidence templates | Extract snapshot-based contracts; replace synthetic capability assumptions only with reviewed evidence |
+| DEMO-05/06/07 | Ordered-use picker, review/refinement, detail, comparison, sample offers, saved-decision migration/recovery | Extend provenance, draft restoration, catalog-version invalidation and new storage contracts |
+| DEMO-08 | Recorded release/emulator smoke evidence and automated checks | Physical-phone/TalkBack, full performance protocol, applicable configuration transitions and G2 decision |
+| DEMO-09/10 | Bounded server adapter, reviewed proposals, fact validation, stale-response checks and fallback | Real-provider D1 evidence; local Nano integration is separate planned work |
+| REVIEW-01 / REAL-* / PILOT-01 | Research and separate crawler/embedder tooling | Exploratory buyer sessions, stage decisions, reviewed production data, operations and pilot evidence |
+
+Research baseline: TypeScript passed; 18 app tests and one controlled-provider HTTP test passed. This revision changes planning documents only; those are prior recorded results, not new runtime checks. Existing crawler records are staging inputs, not approved app offers. No Nano, SQLite catalog sync, Phone/Tablet journey or live-provider acceptance is claimed.
 
 ## 5. Demo design and fixture specification
 
@@ -137,7 +159,7 @@ No independently published packages, database or job queue is needed for D0. Ext
 - CatalogRepository, DecisionStore and Clock interfaces: fixture/local adapters first, API/current-time adapters later.
 - AdviserService: proposed profile edits and grounded explanations only; validation/fallback applies to every Android app flow.
 
-Recommendation math is pure shared TypeScript in the demo. Production moves authoritative evaluation and price resolution behind a typed service while preserving fixtures/contract tests. Avoid simultaneously authoritative client/server calculations with different versions.
+Recommendation math remains pure TypeScript for local and any server reuse. For the integration in §25, publication/review authority belongs to the reviewed backend/export process; the app evaluates an immutable approved local snapshot with compatible rule/scoring versions. A server can revalidate current offers when connected, but local browsing, eligibility, totals and explanations remain usable offline with honest freshness. If the server also evaluates, it must use the same versioned contracts/policy and replay tests. Do not merge conclusions from different snapshots into one run.
 
 ### 6.3 Reusable UI boundaries
 
@@ -145,7 +167,7 @@ AppShell, BudgetField, ChoiceGroup, NeedsSummary, ProductSummary/RecommendationC
 
 ### 6.4 D1 AI service
 
-Define POST /demo/needs/interpret and POST /demo/advice/explain as proposed endpoint contracts. Their existence is not implied by this plan. Requests identify the decision/profile revision and supplied facts. Responses contain typed proposed fields or claims referencing allowed fixture IDs. The client confirms material edits before creating a new run.
+The existing `services/demo-ai` implements POST /demo/needs/interpret, POST /demo/advice/explain and GET /health; see its [run instructions](../../services/demo-ai/README.md). Controlled-provider tests cover the service boundary; real-provider D1 remains pending. Requests identify the profile revision and supplied facts; responses propose fields or allowed claims. Section 25 adds an app-owned provider interface and local Nano adapter, preserving user review and shared validation.
 
 The service holds keys, constrains payloads and usage, applies timeout/cancellation and validates output. No arbitrary web browsing, seller URL generation or automatic constraint relaxation is permitted. Imported/user text is data, not an instruction to change policy. Reject unsupported facts and use a deterministic explanation with an honest status. Logging records error/timing/version metadata with minimal prompt content. Provider settings and retention are decided before using personal input.
 
@@ -157,7 +179,7 @@ Keep a local review/findings log for A08 and diagnostic output for A09. Producti
 
 ## 8. Verification register
 
-All tests below are planned. Store results with build commit, package/dependency versions, dataset/rules/model versions, platform/device/OS, environment, sample size, observed outcome and open defect links.
+The IDs below define verification obligations. Completed subsets and limitations are recorded in §4.1 and the Android verification record; they do not mark the entire register passed. Section 25.7 adds planned T-INT checks. Store results with build commit, dependency/data/rule/model versions, device/OS, environment, sample size, observed outcome and open defect links.
 
 | ID | Verification and evidence |
 |---|---|
@@ -211,15 +233,19 @@ Do not carry artificial hardware assumptions, fixed clocks, sample discounts or 
 
 Build a modular service and straightforward database/search first. Add ingestion workers only for permitted feeds actually used; do not introduce distributed infrastructure solely to match the long-term diagram. Minimum staff screens can be simple forms, review queues and revision views. Decide the internal admin UI shell at G3; it is not part of the native consumer-demo requirement.
 
+Section 25 decomposes parts of REAL-02/03/04 into incremental integration packages; these are not a second production backlog or permission to bypass G3/G4. Contract, fixture-import and native feasibility experiments can precede production readiness. Publishing real catalog bundles or running a real-data pilot requires the applicable source/operating readiness and stage decision. U06 quotation parsing and other REAL-03 outcomes are outside the bounded advisor increment and remain separately staged.
+
 For U06, use explicit user-confirmed quotation fields and an allowlisted set of supported retailer parsers where feasible. Unsupported links fall back to manual entry. Any server fetcher needs bounded destinations, response sizes, redirects and parsing behavior; broad arbitrary URL/OCR ingestion is not baseline scope.
 
 Production AI uses real evidence with the same typed boundaries. Evaluate filters alone, workload rules and AI-assisted intake/explanation against fixed snapshots. An initial proposed 100–150 profile set should include sparse/conflicting input, budget segments, misleading variants and no-fit cases. Technical reviewers judge suitability independently; report disagreements and evidence gaps. Do not use model fluency or affiliate clicks as the sole quality measure.
 
 ### 9.2 Expansion ordering
 
-After G5, review demand, cost and dependency readiness before selecting E/L scope. Phones reuse buying journeys but require phone-specific variants/workload evidence. Alerts need accumulated price observations and revalidation. Used devices need condition evidence. Ownership needs verified policies. Reviewed PC templates need A14 rules and physical/electrical/firmware checks before unrestricted generation. Partner services, community, shared procurement, commercial reporting and new countries require their own operating readiness. This is a dependency order, not a promised release calendar.
+After G5, review demand, cost and dependency readiness before selecting E/L scope. Phones and tablets reuse buying journeys but need category-specific variants, evidence, accessory totals and rules; see §25.9. A deliberate scope revision may resequence this expansion. Alerts need accumulated price observations and revalidation. Used devices need condition evidence. Ownership needs verified policies. Reviewed PC templates need A14 rules and physical/electrical/firmware checks before unrestricted generation. Partner services, community, shared procurement, commercial reporting and new countries require their own operating readiness. This is a dependency order, not a promised release calendar.
 
 ## 10. Capacity, estimate and cost controls
+
+Current incremental estimate: §25.5 totals **21–35 focused developer-days** for the bounded laptop integration with Nano, subject to its feasibility gate. It excludes framework migration, editorial/licensing work, unavailable hardware, review/recruitment waits and category expansion. It overlaps the decomposed REAL work and must not be added again to those packages. Re-estimate after LUA-INT-04/06; no calendar release date is committed.
 
 The Android-only revision removes desktop build/adapter/test work and adds explicit Expressive component validation. Earlier multi-platform estimates do not establish effort for this baseline; re-estimate after Android G1.
 
@@ -239,7 +265,15 @@ Every material scope change names affected U/A/BR/NFR IDs, stage, revised depend
 
 ## 12. Immediate execution order
 
-Start PREP-01, DEMO-01 and the bounded DEMO-02 native slice. Define DEMO-03 fixtures/contracts while the slice is explored. Review G1 before continuing with DEMO-05/06. Finish D0 and the planned D1 checkpoint, conduct REVIEW-01, and record G3 before beginning REAL-02/03 production engineering. If the sponsor explicitly defers D1, REVIEW-01 records that decision and the missing AI evidence; the D1 packages remain pending rather than completed.
+Continue from the existing Android demo:
+
+1. Start LUA-INT-01: reconcile the scope/versions, name reviewers and physical targets, record the remaining G1/G2/D1 evidence, and freeze a fixture regression baseline.
+2. After that baseline, start LUA-INT-02/03 for explicit catalog/session/provider contracts and LUA-INT-06 for a bounded native Nano feasibility experiment. These can proceed independently when capacity exists. Do not recreate the host or rerank products during contract extraction.
+3. Build LUA-INT-04/05 using synthetic bundles first; prepare permitted real catalog review under REAL-01. Address existing demo evidence gaps and REVIEW-01 alongside these bounded experiments; retain the G3/G4 production boundary.
+4. If native feasibility passes, connect LUA-INT-07 and evaluate under LUA-INT-08. If it fails, continue the core and record Nano as deferred; any framework upgrade becomes separately estimated work.
+5. LUA-INT-09 packages the evaluated scope, rollback and gate decision. A core-only delivery must state that Nano is deferred. A local Nano result does not complete server-provider D1; a D1 deferral or replacement requires a recorded G3 decision.
+
+Section 25 is the detailed execution contract for this increment. The inherited D0/D1 and REAL package obligations remain applicable to their respective milestones.
 
 Reference mechanisms: [React Native components](https://reactnative.dev/docs/intro-react-native-components), [Fabric components](https://reactnative.dev/docs/fabric-native-components-introduction), [Building with M3 Expressive](https://m3.material.io/blog/building-with-m3-expressive), [Material motion](https://m3.material.io/styles/motion) and [Android Material guidance](https://developer.android.com/develop/ui/compose/designsystems/material3). Compose documentation supplies design/native reference context, not a requirement to implement Compose screens. Verify React Native Android component/toolchain compatibility during DEMO-01/02.
 
@@ -282,7 +316,7 @@ The listed acceptance ranges are references to the individual BRD criteria, not 
 
 Use a stable decision ID plus separate profile revision, dataset version and rules version. Draft edits do not mutate an accepted historical run. A confirmed change generates a new revision and marks old derived results outdated. Search query state, comparison selection and saved snapshots have explicit ownership; avoid one mutable root object for every screen.
 
-Ranking responses identify their input versions. Accept a response only if its decision/profile revision still matches the active request. Abort where supported; even if transport cancellation fails, ignore late output. Never use last-arriving-response order as the source of truth.
+Ranking responses identify their input versions. Accept a response only if decision/session, request ID, confirmed profile revision, catalog, taxonomy/question, rule and scoring versions match the active run. Explanation caches also include locale, provider/base model, prompt/schema and question context. Abort where supported; even if transport/native cancellation fails, ignore late output. Never use last-arriving-response order as the source of truth.
 
 Distinguish three concepts in code and UI: mandatory fit, current offer validity and price completeness/affordability. Return structured reasons for pass/fail/unknown and no-fit/no-current-offer. A successful fetch returning zero qualifying offers differs from a network failure. Render an old saved comparison with historical labels while a current refresh is pending.
 
@@ -317,6 +351,8 @@ Request: minimal relevant text plus supported field definitions and current conf
 
 The client displays the proposed changes next to the existing values. Apply only after user confirmation; rejection leaves the confirmed profile intact. A clarification response should identify the missing decision rather than fabricate a value. A new profile edit invalidates an outstanding interpretation proposal; the user may re-run it using the current state.
 
+The integration introduces a versioned partial-edit contract: allowlisted typed `SET` and explicit `CLEAR`, with omission meaning unchanged, user-text evidence and base revision. Keep target budget distinct from hard ceiling. Validate each native/server proposal through the same TypeScript boundary; Kotlin structured output is not business approval. Migrate the existing complete `NeedsPatch` through an explicit adapter until both ends support the new contract.
+
 ### 16.2 Explanation contract
 
 Build a fact bundle from the deterministic run: selected/excluded variants, requirement checks, approved spec assertions, total breakdowns, unknowns and calculation references. Include only the scope needed for the question. The model selects allowed claim types, subjects and supporting fact references; controlled rendering owns numerical values, eligibility labels and links.
@@ -348,6 +384,8 @@ Provider failure or failed validation produces a deterministic explanation tied 
 
 Evaluate a small fixed set covering: clear Vietnamese request, ambiguous budget, contradictory requirements, unsupported application, attempts to override facts, invented product/source IDs, contradictory claims with valid IDs, late responses and timeout. Record the provider/model/prompt/schema versions, observed result and cost without publishing private prompts. Keep these checks separate from eventual production hardware-suitability evaluation.
 
+For local mode, Nano readiness includes supported device/model, foreground state and the task's language-quality gate. Failure returns to the form/parser/templates. Server mode requires explicit selection and send; never escalate a failed local request to cloud automatically. Keep Nano out of background catalog workers. Section 25.6 defines capability, cancellation and native-build evidence, and §25.7 defines the larger held-out evaluation.
+
 ## 17. Native integration and shared-component acceptance
 
 | Component group | Shared responsibility | Platform evidence before calling it ready |
@@ -370,7 +408,7 @@ Domain checks run without a device and use manually reasoned expected values for
 
 Repository/schema checks exercise invalid IDs, import retry, saved-schema compatibility and corrupted local records. Component/flow checks cover confirmation, selection and outdated response rejection. Native/device checks cover actual control/input/accessibility behavior and release packaging. AI contract checks include both controlled invalid output and at least one real provider-backed request. Manual buyer sessions address comprehension rather than code coverage.
 
-Use a configured React Native Android build runner and Android device/emulator setup; record unavailable CI/device checks explicitly. Define prospective scripts such as `check:types`, `check:fixtures`, `check:domain`, `build:android` and `verify:demo` during implementation. They are not commands that can be run in the current research-only repository yet.
+Use the current app commands `npm run check`, `npm test`, `npm run test:service`, `npm run export:android` and `npm run build:android` as documented in the [app README](../../apps/adviser/README.md); choose checks appropriate to each change. Proposed catalog, migration and device/evaluation commands must be added by the owning integration package before being listed as runnable. Record unavailable CI/device checks explicitly. Documentation-only revisions require reference/traceability validation, not a new APK or repeated model benchmark.
 
 ### 18.2 Evidence bundle
 
@@ -417,7 +455,7 @@ Build simple staff entry points matching A01–A09: access, staged imports, cata
 
 ### 19.3 REAL-03 — consumer production adapters
 
-Replace local catalog/ranking authority with versioned API contracts while preserving UI semantics. Add real destination mapping, source dates, privacy notices, bounded quotation intake and sharing. Handle current/history distinctions and unsupported links explicitly. Validate each redirect/fetch against approved destinations and bound response size/redirect behavior; do not allow source text or the model to decide an arbitrary server request.
+Replace fixture globals with versioned repository contracts and an approved local catalog snapshot under §25. The publisher owns reviewed facts, offers and policies; the app computes reproducible local advice against those versions. Add authenticated bundle delivery and connected current-offer revalidation without blocking offline discovery. Add real destination mapping, source dates, privacy notices and sharing; bounded quotation intake remains a separate REAL-03 outcome. Handle current/history distinctions and unsupported links explicitly. Validate each redirect/fetch against approved destinations and bound response size/redirect behavior; source text and model output cannot select arbitrary server requests.
 
 ### 19.4 REAL-04 / PILOT-01 — operations and evaluation
 
@@ -463,7 +501,7 @@ Maintain these records with the simplest reviewable mechanism suitable for the t
 
 ## 23. Guided laptop picker implementation contract — v2.1
 
-This section expands U01 and A06/A07, not the number of parent features. It follows the [reference research](../../research/laptop-picker-research.md). Ordered primary uses, structured refinement and the new acceptance cases are not yet implemented or verified in the browser demo. Existing task selection, exact budget, sample ranking, comparison and save behavior can be reused.
+This section defines the U01 and A06/A07 picker contract without adding parent features. It follows the [reference research](../../research/laptop-picker-research.md). Ordered uses, structured refinement, comparison and save behavior now exist in the synthetic Android demo; see §4.1 for evidence limits. Section 25 extends these contracts for replaceable catalogs, durable sessions and optional local AI.
 
 ### 23.1 Work sequence and ownership
 
@@ -482,7 +520,7 @@ Keep existing package dependencies and stage gates. Additions change effort and 
 
 ### 23.2 State and domain changes
 
-Extend the current `Profile` through a versioned migration rather than interpreting its existing `tasks` array as user-confirmed importance. Proposed fields: `primaryUseOrder` (one to three unique supported IDs), `additionalRequiredTaskIds`, `useOrderConfirmed`, existing exact `budget`, `budgetScope`, typed follow-up answers, `profileRevision` and `questionVersion`. Existing product preferences remain separate from primary-use order. All primary and additional tasks contribute mandatory constraints.
+The current `Needs` already extends `Profile` with `primaryUseOrder` (one to three IDs), `additionalRequiredTaskIds`, `useOrderConfirmed`, `revision` and `budgetScope`. Reuse these fields and the existing VM answer; version any additions for field origins, category/intake/question policy, budget target versus ceiling and other typed follow-ups under §25. Do not reinterpret the legacy `tasks` array as confirmed importance. Product preferences remain separate from primary-use order. All primary and additional tasks contribute mandatory constraints.
 
 Store result refinements separately: `screenMinInches`, `screenMaxInches`, `maxWeightKg`, and `sortMode`. A refinement changes the displayed eligible subset; it does not rewrite the needs profile or delete compared/saved items. Mark a selected item outside the current view appropriately. Store draft versus applied filters; cancelling the mobile sheet discards its draft. A revision/token on every result prevents an old run from replacing new criteria.
 
@@ -494,7 +532,7 @@ Migration from local schema v1 preserves the budget, tasks, preferences, saved I
 
 ### 23.3 Ranking and compromise policy
 
-Apply exact-variant, valid-offer, total-budget and all mandatory-work checks first. Rank only eligible variants. For the fixture experiment, a proposed policy uses normalized, documented per-task preference quality and importance weights 3:2:1 (normalize for one/two uses), followed by explicit product preferences, payable total and stable variant ID. Product/technical review must approve this policy and its evidence mapping before implementation. It is an experimental design choice, not the competitor's verified algorithm or a real performance measurement.
+Apply exact-variant, valid-offer, total-budget and all mandatory-work checks first. Rank only eligible variants. The implemented fixture experiment uses per-task illustrative quality and importance weights 3:2:1 (normalized for one/two uses), followed by product preferences, payable total and stable variant ID. Preserve it during extraction. A replacement production policy requires reviewed evidence and before/after replay. The attachment's alternative coefficients remain candidates for evaluation, not validated improvements or hardware measurements.
 
 Do not use array order accidentally, treat missing evidence as zero performance, or display a synthetic score as measured hardware quality. An unknown mandatory requirement leads to clarification; an unknown optional preference is displayed and handled consistently by the versioned policy. Add fixture pairs whose task tradeoffs make a priority-order change meaningful while both remain eligible.
 
@@ -551,3 +589,198 @@ Apply the article’s design tactics to this product: contrasting shapes disting
 Install the React Native release build on at least one named physical Android phone; use an emulator for additional OS/window configurations. Demonstrate exact VND input, task selection/reordering, typed state-event updates and a result action. Check Android Back, IME, edge-to-edge insets, TalkBack, font/display scaling, rotation/recreation, foreground/background return and reduced/disabled animation. Verify focus and state after closing sheets/dialogs. Record supported OS/architectures and missing device coverage at G1; repeat applicable checks across the full D0 journey at G2.
 
 Map AC-UX01–05 to T-D01/T-D05/T-D07/T-D08 in the evidence manifest. Previews support layout/state review; acceptance uses installed React Native Android behavior. Existing money, variant, evidence and AI invariants still apply. No feasibility, design or release check is passed by this planning revision.
+
+## 25. Offline advisor and optional on-device AI integration — v3.3
+
+### 25.1 Outcome, scope and decision register
+
+Recommendation-engine integration: the Device Advisor deterministic contracts now drive the real-reference flow, including hard checks, full-cost uncertainty, weighted utility intervals, evidence reasons, diverse eligible shortlists and reviewed compromise proposals. See [module implementation and evidence](../../apps/adviser/RECOMMENDATION_MODULE.md). This is the laptop recommendation core; missing catalog evidence, Nano and broader category scope are not marked complete.
+
+Real-reference demo progress: Demo 2 now reads 70 collected source listings from a normalized on-device SQLite catalog with separate source/offer/fact tables. Reference recommendations, details, paired comparison and dated saved decisions use these records. See [reference demo evidence and boundaries](../../apps/adviser/REAL_REFERENCE_DEMO.md). Missing charges, stock and workload evidence remain unknown; authenticated live sync, Nano and production acceptance remain pending.
+
+Demo 2 progress: a selectable React Native integration demo now exercises explicit fixture snapshot evaluation, persisted catalog activation/rollback, confirmed deterministic budget proposals and exact detail/comparison. See [Demo 2 implementation record](../../apps/adviser/DEMO_2.md). This is a bounded prototype using AsyncStorage and embedded synthetic bundles; SQLite, native Nano, authenticated synchronization and full package acceptance remain pending. The planned statuses below describe complete package obligations.
+
+Deliver one complete incremental journey: **Explorer/direct search → laptop needs/review → local shortlist → exact detail/paired comparison → offers → save/reopen/share**, using a bundled versioned catalog. Optional Nano extraction proposes needs edits within the same journey. The form, rules and evidence templates complete it with no network or model. Real-price claims require approved sources and valid observations; offline historical prices do not establish current stock or affordability.
+
+This section adopts the architecture and staged work from the [integration research](./ANDROID_ADVISOR_INTEGRATION_RESEARCH.md), based on the supplied `Android_Device_Advisor_Integration_Plan (8).md`. The research contains the repository audit and dated official-source findings. This section owns execution order/status; the research remains its rationale. The following package tables preserve the original complete acceptance obligations. Their current implemented subsets and verification are recorded in §26; unperformed quality/device/production checks remain pending.
+
+| Decision ID | Working decision / unresolved choice | Owner and resolution point |
+|---|---|---|
+| INT-DEC-01 | Keep Expo/React Native screens and TypeScript eligibility/totals/ranking; add a Kotlin local Expo module for SDK access only | Technical lead records in LUA-INT-01 |
+| INT-DEC-02 | Superseded for Demo 2 by the user's full-system instruction: exactly three ordered purposes and three ordered priorities; legacy Demo 1 remains its own historical journey | Implemented in the new versioned profile; see §26 for verification and data boundaries |
+| INT-DEC-03 | Expanded to Phone, Tablet, laptop and prebuilt desktop intake under the full-system instruction | All category entry points implemented; source coverage and model/device quality acceptance remain separate |
+| INT-DEC-04 | Investigate Nano in an internal API 26+ build; decide production minimum OS or maintained core/Nano build variants | Native lead + product after LUA-INT-06; evaluate audience and release-maintenance cost |
+| INT-DEC-05 | Test a compatible Kotlin/KSP/Expo matrix; any broader framework upgrade is separately estimated | Native lead at LUA-INT-06; record pass, further experiment or defer |
+| INT-DEC-06 | Form/templates always available; local mode never silently sends to server. Existing server mode stays explicit | Client/AI owner implements in LUA-INT-07; verify T-INT-05 |
+| INT-DEC-07 | Local Nano evidence does not replace existing server-provider D1 automatically | Product owner at REVIEW-01/G3 records original D1 evidence, explicit deferral or revised gate scope |
+| INT-DEC-08 | Approved immutable catalog snapshots, Expo SQLite repository, separate user-data ownership; start refresh in foreground | Data/client owners confirm compatibility and migration strategy in LUA-INT-04/05 |
+
+These decisions describe implementation policy or open product choices, not new approvals. No new parent U/A journeys, source priorities or spreadsheet approval values are introduced. The nine integration packages refine existing work; G0–G5 still control product readiness and release.
+
+### 25.2 Ownership, modules and code touchpoints
+
+| Boundary / current location | Implementation work | Completion invariant |
+|---|---|---|
+| `src/domain.ts`, `src/picker.ts` | Extract typed catalog input, money/eligibility/ranking/reason functions into `src/advisor/domain/`; keep fixture adapter | Existing fixture outcomes and stable order survive extraction; no direct fixture-global dependency in production evaluation |
+| `src/AndroidApp.tsx` | Extract session reducer/review, request lifecycle and persistence orchestration into `src/advisor/session/`; reuse screens/tokens | Draft, confirmed profile, filters, comparison and saved snapshots have explicit ownership |
+| `src/ai.ts`, `services/demo-ai` | Add `src/advisor/ai/` provider interface, legacy server adapter, deterministic path and native adapter | Same allowlists, revision checks and fact rendering for every provider |
+| `src/advisor/contracts/`, `config/` (new) | Version profile/patch/run/capability contracts, category/intake taxonomy, question predicates and applicable priorities | Missing/unknown/not-applicable are explicit; configuration uses supported enums/operators rather than executable downloaded code |
+| `modules/advisor-ai/` (new) | Kotlin availability/download/extraction/cancel bridge, typed JS wrapper and unsupported web/Expo Go path | No model-driven price, catalog mutation, compatibility verdict or navigation |
+| `src/advisor/data/`, `tools/catalog/` (new) | Fixture and SQLite adapters, staging validator, reviewed snapshot exporter/importer | One immutable snapshot/policy set per run; failed import cannot change the active catalog |
+| Expo configuration / `plugins/` where needed | Reproducible native dependency and manifest settings | Regeneration retains the module/configuration; no durable changes hidden in ignored generated Android files |
+
+Logical folders need not become independent packages. Move responsibilities only when their implementation lands. Keep the existing `Store.version: 2` migration lineage; the attachment's example schema version does not reset it. Existing `validOffers()` is intentionally bound to 18 fixture offers: retain it for workshop validation and create a separate reviewed-catalog validator. Preserve fixture ID isolation from production identities/URLs.
+
+Data authority is explicit: the publisher reviews facts/offers/policies; the installed app reads its approved local snapshot and evaluates the TypeScript core; connected revalidation may update current observations. Qdrant can later discover candidates/evidence, but retrieved IDs/revisions must be checked against published data. Neither vector similarity nor the crawler's default n-gram hash embedder supplies a suitability verdict. No remote search service is needed to finish the first offline slice.
+
+### 25.3 Profile, purchase and session contracts
+
+Implement these additions through versioned adapters/migrations:
+
+- **Needs:** category/subtype, taxonomy/intake/question versions, ordered purposes, separate mandatory workloads, applicable soft priorities, typed hard constraints and field origin/confirmation. A persona triggers relevant questions; it does not imply RAM, OS or budget. `Strength` stays `UNRATED` until an evidence rubric exists.
+- **Budget:** optional preferred band/target plus independently confirmed `hardMaxTotalVnd`, currency and purchase scope. Existing exact `budget` migrates to its established ceiling meaning. An unspecified ceiling remains unknown; the preferred band's lower bound never requires spending more. If the attachment's tiers are enabled, version their `[min, max)` boundaries and test them.
+- **Patch:** base revision/request/session, allowlisted typed `SET`/`CLEAR`, source text and clarification codes. Omission keeps the current value; explicit `CLEAR` may make the profile incomplete. Review material edits before committing, and reject stale or contradictory proposals. Do not invent choices to meet a count.
+- **PurchaseCandidate:** exact variant + valid offer + required accessories/upgrades. Each hard check returns pass/fail/unknown with a reason/evidence reference. Unknown required accessory cost or compatibility cannot yield a confirmed within-budget/compatible result.
+- **RecommendationRun:** profile revision, snapshot, taxonomy/question, rule/scoring versions, eligible/unknown/excluded candidates and rendered reason references. Filters affect the visible subset, not the confirmed profile. Fewer than three eligible variants is valid.
+- **Persistence:** separate durable draft from confirmed profile and dated saved decisions. Commit complete user edits, preserve original payloads during migration, isolate corrupt records and support scoped deletion. Process death restores committed state without resending a prompt or reopening an offer.
+
+Changing profile/category/policy/catalog invalidates dependent results and in-flight requests. Preserve independent answers; explain which dependent choices require reconfirmation. Ranking-policy changes get a separate reviewed replay after extraction; missing evidence does not become invented utility, and overlapping uncertainty intervals do not establish a definitive winner.
+
+### 25.4 Catalog and synchronization delivery
+
+Use the existing crawler files as staging input. The research observed 70 retailer records, separate from the app's synthetic catalog; do not interpret that count as approved unique variants. A02/A03/A04 work resolves exact manufacturer/region/configuration identity, typed units, sources, permission/retention status, offer charges, discount eligibility, condition, stock and observation timestamps before publication. A06/A07 work reviews questions/rules and their effect on fixed cases. A09 keeps the valid snapshot/core usable during failures.
+
+Start with synthetic bundles that exercise the complete importer. A real bundled starter catalog is released only after the source/data gate. Use the existing REAL-01 coverage hypothesis (30–50 exact laptop variants, 2–3 maintainable sources) as a review input; the attachment's 100–300 multi-category SKU goal is a later sizing hypothesis, not a new minimum or a reason to fill gaps with generated data.
+
+Implementation sequence:
+
+1. Create versioned schemas for variant, offer/price observation, fact/source, taxonomy/questions, rules and snapshot manifest. Include dataset mode, market, app/schema compatibility, bytes, digest and trusted-origin/signature metadata. Validate cross-record references and known policy operators.
+2. Add the Expo SDK-compatible SQLite adapter. Import a bundled snapshot on first use so the core works on a first offline launch. Keep settings/saved decisions in the existing store initially; introduce separate transactional session storage only with a justified, tested migration.
+3. Implement proposed `/advisor/v1/manifest`, `/advisor/v1/catalogs/{version}/bundle` and `/advisor/v1/policies/{version}` delivery or equivalent authenticated static paths. These catalog endpoints do not currently exist; specify their deployment/ownership before connecting a production client.
+4. Download with size/time bounds, validate authenticity and content, import into versioned staging tables, then activate the entire snapshot in one transaction. Keep the prior version; never replace an open database file underneath a connection. Interrupted/invalid imports leave active catalog and user history intact.
+5. Capture active versions at run start. Re-evaluate or mark results outdated after activation; retain dated saved observations and withdrawn-item context. Garbage-collect only snapshots no active run needs. Unsupported future schemas remain recoverable.
+6. Deliver user-triggered/foreground refresh first. Add SDK-compatible Expo BackgroundTask only when justified; refresh is best effort and never performs Nano inference. Report observed/expiry context rather than treating background scheduling as a freshness guarantee.
+
+A snapshot signature establishes origin, not factual correctness. Offline stale prices remain reference observations; connected purchase handoff revalidates available offer context and uses reviewed destinations. Keep export/recovery/delete scopes and Android backup behavior documented before claiming device-exclusive storage. Catalog/rule rollback and user-schema migration require separate recovery procedures.
+
+### 25.5 Work packages, dependencies and estimates
+
+Status for every row: **planned; not executed**. Roles are responsibilities, not assumed staff count. Estimates are focused developer-days for someone familiar with this repository and are incremental to the delivered demo.
+
+| ID | Output and owner | Dependencies / readiness | Done when | Effort |
+|---|---|---|---|---|
+| LUA-INT-01 | Baseline, scope/decision register, target matrix and evidence gaps; product + technical lead | Current demo/research | INT-DEC records have working policy, owner and resolution point; existing fixture baseline and G1/G2/D1 gaps are recorded | 1–2 |
+| LUA-INT-02 | Explicit domain/catalog/provider contracts and fixture adapter; domain/client | 01 | Evaluation and AI validation receive the same snapshot; existing regression outcomes preserved; T-INT-01 | 2–3 |
+| LUA-INT-03 | Partial patches, field origins, session reducer and draft restore; client/domain | 02 | v1/v2 migration/recovery, confirmation and stale-result rejection pass; T-INT-02 | 2–3 |
+| LUA-INT-04 | Catalog schema, staging validation, reviewed export contract and bundled laptop dataset; data/domain | 02; data reviewer; G4 before real publication | Synthetic failure fixtures pass; real records satisfy source/identity/cost/evidence review before activation; T-INT-03 | 3–5 |
+| LUA-INT-05 | SQLite, versioned import, foreground refresh and rollback; client/data | 03/04 | First launch offline, atomic activation, failure recovery and historical context pass; T-INT-04 | 3–5 |
+| LUA-INT-06 | Native Nano feasibility report and reproducible version matrix; native lead | 01; supported physical phone | Development/release build and physical capability/download/extraction evidence, or a documented no-go/defer decision; T-INT-05 feasibility subset | 2–4 |
+| LUA-INT-07 | Nano/provider router, extraction/review, cancellation and fallback; native/client/AI | 03 + successful 06; labelled Vietnamese cases | Validated proposals only; explicit routing; lifecycle/quota/late-output cases pass; T-INT-02/05 | 3–5 |
+| LUA-INT-08 | Independent evaluation, release/device/accessibility and performance evidence; QA + data/AI reviewers | 05; 07 for Nano-enabled scope | T-INT-06/07 and applicable T-D/T-P results recorded; core and Nano outcomes assessed separately | 4–6 |
+| LUA-INT-09 | Evaluated release scope, feature flags, rollback and decision pack; product + QA/operations | 08; relevant G3/G4 before pilot | T-INT-08 and applicable G2/G3/G4/G5 decision records identify coverage, issues, deferrals and rollout owner | 1–2 |
+
+Total with the planned Nano path: **21–35 developer-days**. Excludes broader Expo/RN migration, data editorial/licensing work, hardware acquisition, waiting/recruitment, expanded categories and LiteRT-LM. Work can overlap only where dependencies and real capacity allow; do not divide the total mechanically by team size. Re-estimate after 04/06 and before committing a release date.
+
+Core critical path: 01 → 02 → 03/04 → 05 → 08 → 09. Nano path: 01 → 06, then 03 + successful 06 → 07 → 08. If 06 fails, 07 stays deferred; 08/09 can evaluate and deliver an explicitly core-only scope. A completed feasibility investigation with a no-go result is not successful Nano integration. Full integration completion still requires the enabled Nano path to meet its acceptance scope or a recorded scope change.
+
+| Existing work / requirement | Integration decomposition |
+|---|---|
+| DEMO-03/04/05; U01/U02; A06/A07 | 02/03 extract and extend needs/evaluation without restarting synthetic journeys |
+| DEMO-06/07; U03/U04/U05/U07/U08 | 03/04/05 preserve exact identity, comparison, offers, saved observations and user control |
+| DEMO-09/10; U01; BR-07 | 06/07 add local capability and shared validation; original live-server D1 remains separately evidenced |
+| REAL-01/02; A02/A03/A04/A06/A07 | 04 prepares reviewed source/catalog/policy publication; full production roles/audit remain required |
+| REAL-03/04; A09; BR-06/11/13/15 | 05/08/09 deliver local production adapters, freshness, failure handling and rollback |
+| DEMO-08/REVIEW-01/PILOT-01; NFR and AC-UX | 01/08/09 carry forward device, comprehension, performance and gate obligations |
+
+### 25.6 Native AI feasibility and operational contract
+
+The 12 November research found Prompt API minimum API 26 and ML Kit GenAI's Kotlin 2.3+ requirement, compared with the app's recorded minimum API 24 and installed RN catalog's Kotlin 2.1.20 declaration. Installed Expo KSP mappings do not include Kotlin 2.3. These are compatibility risks to test, not a resolved build matrix. Structured output is optional and separately capability-checked. Official-source links and sample-version discrepancies are preserved in the research §5.
+
+LUA-INT-06 must record resolved Expo/RN/AGP/Gradle/JDK/Kotlin/KSP/Prompt/schema versions, min/target SDK, merged manifest, ABIs, relevant native page-size support, release shrinking behavior and physical firmware/AICore/base-model identifiers. Test a bounded override only through reproducible configuration; a KSP lookup override alone does not establish compiler/plugin compatibility. An SDK guard alone does not resolve a library manifest minimum. Keep any framework migration outside the original estimate until scoped.
+
+The native module exposes app-owned readiness, download, extraction and cancellation operations. Readiness distinguishes checking, ready, needs-download/downloading, unsupported/not-ready, temporarily busy, quota, invalid output and cancelled states. Native SDK types stay behind the bridge. Provide an optional-loading/unsupported implementation for Expo Go and web previews. A custom development/release build is required for native evidence.
+
+Use one foreground request at a time. Count/bound prompt input and output, apply timeout/cancellation, avoid generation on each keystroke, and recheck readiness after download. Interrupted download never removes catalog/session data. Background, close or profile/session change invalidates the request even if SDK computation cannot stop immediately. Retry transient errors only within the recorded budget; quota/failure falls back to useful form/templates. Do not automatically download another model or transmit a prompt to cloud.
+
+Verify explicit Vietnamese amounts, approximate targets, negation and corrections against independent labels/parser checks. A model's language availability and valid JSON do not establish correct extraction. The renderer owns facts, prices, verdicts and URLs; the model may select only valid reason IDs. Delay free-form factual explanations and optional ReasonPlan generation until separately evaluated.
+
+### 25.7 Integration verification and quality gates
+
+T-INT IDs are planned verification groups, not existing test commands or new parent business requirements. Preserve existing acceptance IDs. Each result records input/expected outcome, versions, build/device, observed failures and reviewer. Add meaningful checks with the implementation that introduces the behavior.
+
+| ID | Required evidence | Traceability |
+|---|---|---|
+| T-INT-01 | Explicit snapshot parity, deterministic ordering, one-dong/tier boundaries, unknown required cost/OS, no hard failure overridden by score, distinct filter-empty/no-fit | U01–U05; BR-01–05/08/11; T-D02–05; attachment AT-03/04/05/07/14 |
+| T-INT-02 | Typed SET/CLEAR/omission, confirmation, v1/v2 migration, corrupt-record recovery, process-death draft restore, race across profile/session/catalog/rules | U01/U07/U08; BR-07/11/12; T-D03/05/06/09; AT-08/13 |
+| T-INT-03 | Exact variant/provenance/units, offer completeness, source status, policy enums, synthetic separation, malicious text treated as data | A02/A03/A04/A06/A07; BR-01/04/09/13/15; T-P02–05; AT-04/07/10/11 |
+| T-INT-04 | First-install offline, old/unknown schema, wrong signature/hash, interrupted download/import, full disk, atomic activation/rollback, historical freshness | U02/U05/U07/U08/A09; BR-06/11/12; T-D06/08, T-P06/08; AT-01/12/13 |
+| T-INT-05 | Native build/physical ready-downloadable-unsupported states, capability recheck, explicit server routing, foreground/quota/timeout/cancel/late result and model-version changes | U01/A09; BR-07/12; T-D01/08/09; AT-08/09/15 |
+| T-INT-06 | Independently labelled Vietnamese extraction and reviewed ranking pairs; raw/accepted accuracy, coverage, abstention, critical errors by category/model/prompt | A06/A07; BR-02/03/07/08; T-P05; AT-06/10/14/15 |
+| T-INT-07 | Complete release journey, compact/expanded Android, TalkBack/large text/Back/IME/recreation, cold/warm timing and resource limitations | U01–U05/U07/U08; AC-UX01–05; T-D01/05/07/08; AT-01/09 |
+| T-INT-08 | Disable AI without disabling core, bad catalog/policy rollback, compatible app/data recovery, scoped deletion/backup review, handover and recorded scope decision | A09; BR-06/11/12/13/15; T-P06–08; AT-12/13/15 |
+
+AT-02 category-change invalidation and AT-06 unrated/applicability behavior also belong to §25.9 expansion. AT-01 across all three device groups can pass only after that expansion; the laptop check is deliberately partial. The same distinction applies to all-category quality coverage.
+
+Start with a small labelled native smoke set, then build separate development/validation/held-out sets. The attachment proposes 500 situations split 300/100/100; budget annotation/review separately and keep held-out examples out of prompt tuning. Report language/negation/money failures and useful coverage; universal abstention is not a successful model.
+
+Proposed targets carried from the research: 99% raw exact match for explicit money, task/priority F1 ≥0.95, ≥80% agreement on 100 reviewed ranking pairs, local filtering/ranking p95 ≤200 ms on 5,000 loaded SKUs, and warm extraction p95 ≤5 s on enabled devices. These require reviewer-ratified devices, sample sizes and methodology before acceptance; report counts/uncertainty rather than treating a small set as population reliability. Cold start, I/O, app memory and observable AICore/accelerator costs are reported separately. Critical hard-constraint, amount, stale-commit and unsupported-claim failures block the affected capability regardless of average metrics.
+
+### 25.8 Release, rollback and handover
+
+Separate controls for core availability, Nano extraction, optional reason organization, explicit server mode, catalog refresh and later local-model support. Keep compatible policy locally available. A remote kill switch takes effect only after contact; local repeated-failure handling must preserve the form while offline.
+
+Before enabling Nano, require LUA-INT-06/07 evidence and T-INT-05/06/07 on the release configuration. Before real catalog publication/pilot, require G3/G4, reviewed source/offer/policy coverage and T-INT-03/04/08. Progress from internal fixtures to controlled approved data and bounded pilot; expansion beyond pilot requires the existing G5 decision. No planning row or successful APK build accepts a gate.
+
+On bad catalog/policy import, retain or reactivate a compatible prior snapshot. On extraction regression, disable that provider/task and retain form/templates. On incompatible user migration, stop the affected rollout and preserve recoverable records rather than clearing user data. Record owner, affected versions, action, retest and reopen conditions.
+
+Handover includes source/lockfiles, resolved native matrix, dataset/policy schemas and validation report, permitted-source/publication records, migration/import/rollback results, labelled evaluation and device reports, artifact checksum/install instructions, scope/unsupported capabilities, provider/data settings and applicable gate decisions. Track known/unperformed checks distinctly from failures and passes.
+
+### 25.9 Expansion milestones and first execution increment
+
+The bounded laptop delivery is partial against the supplied full-category plan. Complete these separate milestones before claiming its complete scope; estimate them after taxonomy, source and device readiness, outside the 21–35 day range:
+
+| Milestone | Entry dependency and concrete work | Exit evidence / parent journey |
+|---|---|---|
+| Phone and Tablet advisor | Deliberate category scope decision, stable core/repository contracts, reviewed category data; configure personas/workloads, applicable OS/form factors, accessory totals, comparison rows and category-change migration | All-category offline journey, AT-01/02/04/06/11/14, category-specific quality/device evidence; extends U01–U05 with A02–A07 |
+| Prebuilt desktop / PC scope | Define subtype/purchase scope; remove inapplicable battery/mobility scoring, include required peripherals and evidenced OS/software constraints | Complete-cost and applicability cases; U01–U05. Component solving requires the separate U13/A14 reviewed-compatibility milestone |
+| Optional AI reason organization | Stable evidence renderer, passed extraction/runtime gates, independently reviewed reason ordering | Only allowed reason/tradeoff IDs accepted; no new facts or values; U01/U03/U04 and A07 |
+| Optional LiteRT-LM | Demonstrated need beyond Nano coverage, supported/licensed model artifacts, download/integrity/space and device budget | Same extraction gates plus cold/warm memory/thermal/cancellation evidence; explicit model download/delete and deterministic fallback |
+
+First execution increment: complete LUA-INT-01, extract one fixture-backed evaluator/AI-validator path under LUA-INT-02, and run the bounded native experiment under LUA-INT-06. The reviewable outcome is the existing laptop journey with explicit snapshot/provider boundaries plus a native feasibility report. Next connect confirmed profile → bundled snapshot → results/detail/compare/save, then optional extraction through the same review. Keep every increment usable when Nano or real-data readiness is delayed.
+
+## 26. Full Device Advisor implementation — 13 November 2026
+
+The user explicitly requested the full system after identifying missing integration-plan options. This increment extends the existing parent journeys and makes the attachment taxonomy available in the app. The current implementation record is [DEVICE_ADVISOR_SYSTEM.md](../../apps/adviser/DEVICE_ADVISOR_SYSTEM.md); the [verification manifest](../../apps/adviser/verification/device-system-build.json) records exact build and native results. Earlier dated demo notes remain historical.
+
+### 26.1 Delivered integration
+
+| Workstream / existing trace | Current implementation | Evidence / practical limit |
+|---|---|---|
+| U01/U02; LUA-INT-02/03 | Phone, Tablet, laptop/prebuilt desktop; all 19 purposes and ten priorities; exactly three/three ordered choices; versioned session, revision and confirmed/draft ownership | Taxonomy, count, reorder, dependent invalidation and restoration tests; no inferred conversion from old profiles |
+| U01; AT-01/02/03/06 | Six separate intake screens, one adaptive question screen per selected purpose, UNKNOWN answer, conditional OS/form factor, exact price bands, desired target vs hard ceiling, accessories/condition/warranty/RAM, complete review | Three-category component journeys; first launch and completed intake share `ReferenceExplorer` |
+| U01–U05; LUA-INT-03/05 | Pure deterministic eligibility, safe integer total cost, mandatory category/condition/OS/form/warranty/RAM/workload checks, weighted intervals, coverage, evidence reasons, category-specific reference results | Missing facts remain UNKNOWN. Desktop battery/mobility and hard OS/form do not receive soft scoring weight. Strength remains UNRATED; upgrade/repair stay distinct |
+| U03/U04/U07/U08 | Real reference detail, source URLs, comparison, dated saved snapshots, export/delete and corrupt-record retention | Historical saved decisions retain their original observation context; native profile and catalog databases are separate |
+| A02–A07/A09; LUA-INT-04/05 | 75 real observations from six sources; normalized SQLite source/listing/offer/fact/meta tables; local signed catalog publisher; pinned RSA signature, SHA256/size/schema/source validation, atomic activation and previous-snapshot rollback | Real HTTP/crypto/SQLite test rejects tampering, bad hashes/duplicates/unsafe sources; injected write failure preserves the active snapshot. Publisher is local test infrastructure |
+| U01/A09; LUA-INT-06/07 | Local Expo Kotlin module using actual ML Kit Prompt API; capability, model preparation, foreground/cancel/timeout handling; optional bounded text proposal with independent parser agreement and review | Supported physical Nano ready/download/inference and Vietnamese quality evidence remain required. Core forms and template explanations work without Nano |
+| NFR/DEMO-08; LUA-INT-08/09 | Domain/component/catalog checks, database exporter verification, reproducible build configuration and CI workflow | CI is configured, not claimed as remotely executed; observed emulator and build results are in the verification manifest |
+
+Source: the supplied integration plan §§2–14, together with the user's subsequent separate-screen/shared-results/full-options instructions. Stable purpose IDs distinguish similarly named Phone/Tablet/PC personas. The taxonomy preserves all category-specific OS/form choices. PC budget boundaries use 16/32/62/92 million VND; Phone/Tablet use 8/16/24/32 million; the last tier has no upper bound. A band is a preference and never raises the hard ceiling automatically.
+
+### 26.2 Native/build policy
+
+This internal full-system APK adopts API 26 minimum, Kotlin 2.3.21, KSP 2.3.11, Prompt 1.0.0-beta5 and coroutines 1.11.0. Expo SDK 54/RN 0.81.5 remain the host. Durable Expo plugins set the Kotlin catalog and root buildscript dependency, explicit KSP2 version, build memory budget and narrowly scoped localhost cleartext exceptions. Native source dependencies are not patched, metadata checks and release lint remain enabled. See the implementation record for build commands and the exact successful/failed checks.
+
+The local publisher's private key lives in ignored development storage; only its public pin is app source. Regenerating the signing identity requires preparing trust and rebuilding the APK. Production signing custody, key rotation and operated HTTPS publication require an operational design before a public release.
+
+### 26.3 Remaining implementation/acceptance backlog
+
+1. Expand reviewed, permitted product/offer evidence for every category: exact Vietnamese configurations, complete payable totals, stock, warranty, software compatibility and independently measured priority utilities. Current manufacturer records intentionally lack unverified prices and purchase availability; no ranking score repairs a mandatory unknown.
+2. Extend text intake beyond explicit category/ceiling only after typed patch/provenance/conflict handling and independent Vietnamese labels are available. Current free-text clarification is retained and reviewed but does not establish software compatibility automatically. The form implements the complete taxonomy now.
+3. Run Nano download/ready/generation/cancellation on supported physical hardware/AICore. Complete held-out Vietnamese extraction and ranking-pair evaluation; report raw output accuracy and useful accepted coverage independently. Keep Nano opt-in until these pass.
+4. Complete physical TalkBack, large text, compact/expanded/foldable/recreation, full-disk/interrupted update, 5,000-SKU performance and resource tests. Emulator smoke checks and component mocks cover narrower software behavior.
+5. Review provisional dimension anchors, target/band preference policy and Strength rubric before calibrated recommendation claims. Current target/band values are captured for review; hard affordability uses the explicit ceiling.
+6. Establish editorial/source authorization, production catalog hosting, publishing custody, reviewer workflows, scoped policy rollback and incident ownership before real-source pilot operation. Optional LiteRT-LM, cloud routing, AI reason organization and component-by-component PC assembly remain separate milestones.
+
+This increment supersedes the earlier Demo 2 scope restriction. It does not alter existing source approval cells, create new parent journeys, accept G0–G5, or claim the full production/evaluation backlog is complete.
+
+13 November verification result for §26: 55 domain tests, three full-category component journeys with restoration/corrupt-draft checks, 18 legacy flow checks, and ten real HTTP/RSA/SQLite integration checks passed. Android release lint/build, APK signature and 16 KB ZIP alignment passed. The final installed APK retained the confirmed profile and saved history, upgraded its bundled catalog, completed native signed activation/rollback, opened a real reference and saved its dated decision. The emulator reported AICore unsupported; no supported physical Nano generation or production gate acceptance is claimed. Exact hashes, native matrix and observed boundaries are in the [verification manifest](../../apps/adviser/verification/device-system-build.json).

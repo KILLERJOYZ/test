@@ -1,0 +1,119 @@
+[
+  {
+    "id": "apple-iphone16-128",
+    "name": "iPhone 16 128GB · thông số hãng",
+    "category": "phone",
+    "source": "apple",
+    "url": "https://www.apple.com/iphone-16/specs/",
+    "brand": "Apple",
+    "condition": "new",
+    "availability": "unknown",
+    "price": null,
+    "ramGiB": null,
+    "storageGiB": 128,
+    "weightKg": 0.17,
+    "observedAt": "2026-11-12T18:20:54Z",
+    "formFactor": "Classics",
+    "recordType": "manufacturer_spec",
+    "specs": {
+      "os": "iOS",
+      "weight": "0.17 kg",
+      "storage": "128GB",
+      "note": "Thông số hãng, không phải báo giá hoặc cấu hình bán tại Việt Nam đã xác minh."
+    }
+  },
+  {
+    "id": "samsung-a56-spec",
+    "name": "Galaxy A56 5G · thông số hãng",
+    "category": "phone",
+    "source": "samsung",
+    "url": "https://samsungmobilepress.com/media-assets/galaxy-a56-5g?tab=specs",
+    "brand": "Samsung",
+    "condition": "new",
+    "availability": "unknown",
+    "price": null,
+    "ramGiB": null,
+    "storageGiB": null,
+    "weightKg": 0.198,
+    "observedAt": "2026-11-12T18:20:54Z",
+    "formFactor": "Classics",
+    "recordType": "manufacturer_spec",
+    "specs": {
+      "os": "Android",
+      "weight": "0.198 kg",
+      "storage": null,
+      "note": "Thông số hãng, không phải báo giá hoặc cấu hình bán tại Việt Nam đã xác minh."
+    }
+  },
+  {
+    "id": "apple-ipad-a16-wifi128",
+    "name": "iPad (A16) Wi-Fi 128GB · thông số hãng",
+    "category": "tablet",
+    "source": "apple",
+    "url": "https://www.apple.com/ipad-11/specs/",
+    "brand": "Apple",
+    "condition": "new",
+    "availability": "unknown",
+    "price": null,
+    "ramGiB": null,
+    "storageGiB": 128,
+    "weightKg": 0.477,
+    "observedAt": "2026-11-12T18:20:54Z",
+    "formFactor": "Classics",
+    "recordType": "manufacturer_spec",
+    "specs": {
+      "os": "iPadOS",
+      "weight": "0.477 kg",
+      "storage": "128GB",
+      "note": "Thông số hãng, không phải báo giá hoặc cấu hình bán tại Việt Nam đã xác minh."
+    }
+  },
+  {
+    "id": "apple-ipadmini-wifi128",
+    "name": "iPad mini Wi-Fi 128GB · thông số hãng",
+    "category": "tablet",
+    "source": "apple",
+    "url": "https://www.apple.com/ipad-mini/specs/",
+    "brand": "Apple",
+    "condition": "new",
+    "availability": "unknown",
+    "price": null,
+    "ramGiB": null,
+    "storageGiB": 128,
+    "weightKg": 0.255,
+    "observedAt": "2026-11-12T18:20:54Z",
+    "formFactor": "Classics",
+    "recordType": "manufacturer_spec",
+    "specs": {
+      "os": "iPadOS",
+      "weight": "0.255 kg",
+      "storage": "128GB",
+      "note": "Thông số hãng, không phải báo giá hoặc cấu hình bán tại Việt Nam đã xác minh."
+    }
+  },
+  {
+    "id": "apple-macmini-m6-16-256",
+    "name": "Mac mini M6 16GB 256GB · thông số hãng",
+    "category": "desktop",
+    "source": "apple",
+    "url": "https://www.apple.com/mac-mini/specs/",
+    "brand": "Apple",
+    "condition": "new",
+    "availability": "unknown",
+    "price": null,
+    "ramGiB": 16,
+    "storageGiB": 256,
+    "weightKg": 0.67,
+    "observedAt": "2026-11-12T18:20:54Z",
+    "formFactor": "Classics",
+    "recordType": "manufacturer_spec",
+    "specs": {
+      "os": "macOS",
+      "cpu": "Apple M6",
+      "ram": "16GB",
+      "storage": "256GB SSD",
+      "weight": "0.67 kg",
+      "note": "Thông số hãng; chưa xác minh giá tại Việt Nam, màn hình và phụ kiện mua thêm."
+    }
+  }
+]
