@@ -363,5 +363,104 @@ export function taskGuidance(v: Listing, r: Requirements) {
     caveats.push("Chưa có bài đo độc lập cho tác vụ đã chọn");
   return { strengths, caveats };
 }
+const ALLOWLISTED_RETAILERS: Record<string, string> = {
+  "fptshop.com.vn": "fptshop",
+  "thegioididong.com": "thegioididong",
+  "dienmayxanh.com": "dienmayxanh",
+  "cellphones.com.vn": "cellphones",
+  "gearvn.com": "gearvn",
+  "phongvu.vn": "phongvu",
+  "hacom.vn": "hacom",
+  "laptopaz.vn": "laptopaz",
+};
+function optionalNonNegInt(raw: string | undefined, max: number): number | null | "invalid" {
+  const s = (raw ?? "").trim();
+  if (!s) return null;
+  if (!/^\d+$/.test(s)) return "invalid";
+  const n = Number(s);
+  if (!Number.isSafeInteger(n) || n < 0 || n > max) return "invalid";
+  return n;
+}
+export function parseQuotationDraft(input: {
+  name: string;
+  url?: string;
+  advertisedPrice: string;
+  shipping?: string;
+  fees?: string;
+  ram?: string;
+  storage?: string;
+  cpu?: string;
+  os?: string;
+  condition?: "new" | "used" | "unknown";
+  nowIso?: string;
+}): { listing: Listing; recognizedRetailer: boolean } | null {
+  const name = (input.name ?? "").trim();
+  if (!name || name.length > 200) return null;
+  const price = optionalNonNegInt(input.advertisedPrice, 1000000000);
+  if (price === "invalid" || price === null || price <= 0) return null;
+  const shipping = optionalNonNegInt(input.shipping, 100000000);
+  const fees = optionalNonNegInt(input.fees, 100000000);
+  const ram = optionalNonNegInt(input.ram, 1024);
+  const storage = optionalNonNegInt(input.storage, 100000);
+  if (
+    shipping === "invalid" ||
+    fees === "invalid" ||
+    ram === "invalid" ||
+    storage === "invalid" ||
+    (ram !== null && ram <= 0) ||
+    (storage !== null && storage <= 0)
+  )
+    return null;
+  const rawUrl = (input.url ?? "").trim();
+  let url = "https://quote.lua.vn/manual";
+  let source = "manual-quote";
+  let recognizedRetailer = false;
+  if (rawUrl) {
+    if (!safeLink(rawUrl)) return null;
+    url = rawUrl;
+    const host = new URL(rawUrl).hostname.replace(/^www\./i, "").toLowerCase();
+    if (ALLOWLISTED_RETAILERS[host]) {
+      source = ALLOWLISTED_RETAILERS[host];
+      recognizedRetailer = true;
+    }
+  }
+  const observedAt =
+    input.nowIso && Number.isFinite(Date.parse(input.nowIso))
+      ? input.nowIso
+      : new Date().toISOString();
+  const condition =
+    input.condition && ["new", "used", "unknown"].includes(input.condition)
+      ? input.condition
+      : "new";
+  const slug = `${source}:${name}:${price}:${shipping ?? ""}:${fees ?? ""}:${ram ?? ""}:${storage ?? ""}`;
+  let hash = 2166136261;
+  for (let i = 0; i < slug.length; i++) {
+    hash ^= slug.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  const hex = (hash >>> 0).toString(16).padStart(8, "0");
+  const listing: Listing = {
+    id: `${source}:quote-${hex}`,
+    name,
+    source,
+    url,
+    condition,
+    observedAt,
+    ram,
+    storage,
+    cpu: input.cpu?.trim() ? input.cpu.trim().slice(0, 100) : null,
+    os: input.os?.trim() ? input.os.trim().slice(0, 100) : null,
+    screen: null,
+    weight: null,
+    advertisedPrice: price,
+    shipping,
+    fees,
+    stock: "unknown",
+    identity: "unreviewed",
+    rawHash: `quote-${hex}`,
+  };
+  return { listing, recognizedRetailer };
+}
+
 
 

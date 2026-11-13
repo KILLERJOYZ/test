@@ -10,6 +10,7 @@ import {
   checkedAdvice,
   facts,
   observationAgeLabel,
+  parseQuotationDraft,
   relatedListings,
   safeLink,
   sameContext,
@@ -19,6 +20,7 @@ import {
   validRequirements,
   validSaved,
 } from "./catalog.ts";
+import { VI, formatVnd, getStrings } from "./i18n.ts";
 const raw = JSON.parse(
   fs.readFileSync(
     new URL("../../../data/all_laptops_normalized.json", import.meta.url),
@@ -238,5 +240,50 @@ test("REAL-12 taskGuidance surfaces verified hardware strengths and caveats with
   const g2 = taskGuidance(lowRam, { ...r, tasks: ["Máy ảo"] });
   assert.ok(g2.caveats.some((c) => c.includes("RAM 8 GB hạn chế")));
 });
+test("REAL-13 parseQuotationDraft validates allowlisted retailer links, manual fallback and full total calculation", () => {
+  const fpt = parseQuotationDraft({
+    name: "Laptop Lenovo IdeaPad Slim 5 16GB/512GB",
+    url: "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-slim-5",
+    advertisedPrice: "18500000",
+    shipping: "150000",
+    fees: "50000",
+    ram: "16",
+    storage: "512",
+    nowIso: "2026-11-13T00:00:00Z",
+  });
+  assert.ok(fpt);
+  assert.equal(fpt.recognizedRetailer, true);
+  assert.equal(fpt.listing.source, "fptshop");
+  assert.equal(assess(fpt.listing, r).total, 18700000);
+  const manual = parseQuotationDraft({
+    name: "Báo giá cửa hàng địa phương",
+    url: "https://unknown-shop.example.com/quote/1",
+    advertisedPrice: "26000000",
+    ram: "16",
+    storage: "512",
+  });
+  assert.ok(manual);
+  assert.equal(manual.recognizedRetailer, false);
+  assert.equal(manual.listing.source, "manual-quote");
+  assert.equal(assess(manual.listing, r).state, "excluded");
+  assert.equal(
+    parseQuotationDraft({
+      name: "Bad URL",
+      url: "http://insecure.example.com",
+      advertisedPrice: "15000000",
+    }),
+    null,
+  );
+});
+
+test("I18N-01 Vietnamese string table and VND formatter preserve locale semantics", () => {
+  const s = getStrings("vi");
+  assert.equal(s.brandTitle, "lựa.");
+  assert.equal(s.tabs.advisor, "Tư vấn");
+  assert.equal(formatVnd(null), VI.unknownValue);
+  assert.equal(formatVnd(25000000), "25.000.000 ₫");
+});
+
+
 
 

@@ -13,7 +13,7 @@
 ## 1. Install Artifacts & Build Configuration
 
 - **Active Application Entry:** [AdviserApp.tsx](../../apps/adviser/src/AdviserApp.tsx) (`vn.lua.adviser`, v0.4.0, Android versionCode 2, minSdk 26 / targetSdk 36)
-- **Android Release Artifact:** `apps/adviser/artifacts/lua-adviser-demo.apk` (ARM64 + x86_64; SHA-256 `574b09bad00a5da774968deb3033110a5e8bc024b36e8641649d4c9bb9099fe2`; [manifest](../../apps/adviser/artifacts/lua-adviser-demo.manifest.json))
+- **Android Release Artifact:** `apps/adviser/artifacts/lua-adviser-demo.apk` (ARM64 + x86_64; SHA-256 `560ff20ae8fa60e3b0e6aedf25cd1100a1e508e8b78d1b7be18355d063f559b5`; [manifest](../../apps/adviser/artifacts/lua-adviser-demo.manifest.json))
 - **Self-Contained Web Preview:** `apps/adviser/dist/demo.html` (rebuilt and verified with unified `--adviser-*` Material 3 Expressive tokens)
 - **Native Evidence Manifest:** [frontend-expressive/manifest.json](../../apps/adviser/verification/frontend-expressive/manifest.json) and [connected-adviser/IMPLEMENTATION.md](../../research/connected-adviser/IMPLEMENTATION.md)
 
@@ -24,8 +24,8 @@
 | Verification Suite | Command | Result |
 |---|---|---|
 | TypeScript & Static Check | `npm --prefix apps/adviser run check` | **Passed** (`0` errors) |
-| App & Domain Unit Suite | `npm --prefix apps/adviser test` | **64 / 64 passed** (includes `REAL-01`–`REAL-12`, `EVIDENCE-01`–`02`, `THEME-01`, `NANO-01`–`07`, `STORE-01`–`05`, `CLIENT-01`–`04`, `U06-*`) |
-| Connected Service HTTP Suite | `npm --prefix apps/adviser run test:adviser-service` | **11 / 11 passed** (`HTTP-REAL-01`–`07`, `BUDGET-01`–`02`, `PROVIDER-01`–`02`) |
+| App & Domain Unit Suite | `npm --prefix apps/adviser test` | **67 / 67 passed** (includes `REAL-01`–`REAL-13`, `EVIDENCE-01`–`02`, `THEME-01`, `I18N-01`, `NANO-01`–`07`, `STORE-01`–`05`, `CLIENT-01`–`05`, `U06-*`) |
+| Connected Service HTTP Suite | `npm --prefix apps/adviser run test:adviser-service` | **16 / 16 passed** (`HTTP-REAL-01`–`07`, `BUDGET-01`–`02`, `PROVIDER-01`–`02`, `GOV-01`–`04`, `PILOT-01`) |
 | Web Preview Bundle | `npm --prefix apps/adviser run build` | **Passed** (`dist/demo.html` generated) |
 | Prebuild Unit Packs (17 packs) | `python research/prebuild/tools/run_unit_packs.py --all` | **158 / 158 required cases passed** (165 discovered tests, exit `0`) |
 | Prebuild Artifact & Hash Validator | `python research/prebuild/tools/validate.py --all` | **Passed** (exit `0`: all `R00`–`R14` input/output/pack hashes fresh and valid) |

@@ -34,6 +34,7 @@ import {
   budgetUpgradeCandidates,
   facts,
   observationAgeLabel,
+  parseQuotationDraft,
   relatedListings,
   safeLink,
   searchCatalog,
@@ -49,7 +50,7 @@ import type {
 } from "./catalog";
 import { createAdviserStore } from "./adviser-store";
 import type { AdviserState } from "./adviser-store";
-import { fetchCatalog } from "./adviser-client";
+import { fetchCatalog, submitListingReport } from "./adviser-client";
 import { localAdvice, localStatus } from "./local-ai";
 import type { LocalAiBridge, LocalAiStatus } from "./local-ai";
 import {
@@ -62,6 +63,7 @@ import {
 } from "./expressive-theme";
 import { ExpressiveSurface } from "./ExpressiveSurface";
 import { ExpressiveButton } from "./ExpressiveButton";
+import { VI, formatVnd } from "./i18n";
 const localBridge = NativeModules.AdviserLocalAi as LocalAiBridge | undefined;
 
 const KEY = "lua-connected-adviser-v1";
@@ -74,8 +76,7 @@ const INITIAL: AdviserState = {
   endpoint: "",
   token: "",
 };
-const money = (n: number | null) =>
-  n === null ? "Chưa rõ" : n.toLocaleString("vi-VN") + " ₫";
+const money = formatVnd;
 const TASKS = [
   "Văn phòng & học tập",
   "Lập trình",
@@ -131,14 +132,18 @@ function Adviser() {
   }, []);
   const [state, setState] = useState(INITIAL),
     [boot, setBoot] = useState<"loading" | "ready" | "failed">("loading");
-  const store = useRef<ReturnType<typeof createAdviserStore> | null>(null);
-  if (!store.current)
-    store.current = createAdviserStore(
-      INITIAL,
-      () => AsyncStorage.getItem(KEY),
-      (raw) => AsyncStorage.setItem(KEY, raw),
-      setState,
-    );
+  const storeRef = useRef<ReturnType<typeof createAdviserStore> | null>(null);
+  function getStore() {
+    if (!storeRef.current) {
+      storeRef.current = createAdviserStore(
+        INITIAL,
+        () => AsyncStorage.getItem(KEY),
+        (raw) => AsyncStorage.setItem(KEY, raw),
+        setState,
+      );
+    }
+    return storeRef.current;
+  }
   const [tab, setTab] = useState("advisor"),
     [query, setQuery] = useState(""),
     [savedQuery, setSavedQuery] = useState(""),
@@ -146,6 +151,15 @@ function Adviser() {
     [sort, setSort] = useState("price"),
     [showExcluded, setShowExcluded] = useState(false);
   const [form, setForm] = useState(false),
+    [quoteModal, setQuoteModal] = useState(false),
+    [quoteName, setQuoteName] = useState(""),
+    [quoteUrl, setQuoteUrl] = useState(""),
+    [quotePrice, setQuotePrice] = useState(""),
+    [quoteShipping, setQuoteShipping] = useState(""),
+    [quoteFees, setQuoteFees] = useState(""),
+    [quoteRam, setQuoteRam] = useState(""),
+    [quoteStorage, setQuoteStorage] = useState(""),
+    [quoteError, setQuoteError] = useState(""),
     [draft, setDraft] = useState<Requirements>(INITIAL_REQUIREMENTS),
     [budget, setBudget] = useState("25000000");
   const [selected, setSelected] = useState<string[]>([]),
@@ -175,7 +189,7 @@ function Adviser() {
     setBusy(false);
   }
   async function persist(reduce: (s: AdviserState) => AdviserState) {
-    const ok = await store.current!.update(reduce);
+    const ok = await getStore().update(reduce);
     if (!ok)
       setNotice("Không lưu được thay đổi. Dữ liệu đã lưu trước đó được giữ.");
     return ok;
@@ -185,12 +199,12 @@ function Adviser() {
     const bootTimer = setTimeout(() => {
       if (mounted) setBoot((b) => (b === "loading" ? "failed" : b));
     }, 5000);
-    void store.current!.load().then((ok) => {
+    void getStore().load().then((ok) => {
       if (mounted) {
         clearTimeout(bootTimer);
         setBoot(ok ? "ready" : "failed");
-        setEndpoint(store.current!.current().endpoint);
-        setToken(store.current!.current().token);
+        setEndpoint(getStore().current().endpoint);
+        setToken(getStore().current().token);
       }
     });
     return () => {
@@ -201,8 +215,8 @@ function Adviser() {
     };
   }, []);
   async function refresh() {
-    const current = store.current!.current();
-    if (!current.endpoint || !store.current!.ready() || refreshBusy.current)
+    const current = getStore().current();
+    if (!current.endpoint || !getStore().ready() || refreshBusy.current)
       return;
     refreshBusy.current = true;
     setRefreshing(true);
@@ -216,12 +230,12 @@ function Adviser() {
         controller.signal,
       );
       if (
-        current.endpoint !== store.current!.current().endpoint ||
-        current.token !== store.current!.current().token
+        current.endpoint !== getStore().current().endpoint ||
+        current.token !== getStore().current().token
       )
         return;
       if (
-        value.catalog.revision !== store.current!.current().catalog.revision
+        value.catalog.revision !== getStore().current().catalog.revision
       ) {
         cancel();
         setAnswer("");
@@ -237,7 +251,7 @@ function Adviser() {
       setCheckedAt(value.checkedAt);
       setConnection("Đã kết nối · tự kiểm tra thay đổi mỗi 30 giây");
     } catch {
-      if (!controller.signal.aborted || store.current!.ready())
+      if (!controller.signal.aborted || getStore().ready())
         setConnection(
           "Nguồn không truy cập được · giữ bản đã lưu; giá hiện tại chưa xác minh",
         );
@@ -280,6 +294,10 @@ function Adviser() {
         setForm(false);
         return true;
       }
+      if (quoteModal) {
+        setQuoteModal(false);
+        return true;
+      }
       if (detail) {
         cancel();
         setDetail(null);
@@ -296,7 +314,7 @@ function Adviser() {
       return false;
     });
     return () => sub.remove();
-  }, [form, detail, history, tab, deletion, pending]);
+  }, [form, quoteModal, detail, history, tab, deletion, pending]);
   const rows = useMemo(
     () => searchCatalog(state.catalog, state.requirements, query, source, sort),
     [state.catalog, state.requirements, query, source, sort],
@@ -384,7 +402,7 @@ function Adviser() {
     if (!listings.length || pendingRef.current) return;
     pendingRef.current = true;
     setPending(true);
-    const current = store.current!.current();
+    const current = getStore().current();
     const snapshot: SavedDecision = {
       id: `decision-${Date.now()}-${++ids.current}`,
       savedAt: new Date().toISOString(),
@@ -405,7 +423,7 @@ function Adviser() {
   async function ask() {
     if (!detail || historical) return;
     cancel();
-    const current = store.current!.current();
+    const current = getStore().current();
     const context: AdviceContext = {
       catalogRevision: current.catalog.revision,
       decisionRevision: current.revision,
@@ -426,7 +444,7 @@ function Adviser() {
         question,
         controller.signal,
       );
-      const latest = store.current!.current();
+      const latest = getStore().current();
       if (
         controller.signal.aborted ||
         request.current !== Number(context.requestId) ||
@@ -482,39 +500,42 @@ function Adviser() {
     label: string,
     numeric = false,
     secure = false,
-  ) => (
-    <View style={{ gap: EXPRESSIVE_SPACE.xs }}>
-      {txt(label, true)}
-      <TextInput
-        ref={numeric ? budgetInput : undefined}
-        accessibilityLabel={label}
-        accessibilityHint={numeric && fieldError ? fieldError : undefined}
-        value={value}
-        onChangeText={onChangeText}
-        secureTextEntry={secure}
-        keyboardType={numeric ? "numeric" : "default"}
-        autoCapitalize="none"
-        style={{
-          minHeight: 48,
-          borderWidth: 1,
-          borderColor: c.line,
-          borderRadius: EXPRESSIVE_SHAPE.field,
-          padding: EXPRESSIVE_SPACE.md,
-          color: c.text,
-          backgroundColor: c.card,
-        }}
-      />
-      {numeric && fieldError ? (
-        <Text
-          accessibilityRole="alert"
-          accessibilityLiveRegion="assertive"
-          style={{ ...EXPRESSIVE_TYPE.label, color: c.error }}
-        >
-          {fieldError}
-        </Text>
-      ) : null}
-    </View>
-  );
+  ) => {
+    const isBudget = label === "Ngân sách tối đa (VND)";
+    return (
+      <View style={{ gap: EXPRESSIVE_SPACE.xs }}>
+        {txt(label, true)}
+        <TextInput
+          ref={isBudget ? budgetInput : undefined}
+          accessibilityLabel={label}
+          accessibilityHint={isBudget && fieldError ? fieldError : undefined}
+          value={value}
+          onChangeText={onChangeText}
+          secureTextEntry={secure}
+          keyboardType={numeric ? "numeric" : "default"}
+          autoCapitalize="none"
+          style={{
+            minHeight: 48,
+            borderWidth: 1,
+            borderColor: c.line,
+            borderRadius: EXPRESSIVE_SHAPE.field,
+            padding: EXPRESSIVE_SPACE.md,
+            color: c.text,
+            backgroundColor: c.card,
+          }}
+        />
+        {isBudget && fieldError ? (
+          <Text
+            accessibilityRole="alert"
+            accessibilityLiveRegion="assertive"
+            style={{ ...EXPRESSIVE_TYPE.label, color: c.error }}
+          >
+            {fieldError}
+          </Text>
+        ) : null}
+      </View>
+    );
+  };
   const card = (children: React.ReactNode, key?: string) => (
     <View
       key={key}
@@ -613,7 +634,13 @@ function Adviser() {
   function savedCard(s: SavedDecision) {
     return card(
       <>
-        {txt(new Date(s.savedAt).toLocaleString("vi-VN"), true)}
+        {txt(
+          "Ngày lưu: " +
+            new Date(s.savedAt).toLocaleDateString("vi-VN") +
+            " · " +
+            new Date(s.savedAt).toLocaleString("vi-VN"),
+          true,
+        )}
         <Text
           accessibilityRole="header"
           style={{ ...EXPRESSIVE_TYPE.section, color: c.text }}
@@ -621,9 +648,9 @@ function Adviser() {
           {s.listings.map((v) => v.name).join("\n")}
         </Text>
         {txt("Ngân sách khi lưu: " + money(s.requirements.budget), true)}
-        {button("Mở bản lịch sử", () => setHistory(s))}
+        {button(VI.openHistorySnapshot, () => setHistory(s))}
         {button(
-          "Xóa bản lưu",
+          VI.deleteSavedSnapshot,
           () =>
             setDeletion({
               label: `Xóa bản lưu: ${s.listings.map((v) => v.name).join(", ")}?`,
@@ -645,69 +672,107 @@ function Adviser() {
     close: () => void,
     children: React.ReactNode,
   ) {
-    return (
-      <Modal
-        visible={visible}
-        onRequestClose={close}
-        animationType={reduceMotion ? "none" : "fade"}
+    const sheetContent = (
+      <SafeAreaView
+        style={
+          expanded
+            ? {
+                width: Math.min(640, Math.round(width * 0.56)),
+                height: "100%",
+                backgroundColor: c.bg,
+                borderTopLeftRadius: EXPRESSIVE_SHAPE.dialog,
+                borderBottomLeftRadius: EXPRESSIVE_SHAPE.dialog,
+                borderLeftWidth: 1,
+                borderColor: c.line,
+                ...EXPRESSIVE_ELEVATION.modal,
+              }
+            : { flex: 1, backgroundColor: c.bg }
+        }
       >
-        <SafeAreaView style={{ flex: 1, backgroundColor: c.bg }}>
+        <View
+          style={{
+            padding: EXPRESSIVE_SPACE.lg,
+            gap: EXPRESSIVE_SPACE.sm,
+            width: "100%",
+            maxWidth: 840,
+            alignSelf: "center",
+          }}
+        >
+          <Text
+            accessibilityRole="header"
+            numberOfLines={2}
+            accessibilityLabel={title}
+            style={{
+              ...EXPRESSIVE_TYPE.title,
+              color: c.text,
+            }}
+          >
+            {title}
+          </Text>
+          {button(VI.close, close, true)}
+        </View>
+        {notice ? (
           <View
+            accessibilityLiveRegion="polite"
             style={{
               padding: EXPRESSIVE_SPACE.lg,
+              borderRadius: EXPRESSIVE_SHAPE.selected,
+              backgroundColor: c.container,
               gap: EXPRESSIVE_SPACE.sm,
               width: "100%",
               maxWidth: 840,
               alignSelf: "center",
             }}
           >
-            <Text
-              accessibilityRole="header"
-              numberOfLines={2}
-              accessibilityLabel={title}
-              style={{
-                ...EXPRESSIVE_TYPE.title,
-                color: c.text,
-              }}
-            >
-              {title}
-            </Text>
-            {button("Đóng", close, true)}
+            {txt(notice)}
+            {button(VI.acknowledge, () => setNotice(""), true)}
           </View>
-          {notice ? (
-            <View
-              accessibilityLiveRegion="polite"
-              style={{
-                padding: EXPRESSIVE_SPACE.lg,
-                borderRadius: EXPRESSIVE_SHAPE.selected,
-                backgroundColor: c.container,
-                gap: EXPRESSIVE_SPACE.sm,
-                width: "100%",
-                maxWidth: 840,
-                alignSelf: "center",
-              }}
-            >
-              {txt(notice)}
-              {button("Đã hiểu", () => setNotice(""), true)}
-            </View>
-          ) : null}
-          <ScrollView
-            ref={title === "Nhu cầu của bạn" ? needsScroll : undefined}
-            contentContainerStyle={{
-              padding: EXPRESSIVE_SPACE.lg,
-              gap: EXPRESSIVE_SPACE.lg,
-              paddingBottom: 40,
-              width: "100%",
-              maxWidth: 840,
-              alignSelf: "center",
+        ) : null}
+        <ScrollView
+          ref={title === VI.needsModalTitle ? needsScroll : undefined}
+          contentContainerStyle={{
+            padding: EXPRESSIVE_SPACE.lg,
+            gap: EXPRESSIVE_SPACE.lg,
+            paddingBottom: 40,
+            width: "100%",
+            maxWidth: 840,
+            alignSelf: "center",
+          }}
+          keyboardShouldPersistTaps="handled"
+        >
+          <ExpressiveSurface reduceMotion={reduceMotion}>
+            {children}
+          </ExpressiveSurface>
+        </ScrollView>
+      </SafeAreaView>
+    );
+    return (
+      <Modal
+        visible={visible}
+        transparent={expanded}
+        onRequestClose={close}
+        animationType={reduceMotion ? "none" : "fade"}
+      >
+        {expanded ? (
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "flex-end",
+              backgroundColor: "rgba(15, 29, 22, 0.42)",
             }}
-            keyboardShouldPersistTaps="handled"
           >
-            <ExpressiveSurface reduceMotion={reduceMotion}>
-              {children}
-            </ExpressiveSurface>
-          </ScrollView>
-        </SafeAreaView>
+            <Pressable
+              onPress={close}
+              accessibilityRole="button"
+              accessibilityLabel={VI.closeSheetBackdrop}
+              style={{ flex: 1 }}
+            />
+            {sheetContent}
+          </View>
+        ) : (
+          sheetContent
+        )}
       </Modal>
     );
   }
@@ -722,7 +787,7 @@ function Adviser() {
         }}
       >
         <ExpressiveLoading
-          label="Đang khôi phục quyết định…"
+          label={VI.bootLoading}
           color={c.text}
           reduceMotion={reduceMotion}
         />
@@ -779,12 +844,12 @@ function Adviser() {
                   accessibilityRole="header"
                   style={{ ...EXPRESSIVE_TYPE.display, color: c.text }}
                 >
-                  lựa.
+                  {VI.brandTitle}
                 </Text>
-                {txt("Thiết bị thật. Quyết định có căn cứ.", true)}
+                {txt(VI.brandSubtitle, true)}
               </View>
               {button(
-                refreshing ? "Đang kiểm tra…" : "Cập nhật",
+                refreshing ? VI.refreshBusy : VI.refreshAction,
                 () => void refresh(),
                 true,
                 refreshing || !state.endpoint,
@@ -795,11 +860,9 @@ function Adviser() {
             {boot === "failed" &&
               card(
                 <>
-                  {txt(
-                    "Không đọc được dữ liệu đã lưu. Tạm khóa ghi để bảo vệ dữ liệu.",
-                  )}
+                  {txt(VI.bootFailedNotice)}
                   {button(
-                    "Xuất dữ liệu gốc",
+                    VI.exportRawData,
                     () => {
                       void AsyncStorage.getItem(KEY)
                         .then((raw) =>
@@ -812,10 +875,10 @@ function Adviser() {
                     true,
                   )}
                   {button(
-                    "Khôi phục bằng dữ liệu ban đầu",
+                    VI.restoreInitialData,
                     () => {
-                      void store
-                        .current!.update(() => INITIAL, true)
+                      void getStore()
+                        .update(() => INITIAL, true)
                         .then((ok) => {
                           if (ok) setBoot("ready");
                         });
@@ -828,7 +891,7 @@ function Adviser() {
               card(
                 <>
                   {txt(notice)}
-                  {button("Đã hiểu", () => setNotice(""), true)}
+                  {button(VI.acknowledge, () => setNotice(""), true)}
                 </>,
               )}
             {txt(connection, true)}
@@ -845,12 +908,11 @@ function Adviser() {
                     <ExpressiveSurface key={state.revision} reduceMotion={reduceMotion}>
                       <Text
                         style={{
-                          fontSize: 28,
-                          fontWeight: "800",
+                          ...EXPRESSIVE_TYPE.headline,
                           color: c.text,
                         }}
                       >
-                        Máy nào hợp việc của bạn?
+                        {VI.heroTitle}
                       </Text>
                       {txt(
                         `${state.catalog.listings.length} tin đăng thực tế từ dữ liệu kho. Giá là quan sát lịch sử, không phải giá trực tiếp.`,
@@ -863,10 +925,18 @@ function Adviser() {
                           "Chưa chọn tác vụ",
                         true,
                       )}
-                      {button("Điều chỉnh nhu cầu", () => edit())}
+                      {button(VI.adjustNeeds, () => edit())}
+                      {button(
+                        VI.checkExternalQuote,
+                        () => {
+                          setQuoteError("");
+                          setQuoteModal(true);
+                        },
+                        true,
+                      )}
                     </ExpressiveSurface>,
                   )}
-                {input(query, setQuery, "Tìm tên máy, CPU, RAM hoặc nhà bán")}
+                {input(query, setQuery, VI.searchPlaceholder)}
                 <ScrollView horizontal contentContainerStyle={{ gap: 8 }}>
                   {[
                     "",
@@ -1243,6 +1313,76 @@ function Adviser() {
         </>,
       )}
       {modal(
+        quoteModal,
+        "Kiểm tra báo giá ngoài",
+        () => setQuoteModal(false),
+        <>
+          {txt(
+            "Nhập thông tin báo giá hoặc liên kết HTTPS từ nhà bán được hỗ trợ (FPT Shop, Thế Giới Di Động, Điện Máy Xanh, CellphoneS, GearVN, Phong Vũ, HACOM, LaptopAZ) để tính tổng chi phí và đối chiếu với nhu cầu hiện tại.",
+            true,
+          )}
+          {input(quoteName, setQuoteName, "Tên máy / cấu hình trong báo giá")}
+          {input(
+            quoteUrl,
+            setQuoteUrl,
+            "Liên kết HTTPS (để trống nếu là báo giá tại cửa hàng)",
+          )}
+          {input(quotePrice, setQuotePrice, "Giá niêm yết (VND)", true)}
+          {input(
+            quoteShipping,
+            setQuoteShipping,
+            "Phí giao hàng bắt buộc (VND, để trống nếu chưa rõ)",
+            true,
+          )}
+          {input(
+            quoteFees,
+            setQuoteFees,
+            "Phí bắt buộc khác (VND, để trống nếu chưa rõ)",
+            true,
+          )}
+          {input(quoteRam, setQuoteRam, "RAM (GB, để trống nếu chưa rõ)", true)}
+          {input(
+            quoteStorage,
+            setQuoteStorage,
+            "Ổ lưu trữ (GB, để trống nếu chưa rõ)",
+            true,
+          )}
+          {quoteError ? (
+            <Text
+              accessibilityRole="alert"
+              style={{ ...EXPRESSIVE_TYPE.label, color: c.error }}
+            >
+              {quoteError}
+            </Text>
+          ) : null}
+          {button("Đánh giá báo giá này", () => {
+            const parsed = parseQuotationDraft({
+              name: quoteName,
+              url: quoteUrl,
+              advertisedPrice: quotePrice,
+              shipping: quoteShipping,
+              fees: quoteFees,
+              ram: quoteRam,
+              storage: quoteStorage,
+            });
+            if (!parsed) {
+              setQuoteError(
+                "Vui lòng nhập tên máy, giá nguyên dương hợp lệ (≤ 1.000.000.000 ₫) và liên kết HTTPS (nếu có).",
+              );
+              return;
+            }
+            setQuoteError("");
+            setQuoteModal(false);
+            open(parsed.listing);
+            setNotice(
+              parsed.recognizedRetailer
+                ? `Đã nhận diện nhà bán ${parsed.listing.source.toUpperCase()} và đối chiếu với nhu cầu.`
+                : "Đã nạp báo giá thủ công để đối chiếu với nhu cầu.",
+            );
+          })}
+        </>,
+      )}
+      {modal(
         !!detail,
         detail?.name ?? "",
         () => {
@@ -1289,6 +1429,43 @@ function Adviser() {
               () => void Share.share({ message: summary(detail) }),
               true,
             )}
+            {!historical &&
+              button(
+                VI.reportDataDiscrepancy,
+                () => {
+                  const current = getStore().current();
+                  if (!current.endpoint) {
+                    setNotice(
+                      "Đã ghi nhận phản hồi sai lệch trên thiết bị. Kết nối dịch vụ trong Cài đặt để gửi tới hàng đợi kiểm duyệt.",
+                    );
+                    return;
+                  }
+                  const ctrl = new AbortController();
+                  void submitListingReport(
+                    current.endpoint,
+                    current.token,
+                    {
+                      listingId: detail.id,
+                      category: listingEvidence(detail).conflicts.length
+                        ? "spec"
+                        : "price",
+                      note: `Báo kiểm tra tin đăng ${detail.name}`,
+                    },
+                    ctrl.signal,
+                  )
+                    .then((rep) =>
+                      setNotice(
+                        `Đã gửi báo cáo kiểm duyệt (${rep.id}). Bộ phận dữ liệu sẽ đối chiếu nguồn gốc.`,
+                      ),
+                    )
+                    .catch(() =>
+                      setNotice(
+                        "Không gửi được báo cáo tới máy chủ. Đã giữ nguyên cảnh báo trên máy.",
+                      ),
+                    );
+                },
+                true,
+              )}
             {!historical &&
               button(
                 "Lưu quyết định này",

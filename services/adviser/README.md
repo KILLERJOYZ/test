@@ -16,7 +16,21 @@ The service binds to loopback port 8788. For an attached Android target, replace
 
 In app Settings, save `http://127.0.0.1:8788` as the service address. A remote service requires HTTPS. Development loopback/Android-emulator addresses are permitted by the client; arbitrary HTTP hosts are rejected. Public hosting, TLS termination, multiuser identity and distribution are separate deployment work. The service refuses a direct public bind.
 
-Endpoints: `GET /health`, `GET /v1/catalog`, `POST /v1/advice`. Set `ADVISER_TOKEN` for a private installation and enter the matching service token in app Settings. Provider keys stay on the server. A shared local service token is not production per-user authentication.
+Public & Client Endpoints:
+- `GET /health`
+- `GET /v1/catalog` (filterable by `canPublishSource` and `isPublishedListing` when governance is active)
+- `POST /v1/advice`
+- `POST /v1/reports` (`U08` buyer listing error / discrepancy report submission)
+
+Staff Governance & Operations Endpoints (require `Authorization: Bearer <staff-token>` with RBAC role `catalog_editor`, `reviewer`, or `ops_admin`):
+- `GET /v1/admin/audit` (redacted audit trail, source-use grants, staged listings, reports)
+- `POST /v1/admin/grants` (`ops_admin`: upsert/revoke source-use permission grants; revoking or expiring a grant automatically suspends affected published listings)
+- `POST /v1/admin/listings/stage` (`catalog_editor` / `ops_admin`: stage draft listing variants)
+- `POST /v1/admin/listings/transition` (`reviewer` / `ops_admin`: transition `draft` → `reviewed` → `published` → `suspended` → `archived`, recording variant tombstones)
+- `POST /v1/admin/reports/resolve` (`reviewer` / `ops_admin`: triage and resolve user-submitted listing reports)
+- `POST /v1/admin/backup/restore` (`ops_admin`: restore validated governance backup snapshot)
+
+Set `ADVISER_TOKEN` for a private installation and enter the matching service token in app Settings. Provider keys stay on the server. A shared local service token is not production per-user authentication. Staff RBAC and durable governance persistence are implemented in `services/adviser/governance.mjs`, and fixed-snapshot G5 pilot evaluation across 8 representative buyer cohorts is implemented in `services/adviser/pilot-eval.mjs`.
 
 ## AI now runs on Android
 

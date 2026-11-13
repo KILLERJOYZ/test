@@ -85,3 +85,31 @@ export async function fetchAdvice(
     throw Error("INVALID_ADVICE");
   return value;
 }
+export async function submitListingReport(
+  endpoint: string,
+  token: string,
+  payload: {
+    listingId: string;
+    category: "price" | "spec" | "stock" | "link";
+    note: string;
+  },
+  signal: AbortSignal,
+  transport = fetch,
+) {
+  const value = await call(
+    endpoint,
+    "/v1/reports",
+    token,
+    signal,
+    transport,
+    payload,
+  );
+  if (
+    !value?.report ||
+    typeof value.report.id !== "string" ||
+    value.report.listingId !== payload.listingId
+  )
+    throw Error("INVALID_REPORT_RESPONSE");
+  return value.report;
+}
+

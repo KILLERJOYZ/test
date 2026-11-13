@@ -8,6 +8,7 @@ import {
   facts,
   checkedAdvice,
 } from "../../apps/adviser/src/catalog.ts";
+import { createGovernanceStore } from "./governance.mjs";
 
 export function createBudget(file, limits) {
   let state = { requests: 0, reservedVnd: 0 };
@@ -121,7 +122,10 @@ export function createAdviserServer({
   provider = null,
   token = "",
   clock = () => new Date().toISOString(),
+  governance = null,
+  enforceSourceGrants = false,
 } = {}) {
+  const gov = governance ?? createGovernanceStore({ clock });
   let active = 0;
   return http.createServer(async (req, res) => {
     res.setHeader("Content-Type", "application/json; charset=utf-8");
@@ -158,13 +162,96 @@ export function createAdviserServer({
       });
       return;
     }
+    if (req.url === "/v1/reports" && req.method === "POST") {
+      try {
+        let raw = "";
+        for await (const chunk of req) {
+          raw += chunk;
+          if (Buffer.byteLength(raw) > 4000) throw Error("INVALID_REPORT");
+        }
+        const report = gov.submitReport(JSON.parse(raw));
+        send(201, { report });
+      } catch {
+        send(400, { code: "INVALID_REPORT" });
+      }
+      return;
+    }
+    if (req.url === "/v1/admin/audit" && req.method === "GET") {
+      const bearer = (req.headers.authorization || "").replace(/^Bearer\s+/i, "");
+      try {
+        gov.authenticate(bearer, "backup_restore");
+        send(200, { auditLog: gov.auditLog(), reports: gov.reports() });
+      } catch (e) {
+        send(e.message === "UNAUTHORIZED" ? 401 : 403, { code: e.message });
+      }
+      return;
+    }
+    if (req.url?.startsWith("/v1/admin/") && req.method === "POST") {
+      const bearer = (req.headers.authorization || "").replace(/^Bearer\s+/i, "");
+      try {
+        let raw = "";
+        for await (const chunk of req) {
+          raw += chunk;
+          if (Buffer.byteLength(raw) > 64000) throw Error("INVALID_INPUT");
+        }
+        const payload = JSON.parse(raw || "{}");
+        if (req.url === "/v1/admin/grants") {
+          send(200, { grant: gov.upsertGrant(bearer, payload) });
+          return;
+        }
+        if (req.url === "/v1/admin/listings/stage") {
+          send(200, {
+            record: gov.stageListing(bearer, payload.listing, payload.evidenceRefs ?? []),
+          });
+          return;
+        }
+        if (req.url === "/v1/admin/listings/transition") {
+          send(200, {
+            record: gov.transitionListing(
+              bearer,
+              payload.listingId,
+              payload.targetState,
+              payload.reason ?? "",
+            ),
+          });
+          return;
+        }
+        if (req.url === "/v1/admin/reports/resolve") {
+          send(200, {
+            report: gov.resolveReport(bearer, payload.reportId, payload.action ?? {}),
+          });
+          return;
+        }
+        if (req.url === "/v1/admin/backup/restore") {
+          gov.restoreBackup(bearer, payload.snapshot);
+          send(200, { restored: true });
+          return;
+        }
+        send(404, { code: "NOT_FOUND" });
+      } catch (e) {
+        const msg = e.message || "ADMIN_ERROR";
+        const status =
+          msg === "UNAUTHORIZED"
+            ? 401
+            : msg.startsWith("FORBIDDEN")
+              ? 403
+              : msg === "NOT_FOUND"
+                ? 404
+                : 400;
+        send(status, { code: msg });
+      }
+      return;
+    }
     if (!["/v1/catalog", "/v1/advice"].includes(req.url)) {
       send(404, { code: "NOT_FOUND" });
       return;
     }
     let catalog;
     try {
-      catalog = importCatalog(await readFeed());
+      catalog = gov.filterPublishedCatalog(
+        importCatalog(await readFeed()),
+        enforceSourceGrants,
+      );
     } catch {
       send(503, { code: "SOURCE_UNAVAILABLE" });
       return;

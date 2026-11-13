@@ -8,6 +8,8 @@ import {
   createBudget,
   configuredProvider,
 } from "./server.mjs";
+import { createGovernanceStore, redactSensitive } from "./governance.mjs";
+import { evaluatePilotSnapshot } from "./pilot-eval.mjs";
 import { importCatalog } from "../../apps/adviser/scripts/import-catalog.mjs";
 const fixture = () => ({
   generatedAt: "2026-11-13T00:00:00Z",
@@ -246,3 +248,205 @@ test("PROVIDER-02 Responses adapter parses bounded output and forwards abort", a
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+test("GOV-01 source-use grants enforce per-purpose publication and suspend listings on revocation", async () => {
+  const gov = createGovernanceStore({
+    clock: () => "2026-11-13T00:00:00Z",
+    initialActors: {
+      admin: { id: "admin", role: "ops_admin", token: "adm-tok", revoked: false },
+    },
+  });
+  await withServer(
+    { readFeed: fixture, governance: gov, enforceSourceGrants: true },
+    async (url) => {
+      const blocked = await (await fetch(url + "/v1/catalog")).json();
+      assert.equal(blocked.catalog.listings.length, 0);
+      gov.upsertGrant("adm-tok", {
+        source: "retailer",
+        status: "permitted",
+        purposes: ["catalog_display"],
+        expiresAt: "2026-12-31T00:00:00Z",
+      });
+      const permitted = await (await fetch(url + "/v1/catalog")).json();
+      assert.equal(permitted.catalog.listings.length, 1);
+      gov.upsertGrant("adm-tok", {
+        source: "retailer",
+        status: "revoked",
+        purposes: ["catalog_display"],
+      });
+      const afterRevoke = await (await fetch(url + "/v1/catalog")).json();
+      assert.equal(afterRevoke.catalog.listings.length, 0);
+    },
+  );
+});
+test("GOV-02 staff RBAC, token revocation, staging->review->publish->archive tombstones and evidence withdrawal", () => {
+  const gov = createGovernanceStore({
+    clock: () => "2026-11-13T00:00:00Z",
+    initialActors: {
+      admin: { id: "admin", role: "ops_admin", token: "adm-tok", revoked: false },
+    },
+    initialGrants: {
+      retailer: {
+        source: "retailer",
+        status: "permitted",
+        purposes: ["catalog_display"],
+        expiresAt: "2026-12-31T00:00:00Z",
+        revoked: false,
+      },
+    },
+  });
+  gov.registerActor("adm-tok", {
+    id: "ed1",
+    role: "catalog_editor",
+    token: "ed-tok",
+  });
+  gov.registerActor("adm-tok", {
+    id: "rev1",
+    role: "reviewer",
+    token: "rev-tok",
+  });
+  const item = importCatalog(fixture()).listings[0];
+  gov.stageListing("ed-tok", item, ["EV-1"]);
+  assert.throws(
+    () => gov.transitionListing("ed-tok", item.id, "published"),
+    /FORBIDDEN_ROLE/,
+  );
+  assert.throws(
+    () => gov.transitionListing("rev-tok", item.id, "published"),
+    /PUBLISH_REQUIRES_REVIEW/,
+  );
+  gov.transitionListing("rev-tok", item.id, "reviewed");
+  const pub = gov.transitionListing("rev-tok", item.id, "published");
+  assert.equal(pub.publicationState, "published");
+  gov.upsertEvidence("rev-tok", { id: "EV-1", withdrawn: true });
+  assert.equal(
+    gov.filterPublishedCatalog(importCatalog(fixture())).listings.length,
+    0,
+  );
+  gov.transitionListing("adm-tok", item.id, "archived", "superseded");
+  assert.equal(gov.tombstone(item.id)?.reason, "superseded");
+  gov.revokeActor("adm-tok", "ed1");
+  assert.throws(
+    () => gov.stageListing("ed-tok", item),
+    /FORBIDDEN_REVOKED/,
+  );
+});
+test("GOV-03 user report -> staff resolution -> backup/restore and sensitive telemetry redaction", async () => {
+  const gov = createGovernanceStore({
+    clock: () => "2026-11-13T00:00:00Z",
+    initialActors: {
+      admin: { id: "admin", role: "ops_admin", token: "adm-tok", revoked: false },
+    },
+  });
+  const redacted = redactSensitive({
+    token: "secret-123",
+    nested: { authorization: "Bearer xyz", prompt: "private question", safe: 42 },
+  });
+  assert.equal(redacted.token, "[REDACTED]");
+  assert.equal(redacted.nested.authorization, "[REDACTED]");
+  assert.equal(redacted.nested.prompt, "[REDACTED]");
+  assert.equal(redacted.nested.safe, 42);
+  await withServer({ readFeed: fixture, governance: gov }, async (url) => {
+    const res = await fetch(url + "/v1/reports", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        listingId: "retailer:1",
+        category: "price",
+        note: "Giá thực tế tại cửa hàng đã tăng",
+      }),
+    });
+    assert.equal(res.status, 201);
+    const { report } = await res.json();
+    const resolved = gov.resolveReport("adm-tok", report.id, {
+      suspend: true,
+      note: "Đã tạm ẩn để kiểm tra giá",
+    });
+    assert.equal(resolved.status, "resolved");
+    const backup = gov.exportBackup("adm-tok");
+    gov.submitReport({
+      listingId: "retailer:1",
+      category: "stock",
+      note: "Out of stock",
+    });
+    assert.equal(gov.reports().length, 2);
+    gov.restoreBackup("adm-tok", backup);
+    assert.equal(gov.reports().length, 1);
+    const auditRes = await fetch(url + "/v1/admin/audit", {
+      headers: { Authorization: "Bearer adm-tok" },
+    });
+    assert.equal(auditRes.status, 200);
+  });
+});
+test("GOV-04 HTTP admin endpoints enforce RBAC and persist governance state across restarts", async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "adviser-gov-"));
+  try {
+    const file = path.join(dir, "gov.json");
+    const gov1 = createGovernanceStore({
+      clock: () => "2026-11-13T00:00:00Z",
+      persistenceFile: file,
+      initialActors: {
+        admin: { id: "admin", role: "ops_admin", token: "adm-tok", revoked: false },
+        editor: { id: "editor", role: "catalog_editor", token: "ed-tok", revoked: false },
+      },
+    });
+    await withServer({ readFeed: fixture, governance: gov1, enforceSourceGrants: true }, async (url) => {
+      const forbidden = await fetch(url + "/v1/admin/grants", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer ed-tok",
+        },
+        body: JSON.stringify({
+          source: "retailer",
+          status: "permitted",
+          purposes: ["catalog_display"],
+        }),
+      });
+      assert.equal(forbidden.status, 403);
+      const ok = await fetch(url + "/v1/admin/grants", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer adm-tok",
+        },
+        body: JSON.stringify({
+          source: "retailer",
+          status: "permitted",
+          purposes: ["catalog_display"],
+          expiresAt: "2026-12-31T00:00:00Z",
+        }),
+      });
+      assert.equal(ok.status, 200);
+    });
+    const gov2 = createGovernanceStore({
+      clock: () => "2026-11-13T00:00:00Z",
+      persistenceFile: file,
+    });
+    assert.equal(gov2.canPublishSource("retailer"), true);
+    assert.ok(gov2.auditLog().some((e) => e.action === "upsert_grant"));
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+test("PILOT-01 fixed-snapshot evaluation across 70 real listings enforces zero hard violations and verifies upgrade/task arms", () => {
+  const realRaw = JSON.parse(
+    fs.readFileSync(
+      new URL("../../data/all_laptops_normalized.json", import.meta.url),
+      "utf8",
+    ),
+  );
+  const realCatalog = importCatalog(realRaw);
+  const report = evaluatePilotSnapshot(realCatalog);
+  assert.equal(report.listingCount, 70);
+  assert.equal(report.profileCount, 8);
+  assert.equal(report.hardConstraintViolations, 0);
+  assert.equal(report.unresolvedConflictPromotions, 0);
+  assert.equal(report.quotationIntakeVerified, true);
+  const noFit = report.profiles.find((p) => p.id === "PROF-05-TIGHT-NO-FIT");
+  assert.equal(noFit?.eligibleCount, 0);
+  const dev = report.profiles.find((p) => p.id === "PROF-02-DEV-MAINSTREAM");
+  assert.ok(dev && dev.eligibleCount > 0 && dev.taskStrengthMatchCount > 0);
+});
+
+
+

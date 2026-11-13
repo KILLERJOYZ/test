@@ -1,6 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { endpointUrl, fetchAdvice, fetchCatalog } from "./adviser-client.ts";
+import {
+  endpointUrl,
+  fetchAdvice,
+  fetchCatalog,
+  submitListingReport,
+} from "./adviser-client.ts";
 import { INITIAL_REQUIREMENTS } from "./catalog.ts";
 const context = {
   catalogRevision: "rev",
@@ -109,3 +114,30 @@ test("CLIENT-04 stale advice, malformed proposals and aborted responses rejected
     /ABORTED/,
   );
 });
+test("CLIENT-05 submitListingReport validates report submission envelope", async () => {
+  const transport = (async (_url: any, options: any) => {
+    const sent = JSON.parse(options.body);
+    assert.equal(sent.listingId, "fptshop:1");
+    assert.equal(sent.category, "price");
+    return new Response(
+      JSON.stringify({
+        report: {
+          id: "rep-1",
+          listingId: "fptshop:1",
+          category: "price",
+          status: "open",
+        },
+      }),
+      { status: 201 },
+    );
+  }) as typeof fetch;
+  const out = await submitListingReport(
+    "https://example.com",
+    "tok",
+    { listingId: "fptshop:1", category: "price", note: "Price changed" },
+    new AbortController().signal,
+    transport,
+  );
+  assert.equal(out.id, "rep-1");
+});
+
