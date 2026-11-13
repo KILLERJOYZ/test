@@ -50,7 +50,12 @@ import type {
 } from "./catalog";
 import { createAdviserStore } from "./adviser-store";
 import type { AdviserState } from "./adviser-store";
-import { fetchCatalog, submitListingReport } from "./adviser-client";
+import {
+  fetchCatalog,
+  fetchAdvice,
+  submitListingReport,
+} from "./adviser-client";
+import { DEFAULT_API_ENDPOINT } from "./api/config";
 import { localAdvice, localStatus } from "./local-ai";
 import type { LocalAiBridge, LocalAiStatus } from "./local-ai";
 import {
@@ -73,7 +78,7 @@ const INITIAL: AdviserState = {
   revision: 0,
   saved: [],
   catalog: imported as Catalog,
-  endpoint: "",
+  endpoint: DEFAULT_API_ENDPOINT,
   token: "",
 };
 const money = formatVnd;
@@ -103,8 +108,8 @@ function Adviser() {
   } | null>(null);
   const [pending, setPending] = useState(false);
   const pendingRef = useRef(false);
-  const budgetInput = useRef<TextInput>(null);
-  const needsScroll = useRef<ScrollView>(null);
+  const budgetInput = useRef<any>(null);
+  const needsScroll = useRef<any>(null);
   const [fieldError, setFieldError] = useState("");
   useEffect(() => {
     let mounted = true;
@@ -203,7 +208,13 @@ function Adviser() {
       if (mounted) {
         clearTimeout(bootTimer);
         setBoot(ok ? "ready" : "failed");
-        setEndpoint(getStore().current().endpoint);
+        const currentEndpoint = getStore().current().endpoint;
+        if (!currentEndpoint && DEFAULT_API_ENDPOINT) {
+          void persist((s) => ({ ...s, endpoint: DEFAULT_API_ENDPOINT }));
+          setEndpoint(DEFAULT_API_ENDPOINT);
+        } else {
+          setEndpoint(currentEndpoint);
+        }
         setToken(getStore().current().token);
       }
     });
@@ -436,14 +447,28 @@ function Adviser() {
     setProposal(null);
     const timer = setTimeout(() => controller.abort(), 50000);
     try {
-      const value = await localAdvice(
-        localBridge,
-        context,
-        detail,
-        current.requirements,
-        question,
-        controller.signal,
-      );
+      let value;
+      if (localBridge) {
+        value = await localAdvice(
+          localBridge,
+          context,
+          detail,
+          current.requirements,
+          question,
+          controller.signal,
+        );
+      } else if (current.endpoint) {
+        value = await fetchAdvice(
+          current.endpoint,
+          current.token,
+          context,
+          current.requirements,
+          question,
+          controller.signal,
+        );
+      } else {
+        throw Error("NO_AI_SERVICE");
+      }
       const latest = getStore().current();
       if (
         controller.signal.aborted ||
@@ -562,6 +587,7 @@ function Adviser() {
       <>
         {txt(
           v.source.toUpperCase() +
+            (v.brand ? ` · ${v.brand}` : "") +
             " · " +
             (v.condition === "used" ? "Máy cũ" : "Tin đăng") +
             " · " +
@@ -574,7 +600,10 @@ function Adviser() {
         >
           {v.name}
         </Text>
-        {txt(`${specification(v)} · ${v.cpu ?? "CPU chưa rõ"}`)}
+        {txt(
+          `${specification(v)} · ${v.cpu ?? "CPU chưa rõ"}` +
+            (v.gpu ? ` · ${v.gpu}` : ""),
+        )}
         {g.strengths.length > 0 &&
           txt("Điểm phù hợp đã biết: " + g.strengths.join(" · "), true)}
         {listingEvidence(v).conflicts.map((issue) => (
@@ -597,6 +626,21 @@ function Adviser() {
         >
           {money(v.advertisedPrice)}
         </Text>
+        {(Boolean(
+          v.priceOriginal && v.priceOriginal > (v.advertisedPrice ?? 0),
+        ) ||
+          Boolean(v.installment)) &&
+          txt(
+            [
+              v.priceOriginal && v.priceOriginal > (v.advertisedPrice ?? 0)
+                ? `Niêm yết: ${money(v.priceOriginal)}${v.discountPercent ? ` (-${v.discountPercent}%)` : ""}`
+                : "",
+              v.installment ?? "",
+            ]
+              .filter(Boolean)
+              .join(" · "),
+            true,
+          )}
         {txt(
           a.total !== null
             ? `Giá ghi nhận ${new Date(v.observedAt).toLocaleString("vi-VN")}. Tổng chi phí đã biết: ${money(a.total)}.`
@@ -1405,7 +1449,12 @@ function Adviser() {
                   <View key={i}>{txt(f)}</View>
                 ))}
                 {txt(
-                  `Hệ điều hành: ${detail.os ?? "chưa rõ"}\nMàn hình: ${detail.screen ?? "chưa rõ"}\nKhối lượng: ${detail.weight ?? "chưa rõ"}`,
+                  `Hệ điều hành: ${detail.os ?? "chưa rõ"}\nMàn hình: ${detail.screen ?? "chưa rõ"}\nKhối lượng: ${detail.weight ?? "chưa rõ"}` +
+                    (detail.gpu ? `\nCard đồ họa: ${detail.gpu}` : "") +
+                    (detail.battery ? `\nPin: ${detail.battery}` : "") +
+                    (detail.brand ? `\nThương hiệu: ${detail.brand}` : "") +
+                    (detail.priceOriginal ? `\nGiá niêm yết: ${money(detail.priceOriginal)}${detail.discountPercent ? ` (-${detail.discountPercent}%)` : ""}` : "") +
+                    (detail.installment ? `\nƯu đãi: ${detail.installment}` : ""),
                   true,
                 )}
               </>,
@@ -1498,27 +1547,31 @@ function Adviser() {
             {!historical &&
               card(
                 <>
-                  {txt("Gemini Nano · AI trên thiết bị")}
+                  {txt(localBridge ? "Gemini Nano · AI trên thiết bị" : "Trợ lý AI · FastAPI Backend")}
                   {txt(
                     "Trạng thái: " +
-                      {
-                        available: "Sẵn sàng",
-                        downloadable: "Có thể tải mô hình",
-                        downloading: "Đang tải mô hình",
-                        unavailable: localBridge
-                          ? "Thiết bị chưa hỗ trợ hoặc AICore chưa sẵn sàng"
-                          : "Cần bản APK Android có AI trên thiết bị (không phải Expo Go/web)",
-                      }[aiStatus],
+                      (localBridge
+                        ? {
+                            available: "Sẵn sàng",
+                            downloadable: "Có thể tải mô hình",
+                            downloading: "Đang tải mô hình",
+                            unavailable: "Thiết bị chưa hỗ trợ hoặc AICore chưa sẵn sàng",
+                          }[aiStatus]
+                        : state.endpoint
+                          ? `Đã kết nối máy chủ (${state.endpoint})`
+                          : "Chưa kết nối máy chủ tư vấn"),
                     true,
                   )}
-                  {button(
-                    "Kiểm tra AI trên máy",
-                    () => {
-                      void localStatus(localBridge).then(setAiStatus);
-                    },
-                    true,
+                  {localBridge && (
+                    button(
+                      "Kiểm tra AI trên máy",
+                      () => {
+                        void localStatus(localBridge).then(setAiStatus);
+                      },
+                      true,
+                    )
                   )}
-                  {aiStatus === "downloadable" &&
+                  {localBridge && aiStatus === "downloadable" &&
                     button(
                       "Tải mô hình Gemini Nano",
                       () => {
@@ -1533,7 +1586,7 @@ function Adviser() {
                       },
                       true,
                     )}
-                  {aiStatus === "downloading" &&
+                  {localBridge && aiStatus === "downloading" &&
                     button(
                       "Hủy tải mô hình",
                       () => {
@@ -1542,7 +1595,7 @@ function Adviser() {
                       },
                       true,
                     )}
-                  {aiStatus === "downloading" && (
+                  {localBridge && aiStatus === "downloading" && (
                     <ExpressiveLoading
                       label="Đang tải mô hình…"
                       color={c.text}
@@ -1551,7 +1604,9 @@ function Adviser() {
                   )}
                   {input(question, setQuestion, "Câu hỏi cho AI")}
                   {txt(
-                    "Câu hỏi và dữ kiện được xử lý bằng Gemini Nano trên thiết bị. Không gửi tới dịch vụ AI đám mây. AI chỉ chọn dữ kiện đã kiểm tra hoặc đề xuất nhu cầu để bạn duyệt.",
+                    localBridge
+                      ? "Câu hỏi và dữ kiện được xử lý bằng Gemini Nano trên thiết bị. Không gửi tới dịch vụ AI đám mây."
+                      : "Câu hỏi và dữ kiện được kiểm chứng qua dịch vụ tư vấn FastAPI kết nối PostgreSQL.",
                     true,
                   )}
                   {button(
@@ -1560,7 +1615,8 @@ function Adviser() {
                     false,
                     busy ||
                       boot !== "ready" ||
-                      aiStatus !== "available" ||
+                      (!localBridge && !state.endpoint) ||
+                      (!!localBridge && aiStatus !== "available") ||
                       !question.trim(),
                   )}
                   {busy && (

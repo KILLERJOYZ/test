@@ -55,8 +55,8 @@ function inferBrand(name = '', explicitBrand = null) {
     { pattern: /\b(macbook|apple)\b/i, brand: 'Apple' },
     { pattern: /\b(asus|rog|tuf|vivobook|zenbook)\b/i, brand: 'ASUS' },
     { pattern: /\b(acer|nitro|predator|aspire|swift)\b/i, brand: 'Acer' },
-    { pattern: /\b(lenovo|thinkpad|ideapad|legion|loq|yoga|thinkbook)\b/i, brand: 'Lenovo' },
-    { pattern: /\b(hp|pavilion|envy|victus|omen|probook|elitebook)\b/i, brand: 'HP' },
+    { pattern: /\b(lenovo|thinkpad|ideapad|ideacentre|legion|loq|yoga|thinkbook)\b/i, brand: 'Lenovo' },
+    { pattern: /\b(hp|pavilion|envy|victus|omen|probook|elitebook|omnibook)\b/i, brand: 'HP' },
     { pattern: /\b(dell|inspiron|vostro|latitude|xps|alienware)\b/i, brand: 'Dell' },
     { pattern: /\b(msi|katana|cyborg|thin|modern|prestige|stealth|raider)\b/i, brand: 'MSI' },
     { pattern: /\b(gigabyte|aorus|aero)\b/i, brand: 'GIGABYTE' },
@@ -100,6 +100,12 @@ function inferModel(name = '', brand = null, explicitModel = null) {
     if (/^apple$/i.test(brand)) {
       cleaned = cleaned.replace(/^apple\s+/i, '').trim();
     }
+  }
+
+  // Strip pipe-delimited spec tail, e.g. "Lenovo IdeaPad ... | Ryzen 7, 16GB..."
+  const pipeIdx = cleaned.indexOf('|');
+  if (pipeIdx > 0) {
+    cleaned = cleaned.slice(0, pipeIdx).trim();
   }
 
   // Strip parenthetical spec list at the end if it contains commas, e.g. (i7 1355U, 16GB, ...)
@@ -307,14 +313,31 @@ function createNormalizedLaptop(raw = {}) {
         }))
     : [];
 
-  const images = Array.isArray(raw.images)
-    ? [...new Set(raw.images.filter((img) => typeof img === 'string' && img.trim().length > 0))]
-    : raw.thumbnail
-      ? [raw.thumbnail]
-      : [];
+  const rawImages = Array.isArray(raw.images) ? [...raw.images] : [];
+  if (raw.thumbnail && typeof raw.thumbnail === 'string') {
+    rawImages.unshift(raw.thumbnail.trim());
+  }
+
+  const images = [
+    ...new Set(
+      rawImages
+        .filter(
+          (img) =>
+            typeof img === 'string' &&
+            img.trim().length > 0 &&
+            !img.trim().startsWith('data:image') &&
+            !img.toLowerCase().includes('.svg')
+        )
+        .map((img) => img.trim())
+    ),
+  ];
+
+  const thumbnail = raw.thumbnail ? raw.thumbnail.trim() : images[0] || null;
 
   const promotions = Array.isArray(raw.promotions)
-    ? [...new Set(raw.promotions.map((p) => String(p).replace(/\s+/g, ' ').trim()).filter(Boolean))]
+    ? raw.promotions
+        .filter((p) => p && (typeof p === 'string' ? p.trim() : p.title || p.description))
+        .map((p) => (typeof p === 'string' ? { title: p.trim() } : p))
     : [];
 
   return {
@@ -350,7 +373,7 @@ function createNormalizedLaptop(raw = {}) {
           : null,
     },
     media: {
-      thumbnail: images[0] || null,
+      thumbnail,
       images,
     },
     metadata: {

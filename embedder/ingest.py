@@ -92,10 +92,20 @@ def build_payload(product: Dict[str, Any], embedding_text: str) -> Dict[str, Any
     rating = product.get("rating") or {}
     media = product.get("media") or {}
 
-    thumbnail = media.get("thumbnail")
-    images = media.get("images") or []
-    if not thumbnail and images:
-        thumbnail = images[0]
+    raw_images = media.get("images") or product.get("images") or []
+    if isinstance(raw_images, str):
+        try:
+            raw_images = json.loads(raw_images)
+        except Exception:
+            raw_images = [raw_images]
+    if not isinstance(raw_images, list):
+        raw_images = []
+
+    thumbnail = media.get("thumbnail") or product.get("thumbnail") or (raw_images[0] if raw_images else None)
+    if thumbnail and thumbnail not in raw_images:
+        raw_images.insert(0, thumbnail)
+
+    images = [img for img in raw_images if isinstance(img, str) and img.strip()]
 
     return {
         "id": product.get("id"),
@@ -118,6 +128,11 @@ def build_payload(product: Dict[str, Any], embedding_text: str) -> Dict[str, Any
         "screen": specs.get("screen"),
         "os": specs.get("os"),
         "thumbnail": thumbnail,
+        "images": images,
+        "media": {
+            "thumbnail": thumbnail,
+            "images": images,
+        },
         "rating_average": rating.get("average"),
         "rating_count": rating.get("count"),
         "embedding_text": embedding_text,
@@ -170,28 +185,31 @@ def collect_products(target_path: Path) -> List[Dict[str, Any]]:
     return products
 
 
-def ingest_to_qdrant(
-    data_path: Optional[str] = None,
+def ingest_records(
+    products: List[Dict[str, Any]],
     collection_name: Optional[str] = None,
     provider: Optional[str] = None,
     recreate: bool = False,
     batch_size: int = 64,
-) -> None:
-    """Ingests laptops from JSON into Qdrant collection."""
-    path = Path(data_path) if data_path else config.DEFAULT_INPUT_FILE
-    if not path.exists():
-        # Fall back to data directory if single file doesn't exist
-        path = config.DEFAULT_DATA_DIR
+) -> int:
+    """Ingests a list of laptop product dictionaries into Qdrant collection.
 
+    Reuses embedder, qdrant_storage, text building, and point generation.
+    Returns the total number of points successfully ingested.
+    """
     col_name = collection_name or config.QDRANT_COLLECTION
 
     logger.info("==================================================")
     logger.info(" Qdrant Laptop Vector Ingestion")
-    logger.info(" Input Data Path  : %s", path)
+    logger.info(" Total Records    : %d", len(products))
     logger.info(" Target Collection: %s", col_name)
     logger.info(" Recreate Coll.   : %s", recreate)
     logger.info(" Embedding Model  : %s", provider or config.EMBEDDING_PROVIDER)
     logger.info("==================================================")
+
+    if not products:
+        logger.warning("No products provided to ingest.")
+        return 0
 
     # 1. Initialize embedder
     embedder = get_embedder(provider)
@@ -205,7 +223,7 @@ def ingest_to_qdrant(
             storage.host,
             storage.port,
         )
-        return
+        return 0
 
     # 3. Ensure collection exists with matching vector dimension
     storage.ensure_collection(
@@ -214,13 +232,7 @@ def ingest_to_qdrant(
         recreate=recreate,
     )
 
-    # 4. Load products
-    products = collect_products(path)
-    if not products:
-        logger.warning("No products found to ingest.")
-        return
-
-    # 5. Build texts & prepare points
+    # 4. Build texts & prepare points
     logger.info("Generating embeddings and constructing points...")
     start_time = time.time()
 
@@ -232,7 +244,6 @@ def ingest_to_qdrant(
         emb_text = build_embedding_text(item)
         payload = build_payload(item, emb_text)
 
-        # Deterministic UUID for Qdrant point
         point_id_str = f"{item.get('source', '')}_{item.get('id') or item.get('sku') or item.get('url') or item.get('name')}"
         point_uuid = str(uuid.uuid5(uuid.NAMESPACE_DNS, point_id_str))
 
@@ -261,7 +272,7 @@ def ingest_to_qdrant(
                 )
             )
 
-    # 6. Upsert points into Qdrant
+    # 5. Upsert points into Qdrant
     logger.info("Upserting %d points into collection '%s'...", len(all_points), col_name)
     storage.upsert_points(col_name, all_points, batch_size=batch_size)
 
@@ -274,6 +285,34 @@ def ingest_to_qdrant(
     logger.info(" Collection Points Now: %s", info["points_count"])
     logger.info(" Elapsed Time         : %.2fs", elapsed)
     logger.info("==================================================")
+    return len(all_points)
+
+
+def ingest_to_qdrant(
+    data_path: Optional[str] = None,
+    collection_name: Optional[str] = None,
+    provider: Optional[str] = None,
+    recreate: bool = False,
+    batch_size: int = 64,
+) -> None:
+    """Ingests laptops from JSON into Qdrant collection."""
+    path = Path(data_path) if data_path else config.DEFAULT_INPUT_FILE
+    if not path.exists():
+        path = config.DEFAULT_DATA_DIR
+
+    # Load products
+    products = collect_products(path)
+    if not products:
+        logger.warning("No products found to ingest.")
+        return
+
+    ingest_records(
+        products=products,
+        collection_name=collection_name,
+        provider=provider,
+        recreate=recreate,
+        batch_size=batch_size,
+    )
 
 
 def main():

@@ -5,12 +5,16 @@ const { crawlCellphones } = require('./src/crawlers/cellphonesCrawler');
 const { crawlThegioididong } = require('./src/crawlers/thegioididongCrawler');
 const { crawlDienmayxanh } = require('./src/crawlers/dienmayxanhCrawler');
 const { crawlFptshop } = require('./src/crawlers/fptshopCrawler');
+const { crawlLaptopaz } = require('./src/crawlers/laptopazCrawler');
+const { crawlTrungtran } = require('./src/crawlers/trungtranCrawler');
 
 const CRAWLER_MAP = {
   cellphones: crawlCellphones,
   thegioididong: crawlThegioididong,
   dienmayxanh: crawlDienmayxanh,
   fptshop: crawlFptshop,
+  laptopaz: crawlLaptopaz,
+  trungtran: crawlTrungtran,
 };
 
 function parseCliArgs(argv) {

@@ -1,0 +1,853 @@
+{
+  "source": "laptopaz",
+  "crawledAt": "2026-11-13T12:55:47.709Z",
+  "totalCategories": 115,
+  "totalProducts": 2,
+  "categories": [
+    {
+      "name": "Laptop Dell Mới",
+      "slug": "laptop-dell-moi",
+      "url": "https://laptopaz.vn/laptop-dell-moi.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell Alienware",
+      "slug": "dell-alienware",
+      "url": "https://laptopaz.vn/dell-alienware.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell Inspiron",
+      "slug": "dell-inspiron",
+      "url": "https://laptopaz.vn/dell-inspiron.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell Precision",
+      "slug": "dell-precision",
+      "url": "https://laptopaz.vn/dell-precision.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell Latitude",
+      "slug": "dell-latitude",
+      "url": "https://laptopaz.vn/dell-latitude.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell XPS",
+      "slug": "dell-xps",
+      "url": "https://laptopaz.vn/dell-xps.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell G-Seri",
+      "slug": "dell-g-seri",
+      "url": "https://laptopaz.vn/dell-g-seri.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell Vostro",
+      "slug": "dell-vostro",
+      "url": "https://laptopaz.vn/dell-vostro.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Lenovo Mới",
+      "slug": "laptop-lenovo-moi",
+      "url": "https://laptopaz.vn/laptop-lenovo-moi.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo Ideapad",
+      "slug": "lenovo-ideapad",
+      "url": "https://laptopaz.vn/lenovo-ideapad.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo Legion",
+      "slug": "lenovo-legion",
+      "url": "https://laptopaz.vn/lenovo-legion.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo ThinkBook",
+      "slug": "lenovo-thinkbook",
+      "url": "https://laptopaz.vn/lenovo-thinkbook.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo Thinkpad",
+      "slug": "lenovo-thinkpad",
+      "url": "https://laptopaz.vn/lenovo-thinkpad.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo Yoga",
+      "slug": "lenovo-yoga",
+      "url": "https://laptopaz.vn/lenovo-yoga.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo LOQ",
+      "slug": "lenovo-loq",
+      "url": "https://laptopaz.vn/lenovo-loq.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Acer Mới",
+      "slug": "laptop-acer-moi-100",
+      "url": "https://laptopaz.vn/laptop-acer-moi-100.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Aspire",
+      "slug": "acer-aspire",
+      "url": "https://laptopaz.vn/acer-aspire.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Predator",
+      "slug": "acer-predator",
+      "url": "https://laptopaz.vn/acer-predator.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Nitro",
+      "slug": "acer-nitro",
+      "url": "https://laptopaz.vn/acer-nitro.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Swift",
+      "slug": "acer-swift",
+      "url": "https://laptopaz.vn/acer-swift.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Spin",
+      "slug": "acer-spin",
+      "url": "https://laptopaz.vn/acer-spin.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop HP Mới",
+      "slug": "laptop-hp-moi",
+      "url": "https://laptopaz.vn/laptop-hp-moi.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Elitebook",
+      "slug": "hp-elitebook",
+      "url": "https://laptopaz.vn/hp-elitebook.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Omen",
+      "slug": "hp-omen",
+      "url": "https://laptopaz.vn/hp-omen.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Spectre",
+      "slug": "hp-spectre",
+      "url": "https://laptopaz.vn/hp-spectre.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Envy",
+      "slug": "hp-envy",
+      "url": "https://laptopaz.vn/hp-envy.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Pavilion",
+      "slug": "hp-pavilion",
+      "url": "https://laptopaz.vn/hp-pavilion.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Zbook",
+      "slug": "hp-zbook",
+      "url": "https://laptopaz.vn/hp-zbook.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Probook",
+      "slug": "hp-probook",
+      "url": "https://laptopaz.vn/hp-probook.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Asus Mới",
+      "slug": "laptop-asus-moi",
+      "url": "https://laptopaz.vn/laptop-asus-moi.html",
+      "type": "brand"
+    },
+    {
+      "name": "Asus TUF",
+      "slug": "asus-tuf",
+      "url": "https://laptopaz.vn/asus-tuf.html",
+      "type": "brand"
+    },
+    {
+      "name": "Asus VivoBook",
+      "slug": "asus-vivobook",
+      "url": "https://laptopaz.vn/asus-vivobook.html",
+      "type": "brand"
+    },
+    {
+      "name": "Asus ZenBook",
+      "slug": "asus-zenbook",
+      "url": "https://laptopaz.vn/asus-zenbook.html",
+      "type": "brand"
+    },
+    {
+      "name": "Asus Rog",
+      "slug": "asus-rog",
+      "url": "https://laptopaz.vn/asus-rog.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop MSI Mới",
+      "slug": "laptop-msi-moi",
+      "url": "https://laptopaz.vn/laptop-msi-moi.html",
+      "type": "brand"
+    },
+    {
+      "name": "MSI G-Seri",
+      "slug": "msi-g-seri",
+      "url": "https://laptopaz.vn/msi-g-seri.html",
+      "type": "brand"
+    },
+    {
+      "name": "MSI Modern",
+      "slug": "msi-modern",
+      "url": "https://laptopaz.vn/msi-modern.html",
+      "type": "brand"
+    },
+    {
+      "name": "MSI Bravo",
+      "slug": "msi-bravo",
+      "url": "https://laptopaz.vn/msi-bravo.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Samsung mới",
+      "slug": "laptop-samsung-moi",
+      "url": "https://laptopaz.vn/laptop-samsung-moi.html",
+      "type": "brand"
+    },
+    {
+      "name": "HỌC TẬP - VĂN PHÒNG",
+      "slug": "laptop-van-phong",
+      "url": "https://laptopaz.vn/laptop-van-phong.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Dell",
+      "slug": "laptop-dell-van-phong",
+      "url": "https://laptopaz.vn/laptop-dell-van-phong.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Acer",
+      "slug": "laptop-acer-van-phong",
+      "url": "https://laptopaz.vn/laptop-acer-van-phong.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Asus",
+      "slug": "laptop-asus-van-phong",
+      "url": "https://laptopaz.vn/laptop-asus-van-phong.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop HP",
+      "slug": "laptop-hp-van-phong",
+      "url": "https://laptopaz.vn/laptop-hp-van-phong.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Lenovo",
+      "slug": "laptop-lenovo-van-phong",
+      "url": "https://laptopaz.vn/laptop-lenovo-van-phong.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop MSI",
+      "slug": "laptop-msi-van-phong",
+      "url": "https://laptopaz.vn/laptop-msi-van-phong.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Samsung",
+      "slug": "laptop-samsung-van-phong",
+      "url": "https://laptopaz.vn/laptop-samsung-van-phong.html",
+      "type": "brand"
+    },
+    {
+      "name": "LAPTOP GAMING",
+      "slug": "laptop-gaming",
+      "url": "https://laptopaz.vn/laptop-gaming.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell Gaming",
+      "slug": "laptop-dell-gaming",
+      "url": "https://laptopaz.vn/laptop-dell-gaming.html",
+      "type": "brand"
+    },
+    {
+      "name": "Asus Gaming",
+      "slug": "laptop-asus-gaming",
+      "url": "https://laptopaz.vn/laptop-asus-gaming.html",
+      "type": "brand"
+    },
+    {
+      "name": "MSI Gaming",
+      "slug": "laptop-msi-gaming",
+      "url": "https://laptopaz.vn/laptop-msi-gaming.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Gaming",
+      "slug": "laptop-acer-gaming",
+      "url": "https://laptopaz.vn/laptop-acer-gaming.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Gaming",
+      "slug": "laptop-hp-gaming",
+      "url": "https://laptopaz.vn/laptop-hp-gaming.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo Gaming",
+      "slug": "laptop-lenovo-gaming",
+      "url": "https://laptopaz.vn/laptop-lenovo-gaming.html",
+      "type": "brand"
+    },
+    {
+      "name": "LAPTOP ĐỒ HỌA",
+      "slug": "laptop-do-hoa-workstation",
+      "url": "https://laptopaz.vn/laptop-do-hoa-workstation.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Đồ Hoạ Dell",
+      "slug": "laptop-dell-do-hoa",
+      "url": "https://laptopaz.vn/laptop-dell-do-hoa.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Đồ Hoạ HP",
+      "slug": "laptop-hp-do-hoa",
+      "url": "https://laptopaz.vn/laptop-hp-do-hoa.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Đồ Hoạ Lenovo",
+      "slug": "laptop-lenovo-do-hoa",
+      "url": "https://laptopaz.vn/laptop-lenovo-do-hoa.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Đồ họa Acer",
+      "slug": "laptop-acer-do-hoa",
+      "url": "https://laptopaz.vn/laptop-acer-do-hoa.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Đồ họa Asus",
+      "slug": "laptop-asus-do-hoa",
+      "url": "https://laptopaz.vn/laptop-asus-do-hoa.html",
+      "type": "brand"
+    },
+    {
+      "name": "LAPTOP MỎNG NHẸ CAO CẤP",
+      "slug": "laptop-mong-nhe-cao-cap",
+      "url": "https://laptopaz.vn/laptop-mong-nhe-cao-cap.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop HP",
+      "slug": "laptop-hp-mong-nhe-cao-cap",
+      "url": "https://laptopaz.vn/laptop-hp-mong-nhe-cao-cap.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Dell",
+      "slug": "laptop-dell-mong-nhe-cao-cap",
+      "url": "https://laptopaz.vn/laptop-dell-mong-nhe-cao-cap.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Lenovo",
+      "slug": "laptop-lenovo-mong-nhe-cao-cap",
+      "url": "https://laptopaz.vn/laptop-lenovo-mong-nhe-cao-cap.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Asus",
+      "slug": "laptop-asus-mong-nhe-cao-cap",
+      "url": "https://laptopaz.vn/laptop-asus-mong-nhe-cao-cap.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop MSI",
+      "slug": "laptop-msi-mong-nhe-cao-cap",
+      "url": "https://laptopaz.vn/laptop-msi-mong-nhe-cao-cap.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Acer",
+      "slug": "laptop-acer-mong-nhe-cao-cap",
+      "url": "https://laptopaz.vn/laptop-acer-mong-nhe-cao-cap.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Samsung",
+      "slug": "laptop-samsung-mong-nhe-cao-cap",
+      "url": "https://laptopaz.vn/laptop-samsung-mong-nhe-cao-cap.html",
+      "type": "brand"
+    },
+    {
+      "name": "LAPTOP LIKE NEW",
+      "slug": "laptop-like-new",
+      "url": "https://laptopaz.vn/laptop-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Dell Like new",
+      "slug": "laptop-dell-like-new",
+      "url": "https://laptopaz.vn/laptop-dell-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell Alienware Like new",
+      "slug": "dell-alienware-like-new",
+      "url": "https://laptopaz.vn/dell-alienware-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell G-Seri Like new",
+      "slug": "dell-g-seri-like-new",
+      "url": "https://laptopaz.vn/dell-g-seri-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell Inspiron Like new",
+      "slug": "dell-inspiron-like-new",
+      "url": "https://laptopaz.vn/dell-inspiron-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell Latitude Like new",
+      "slug": "dell-latitude-like-new",
+      "url": "https://laptopaz.vn/dell-latitude-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell Precision Like new",
+      "slug": "dell-precision-like-new",
+      "url": "https://laptopaz.vn/dell-precision-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell XPS Like new",
+      "slug": "dell-xps-like-new",
+      "url": "https://laptopaz.vn/dell-xps-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Dell Vostro Like new",
+      "slug": "dell-vostro-like-new",
+      "url": "https://laptopaz.vn/dell-vostro-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop HP Like new",
+      "slug": "laptop-hp-like-new",
+      "url": "https://laptopaz.vn/laptop-hp-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Elitebook Like new",
+      "slug": "hp-elitebook-like-new",
+      "url": "https://laptopaz.vn/hp-elitebook-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Envy Like new",
+      "slug": "hp-envy-like-new",
+      "url": "https://laptopaz.vn/hp-envy-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Omen Like new",
+      "slug": "hp-omen-like-new",
+      "url": "https://laptopaz.vn/hp-omen-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Spectre Like new",
+      "slug": "hp-spectre-like-new",
+      "url": "https://laptopaz.vn/hp-spectre-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Zbook Like new",
+      "slug": "hp-zbook-like-new",
+      "url": "https://laptopaz.vn/hp-zbook-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Pavilion Like new",
+      "slug": "hp-pavilion-like-new",
+      "url": "https://laptopaz.vn/hp-pavilion-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Probook Like new",
+      "slug": "hp-probook-like-new",
+      "url": "https://laptopaz.vn/hp-probook-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "HP Notebook Like new",
+      "slug": "hp-notebook-like-new",
+      "url": "https://laptopaz.vn/hp-notebook-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Lenovo Like new",
+      "slug": "laptop-lenovo-like-new",
+      "url": "https://laptopaz.vn/laptop-lenovo-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo Ideapad Like new",
+      "slug": "lenovo-ideapad-like-new",
+      "url": "https://laptopaz.vn/lenovo-ideapad-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo Legion Like new",
+      "slug": "lenovo-legion-like-new",
+      "url": "https://laptopaz.vn/lenovo-legion-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo ThinkBook Like new",
+      "slug": "lenovo-thinkbook-like-new",
+      "url": "https://laptopaz.vn/lenovo-thinkbook-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo Thinkpad Like new",
+      "slug": "lenovo-thinkpad-like-new",
+      "url": "https://laptopaz.vn/lenovo-thinkpad-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Lenovo Yoga Like new",
+      "slug": "lenovo-yoga-like-new",
+      "url": "https://laptopaz.vn/lenovo-yoga-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Acer Like new",
+      "slug": "laptop-acer-like-new",
+      "url": "https://laptopaz.vn/laptop-acer-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Aspire Like new",
+      "slug": "acer-aspire-like-new",
+      "url": "https://laptopaz.vn/acer-aspire-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Nitro Like new",
+      "slug": "acer-nitro-like-new",
+      "url": "https://laptopaz.vn/acer-nitro-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Predator Like new",
+      "slug": "acer-predator-like-new",
+      "url": "https://laptopaz.vn/acer-predator-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Spin Like new",
+      "slug": "acer-spin-like-new",
+      "url": "https://laptopaz.vn/acer-spin-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Acer Swift Like new",
+      "slug": "acer-swift-like-new",
+      "url": "https://laptopaz.vn/acer-swift-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Asus Like new",
+      "slug": "laptop-asus-like-new",
+      "url": "https://laptopaz.vn/laptop-asus-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Asus Rog Like new",
+      "slug": "asus-rog-like-new",
+      "url": "https://laptopaz.vn/asus-rog-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Asus ZenBook Like new",
+      "slug": "asus-zenbook-like-new",
+      "url": "https://laptopaz.vn/asus-zenbook-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Asus VivoBook Like new",
+      "slug": "asus-vivobook-like-new",
+      "url": "https://laptopaz.vn/asus-vivobook-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Asus Tuf Like new",
+      "slug": "asus-tuf-like-new",
+      "url": "https://laptopaz.vn/asus-tuf-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop MSI Like new",
+      "slug": "laptop-msi-like-new",
+      "url": "https://laptopaz.vn/laptop-msi-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "MSI Bravo Like new",
+      "slug": "msi-bravo-like-new",
+      "url": "https://laptopaz.vn/msi-bravo-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "MSI G-Seri Like new",
+      "slug": "msi-g-seri-like-new",
+      "url": "https://laptopaz.vn/msi-g-seri-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "MSI Modern Like new",
+      "slug": "msi-modern-like-new",
+      "url": "https://laptopaz.vn/msi-modern-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Samsung Like new",
+      "slug": "laptop-samsung-like-new",
+      "url": "https://laptopaz.vn/laptop-samsung-like-new.html",
+      "type": "brand"
+    },
+    {
+      "name": "RAM Laptop",
+      "slug": "ram-laptop",
+      "url": "https://laptopaz.vn/ram-laptop.html",
+      "type": "brand"
+    },
+    {
+      "name": "Ổ Cứng Laptop",
+      "slug": "o-cung-laptop",
+      "url": "https://laptopaz.vn/o-cung-laptop.html",
+      "type": "brand"
+    },
+    {
+      "name": "Bàn Phím",
+      "slug": "ban-phim-laptop",
+      "url": "https://laptopaz.vn/ban-phim-laptop.html",
+      "type": "brand"
+    },
+    {
+      "name": "Wifi Laptop",
+      "slug": "wfi-laptop",
+      "url": "https://laptopaz.vn/wfi-laptop.html",
+      "type": "brand"
+    },
+    {
+      "name": "Chuột",
+      "slug": "chuot-co-day",
+      "url": "https://laptopaz.vn/chuot-co-day.html",
+      "type": "brand"
+    },
+    {
+      "name": "Tản nhiệt",
+      "slug": "tan-nhiet",
+      "url": "https://laptopaz.vn/tan-nhiet.html",
+      "type": "brand"
+    },
+    {
+      "name": "Balo - Túi chống sốc",
+      "slug": "balo-tui-chong-soc",
+      "url": "https://laptopaz.vn/balo-tui-chong-soc.html",
+      "type": "brand"
+    }
+  ],
+  "products": [
+    {
+      "id": "5b7eeb46b9e157d9",
+      "source": "laptopaz",
+      "sku": "5846",
+      "name": "Laptop Dell 14 D14261 71110664 | Intel Core 3 304, 8GB, 512GB, Intel Graphics, 14inch WUXGA, Win 11, Office, Bạc",
+      "brand": "Dell",
+      "model": "14 D14261 71110664",
+      "url": "https://laptopaz.vn/laptop-dell-14-d14261-71110664-intel-core-3-304-8gb-512gb-intel-graphics-14inch-wuxga-win-11-office-bac.html",
+      "condition": "new",
+      "availability": "out_of_stock",
+      "categories": [
+        {
+          "name": "Laptop mới",
+          "slug": "laptop-moi",
+          "url": "https://laptopaz.vn/laptop-moi.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": null,
+        "original": null,
+        "discountPercent": null,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core 3 304 (5 nhân / 5 luồng, up to 4.3GHz, NPU 15 TOPS)",
+        "ram": "8GB DDR5 5600MHz, có thể nâng cấp",
+        "storage": "512GB SSD M.2 NVMe PCIe 4.0Nâng cấp bằng cách thay ổ dung lượng lớn hơn",
+        "gpu": "Intel Graphics (tích hợp)",
+        "screen": "14 inch WUXGA (1920x1200) IPSTần số quét 60Hz, độ sáng 400 nits, chống chói",
+        "battery": "3-cell 41Wh, sạc qua cổng USB-C",
+        "weight": "1.29kg",
+        "os": "Windows bản quyền, Microsoft Office Home 2024",
+        "ports": "2x USB-C 3.2 Gen 2 10Gbps (hỗ trợ sạc PD, xuất hình DisplayPort)2x USB-A 3.2 Gen 1 5Gbps1x HDMI 2.11x Jack tai nghe / micro 3.5mm",
+        "rawSpecs": {
+          "CPU": "Intel Core 3 304 (5 nhân / 5 luồng, up to 4.3GHz, NPU 15 TOPS)",
+          "Card đồ họa": "Intel Graphics (tích hợp)",
+          "RAM": "8GB DDR5 5600MHz, có thể nâng cấp",
+          "Ổ cứng": "512GB SSD M.2 NVMe PCIe 4.0Nâng cấp bằng cách thay ổ dung lượng lớn hơn",
+          "Màn hình": "14 inch WUXGA (1920x1200) IPSTần số quét 60Hz, độ sáng 400 nits, chống chói",
+          "Cổng kết nối": "2x USB-C 3.2 Gen 2 10Gbps (hỗ trợ sạc PD, xuất hình DisplayPort)2x USB-A 3.2 Gen 1 5Gbps1x HDMI 2.11x Jack tai nghe / micro 3.5mm",
+          "Kết nối không dây": "Wi-Fi 6E (Intel AX211), Bluetooth 5.4",
+          "Bàn phím": "Có phím Copilot",
+          "Webcam": "HD 720p, màn che riêng tư",
+          "Âm thanh": "2 loa 2W",
+          "Bảo mật": "TPM 2.0, khe khóa Wedge",
+          "Pin / Sạc": "3-cell 41Wh, sạc qua cổng USB-C",
+          "Hệ điều hành / Phần mềm": "Windows bản quyền, Microsoft Office Home 2024",
+          "Chất liệu / Màu sắc": "Bạc (Platinum Silver)",
+          "Kích thước, trọng lượng": "313.3 x 222 x 11.35–17.7 mm; từ 1.29kg"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://laptopaz.vn/cdn-cgi/image/width=600,quality=75,format=auto,onerror=redirect/media/product/5846_laptop_dell_14_d14261_71110664_v2_01.jpg",
+        "images": [
+          "https://laptopaz.vn/cdn-cgi/image/width=600,quality=75,format=auto,onerror=redirect/media/product/5846_laptop_dell_14_d14261_71110664_v2_01.jpg",
+          "https://laptopaz.vn/media/product/5846_laptop_dell_14_d14261_71110664_v2_01.jpg",
+          "https://laptopaz.vn/media/product/5846_laptop_dell_14_d14261_71110664_v2_02.jpg",
+          "https://laptopaz.vn/media/product/5846_laptop_dell_14_d14261_71110664_v2_03.jpg",
+          "https://laptopaz.vn/media/product/5846_laptop_dell_14_d14261_71110664_v2_04.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T12:55:47.692Z"
+      }
+    },
+    {
+      "id": "26baf5789210b77b",
+      "source": "laptopaz",
+      "sku": "5845",
+      "name": "Laptop HP OmniBook 5 14 HM0040AU D72CVPA | AMD Ryzen AI 7 445, 16GB, 512GB, AMD Radeon 840M, 14inch WUXGA OLED, Win 11, Bạc",
+      "brand": "HP",
+      "model": "OmniBook 5 14 HM0040AU D72CVPA",
+      "url": "https://laptopaz.vn/laptop-hp-omnibook-5-14-hm0040au-d72cvpa-amd-ryzen-ai-7-445-16gb-512gb-amd-radeon-840m-14inch-wuxga-oled-win-11-bac.html",
+      "condition": "new",
+      "availability": "out_of_stock",
+      "categories": [
+        {
+          "name": "Laptop mới",
+          "slug": "laptop-moi",
+          "url": "https://laptopaz.vn/laptop-moi.html",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": null,
+        "original": null,
+        "discountPercent": null,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "AMD Ryzen AI 7 445 (6 nhân / 12 luồng, up to 4.6GHz, NPU 50 TOPS)",
+        "ram": "16GB LPDDR5x 7500MHz, hàn trên bo mạch",
+        "storage": "512GB SSD M.2 NVMe PCIe Gen4Nâng cấp bằng cách thay ổ dung lượng lớn hơn",
+        "gpu": "AMD Radeon 840M (tích hợp)",
+        "screen": "14 inch WUXGA (1920x1200) OLED, tỷ lệ 16:10độ sáng 300 nits, 100% DCI-P3, không cảm ứng",
+        "battery": "3-cell 59Wh, adapter 65W USB-C GaN",
+        "weight": "1.33kg",
+        "os": "Windows bản quyền",
+        "ports": "1x USB-A (10Gbps)1x USB-A (5Gbps)2x USB-C (10Gbps, sạc PD, DisplayPort 2.1)1x HDMI 2.11x Jack tai nghe / micro 3.5mm",
+        "rawSpecs": {
+          "CPU": "AMD Ryzen AI 7 445 (6 nhân / 12 luồng, up to 4.6GHz, NPU 50 TOPS)",
+          "Card đồ họa": "AMD Radeon 840M (tích hợp)",
+          "RAM": "16GB LPDDR5x 7500MHz, hàn trên bo mạch",
+          "Ổ cứng": "512GB SSD M.2 NVMe PCIe Gen4Nâng cấp bằng cách thay ổ dung lượng lớn hơn",
+          "Màn hình": "14 inch WUXGA (1920x1200) OLED, tỷ lệ 16:10độ sáng 300 nits, 100% DCI-P3, không cảm ứng",
+          "Cổng kết nối": "1x USB-A (10Gbps)1x USB-A (5Gbps)2x USB-C (10Gbps, sạc PD, DisplayPort 2.1)1x HDMI 2.11x Jack tai nghe / micro 3.5mm",
+          "Kết nối không dây": "Wi-Fi 6, Bluetooth 5.4",
+          "Bàn phím": "Có đèn nền",
+          "Webcam": "FHD IR",
+          "Âm thanh": "Loa kép, DTS:X Ultra, HP Audio Boost",
+          "Bảo mật": "Camera IR, nắp che camera, TPM",
+          "Pin / Sạc": "3-cell 59Wh, adapter 65W USB-C GaN",
+          "Hệ điều hành / Phần mềm": "Windows bản quyền",
+          "Chất liệu / Màu sắc": "Nhôm / Bạc (Glacier Silver)",
+          "Kích thước, trọng lượng": "312 x 217.5 x 13.6 mm; 1.33kg"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://laptopaz.vn/cdn-cgi/image/width=600,quality=75,format=auto,onerror=redirect/media/product/5845_laptop_hp_omnibook_5_14_hm0040au_d72cvpa_v2_01.jpg",
+        "images": [
+          "https://laptopaz.vn/cdn-cgi/image/width=600,quality=75,format=auto,onerror=redirect/media/product/5845_laptop_hp_omnibook_5_14_hm0040au_d72cvpa_v2_01.jpg",
+          "https://laptopaz.vn/media/product/5845_laptop_hp_omnibook_5_14_hm0040au_d72cvpa_v2_01.jpg",
+          "https://laptopaz.vn/media/product/5845_laptop_hp_omnibook_5_14_hm0040au_d72cvpa_v2_02.jpg",
+          "https://laptopaz.vn/media/product/5845_laptop_hp_omnibook_5_14_hm0040au_d72cvpa_v2_03.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T12:55:47.694Z"
+      }
+    }
+  ]
+}

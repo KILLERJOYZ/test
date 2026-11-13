@@ -180,7 +180,7 @@ export default function DemoTwo({ onExit }: { onExit: () => void }) {
     | "lab";
   const [referenceMode, setReferenceMode] = useState(true);
   const [screen, setScreen] = useState<Screen>("results");
-  const scroll = useRef<ScrollView>(null);
+  const scroll = useRef<any>(null);
   useEffect(() => {
     scroll.current?.scrollTo({ y: 0, animated: false });
     setNotice("");

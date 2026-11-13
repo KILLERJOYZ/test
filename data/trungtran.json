@@ -1,0 +1,226 @@
+{
+  "source": "trungtran",
+  "crawledAt": "2026-11-13T12:56:07.344Z",
+  "totalCategories": 6,
+  "totalProducts": 2,
+  "categories": [
+    {
+      "name": "Game",
+      "slug": "laptop-chuyen-game",
+      "url": "https://trungtran.vn/laptop-chuyen-game/",
+      "type": "brand"
+    },
+    {
+      "name": "Lập trình",
+      "slug": "laptop-chuyen-lap-trinh",
+      "url": "https://trungtran.vn/laptop-chuyen-lap-trinh/",
+      "type": "brand"
+    },
+    {
+      "name": "Học tập, Văn phòng",
+      "slug": "laptop-van-phong",
+      "url": "https://trungtran.vn/laptop-van-phong/",
+      "type": "brand"
+    },
+    {
+      "name": "Đồ họa, Kỹ thuật",
+      "slug": "laptop-do-hoa",
+      "url": "https://trungtran.vn/laptop-do-hoa/",
+      "type": "brand"
+    },
+    {
+      "name": "Mỏng nhẹ",
+      "slug": "laptop-mong-nhe",
+      "url": "https://trungtran.vn/laptop-mong-nhe/",
+      "type": "brand"
+    },
+    {
+      "name": "Laptop Gaming - Đồ Họa",
+      "slug": "laptop-gaming-dohoa",
+      "url": "https://trungtran.vn/laptop-gaming-dohoa/",
+      "type": "brand"
+    }
+  ],
+  "products": [
+    {
+      "id": "8c5c1f553bb4b761",
+      "source": "trungtran",
+      "sku": "1751",
+      "name": "Máy tính để bàn IdeaCentre All In One 24ILL11 F0JY0045VN Ultra 5 226V RAM 16GB SSD 512GB 23.8\" FHD IPS",
+      "brand": "Lenovo",
+      "model": "Máy tính để bàn IdeaCentre All In One 24ILL11 F0JY0045VN Ultra 5 226V RAM 16GB SSD 512GB 23.8\" FHD IPS",
+      "url": "https://trungtran.vn/may-tinh-de-ban-ideacentre-aio-24ill11-f0jy0045vn/",
+      "condition": "new",
+      "availability": "pre_order",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://trungtran.vn/laptop/?sort_r=hits",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 26990000,
+        "original": 26990000,
+        "discountPercent": null,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core™ Ultra 5 226V, 8 nhân, 8 luồng, xung nhịp tối đa lên đến 4.5GHz, 8MB Intel® Smart Cache, Intel® AI Boost hiệu năng lên đến 40 TOPS",
+        "ram": "16GB LPDDR5X-8533 onboard, MoP, không thể nâng cấp",
+        "storage": "512GB M.2 2280 PCIe ® 4.0x4 NVMe, nâng cấp theo dạng thay thế do chỉ có 1 khe cắm duy nhất (max 1TB)",
+        "gpu": "Intel ® Arc™ Graphics 130V",
+        "screen": "23.8\" FHD (1920x1080) IPS, độ sáng 250 nits, tần số quét 100Hz, độ phủ màu 99% sRGB, giảm ánh sáng xanh, không cảm ứng",
+        "battery": null,
+        "weight": "6.0 kg",
+        "os": "Windows 11 Home",
+        "ports": "Xem trong bài viết",
+        "rawSpecs": {
+          "CPU (Bộ vi xử lý)": "Intel Core™ Ultra 5 226V, 8 nhân, 8 luồng, xung nhịp tối đa lên đến 4.5GHz, 8MB Intel® Smart Cache, Intel® AI Boost hiệu năng lên đến 40 TOPS",
+          "Ram (Bộ nhớ trong)": "16GB LPDDR5X-8533 onboard, MoP, không thể nâng cấp",
+          "Storage (Ổ cứng)": "512GB M.2 2280 PCIe ® 4.0x4 NVMe, nâng cấp theo dạng thay thế do chỉ có 1 khe cắm duy nhất (max 1TB)",
+          "Màn hình": "23.8\" FHD (1920x1080) IPS, độ sáng 250 nits, tần số quét 100Hz, độ phủ màu 99% sRGB, giảm ánh sáng xanh, không cảm ứng",
+          "Card đồ họa": "Intel ® Arc™ Graphics 130V",
+          "Âm thanh": "HARMAN Audio, 2 loa 3Wx2",
+          "Cổng kết nối vật lý": "Xem trong bài viết",
+          "Kết nối không dây": "Wi-Fi ® 6 + BT5.3",
+          "Trọng lượng": "6.0 kg",
+          "Màu sắc": "Xám mây (Cloud Grey)",
+          "Tình trạng sản phẩm": "New 100%",
+          "Bảo hành": "24 tháng chính hãng Lenovo Việt Nam",
+          "Hệ điều hành": "Windows 11 Home",
+          "Bàn phím": "Bàn phím cùng chuột Calliope USB màu xám mây",
+          "Fingerprint reader": "Không hỗ trợ",
+          "Camera": "5.0MP, 2 micro tích hợp",
+          "Kích thước máy": "53.95 x 19.21 x 43.79 cm",
+          "Năm sản xuất": "2026",
+          "Hãng sản xuất": "Lenovo",
+          "Xuất xứ": "China"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://trungtran.vn/images/products/2026/resized/IdeaCentre-AIO-24ILL11-F0JY0045VN-1.webp",
+        "images": [
+          "https://trungtran.vn/images/products/2026/resized/IdeaCentre-AIO-24ILL11-F0JY0045VN-1.webp",
+          "https://trungtran.vn/images/products/2026/original/IdeaCentre-AIO-24ILL11-F0JY0045VN-1.jpg",
+          "https://trungtran.vn/images/products/2026/resized/tai-nghe-gaming-dareu-eh406-01.webp",
+          "https://trungtran.vn/images/products/2026/resized/chai-ve-sinh-man-hinh-hyper-cleaning-hyperwork-c02-hyper-cleaning-kit-hyperwork-6_(1).webp",
+          "https://trungtran.vn/images/products/2026/resized/CC01-thumb.webp",
+          "https://trungtran.vn/upload_images/images/products/asus-rog/resized/GU606AX.webp",
+          "https://trungtran.vn/images/products/2026/resized/Yoga_Pro_9_15N1X11_CT2_04.webp",
+          "https://trungtran.vn/upload_images/images/products/asus-rog/resized/Zephyrus_G16_GU606AW_10.webp",
+          "https://trungtran.vn/upload_images/images/products/asus-expertbook-series/resized/B9406CAA-X7642TW.webp",
+          "https://trungtran.vn/upload_images/images/products/legion-7/resized/uvGwvQmBE40ksUTpEmluCheB4-1776.webp",
+          "https://trungtran.vn/upload_images/images/products/asus-rog/resized/GU405AR.webp",
+          "https://trungtran.vn/images/products/2026/resized/ckQBBAmVUZSv0QycsEIHeJnas-5935.webp",
+          "https://trungtran.vn/images/products/2026/resized/thinkpad_x9-15p-gen-1_(6).webp"
+        ]
+      },
+      "metadata": {
+        "warranty": "BH 24 tháng Lenovo VN",
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T12:56:07.328Z"
+      }
+    },
+    {
+      "id": "9322979a054cceab",
+      "source": "trungtran",
+      "sku": "1752",
+      "name": "Máy tính để bàn IdeaCentre All In One 24ILL11 F0JY005UVN Ultra 5 226V RAM 16GB SSD 512GB 23.8\" FHD IPS",
+      "brand": "Lenovo",
+      "model": "Máy tính để bàn IdeaCentre All In One 24ILL11 F0JY005UVN Ultra 5 226V RAM 16GB SSD 512GB 23.8\" FHD IPS",
+      "url": "https://trungtran.vn/may-tinh-de-ban-ideacentre-aio-24ill11-f0jy005uvn/",
+      "condition": "new",
+      "availability": "pre_order",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://trungtran.vn/laptop/?sort_r=hits",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 26990000,
+        "original": 26990000,
+        "discountPercent": null,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core™ Ultra 5 226V, 8 nhân (4P + 4LPE) / 8 luồng, tốc độ Turbo tối đa lên đến 4.5GHz, bộ nhớ đệm thông minh Intel® 8MB.",
+        "ram": "16GB LPDDR5X-8533 onboard, MoP, không thể nâng cấp",
+        "storage": "512GB M.2 2280 PCIe ® 4.0x4 NVMe, nâng cấp theo dạng thay thế do chỉ có 1 khe cắm duy nhất (max 1TB)",
+        "gpu": "Intel ® Arc™ Graphics 130V",
+        "screen": "23.8\" FHD (1920x1080) IPS, độ sáng 250 nits, tần số quét 100Hz, độ phủ màu 99% sRGB, giảm ánh sáng xanh, không cảm ứng",
+        "battery": null,
+        "weight": "6.0 kg",
+        "os": "Windows 11 Home",
+        "ports": "Xem trong bài viết",
+        "rawSpecs": {
+          "CPU (Bộ vi xử lý)": "Intel Core™ Ultra 5 226V, 8 nhân (4P + 4LPE) / 8 luồng, tốc độ Turbo tối đa lên đến 4.5GHz, bộ nhớ đệm thông minh Intel® 8MB.",
+          "Ram (Bộ nhớ trong)": "16GB LPDDR5X-8533 onboard, MoP, không thể nâng cấp",
+          "Storage (Ổ cứng)": "512GB M.2 2280 PCIe ® 4.0x4 NVMe, nâng cấp theo dạng thay thế do chỉ có 1 khe cắm duy nhất (max 1TB)",
+          "Màn hình": "23.8\" FHD (1920x1080) IPS, độ sáng 250 nits, tần số quét 100Hz, độ phủ màu 99% sRGB, giảm ánh sáng xanh, không cảm ứng",
+          "Card đồ họa": "Intel ® Arc™ Graphics 130V",
+          "Âm thanh": "HARMAN Audio, 2 loa 3Wx2",
+          "Cổng kết nối vật lý": "Xem trong bài viết",
+          "Kết nối không dây": "Wi-Fi ® 6 + BT5.3",
+          "Trọng lượng": "6.0 kg",
+          "Màu sắc": "Xám (Luna Grey)",
+          "Tình trạng sản phẩm": "New 100%",
+          "Bảo hành": "24 tháng chính hãng Lenovo Việt Nam",
+          "Hệ điều hành": "Windows 11 Home",
+          "Bàn phím": "Bàn phím cùng chuột Calliope USB màu xám",
+          "Fingerprint reader": "Không hỗ trợ",
+          "Camera": "5.0MP, 2 micro tích hợp",
+          "Kích thước máy": "53.95 x 19.21 x 43.79 cm",
+          "Năm sản xuất": "2026",
+          "Hãng sản xuất": "Lenovo",
+          "Xuất xứ": "China"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://trungtran.vn/images/products/2026/resized/IdeaCentre-AIO-24ILL11-F0JY005UVN-1.webp",
+        "images": [
+          "https://trungtran.vn/images/products/2026/resized/IdeaCentre-AIO-24ILL11-F0JY005UVN-1.webp",
+          "https://trungtran.vn/images/products/2026/original/IdeaCentre-AIO-24ILL11-F0JY005UVN-1.jpg",
+          "https://trungtran.vn/images/products/2026/resized/tai-nghe-gaming-dareu-eh406-01.webp",
+          "https://trungtran.vn/images/products/2026/resized/chai-ve-sinh-man-hinh-hyper-cleaning-hyperwork-c02-hyper-cleaning-kit-hyperwork-6_(1).webp",
+          "https://trungtran.vn/images/products/2026/resized/CC01-thumb.webp",
+          "https://trungtran.vn/upload_images/images/products/asus-rog/resized/GU606AX.webp",
+          "https://trungtran.vn/images/products/2026/resized/Yoga_Pro_9_15N1X11_CT2_04.webp",
+          "https://trungtran.vn/upload_images/images/products/asus-rog/resized/Zephyrus_G16_GU606AW_10.webp",
+          "https://trungtran.vn/upload_images/images/products/asus-expertbook-series/resized/B9406CAA-X7642TW.webp",
+          "https://trungtran.vn/upload_images/images/products/legion-7/resized/uvGwvQmBE40ksUTpEmluCheB4-1776.webp",
+          "https://trungtran.vn/upload_images/images/products/asus-rog/resized/GU405AR.webp",
+          "https://trungtran.vn/images/products/2026/resized/ckQBBAmVUZSv0QycsEIHeJnas-5935.webp",
+          "https://trungtran.vn/images/products/2026/resized/thinkpad_x9-15p-gen-1_(6).webp"
+        ]
+      },
+      "metadata": {
+        "warranty": "BH 24 tháng Lenovo VN",
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T12:56:07.329Z"
+      }
+    }
+  ]
+}

@@ -429,13 +429,12 @@ test("GOV-04 HTTP admin endpoints enforce RBAC and persist governance state acro
   }
 });
 test("PILOT-01 fixed-snapshot evaluation across 70 real listings enforces zero hard violations and verifies upgrade/task arms", () => {
-  const realRaw = JSON.parse(
+  const realCatalog = JSON.parse(
     fs.readFileSync(
-      new URL("../../data/all_laptops_normalized.json", import.meta.url),
+      new URL("../../apps/adviser/src/real-catalog.json", import.meta.url),
       "utf8",
     ),
   );
-  const realCatalog = importCatalog(realRaw);
   const report = evaluatePilotSnapshot(realCatalog);
   assert.equal(report.listingCount, 70);
   assert.equal(report.profileCount, 8);

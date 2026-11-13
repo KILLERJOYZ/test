@@ -279,6 +279,22 @@ async function enrichProductDetail(page, rawProduct) {
       }
     });
 
+    // Gallery / Slider images on detail page
+    const galleryImgs = [];
+    $('.slider-item img, .detail-slider img, .gallery-img img, .box-slider img, .owl-item img').each((_, el) => {
+      const src = $(el).attr('data-src') || $(el).attr('src');
+      if (src && !src.includes('icon') && !src.includes('logo') && !src.includes('.svg')) {
+        const full = resolveUrl(BASE_URL, src);
+        if (full) galleryImgs.push(full);
+      }
+    });
+    if (galleryImgs.length > 0) {
+      rawProduct.images = [...new Set([...(rawProduct.images || []), ...galleryImgs])];
+      if (!rawProduct.thumbnail && rawProduct.images.length > 0) {
+        rawProduct.thumbnail = rawProduct.images[0];
+      }
+    }
+
     rawProduct.specs = { ...(rawProduct.specs || {}), ...specs };
     if (options.length > 0) {
       rawProduct.options = options;
@@ -304,6 +320,31 @@ async function crawlThegioididong(browser, options = {}) {
   try {
     console.log(`[TheGioiDiDong] Navigating to ${START_URL}...`);
     await page.goto(START_URL, { waitUntil: 'networkidle2', timeout: 40000 });
+
+    // Chiến thuật: Ấn vào chữ "Mới nhất" ở "Sắp xếp theo", đợi dữ liệu cập nhật rồi thực hiện thu thập
+    try {
+      console.log('[TheGioiDiDong] Áp dụng chiến thuật: Ấn vào chữ "Mới nhất" ở "Sắp xếp theo"...');
+      const moiNhatBtn = await page.evaluateHandle(() => {
+        const elements = Array.from(document.querySelectorAll('div, a, span, button'));
+        return elements.find((el) => {
+          const text = (el.textContent || '').trim();
+          return text === 'Mới nhất' && el.offsetParent !== null;
+        }) || null;
+      });
+
+      if (moiNhatBtn && moiNhatBtn.asElement()) {
+        await moiNhatBtn.asElement().click();
+        console.log('[TheGioiDiDong] Đã ấn "Mới nhất", đợi dữ liệu cập nhật...');
+        await sleep(3000);
+      } else {
+        console.log('[TheGioiDiDong] Chuyển tới hash #o=3...');
+        await page.goto(`${START_URL}#o=3&pi=0`, { waitUntil: 'networkidle2', timeout: 35000 });
+        await sleep(2000);
+      }
+    } catch (err) {
+      console.warn(`[TheGioiDiDong] Lỗi khi chọn "Mới nhất": ${err.message}`);
+    }
+
     await autoScroll(page, 4, 500);
 
     const mainHtml = await page.content();

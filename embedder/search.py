@@ -114,6 +114,8 @@ def search_laptops(
         storage_val = payload.get("storage") or "N/A"
         gpu = payload.get("gpu") or "N/A"
         url = payload.get("url") or ""
+        thumbnail = payload.get("thumbnail") or ""
+        images_count = len(payload.get("images") or [])
 
         print(f"#{idx} [Score: {hit.score:.4f}] {name}")
         print(f"   Hãng: {brand_val} | Nguồn: {source_val} | Tình trạng: {cond} | Giá: {price}")
@@ -123,6 +125,8 @@ def search_laptops(
             print(f"   GPU: {gpu[:80]}")
         if url:
             print(f"   Link: {url}")
+        if thumbnail:
+            print(f"   Ảnh: {thumbnail} (tổng {images_count} ảnh)")
         print("-" * 80)
 
 

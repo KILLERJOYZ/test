@@ -18,6 +18,17 @@ export type Listing = {
   stock: "unknown";
   identity: "unreviewed";
   rawHash: string;
+  brand?: string | null;
+  model?: string | null;
+  gpu?: string | null;
+  battery?: string | null;
+  thumbnail?: string | null;
+  priceOriginal?: number | null;
+  discountPercent?: number | null;
+  installment?: string | null;
+  ratingAverage?: number | null;
+  ratingCount?: number | null;
+  availability?: string | null;
 };
 export type Catalog = {
   schemaVersion: 1;

@@ -1,0 +1,6 @@
+psycopg[binary]>=3.2
+qdrant-client>=1.20,<1.22
+numpy>=1.24
+python-dotenv>=1.0
+pgserver>=0.1.4
+openai>=1.60

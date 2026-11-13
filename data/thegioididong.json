@@ -1,6 +1,6 @@
 {
   "source": "thegioididong",
-  "crawledAt": "2026-11-11T04:39:23.774Z",
+  "crawledAt": "2026-11-13T11:48:08.067Z",
   "totalCategories": 108,
   "totalProducts": 15,
   "categories": [
@@ -655,13 +655,13 @@
   ],
   "products": [
     {
-      "id": "f230b970b23f4fb3",
+      "id": "90c7e33aa69e63b2",
       "source": "thegioididong",
-      "sku": "0220042003457",
-      "name": "Laptop HP 240R G10 - C3RU7AT (Core 5 120U, 16GB, 512GB, Full HD, Win11)",
-      "brand": "Hp",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/hp-240r-g10-core-5-120u-c3ru7at",
+      "sku": "0220042104238",
+      "name": "Laptop Acer Gaming Nitro ProPanel ANV16-I12-53VH - NH.U8QSV.001 (Core 5 205H, 16GB, 512GB, RTX 3050 4GB, 16 inch WUXGA 165Hz, Win11)",
+      "brand": "Acer",
+      "model": "Gaming Nitro ProPanel ANV16-I12-53VH - NH.U8QSV.001",
+      "url": "https://www.thegioididong.com/laptop/acer-gaming-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001",
       "condition": "new",
       "availability": "in_stock",
       "categories": [
@@ -674,86 +674,1312 @@
       ],
       "pricing": {
         "currency": "VND",
-        "current": 21290000,
-        "original": 29090000,
-        "discountPercent": 26,
-        "installment": "Trả chậm 0% trả trước 0đ",
+        "current": 28990000,
+        "original": 32390000,
+        "discountPercent": 10,
+        "installment": null,
         "priceNote": null
       },
       "specs": {
-        "cpu": "Intel Core 5 Raptor Lake - 120U",
+        "cpu": "Intel Core 5 - 205H",
         "ram": "16 GB",
-        "storage": "512 GB SSD PCIe M.2 (2280) (Có thể tháo rời, lắp thanh khác tối đa 1 TB (2280))",
-        "gpu": "Card tích hợp - Intel UHD Graphics",
-        "screen": "14 inch",
-        "battery": "3 cell, 41.04 Wh",
-        "weight": null,
+        "storage": "•512 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 4 TB)•Hỗ trợ thêm 1 khe cắm SSD M.2 PCIe mở rộng (nâng cấp tối đa 4 TB)",
+        "gpu": "Card rời - NVIDIA GeForce RTX 3050, 4 GB",
+        "screen": "16 inch, WUXGA (1920 x 1200), 165 Hz",
+        "battery": "4-cell Li-ion, 53.35 Wh",
+        "weight": "2.35 kg",
         "os": "Windows 11 Home SL",
-        "ports": "•HDMI•2 x USB 3.2•Jack tai nghe 3.5 mm•1 x USB 3.2 Gen 2 Type-C (hỗ trợ DisplayPort, Power delivery, HP Sleep and Charge)",
+        "ports": "•1 x USB 3.2 Gen 2 Type-C (hỗ trợ DisplayPort 1.4 và Power Delivery)•1 x USB-A (hỗ trợ USB 3.2 Gen 1)•1 x USB-A (hỗ trợ USB 3.2 Gen 2)•LAN (RJ45)•Mini DisplayPort 1.4•Jack tai nghe 3.5 mm•1x DC-in•HDMI 2.1",
         "rawSpecs": {
-          "Công nghệ CPU": "Intel Core 5 Raptor Lake - 120U",
-          "Số nhân": "10",
+          "Công nghệ CPU": "Intel Core 5 - 205H",
+          "Số nhân": "8",
           "Số luồng": "12",
-          "Tốc độ CPU": "1.40 GHz (Lên đến 5.00 GHz khi tải nặng)",
-          "Card màn hình": "Card tích hợp - Intel UHD Graphics",
+          "Tốc độ CPU": "2.20 GHz (Lên đến 4.80 GHz khi tải nặng)",
+          "Card màn hình": "Card rời - NVIDIA GeForce RTX 3050, 4 GB",
           "RAM": "16 GB",
-          "Loại RAM": "DDR4 (1 khe 16 GB + 1 khe rời)",
+          "Loại RAM": "DDR4 (1 khe 8 GB + 1 khe 8 GB)",
           "Tốc độ Bus RAM": "3200 MHz",
-          "Hỗ trợ RAM tối đa": "32 GB",
-          "Ổ cứng": "512 GB SSD PCIe M.2 (2280) (Có thể tháo rời, lắp thanh khác tối đa 1 TB (2280))",
-          "Kích thước màn hình": "14 inch",
-          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Hỗ trợ RAM tối đa": "64 GB",
+          "Ổ cứng": "•512 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 4 TB)•Hỗ trợ thêm 1 khe cắm SSD M.2 PCIe mở rộng (nâng cấp tối đa 4 TB)",
+          "Kích thước màn hình": "16 inch",
+          "Độ phân giải": "WUXGA (1920 x 1200)",
           "Tấm nền": "IPS",
-          "Tần số quét": "Hãng không công bố",
-          "Độ phủ màu": "45% NTSC",
-          "Công nghệ màn hình": "•300 nits•Chống chói Anti Glare",
-          "Cổng giao tiếp": "•HDMI•2 x USB 3.2•Jack tai nghe 3.5 mm•1 x USB 3.2 Gen 2 Type-C (hỗ trợ DisplayPort, Power delivery, HP Sleep and Charge)",
-          "Kết nối không dây": "•Wi-Fi 6 (802.11ax)•Bluetooth 5.4",
-          "Khe đọc thẻ nhớ": "Không",
-          "Webcam": "HD webcam",
-          "Đèn bàn phím": "Không có đèn",
-          "Bảo mật": "Công tắc khoá camera",
-          "Công nghệ âm thanh": "•Dual speakers•Realtek High Definition Audio",
-          "Tản nhiệt": "Hãng không công bố",
-          "Thông tin Pin": "3 cell, 41.04 Wh",
+          "Tần số quét": "165 Hz",
+          "Độ phủ màu": "100% sRGB",
+          "Công nghệ màn hình": "•Acer ComfyView•LED-backlit TFT LCD•Wide viewing angle•Ultra-slim design•Mercury free, environment friendly",
+          "Màn hình cảm ứng": "Không",
+          "Cổng giao tiếp": "•1 x USB 3.2 Gen 2 Type-C (hỗ trợ DisplayPort 1.4 và Power Delivery)•1 x USB-A (hỗ trợ USB 3.2 Gen 1)•1 x USB-A (hỗ trợ USB 3.2 Gen 2)•LAN (RJ45)•Mini DisplayPort 1.4•Jack tai nghe 3.5 mm•1x DC-in•HDMI 2.1",
+          "Kết nối không dây": "•Wi-Fi 6 (802.11ax) Dual band 2x2•Bluetooth 5.2",
+          "Webcam": "HD",
+          "Đèn bàn phím": "Có",
+          "Bảo mật": "•Mô-đun bảo mật TPM (Firmware TPM)•Công tắc khoá camera",
+          "Công nghệ âm thanh": "•Quad built-in stereo speakers•One built-in digital microphone",
+          "Tản nhiệt": "2 quạt",
+          "Thông tin Pin": "4-cell Li-ion, 53.35 Wh",
           "Hệ điều hành": "Windows 11 Home SL",
-          "Thời điểm ra mắt": "2025",
-          "Kích thước": "Dài 323.7 mm - Rộng 215 mm - Dày 9.3 mm - Nặng 1.402 kg",
-          "Chất liệu": "Vỏ nhựa"
+          "Kích thước": "Dài 356.9 mm - Rộng 259 mm - Dày 23.56 - 27.05 mm - Nặng 2.35 kg",
+          "Chất liệu": "Vỏ nhựa - Nắp lưng bằng nhôm"
         }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": 4.9,
-        "count": 5902
+        "average": null,
+        "count": null
       },
       "media": {
-        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003457-laptop-tron-20261104-600x600.png",
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-thumb151415.jpg",
         "images": [
-          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003457-laptop-tron-20261104-600x600.png",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-1-639153150184061271.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-2-639153150190075414.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-3-639153150196376684.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-4-639153150202780328.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-5-639153150209273826.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-6-639153150216014021.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-7-639153150225706118.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-8-639153150232259074.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-9-639153150239887479.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-10-639153150246430160.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-11-639153150252443612.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-12-639153150259659056.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-13-639153150266938956.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-14-639153150275689142.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/355729/hp-240r-g10-core-5-120u-c3ru7at-99-638945005502293968.jpg"
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-thumb151415.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-1151416.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-2151417.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-3151418.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-4151418.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-5151419.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-6151419.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-7151421.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-8151422.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-9151423.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-10151424.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-11151424.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-12151425.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-13151425.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-14151426.jpg",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/acer-nitro-propanel-anv16-i12-53vh-core-5-205h-nh-u8qsv-001-15151426.jpg"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.758Z"
+        "crawledAt": "2026-11-13T11:48:08.038Z"
+      }
+    },
+    {
+      "id": "9fb980ae71c68876",
+      "source": "thegioididong",
+      "sku": "0220042104202",
+      "name": "Laptop Dell 15 DC15250 - CPH995-2Y (i5 1334U, 16GB, 512GB, 15.6 inch Full HD, 120Hz, OfficeH24+365B, Win11)",
+      "brand": "Dell",
+      "model": "15 DC15250 - CPH995-2Y",
+      "url": "https://www.thegioididong.com/laptop/dell-15-dc15250-i5-1334u-cph995-2y",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 28990000,
+        "original": 30590000,
+        "discountPercent": 5,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core i5 Raptor Lake - 1334U",
+        "ram": "16 GB",
+        "storage": "512 GB SSD PCIe NVMe (M.2 2280)",
+        "gpu": "Card tích hợp - Intel Graphics",
+        "screen": "15.6 inch, Full HD (1920 x 1080), 30 - 120 Hz",
+        "battery": "3 cell, 41 Wh",
+        "weight": "1.639 kg",
+        "os": "Windows 11 Home Single Language 64-bit + Office Home 2024 + Microsoft 365 Basic",
+        "ports": "•1 x USB 2.0 Type-A•1 x USB 3.2 Gen 1 Type-A•1 x USB 3.2 Gen 1 Type-C•1 x USB 3.2 Gen 1 Type-C (hỗ trợ DisplayPort 1.4 và Power Delivery)•HDMI•Jack tai nghe/micro 3.5 mm",
+        "rawSpecs": {
+          "Công nghệ CPU": "Intel Core i5 Raptor Lake - 1334U",
+          "Số nhân": "10",
+          "Số luồng": "12",
+          "Tốc độ CPU": "3.40 GHz (Lên đến 4.60 GHz khi tải nặng)",
+          "Card màn hình": "Card tích hợp - Intel Graphics",
+          "RAM": "16 GB",
+          "Loại RAM": "DDR5 (1 khe 16 GB + 1 khe rời)",
+          "Tốc độ Bus RAM": "4400 MHz",
+          "Hỗ trợ RAM tối đa": "16 GB",
+          "Ổ cứng": "512 GB SSD PCIe NVMe (M.2 2280)",
+          "Kích thước màn hình": "15.6 inch",
+          "Độ phân giải": "Full HD (1920 x 1080)",
+          "Tấm nền": "WVA",
+          "Tần số quét": "30 - 120 Hz",
+          "Độ phủ màu": "45% NTSC",
+          "Công nghệ màn hình": "Chống chói Anti Glare",
+          "Màn hình cảm ứng": "Không",
+          "Cổng giao tiếp": "•1 x USB 2.0 Type-A•1 x USB 3.2 Gen 1 Type-A•1 x USB 3.2 Gen 1 Type-C•1 x USB 3.2 Gen 1 Type-C (hỗ trợ DisplayPort 1.4 và Power Delivery)•HDMI•Jack tai nghe/micro 3.5 mm",
+          "Kết nối không dây": "•Wi-Fi 802.11ax•Bluetooth 5.0",
+          "Khe đọc thẻ nhớ": "SD",
+          "Webcam": "HD Webcam",
+          "Đèn bàn phím": "Không có đèn",
+          "Bảo mật": "TPM 2.0",
+          "Công nghệ âm thanh": "Realtek High Definition Audio",
+          "Thông tin Pin": "3 cell, 41 Wh",
+          "Hệ điều hành": "Windows 11 Home Single Language 64-bit + Office Home 2024 + Microsoft 365 Basic",
+          "Kích thước": "Dài 358.5 mm - Rộng 235.56 mm - Dày 17.99 mm - Nặng 1.639 kg",
+          "Chất liệu": "Vỏ nhựa"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": 5,
+        "count": 5
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdnv2.tgdd.vn/pim/cdn/images/202611/0220042104202-laptop-tron-20261106-600x600145415.png",
+        "images": [
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdnv2.tgdd.vn/pim/cdn/images/202611/0220042104202-laptop-tron-20261106-600x600145415.png",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-15-dc15250-i5-1334u-cph995-2y-2143739.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-15-dc15250-i5-1334u-cph995-2y-3143806.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-15-dc15250-i5-1334u-cph995-2y-4143832.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-15-dc15250-i5-1334u-cph995-2y-1143711.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-15-dc15250-i5-1334u-cph995-2y-5143844.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-15-dc15250-i5-1334u-cph995-2y-6143905.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-15-dc15250-i5-1334u-cph995-2y-7143919.webp"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.038Z"
+      }
+    },
+    {
+      "id": "ebc3d9a0626d3317",
+      "source": "thegioididong",
+      "sku": "0220042104201",
+      "name": "Laptop Dell XPS 13 DX13260 - TNR9K-2Y (Core 5 320, 16GB, 512GB, 13.4 inch 2.5K, Cảm ứng, 120Hz, OfficeH24+365B+Win11)",
+      "brand": "Dell",
+      "model": "XPS 13 DX13260 - TNR9K-2Y",
+      "url": "https://www.thegioididong.com/laptop/dell-xps-13-dx13260-core-5-320-tnr9k-2y",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 46290000,
+        "original": 46990000,
+        "discountPercent": 1,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core 5 Wildcat Lake - 320",
+        "ram": "16 GB",
+        "storage": "512 GB SSD Gen4x4 QLC",
+        "gpu": "Card tích hợp - Intel Graphics",
+        "screen": "13.4 inch, QHD+ 2.5K (2560x1600), 30 - 120 Hz",
+        "battery": "3 cell, 52 Wh",
+        "weight": "1.052 kg",
+        "os": "Windows 11 Home Single Language 64-bit + Office Home 2024 + Microsoft 365 Basic",
+        "ports": "2 x USB 3.2 Gen 2 Type-C (hỗ trợ Power Delivery 3.1 và DisplayPort 2.1)",
+        "rawSpecs": {
+          "Công nghệ CPU": "Intel Core 5 Wildcat Lake - 320",
+          "Số nhân": "6",
+          "Số luồng": "6",
+          "Tốc độ CPU": "1.5 GHz (Lên đến 4.6 GHz khi tải nặng)",
+          "NPU": "Intel AI Boost",
+          "Hiệu năng xử lý AI (TOPS)": "Lên đến 16 TOPS",
+          "Card màn hình": "Card tích hợp - Intel Graphics",
+          "RAM": "16 GB",
+          "Loại RAM": "LPDDR5X (Onboard)",
+          "Tốc độ Bus RAM": "7467 MHz",
+          "Hỗ trợ RAM tối đa": "Không hỗ trợ nâng cấp",
+          "Ổ cứng": "512 GB SSD Gen4x4 QLC",
+          "Kích thước màn hình": "13.4 inch",
+          "Độ phân giải": "QHD+ 2.5K (2560x1600)",
+          "Tần số quét": "30 - 120 Hz",
+          "Độ phủ màu": "100% DCI-P3",
+          "Công nghệ màn hình": "•InfinityEdge•Eyesafe•Low Blue Light•WLED",
+          "Màn hình cảm ứng": "Có",
+          "Cổng giao tiếp": "2 x USB 3.2 Gen 2 Type-C (hỗ trợ Power Delivery 3.1 và DisplayPort 2.1)",
+          "Kết nối không dây": "•Wi-Fi 802.11be•Bluetooth 6.0",
+          "Khe đọc thẻ nhớ": "Không",
+          "Webcam": "Full HD + IR camera",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "•Mở khoá khuôn mặt•TPM 2.0",
+          "Công nghệ âm thanh": "•Cirrus Logic Audio•SoundWire Interface•Waves MaxxAudio",
+          "Tản nhiệt": "2 quạt",
+          "Thông tin Pin": "3 cell, 52 Wh",
+          "Hệ điều hành": "Windows 11 Home Single Language 64-bit + Office Home 2024 + Microsoft 365 Basic",
+          "Kích thước": "Dài 296.9 mm - Rộng 200.7 mm - Dày 12.75 mm - Nặng 1.052 kg",
+          "Chất liệu": "Vỏ nhôm"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": 5,
+        "count": 1
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdnv2.tgdd.vn/pim/cdn/images/202611/0220042104201-laptop-tron-20261106-600x600223102.png",
+        "images": [
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdnv2.tgdd.vn/pim/cdn/images/202611/0220042104201-laptop-tron-20261106-600x600223102.png",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-xps-13-dx13260-1215941.JPG",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-xps-13-dx13260-2215941.JPG",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-xps-13-dx13260-3215941.JPG",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-xps-13-dx13260-4215941.JPG",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-xps-13-dx13260-5215941.JPG",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-xps-13-dx13260-6215941.JPG",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-xps-13-dx13260-7215941.JPG",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202611/dell-xps-13-dx13260-8215941.JPG"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.039Z"
+      }
+    },
+    {
+      "id": "e4d96d02c8936721",
+      "source": "thegioididong",
+      "sku": "0220042104231",
+      "name": "Laptop Lenovo Yoga Pro 9 15N1X11 - 83SR001HVN (RTX Spark N1X, 64GB, 1TB, RTX Blackwell, 15.3” WQXGA 165Hz, Cảm ứng, OfficeH24+365, Win11)",
+      "brand": "Lenovo",
+      "model": "Yoga Pro 9 15N1X11 - 83SR001HVN",
+      "url": "https://www.thegioididong.com/laptop/lenovo-yoga-pro-9-15n1x11-rtx-spark-n1x-83sr001hvn",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 129290000,
+        "original": 129990000,
+        "discountPercent": 1,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "NVIDIA RTX Spark™ N1X - 6144-core GPU and 20-core CPU",
+        "ram": "64 GB",
+        "storage": "1TB SSD M.2 2242 PCIe 4.0x4 NVMe - Hỗ trợ thêm 1 khe M.2 2242 PCIe 5.0 x4 slot Nâng cấp tối đa 2TB (Tổng 2 khe)",
+        "gpu": "Card tích hợp - NVIDIA® Blackwell RTX 6144-core GPU",
+        "screen": "15.3 inch, 2.5K WQXGA (2560x1600), 165 Hz",
+        "battery": "92.5Wh",
+        "weight": "1.75 kg",
+        "os": "Windows 11 Home Single Language, English Microsoft 365 Basic + Office Home 2024",
+        "ports": "•1x USB-A (up to USB 10Gbps), Always On•1x USB-A (up to USB 10Gbps)•2x USB-C® (up to USB4® 40Gbps), with USB PD 65-100W and DisplayPort™ 2.1•1x HDMI® 2.1, up to 8K/60Hz•1x Headphone / microphone combo jack (3.5mm)•1x SD card reader (UHS-II)",
+        "rawSpecs": {
+          "Công nghệ CPU": "NVIDIA RTX Spark™ N1X - 6144-core GPU and 20-core CPU",
+          "Số nhân": "20",
+          "Số luồng": "20",
+          "Hiệu năng xử lý AI (TOPS)": "Copilot+ PC",
+          "Card màn hình": "Card tích hợp - NVIDIA® Blackwell RTX 6144-core GPU",
+          "Số nhân GPU": "6144 CUDA Cores",
+          "RAM": "64 GB",
+          "Loại RAM": "LPDDR5X",
+          "Tốc độ Bus RAM": "9400 MHz",
+          "Hỗ trợ RAM tối đa": "Không nâng cấp",
+          "Ổ cứng": "1TB SSD M.2 2242 PCIe 4.0x4 NVMe - Hỗ trợ thêm 1 khe M.2 2242 PCIe 5.0 x4 slot Nâng cấp tối đa 2TB (Tổng 2 khe)",
+          "Kích thước màn hình": "15.3 inch",
+          "Độ phân giải": "2.5K WQXGA (2560x1600)",
+          "Tấm nền": "OLED",
+          "Tần số quét": "165 Hz",
+          "Độ phủ màu": "•100% P3•100% sRGB•99% Adobe® RGB",
+          "Công nghệ màn hình": "•Eyesafe®•Dolby Vision®•G-SYNC®•Flicker Free•DisplayHDR™ True Black 1000•Glass•Touch•X-Rite®•PureSight Pro•Pantone® Validated•Pantone® SkinTone™ Validated",
+          "Màn hình cảm ứng": "Có",
+          "Cổng giao tiếp": "•1x USB-A (up to USB 10Gbps), Always On•1x USB-A (up to USB 10Gbps)•2x USB-C® (up to USB4® 40Gbps), with USB PD 65-100W and DisplayPort™ 2.1•1x HDMI® 2.1, up to 8K/60Hz•1x Headphone / microphone combo jack (3.5mm)•1x SD card reader (UHS-II)",
+          "Kết nối không dây": "•Wi-Fi® 7 802.11be 2x2•BT5.4",
+          "Khe đọc thẻ nhớ": "SD Card Reader",
+          "Webcam": "9.2MP + IR with E-shutter",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "•TPM 2.0•Nhận diện khuôn mặt (FaceID)•Công tắc khoá camera",
+          "Công nghệ âm thanh": "•Dolby Atmos•Smart Amplifier",
+          "Tính năng khác": "TPM 2.0",
+          "Thông tin Pin": "92.5Wh",
+          "Hệ điều hành": "Windows 11 Home Single Language, English Microsoft 365 Basic + Office Home 2024",
+          "Thời điểm ra mắt": "2026",
+          "Kích thước": "Dài 347 mm - Rộng 242 mm - Dày 16.7 mm - Nặng 1.75 kg (3.86 lbs)",
+          "Chất liệu": "Vỏ kim loại - Nhôm"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042104231-laptop-tron-20261105-600x600.png",
+        "images": [
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042104231-laptop-tron-20261105-600x600.png",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/lenovo-yoga-pro-9-15n1x11-rtx-spark-n1x-83sr001hvn-1101945.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/lenovo-yoga-pro-9-15n1x11-rtx-spark-n1x-83sr001hvn-2101945.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/lenovo-yoga-pro-9-15n1x11-rtx-spark-n1x-83sr001hvn-3101945.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/lenovo-yoga-pro-9-15n1x11-rtx-spark-n1x-83sr001hvn-4101945.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/lenovo-yoga-pro-9-15n1x11-rtx-spark-n1x-83sr001hvn-5101945.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/lenovo-yoga-pro-9-15n1x11-rtx-spark-n1x-83sr001hvn-6101945.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/lenovo-yoga-pro-9-15n1x11-rtx-spark-n1x-83sr001hvn-7101945.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/lenovo-yoga-pro-9-15n1x11-rtx-spark-n1x-83sr001hvn-8101945.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/lenovo-yoga-pro-9-15n1x11-rtx-spark-n1x-83sr001hvn-9101945.webp"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.039Z"
+      }
+    },
+    {
+      "id": "ddfa0271f9c1a1d2",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "Macbook Pro 16 inch PROLED M5 Pro 48GB/1TB",
+      "brand": "Apple",
+      "model": "Macbook Pro 16 inch PROLED M5 Pro 48GB",
+      "url": "https://www.thegioididong.com/laptop/macbook-pro-16-inch-proled-m5-pro-48gb-1tb",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 109490000,
+        "original": 109490000,
+        "discountPercent": null,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Apple M5 Pro",
+        "ram": "48 GB",
+        "storage": "1 TB SSD",
+        "gpu": "Card tích hợp - 20 nhân GPU",
+        "screen": "16.3 inch, PROLED XDR (3472 x 2266), up to 120 Hz",
+        "battery": "Li-Po, 100 Wh",
+        "weight": "1.82 kg",
+        "os": "macOS",
+        "ports": "•Jack tai nghe 3.5 mm•MagSafe 3•HDMI•3 x Thunderbolt 5 (USB‑C) (Sạc, DisplayPort, Thunderbolt 5 (lên đến 120Gb/s), USB 4 (lên đến 120Gb/s), Genlock)",
+        "rawSpecs": {
+          "Công nghệ CPU": "Apple M5 Pro",
+          "Số nhân": "18",
+          "Tốc độ CPU": "307 GB/s memory bandwidth",
+          "Card màn hình": "Card tích hợp - 20 nhân GPU",
+          "RAM": "48 GB",
+          "Ổ cứng": "1 TB SSD",
+          "Kích thước màn hình": "16.3 inch",
+          "Độ phân giải": "PROLED XDR (3472 x 2266)",
+          "Tấm nền": "OLED",
+          "Tần số quét": "up to 120 Hz",
+          "Màn hình cảm ứng": "Có",
+          "Cổng giao tiếp": "•Jack tai nghe 3.5 mm•MagSafe 3•HDMI•3 x Thunderbolt 5 (USB‑C) (Sạc, DisplayPort, Thunderbolt 5 (lên đến 120Gb/s), USB 4 (lên đến 120Gb/s), Genlock)",
+          "Kết nối không dây": "•Chip mạng không dây Apple N1•Wi-Fi 7 (802.11be)•Bluetooth 6.0",
+          "Khe đọc thẻ nhớ": "SD",
+          "Webcam": "Camera 12MP Center Stage",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "•Hệ thống âm thanh 6 loa•Spatial Audio•3 microphones•Stereo speakers•Dolby Atmos",
+          "Thông tin Pin": "Li-Po, 100 Wh",
+          "Hệ điều hành": "macOS",
+          "Thời điểm ra mắt": "10/2026",
+          "Kích thước": "Dài 355.5 mm - Rộng 244.2 mm - Dày 16 mm - 1.82 kg",
+          "Chất liệu": "Vỏ nhôm tái chế 100%"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdnv2.tgdd.vn/pim/cdn/images/202610/16-inch-den203151.png",
+        "images": [
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdnv2.tgdd.vn/pim/cdn/images/202610/16-inch-den203151.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.039Z"
+      }
+    },
+    {
+      "id": "40ffffbce4c26fe2",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "Macbook Pro 16 inch PROLED M5 Max 36GB/2TB",
+      "brand": "Apple",
+      "model": "Macbook Pro 16 inch PROLED M5 Max 36GB",
+      "url": "https://www.thegioididong.com/laptop/macbook-pro-16-inch-proled-m5-max-36gb-2tb",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 130990000,
+        "original": 130990000,
+        "discountPercent": null,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Apple M5 Max",
+        "ram": "36 GB",
+        "storage": "2 TB SSD",
+        "gpu": "Card tích hợp - 32 nhân GPU",
+        "screen": "16.3 inch, PROLED XDR (3472 x 2266), up to 120 Hz",
+        "battery": "Li-Po, 100 Wh",
+        "weight": "1.82 kg",
+        "os": "macOS",
+        "ports": "•Jack tai nghe 3.5 mm•MagSafe 3•HDMI•3 x Thunderbolt 5 (USB‑C) (Sạc, DisplayPort, Thunderbolt 5 (lên đến 120Gb/s), USB 4 (lên đến 120Gb/s), Genlock)",
+        "rawSpecs": {
+          "Công nghệ CPU": "Apple M5 Max",
+          "Số nhân": "18",
+          "Tốc độ CPU": "460 GB/s memory bandwidth",
+          "Card màn hình": "Card tích hợp - 32 nhân GPU",
+          "RAM": "36 GB",
+          "Ổ cứng": "2 TB SSD",
+          "Kích thước màn hình": "16.3 inch",
+          "Độ phân giải": "PROLED XDR (3472 x 2266)",
+          "Tấm nền": "OLED",
+          "Tần số quét": "up to 120 Hz",
+          "Màn hình cảm ứng": "Có",
+          "Cổng giao tiếp": "•Jack tai nghe 3.5 mm•MagSafe 3•HDMI•3 x Thunderbolt 5 (USB‑C) (Sạc, DisplayPort, Thunderbolt 5 (lên đến 120Gb/s), USB 4 (lên đến 120Gb/s), Genlock)",
+          "Kết nối không dây": "•Chip mạng không dây Apple N1•Wi-Fi 7 (802.11be)•Bluetooth 6.0",
+          "Khe đọc thẻ nhớ": "SD",
+          "Webcam": "Camera 12MP Center Stage",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "•Hệ thống âm thanh 6 loa•Spatial Audio•3 microphones•Stereo speakers•Dolby Atmos",
+          "Thông tin Pin": "Li-Po, 100 Wh",
+          "Hệ điều hành": "macOS",
+          "Thời điểm ra mắt": "10/2026",
+          "Kích thước": "Dài 355.5 mm - Rộng 244.2 mm - Dày 16 mm - 1.82 kg",
+          "Chất liệu": "Vỏ nhôm tái chế 100%"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdnv2.tgdd.vn/pim/cdn/images/202610/16-inch-den203001.png",
+        "images": [
+          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdnv2.tgdd.vn/pim/cdn/images/202610/16-inch-den203001.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.039Z"
+      }
+    },
+    {
+      "id": "363bc231759f1c07",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "Macbook Pro 14 inch PROLED M5 Pro 24GB/1TB",
+      "brand": "Apple",
+      "model": "Macbook Pro 14 inch PROLED M5 Pro 24GB",
+      "url": "https://www.thegioididong.com/laptop/macbook-pro-14-inch-proled-m5-pro",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 79990000,
+        "original": 79990000,
+        "discountPercent": null,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Apple M5 Pro",
+        "ram": "24 GB",
+        "storage": "1 TB SSD",
+        "gpu": "Card tích hợp - 16 nhân GPU",
+        "screen": "14.2 inch, PROLED XDR (3024 x 1986), up to 120 Hz",
+        "battery": "Li-Po, 72.6 Wh",
+        "weight": "1.38 kg",
+        "os": "macOS",
+        "ports": "•Jack tai nghe 3.5 mm•MagSafe 3•3 x Thunderbolt 5 (hỗ trợ DisplayPort, Thunderbolt 5 (up to 120Gb/s), USB 4 (up to 120Gb/s))•HDMI",
+        "rawSpecs": {
+          "Công nghệ CPU": "Apple M5 Pro",
+          "Số nhân": "15",
+          "Tốc độ CPU": "307 GB/s memory bandwidth",
+          "Card màn hình": "Card tích hợp - 16 nhân GPU",
+          "RAM": "24 GB",
+          "Ổ cứng": "1 TB SSD",
+          "Kích thước màn hình": "14.2 inch",
+          "Độ phân giải": "PROLED XDR (3024 x 1986)",
+          "Tấm nền": "OLED",
+          "Tần số quét": "up to 120 Hz",
+          "Màn hình cảm ứng": "Có",
+          "Cổng giao tiếp": "•Jack tai nghe 3.5 mm•MagSafe 3•3 x Thunderbolt 5 (hỗ trợ DisplayPort, Thunderbolt 5 (up to 120Gb/s), USB 4 (up to 120Gb/s))•HDMI",
+          "Kết nối không dây": "•Chip mạng không dây Apple N1•Wi-Fi 7 (802.11be)•Bluetooth 6.0",
+          "Khe đọc thẻ nhớ": "SD",
+          "Webcam": "Camera 12MP Center Stage",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "•Hệ thống âm thanh 6 loa•Spatial Audio•3 microphones•Stereo speakers•Dolby Atmos",
+          "Thông tin Pin": "Li-Po, 72.6 Wh",
+          "Hệ điều hành": "macOS",
+          "Thời điểm ra mắt": "10/2026",
+          "Kích thước": "Dài 310.8 mm - Rộng 216.3 mm - Dày 15 mm - 1.38 kg",
+          "Chất liệu": "Vỏ nhôm tái chế 100%"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/14-inch-prooled202251.png",
+        "images": [
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/14-inch-prooled202251.png"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.039Z"
+      }
+    },
+    {
+      "id": "b7763548605a6158",
+      "source": "thegioididong",
+      "sku": "0220042104182",
+      "name": "Laptop Asus ZenBook UX5406AA - SU425W (Ultra 9 386H, 32GB, 1TB, 14'' 3K 120Hz, Cảm ứng, Win11)",
+      "brand": "Asus",
+      "model": "ZenBook UX5406AA - SU425W",
+      "url": "https://www.thegioididong.com/laptop/asus-zenbook-ux5406aa-ultra-9-386h-su425w",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 60490000,
+        "original": 62990000,
+        "discountPercent": 3,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel® Core™ Ultra 9 - 386H",
+        "ram": "32 GB",
+        "storage": "1 TB SSD M.2 NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 2 TB)",
+        "gpu": null,
+        "screen": "14 inch, 3K (2880 x 1800) OLED, 120 Hz",
+        "battery": "4-cell Li-ion, 77 Wh",
+        "weight": "1.20 kg",
+        "os": "Windows 11 Home Single Language 64-bit",
+        "ports": "•1x USB 3.2 Gen 2 Type-A (data speed up to 10Gbps)•2x Thunderbolt™ 4 with support for display / power delivery (data speed up to 40Gbps)•1x HDMI 2.1 TMDS•1x 3.5mm Combo Audio Jack",
+        "rawSpecs": {
+          "Công nghệ CPU": "Intel® Core™ Ultra 9 - 386H",
+          "Số nhân": "16",
+          "Số luồng": "16",
+          "Tốc độ CPU": "2.10 GHz (Lên đến 4.90 GHz khi tải nặng)",
+          "NPU": "Intel AI Boost",
+          "Hiệu năng xử lý AI (TOPS)": "Intel® NPU",
+          "RAM": "32 GB",
+          "Loại RAM": "LPDDR5X (Onboard)",
+          "Tốc độ Bus RAM": "8533 MHz",
+          "Ổ cứng": "1 TB SSD M.2 NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 2 TB)",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "3K (2880 x 1800) OLED",
+          "Tấm nền": "OLED",
+          "Tần số quét": "120 Hz",
+          "Độ phủ màu": "100% DCI-P3",
+          "Công nghệ màn hình": "•DisplayHDR True Black 1000•1.07 tỷ màu•Pantone Validated",
+          "Màn hình cảm ứng": "Có",
+          "Cổng giao tiếp": "•1x USB 3.2 Gen 2 Type-A (data speed up to 10Gbps)•2x Thunderbolt™ 4 with support for display / power delivery (data speed up to 40Gbps)•1x HDMI 2.1 TMDS•1x 3.5mm Combo Audio Jack",
+          "Kết nối không dây": "•Wi-Fi 7(802.11be)•Bluetooth® 6.0",
+          "Webcam": "FHD 1080P + IR Camera for Windows Hello",
+          "Đèn bàn phím": "Có",
+          "Bảo mật": "Nhận diện khuôn mặt (FaceID)",
+          "Công nghệ âm thanh": "•Smart Amp Technology•Built-in speaker•Built-in array microphone",
+          "Tính năng khác": "Độ bền chuẩn quân đội MIL STD 810H",
+          "Thông tin Pin": "4-cell Li-ion, 77 Wh",
+          "Hệ điều hành": "Windows 11 Home Single Language 64-bit",
+          "Thời điểm ra mắt": "2026",
+          "Kích thước": "Dài 31.03 cm - Rộng 21.47 cm - Dày 1.19 - 1.29 cm - Nặng 1.20 kg",
+          "Chất liệu": "Vỏ nhôm"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042104182-laptop-tron-20261104-600x600.png",
+        "images": [
+          "https://cdn.tgdd.vn/2026/11/timerseo/0220042104182-laptop-tron-20261104-600x600.png",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-1214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-2214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-3214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-4214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-5214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-6214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-7214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-8214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-9214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-10214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-11214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-12214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-13214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-14214751.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux5406aa-ultra-9-386h-su425w-99214859.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.039Z"
+      }
+    },
+    {
+      "id": "2661678347659f66",
+      "source": "thegioididong",
+      "sku": "0220042104181",
+      "name": "Laptop Asus ZenBook UX3480QA - U1029W (X1 26 100, 16GB, 512GB, 14'' WUXGA, Win11)",
+      "brand": "Asus",
+      "model": "ZenBook UX3480QA - U1029W",
+      "url": "https://www.thegioididong.com/laptop/asus-zenbook-ux3480qa-x1-26-100-u1029w",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 29990000,
+        "original": 34490000,
+        "discountPercent": 13,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Snapdragon® X X1 26 - X1 26 100",
+        "ram": "16 GB",
+        "storage": "512 GB SSD M.2 NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB (2242) / 1 TB (2280))",
+        "gpu": "Card tích hợp - Qualcomm Adreno GPU",
+        "screen": "14 inch, WUXGA (1920 x 1200) - OLED, 60 Hz",
+        "battery": "3-cell Li-ion, 50 Wh",
+        "weight": "1.10 kg",
+        "os": "Windows 11 Home Single Language 64-bit",
+        "ports": "•1x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps)•2x USB 3.2 Gen 2 Type-C with support for display / power delivery (data speed up to 10Gbps)•1x HDMI 2.1 TMDS•1x 3.5mm Combo Audio Jack",
+        "rawSpecs": {
+          "Công nghệ CPU": "Snapdragon® X X1 26 - X1 26 100",
+          "Số nhân": "8",
+          "Số luồng": "8",
+          "Tốc độ CPU": "Lên đến 2.97 GHz khi tải nặng",
+          "NPU": "up to 45TOPS",
+          "Hiệu năng xử lý AI (TOPS)": "Qualcomm® Hexagon™ NPU",
+          "Card màn hình": "Card tích hợp - Qualcomm Adreno GPU",
+          "RAM": "16 GB",
+          "Loại RAM": "LPDDR5X (Onboard)",
+          "Tốc độ Bus RAM": "8448 MHz",
+          "Hỗ trợ RAM tối đa": "16 GB",
+          "Ổ cứng": "512 GB SSD M.2 NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB (2242) / 1 TB (2280))",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "WUXGA (1920 x 1200) - OLED",
+          "Tấm nền": "OLED",
+          "Tần số quét": "60 Hz",
+          "Độ phủ màu": "100% DCI-P3",
+          "Công nghệ màn hình": "OLED",
+          "Màn hình cảm ứng": "Không",
+          "Cổng giao tiếp": "•1x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps)•2x USB 3.2 Gen 2 Type-C with support for display / power delivery (data speed up to 10Gbps)•1x HDMI 2.1 TMDS•1x 3.5mm Combo Audio Jack",
+          "Kết nối không dây": "•Wi-Fi 6E(802.11ax)•Bluetooth 5.3",
+          "Webcam": "FHD 1080P + IR Camera for Windows Hello",
+          "Đèn bàn phím": "Có",
+          "Bảo mật": "•TPM 2.0•Nhận diện khuôn mặt (FaceID)",
+          "Công nghệ âm thanh": "•Smart Amp Technology•Built-in speaker•Built-in array microphone",
+          "Tính năng khác": "Độ bền chuẩn quân đội MIL STD 810H",
+          "Thông tin Pin": "3-cell Li-ion, 50 Wh",
+          "Hệ điều hành": "Windows 11 Home Single Language 64-bit",
+          "Thời điểm ra mắt": "2026",
+          "Kích thước": "Dài 31.11 cm - Rộng 21.58 cm - Nặng 1.10 kg (2.43 lbs)",
+          "Chất liệu": "Vỏ nhôm"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-thumb233225.webp",
+        "images": [
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-thumb233225.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-1233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-2233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-3233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-4233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-5233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-6233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-7233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-8233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-10233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-11233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-12233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-13233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-9233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-14233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-15233202.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480qa-x1-26-100-u1029w-99211513.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.039Z"
+      }
+    },
+    {
+      "id": "ce5f414f40003ec9",
+      "source": "thegioididong",
+      "sku": "0220042104191",
+      "name": "Laptop Asus ZenBook UX3480KA - U1078W (R7 AI 345, 24GB, 512GB, 14'' WUXGA, Win11)",
+      "brand": "Asus",
+      "model": "ZenBook UX3480KA - U1078W",
+      "url": "https://www.thegioididong.com/laptop/asus-zenbook-ux3480ka-r7-ai-345-u1078w",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 38490000,
+        "original": 43390000,
+        "discountPercent": 11,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "AMD Ryzen 7 - 345",
+        "ram": "24 GB",
+        "storage": "512 GB SSD NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+        "gpu": "Card tích hợp - AMD Radeon Graphics",
+        "screen": "14 inch, WUXGA (1920 x 1200) - OLED, 60 Hz",
+        "battery": "4-cell Li-ion, 70 Wh",
+        "weight": "1.2 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "•1x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps)•1x USB 3.2 Gen 2 Type-C (hỗ trợ Power Delivery / DisplayPort Alt Mode)•1 x USB 4.0 Gen 3 Type-C (Hỗ trợ DisplayPort và Power Delivery)•HDMI 2.1•1 x 3.5mm combo audio jack",
+        "rawSpecs": {
+          "Công nghệ CPU": "AMD Ryzen 7 - 345",
+          "Số nhân": "6",
+          "Số luồng": "12",
+          "Tốc độ CPU": "2.0 GHz (Lên đến 4.6 GHz khi tải nặng)",
+          "NPU": "AMD XDNA",
+          "Hiệu năng xử lý AI (TOPS)": "Lên đến 50 TOPS",
+          "Card màn hình": "Card tích hợp - AMD Radeon Graphics",
+          "RAM": "24 GB",
+          "Loại RAM": "DDR5 (1 khe 24 GB onboard)",
+          "Tốc độ Bus RAM": "5600 MHz",
+          "Hỗ trợ RAM tối đa": "24 GB",
+          "Ổ cứng": "512 GB SSD NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "WUXGA (1920 x 1200) - OLED",
+          "Tấm nền": "OLED",
+          "Tần số quét": "60 Hz",
+          "Độ phủ màu": "100% DCI-P3",
+          "Công nghệ màn hình": "OLED",
+          "Màn hình cảm ứng": "Không",
+          "Cổng giao tiếp": "•1x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps)•1x USB 3.2 Gen 2 Type-C (hỗ trợ Power Delivery / DisplayPort Alt Mode)•1 x USB 4.0 Gen 3 Type-C (Hỗ trợ DisplayPort và Power Delivery)•HDMI 2.1•1 x 3.5mm combo audio jack",
+          "Webcam": "FHD 1080P + IR Camera for Windows Hello",
+          "Đèn bàn phím": "Có",
+          "Bảo mật": "•Mở khoá khuôn mặt•TPM 2.0",
+          "Công nghệ âm thanh": "•Built-in array microphone•Smart Amp Technology•Built-in speaker",
+          "Tính năng khác": "Độ bền chuẩn quân đội MIL STD 810H",
+          "Thông tin Pin": "4-cell Li-ion, 70 Wh",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Thời điểm ra mắt": "2026",
+          "Kích thước": "Dài 31.12 cm - Rộng 21.58 cm - Dày 1.39 cm - Nặng 1.2 kg",
+          "Chất liệu": "Khung & Mặt lưng hợp kim nhôm, magie"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-thumb172523.webp",
+        "images": [
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-thumb172523.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-1172519.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-2172519.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-3172519.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-4172519.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-5172519.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-6172519.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-7172519.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-8172519.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-9172518.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-10172518.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-11172518.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-12172519.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1078w-13172519.webp"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.048Z"
+      }
+    },
+    {
+      "id": "f68faf0b10c6c9a3",
+      "source": "thegioididong",
+      "sku": "0220042104190",
+      "name": "Laptop Asus ZenBook UX3480KA - U1077W (R7 AI 345, 16GB, 512GB, 14'' WUXGA, Win11)",
+      "brand": "Asus",
+      "model": "ZenBook UX3480KA - U1077W",
+      "url": "https://www.thegioididong.com/laptop/asus-zenbook-ux3480ka-r7-ai-345-u1077w",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 33490000,
+        "original": 37990000,
+        "discountPercent": 11,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "AMD Ryzen 7 - 345",
+        "ram": "16 GB",
+        "storage": "512 GB SSD NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+        "gpu": "Card tích hợp - AMD Radeon Graphics",
+        "screen": "14 inch, WUXGA (1920 x 1200) - OLED, 60 Hz",
+        "battery": "4-cell Li-ion, 70 Wh",
+        "weight": "1.2 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "•1x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps)•1 x USB 4.0 Gen 3 Type-C (Hỗ trợ DisplayPort và Power Delivery)•1 x USB 3.2 Gen 2 Type-C (Hỗ trợ DisplayPort và Power Delivery)",
+        "rawSpecs": {
+          "Công nghệ CPU": "AMD Ryzen 7 - 345",
+          "Số nhân": "6",
+          "Số luồng": "12",
+          "Tốc độ CPU": "2.0 GHz (Lên đến 4.6 GHz khi tải nặng)",
+          "NPU": "AMD XDNA",
+          "Hiệu năng xử lý AI (TOPS)": "Lên đến 50 TOPS",
+          "Card màn hình": "Card tích hợp - AMD Radeon Graphics",
+          "RAM": "16 GB",
+          "Loại RAM": "DDR5 (1 khe 16 GB onboard)",
+          "Tốc độ Bus RAM": "5600 MHz",
+          "Hỗ trợ RAM tối đa": "16 GB",
+          "Ổ cứng": "512 GB SSD NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "WUXGA (1920 x 1200) - OLED",
+          "Tấm nền": "OLED",
+          "Tần số quét": "60 Hz",
+          "Độ phủ màu": "100% DCI-P3",
+          "Công nghệ màn hình": "OLED",
+          "Màn hình cảm ứng": "Không",
+          "Cổng giao tiếp": "•1x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps)•1 x USB 4.0 Gen 3 Type-C (Hỗ trợ DisplayPort và Power Delivery)•1 x USB 3.2 Gen 2 Type-C (Hỗ trợ DisplayPort và Power Delivery)",
+          "Khe đọc thẻ nhớ": "Không có",
+          "Webcam": "FHD 1080P + IR Camera for Windows Hello",
+          "Đèn bàn phím": "Có",
+          "Bảo mật": "•TPM 2.0•Mở khoá khuôn mặt",
+          "Công nghệ âm thanh": "•Smart Amp Technology•Built-in speaker•Built-in array microphone",
+          "Tính năng khác": "Độ bền chuẩn quân đội MIL STD 810H",
+          "Thông tin Pin": "4-cell Li-ion, 70 Wh",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Thời điểm ra mắt": "2026",
+          "Kích thước": "Dài 31.12 cm - Rộng 21.58 cm - Dày 1.39 cm - Nặng 1.2 kg",
+          "Chất liệu": "Khung & Mặt lưng hợp kim nhôm, magie"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-thumb170219.webp",
+        "images": [
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-thumb170219.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-1170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-2170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-3170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-4170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-5170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-6170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-7170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-8170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-9170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-10170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-11170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-12170248.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-ux3480ka-r7-ai-345-u1077w-13170248.webp"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.048Z"
+      }
+    },
+    {
+      "id": "a55a36d18d36cc0b",
+      "source": "thegioididong",
+      "sku": null,
+      "name": "MacBook Pro 14 inch M6 16GB/1TB",
+      "brand": "Apple",
+      "model": "MacBook Pro 14 inch M6 16GB",
+      "url": "https://www.thegioididong.com/laptop/macbook-pro-14-inch-m6-16gb-1tb",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 54990000,
+        "original": 54990000,
+        "discountPercent": null,
+        "installment": null,
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Apple M6",
+        "ram": "16 GB",
+        "storage": "1 TB SSD",
+        "gpu": "Card tích hợp - GPU 12 lõi",
+        "screen": "14.2 inch, Liquid Retina XDR display (3024 x 1964)",
+        "battery": "Li-Po, 72.4 Wh",
+        "weight": "1.55 kg",
+        "os": "macOS",
+        "ports": "•Jack tai nghe 3.5 mm•MagSafe 3•HDMI•3 x Thunderbolt 4 ( hỗ trợ DisplayPort, Thunderbolt 4 (up to 40Gb/s), USB 4 (up to 40Gb/s))",
+        "rawSpecs": {
+          "Công nghệ CPU": "Apple M6",
+          "Số nhân": "12",
+          "Tốc độ CPU": "Băng thông bộ nhớ lên đến 170GB/s",
+          "Card màn hình": "Card tích hợp - GPU 12 lõi",
+          "RAM": "16 GB",
+          "Ổ cứng": "1 TB SSD",
+          "Kích thước màn hình": "14.2 inch",
+          "Độ phân giải": "Liquid Retina XDR display (3024 x 1964)",
+          "Công nghệ màn hình": "•ProMotion•Wide color (P3)•Độ sáng XDR: toàn màn hình 1000 nits, cao nhất 1600 nits (chỉ nội dung HDR)•True Tone Technology•1 tỷ màu",
+          "Cổng giao tiếp": "•Jack tai nghe 3.5 mm•MagSafe 3•HDMI•3 x Thunderbolt 4 ( hỗ trợ DisplayPort, Thunderbolt 4 (up to 40Gb/s), USB 4 (up to 40Gb/s))",
+          "Kết nối không dây": "•Chip mạng không dây Apple N1•Wi-Fi 7 (802.11be)•Bluetooth 6.0",
+          "Khe đọc thẻ nhớ": "SD",
+          "Webcam": "Camera 12MP Center Stage",
+          "Đèn bàn phím": "Đơn sắc - Màu trắng",
+          "Bảo mật": "Bảo mật vân tay",
+          "Công nghệ âm thanh": "•Spatial Audio•3 microphones•Stereo speakers•Dolby Atmos",
+          "Thông tin Pin": "Li-Po, 72.4 Wh",
+          "Hệ điều hành": "macOS",
+          "Thời điểm ra mắt": "10/2026",
+          "Kích thước": "Dài 312.6 mm - Rộng 221.2 mm - Dày 15.5 mm - Nặng 1.55 kg",
+          "Chất liệu": "Vỏ nhôm tái chế 100%"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/macbook-den162143.jpg",
+        "images": [
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/macbook-den162143.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.048Z"
+      }
+    },
+    {
+      "id": "722d41472363c33b",
+      "source": "thegioididong",
+      "sku": "0220042104186",
+      "name": "Laptop Asus Zenbook 14 UX3480AA - ST448W (Ultra 9 386H, 24GB, 512GB, 14'' 3K 120Hz, Win11)",
+      "brand": "Asus",
+      "model": "Zenbook 14 UX3480AA - ST448W",
+      "url": "https://www.thegioididong.com/laptop/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 46990000,
+        "original": 50990000,
+        "discountPercent": 7,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core Ultra 9 Panther Lake - 386H",
+        "ram": "24 GB",
+        "storage": "512 GB SSD NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+        "gpu": "Intel Arc Graphics",
+        "screen": "14 inch, 3K (2880 x 1800) OLED, 120 Hz",
+        "battery": "4-cell Li-Po, 70 Wh",
+        "weight": "1.20 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "•1x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps)•1x USB 3.2 Gen 2 Type-C with support for display / power delivery (data speed up to 10Gbps)•1x Thunderbolt™ 4 with support for display / power delivery (data speed up to 40Gbps)•1x micro HDMI 2.1 TMDS•1x 3.5mm Combo Audio Jack",
+        "rawSpecs": {
+          "Công nghệ CPU": "Intel Core Ultra 9 Panther Lake - 386H",
+          "Số nhân": "16",
+          "Số luồng": "16",
+          "Tốc độ CPU": "2.10 GHz (Lên đến 4.70 GHz khi tải nặng)",
+          "NPU": "Intel AI Boost",
+          "Hiệu năng xử lý AI (TOPS)": "Intel® NPU",
+          "Card màn hình": "Intel Arc Graphics",
+          "RAM": "24 GB",
+          "Loại RAM": "LPDDR5X (Onboard)",
+          "Tốc độ Bus RAM": "7467 MHz",
+          "Hỗ trợ RAM tối đa": "24 GB",
+          "Ổ cứng": "512 GB SSD NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "3K (2880 x 1800) OLED",
+          "Tấm nền": "OLED",
+          "Tần số quét": "120 Hz",
+          "Độ phủ màu": "100% DCI-P3",
+          "Công nghệ màn hình": "OLED",
+          "Màn hình cảm ứng": "Không",
+          "Cổng giao tiếp": "•1x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps)•1x USB 3.2 Gen 2 Type-C with support for display / power delivery (data speed up to 10Gbps)•1x Thunderbolt™ 4 with support for display / power delivery (data speed up to 40Gbps)•1x micro HDMI 2.1 TMDS•1x 3.5mm Combo Audio Jack",
+          "Kết nối không dây": "•Wi-Fi 6E(802.11ax)•Bluetooth® 5.4",
+          "Webcam": "FHD 1080p + IR with Privacy Shutter",
+          "Đèn bàn phím": "Có",
+          "Bảo mật": "•Nhận diện khuôn mặt (FaceID)•Mô-đun bảo mật TPM (Firmware TPM)•Mật khẩu thiết lập BIOS•Microsoft Pluton Processor•Mật khẩu người dùng BIOS",
+          "Công nghệ âm thanh": "•Smart Amp Technology•Built-in speaker•Built-in array microphone",
+          "Tản nhiệt": "1 x Quạt",
+          "Tính năng khác": "Độ bền chuẩn quân đội MIL STD 810H",
+          "Thông tin Pin": "4-cell Li-Po, 70 Wh",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Thời điểm ra mắt": "2026",
+          "Kích thước": "Dài 31.12 cm - Rộng 21.58 cm - Dày 1.39 - 1.69 cm - Nặng 1.20 kg",
+          "Chất liệu": "Vỏ nhôm"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-thumb151408.webp",
+        "images": [
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-thumb151408.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-1151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-2151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-3151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-4151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-5151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-6151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-7151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-8151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-9151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-10151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-11151454.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-12151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-13151455.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-9-386h-st448w-99151548.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.048Z"
+      }
+    },
+    {
+      "id": "21dd4c65261d7013",
+      "source": "thegioididong",
+      "sku": "0220042104185",
+      "name": "Laptop Asus Zenbook 14 UX3480AA - ST189W (Ultra 7 355, 24GB, 512GB, 14'' 3K OLED 120 Hz, Win11)",
+      "brand": "Asus",
+      "model": "Zenbook 14 UX3480AA - ST189W",
+      "url": "https://www.thegioididong.com/laptop/asus-zenbook-14-ux3480aa-ultra-7-355-st189w",
+      "condition": "new",
+      "availability": "in_stock",
+      "categories": [
+        {
+          "name": "Laptop",
+          "slug": "laptop",
+          "url": "https://www.thegioididong.com/laptop",
+          "type": "root"
+        }
+      ],
+      "pricing": {
+        "currency": "VND",
+        "current": 41590000,
+        "original": 46990000,
+        "discountPercent": 11,
+        "installment": "Trả chậm 0% trả trước 0đ",
+        "priceNote": null
+      },
+      "specs": {
+        "cpu": "Intel Core Ultra 7 Panther Lake - 355",
+        "ram": "24 GB",
+        "storage": "512 GB SSD M.2 NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+        "gpu": "Card tích hợp - Intel Arc Graphics",
+        "screen": "14 inch, 3K (2880 x 1800) OLED, 120 Hz",
+        "battery": "4-cell Li-Po, 70 Wh",
+        "weight": "1.20 kg",
+        "os": "Windows 11 Home SL",
+        "ports": "•1x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps)•1x USB 3.2 Gen 2 Type-C with support for display / power delivery (data speed up to 10Gbps)•1x Thunderbolt™ 4 with support for display / power delivery (data speed up to 40Gbps)•1x micro HDMI 2.1 TMDS•1x 3.5mm Combo Audio Jack",
+        "rawSpecs": {
+          "Công nghệ CPU": "Intel Core Ultra 7 Panther Lake - 355",
+          "Số nhân": "8",
+          "Số luồng": "8",
+          "Tốc độ CPU": "2.30 GHz (Lên đến 4.70 GHz khi tải nặng)",
+          "NPU": "Intel AI Boost",
+          "Hiệu năng xử lý AI (TOPS)": "Intel® NPU",
+          "Card màn hình": "Card tích hợp - Intel Arc Graphics",
+          "RAM": "24 GB",
+          "Loại RAM": "LPDDR5X (Onboard)",
+          "Tốc độ Bus RAM": "7467 MHz",
+          "Hỗ trợ RAM tối đa": "24 GB",
+          "Ổ cứng": "512 GB SSD M.2 NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
+          "Kích thước màn hình": "14 inch",
+          "Độ phân giải": "3K (2880 x 1800) OLED",
+          "Tấm nền": "OLED",
+          "Tần số quét": "120 Hz",
+          "Độ phủ màu": "100% DCI-P3",
+          "Công nghệ màn hình": "OLED",
+          "Màn hình cảm ứng": "Không",
+          "Cổng giao tiếp": "•1x USB 3.2 Gen 1 Type-A (data speed up to 5Gbps)•1x USB 3.2 Gen 2 Type-C with support for display / power delivery (data speed up to 10Gbps)•1x Thunderbolt™ 4 with support for display / power delivery (data speed up to 40Gbps)•1x micro HDMI 2.1 TMDS•1x 3.5mm Combo Audio Jack",
+          "Kết nối không dây": "•Wi-Fi 6E(802.11ax)•Bluetooth 5.4",
+          "Webcam": "FHD 1080p + IR with Privacy Shutter",
+          "Đèn bàn phím": "Có",
+          "Bảo mật": "•Nhận diện khuôn mặt (FaceID)•Mô-đun bảo mật TPM (Firmware TPM)•Mật khẩu thiết lập BIOS•Microsoft Pluton Processor•Mật khẩu người dùng BIOS",
+          "Công nghệ âm thanh": "•Smart Amp Technology•Built-in speaker•Built-in array microphone",
+          "Tản nhiệt": "1 x Quạt",
+          "Tính năng khác": "Độ bền chuẩn quân đội MIL STD 810H",
+          "Thông tin Pin": "4-cell Li-Po, 70 Wh",
+          "Hệ điều hành": "Windows 11 Home SL",
+          "Thời điểm ra mắt": "2026",
+          "Kích thước": "Dài 31.12 cm - Rộng 21.58 cm - Dày 1.39 - 1.69 cm - Nặng 1.20 kg",
+          "Chất liệu": "Vỏ nhôm"
+        }
+      },
+      "options": [],
+      "promotions": [],
+      "rating": {
+        "average": null,
+        "count": null
+      },
+      "media": {
+        "thumbnail": "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-thumb112300.webp",
+        "images": [
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-thumb112300.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-1112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-2112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-3112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-4112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-5112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-6112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-7112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-8112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-9112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-10112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-11112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-12112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-13112440.webp",
+          "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-zenbook-14-ux3480aa-ultra-7-355-st189w-99112747.jpg"
+        ]
+      },
+      "metadata": {
+        "warranty": null,
+        "storeCount": null,
+        "defectNote": null,
+        "crawledAt": "2026-11-13T11:48:08.048Z"
       }
     },
     {
@@ -762,7 +1988,7 @@
       "sku": "0220042104187",
       "name": "Laptop Asus Vivobook 14 X1404VA - EB2385W (Core 3 100U, 8GB, 256GB, 14'' Full HD, Win11)",
       "brand": "Asus",
-      "model": null,
+      "model": "Vivobook 14 X1404VA - EB2385W",
       "url": "https://www.thegioididong.com/laptop/asus-vivobook-14-x1404va-core-3-100u-eb2385w",
       "condition": "new",
       "availability": "in_stock",
@@ -787,7 +2013,7 @@
         "ram": "8 GB",
         "storage": "256 GB SSD NVMe PCIe (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
         "gpu": "Card tích hợp - Intel UHD Graphics",
-        "screen": "14 inch",
+        "screen": "14 inch, Full HD (1920 x 1080), 60 Hz",
         "battery": "3-cell Li-ion, 42 Wh",
         "weight": "1.40 kg",
         "os": "Windows 11 Home SL",
@@ -830,9 +2056,9 @@
         "count": 76
       },
       "media": {
-        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042104187-laptop-tron-20261104-600x600.png",
+        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042104187-laptop-tron-20261104-600x600.png",
         "images": [
-          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042104187-laptop-tron-20261104-600x600.png",
+          "https://cdn.tgdd.vn/2026/11/timerseo/0220042104187-laptop-tron-20261104-600x600.png",
           "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-1105320.webp",
           "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-2105320.webp",
           "https://cdnv2.tgdd.vn/pim/cdn/images/202610/asus-vivobook-14-x1404va-core-3-100u-eb2385w-3105320.webp",
@@ -852,789 +2078,7 @@
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.758Z"
-      }
-    },
-    {
-      "id": "76142541fb30d5dd",
-      "source": "thegioididong",
-      "sku": "0220042003992",
-      "name": "Laptop Dell 15 DC15255 - DC5R5973W1-2Y (R5 7530U, 16GB, 512GB, Full HD 120Hz, OfficeHS24+365, Win11)",
-      "brand": "Dell",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/dell-15-dc15255-r5-7530u-dc5r5973w1-2y",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 23990000,
-        "original": 25690000,
-        "discountPercent": 6,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "AMD Ryzen 5 - 7530U",
-        "ram": "16 GB",
-        "storage": "512 GB SSD M.2 NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
-        "gpu": "Card tích hợp - AMD Radeon Graphics",
-        "screen": "15.6 inch",
-        "battery": "3-cell Li-ion, 41 Wh",
-        "weight": "1.65 kg",
-        "os": "Windows 11 Home + Office Home 2024 + Microsoft 365 Basic 1 năm",
-        "ports": "•1 x USB 2.0•1 x USB 3.2 Gen 1 Type-C•1 x USB 3.2•HDMI 1.4•1 x Headphone/microphone combo",
-        "rawSpecs": {
-          "Công nghệ CPU": "AMD Ryzen 5 - 7530U",
-          "Số nhân": "6",
-          "Số luồng": "12",
-          "Tốc độ CPU": "2.00 GHz (Lên đến 4.50 GHz khi tải nặng)",
-          "NPU": "Không",
-          "Hiệu năng xử lý AI (TOPS)": "2,2",
-          "Card màn hình": "Card tích hợp - AMD Radeon Graphics",
-          "Số nhân GPU": "Không",
-          "RAM": "16 GB",
-          "Loại RAM": "DDR4 (1 khe 16 GB + 1 khe rời)",
-          "Tốc độ Bus RAM": "3200 MHz",
-          "Hỗ trợ RAM tối đa": "16 GB",
-          "Ổ cứng": "512 GB SSD M.2 NVMe PCIe 4.0 (Có thể tháo ra, lắp thanh khác tối đa 1 TB)",
-          "Kích thước màn hình": "15.6 inch",
-          "Độ phân giải": "Full HD (1920 x 1200)",
-          "Tấm nền": "WVA",
-          "Tần số quét": "120 Hz",
-          "Độ phủ màu": "45% NTSC",
-          "Công nghệ màn hình": "•250 nits•Chống chói Anti Glare",
-          "Màn hình cảm ứng": "Không",
-          "Cổng giao tiếp": "•1 x USB 2.0•1 x USB 3.2 Gen 1 Type-C•1 x USB 3.2•HDMI 1.4•1 x Headphone/microphone combo",
-          "Kết nối không dây": "•Bluetooth•Wi-Fi 5(802.11ac)",
-          "Khe đọc thẻ nhớ": "SD",
-          "Webcam": "HD webcam",
-          "Đèn bàn phím": "Không có đèn",
-          "Bảo mật": "Không có",
-          "Công nghệ âm thanh": "Realtek Audio",
-          "Tản nhiệt": "Hãng không công bố",
-          "Tính năng khác": "Hãng không công bố",
-          "Thông tin Pin": "3-cell Li-ion, 41 Wh",
-          "Hệ điều hành": "Windows 11 Home + Office Home 2024 + Microsoft 365 Basic 1 năm",
-          "Thời điểm ra mắt": "2025",
-          "Kích thước": "Dài 358.5 mm - Rộng 235 mm - Dày 17.5 mm - Nặng 1.65 kg",
-          "Chất liệu": "Vỏ nhựa"
-        }
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": 5,
-        "count": 519
-      },
-      "media": {
-        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003992-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003992-laptop-tron-20261104-600x600.png",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-1-639180727027097582.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-2-639180727018799972.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-3-639180726926627681.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-4-639180726920662569.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-5-639180726913748327.jpg",
-          "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/368556/dell-15-dc15255-r5-7530u-dc5r5973w1-2y-99-639180726898007692.jpg"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.758Z"
-      }
-    },
-    {
-      "id": "a1ee4165cda3b8ec",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "MacBook Air 13 inch M5 16GB/512GB/8GPU 30W",
-      "brand": "Apple",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/macbook-air-13-inch-m5-16gb-512gb",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 33390000,
-        "original": 35990000,
-        "discountPercent": 7,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": null,
-        "ram": "16GB",
-        "storage": "512GB",
-        "gpu": null,
-        "screen": "13 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/Products/Images/44/363474/macbook-air-13-inch-m5-16gb-512gb-bac.jpg",
-        "images": [
-          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/Products/Images/44/363474/macbook-air-13-inch-m5-16gb-512gb-bac.jpg"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
-      }
-    },
-    {
-      "id": "5782a1f84495e024",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "HP 15 fc0023AU R5 7520U (D0BH1PA)",
-      "brand": "HP",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/hp-15-fc0023au-r5-7520u-d0bh1pa",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 21990000,
-        "original": 24690000,
-        "discountPercent": 10,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "R5 7520U",
-        "ram": "16 GB",
-        "storage": "SSD 512 GB",
-        "gpu": null,
-        "screen": "15.6 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003571-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003571-laptop-tron-20261104-600x600.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
-      }
-    },
-    {
-      "id": "9b8200c7a8ca76e7",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "Dell 15 DC15250 i5 1334U (DC5I5897W1)",
-      "brand": "Dell",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/dell-15-dc15250-i5-1334u-dc5i5897w1",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 22990000,
-        "original": 24490000,
-        "discountPercent": 6,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": null,
-        "ram": "16 GB",
-        "storage": "SSD 512 GB",
-        "gpu": null,
-        "screen": "15.6 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003649-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://img.tgdd.vn/imgt/ecom/f_webp,fit_outside,quality_100,s_448x448/https://cdn.tgdd.vn/2026/11/timerseo/0220042003649-laptop-tron-20261104-600x600.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
-      }
-    },
-    {
-      "id": "3bd6eb67586962ad",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "Acer Aspire Lite 14 AL14-44P-R0SP R7 7730U (NX.DMCSV.003)",
-      "brand": "Acer",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/acer-aspire-lite-14-al14-44p-r0sp-r7-7730u-nx-dmcsv-003",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 20490000,
-        "original": 22990000,
-        "discountPercent": 10,
-        "installment": "Trả chậm 0% trả trước 0đQuà 900.000₫",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "R7 7730U",
-        "ram": "8 GB",
-        "storage": "SSD 512 GB",
-        "gpu": null,
-        "screen": "14.5 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003933-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003933-laptop-tron-20261104-600x600.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
-      }
-    },
-    {
-      "id": "3670eca089f3082e",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "Asus Zenbook 14 UM3406GA R7 AI 445 (QD073WS)",
-      "brand": "ASUS",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/asus-zenbook-14-um3406ga-r7-ai-445-qd073ws",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 35990000,
-        "original": 39990000,
-        "discountPercent": 10,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": null,
-        "ram": "32 GB",
-        "storage": "SSD 1 TB",
-        "gpu": null,
-        "screen": "14 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003674-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003674-laptop-tron-20261104-600x600.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
-      }
-    },
-    {
-      "id": "661e1af9d36d8403",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "MSI Modern 15 F1MG-1264VN Core 5 120U",
-      "brand": "MSI",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/msi-modern-15-f1mg-1264vn-core-5-120u",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 20990000,
-        "original": 22090000,
-        "discountPercent": 4,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "Core 5 120U",
-        "ram": "16 GB",
-        "storage": "SSD 512 GB",
-        "gpu": null,
-        "screen": "15.6 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042004015-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://cdn.tgdd.vn/2026/11/timerseo/0220042004015-laptop-tron-20261104-600x600.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
-      }
-    },
-    {
-      "id": "8dcb7faec0406c39",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "Asus Vivobook S 16 S3607VA Core 5 210H (RP155W)",
-      "brand": "ASUS",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/asus-vivobook-s-16-s3607va-core-5-210h-rp155w",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 25490000,
-        "original": 34990000,
-        "discountPercent": 27,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "Core 5 210H",
-        "ram": "16 GB",
-        "storage": "SSD 512 GB",
-        "gpu": null,
-        "screen": "16 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042004028-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://cdn.tgdd.vn/2026/11/timerseo/0220042004028-laptop-tron-20261104-600x600.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
-      }
-    },
-    {
-      "id": "bda527c380e4c123",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "Lenovo IdeaPad Slim 3 15IPH11 Ultra 5 322 (83UR00A4VN)",
-      "brand": "Lenovo",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/lenovo-ideapad-slim-3-15iph11-ultra-5-322-83ur00a4vn",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 24990000,
-        "original": 31990000,
-        "discountPercent": 21,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": null,
-        "ram": "16 GB",
-        "storage": "SSD 512 GB",
-        "gpu": null,
-        "screen": "15.3 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003922-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003922-laptop-tron-20261104-600x600.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
-      }
-    },
-    {
-      "id": "e27bdda8ed313c49",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "HP OmniBook 5 AI 16 af1048TU Ultra 5 225U (BZ7Q9PA)",
-      "brand": "HP",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/hp-omnibook-5-ai-16-af1048tu-ultra-5-225u-bz7q9pa",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 26490000,
-        "original": 31290000,
-        "discountPercent": 15,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": null,
-        "ram": "16 GB",
-        "storage": "SSD 512 GB",
-        "gpu": null,
-        "screen": "16 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003311-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003311-laptop-tron-20261104-600x600.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
-      }
-    },
-    {
-      "id": "de357c0a165dad04",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "Dell 15 DC15250 i5 1334U (71092479)",
-      "brand": "Dell",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/dell-15-dc15250-i5-1334u-71092479",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 22990000,
-        "original": 24490000,
-        "discountPercent": 6,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": null,
-        "ram": "16 GB",
-        "storage": "SSD 512 GB",
-        "gpu": null,
-        "screen": "15.6 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003833-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003833-laptop-tron-20261104-600x600.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
-      }
-    },
-    {
-      "id": "c161bc3b0624e9f4",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "SingPC M16-i382 i3 1215U",
-      "brand": null,
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/singpc-m16-i382-i3-1215u",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 13690000,
-        "original": 15190000,
-        "discountPercent": 9,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": null,
-        "ram": "8 GB",
-        "storage": "SSD 256 GB",
-        "gpu": null,
-        "screen": "14 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003938-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003938-laptop-tron-20261104-600x600.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
-      }
-    },
-    {
-      "id": "a8fbf419f19cb0ef",
-      "source": "thegioididong",
-      "sku": null,
-      "name": "Asus Vivobook S14 S3407VA Core 5 210H (LY146W)",
-      "brand": "ASUS",
-      "model": null,
-      "url": "https://www.thegioididong.com/laptop/asus-vivobook-s14-s3407va-core-5-210h-ly146w",
-      "condition": "new",
-      "availability": "in_stock",
-      "categories": [
-        {
-          "name": "Laptop",
-          "slug": "laptop",
-          "url": "https://www.thegioididong.com/laptop",
-          "type": "root"
-        }
-      ],
-      "pricing": {
-        "currency": "VND",
-        "current": 21890000,
-        "original": 22990000,
-        "discountPercent": 4,
-        "installment": "Trả chậm 0% trả trước 0đ",
-        "priceNote": null
-      },
-      "specs": {
-        "cpu": "Core 5 210H",
-        "ram": "16 GB",
-        "storage": "SSD 512 GB",
-        "gpu": null,
-        "screen": "14 inch",
-        "battery": null,
-        "weight": null,
-        "os": null,
-        "ports": null,
-        "rawSpecs": {}
-      },
-      "options": [],
-      "promotions": [],
-      "rating": {
-        "average": null,
-        "count": null
-      },
-      "media": {
-        "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042003498-laptop-tron-20261104-600x600.png",
-        "images": [
-          "https://cdn.tgdd.vn/2026/11/timerseo/0220042003498-laptop-tron-20261104-600x600.png"
-        ]
-      },
-      "metadata": {
-        "warranty": null,
-        "storeCount": null,
-        "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:23.759Z"
+        "crawledAt": "2026-11-13T11:48:08.048Z"
       }
     }
   ]

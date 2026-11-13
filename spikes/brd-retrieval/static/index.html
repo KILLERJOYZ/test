@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lựa catalog</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font: 16px/1.45 system-ui, sans-serif; }
+    main { max-width: 52rem; margin: 0 auto; padding: 1.5rem; }
+    h1 { font-size: 1.4rem; margin: 0 0 0.4rem; }
+    p { margin: 0 0 1rem; }
+    form { display: flex; gap: 0.5rem; }
+    textarea { flex: 1; min-height: 4.5rem; font: inherit; padding: 0.6rem; }
+    button { font: inherit; padding: 0.6rem 1rem; }
+    .status { margin: 1rem 0; font-weight: 650; }
+    pre { white-space: pre-wrap; padding: 0.8rem; background: canvas; border: 1px solid color-mix(in srgb, canvastext 20%, transparent); }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { text-align: left; padding: 0.35rem 0.4rem; border-bottom: 1px solid color-mix(in srgb, canvastext 18%, transparent); vertical-align: top; }
+    .muted { opacity: 0.75; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Tra cứu catalog</h1>
+    <p class="muted" id="health">Đang kiểm tra dịch vụ…</p>
+    <form id="ask">
+      <textarea name="request" required>Intel Core 5 205H dưới 30 triệu</textarea>
+      <button type="submit">Hỏi</button>
+    </form>
+    <p class="status" id="status"></p>
+    <pre id="answer"></pre>
+    <table>
+      <thead><tr><th>Biến thể</th><th>Giá niêm yết</th><th>Nơi bán</th></tr></thead>
+      <tbody id="offers"></tbody>
+    </table>
+    <h2>Bằng chứng</h2>
+    <ul id="evidence"></ul>
+  </main>
+  <script>
+    const health = document.querySelector("#health");
+    const status = document.querySelector("#status");
+    const answer = document.querySelector("#answer");
+    const offers = document.querySelector("#offers");
+    const evidence = document.querySelector("#evidence");
+
+    function text(node, value) { node.textContent = value ?? ""; }
+
+    fetch("/api/health").then((res) => res.json()).then((body) => {
+      text(health, `Catalog ${body.catalog}. Bằng chứng ${body.evidence}. Mô hình ${body.provider_configured ? body.model : "chưa cấu hình, dùng dự phòng"}.`);
+    }).catch(() => { text(health, "Không đọc được trạng thái."); });
+
+    document.querySelector("#ask").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      text(status, "Đang tìm…");
+      text(answer, "");
+      offers.replaceChildren();
+      evidence.replaceChildren();
+      const request = new FormData(event.currentTarget).get("request");
+      const res = await fetch("/api/advise", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ request }),
+      });
+      const body = await res.json();
+      text(status, `${body.mode || "error"}${body.reason ? " · " + body.reason : ""}`);
+      text(answer, body.answer || body.error || "");
+      for (const row of body.offers || []) {
+        const tr = document.createElement("tr");
+        for (const value of [row.name, row.amount_vnd == null ? "chưa có giá" : `${Number(row.amount_vnd).toLocaleString("vi-VN")} VND`, row.seller]) {
+          const td = document.createElement("td");
+          td.textContent = value;
+          tr.append(td);
+        }
+        offers.append(tr);
+      }
+      for (const row of body.evidence || []) {
+        const li = document.createElement("li");
+        li.textContent = `${row.source_label}: ${row.claim}`;
+        evidence.append(li);
+      }
+    });
+  </script>
+</body>
+</html>

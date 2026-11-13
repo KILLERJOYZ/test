@@ -1,5 +1,6 @@
 import { sameContext, validCatalog, validRequirements } from "./catalog.ts";
-import type { AdviceContext, Requirements } from "./catalog.ts";
+import type { AdviceContext, Listing, Requirements } from "./catalog.ts";
+
 export function endpointUrl(endpoint: string, path: string) {
   const url = new URL(endpoint);
   if (
@@ -17,6 +18,7 @@ export function endpointUrl(endpoint: string, path: string) {
     throw Error("ENDPOINT_REQUIRES_HTTPS");
   return url.origin + path;
 }
+
 async function call(
   endpoint: string,
   path: string,
@@ -38,6 +40,7 @@ async function call(
     if (response.status === 409) throw Error("STALE_CATALOG");
     if (response.status === 503) throw Error("SERVICE_UNAVAILABLE");
     if (response.status === 429) throw Error("USAGE_LIMIT");
+    if (response.status === 404) throw Error("NOT_FOUND");
     throw Error("SERVICE_ERROR");
   }
   const text = await response.text();
@@ -45,6 +48,18 @@ async function call(
   if (signal.aborted) throw Error("ABORTED");
   return JSON.parse(text);
 }
+
+export async function fetchHealth(
+  endpoint: string,
+  token = "",
+  signal?: AbortSignal,
+  transport = fetch,
+) {
+  const controller = new AbortController();
+  const actualSignal = signal || controller.signal;
+  return call(endpoint, "/health", token, actualSignal, transport);
+}
+
 export async function fetchCatalog(
   endpoint: string,
   token: string,
@@ -60,6 +75,63 @@ export async function fetchCatalog(
     throw Error("INVALID_CATALOG");
   return value;
 }
+
+export async function fetchLaptops(
+  endpoint: string,
+  params: {
+    q?: string;
+    source?: string;
+    brand?: string;
+    max_price?: number;
+    sort?: string;
+    limit?: number;
+    offset?: number;
+  } = {},
+  token = "",
+  signal?: AbortSignal,
+  transport = fetch,
+) {
+  const qs = new URLSearchParams();
+  if (params.q) qs.set("q", params.q);
+  if (params.source) qs.set("source", params.source);
+  if (params.brand) qs.set("brand", params.brand);
+  if (params.max_price) qs.set("max_price", String(params.max_price));
+  if (params.sort) qs.set("sort", params.sort);
+  if (params.limit) qs.set("limit", String(params.limit));
+  if (params.offset) qs.set("offset", String(params.offset));
+
+  const path = `/v1/laptops${qs.toString() ? `?${qs.toString()}` : ""}`;
+  const controller = new AbortController();
+  return call(endpoint, path, token, signal || controller.signal, transport);
+}
+
+export async function fetchLaptopDetail(
+  endpoint: string,
+  laptopId: string,
+  token = "",
+  signal?: AbortSignal,
+  transport = fetch,
+): Promise<Listing> {
+  const path = `/v1/laptops/${encodeURIComponent(laptopId)}`;
+  const controller = new AbortController();
+  return call(endpoint, path, token, signal || controller.signal, transport);
+}
+
+export async function fetchCompare(
+  endpoint: string,
+  ids: string[],
+  requirements: Requirements,
+  token = "",
+  signal?: AbortSignal,
+  transport = fetch,
+) {
+  const controller = new AbortController();
+  return call(endpoint, "/v1/compare", token, signal || controller.signal, transport, {
+    ids,
+    requirements,
+  });
+}
+
 export async function fetchAdvice(
   endpoint: string,
   token: string,
