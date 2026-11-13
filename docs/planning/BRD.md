@@ -3,7 +3,7 @@
 
 | Document control | Value |
 |---|---|
-| Version / date | 2.3 / 11 November 2026 |
+| Version / date | 2.0 / 11 November 2026 |
 | Status | Draft for stakeholder review; requirements proposed, not signed off |
 | Initial market | Vietnam |
 | Target clients | Android mobile and Windows desktop |
@@ -11,11 +11,9 @@
 | Companion plan | [Implementation plan](./IMPLEMENTATION_PLAN.md) |
 | Traceability | [Requirement and verification register](./project-traceability.json) |
 
-Version 2.0 established detailed use cases, acceptance criteria and lifecycle rules. Version 2.1 explicitly expands U01 into the guided laptop picker and adds associated A06/A07 controls, based on [picker research and code-gap inspection](../../research/laptop-picker-research.md). Version 2.2 adds U19: a contextual chatbot invitation after sustained in-app/site product browsing or searching. These additions are planned work; existing browser verification does not establish their completion. The documented backlog now contains 37 parent journeys (19 user and 18 admin); U19 has not been added to the source spreadsheet. Native/AI stage gates remain unchanged.
+Version 2.0 retains the agreed product direction and adds detailed use cases, independently verifiable acceptance criteria, lifecycle rules, access responsibilities, measurement definitions and decision records. Added detail does not expand the demo boundary or approve the proposed backlog.
 
-Version 2.3 adds the admin necessity analysis in sections 8.1–8.6 and detailed A06 acceptance cases. It explains operational needs, minimum delivery scope, ownership and the full lifecycle of a needs/question/rule change. The 18 admin journeys remain intact; added analysis does not approve implementation or alter source-sheet priorities.
-
-Reading guide: sections 1–6 explain the business and staged scope; sections 7–11 catalog requirements and rules, with admin necessity and needs-management analysis in section 8; sections 12–15 define governance and sources; sections 16–22 specify the behavior and evidence needed to assess readiness. Implementation mechanics are in the companion plan.
+Reading guide: sections 1–5 explain the business and scope direction; sections 7–11 catalog requirements and rules; sections 12–15 define governance and sources; sections 16–22 specify the behavior and evidence needed to assess readiness. Implementation mechanics are in the companion plan.
 
 ## 1. Purpose and decision requested
 
@@ -65,195 +63,49 @@ Confirmed by the conversation: Vietnam first; expand globally later; Android and
 
 Proposed sequencing: new laptops first, followed by phones and then PC builds when their data/rules are ready. This narrows the first release, not the long-term product vision. Team, budget, provider, minimum OS/device support, operating targets and supplier permissions remain open.
 
-## 6. Release scope and phase definitions
-
-| Stage | Purpose and included boundary | Exit / next decision |
-|---|---|---|
-| F | Prove compatible native hosts and essential controls on both clients | G1: native feasibility accepted |
-| D0 | Complete a local laptop decision with synthetic catalog/offers and deterministic explanations | G2: interaction demo accepted |
-| D1 | Add real server-backed needs interpretation and grounded explanations, retaining D0 fallback | G3: AI demo and demo review accepted |
-| R | Authorize the production baseline, establish permitted sources and audit a small real catalog | G4: data/operating readiness accepted |
-| P | Implement and run a controlled Vietnam laptop pilot with real users and offers | G5: pilot accepted for a defined wider release |
-| E | Stage phones, tracking, used devices, ownership, upgrades and reviewed PC builds | Separate category/feature readiness decisions |
-| L | Partner services, collaboration, monetization integrations and other countries | Separate business and operational readiness decisions |
-
-Stage F is part of the demo work. G3 is a hard boundary before production engineering: approve both D0 and D1, or explicitly document acceptance of a D1 deferral. A missing provider does not make a scripted response an AI acceptance result. Source discussions and feasibility research may occur during the demo; live integrations and production deployment require the subsequent scope decision.
-
-### 6.1 Demo boundary
-
-One connected path: Discover → needs/review → results → variant detail → two-device comparison → sample buying options → saved decision. Use Vietnamese and VND, twelve fictional variants, eighteen fictional offers and three fictional sellers. Counts are proposed fixtures, not market coverage targets.
-
-Include synthetic price/eligibility states, a no-fit case, unknown mandatory information, edits, Back/restart behavior and failure recovery. Label sample data on discovery, cards, detail, offers and shared/saved summaries. Use a fixed demo clock for reproducible freshness scenarios.
-
-Purchase actions show a local sample offer summary. They must not imply purchase completion or forward a fictional quote to a real retailer. Demo administration consists of versioned fixture editing, validation, preview and reset through a documented local maintainer workflow; no full admin portal, production identity system or live ingestion service is needed.
-
-D1 adds two bounded AI operations: propose typed needs fields from text; explain supplied facts about the current decision. Invalid output is rejected. A distinct status identifies live AI, deterministic fallback and unavailable AI.
-
-### 6.2 Production pilot boundary
-
-Eight core user journeys U01–U08, and the minimum internal workflows A01–A09 required to operate them. Partial demo coverage is not a production completion claim. Start with roughly 30–50 exact new-laptop variants from two or three maintainable sources, subject to coverage and access findings. Maintain a restricted admin surface, manual imports/corrections, publication states, freshness handling, bounded AI and real retailer handoff.
-
-Exclude full account synchronization, unrestricted crawling/OCR, price prediction, in-app checkout, lending, fulfillment, universal stock coverage, arbitrary PC builds, public community and global release. These are separate future scopes, where appropriate. The early admin workflows can be simple audited forms and commands; their outcomes are required, not an elaborate dashboard.
-
 ## 7. User business requirements
 
-The source backlog uses STT 1–18 for U01–U18. U19 is a user-requested documentation addition without a source spreadsheet row; existing STT values are unchanged. IDs below are stable references independent of spreadsheet row position. Each row describes a complete user outcome. Stage denotes earliest planned delivery, with explicitly limited demo coverage where applicable.
+Các use case người dùng (STT 1–18) được tối giản và gộp nhóm theo luồng thao tác của người dùng và phản hồi của hệ thống, tối ưu cho phạm vi triển khai Hackathon (4–6 tiếng).
 
-| ID / source STT | Complete journey and acceptance outcome | Demo coverage / production stage |
+**Thang mức độ ưu tiên (Urgency):**
+- **1:** Cần làm đầu tiên (Luồng trải nghiệm cốt lõi cho MVP Hackathon trong 4–6 tiếng)
+- **2:** Không cần làm ngay lập tức (Làm bổ sung nếu còn thời gian sau khi hoàn tất nhóm 1)
+- **3:** Tính năng trong tương lai (Mở rộng sau Hackathon)
+- **0:** Không cần thiết cho phạm vi Hackathon (Lược bỏ để tập trung nguồn lực)
+
+| ID / source STT | Complete journey and acceptance outcome | Urgency |
 |---|---|---|
-| U01 / 1 | From Discover, open the laptop picker, order primary uses, retain all mandatory tasks, enter a total ceiling, answer relevant follow-ups and confirm. Inspect task-level fit, refine results, explore explicit compromises and continue to detail, compare or save. | D0 synthetic picker; existing frontend partial, v2.1 additions pending; D1 text interpretation; P verified workload/catalog evidence |
-| U02 / 2 | Open Find deals, search/filter supported products, inspect variant/price/seller/conditions and open, save or compare a result. | D0 bounded fixture browsing; P real sourced offers, no unsupported discount labels |
-| U03 / 3 | Open a device, select an exact variant, inspect specs/pros/cons/evidence and report wrong information. Changed variant updates all related content. | D0 fixture detail/provenance; P evidence sources and report submission |
-| U04 / 4 | Select variants, compare consistent criteria, adjust requirements and choose or reject an option. Mandatory requirements remain explicit. | D0 two-device comparison; P verified comparisons; E optional ownership-cost scenarios |
-| U05 / 5 | Open buying options, inspect comparable totals and seller terms, then open the chosen retailer. Known conditions and unknown charges remain visible. | D0 simulated offer summary only; P verified retailer handoff |
-| U06 / 6 | Enter a supported link or quotation, confirm extracted fields, inspect suitability/cost/uncertainty, then save, compare or visit the seller. | P manual quotation plus bounded supported-link intake; broad OCR deferred |
-| U07 / 7 | Save a decision, reopen it with dated context, remove unwanted entries and share a useful brief. | D0 local persistence/revisit/delete; P summary sharing; E optional sync/offline visit pack |
-| U08 / 8 | Start without signup, inspect settings/data, edit or delete stored information and control contextual permissions. | D0 guest/local deletion/settings; P privacy disclosure/export and relevant permissions |
-| U09 / 9 | Track suitable configurations against a target and deadline, inspect observed history, receive a rechecked alert and change/stop tracking. | E after price observation, freshness and notification readiness |
-| U10 / 10 | Enter available funds/contributions/timeframe, compare documented payment or saving scenarios and save an understood plan. | E; no money custody or credit approval |
-| U11 / 11 | Find a used/refurbished offer, inspect condition/repair/lock evidence, compare net cost and complete an inspection checklist before deciding. | E; independent inspection referral requires L partner readiness |
-| U12 / 12 | Identify an existing device and limitation, compare keep/repair/upgrade/replace options and choose a sourced next step. | E manual bounded advice; hardware scan/service integrations later |
-| U13 / 13 | Specify whole-build scope and retained parts, inspect/change a reviewed PC configuration, verify compatibility and compare complete purchase baskets. | E reviewed templates first; automatic solver requires later validation |
-| U14 / 14 | Confirm a purchase, save optional receipt/terms, complete receiving checks and use verified return/warranty/support reminders. | E; purchase is user-confirmed, not inferred from a link click |
-| U15 / 15 | Create a family/team plan, collect needs and approvals, compare whole-budget options and agree a purchase. | L; optional group quotes require genuine terms and suppliers |
-| U16 / 16 | Describe a device for resale/trade-in, compare current conditional quotes and prepare documented data migration and handover. | L; no guaranteed final valuation or certified erasure claim |
-| U17 / 17 | Inspect relevant owner experience, submit a scoped question, obtain a disclosed expert opinion and optionally contribute structured experience. | L after moderation and expert operating processes |
-| U18 / 18 | Specify temporary access needs, compare verified rental/loan/assistance terms with buying and reach the relevant provider. | L after local provider/program verification |
-| U19 / not yet in sheet | While browsing listings, viewing product details or searching within the app/site, accumulate active foreground time in the current session. At the configured threshold, show a dismissible chatbot invitation asking about needs. If accepted, open contextual chat without losing the current page, search or selected products, clarify tasks/budget and offer grounded suggestions. | Planned; delivery stage, timing and repeat policy pending review. No current implementation or acceptance evidence. |
+| U01 / 1 | Người dùng vào tab "Explorer", lựa chọn các yêu cầu, lựa chọn giá, hệ thống phản hồi các sản phẩm phù hợp | 1 |
+| U02 / 2 | Người dùng nhập từ khóa tìm kiếm hoặc chọn bộ lọc nhanh trên tab "Explorer", hệ thống phản hồi danh sách các sản phẩm và mức giá tương ứng | 1 |
+| U03, U05 / 3, 5 | Người dùng nhấn vào một sản phẩm và chọn phiên bản cấu hình, hệ thống hiển thị chi tiết thông số, ưu/nhược điểm, danh sách nơi bán kèm tổng giá dự kiến và liên kết tới trang mua hàng | 1 |
+| U04 / 4 | Người dùng chọn 2 sản phẩm để đối chiếu và điều chỉnh tiêu chí ưu tiên, hệ thống hiển thị bảng so sánh trực quan về thông số, giá bán và mức độ đáp ứng nhu cầu | 1 |
+| U07 / 7 | Người dùng nhấn lưu sản phẩm hoặc kết quả tư vấn, hệ thống lưu vào thiết bị để xem lại, xóa hoặc chia sẻ bản tóm tắt quyết định | 2 |
+| U08 / 8 | Người dùng sử dụng ứng dụng ngay không cần đăng nhập và thao tác trong mục Cài đặt, hệ thống cập nhật tùy chọn hiển thị hoặc xóa dữ liệu lịch sử lưu trên máy | 2 |
+| U06 / 6 | Người dùng dán đường dẫn (link) sản phẩm hoặc báo giá có sẵn vào ô kiểm tra, hệ thống trích xuất thông tin và phản hồi đánh giá mức độ phù hợp kèm chi phí thực tế | 2 |
+| U09 / 9 | Người dùng đặt mức giá mục tiêu cần theo dõi cho một sản phẩm, hệ thống lưu cấu hình và gửi thông báo khi giá bán giảm chạm ngưỡng | 3 |
+| U10 / 10 | Người dùng truy cập vào banner sự kiện, hệ thống chuyển sang màn hình sự kiện và hiển thị các sản phẩm trong sự kiện với giá mới | 3 |
+| U11 / 11 | (AI) Người dùng truy cập vào nút mở Trợ lý, Popup Trợ lý hiện ra, thu thập yêu cầu của người dùng, hiển thị các lựa chọn theo yêu cầu và cập nhật các lựa chọn khi người dùng thay đổi yêu cầu | 1 |
+| U12 / 12 | (AI) Trong phần "Chi tiết máy", người dùng lựa chọn 'Phân tích sản phẩm', trợ lý cung cấp các ưu điểm/hạn chế của sản phẩm, loại người dùng và phân khúc phù hợp/không phù hợp với sản phẩm. | 1 |
+| U13 / 13 | (AI) Trong phần "So sánh sản phẩm", người dùng lựa chọn 'Phân tích', trợ lý cung cấp các ưu điểm/hạn chế của hai sản phẩm, so sánh với yêu cầu ban đầu của người dùng (nếu có) để đưa ra lựa chọn hợp lý. | 1 |
+
 
 ### 7.1 Needs intake rules
 
-Use route-specific questions; browsing and quotation entry do not require the entire recommendation questionnaire. Start with category, exact total ceiling, all regular tasks, allowed condition and up to two soft priorities. In the picker, distinguish one to three ordered primary uses from additional mandatory tasks and from soft product preferences. Ordering must not remove any mandatory requirement. The initial four-to-six-core-question idea is a hypothesis, not a mandated wizard length. Ask extra critical questions whenever the decision requires them.
-
-The picker is a guest-accessible U01 entry, not mandatory account onboarding. Its result refinements are optional views over the eligible set. Show active refinements and allow clearing them without deleting the confirmed profile. Prefer exact VND entry with optional budget shortcuts; a shortcut must expose its resulting ceiling and must not impose a minimum spend. Reordering uses or selecting another task never increases the confirmed ceiling automatically.
-
-Each result distinguishes task fit, price completeness, evidence confidence and preference ranking. Any option violating a hard constraint belongs only in a separately labelled, user-requested exploration, with failure reasons and cost differences. It cannot be labelled suitable until the user changes the constraint and the rerun passes. Unresolved mandatory information remains unknown. The supported category/workload scope is explicit; unsupported specialist work does not receive a fabricated suitability verdict.
-
-Represent answered, unknown, skipped and not applicable separately. An explicit no preference differs from missing data. No behavioral answer is preselected. Exclusive unknown/none options cannot coexist with contradictory specifics. Preserve Back/edit state; invalidate dependent answers/results when tasks or category change. Show assumptions and pending critical requirements in the review. Do not solicit salary, identity number, employer identity or precise location merely to recommend a machine.
-
-### 7.2 U19 — Contextual chatbot invitation during browsing
-
-Count eligible active time across product listings, product details and search within the current app/site session; internal navigation does not restart the count. Pause when the app is backgrounded, the tab is hidden or the user is idle. Do not count time outside the app/site or infer a need from elapsed time alone. Foreground/idle detection, session end/reset, threshold and cooldown values must be defined and reviewed before implementation; no numeric threshold is committed here.
-
-The invitation asks whether the user wants help choosing a device. It must be dismissible, preserve focus and browsing state, and avoid repeated interruptions after dismissal according to a documented cooldown. Accepting opens chat in context and asks the user to confirm needs and budget; product views/searches are context, not confirmed requirements. Do not interrupt an existing chat or a critical input/confirmation step. The user can continue browsing without accepting.
-
-Use only the minimum in-app session context with an appropriate disclosure; do not introduce cross-site tracking or send browsing history/private text to an AI provider merely because the timer expires. Provider transmission follows the AI notice and data rules in section 19. Live AI, simulated advice, fallback and unavailable states remain explicit. U19 adds a conversational entry to U01–U05, not permission to alter constraints or invent product/price claims. Website behavior refers to a supported browser surface and does not replace the required Android/Windows native clients.
+Chỉ hỏi các câu hỏi gắn trực tiếp với nhu cầu chọn máy (danh mục thiết bị, ngân sách tối đa, tác vụ sử dụng chính và tối đa 2 ưu tiên phụ). Người dùng tìm kiếm trực tiếp không bắt buộc phải qua bước khảo sát. Khi người dùng thay đổi nhu cầu hoặc mức giá, hệ thống tự động cập nhật lại danh sách sản phẩm gợi ý. Không thu thập thông tin nhạy cảm (mức lương, CCCD, nơi làm việc, vị trí chính xác).
 
 ## 8. Admin business requirements
 
-The source backlog uses STT 19–36. Demo substitutes do not count as completed production admin features.
+Các use case quản trị (STT 19–36) được tối giản và gộp nhóm theo thao tác của quản trị viên và phản hồi của hệ thống. Trong khuôn khổ Hackathon 4–6 tiếng, ưu tiên nạp dữ liệu mẫu (fixtures/JSON) và cấu hình luật gợi ý thay vì xây dựng cổng quản trị phức tạp.
 
-| ID / source STT | Admin entry, action and completion outcome | Planned stage |
+| ID / source STT | Complete journey and acceptance outcome | Urgency |
 |---|---|---|
-| A01 / 19 | Personnel/access → invite or disable a staff member, assign a bounded role, verify effective access and revoke sessions; changes are audited and enforced by the server. | P minimum fixed roles; D0 maintainer access is local only |
-| A02 / 20 | Sources/imports → register permitted use and mappings, import into staging, review errors/differences and accept valid records or retry without duplication. | D0 fixture validation analogue; R/P permitted manual import, automated feeds later |
-| A03 / 21 | Catalog → create/edit exact variants, resolve duplicates, preview/review and publish or restore a prior revision with affected links identified. | D0 versioned fixture analogue; R/P catalog workflow |
-| A04 / 22 | Sellers/offers → verify seller/policies, match variant, review price/fees/eligibility/stock/URL, then publish, correct or suspend an offer. | D0 fixture scenarios; R/P auditable offer management |
-| A05 / 23 | Evidence → record provenance and tested configuration, resolve conflicts, review claim previews and publish or withdraw supported content. | D0 fixture provenance; R/P evidence review |
-| A06 / 24 | Needs/rules → edit questions, branches and workload constraints, simulate profiles and publish a versioned valid protocol. | D0 source-controlled rules; P reviewer-operated publication |
-| A07 / 25 | Recommendation quality → evaluate a candidate rules/prompt/model version against fixed cases, inspect regressions and release/roll back it. | D0 rules checks; D1 model checks; P release control |
-| A08 / 26 | Reports → triage and assign an information error, verify evidence, correct/suspend or reject with reason and close the report with an appropriate response. | P linked to U03; demo records review findings locally |
-| A09 / 27 | Operations → inspect failures, freshness, latency/cost and impact, apply bounded recovery/fallback, verify service recovery and record resolution. | D0/D1 diagnostic evidence; P operating workflow |
-| A10 / 28 | Releases → review readiness and client/version targeting, enable a controlled rollout, inspect results and disable or revert configuration when necessary. | E operational UI; P still requires documented release/rollback procedure |
-| A11 / 29 | Analytics → inspect aggregate journey/coverage/cost evidence, identify a problem, prioritize a change and compare its observed outcome. | E richer analytics; P minimum consent-aware operational measurement |
-| A12 / 30 | Price alerts → review price coverage/candidates, verify offer validity and consent, send/monitor or stop a campaign and resolve failures. | E prerequisite for U09 |
-| A13 / 31 | Data support → authenticate a request, review minimum necessary server data, resolve export/deletion/access issue and provide outcome/audit evidence. | E accounts; P basic process required for any server-held personal data |
-| A14 / 32 | PC/upgrade review → maintain part constraints and reviewed builds, inspect conflicts/unknowns and publish or re-review affected configurations. | E prerequisite for U12/U13 scope |
-| A15 / 33 | Partners → verify service coverage, terms/responsibility, approve listing, monitor problems and update/suspend a provider. | L prerequisite for related services |
-| A16 / 34 | Community/expert review → inspect flagged/pending content and expert credentials/conflicts, decide moderation and support review of that decision. | L prerequisite for U17 |
-| A17 / 35 | Commercial operations → approve labelled campaigns and allowed destinations, check ranking independence, reconcile actual partner reports and end campaigns. | L; disclosure and ranking independence apply from first commercial placement |
-| A18 / 36 | Expansion → assess category/country data, currency/variants/support and full journey tests, authorize a limited rollout and reassess coverage. | E category readiness; L additional countries |
-
-### 8.1 Why an admin function is needed
-
-The service's promise depends on maintaining correct variants, usable offers and defensible workload advice as prices, software and available products change. Admin capability is needed wherever a person must resolve uncertainty, approve a consequential change, correct a public error or restore service. A dashboard is useful only when it supports one of those decisions. A report, script, versioned file or small internal form may satisfy the early need if its outcome is reviewable and recoverable.
-
-This analysis uses the agreed user journeys and business rules; it is a proposed operating model, not evidence of staffing capacity or a separate market study. Necessity below refers to an operational outcome. It does not require a separate screen or a full portal for every ID.
-
-| ID | Business need and consequence if absent | Minimum necessary outcome / timing |
-|---|---|---|
-| A01 | Restrict who can change advice, offers and public content. Without attributable access, accidental or unauthorized changes cannot be contained reliably. | Before privileged production operations: named staff, bounded roles, enforced revocation and an audit trail. Invitations and a role-builder UI can wait; fixed roles can satisfy the pilot. |
-| A02 | Bring permitted product/offer records into a reviewable dataset. Without staging and validation, imports can create duplicates or publish incorrect data at scale. | D0 fixture validation; R/P source register, bounded manual import, errors and retry. Automated crawling, scheduling and many-source connectors are later capacity choices. |
-| A03 | Keep exact purchasable configurations distinct and correct. Without this, a recommendation can point to a similar name with inadequate RAM, storage or another component. | R/P edit, identity checks, review, publication and correction/history. Begin with the small laptop catalog; mass enrichment and broad category tools can wait. |
-| A04 | Maintain usable buying options and price conditions. Without this, the cheapest apparent result may be unavailable, conditional or a different configuration. | R/P verified seller/variant association, total completeness, timestamps, destination and suspension. Complex promotion stacking is deferred until evidence supports it. |
-| A05 | Decide which statements the adviser can substantiate. Without evidence review, marketing claims or unrelated benchmark results can become misleading buying advice. | R/P assertion-level provenance, configuration context, unresolved conflicts and withdrawal impact. D0 uses explicitly synthetic provenance. |
-| A06 | Translate actual work into the questions and constraints the picker uses. Without maintained needs rules, advice becomes generic, inconsistent or outdated. | D0 versioned questions/rules and simulation; P reviewed activation and rollback. A visual rule-authoring tool is optional; business validation is required. |
-| A07 | Establish whether a rule/model change is safe to use. Without comparative evaluation, a more fluent answer may introduce budget, fit or claim regressions. | D0 deterministic regression evidence; D1 provider-output evaluation; P release decision and rollback. No custom model-training platform is required. |
-| A08 | Correct errors buyers discover after publication. Without ownership and closure, reports accumulate while the same wrong recommendation remains visible. | P actionable report queue, assignment, evidence, correction/suspension or justified rejection and verified closure. A general CRM can wait. |
-| A09 | Detect and contain broken sources, stale prices or AI failures. Without intervention and recovery evidence, silent degradation undermines every recommendation. | D0/D1 diagnostics and fallback; P freshness/failure/cost monitoring, owner and recovery procedure. A custom operations dashboard is optional. |
-| A10 | Control which version or capability buyers receive. Without a release/revert process, an error can affect the whole supported audience. | P documented deployment/configuration approval and tested rollback; E richer targeting/rollout UI. The basic control is needed before the later dashboard. |
-| A11 | Identify unmet needs and operational costs accurately. Without defined measurements, the team may optimize clicks while recommendations remain unsuitable. | Demo observations; P a small aggregate report with coverage, no-fit causes, correction effort and cost. E richer exploration and segmentation. |
-| A12 | Send useful, consented price alerts. Without observation history and rechecking, an alert may advertise a stale or ineligible price. | Required when U09 is introduced, not for the first picker. Verify thresholds, recipients, offer validity, deduplication, stop and delivery outcome. |
-| A13 | Resolve personal-data or access requests within the data actually held. Without a basic process, users cannot exercise the app's promised controls. | Local deletion in D0; before server-held personal data, provide verified request handling and actual export/delete outcomes. Account-support tooling follows accounts. |
-| A14 | Establish that a build or upgrade is compatible as a whole. Without reviewed constraints, individually plausible parts can produce an unusable purchase. | Before U12/U13 supported advice: reviewed parts/build templates, critical-unknown handling and impact review. Unrestricted automatic PC solving is later. |
-| A15 | Ensure referred services exist with understandable terms and responsibilities. Without this, a referral can imply support the app or provider cannot supply. | Before partner-dependent services: coverage/terms verification, named responsibility and suspension. Unneeded for a direct laptop shortlist. |
-| A16 | Maintain useful community/expert advice and address conflicts or abuse. Without moderation, unsupported advice can appear authoritative. | Before U17: moderation, expert/conflict checks and review/dispute handling. Community operations do not belong in the first demo. |
-| A17 | Preserve ranking trust and reconcile real commercial activity. Without controls, paid placement can masquerade as suitability and revenue reports may be inaccurate. | Disclosure and organic-ranking independence from the first commercial placement; reconciliation when commercial reporting exists. Full campaign tooling can follow. |
-| A18 | Decide whether another category or country is sufficiently supported. Without readiness review, currency conversion can disguise missing variants, sellers or warranty coverage. | Before each expansion: category/country evidence, operating owner and complete journey checks. A global administration suite is unnecessary for Vietnam-first delivery. |
-
-### 8.2 Minimum operating scope by delivery stage
-
-**D0/D1 demo:** a maintainer edits synthetic fixtures and versioned questions/rules, validates them, previews the user result, runs fixed cases and records issues. Reuse A02–A07 concepts and A09 diagnostics in this limited environment. A local price workshop does not implement publication authority, production staff access or real-source review. A named owner records demo releases and restores a known-good version if needed.
-
-**R/P laptop readiness and pilot:** provide the A01–A09 operating outcomes within the approved small catalog and supported workloads. Add the basic release control from A10, aggregate decision evidence from A11 and A13 handling wherever personal data is stored. These can be combined in a compact internal workspace with a review queue, catalog/offer/evidence records, needs-policy releases, reports and service status. Business boundaries remain distinct even when the interface is shared.
-
-**E/L expansion:** add the richer A10/A11/A13 tooling and activate A12/A14–A18 only with the dependent customer service or category. A first commercial placement still needs A17 disclosure controls even if the full commercial module remains deferred. A later-feature label cannot waive an operating prerequisite of a feature introduced earlier.
-
-The launch decision must consider operating capacity as well as software completion. Before G4, name who refreshes offers, reviews evidence/rules, handles reports and covers incidents; record available working hours and a backup. If the team cannot maintain the promised coverage, narrow supported sources, workloads or availability claims before increasing automation or catalog size.
-
-### 8.3 A06 — Business analysis of needs, questions and workload rules
-
-**Business objective:** help a buyer describe the work accurately and receive advice based on that confirmed work. A06 serves U01 and its contextual entry U19, with consequences for detail, comparison and saved decisions under U03/U04/U07. The rule owner maintains the interpretation protocol; the buyer remains the authority over their own needs and budget.
-
-**Triggers:** a supported application changes requirements; buyers repeatedly misunderstand a question; reports reveal false-fit or unnecessary exclusions; a new supported workload is proposed; evidence is withdrawn; or a question/translation changes meaning. A new job label by itself is insufficient justification for a new hardware rule.
-
-**Actors and authority:** a needs editor proposes a revision; an evidence reviewer checks the supporting assertions under A05; a recommendation reviewer assesses expected decisions under A07; an authorized publisher activates the approved bundle. A01 governs these permissions. One person may hold several responsibilities in a small team, but each decision and any lack of independent review is visible. Operations may disable an affected rule or revert to an approved version; it cannot declare an unevaluated replacement valid merely to restore coverage.
-
-| Business information | Required meaning for the decision |
-|---|---|
-| Need/use-case definition | Stable ID, user-facing Vietnamese wording, supported category, examples, exclusions and owner; distinguish occupation from actual tasks |
-| Workload context | Relevant application/platform/version, project size, concurrency or other consequential scale, with explicit unknown/not-applicable states |
-| Question and answer | Stable field/option IDs, single/multiple selection, dependency and invalidation rules, when clarification is mandatory, and reviewed wording |
-| Requirement mapping | Which confirmed answer produces a hard constraint, which influences a preference, and why; preserve all additional mandatory tasks |
-| Supporting evidence | Assertion/source IDs, scope and dates; distinguish vendor minimum, reviewed practical requirement and synthetic demo assumption |
-| Policy version | Question/branch/mapping/ranking versions, expected schema compatibility, release scope, reviewer decision and effective date |
-| Simulation case | Invented buyer scenario, expected questions, explicit mandatory conditions, manually adjudicated result/unknown and candidate-versus-baseline difference |
-
-Completion requires a usable, evaluated interpretation policy, not merely saving a question. The normal journey is:
-
-1. Open Needs & rules from a report, evidence change or planned improvement. Identify the problem, affected workload, current version and expected buyer benefit.
-2. Draft the change. Preview the Vietnamese question/answers, applicable branches, dependency invalidation, mandatory mappings and any ranking effect. Keep the total ceiling independent of task labels or budget shortcuts.
-3. Attach applicable evidence or explicitly limit the change to synthetic demonstration. Unsupported cases lead to clarification or an unsupported-scope response; they do not receive an invented minimum configuration.
-4. Simulate complete paths, including Back/edit, unknown answers, extra mandatory tasks and reordered primary uses. Inspect exactly which answers produce constraints and which evidence supports them.
-5. Under A07, compare candidate and approved versions on the fixed cases. Review both false acceptance and unjustified exclusion, changed eligible variants, question burden and the explanation a buyer would see. A high match count is not proof of improvement.
-6. Review affected scope: new decisions, ongoing drafts, cached results and historical saves. Approve or request correction with a reason; publish only a compatible, evaluated policy bundle.
-7. Verify the active version in a fresh decision. Monitor reported errors and no-fit/clarification causes; retire or revert with a recorded reason when needed. Re-evaluate current recommendations when their governing inputs change while preserving the original dated record.
-
-**Example:** an admin proposes changing the follow-up for coding plus virtual-machine work. The editor must distinguish the number/type of concurrent environments and uncertainty rather than assigning the same requirement to every programmer. A demonstration RAM threshold is labelled synthetic. Production advice needs reviewed workload evidence. If the buyer removes VM work, its dependent constraint stops applying on the next confirmed run. Reordering programming and study cannot remove a still-mandatory VM requirement or increase the budget.
-
-**Boundary with user data:** policy publication changes interpretation rules for applicable runs. It does not authorize staff to edit a buyer's confirmed budget/tasks, open unrelated private chats or treat browsing time under U19 as a declared workload. An AI needs proposal is confirmed by the buyer under BR-07; A06 defines the allowed questions and mappings rather than silently applying model guesses.
-
-### 8.4 Boundaries, exceptions and operating decisions
-
-| Situation | Required admin outcome / responsible journey |
-|---|---|
-| Retailer price changed, but the workload rule is correct | A04 corrects/rechecks the offer; do not alter workload requirements to keep that device recommended. |
-| Software requirement lacks evidence or conflicts with a test | A05 assesses the assertion; A06 withholds the unsupported rule/fit claim or requests clarification. |
-| A correct rule is applied incorrectly, or AI contradicts it | A07 records the regression and blocks/reverts the candidate; A09 contains service impact. |
-| A question text edit changes its interpretation | Treat as a policy revision with path and outcome review; do not bypass evaluation as a cosmetic translation fix. |
-| New policy is incompatible with an older client or saved schema | Hold activation for that scope or use a supported approved bundle; disclose re-confirmation needs and preserve historic observations. |
-| Urgent wrong-fit report affects published advice | A08 opens an attributable issue; authorized staff suspend the affected claim/capability, then A05–A07 validate a correction. Keep a reason and verify containment/recovery. |
-| No candidate is eligible for a popular workload/budget | A11 distinguishes inadequate evidence, catalog coverage, true hard-constraint conflict and filter-empty. Neither A06 nor commercial staff may loosen the buyer's requirements without confirmation. |
-
-### 8.5 How to establish that admin capability is sufficient
-
-At G4, require a practical operating rehearsal: import a bounded source sample, correct a wrong variant/offer, withdraw evidence, revise and reject a bad needs policy, publish/revert an approved revision, resolve a report and handle a source outage. Record the responsible role, actual outcome, time spent, outstanding work and recovery evidence. The workflow can be modest; an unowned manual step is an unresolved readiness condition.
-
-Use section 20 definitions and add admin workload context: actionable queue size/age, unresolved high-impact records, reviewer time per change, stale-offer backlog and policy regressions by supported workload. Every measure needs a time window and denominator. Proposed response targets and support hours remain G4 decisions; no SLA or staffing level is inferred from this analysis. Prefer user-impact and integrity measures over the number of admin screens or published records.
-
-### 8.6 Decisions still required
-
-Before production scope is accepted, record the named owners and backup, the reviewed initial workload list, who can approve each publication type, which assessments have independent review, evidence freshness/review triggers, handling of in-progress decisions during activation, and the operating capacity available to meet coverage/correction promises. Decide whether each pilot workflow is a reviewed file/script, a shared internal form or a dedicated UI only after its frequency and risk are understood. A06 also needs the reviewed application/scale taxonomy and fixed scenario set; the competitor's use-case menu does not establish this product's supported coverage.
+| A02, A03, A04 / 20, 21, 22 | Quản trị viên nhập hoặc cập nhật danh sách sản phẩm, phiên bản cấu hình và giá bán từ các cửa hàng (qua file dữ liệu hoặc form), hệ thống kiểm tra tính hợp lệ và cập nhật lên danh mục hiển thị | 1 |
+| A06, A07 / 24, 25 | Quản trị viên thiết lập bộ câu hỏi khảo sát nhu cầu, luật chấm điểm và câu lệnh (prompt) cho AI, hệ thống áp dụng cấu hình mới để phân tích và phản hồi gợi ý sản phẩm | 0 (hard code instruction cho LLM) |
+| A09 / 27 | Quản trị viên kiểm tra trạng thái kết nối AI và dữ liệu, hệ thống hiển thị thông báo trạng thái và tự động chuyển sang chế độ gợi ý dự phòng (fallback) khi dịch vụ AI gặp sự cố | 2 |
+| A05, A08 / 23, 26 | Quản trị viên xem các báo cáo sai sót thông tin từ người dùng và chỉnh sửa lại thông số/dẫn chứng, hệ thống lưu bản cập nhật và hiển thị thông tin đã đính chính | 3 |
+| A11, A12, A14 / 29, 30, 32 | Quản trị viên xem thống kê lượt sử dụng, quản lý chiến dịch báo giá giảm hoặc cập nhật danh mục linh kiện PC, hệ thống tổng hợp số liệu và cập nhật dữ liệu cho các tính năng mở rộng | 3 |
+| A01, A10, A13 / 19, 28, 31 | Quản trị viên phân quyền tài khoản nhân sự, cấu hình phát hành phiên bản (rollout) hoặc xử lý yêu cầu trích xuất/xóa dữ liệu cá nhân trên máy chủ, hệ thống kiểm soát quyền truy cập và ghi nhận lịch sử | 0 |
+| A15, A16, A17, A18 / 33, 34, 35, 36 | Quản trị viên phê duyệt đối tác dịch vụ, kiểm duyệt nội dung cộng đồng, quản lý chiến dịch quảng cáo hoặc mở rộng danh mục đa quốc gia, hệ thống cập nhật các chính sách vận hành thương mại tương ứng | 0 |
 
 ## 9. Mandatory business rules
 
@@ -325,7 +177,7 @@ No known critical budget/variant/claim-integrity failure may remain unresolved i
 | Insufficient local product/offer evidence or unavailable source access | Data lead limits coverage honestly, negotiates/records access and audits a starter catalog before production |
 | Wrong variant or conditional price wins ranking | Domain constraints, review/abstention, calculation fixtures and manual checkout-context audit |
 | AI produces unsupported advice | Typed proposals, checked evidence IDs, deterministic decisions, validation and fallbacks; recommendation reviewer owns regressions |
-| Full 37-journey documented backlog treated as demo scope | Product owner uses stage/coverage register and explicit change control; U19 delivery stage remains pending |
+| Full 36-journey backlog treated as demo scope | Product owner uses stage/coverage register and explicit change control |
 | Catalog refresh/correction work exceeds capacity | Measure staff effort and source lag at pilot; narrow sources/workloads before expansion |
 | Commercial incentives erode trust | Separate sponsorship and organic suitability with reviewable controls |
 | Solo or inexperienced native team delays delivery | Re-estimate after G1; effort figures are assumptions, not a launch date |
@@ -359,12 +211,6 @@ Flow: choose the guided route; answer the necessary core questions; receive task
 - **AC-U01-02:** Given an unknown ceiling or essential application requirement, when options are requested, then the system clarifies or labels an exploratory result; it does not assume unlimited funds or confirmed compatibility.
 - **AC-U01-03:** Given no configuration passes all hard constraints, when the run completes, then the result identifies the decisive unmet requirements and offers voluntary edits without changing the stored constraints.
 - **AC-U01-04:** Given a confirmed profile revision and a later edit, when an older run finishes, then it cannot replace the newer revision's result. Back and retry preserve the user's explicit answers.
-- **AC-U01-05:** Given one to three primary uses, when the buyer reorders them by touch, keyboard or assistive controls, then the review preserves that order and the run records its ranking-policy version. An additional mandatory task is retained independently; order affects preference ranking only after every hard requirement passes.
-- **AC-U01-06:** Given an exact VND ceiling, when a task, priority or budget shortcut changes, then any new ceiling is visible and explicitly confirmed before use. Task changes alone preserve the ceiling; no band floor excludes cheaper eligible options.
-- **AC-U01-07:** Given eligible options and active screen/weight refinements, when refinements exclude all options, then results identify the filter cause and clearing filters restores the eligible set without changing tasks, ceiling or saved selections. A true no-fit result remains distinct from filter-empty, missing data and service failure.
-- **AC-U01-08:** Given a request to explore compromises, then each exploratory item names unmet/unknown requirements and any known budget difference, stays outside the confirmed shortlist and cannot acquire a suitable badge through a ranking change. Only an explicit profile change followed by a passing rerun changes eligibility.
-- **AC-U01-09:** Given a result and its ordered uses, when inspected, then the buyer can see per-use pass/fail/unknown evidence, decisive advantages and limitations, exact variant and dated offer context. Missing evidence is not converted into a numeric match percentage or supported specialist-work claim.
-- **AC-U01-10:** Given a picker decision moving through detail, comparison and saving, then task order, additional requirements and confirmed profile revision persist. Reopening an older saved schema does not invent user-confirmed ordering; incompatible state is explained and retained for recovery or explicit reset.
 
 ### 16.2 U02 — Find an offer without completing setup
 
@@ -429,15 +275,6 @@ Actor: guest or future account holder. Entry: first launch or Settings & data. F
 - **AC-U08-03:** Given an optional permission is refused, when its related feature is used, then the app explains the consequence and preserves applicable manual or basic functionality.
 - **AC-U08-04:** In P, given a valid export/delete request for server-held data, when processed through the supported ownership-verification route, then the user receives the actual outcome and retention limits; raw prompts and uploaded documents are not exposed to unrelated staff.
 
-### 16.9 U19 — Receive contextual conversational help while browsing
-
-Actor: guest or buyer browsing the supported app/site. Trigger: active eligible browsing/search time reaches a reviewed threshold in the current session. Outcome: accept contextual chat and confirm needs, or dismiss/ignore and continue browsing. Delivery stage and timer/session/cooldown parameters remain pending; these criteria do not authorize frontend implementation or live AI integration.
-
-- **AC-U19-01:** Given listing/detail/search activity in one session, when internal navigation occurs, then eligible active time accumulates without restarting; hidden-tab, background and idle time does not advance it. Leaving/returning follows the documented pause/reset policy and cannot trigger an invitation while outside the active app/site.
-- **AC-U19-02:** Given the configured threshold is reached and no chat or critical input/confirmation is active, then a dismissible invitation asks whether help is wanted without stealing focus or clearing browsing state. Dismissal suppresses repeated invitations for the reviewed cooldown; ignoring it leaves browsing usable.
-- **AC-U19-03:** Given the invitation is accepted, then chat retains the current query, exact viewed variants and explicit selections, asks about tasks/budget and confirms inferred needs before applying changes. Browsing time or viewed products alone cannot establish requirements, increase the ceiling or override mandatory constraints.
-- **AC-U19-04:** Given a timer-triggered invitation, then no browsing history/private text is automatically sent to an AI provider. Accepted chat follows the applicable notice/minimum-data rules, exposes live/simulated/fallback/unavailable mode accurately and permits continued browsing if AI is unavailable. Suggestions obey the existing variant, evidence and price rules.
-
 ## 17. Detailed admin controls and publication requirements
 
 ### 17.1 Minimum operating roles
@@ -474,11 +311,6 @@ Production must define a reviewer for each release. Prefer a different reviewer 
 | **AC-A06-02** | Given a new rule version becomes active, new runs record it; historical runs remain interpretable with their original version and are not silently rewritten. |
 | **AC-A07-01** | Given a candidate model/prompt/rule release, the fixed evaluation report identifies regressions and mandatory failures; an unresolved critical failure blocks normal release. |
 | **AC-A07-02** | Given rollback or AI disabling, new advice uses the selected safe version/fallback and exposes its mode; authoritative price and eligibility calculations remain available. |
-| **AC-A06-03** | Given a picker-policy candidate, simulation includes reordered uses, an additional mandatory task, unchanged budget after task edits, filter-empty and compromise cases. A06/A07 review blocks activation on a hard-constraint violation, records policy/question/fixture versions and permits rollback without rewriting historical decisions. |
-| **AC-A06-04** | Given a new or changed workload mapping, the reviewer can identify the triggering answer, hard/soft meaning, applicable application/scale and supporting assertion. Missing/conflicting critical evidence prevents a supported-fit claim; synthetic demo assumptions remain explicit and cannot be activated as production evidence. |
-| **AC-A06-05** | Given a question or branch revision, simulation detects unreachable questions, cycles, contradictory/exclusive answers and stale dependent constraints after a parent answer changes. It includes an unknown-answer path and an additional mandatory task; invalid paths or a critical expected-outcome regression block activation. |
-| **AC-A06-06** | Given a reviewed policy candidate, activation checks the intended client/schema scope and records the compatible question/mapping/ranking bundle. Affected ongoing decisions are rerun or require re-confirmation before a current fit verdict; old saved observations and user-confirmed budget/tasks are not silently rewritten. |
-| **AC-A06-07** | Given a proposed publication, rejection or rollback, the authorized actor records reason, candidate/baseline versions and evaluation outcome. A new decision demonstrably uses the selected approved version; an unapproved replacement or staff edit to unrelated private buyer needs is denied. |
 | **AC-A08-01** | Given duplicate reports, support can relate them to the same record without leaking another reporter's personal information; a resolution identifies evidence and action/reason. |
 | **AC-A08-02** | Given a validated correction, publication/suspension and report resolution are linked; notification only uses an available, appropriate user channel. |
 | **AC-A09-01** | Given an import/model/source failure, operations can identify affected records/requests and apply bounded retry, suspension or fallback with an audit reason. |

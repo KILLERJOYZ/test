@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: laptops
+    description: "Bảng chính lưu danh mục laptops được cập nhật Incremental từ dbt model"
+    columns:
+      - name: id
+        description: "Khóa chính duy nhất của máy"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "Tên đầy đủ của sản phẩm"
+        tests:
+          - not_null
+      - name: source
+        description: "Nguồn crawler"
+        tests:
+          - not_null
+      - name: crawled_at
+        description: "Mốc thời gian crawl dữ liệu (dùng để lọc incremental)"
+        tests:
+          - not_null
+      - name: synced_to_qdrant
+        description: "Cờ đánh dấu đã đẩy vector vào Qdrant"

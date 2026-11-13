@@ -1,6 +1,6 @@
 {
   "source": "fptshop",
-  "crawledAt": "2026-11-11T04:39:50.775Z",
+  "crawledAt": "2026-11-12T04:26:55.998Z",
   "totalCategories": 38,
   "totalProducts": 15,
   "categories": [
@@ -59,16 +59,16 @@
       "type": "brand"
     },
     {
-      "name": "Thunderobot",
-      "slug": "may-tinh-xach-tay/thunderobot",
-      "url": "https://fptshop.com.vn/may-tinh-xach-tay/thunderobot",
-      "type": "brand"
-    },
-    {
       "name": "Colorful",
       "slug": "may-tinh-xach-tay/colorful",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/colorful",
       "type": "segment"
+    },
+    {
+      "name": "Thunderobot",
+      "slug": "may-tinh-xach-tay/thunderobot",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/thunderobot",
+      "type": "brand"
     },
     {
       "name": "Gigabyte",
@@ -143,12 +143,6 @@
       "type": "segment"
     },
     {
-      "name": "MacBook Pro",
-      "slug": "may-tinh-xach-tay/macbook-pro",
-      "url": "https://fptshop.com.vn/may-tinh-xach-tay/macbook-pro",
-      "type": "segment"
-    },
-    {
       "name": "Dell XPS",
       "slug": "may-tinh-xach-tay/dell-xps",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/dell-xps",
@@ -197,6 +191,12 @@
       "type": "segment"
     },
     {
+      "name": "MacBook Pro",
+      "slug": "may-tinh-xach-tay/macbook-pro",
+      "url": "https://fptshop.com.vn/may-tinh-xach-tay/macbook-pro",
+      "type": "segment"
+    },
+    {
       "name": "ASUS ExpertBook",
       "slug": "may-tinh-xach-tay/asus-expertbook",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus-expertbook",
@@ -240,7 +240,7 @@
       "sku": "00930661",
       "name": "Laptop Acer Aspire Lite 14 AL14-44P-R0SP R7 7730U/8GB/512GB/14.5\" FHD/Win11",
       "brand": "Acer",
-      "model": null,
+      "model": "Aspire Lite 14 AL14-44P-R0SP",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/acer-aspire-lite-14-al14-44p-r0sp-r7-7730u",
       "condition": "new",
       "availability": "in_stock",
@@ -254,9 +254,9 @@
       ],
       "pricing": {
         "currency": "VND",
-        "current": 19290000,
+        "current": 19490000,
         "original": 21990000,
-        "discountPercent": 12,
+        "discountPercent": 11,
         "installment": null,
         "priceNote": null
       },
@@ -265,7 +265,7 @@
         "ram": "8 GB",
         "storage": "512GB SSD",
         "gpu": null,
-        "screen": "14.5\" FHD",
+        "screen": "14.5 inch",
         "battery": null,
         "weight": null,
         "os": "Win11",
@@ -297,7 +297,7 @@
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.923Z"
       }
     },
     {
@@ -306,7 +306,7 @@
       "sku": "00922642",
       "name": "Laptop HP 250R G10 Core 5-120U/16GB/512GB/15.6\" FHD/Win11 (C3SH7AT)",
       "brand": "HP",
-      "model": null,
+      "model": "250R G10",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-250r-g10-core-5-120u-c3sh7at",
       "condition": "new",
       "availability": "in_stock",
@@ -331,7 +331,7 @@
         "ram": "16 GB",
         "storage": "512GB SSD",
         "gpu": null,
-        "screen": "15.6\" FHD",
+        "screen": "15.6 inch",
         "battery": null,
         "weight": null,
         "os": "Win11 (C3SH7AT)",
@@ -363,7 +363,7 @@
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.923Z"
       }
     },
     {
@@ -372,7 +372,7 @@
       "sku": "00924298",
       "name": "Laptop Asus Vivobook X1404VA-EB355W Core 7 150U/16GB/512GB/14\" FHD/Win11",
       "brand": "Asus",
-      "model": null,
+      "model": "Vivobook X1404VA-EB355W",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus-vivobook-x1404va-eb355w-core-7-150u",
       "condition": "new",
       "availability": "in_stock",
@@ -397,7 +397,7 @@
         "ram": "16GB",
         "storage": "512GB SSD",
         "gpu": null,
-        "screen": "14\" FHD",
+        "screen": "14 inch",
         "battery": null,
         "weight": null,
         "os": "Win11",
@@ -416,7 +416,7 @@
       "promotions": [],
       "rating": {
         "average": 4.9,
-        "count": 141
+        "count": 143
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/asus_vivobook_14_x1404_1_172d6c07b6.png",
@@ -429,16 +429,16 @@
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.923Z"
       }
     },
     {
-      "id": "28a617079f02bd8b",
+      "id": "cd006fcd0979b950",
       "source": "fptshop",
-      "sku": null,
-      "name": "Laptop Dell 14 DC14250 Core 5 120U (DC4C5386W)",
+      "sku": "00924497",
+      "name": "Laptop Dell 14 DC14250 Core 5 120U/16GB/512GB/14\"FHD+/Win11/Office Home 2024/Microsoft 365",
       "brand": "Dell",
-      "model": null,
+      "model": "14 DC14250",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/dell-14-dc14250-core-5-120u-dc4c5386w",
       "condition": "new",
       "availability": "in_stock",
@@ -459,43 +459,51 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": "Core 5 120U",
-        "ram": null,
-        "storage": null,
+        "cpu": "Core 5",
+        "ram": "16 GB",
+        "storage": "512GB SSD",
         "gpu": null,
-        "screen": null,
+        "screen": "14 inch",
         "battery": null,
         "weight": null,
-        "os": null,
+        "os": "Win11",
         "ports": null,
-        "rawSpecs": {}
+        "rawSpecs": {
+          "CPU": "Core 5",
+          "RAM": "16 GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "14\"FHD+",
+          "Hệ điều hành": "Win11",
+          "Kích thước màn hình": "14 inch"
+        }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 68
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/dell_14_dc14250_bac_01_187ecc6453.png",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/dell_14_dc14250_bac_01_187ecc6453.png"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/dell_14_dc14250_bac_01_187ecc6453.png",
+          "https://cdn2.fptshop.com.vn/unsafe/dell_14_dc14250_bac_01_187ecc6453.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.923Z"
       }
     },
     {
-      "id": "1f1dd132e6326e76",
+      "id": "aadcd0b8d052b47d",
       "source": "fptshop",
-      "sku": null,
+      "sku": "00926643",
       "name": "MacBook Neo 13 8GB/256GB/20W",
       "brand": "Apple",
-      "model": null,
+      "model": "MacBook Neo 13 8GB",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/macbook-neo-13-inch-8gb-256gb",
       "condition": "new",
       "availability": "in_stock",
@@ -516,45 +524,49 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": null,
-        "ram": "256GB",
+        "cpu": "A18 Pro",
+        "ram": "8 GB",
         "storage": "256GB",
         "gpu": null,
-        "screen": null,
+        "screen": "13 inch",
         "battery": null,
         "weight": null,
         "os": null,
         "ports": null,
         "rawSpecs": {
-          "RAM": "256GB"
+          "RAM": "8 GB",
+          "CPU": "A18 Pro",
+          "Kích thước màn hình": "13 inch",
+          "Màn hình": "Liquid Retina 13 inch, tấm nền IPS, 2408 x 1506, 219 ppi, 500 nit, 1 tỷ màu, dải màu sRGB"
         }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 294
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/Mac_Book_13_in_A18_Pro_Citrus_1_f70ec68b06.png",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/Mac_Book_13_in_A18_Pro_Citrus_1_f70ec68b06.png"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/Mac_Book_13_in_A18_Pro_Citrus_1_f70ec68b06.png",
+          "https://cdn2.fptshop.com.vn/unsafe/Mac_Book_13_in_A18_Pro_Citrus_1_f70ec68b06.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.924Z"
       }
     },
     {
-      "id": "90dc4e8b5da26c0d",
+      "id": "562d8e598f32cd20",
       "source": "fptshop",
-      "sku": null,
-      "name": "Laptop Lenovo IdeaPad Slim 3 16IWC11 Core 5 320 (83RS002KVN)",
+      "sku": "00930377",
+      "name": "Laptop Lenovo IdeaPad Slim 3 16IWC11 Core 5 320/AI/8GB/512GB/16\" WUXGA/Win11HSL (83RS002KVN)",
       "brand": "Lenovo",
-      "model": null,
+      "model": "IdeaPad Slim 3 16IWC11",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-ideapad-slim-3-16iwc11-83rs002kvn",
       "condition": "new",
       "availability": "in_stock",
@@ -575,43 +587,52 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": "Core 5 320",
-        "ram": null,
-        "storage": null,
+        "cpu": "Core 5",
+        "ram": "8 GB",
+        "storage": "512GB SSD",
         "gpu": null,
-        "screen": null,
+        "screen": "16 inch",
         "battery": null,
         "weight": null,
-        "os": null,
+        "os": "Win11HSL (83RS002KVN)",
         "ports": null,
-        "rawSpecs": {}
+        "rawSpecs": {
+          "CPU": "Core 5",
+          "RAM": "8 GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "16\" WUXGA",
+          "Hệ điều hành": "Win11HSL (83RS002KVN)",
+          "Kích thước màn hình": "16 inch",
+          "Tấm nền": "IPS"
+        }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 154
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930377_lenovo_ideapad_slim_3_16iwc11_01_dae1811782.png",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930377_lenovo_ideapad_slim_3_16iwc11_01_dae1811782.png"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930377_lenovo_ideapad_slim_3_16iwc11_01_dae1811782.png",
+          "https://cdn2.fptshop.com.vn/unsafe/00930377_lenovo_ideapad_slim_3_16iwc11_01_dae1811782.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.924Z"
       }
     },
     {
-      "id": "1f335510f698863f",
+      "id": "b43b62936ace6c8a",
       "source": "fptshop",
-      "sku": null,
-      "name": "Laptop Acer Aspire Lite 15 AL15-36P-30TN C3 N350",
+      "sku": "00930513",
+      "name": "Laptop Acer Aspire Lite 15 AL15-36P-30TN C3 N350/8GB/512GB/15.6\" FHD/Win 11",
       "brand": "Acer",
-      "model": null,
+      "model": "Aspire Lite 15 AL15-36P-30TN C3",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/acer-aspire-lite-15-al15-36p-30tn-c3-n350",
       "condition": "new",
       "availability": "in_stock",
@@ -632,43 +653,52 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": null,
-        "ram": null,
-        "storage": null,
+        "cpu": "N350",
+        "ram": "8 GB",
+        "storage": "512GB SSD",
         "gpu": null,
-        "screen": null,
+        "screen": "15.6 inch",
         "battery": null,
         "weight": null,
-        "os": null,
+        "os": "Win 11",
         "ports": null,
-        "rawSpecs": {}
+        "rawSpecs": {
+          "CPU": "N350",
+          "RAM": "8 GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "15.6\" FHD",
+          "Hệ điều hành": "Win 11",
+          "Kích thước màn hình": "15.6 inch",
+          "Tấm nền": "IPS"
+        }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 17
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930513_acer_aspire_lite_15_al15_36p_30tn_01_31569a6c93.png",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930513_acer_aspire_lite_15_al15_36p_30tn_01_31569a6c93.png"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930513_acer_aspire_lite_15_al15_36p_30tn_01_31569a6c93.png",
+          "https://cdn2.fptshop.com.vn/unsafe/00930513_acer_aspire_lite_15_al15_36p_30tn_01_31569a6c93.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.924Z"
       }
     },
     {
-      "id": "5634a28bf0fbd9ac",
+      "id": "1d5598c93b28268c",
       "source": "fptshop",
-      "sku": null,
-      "name": "Laptop Colorful Rimbook L1 i5-12450H (CE50016512C-G-E1AC)",
-      "brand": null,
-      "model": null,
+      "sku": "00918650",
+      "name": "Laptop Colorful Rimbook L1 i5-12450H/16GB/512GB/15.6\" FHD/Win11_CE50016512C-G-E1AD",
+      "brand": "Colorful",
+      "model": "Rimbook L1",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/colorful-rimbook-l1-i5-12450h-ce50016512c-g-e1ac",
       "condition": "new",
       "availability": "in_stock",
@@ -689,43 +719,52 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": "i5-12450H",
-        "ram": null,
-        "storage": null,
+        "cpu": "Core i5",
+        "ram": "16GB",
+        "storage": "512GB SSD",
         "gpu": null,
-        "screen": null,
+        "screen": "15.6 inch",
         "battery": null,
         "weight": null,
-        "os": null,
+        "os": "Win11_CE50016512C-G-E1AD",
         "ports": null,
-        "rawSpecs": {}
+        "rawSpecs": {
+          "RAM": "16GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "15.6\" FHD",
+          "Hệ điều hành": "Win11_CE50016512C-G-E1AD",
+          "CPU": "Core i5",
+          "Kích thước màn hình": "15.6 inch",
+          "Tấm nền": "IPS"
+        }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 153
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/colorful_rimbook_l1_xam_1_96ce53228b.png",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/colorful_rimbook_l1_xam_1_96ce53228b.png"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/colorful_rimbook_l1_xam_1_96ce53228b.png",
+          "https://cdn2.fptshop.com.vn/unsafe/colorful_rimbook_l1_xam_1_96ce53228b.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.924Z"
       }
     },
     {
-      "id": "e23bf7863b1b3369",
+      "id": "91f37d146dfd3ca5",
       "source": "fptshop",
-      "sku": null,
-      "name": "MacBook Air 13 M5 10CPU/8GPU/16GB/512GB",
+      "sku": "00926591",
+      "name": "MacBook Air 13 M5 10CPU/8GPU/16GB/512GB/30W",
       "brand": "Apple",
-      "model": null,
+      "model": "MacBook Air 13 M5 10CPU",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/macbook-air-13-m5-2026-10cpu-8gpu-16gb-512gb",
       "condition": "new",
       "availability": "in_stock",
@@ -746,46 +785,52 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": null,
+        "cpu": "M5",
         "ram": "16GB",
         "storage": "512GB SSD",
         "gpu": null,
-        "screen": null,
-        "battery": null,
+        "screen": "13.6 inch",
+        "battery": "53,8 Wh, xem video đến 18 giờ, duyệt web không dây đến 15 giờ",
         "weight": null,
-        "os": null,
+        "os": "macOS Tahoe, có Apple Intelligence",
         "ports": null,
         "rawSpecs": {
           "RAM": "16GB",
-          "Ổ cứng": "512GB SSD"
+          "Ổ cứng": "512GB SSD",
+          "CPU": "M5",
+          "Kích thước màn hình": "13.6 inch",
+          "Màn hình": "Liquid Retina 13,6 inch, IPS đèn nền LED, 2560 x 1664 pixel, 224 ppi, 500 nit, 1 tỷ màu, P3, True Tone",
+          "Pin": "53,8 Wh, xem video đến 18 giờ, duyệt web không dây đến 15 giờ",
+          "Hệ điều hành": "macOS Tahoe, có Apple Intelligence"
         }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 244
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_air_13_m5_starlight_1_bfd6f1c5ed.png",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_air_13_m5_starlight_1_bfd6f1c5ed.png"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_air_13_m5_starlight_1_bfd6f1c5ed.png",
+          "https://cdn2.fptshop.com.vn/unsafe/macbook_air_13_m5_starlight_1_bfd6f1c5ed.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.924Z"
       }
     },
     {
-      "id": "98baf04ff7b010fe",
+      "id": "697ed56572998dc6",
       "source": "fptshop",
-      "sku": null,
-      "name": "Laptop Lenovo IdeaPad Slim 3 14IWC11 Core 5 320 (83RQ002PVN)",
+      "sku": "00929657",
+      "name": "Laptop Lenovo IdeaPad Slim 3 14IWC11 Core 5 320/AI/8GB/512GB/14\"WUXGA/Win11SL (83RQ002PVN)",
       "brand": "Lenovo",
-      "model": null,
+      "model": "IdeaPad Slim 3 14IWC11",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-ideapad-slim-3-14iwc11-83rq002pvn",
       "condition": "new",
       "availability": "in_stock",
@@ -806,43 +851,52 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": "Core 5 320",
-        "ram": null,
-        "storage": null,
+        "cpu": "Core 5",
+        "ram": "8 GB",
+        "storage": "512GB SSD",
         "gpu": null,
-        "screen": null,
+        "screen": "14 inch",
         "battery": null,
         "weight": null,
-        "os": null,
+        "os": "Win11SL (83RQ002PVN)",
         "ports": null,
-        "rawSpecs": {}
+        "rawSpecs": {
+          "CPU": "Core 5",
+          "RAM": "8 GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "14\"WUXGA",
+          "Hệ điều hành": "Win11SL (83RQ002PVN)",
+          "Kích thước màn hình": "14 inch",
+          "Tấm nền": "IPS"
+        }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 178
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00929657_lenovo_ideapad_slim_3_14iwc11_01_a7054ebbc2.png",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00929657_lenovo_ideapad_slim_3_14iwc11_01_a7054ebbc2.png"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00929657_lenovo_ideapad_slim_3_14iwc11_01_a7054ebbc2.png",
+          "https://cdn2.fptshop.com.vn/unsafe/00929657_lenovo_ideapad_slim_3_14iwc11_01_a7054ebbc2.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.924Z"
       }
     },
     {
-      "id": "07490167de78ab2e",
+      "id": "56c142f5937924d2",
       "source": "fptshop",
-      "sku": null,
-      "name": "Laptop Asus Vivobook 16 X1607CA-MB387W Ultra 5 225H",
-      "brand": "ASUS",
-      "model": null,
+      "sku": "00930030",
+      "name": "Laptop Asus Vivobook 16 X1607CA-MB387W Ultra 5 225H/AI/16GB/512GB/16\" WUXGA/Win11",
+      "brand": "Asus",
+      "model": "Vivobook 16 X1607CA-MB387W Ultra 5 225H",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus-vivobook-16-x1607ca-mb387w-ultra-5-225h",
       "condition": "new",
       "availability": "in_stock",
@@ -863,43 +917,52 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": null,
-        "ram": null,
-        "storage": null,
+        "cpu": "Core Ultra 5",
+        "ram": "16 GB",
+        "storage": "512GB SSD",
         "gpu": null,
-        "screen": null,
+        "screen": "16 inch",
         "battery": null,
         "weight": null,
-        "os": null,
+        "os": "Win11",
         "ports": null,
-        "rawSpecs": {}
+        "rawSpecs": {
+          "RAM": "16 GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "16\" WUXGA",
+          "Hệ điều hành": "Win11",
+          "CPU": "Core Ultra 5",
+          "Kích thước màn hình": "16 inch",
+          "Tấm nền": "IPS"
+        }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 138
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930030_asus_vivobook_16_x1607ca_bac_logo_ai_17df31a9b3.png",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930030_asus_vivobook_16_x1607ca_bac_logo_ai_17df31a9b3.png"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930030_asus_vivobook_16_x1607ca_bac_logo_ai_17df31a9b3.png",
+          "https://cdn2.fptshop.com.vn/unsafe/00930030_asus_vivobook_16_x1607ca_bac_logo_ai_17df31a9b3.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.924Z"
       }
     },
     {
-      "id": "41dd2a495dd74724",
+      "id": "6b4d5a7ffd70074e",
       "source": "fptshop",
-      "sku": null,
-      "name": "Laptop HP 15-fd1289TU Ultra 7-155H (C2CV8PA)",
+      "sku": "00922844",
+      "name": "Laptop HP 15-fd1289TU Ultra 7-155H/AI/16GB/512GB/15.6\"FHD/Win11_C2CV8PA",
       "brand": "HP",
-      "model": null,
+      "model": "15-fd1289TU Ultra 7-155H",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-15-fd1289tu-ultra-7-155h-c2cv8pa",
       "condition": "new",
       "availability": "in_stock",
@@ -920,43 +983,52 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": null,
-        "ram": null,
-        "storage": null,
+        "cpu": "Core Ultra 7",
+        "ram": "16GB",
+        "storage": "512GB SSD",
         "gpu": null,
-        "screen": null,
+        "screen": "15.6 inch",
         "battery": null,
         "weight": null,
-        "os": null,
+        "os": "Win11_C2CV8PA",
         "ports": null,
-        "rawSpecs": {}
+        "rawSpecs": {
+          "RAM": "16GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "15.6\"FHD",
+          "Hệ điều hành": "Win11_C2CV8PA",
+          "CPU": "Core Ultra 7",
+          "Kích thước màn hình": "15.6 inch",
+          "Tấm nền": "IPS"
+        }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 266
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00922844_hp_15_fd1289tu_c2cv8pa_bac_01_216c5b8b09.png",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00922844_hp_15_fd1289tu_c2cv8pa_bac_01_216c5b8b09.png"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00922844_hp_15_fd1289tu_c2cv8pa_bac_01_216c5b8b09.png",
+          "https://cdn2.fptshop.com.vn/unsafe/00922844_hp_15_fd1289tu_c2cv8pa_bac_01_216c5b8b09.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.924Z"
       }
     },
     {
-      "id": "6992c93e76516db7",
+      "id": "00cf792e06cbacd6",
       "source": "fptshop",
-      "sku": null,
+      "sku": "00927288",
       "name": "MacBook Pro 14 M5 10CPU/10GPU/16GB/1TB/96W",
       "brand": "Apple",
-      "model": null,
+      "model": "MacBook Pro 14 M5 10CPU",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/macbook-pro-14-m5-2026-10cpu-10gpu-16gb-1tb-96w",
       "condition": "new",
       "availability": "in_stock",
@@ -977,46 +1049,49 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": null,
-        "ram": "16GB",
+        "cpu": "M5",
+        "ram": "16 GB",
         "storage": "1TB SSD",
         "gpu": null,
-        "screen": null,
+        "screen": "14 inch",
         "battery": null,
         "weight": null,
         "os": null,
         "ports": null,
         "rawSpecs": {
-          "RAM": "16GB",
-          "Ổ cứng": "1TB SSD"
+          "RAM": "16 GB",
+          "Ổ cứng": "1TB SSD",
+          "CPU": "M5",
+          "Kích thước màn hình": "14 inch"
         }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 38
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_pro_14_m5_2025_den_1_c0818fdf94.jpg",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_pro_14_m5_2025_den_1_c0818fdf94.jpg"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_pro_14_m5_2025_den_1_c0818fdf94.jpg",
+          "https://cdn2.fptshop.com.vn/unsafe/macbook_pro_14_m5_2025_den_1_c0818fdf94.jpg"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.924Z"
       }
     },
     {
-      "id": "11ef0732e787d7bd",
+      "id": "8823c92e100be255",
       "source": "fptshop",
-      "sku": null,
-      "name": "Laptop HP OmniBook 7 14-fr0033TU Ultra 5-225U (C1MN2PA)",
+      "sku": "00921488",
+      "name": "Laptop HP OmniBook 7 14-fr0033TU Ultra 5-225U/AI/16GB/512GB/14\"/Win11/HS24/OS365 (C1MN2PA)",
       "brand": "HP",
-      "model": null,
+      "model": "OmniBook 7 14-fr0033TU Ultra 5-225U",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-omnibook-7-14-fr0033tu-ultra-5-225u-c1mn2pa",
       "condition": "new",
       "availability": "in_stock",
@@ -1037,43 +1112,51 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": null,
-        "ram": null,
-        "storage": null,
+        "cpu": "Core Ultra 5",
+        "ram": "16 GB",
+        "storage": "512GB SSD",
         "gpu": null,
-        "screen": null,
+        "screen": "14 inch",
         "battery": null,
         "weight": null,
-        "os": null,
+        "os": "Win11",
         "ports": null,
-        "rawSpecs": {}
+        "rawSpecs": {
+          "RAM": "16 GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "14\"",
+          "Hệ điều hành": "Win11",
+          "CPU": "Core Ultra 5",
+          "Kích thước màn hình": "14 inch"
+        }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 298
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00921488_hp_omnibook_7_14_fr0033tu_bac_01_fb14b7c88d.png",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00921488_hp_omnibook_7_14_fr0033tu_bac_01_fb14b7c88d.png"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00921488_hp_omnibook_7_14_fr0033tu_bac_01_fb14b7c88d.png",
+          "https://cdn2.fptshop.com.vn/unsafe/00921488_hp_omnibook_7_14_fr0033tu_bac_01_fb14b7c88d.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.924Z"
       }
     },
     {
-      "id": "1ff17e84130248f7",
+      "id": "d3dc6fb712d85a9f",
       "source": "fptshop",
-      "sku": null,
-      "name": "Laptop HP 14-em0024AU Ryzen 5-7520U (D0BG8PA)",
+      "sku": "00926893",
+      "name": "Laptop HP 14-em0024AU Ryzen 5-7520U/16GB/512GB/ 14\"FHD/Win11 (D0BG8PA)",
       "brand": "HP",
-      "model": null,
+      "model": "14-em0024AU Ryzen 5-7520U",
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-14-em0024au-ryzen-5-7520u-d0bg8pa",
       "condition": "new",
       "availability": "in_stock",
@@ -1094,34 +1177,42 @@
         "priceNote": null
       },
       "specs": {
-        "cpu": null,
-        "ram": null,
-        "storage": null,
+        "cpu": "Ryzen 5",
+        "ram": "16GB",
+        "storage": "512GB SSD",
         "gpu": null,
-        "screen": null,
+        "screen": "14 inch",
         "battery": null,
         "weight": null,
-        "os": null,
+        "os": "Win11 (D0BG8PA)",
         "ports": null,
-        "rawSpecs": {}
+        "rawSpecs": {
+          "RAM": "16GB",
+          "Ổ cứng": "512GB SSD",
+          "Màn hình": "14\"FHD",
+          "Hệ điều hành": "Win11 (D0BG8PA)",
+          "CPU": "Ryzen 5",
+          "Kích thước màn hình": "14 inch"
+        }
       },
       "options": [],
       "promotions": [],
       "rating": {
-        "average": null,
-        "count": null
+        "average": 4.9,
+        "count": 161
       },
       "media": {
         "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/hp_14_em_bac_01_f60ff4a623.png",
         "images": [
-          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/hp_14_em_bac_01_f60ff4a623.png"
+          "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/hp_14_em_bac_01_f60ff4a623.png",
+          "https://cdn2.fptshop.com.vn/unsafe/hp_14_em_bac_01_f60ff4a623.png"
         ]
       },
       "metadata": {
         "warranty": null,
         "storeCount": null,
         "defectNote": null,
-        "crawledAt": "2026-11-11T04:39:50.754Z"
+        "crawledAt": "2026-11-12T04:26:55.924Z"
       }
     }
   ]
