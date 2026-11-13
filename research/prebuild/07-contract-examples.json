@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R07",
+  "inputs": [
+    {
+      "ref": "services/demo-ai/server.mjs",
+      "sha256": "505750b50566ccf7cd4a549a55b949dbd929efc1c300ef01cf02e69af0cd5c01"
+    },
+    {
+      "ref": "apps/adviser/src/ai.ts",
+      "sha256": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf"
+    },
+    {
+      "ref": "apps/adviser/src/picker.ts",
+      "sha256": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943"
+    },
+    {
+      "ref": "docs/planning/APP_FLOW_DEEP_RESEARCH.md",
+      "sha256": "83977fa9832f9a0ba97e1f33a5a6b43597c79186b2b70445054565500942983a"
+    }
+  ],
+  "data": {
+    "valid": [
+      {
+        "context": {
+          "decisionId": "D1",
+          "runId": "R1",
+          "requestId": "Q1",
+          "profileRevision": 1,
+          "catalogVersion": "c1",
+          "rulesVersion": "r1",
+          "offerContextHash": "h1",
+          "focusVariantIds": [
+            "v1"
+          ],
+          "origin": "detail"
+        },
+        "state": "needs_clarification",
+        "candidates": [],
+        "excluded": [],
+        "unknowns": []
+      },
+      {
+        "context": {
+          "decisionId": "D1",
+          "runId": "R1",
+          "requestId": "Q1",
+          "profileRevision": 1,
+          "catalogVersion": "c1",
+          "rulesVersion": "r1",
+          "offerContextHash": "h1",
+          "focusVariantIds": [
+            "v1"
+          ],
+          "origin": "detail"
+        },
+        "state": "evidence_unknown",
+        "candidates": [],
+        "excluded": [],
+        "unknowns": []
+      },
+      {
+        "context": {
+          "decisionId": "D1",
+          "runId": "R1",
+          "requestId": "Q1",
+          "profileRevision": 1,
+          "catalogVersion": "c1",
+          "rulesVersion": "r1",
+          "offerContextHash": "h1",
+          "focusVariantIds": [
+            "v1"
+          ],
+          "origin": "detail"
+        },
+        "state": "eligible",
+        "candidates": [
+          {
+            "variantId": "v1",
+            "fit": "pass",
+            "offerValidity": "current",
+            "priceCompleteness": "complete",
+            "affordability": "within_budget",
+            "completeTotalVnd": 20000000,
+            "reasonCodes": [],
+            "evidenceRefs": []
+          }
+        ],
+        "excluded": [],
+        "unknowns": []
+      },
+      {
+        "context": {
+          "decisionId": "D1",
+          "runId": "R1",
+          "requestId": "Q1",
+          "profileRevision": 1,
+          "catalogVersion": "c1",
+          "rulesVersion": "r1",
+          "offerContextHash": "h1",
+          "focusVariantIds": [
+            "v1"
+          ],
+          "origin": "detail"
+        },
+        "state": "no_fit",
+        "candidates": [],
+        "excluded": [],
+        "unknowns": []
+      },
+      {
+        "context": {
+          "decisionId": "D1",
+          "runId": "R1",
+          "requestId": "Q1",
+          "profileRevision": 1,
+          "catalogVersion": "c1",
+          "rulesVersion": "r1",
+          "offerContextHash": "h1",
+          "focusVariantIds": [
+            "v1"
+          ],
+          "origin": "detail"
+        },
+        "state": "no_verified_affordable_offer",
+        "candidates": [],
+        "excluded": [],
+        "unknowns": []
+      },
+      {
+        "context": {
+          "decisionId": "D1",
+          "runId": "R1",
+          "requestId": "Q1",
+          "profileRevision": 1,
+          "catalogVersion": "c1",
+          "rulesVersion": "r1",
+          "offerContextHash": "h1",
+          "focusVariantIds": [
+            "v1"
+          ],
+          "origin": "detail"
+        },
+        "state": "filter_empty",
+        "candidates": [],
+        "excluded": [],
+        "unknowns": []
+      },
+      {
+        "context": {
+          "decisionId": "D1",
+          "runId": "R1",
+          "requestId": "Q1",
+          "profileRevision": 1,
+          "catalogVersion": "c1",
+          "rulesVersion": "r1",
+          "offerContextHash": "h1",
+          "focusVariantIds": [
+            "v1"
+          ],
+          "origin": "detail"
+        },
+        "state": "source_unavailable",
+        "candidates": [],
+        "excluded": [],
+        "unknowns": []
+      },
+      {
+        "context": {
+          "decisionId": "D1",
+          "runId": "R1",
+          "requestId": "Q1",
+          "profileRevision": 1,
+          "catalogVersion": "c1",
+          "rulesVersion": "r1",
+          "offerContextHash": "h1",
+          "focusVariantIds": [
+            "v1"
+          ],
+          "origin": "detail"
+        },
+        "state": "stale_revision",
+        "candidates": [],
+        "excluded": [],
+        "unknowns": []
+      }
+    ],
+    "invalid": [
+      {
+        "id": "missing_context",
+        "value": {
+          "state": "eligible"
+        },
+        "expectedError": "schema_fields"
+      },
+      {
+        "id": "wrong_variant",
+        "offer": {
+          "variantId": "v2",
+          "matchStatus": "accepted"
+        },
+        "requestedVariantId": "v1",
+        "expectedError": "variant_mismatch"
+      }
+    ]
+  },
+  "evidenceRefs": [],
+  "gaps": [
+    {
+      "id": "GAP-R07-001",
+      "reason": "Contract is bounded research scope; production identity and source permissions unreviewed.",
+      "nextAction": "Exercise R08 client/service/history boundaries and review scoped production requirements."
+    }
+  ]
+}

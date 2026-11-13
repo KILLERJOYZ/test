@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R12",
+  "inputs": [
+    {
+      "ref": "brd.md",
+      "sha256": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712"
+    },
+    {
+      "ref": "research/prebuild/03-source-register.json",
+      "sha256": "65a612548b4401980f5c408bc75773416a6cfb674639628b50c12f806901cdc6"
+    },
+    {
+      "ref": "research/prebuild/04-catalog-audit.json",
+      "sha256": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc"
+    },
+    {
+      "ref": "research/prebuild/07-api-contract.json",
+      "sha256": "abe694af8f8fea8eb8621adbf12ce1a0ecfaa7ef1409aae9bf2a6cf8a0dde3f7"
+    }
+  ],
+  "data": {
+    "scenarios": [
+      {
+        "id": "OPS-01",
+        "trigger": "Wrong variant/price correction",
+        "authority": "Research harness only; production owner pending",
+        "expectedTransitions": [
+          "Correct or suspend current claim; preserve history"
+        ],
+        "userState": "Explicit current-state failure or corrected result; historical prices stay dated",
+        "recoveryCheck": "Actual sandbox assertions in operations-sandbox.mjs; production restore remains unimplemented",
+        "mode": "sandbox",
+        "result": "pass",
+        "evidenceRefs": [
+          "E-R12-SANDBOX"
+        ],
+        "productionControlsValidated": false,
+        "approved": false,
+        "retention": null,
+        "restoreTarget": null,
+        "providerCap": null,
+        "destroysHistory": false
+      },
+      {
+        "id": "OPS-02",
+        "trigger": "Source outage/staleness",
+        "authority": "Research harness only; production owner pending",
+        "expectedTransitions": [
+          "Correct or suspend current claim; preserve history"
+        ],
+        "userState": "Explicit current-state failure or corrected result; historical prices stay dated",
+        "recoveryCheck": "Actual sandbox assertions in operations-sandbox.mjs; production restore remains unimplemented",
+        "mode": "sandbox",
+        "result": "pass",
+        "evidenceRefs": [
+          "E-R12-SANDBOX"
+        ],
+        "productionControlsValidated": false,
+        "approved": false,
+        "retention": null,
+        "restoreTarget": null,
+        "providerCap": null,
+        "destroysHistory": false
+      },
+      {
+        "id": "OPS-03",
+        "trigger": "Evidence withdrawal",
+        "authority": "Research harness only; production owner pending",
+        "expectedTransitions": [
+          "Correct or suspend current claim; preserve history"
+        ],
+        "userState": "Explicit current-state failure or corrected result; historical prices stay dated",
+        "recoveryCheck": "Actual sandbox assertions in operations-sandbox.mjs; production restore remains unimplemented",
+        "mode": "sandbox",
+        "result": "pass",
+        "evidenceRefs": [
+          "E-R12-SANDBOX"
+        ],
+        "productionControlsValidated": false,
+        "approved": false,
+        "retention": null,
+        "restoreTarget": null,
+        "providerCap": null,
+        "destroysHistory": false
+      },
+      {
+        "id": "OPS-04",
+        "trigger": "Unauthorized/revoked publication",
+        "authority": "Research harness only; production owner pending",
+        "expectedTransitions": [
+          "Correct or suspend current claim; preserve history"
+        ],
+        "userState": "Explicit current-state failure or corrected result; historical prices stay dated",
+        "recoveryCheck": "Actual sandbox assertions in operations-sandbox.mjs; production restore remains unimplemented",
+        "mode": "sandbox",
+        "result": "pass",
+        "evidenceRefs": [
+          "E-R12-SANDBOX"
+        ],
+        "productionControlsValidated": false,
+        "approved": false,
+        "retention": null,
+        "restoreTarget": null,
+        "providerCap": null,
+        "destroysHistory": false
+      },
+      {
+        "id": "OPS-05",
+        "trigger": "Provider failure/cap",
+        "authority": "Research harness only; production owner pending",
+        "expectedTransitions": [
+          "Correct or suspend current claim; preserve history"
+        ],
+        "userState": "Explicit current-state failure or corrected result; historical prices stay dated",
+        "recoveryCheck": "Actual sandbox assertions in operations-sandbox.mjs; production restore remains unimplemented",
+        "mode": "sandbox",
+        "result": "pass",
+        "evidenceRefs": [
+          "E-R12-SANDBOX"
+        ],
+        "productionControlsValidated": false,
+        "approved": false,
+        "retention": null,
+        "restoreTarget": null,
+        "providerCap": null,
+        "destroysHistory": false
+      },
+      {
+        "id": "OPS-06",
+        "trigger": "Bad rule/catalog rollback",
+        "authority": "Research harness only; production owner pending",
+        "expectedTransitions": [
+          "Correct or suspend current claim; preserve history"
+        ],
+        "userState": "Explicit current-state failure or corrected result; historical prices stay dated",
+        "recoveryCheck": "Actual sandbox assertions in operations-sandbox.mjs; production restore remains unimplemented",
+        "mode": "sandbox",
+        "result": "pass",
+        "evidenceRefs": [
+          "E-R12-SANDBOX"
+        ],
+        "productionControlsValidated": false,
+        "approved": false,
+        "retention": null,
+        "restoreTarget": null,
+        "providerCap": null,
+        "destroysHistory": false
+      }
+    ],
+    "dataBoundaries": {
+      "public": "Reviewed/permitted facts only after publication authorization.",
+      "private": "Local needs/history; redacted research outputs.",
+      "restricted": "Credentials, participant contacts and private agreements outside repository.",
+      "staff": "Production access/role/audit policy unimplemented."
+    },
+    "operatingOwners": null,
+    "retentionPolicy": null,
+    "measuredReviewEffort": null
+  },
+  "evidenceRefs": [
+    "E-R12-SANDBOX"
+  ],
+  "gaps": [
+    {
+      "id": "GAP-R12-001",
+      "reason": "Production source retention, owner/capacity, RBAC and restore targets unassigned.",
+      "nextAction": "Resolve scoped external inputs and accountable review before production approval."
+    }
+  ]
+}

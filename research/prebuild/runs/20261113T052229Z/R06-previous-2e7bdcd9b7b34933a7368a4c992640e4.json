@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R06",
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "b70ae500532172f47e9b0dba89dcc58ae701fe3cbfc84a72e28601c27483a02a",
+  "inputHashes": {
+    "apps/adviser/src/AndroidApp.tsx": "21b8ac0d5b0dddd7de2f657416e0497be983047a4bb554acd2f6505b56a1cb73",
+    "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+    "docs/planning/APP_FLOW.md": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640",
+    "research/prebuild/01-buyer-research.md": "1c1a16f54ddfb8b23656299e3f26424fe0a00b2163f386c5562c6a42db7e6d80",
+    "research/prebuild/02-journey-benchmark.json": "a3ecadaaacf2e2314f94d5751cb356af7f5cf7ef49915e4d0782eab8428eb7bc",
+    "docs/planning/APP_FLOW_DEEP_RESEARCH.md": "83977fa9832f9a0ba97e1f33a5a6b43597c79186b2b70445054565500942983a",
+    "research/prebuild/flow-review/current-flow-observations.json": "f6452b08e16cdfc62839d149f21d186cd12387ab94cb0428696f318db40d7e3b"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "outputHashes": {
+    "research/prebuild/06-flow-validation.json": "610c30d1bf1072040ecf4f749917af218ce629dd487253ce953dd06134283783",
+    "research/prebuild/06-flow-validation.md": "6396e0b74bbf54442397105bb535b02d69a8d5f42be33238418b8ae7151472d0",
+    "apps/adviser/src/decision-state.test.ts": "c58ee182528928d4bee031926746557f2733ad9b2deced6cd1db245e45a14858",
+    "apps/adviser/src/decision-state.ts": "d1ee7a85245717b3bfe577a4a217f0e639e7f64aa215c1a4e8f48be3085658d9"
+  },
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U06",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/284886d371634daeb221bf79be402173.json",
+      "reportHash": "27aab2fa8cbb5add33861f9076153edac669c63e02131a5d71412e9ad6c81e2a",
+      "definitionHash": "052235dbc542a923266c9db0a7d49096f2e6f41862a6d01e5a7793bef3c3978d",
+      "testedFileHashes": {
+        "apps/adviser/src/decision-state.test.ts": "c58ee182528928d4bee031926746557f2733ad9b2deced6cd1db245e45a14858",
+        "apps/adviser/src/decision-state.ts": "d1ee7a85245717b3bfe577a4a217f0e639e7f64aa215c1a4e8f48be3085658d9",
+        "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+        "apps/adviser/src/domain.test.ts": "8c2ee9589ec50a9d8a4dcb1a37978a8af1045764ebee86abac6b15e91d8b0bbb",
+        "apps/adviser/src/picker.test.ts": "84fd4a72fb718438504a0af695ef7454a8cbddf2cd0f0dd4c4dc2dbad36a2dd1",
+        "apps/adviser/src/ai.test.ts": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98",
+        "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+        "apps/adviser/src/ai.ts": "db39c6e7eb33ab1dc341b152984e524af18f596ac3b9288a3843a5b0c7304605",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "U06-01",
+        "U06-02",
+        "U06-03",
+        "U06-04",
+        "U06-05",
+        "U06-06",
+        "U06-07",
+        "U06-08",
+        "U06-09",
+        "U06-10",
+        "U06-11",
+        "U06-12",
+        "U06-13",
+        "U06-14",
+        "U06-15"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    },
+    {
+      "packId": "UBASE",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/284886d371634daeb221bf79be402173.json",
+      "reportHash": "27aab2fa8cbb5add33861f9076153edac669c63e02131a5d71412e9ad6c81e2a",
+      "definitionHash": "757c1c6368f6d034fadbc695f7766e34a8b078000a522f465be3f671dc4a4edb",
+      "testedFileHashes": {
+        "apps/adviser/src/decision-state.test.ts": "c58ee182528928d4bee031926746557f2733ad9b2deced6cd1db245e45a14858",
+        "apps/adviser/src/decision-state.ts": "d1ee7a85245717b3bfe577a4a217f0e639e7f64aa215c1a4e8f48be3085658d9",
+        "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+        "apps/adviser/src/domain.test.ts": "8c2ee9589ec50a9d8a4dcb1a37978a8af1045764ebee86abac6b15e91d8b0bbb",
+        "apps/adviser/src/picker.test.ts": "84fd4a72fb718438504a0af695ef7454a8cbddf2cd0f0dd4c4dc2dbad36a2dd1",
+        "apps/adviser/src/ai.test.ts": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98",
+        "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+        "apps/adviser/src/ai.ts": "db39c6e7eb33ab1dc341b152984e524af18f596ac3b9288a3843a5b0c7304605",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "UBASE-01",
+        "UBASE-02",
+        "UBASE-03",
+        "UBASE-04",
+        "UBASE-05",
+        "UBASE-06",
+        "UBASE-07",
+        "UBASE-08",
+        "UBASE-09",
+        "UBASE-10",
+        "UBASE-11",
+        "UBASE-12",
+        "UBASE-13",
+        "UBASE-14",
+        "UBASE-15",
+        "UBASE-16",
+        "UBASE-17",
+        "UBASE-18"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "checks": [
+    {
+      "id": "baseline_types",
+      "command": [
+        "npm",
+        "--prefix",
+        "apps/adviser",
+        "run",
+        "check"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:41:10.939316+00:00",
+      "finishedAt": "2026-11-13T05:41:14.563133+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "build",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R06-types.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R06"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:46:04.197382+00:00",
+      "finishedAt": "2026-11-13T05:46:05.375875+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R06-artifact-fddd5ba7e55a415f981c3063031de1d6.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R06"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:51:50.829196+00:00",
+      "finishedAt": "2026-11-13T05:51:51.978795+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R06-artifact-be87d77f82da44e9b6bd20f32039890a.log",
+      "reason": null
+    },
+    {
+      "id": "decision_state_tests",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "apps/adviser/src/decision-state.test.ts"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:25.715035+00:00",
+      "finishedAt": "2026-11-13T06:03:26.729588+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/284886d371634daeb221bf79be402173-decision_state_tests.log",
+      "reason": null
+    },
+    {
+      "id": "baseline_domain",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "apps/adviser/src/domain.test.ts",
+        "apps/adviser/src/picker.test.ts",
+        "apps/adviser/src/ai.test.ts"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:25.715035+00:00",
+      "finishedAt": "2026-11-13T06:03:26.729609+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/284886d371634daeb221bf79be402173-baseline_domain.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R06"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:25.715035+00:00",
+      "finishedAt": "2026-11-13T06:03:26.846699+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R06-artifact-d8220a40592c40e48c3c41db58d24423.log",
+      "reason": null
+    }
+  ],
+  "regressions": [
+    {
+      "findingId": "FLOW-04",
+      "caseId": "U06-12",
+      "beforeRef": "research/prebuild/runs/20261113T052229Z/R06-U06-12-before.log",
+      "afterRef": "research/prebuild/runs/20261113T052229Z/R06-U06-12-after.log",
+      "sourceRef": "apps/adviser/src/picker.ts"
+    },
+    {
+      "findingIds": [
+        "FLOW-01",
+        "FLOW-02",
+        "FLOW-03"
+      ],
+      "baselineRef": "research/prebuild/runs/20261113T052229Z/flow-baseline-before-fixes.json",
+      "testRef": "apps/adviser/src/decision-state.test.ts",
+      "sourceRefs": [
+        "apps/adviser/src/decision-state.ts",
+        "apps/adviser/src/AndroidApp.tsx"
+      ],
+      "limitations": "Controlled helper checks; complete app/native acceptance still pending."
+    }
+  ],
+  "commandDefinitionHashes": {
+    "baseline_domain": "eaf12c7a1eaaedae894c24aedfa0de11ce4136a9ddfecea2fffee3f053519701",
+    "decision_state_tests": "0097750c751ea0ad02cbaf83f20b33d42b27b060c13bf544e3cbe799e4239a45"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "checks": [
+    "final APK install and launch",
+    "select and deselect with independent release spring",
+    "cancel draft",
+    "native home rendering"
+  ],
+  "video": "native-motion.mp4"
+}

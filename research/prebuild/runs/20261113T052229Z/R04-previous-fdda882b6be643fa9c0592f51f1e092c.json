@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R04",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R04"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:35:07.527557+00:00",
+      "finishedAt": "2026-11-13T05:35:08.495113+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R04-artifact-26cf0ec1ecd04ddfa7dc55504ff10fbf.log",
+      "reason": null
+    },
+    {
+      "id": "audit_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_audit_catalog.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:40:09.566459+00:00",
+      "finishedAt": "2026-11-13T05:40:10.232765+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/c1adc0e133ab47b792535ee61edfbda8-audit_tests.log",
+      "reason": null
+    },
+    {
+      "id": "audit_run",
+      "command": [
+        "python",
+        "research/prebuild/tools/audit_catalog.py",
+        "--input",
+        "data/all_laptops_normalized.json",
+        "--out",
+        "research/prebuild/04-catalog-audit.json"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:40:10.232785+00:00",
+      "finishedAt": "2026-11-13T05:40:10.431697+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "research",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R04-audit_run-c6961c69d6d34f5d9aa9c4eda496ea16.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R04"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:40:09.566459+00:00",
+      "finishedAt": "2026-11-13T05:40:10.548186+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R04-artifact-9d965c7d94ff4cb5a3b10fd2a39cc563.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "26fa5477b313aa894768b4aca9af34b6a93c6f03fd7ae439920083c8897950e8",
+  "inputHashes": {
+    "data/all_laptops_normalized.json": "dea729f33a3e087a3992c2898842ffecceaba93fd39c878b0ebb2ede35486853",
+    "crawler/src/models/laptopSchema.js": "1cc221abb948899df2a84eb7d399330d78c1fbba7a8ca8a7f1b0bee2aa053709",
+    "crawler/src/utils/storage.js": "bfcad510e964a8ef5d98e95d20925a323f0b6f03aff79fb36fc4cce87b2113e9"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U04",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/c1adc0e133ab47b792535ee61edfbda8.json",
+      "reportHash": "429b6eaad71d6561fa31041f5341f293d160b3651bcb5ebc99e4e43630de34d7",
+      "definitionHash": "d61eac03d3881e247289157b6a5d8795ee81681143c22c9c3d3b55cdb8f71004",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_audit_catalog.py": "cc57ae4d0fdceb162d0c4a85247d3d62f0715a7e5d25423e3926f64090f1b14b",
+        "research/prebuild/tools/audit_catalog.py": "d30bef2b24e34742d44503b3cf9f6edbf504691fec03d465f588febc56d06f04",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "21ebb9cad1cc854fc9d41b5b7fc72a853a948398524148d99cb8c7fe45ff2d9e"
+      },
+      "passedCaseIds": [
+        "U04-01",
+        "U04-02",
+        "U04-03",
+        "U04-04",
+        "U04-05",
+        "U04-06",
+        "U04-07",
+        "U04-08"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/tools/audit_catalog.py": "d30bef2b24e34742d44503b3cf9f6edbf504691fec03d465f588febc56d06f04",
+    "research/prebuild/tools/test_audit_catalog.py": "cc57ae4d0fdceb162d0c4a85247d3d62f0715a7e5d25423e3926f64090f1b14b",
+    "research/prebuild/04-catalog-audit.json": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc",
+    "research/prebuild/04-catalog-findings.md": "2020841b5868f65947c281716aab04803180cb640f8e56da7e6502f75b526510"
+  }
+}

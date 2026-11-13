@@ -1,0 +1,3236 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R05",
+  "inputs": [
+    {
+      "ref": "apps/adviser/src/domain.ts",
+      "sha256": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d"
+    },
+    {
+      "ref": "apps/adviser/src/picker.ts",
+      "sha256": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943"
+    },
+    {
+      "ref": "research/prebuild/04-catalog-audit.json",
+      "sha256": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc"
+    }
+  ],
+  "data": {
+    "corpusVersion": "synthetic-invariants-v1",
+    "seed": 20261113,
+    "snapshotHashes": {
+      "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+      "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+      "research/prebuild/04-catalog-audit.json": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc"
+    },
+    "cases": [
+      {
+        "id": "C-ordinary-001",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-002",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-003",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-004",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-005",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-006",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-007",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-008",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-009",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-010",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-011",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-012",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-013",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-014",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-015",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-016",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-017",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-018",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-019",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-020",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-021",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-022",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-023",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-024",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-025",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-026",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-027",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-028",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-029",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-030",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-031",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-032",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-033",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-034",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-035",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-036",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-037",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-038",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-039",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-040",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-041",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-042",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-043",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-044",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-045",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-046",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-047",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-048",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-049",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-ordinary-050",
+        "primaryGroup": "ordinary",
+        "tags": [
+          "filter_empty",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "maxWeightKg": 1,
+          "weightKg": 1.5
+        },
+        "expected": {
+          "state": "filter_empty",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-001",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-002",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "one_less",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 19999999,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "over_budget",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-003",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "unknown_shipping",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": null,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": null,
+          "affordability": "unknown",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-004",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-005",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "one_less",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 19999999,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "over_budget",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-006",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "unknown_shipping",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": null,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": null,
+          "affordability": "unknown",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-007",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-008",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "one_less",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 19999999,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "over_budget",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-009",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "unknown_shipping",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": null,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": null,
+          "affordability": "unknown",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-010",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-011",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "one_less",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 19999999,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "over_budget",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-012",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "unknown_shipping",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": null,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": null,
+          "affordability": "unknown",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-013",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-014",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "one_less",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 19999999,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "over_budget",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-015",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "unknown_shipping",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": null,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": null,
+          "affordability": "unknown",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-016",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-017",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "one_less",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 19999999,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "over_budget",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-018",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "unknown_shipping",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": null,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": null,
+          "affordability": "unknown",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-019",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "exact",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 20000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "within_budget",
+          "state": "eligible"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-price_budget-020",
+        "primaryGroup": "price_budget",
+        "tags": [
+          "one_less",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 19999999,
+          "confirmed": true
+        },
+        "scenario": {
+          "costs": {
+            "baseVnd": 20000000,
+            "shippingVnd": 200000,
+            "mandatoryExtraFeesVnd": 300000,
+            "discountVnd": 500000
+          }
+        },
+        "expected": {
+          "completeTotalVnd": 20000000,
+          "affordability": "over_budget",
+          "state": "no_verified_affordable_offer"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-001",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "wrong_variant",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "variantId": "V-A",
+          "offerVariantId": "V-B"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-002",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "used",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "condition": "used"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-003",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "wrong_variant",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "variantId": "V-A",
+          "offerVariantId": "V-B"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-004",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "used",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "condition": "used"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-005",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "wrong_variant",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "variantId": "V-A",
+          "offerVariantId": "V-B"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-006",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "used",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "condition": "used"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-007",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "wrong_variant",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "variantId": "V-A",
+          "offerVariantId": "V-B"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-008",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "used",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "condition": "used"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-009",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "wrong_variant",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "variantId": "V-A",
+          "offerVariantId": "V-B"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-010",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "used",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "condition": "used"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-011",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "wrong_variant",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "variantId": "V-A",
+          "offerVariantId": "V-B"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-012",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "used",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "condition": "used"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-013",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "wrong_variant",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "variantId": "V-A",
+          "offerVariantId": "V-B"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-014",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "used",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "condition": "used"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-identity_condition-015",
+        "primaryGroup": "identity_condition",
+        "tags": [
+          "wrong_variant",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "variantId": "V-A",
+          "offerVariantId": "V-B"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-001",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "unknown_capability",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "datasetKind": "crawled_draft"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-002",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "hard_fail",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "requiredRamGb": 32,
+          "ramGb": 8,
+          "softPreference": "portable"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-003",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "source_failure",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "sourceStatus": "failed"
+        },
+        "expected": {
+          "state": "source_unavailable"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-004",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "unknown_capability",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "datasetKind": "crawled_draft"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-005",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "hard_fail",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "requiredRamGb": 32,
+          "ramGb": 8,
+          "softPreference": "portable"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-006",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "source_failure",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "sourceStatus": "failed"
+        },
+        "expected": {
+          "state": "source_unavailable"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-007",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "unknown_capability",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "datasetKind": "crawled_draft"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-008",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "hard_fail",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "requiredRamGb": 32,
+          "ramGb": 8,
+          "softPreference": "portable"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-009",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "source_failure",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "sourceStatus": "failed"
+        },
+        "expected": {
+          "state": "source_unavailable"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-010",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "unknown_capability",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "datasetKind": "crawled_draft"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-011",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "hard_fail",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "requiredRamGb": 32,
+          "ramGb": 8,
+          "softPreference": "portable"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-012",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "source_failure",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "sourceStatus": "failed"
+        },
+        "expected": {
+          "state": "source_unavailable"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-013",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "unknown_capability",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "datasetKind": "crawled_draft"
+        },
+        "expected": {
+          "state": "evidence_unknown",
+          "fit": "unknown"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-014",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "hard_fail",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "requiredRamGb": 32,
+          "ramGb": 8,
+          "softPreference": "portable"
+        },
+        "expected": {
+          "state": "no_fit",
+          "fit": "fail"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-unknown_no_fit-015",
+        "primaryGroup": "unknown_no_fit",
+        "tags": [
+          "source_failure",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "sourceStatus": "failed"
+        },
+        "expected": {
+          "state": "source_unavailable"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-freshness-001",
+        "primaryGroup": "freshness",
+        "tags": [
+          "expired",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "offerValidity": "expired"
+        },
+        "expected": {
+          "state": "no_verified_affordable_offer",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-freshness-002",
+        "primaryGroup": "freshness",
+        "tags": [
+          "source_failure",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "sourceStatus": "failed"
+        },
+        "expected": {
+          "state": "source_unavailable"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-freshness-003",
+        "primaryGroup": "freshness",
+        "tags": [
+          "expired",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "offerValidity": "expired"
+        },
+        "expected": {
+          "state": "no_verified_affordable_offer",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-freshness-004",
+        "primaryGroup": "freshness",
+        "tags": [
+          "source_failure",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "sourceStatus": "failed"
+        },
+        "expected": {
+          "state": "source_unavailable"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-freshness-005",
+        "primaryGroup": "freshness",
+        "tags": [
+          "expired",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "offerValidity": "expired"
+        },
+        "expected": {
+          "state": "no_verified_affordable_offer",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-freshness-006",
+        "primaryGroup": "freshness",
+        "tags": [
+          "source_failure",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "sourceStatus": "failed"
+        },
+        "expected": {
+          "state": "source_unavailable"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-freshness-007",
+        "primaryGroup": "freshness",
+        "tags": [
+          "expired",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "offerValidity": "expired"
+        },
+        "expected": {
+          "state": "no_verified_affordable_offer",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-freshness-008",
+        "primaryGroup": "freshness",
+        "tags": [
+          "source_failure",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "sourceStatus": "failed"
+        },
+        "expected": {
+          "state": "source_unavailable"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-freshness-009",
+        "primaryGroup": "freshness",
+        "tags": [
+          "expired",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "offerValidity": "expired"
+        },
+        "expected": {
+          "state": "no_verified_affordable_offer",
+          "fit": "pass"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-freshness-010",
+        "primaryGroup": "freshness",
+        "tags": [
+          "source_failure",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "sourceStatus": "failed"
+        },
+        "expected": {
+          "state": "source_unavailable"
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-revision-001",
+        "primaryGroup": "revision",
+        "tags": [
+          "stale_revision",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "activeRevision": 2,
+          "responseRevision": 1
+        },
+        "expected": {
+          "state": "stale_revision",
+          "accept": false
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-revision-002",
+        "primaryGroup": "revision",
+        "tags": [
+          "history",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "savedTotalVnd": 20000000,
+          "currentTotalVnd": 21000000
+        },
+        "expected": {
+          "historicalTotalVnd": 20000000,
+          "currentTotalVnd": 21000000,
+          "rewriteHistory": false
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-revision-003",
+        "primaryGroup": "revision",
+        "tags": [
+          "stale_revision",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "activeRevision": 2,
+          "responseRevision": 1
+        },
+        "expected": {
+          "state": "stale_revision",
+          "accept": false
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-revision-004",
+        "primaryGroup": "revision",
+        "tags": [
+          "history",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "savedTotalVnd": 20000000,
+          "currentTotalVnd": 21000000
+        },
+        "expected": {
+          "historicalTotalVnd": 20000000,
+          "currentTotalVnd": 21000000,
+          "rewriteHistory": false
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-revision-005",
+        "primaryGroup": "revision",
+        "tags": [
+          "stale_revision",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "activeRevision": 2,
+          "responseRevision": 1
+        },
+        "expected": {
+          "state": "stale_revision",
+          "accept": false
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-revision-006",
+        "primaryGroup": "revision",
+        "tags": [
+          "history",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "savedTotalVnd": 20000000,
+          "currentTotalVnd": 21000000
+        },
+        "expected": {
+          "historicalTotalVnd": 20000000,
+          "currentTotalVnd": 21000000,
+          "rewriteHistory": false
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-revision-007",
+        "primaryGroup": "revision",
+        "tags": [
+          "stale_revision",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "activeRevision": 2,
+          "responseRevision": 1
+        },
+        "expected": {
+          "state": "stale_revision",
+          "accept": false
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-revision-008",
+        "primaryGroup": "revision",
+        "tags": [
+          "history",
+          "synthetic_invariant"
+        ],
+        "partition": "heldout",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "savedTotalVnd": 20000000,
+          "currentTotalVnd": 21000000
+        },
+        "expected": {
+          "historicalTotalVnd": 20000000,
+          "currentTotalVnd": 21000000,
+          "rewriteHistory": false
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-revision-009",
+        "primaryGroup": "revision",
+        "tags": [
+          "stale_revision",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "activeRevision": 2,
+          "responseRevision": 1
+        },
+        "expected": {
+          "state": "stale_revision",
+          "accept": false
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      },
+      {
+        "id": "C-revision-010",
+        "primaryGroup": "revision",
+        "tags": [
+          "history",
+          "synthetic_invariant"
+        ],
+        "partition": "development",
+        "needs": {
+          "budgetVnd": 22000000,
+          "confirmed": true
+        },
+        "scenario": {
+          "savedTotalVnd": 20000000,
+          "currentTotalVnd": 21000000
+        },
+        "expected": {
+          "historicalTotalVnd": 20000000,
+          "currentTotalVnd": 21000000,
+          "rewriteHistory": false
+        },
+        "snapshotRef": "inline_synthetic",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": [],
+        "adjudication": "independent literals; not reviewed hardware suitability"
+      }
+    ],
+    "freezeHash": "9193d8d578a61d3f3a3711e37140aa3127a4d5e91c6dee676680ccc570affc9b"
+  },
+  "evidenceRefs": [],
+  "gaps": [
+    {
+      "id": "GAP-R05-001",
+      "reason": "Labels are synthetic invariants, not independent real-world suitability judgments.",
+      "nextAction": "Obtain exact workload evidence and independent adjudication for real quality evaluation."
+    }
+  ]
+}

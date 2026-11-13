@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R12",
+  "checks": [
+    {
+      "id": "operations_evidence_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_operations_evidence.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:01:11.727154+00:00",
+      "finishedAt": "2026-11-13T06:01:12.259628+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/a0f5bb49dc5045859a907dc9753ab7b0-operations_evidence_tests.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R12"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:01:11.727154+00:00",
+      "finishedAt": "2026-11-13T06:01:12.353861+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R12-artifact-48cfd33a2904449a99ce75cca5dbb962.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "949b1a940ea0ef1651d1ea1b6182e9df8f0d85d6e9bd6893260848d5b04a3444",
+  "inputHashes": {
+    "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
+    "research/prebuild/03-source-register.json": "65a612548b4401980f5c408bc75773416a6cfb674639628b50c12f806901cdc6",
+    "research/prebuild/04-catalog-audit.json": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc",
+    "research/prebuild/07-api-contract.json": "abe694af8f8fea8eb8621adbf12ce1a0ecfaa7ef1409aae9bf2a6cf8a0dde3f7"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U12",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/a0f5bb49dc5045859a907dc9753ab7b0.json",
+      "reportHash": "84c4e33dbd311fc4a2b2184c879d98f2926a26609d78a5a169cc3a541611e89f",
+      "definitionHash": "51a3f46831cacbafe1425ad5225cb60c75a3938e79295dd737523a15ce788966",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_operations_evidence.py": "6bc855674f0041e410cdfb1ffaf446cc92df3d8b321fed1d63e223195f82d031",
+        "research/prebuild/tools/validate.py": "ae18c3737e35ed0610ffb387864050f235412c205e6e9b67543acaabc130613b",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "0c9eafbd988f9dfe88968f5914de23e01a53970598a5eff61c14589d4cc0fa33"
+      },
+      "passedCaseIds": [
+        "U12-01",
+        "U12-02",
+        "U12-03",
+        "U12-04",
+        "U12-05",
+        "U12-06"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/12-operations-scenarios.json": "94dc2221387ea9cd452d5562ec393f3b408ada9caf3b4b1b409d8c63fb39db08",
+    "research/prebuild/12-operations-and-data-handling.md": "c34c06c3c1cc24901db7ded77a2481c9ba4aceb3893e987dce2edd97138f0cd2",
+    "research/prebuild/tools/test_operations_evidence.py": "6bc855674f0041e410cdfb1ffaf446cc92df3d8b321fed1d63e223195f82d031"
+  }
+}

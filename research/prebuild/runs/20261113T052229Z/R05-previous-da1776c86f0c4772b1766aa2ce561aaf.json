@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R05",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R05"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:36:44.048643+00:00",
+      "finishedAt": "2026-11-13T05:36:45.212816+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R05-artifact-e12b183af2e342619b01a1a76e94997c.log",
+      "reason": null
+    },
+    {
+      "id": "corpus_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_cases.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:40:10.783685+00:00",
+      "finishedAt": "2026-11-13T05:40:11.410752+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/4743eecb0aa74a94af642d48089180db-corpus_tests.log",
+      "reason": null
+    },
+    {
+      "id": "corpus_run",
+      "command": [
+        "python",
+        "research/prebuild/tools/build_cases.py",
+        "--config",
+        "research/prebuild/run-config.json",
+        "--out",
+        "research/prebuild/05-evaluation-cases.json"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:40:11.410772+00:00",
+      "finishedAt": "2026-11-13T05:40:11.606919+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "research",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R05-corpus_run-39f98d58f36443abb1e1278185be8611.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R05"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:40:10.783685+00:00",
+      "finishedAt": "2026-11-13T05:40:11.714048+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R05-artifact-f807d1a91daf4508937d23754014176a.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "1e9a1feb92f8f08619cd0f6cca461fd266d9577b6be6c684d3f921f4cd508928",
+  "inputHashes": {
+    "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+    "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+    "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
+    "research/prebuild/04-catalog-audit.json": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U05",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/4743eecb0aa74a94af642d48089180db.json",
+      "reportHash": "86501ff8577042abfdd92e907df7989380a277a93c8c6894c1fd62c51b50ce39",
+      "definitionHash": "b2af811d14d5c7ee9b7926c0d642d918a3a464b149aaaee4f302c057e3c4c85e",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_cases.py": "0cec64f3fdd2f3dbab19570102be904f45ef158dc715d2832fda8316ee69d747",
+        "research/prebuild/tools/build_cases.py": "9245c5871e43db6dff2135e1549cf89ee1d6ca925049dea999c1248dcd2b3203",
+        "research/prebuild/05-workload-policy.json": "c980754924f950837259f86e0894332cd9f7109b38e9dcc9c79189bc7d553fe6",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "21ebb9cad1cc854fc9d41b5b7fc72a853a948398524148d99cb8c7fe45ff2d9e"
+      },
+      "passedCaseIds": [
+        "U05-01",
+        "U05-02",
+        "U05-03",
+        "U05-04",
+        "U05-05",
+        "U05-06",
+        "U05-07",
+        "U05-08"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/05-workload-policy.md": "7a8f1708da532d7d6ceafc7b0fe2b807196ff92d7cc8ca3f2ad9f55a407b2584",
+    "research/prebuild/05-workload-policy.json": "c980754924f950837259f86e0894332cd9f7109b38e9dcc9c79189bc7d553fe6",
+    "research/prebuild/05-evaluation-cases.json": "d664fd777b27de347813b85430c7c272e40e223cd8e68193fa83b9a0a78f7a6e",
+    "research/prebuild/tools/build_cases.py": "9245c5871e43db6dff2135e1549cf89ee1d6ca925049dea999c1248dcd2b3203",
+    "research/prebuild/tools/test_cases.py": "0cec64f3fdd2f3dbab19570102be904f45ef158dc715d2832fda8316ee69d747"
+  }
+}

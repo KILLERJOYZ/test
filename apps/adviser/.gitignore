@@ -1,0 +1,15 @@
+node_modules/
+dist/
+android/.gradle/
+android/.cxx/
+android/build/
+android/app/build/
+android/app/.cxx/
+android/local.properties
+*.log
+.expo/
+android/
+expo-env.d.ts
+artifacts/*.apk
+verification/*-build.log
+verification/emulator-*.xml

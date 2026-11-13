@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R02",
+  "checks": [
+    {
+      "id": "journey_evidence_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_journey_evidence.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:32:57.117811+00:00",
+      "finishedAt": "2026-11-13T05:32:57.719851+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/f5a7474fc6bf4b55a01f7701fd9f7103-journey_evidence_tests.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "running",
+  "evidenceStatus": "partial",
+  "definitionHash": "f6a20d1adc94d1cc7f1c940d96781da5781033b66f22d45248e00acc58db05f8",
+  "inputHashes": {
+    "research/project-research.md": "c138f2a551a618b4456c2dd60ead26c6d7eaee5d3e4b20a6d10754ba1c4dd1af",
+    "research/sources.md": "74136ca5e1720595cb92abdfbea8f0638a82e598141833b25e5135aace5c534a",
+    "research/mobile-interface-strategy.md": "d2a8de7480774262643ea0a4510a077cb7314d59bc052aec1c23092d8d807bc2",
+    "docs/planning/APP_FLOW.md": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U02",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/f5a7474fc6bf4b55a01f7701fd9f7103.json",
+      "reportHash": "ee6b84c569fe6de7391799feccead8abcaed74f3b8b35f7dbbfeb492c2f3709c",
+      "definitionHash": "132b112d3359a27fb21ebc5a9efd0ebaabb6c4edfd20c61c93324132c0a18aab",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_journey_evidence.py": "736fb22f8a0f720bccbd09886a09bdf949bec069557a01336c8aa26cd743f48a",
+        "research/prebuild/tools/validate.py": "aa1c3d526db1425a7017370343440ad48f466fe51a066145f0e0211e57ed323d",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "21ebb9cad1cc854fc9d41b5b7fc72a853a948398524148d99cb8c7fe45ff2d9e"
+      },
+      "passedCaseIds": [
+        "U02-01",
+        "U02-02",
+        "U02-03",
+        "U02-04",
+        "U02-05"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/02-journey-benchmark.json": "a3ecadaaacf2e2314f94d5751cb356af7f5cf7ef49915e4d0782eab8428eb7bc",
+    "research/prebuild/02-journey-benchmark.md": "74c1aabeb2fcc2c12285b635d6efabe91c5202fcd18b31d7b8283ddb6d0a89bb",
+    "research/prebuild/tools/test_journey_evidence.py": "736fb22f8a0f720bccbd09886a09bdf949bec069557a01336c8aa26cd743f48a"
+  }
+}

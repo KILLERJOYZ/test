@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R02",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R02"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:33:19.263983+00:00",
+      "finishedAt": "2026-11-13T05:33:20.012344+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R02-artifact-ce4ed4e2d6ba440daaf6b5b263532c33.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R02"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:40:07.826469+00:00",
+      "finishedAt": "2026-11-13T05:40:08.500150+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R02-artifact-665e3ec7f0c247cba3a5ee2f77f46b45.log",
+      "reason": null
+    },
+    {
+      "id": "journey_evidence_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_journey_evidence.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:21.818754+00:00",
+      "finishedAt": "2026-11-13T06:03:22.376861+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/e343b5252d364de193a944efbbc93050-journey_evidence_tests.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R02"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:21.818754+00:00",
+      "finishedAt": "2026-11-13T06:03:22.461706+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R02-artifact-57c33f8e57ae4d8a9c18fd60907f5429.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "f6a20d1adc94d1cc7f1c940d96781da5781033b66f22d45248e00acc58db05f8",
+  "inputHashes": {
+    "research/project-research.md": "c138f2a551a618b4456c2dd60ead26c6d7eaee5d3e4b20a6d10754ba1c4dd1af",
+    "research/sources.md": "74136ca5e1720595cb92abdfbea8f0638a82e598141833b25e5135aace5c534a",
+    "research/mobile-interface-strategy.md": "d2a8de7480774262643ea0a4510a077cb7314d59bc052aec1c23092d8d807bc2",
+    "docs/planning/APP_FLOW.md": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U02",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/e343b5252d364de193a944efbbc93050.json",
+      "reportHash": "0d2830f622c0a2ff81d9e30ad51b765602e72ae633b6a20a9116197f51b1b63c",
+      "definitionHash": "132b112d3359a27fb21ebc5a9efd0ebaabb6c4edfd20c61c93324132c0a18aab",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_journey_evidence.py": "736fb22f8a0f720bccbd09886a09bdf949bec069557a01336c8aa26cd743f48a",
+        "research/prebuild/tools/validate.py": "ea2db9f6ba5b1fb270ce56345be97ba2b2615b0ccfe898f11f73706568df85d4",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "U02-01",
+        "U02-02",
+        "U02-03",
+        "U02-04",
+        "U02-05"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/02-journey-benchmark.json": "a3ecadaaacf2e2314f94d5751cb356af7f5cf7ef49915e4d0782eab8428eb7bc",
+    "research/prebuild/02-journey-benchmark.md": "74c1aabeb2fcc2c12285b635d6efabe91c5202fcd18b31d7b8283ddb6d0a89bb",
+    "research/prebuild/tools/test_journey_evidence.py": "736fb22f8a0f720bccbd09886a09bdf949bec069557a01336c8aa26cd743f48a"
+  },
+  "commandDefinitionHashes": {
+    "journey_evidence_tests": "a31b78adffd3e9c977902833e69a28eb3cc2e1687fc84fe45ea3060f3108190d"
+  }
+}

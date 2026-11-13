@@ -1,0 +1,121 @@
+{
+  "date": "2026-11-13",
+  "timezone": "Asia/Saigon",
+  "scope": "Current uncommitted AdviserApp frontend; no design/behavior implementation changes",
+  "gitHead": "d2f26ee62e50d661e30bc2aa271ae061f9e4e823",
+  "skillSource": {
+    "repository": "https://github.com/uxuiprinciples/agent-skills",
+    "commit": "8f14fb5f5ee96a00f5b92c69699008b73fe478f5",
+    "installed": [
+      "uxui-evaluator",
+      "interface-auditor",
+      "ai-interface-reviewer",
+      "flow-checker",
+      "vibe-coding-advisor"
+    ],
+    "applied": [
+      "uxui-evaluator",
+      "interface-auditor",
+      "ai-interface-reviewer",
+      "flow-checker"
+    ],
+    "apiEnriched": false,
+    "hostDiscoveryVerified": true
+  },
+  "commands": [
+    {
+      "command": "npm run build",
+      "cwd": "apps/adviser",
+      "status": "pass",
+      "notes": [
+        "TypeScript, Vite production build and standalone preview passed.",
+        "react-native-safe-area-context use-client warning."
+      ]
+    },
+    {
+      "command": "npm test",
+      "cwd": "apps/adviser",
+      "status": "pass",
+      "tests": 57,
+      "passed": 57,
+      "failed": 0,
+      "notes": [
+        "Contains legacy and current domain/contract tests; does not establish rendered UI behavior."
+      ]
+    },
+    {
+      "command": "node node_modules/vite/bin/vite.js --host 127.0.0.1 --port 4179 --strictPort",
+      "status": "fail",
+      "notes": [
+        "Dependency optimization attempted missing react-native-web/Libraries/Utilities/codegenNativeComponent from safe-area-context."
+      ]
+    },
+    {
+      "command": "adb devices -l",
+      "status": "completed",
+      "devices": [],
+      "notes": [
+        "Native acceptance not performed."
+      ]
+    }
+  ],
+  "browser": {
+    "surface": "in-app browser",
+    "url": "http://127.0.0.1:4180/",
+    "build": "dist/assets/index-31e7MPnm.js",
+    "theme": "dark",
+    "viewports": [
+      {
+        "width": 390,
+        "height": 844
+      },
+      {
+        "width": 320,
+        "height": 720
+      },
+      {
+        "width": 1024,
+        "height": 768
+      }
+    ],
+    "flows": [
+      "home",
+      "needs modal",
+      "invalid budget",
+      "empty search",
+      "two-product comparison",
+      "detail",
+      "unavailable AI",
+      "save",
+      "saved list",
+      "settings"
+    ],
+    "console": [
+      "BackHandler is not supported on web and should not be used."
+    ],
+    "limitations": [
+      "No light-theme render, font-scale/zoom, complete focus traversal or native target testing.",
+      "Last optional needs-form browser click blocked by automatic approval review due to usage limit; no bypass attempted.",
+      "Temporary viewport override restored after user continuation."
+    ]
+  },
+  "native": {
+    "tested": false,
+    "reason": "No connected devices or emulator reported by adb.",
+    "notTested": [
+      "TalkBack",
+      "IME/insets",
+      "hardware/external-keyboard Back",
+      "large font/display scale",
+      "rotation/recreation",
+      "dynamic color",
+      "reduced motion",
+      "successful on-device inference"
+    ]
+  },
+  "verdict": "not_accepted",
+  "notes": [
+    "Audit-only: fixes proposed, not implemented.",
+    "Source hashes identify reviewed working-tree files; HEAD alone does not describe the current app."
+  ]
+}

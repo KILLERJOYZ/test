@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R11",
+  "inputs": [
+    {
+      "ref": "apps/adviser/VERIFICATION.md",
+      "sha256": "095932ccc3571e9dbe16587a8616e136ed1a585620c9f567eb9a8db63a45dded"
+    },
+    {
+      "ref": "apps/adviser/verification/android-demo-manifest.json",
+      "sha256": "0d1459b3110d30e2a974dadf7a057b0cbe7f717e2d65a9685f408d0bdfc419a1"
+    },
+    {
+      "ref": "apps/adviser/scripts/android-smoke.py",
+      "sha256": "d392ff629847f09b411c101b01926c53adc1b373f55391032127cecebc5143d9"
+    },
+    {
+      "ref": "research/prebuild/06-flow-validation.json",
+      "sha256": "f60b0b99575fa0390b68cc7125fd8cfe6b685bb219d947ffaebbd0a7c31afd12"
+    }
+  ],
+  "data": {
+    "buildHash": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+    "targetMatrix": [],
+    "physicalDeviceValidated": false,
+    "cases": [
+      {
+        "id": "D01",
+        "result": "not_run",
+        "method": "not_run",
+        "reason": "No connected authorized Android target. Existing APK predates changed app source.",
+        "buildHash": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+        "evidenceRefs": []
+      },
+      {
+        "id": "D02",
+        "result": "not_run",
+        "method": "not_run",
+        "reason": "No connected authorized Android target. Existing APK predates changed app source.",
+        "buildHash": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+        "evidenceRefs": []
+      },
+      {
+        "id": "D03",
+        "result": "not_run",
+        "method": "not_run",
+        "reason": "No connected authorized Android target. Existing APK predates changed app source.",
+        "buildHash": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+        "evidenceRefs": []
+      },
+      {
+        "id": "D04",
+        "result": "not_run",
+        "method": "not_run",
+        "reason": "No connected authorized Android target. Existing APK predates changed app source.",
+        "buildHash": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+        "evidenceRefs": []
+      },
+      {
+        "id": "D05",
+        "result": "not_run",
+        "method": "not_run",
+        "reason": "No connected authorized Android target. Existing APK predates changed app source.",
+        "buildHash": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+        "evidenceRefs": []
+      },
+      {
+        "id": "D06",
+        "result": "not_run",
+        "method": "not_run",
+        "reason": "No connected authorized Android target. Existing APK predates changed app source.",
+        "buildHash": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+        "evidenceRefs": []
+      },
+      {
+        "id": "D07",
+        "result": "not_run",
+        "method": "not_run",
+        "reason": "No connected authorized Android target. Existing APK predates changed app source.",
+        "buildHash": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+        "evidenceRefs": []
+      },
+      {
+        "id": "D08",
+        "result": "not_run",
+        "method": "not_run",
+        "reason": "No connected authorized Android target. Existing APK predates changed app source.",
+        "buildHash": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+        "evidenceRefs": []
+      }
+    ],
+    "rawTimingSamples": [],
+    "timings": [],
+    "limitations": [
+      "ADB exists at SDK path; devices list empty. ADB daemon started by inspection and stopped afterward.",
+      "Historical emulator evidence is not current-source or physical-phone acceptance.",
+      "No rebuilt APK or startup/timing/keyboard/Back/TalkBack observations."
+    ],
+    "inventory": {
+      "adb": "C:\\Users\\luken\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+      "exitCode": 0,
+      "logRef": "research/prebuild/runs/20261113T052229Z/R11-adb-devices.log",
+      "currentSourceRequiresNewBuild": true
+    }
+  },
+  "evidenceRefs": [],
+  "gaps": [
+    {
+      "id": "GAP-R11-EXTERNAL",
+      "reason": "No physical/native validation; rebuild changed source and run D01-D08 on an authorized named target.",
+      "nextAction": "Complete the named external observations and accountable review before production acceptance."
+    }
+  ]
+}

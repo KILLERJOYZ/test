@@ -1,0 +1,10 @@
+{
+  "ro.product.model": "sdk_gphone16k_x86_64",
+  "ro.build.version.sdk": "37",
+  "ro.build.version.release": "17",
+  "ro.product.cpu.abi": "x86_64",
+  "serial": "emulator-5580",
+  "readOnly": true,
+  "headless": true,
+  "physicalDevice": false
+}

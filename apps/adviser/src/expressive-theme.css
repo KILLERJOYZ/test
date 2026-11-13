@@ -1,0 +1,27 @@
+/* Generated from expressive-theme.ts. */
+:root {
+  --adviser-bg: #f3f6ee;
+  --adviser-card: #ffffff;
+  --adviser-container: #dcebdd;
+  --adviser-text: #193127;
+  --adviser-muted: #50675b;
+  --adviser-accent: #245f43;
+  --adviser-onAccent: #ffffff;
+  --adviser-line: #687d70;
+  --adviser-error: #a32932;
+  --adviser-onContainer: #173c27;
+}
+@media (prefers-color-scheme: dark) {
+:root {
+  --adviser-bg: #101b18;
+  --adviser-card: #1d2d27;
+  --adviser-container: #304e3b;
+  --adviser-text: #e3eee7;
+  --adviser-muted: #a5b9ac;
+  --adviser-accent: #9ed6b1;
+  --adviser-onAccent: #163323;
+  --adviser-line: #8ba394;
+  --adviser-error: #ffb3b9;
+  --adviser-onContainer: #d2f0da;
+}
+}

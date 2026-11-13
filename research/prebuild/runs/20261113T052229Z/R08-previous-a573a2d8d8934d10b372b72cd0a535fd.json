@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R08",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R08"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:51:32.999005+00:00",
+      "finishedAt": "2026-11-13T05:51:34.249391+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R08-artifact-aa673ada91814343a9267eb331b6e311.log",
+      "reason": null
+    },
+    {
+      "id": "android_network_smoke",
+      "command": [
+        "adb",
+        "devices",
+        "-l"
+      ],
+      "cwd": ".",
+      "startedAt": null,
+      "finishedAt": null,
+      "exitCode": null,
+      "result": "not_run",
+      "mode": "device",
+      "outputRef": null,
+      "reason": "Get-Command adb returned no executable on PATH; no named authorized target/build was established."
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R08"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:27.857625+00:00",
+      "finishedAt": "2026-11-13T06:03:29.061363+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R08-artifact-11d1cece306d416aa096d85fb37a561e.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R08"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:07:06.424313+00:00",
+      "finishedAt": "2026-11-13T06:07:07.669334+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R08-artifact-eeefaa909e044ae381f7b5b82d0c800d.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R08"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:16:24.788480+00:00",
+      "finishedAt": "2026-11-13T06:16:25.990327+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R08-artifact-bb128a3460524ef6846f6af3da578c12.log",
+      "reason": null
+    },
+    {
+      "id": "spike_unit_tests",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "spikes/prebuild-contract/policy.test.mjs",
+        "spikes/prebuild-contract/repository.test.mjs"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:22:46.946194+00:00",
+      "finishedAt": "2026-11-13T06:22:47.571344+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/f2dc51a215524985b4fe5f4299ec291a-spike_unit_tests.log",
+      "reason": null
+    },
+    {
+      "id": "spike_tests",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "spikes/prebuild-contract/contract.test.mjs"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:22:47.571365+00:00",
+      "finishedAt": "2026-11-13T06:22:48.144506+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "integration",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R08-spike_tests-b6a57d1f7f994616b662147587e85f0d.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R08"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:22:46.946194+00:00",
+      "finishedAt": "2026-11-13T06:22:48.243174+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R08-artifact-67efde3b9f4240ba8debad843928c25b.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "46cb3a87d03f31d572f469cd07a080096b72c3dc2095bf9e73d643edb082e699",
+  "inputHashes": {
+    "research/prebuild/07-api-contract.json": "50057485a01ca142981d4511c876aadea5bd1955b0eb8347f834c9055bdd8470",
+    "research/prebuild/05-workload-policy.json": "c980754924f950837259f86e0894332cd9f7109b38e9dcc9c79189bc7d553fe6",
+    "research/prebuild/04-catalog-audit.json": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc",
+    "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U08",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/f2dc51a215524985b4fe5f4299ec291a.json",
+      "reportHash": "238b908bca05de2039350876936b6dd0d6b4f233102e9cec5e9d876a715f48f3",
+      "definitionHash": "cfe9d319780edc5c717ced7b37d788893716e2df5b403862f409508feda0dd51",
+      "testedFileHashes": {
+        "spikes/prebuild-contract/policy.test.mjs": "51669f2495c859eaabda6e8868236f960e619cb2ab5877689900293c2fed85a5",
+        "spikes/prebuild-contract/repository.test.mjs": "91ba8ee4ba468376727acc2ae008992b1dc8940ef3b16e5153d577407b56c3d1",
+        "spikes/prebuild-contract/policy.ts": "8e064751c5da60cc8ff6b9dbc0d37c7d81bc4b06a46d3c8dd34ed9d6a0be2e94",
+        "spikes/prebuild-contract/repository.ts": "a1f296b128ceb1055c3de9c0c16f8ba5983e6aadab878f19dcd074d871b9c7e2",
+        "spikes/prebuild-contract/fixtures.mjs": "81252dd8f7b6cd6411f8b8979bd6765cc3f704689aa659e1698f358f0908bf54",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "U08-01",
+        "U08-02",
+        "U08-03",
+        "U08-04",
+        "U08-05",
+        "U08-06",
+        "U08-07",
+        "U08-08",
+        "U08-09",
+        "U08-10",
+        "U08-11"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/08-integration-spike.md": "08775711dd483b400b9d080a75c9cd8390ff1c1a99371049471668633b175cdd",
+    "spikes/prebuild-contract/package.json": "1342aa4a0c4b04be97c0a0b9d00af561fe2cc2bd310bd8bfe6d7debb39fb67cc",
+    "spikes/prebuild-contract/server.ts": "1bf4b41186c9f2f66c6d0aebcfc90d805b3a234805b6a900b727415dc389ef9b",
+    "spikes/prebuild-contract/repository.ts": "a1f296b128ceb1055c3de9c0c16f8ba5983e6aadab878f19dcd074d871b9c7e2",
+    "spikes/prebuild-contract/policy.ts": "8e064751c5da60cc8ff6b9dbc0d37c7d81bc4b06a46d3c8dd34ed9d6a0be2e94",
+    "spikes/prebuild-contract/contract.test.mjs": "f09f05061b056a5d3e2c377daf77d16aa7f3671f9340584a9634ee453440102a",
+    "spikes/prebuild-contract/policy.test.mjs": "51669f2495c859eaabda6e8868236f960e619cb2ab5877689900293c2fed85a5",
+    "spikes/prebuild-contract/repository.test.mjs": "91ba8ee4ba468376727acc2ae008992b1dc8940ef3b16e5153d577407b56c3d1"
+  },
+  "commandDefinitionHashes": {
+    "spike_unit_tests": "4f0404646bd3f49d73f49242eb4bb1c23ac9192ef5527320362de3f3177b8f71",
+    "spike_tests": "b7524bd24204b706b238e0fd96e9cc1a67ab2e5047d452d0f67c02b2eed6a506"
+  }
+}

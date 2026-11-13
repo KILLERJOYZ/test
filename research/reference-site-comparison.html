@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference-site evidence comparison</title>
+<style>
+  :root { color-scheme: light dark; }
+  html, body { margin: 0; padding: 0; background: transparent; color: var(--foreground); font-family: var(--font-sans, sans-serif); }
+  #reference-comparison { width: 100%; }
+  #reference-comparison table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: 13px; line-height: 1.5; }
+  #reference-comparison th, #reference-comparison td { padding: 12px 6px; text-align: center; vertical-align: middle; overflow-wrap: anywhere; border-bottom: 1px solid var(--border); }
+  #reference-comparison th { font-weight: 500; }
+  #reference-comparison th:first-child { text-align: left; width: 31%; padding-left: 0; }
+  #reference-comparison thead th { vertical-align: bottom; }
+  #reference-comparison .observed { color: var(--success); }
+  #reference-comparison .published { color: var(--info); }
+  #reference-comparison .unknown { color: var(--muted-foreground); }
+  #reference-comparison .mark { display: block; font-size: 17px; font-weight: 500; }
+  #reference-comparison .legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 12px 0 0; font-size: 12px; line-height: 1.6; color: var(--muted-foreground); }
+  #reference-comparison a { color: var(--foreground); text-underline-offset: 3px; }
+  #reference-comparison figcaption { margin-top: 10px; color: var(--muted-foreground); font-size: 12px; line-height: 1.6; }
+  #reference-comparison figure { margin: 0; }
+  @media(max-width: 450px) {
+    #reference-comparison table { font-size: 12px; }
+    #reference-comparison th, #reference-comparison td { padding: 10px 4px; }
+    #reference-comparison th:first-child { width: 29%; }
+  }
+</style>
+</head>
+<body>
+<main id="reference-comparison">
+<figure aria-label="Comparison of publicly documented features across the three reference sites. Question marks indicate unverified features, not proof of absence.">
+<table>
+  <thead><tr><th scope="col">Evidence checked</th><th scope="col">GSMArena</th><th scope="col">Bestlaptop.<wbr>deals</th><th scope="col">PhoneArena</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Specification discovery</th><td class="observed"><span class="mark">✓</span>Documented</td><td class="observed"><span class="mark">✓</span>Documented</td><td class="observed"><span class="mark">✓</span>Documented</td></tr>
+    <tr><th scope="row">Needs + budget laptop picker</th><td class="unknown"><span class="mark">?</span>Unverified</td><td class="observed"><span class="mark">✓</span>Documented</td><td class="unknown"><span class="mark">?</span>Unverified</td></tr>
+    <tr><th scope="row">Explicit phone test methodology</th><td class="unknown"><span class="mark">?</span>Fetch limited</td><td class="unknown"><span class="mark">?</span>Unverified</td><td class="observed"><span class="mark">✓</span>Documented</td></tr>
+    <tr><th scope="row">Commercial specs feed</th><td class="unknown"><span class="mark">?</span>Unverified</td><td class="unknown"><span class="mark">?</span>Unverified</td><td class="published"><span class="mark">↗</span>XML offer</td></tr>
+    <tr><th scope="row">Vietnam total-price validation</th><td class="unknown"><span class="mark">?</span>Unverified</td><td class="unknown"><span class="mark">?</span>Unverified</td><td class="unknown"><span class="mark">?</span>Unverified</td></tr>
+  </tbody>
+</table>
+<div class="legend"><span>✓ Public documentation observed</span><span>↗ Commercial service advertised</span><span>? Unverified in this audit</span></div>
+<figcaption>Document research · 10 Nov 2026 · Features and feed quality were not operationally tested.<br>Sources: <a href="https://www.gsmarena.com/m/faq.php3">GSMArena FAQ</a> · <a href="https://www.bestlaptop.deals/laptop-picker">Laptop Picker</a> · <a href="https://www.bestlaptop.deals/recommendations/Crazy-Deals">Laptop filters</a> · <a href="https://www.phonearena.com/phones/compare">Phone compare</a> · <a href="https://www.phonearena.com/howdowerate">Test methods</a> · <a href="https://www.phonearena.com/database">Feed licensing</a></figcaption>
+</figure>
+</main>
+</body>
+</html>

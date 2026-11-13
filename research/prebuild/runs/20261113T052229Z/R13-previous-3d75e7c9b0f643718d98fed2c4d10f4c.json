@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R13",
+  "checks": [
+    {
+      "id": "cost_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_cost_model.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:01:12.555784+00:00",
+      "finishedAt": "2026-11-13T06:01:13.261267+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/7586aba27a494b4990f4dafc4669a57d-cost_tests.log",
+      "reason": null
+    },
+    {
+      "id": "cost_run",
+      "command": [
+        "python",
+        "research/prebuild/tools/cost_model.py",
+        "--input",
+        "research/prebuild/13-cost-inputs.json",
+        "--out",
+        "research/prebuild/13-cost-results.json"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:01:13.261288+00:00",
+      "finishedAt": "2026-11-13T06:01:13.455432+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "research",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-cost_run-44f608516fdf44419000ab69bf703f9b.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R13"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:01:12.555784+00:00",
+      "finishedAt": "2026-11-13T06:01:13.552376+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R13-artifact-7d25c853dc974fcda9c1ffc99d829268.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "b53416bcd28fb208aa8d67cf602c483832ffca7318dfd1b77b3986ca9033b427",
+  "inputHashes": {
+    "research/prebuild/09-retrieval-ranking-results.json": "ec79d682ef6a9a773555746e02dbfb19c94ada136387fada1e450b15ad1b3cfd",
+    "research/prebuild/10-ai-evaluation.json": "99e3c30dd7772ca06f1a443fb4181103660ed160031719f8e6615195c1950f7f",
+    "research/prebuild/12-operations-scenarios.json": "94dc2221387ea9cd452d5562ec393f3b408ada9caf3b4b1b409d8c63fb39db08"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U13",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/7586aba27a494b4990f4dafc4669a57d.json",
+      "reportHash": "13642d9da6cd38beaa689f7f2521d2eb69d72618fb28f1e18063530b5865c741",
+      "definitionHash": "22f881b111614ed72a7f29687aa4c2f6348308612675bf0ba3581403dfc48ab4",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_cost_model.py": "479d07035cd2f06e0ceb3b734b017a7d7706207f694a9df0d98620e457000949",
+        "research/prebuild/tools/cost_model.py": "2a6b8182b431fde649832a224beef88f06ffd462c180a87f8c4fb626d48ab63a",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "0c9eafbd988f9dfe88968f5914de23e01a53970598a5eff61c14589d4cc0fa33"
+      },
+      "passedCaseIds": [
+        "U13-01",
+        "U13-02",
+        "U13-03",
+        "U13-04",
+        "U13-05",
+        "U13-06",
+        "U13-07"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/13-cost-inputs.json": "1b637dd5a8a35f7d677e6f9d6c1f68d7cd88f06fdb4549e2087a59683e838a52",
+    "research/prebuild/13-cost-results.json": "e3468e277d5086e9a0a16c5ce155f10bdb4dea047f40415c3bb65c00f58571dd",
+    "research/prebuild/13-cost-capacity-and-estimate.md": "47def55e7739d350906d7cd8daf2a664dda56faa56c4ced86efde0150f67103d",
+    "research/prebuild/tools/cost_model.py": "2a6b8182b431fde649832a224beef88f06ffd462c180a87f8c4fb626d48ab63a",
+    "research/prebuild/tools/test_cost_model.py": "479d07035cd2f06e0ceb3b734b017a7d7706207f694a9df0d98620e457000949"
+  }
+}

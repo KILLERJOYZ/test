@@ -1,0 +1,800 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-11-10",
+  "marketDefault": "VN",
+  "currency": "VND",
+  "status": "Proposed question protocol; not a validated questionnaire or production rules engine",
+  "answerStates": [
+    "answered",
+    "unknown",
+    "skipped",
+    "not_applicable"
+  ],
+  "defaults": "No behavioral answer preselected. Country may be visibly suggested and edited. No unknown answer implies false.",
+  "questions": [
+    {
+      "id": "intent",
+      "stage": "entry",
+      "control": "single",
+      "question": "What would you like help with?",
+      "vi": "Bạn muốn được giúp điều gì?",
+      "options": [
+        [
+          "find",
+          "Find a suitable device"
+        ],
+        [
+          "check_offer",
+          "Check a retailer offer"
+        ],
+        [
+          "improve",
+          "Improve a device I own"
+        ],
+        [
+          "browse",
+          "Browse without setup"
+        ]
+      ],
+      "effect": "Route the journey. Offer check, existing-device and browse routes bypass unrelated discovery questions."
+    },
+    {
+      "id": "category",
+      "stage": "core",
+      "control": "single",
+      "question": "What are you choosing?",
+      "vi": "Bạn đang tìm thiết bị nào?",
+      "options": [
+        [
+          "laptop",
+          "Laptop"
+        ],
+        [
+          "phone",
+          "Phone"
+        ],
+        [
+          "desktop",
+          "Desktop PC"
+        ],
+        [
+          "unknown",
+          "Help me decide"
+        ]
+      ],
+      "effect": "Choose question and catalog scope. Unknown routes to a clarification, not an arbitrary default."
+    },
+    {
+      "id": "budget",
+      "stage": "core",
+      "control": "money_ceiling",
+      "question": "What is the maximum total you want to spend?",
+      "vi": "Bạn muốn chi tối đa bao nhiêu cho lần mua này?",
+      "optionsByCategory": {
+        "laptop": [
+          12000000,
+          18000000,
+          25000000,
+          35000000,
+          50000000
+        ],
+        "phone": [
+          5000000,
+          8000000,
+          12000000,
+          20000000,
+          30000000
+        ],
+        "desktop": [
+          15000000,
+          20000000,
+          30000000,
+          40000000,
+          60000000
+        ]
+      },
+      "additionalOptions": [
+        "custom_exact_ceiling",
+        "help_me_set_budget"
+      ],
+      "effect": "User-confirmed hard ceiling in VND for the stated purchase scope. Values are illustrative preset ceilings, not market benchmarks. Unknown means no budget-personalized eligibility claim."
+    },
+    {
+      "id": "laptop_uses",
+      "stage": "core",
+      "categories": [
+        "laptop"
+      ],
+      "control": "multi",
+      "question": "What will you regularly use it for?",
+      "vi": "Bạn thường dùng laptop để làm gì?",
+      "options": [
+        [
+          "study_office",
+          "Study and office tasks"
+        ],
+        [
+          "coding",
+          "Programming"
+        ],
+        [
+          "engineering",
+          "CAD, engineering or architecture"
+        ],
+        [
+          "photo",
+          "Photo/design work"
+        ],
+        [
+          "video",
+          "Video editing"
+        ],
+        [
+          "gaming",
+          "Gaming"
+        ],
+        [
+          "local_ai",
+          "Run AI models locally"
+        ],
+        [
+          "other",
+          "Another use"
+        ],
+        [
+          "unknown",
+          "Not sure yet"
+        ]
+      ],
+      "exclusiveOptions": [
+        "unknown"
+      ],
+      "effect": "Select all actual uses. Tasks route follow-ups; occupation does not set hardware minimums."
+    },
+    {
+      "id": "phone_uses",
+      "stage": "core",
+      "categories": [
+        "phone"
+      ],
+      "control": "multi",
+      "question": "What will you regularly use your phone for?",
+      "vi": "Bạn thường dùng điện thoại để làm gì?",
+      "options": [
+        [
+          "daily",
+          "Calls, messaging and everyday apps"
+        ],
+        [
+          "camera",
+          "Photography"
+        ],
+        [
+          "video",
+          "Recording/editing video"
+        ],
+        [
+          "gaming",
+          "Gaming"
+        ],
+        [
+          "outdoor",
+          "Navigation or outdoor work"
+        ],
+        [
+          "work",
+          "Work or required apps"
+        ],
+        [
+          "reading",
+          "Reading and accessibility needs"
+        ],
+        [
+          "other",
+          "Another use"
+        ],
+        [
+          "unknown",
+          "Not sure yet"
+        ]
+      ],
+      "exclusiveOptions": [
+        "unknown"
+      ],
+      "effect": "Select all actual uses. Show relevant follow-ups; daily apps do not imply demanding workloads."
+    },
+    {
+      "id": "desktop_uses",
+      "stage": "core",
+      "categories": [
+        "desktop"
+      ],
+      "control": "multi",
+      "question": "What will you regularly use the PC for?",
+      "vi": "Bạn thường dùng PC để làm gì?",
+      "options": [
+        [
+          "office",
+          "Office and study"
+        ],
+        [
+          "coding",
+          "Programming"
+        ],
+        [
+          "engineering",
+          "CAD or engineering"
+        ],
+        [
+          "creative",
+          "Photo/video/design work"
+        ],
+        [
+          "gaming",
+          "Gaming"
+        ],
+        [
+          "local_ai",
+          "Run AI models locally"
+        ],
+        [
+          "other",
+          "Another use"
+        ],
+        [
+          "unknown",
+          "Not sure yet"
+        ]
+      ],
+      "exclusiveOptions": [
+        "unknown"
+      ],
+      "effect": "Select all actual uses. Route task-specific requirements and build scope."
+    },
+    {
+      "id": "condition",
+      "stage": "core_optional",
+      "control": "single",
+      "question": "Which product conditions would you consider?",
+      "vi": "Bạn cân nhắc tình trạng máy nào?",
+      "options": [
+        [
+          "new",
+          "New only"
+        ],
+        [
+          "used",
+          "Used/refurbished only"
+        ],
+        [
+          "both",
+          "Compare new and used/refurbished"
+        ],
+        [
+          "unknown",
+          "Not sure yet"
+        ]
+      ],
+      "effect": "Explicit new/used restriction. Unknown is not permission to recommend used as equivalent; disclose the assumption or ask before selecting a used offer."
+    },
+    {
+      "id": "laptop_priorities",
+      "stage": "core_optional",
+      "categories": [
+        "laptop"
+      ],
+      "control": "multi",
+      "maxSelections": 2,
+      "question": "Which two tradeoffs matter most?",
+      "vi": "Hai ưu tiên nào quan trọng nhất với bạn?",
+      "options": [
+        [
+          "spend_less",
+          "Spend less while meeting my needs"
+        ],
+        [
+          "portable",
+          "Easy to carry"
+        ],
+        [
+          "battery",
+          "Battery away from an outlet"
+        ],
+        [
+          "sustained",
+          "Sustained performance"
+        ],
+        [
+          "screen",
+          "Screen and reading comfort"
+        ],
+        [
+          "service",
+          "Warranty and service access"
+        ],
+        [
+          "upgrade",
+          "Upgrade options"
+        ],
+        [
+          "no_preference",
+          "No strong preference"
+        ]
+      ],
+      "exclusiveOptions": [
+        "no_preference"
+      ],
+      "effect": "Soft ranking priorities only. Choosing two must never discard any selected task or required feature."
+    },
+    {
+      "id": "phone_priorities",
+      "stage": "core_optional",
+      "categories": [
+        "phone"
+      ],
+      "control": "multi",
+      "maxSelections": 2,
+      "question": "Which two tradeoffs matter most?",
+      "vi": "Hai ưu tiên nào quan trọng nhất với bạn?",
+      "options": [
+        [
+          "spend_less",
+          "Spend less while meeting my needs"
+        ],
+        [
+          "camera",
+          "Camera results"
+        ],
+        [
+          "battery",
+          "Battery between charges"
+        ],
+        [
+          "compact",
+          "Easy to hold/carry"
+        ],
+        [
+          "gaming",
+          "Gaming performance"
+        ],
+        [
+          "support",
+          "Published software support"
+        ],
+        [
+          "service",
+          "Warranty and service access"
+        ],
+        [
+          "no_preference",
+          "No strong preference"
+        ]
+      ],
+      "exclusiveOptions": [
+        "no_preference"
+      ],
+      "effect": "Soft ranking only. Keep camera measurement, battery evidence and support facts distinct."
+    },
+    {
+      "id": "desktop_priorities",
+      "stage": "core_optional",
+      "categories": [
+        "desktop"
+      ],
+      "control": "multi",
+      "maxSelections": 2,
+      "question": "Which two tradeoffs matter most?",
+      "vi": "Hai ưu tiên nào quan trọng nhất với bạn?",
+      "options": [
+        [
+          "spend_less",
+          "Spend less while meeting my needs"
+        ],
+        [
+          "performance",
+          "Task performance"
+        ],
+        [
+          "quiet",
+          "Lower noise"
+        ],
+        [
+          "compact",
+          "Small footprint"
+        ],
+        [
+          "upgrade",
+          "Upgrade options"
+        ],
+        [
+          "service",
+          "Assembly and support"
+        ],
+        [
+          "no_preference",
+          "No strong preference"
+        ]
+      ],
+      "exclusiveOptions": [
+        "no_preference"
+      ],
+      "effect": "Soft ranking only; cannot override electrical, physical or workload compatibility."
+    },
+    {
+      "id": "must_have",
+      "stage": "critical_followup",
+      "control": "multi_with_search",
+      "question": "Is there anything the device must support?",
+      "optionsSource": "Category-relevant ports, peripherals, required apps, operating system, networking and accessibility needs; include no special requirement, other and unknown with correct exclusivity.",
+      "effect": "A marked must-have becomes a hard constraint. Brand or aesthetic preferences are not automatically hard requirements."
+    },
+    {
+      "id": "required_software",
+      "stage": "critical_followup",
+      "control": "search_multi_with_other",
+      "trigger": "Laptop/desktop coding, engineering, creative or local-AI use; phone required-work-app use.",
+      "question": "Which applications or tools do you need?",
+      "optionsSource": "Searchable maintained app list, Other with manual name, and Not sure. Ask version/architecture/backend only when relevant.",
+      "effect": "Retrieve vendor compatibility requirements and relevant workload evidence. Merely selecting an app does not confirm performance."
+    },
+    {
+      "id": "vm_count",
+      "stage": "critical_followup",
+      "control": "single",
+      "trigger": "User explicitly indicates virtual machines or emulators.",
+      "question": "How many virtual machines or emulators run at the same time?",
+      "options": [
+        [
+          "none",
+          "None"
+        ],
+        [
+          "one",
+          "One"
+        ],
+        [
+          "two_three",
+          "Two or three"
+        ],
+        [
+          "four_plus",
+          "Four or more"
+        ],
+        [
+          "unknown",
+          "Not sure"
+        ]
+      ],
+      "effect": "Workload intensity signal; refine memory/CPU guidance with workload evidence rather than a universal RAM rule."
+    },
+    {
+      "id": "gaming_titles",
+      "stage": "critical_followup",
+      "control": "search_multi_with_other",
+      "trigger": "Gaming selected.",
+      "question": "Which games matter to you?",
+      "optionsSource": "Maintained searchable titles plus other and unknown.",
+      "effect": "Identify relevant game/anti-cheat/platform requirements; do not substitute a generic gamer label."
+    },
+    {
+      "id": "gaming_target",
+      "stage": "critical_followup",
+      "control": "guided_target",
+      "trigger": "Gaming selected and target materially changes the shortlist.",
+      "question": "What gaming experience are you aiming for?",
+      "options": [
+        [
+          "casual",
+          "Comfortable casual play"
+        ],
+        [
+          "competitive",
+          "Competitive responsiveness"
+        ],
+        [
+          "visual",
+          "Higher visual settings"
+        ],
+        [
+          "custom",
+          "I know my resolution/frame-rate target"
+        ],
+        [
+          "unknown",
+          "Help me choose"
+        ]
+      ],
+      "effect": "Translate goals through relevant evidence. Custom numeric targets need a supported measurement basis."
+    },
+    {
+      "id": "creative_scale",
+      "stage": "critical_followup",
+      "control": "application_specific",
+      "trigger": "Creative use selected and project scale changes fit.",
+      "question": "What kind of projects do you usually work on?",
+      "optionsSource": "Task-specific choices, for example video resolution/codec or CAD model scope, with examples, other and unknown.",
+      "effect": "Avoid bundling unrelated project-size meanings into one generic heavy-work option."
+    },
+    {
+      "id": "phone_camera",
+      "stage": "critical_followup",
+      "categories": [
+        "phone"
+      ],
+      "control": "multi",
+      "trigger": "Photography/video selected.",
+      "question": "What do you mainly want to capture?",
+      "options": [
+        [
+          "people",
+          "People and everyday moments"
+        ],
+        [
+          "night",
+          "Low-light scenes"
+        ],
+        [
+          "zoom",
+          "Distant subjects"
+        ],
+        [
+          "video",
+          "Moving video"
+        ],
+        [
+          "documents",
+          "Documents or work evidence"
+        ],
+        [
+          "unknown",
+          "Not sure"
+        ]
+      ],
+      "exclusiveOptions": [
+        "unknown"
+      ],
+      "effect": "Weight relevant measured camera behaviors rather than megapixels."
+    },
+    {
+      "id": "phone_charging",
+      "stage": "critical_followup",
+      "categories": [
+        "phone"
+      ],
+      "control": "single",
+      "trigger": "Battery priority or outdoor use.",
+      "question": "How often can you usually charge during your day?",
+      "options": [
+        [
+          "often",
+          "Charging is usually available"
+        ],
+        [
+          "evening",
+          "Usually only at the end of the day"
+        ],
+        [
+          "limited",
+          "Often away from reliable charging"
+        ],
+        [
+          "unknown",
+          "It varies / not sure"
+        ]
+      ],
+      "effect": "Context for battery priorities, not a promise of all-day measured runtime."
+    },
+    {
+      "id": "required_os",
+      "stage": "critical_followup",
+      "control": "single",
+      "question": "Do you need to keep using a particular operating system?",
+      "optionsByCategory": {
+        "phone": [
+          "Android required",
+          "iOS required",
+          "No operating-system requirement",
+          "Not sure"
+        ],
+        "computer": [
+          "Windows required",
+          "macOS required",
+          "Linux required",
+          "No operating-system requirement",
+          "Not sure"
+        ]
+      },
+      "effect": "A required platform is a hard constraint; lack of requirement does not establish app compatibility."
+    },
+    {
+      "id": "accessibility",
+      "stage": "critical_followup",
+      "control": "multi_with_other",
+      "trigger": "User indicates accessibility/comfort needs or opens additional requirements.",
+      "question": "Which interaction needs should we account for?",
+      "optionsSource": "Readable larger text, hearing-related features, one-handed reach, input/peripheral needs, other, no additional needs, unknown.",
+      "effect": "Use non-diagnostic language and hands-on checks. Do not infer needs from age or require medical information."
+    },
+    {
+      "id": "pc_scope",
+      "stage": "critical_followup",
+      "categories": [
+        "desktop"
+      ],
+      "control": "single",
+      "question": "What must your PC budget include?",
+      "options": [
+        [
+          "tower",
+          "Computer tower only"
+        ],
+        [
+          "tower_monitor",
+          "Tower and monitor"
+        ],
+        [
+          "complete",
+          "Computer, monitor, keyboard and mouse"
+        ],
+        [
+          "upgrade",
+          "Only upgrades to an existing PC"
+        ],
+        [
+          "custom",
+          "A different set of items"
+        ],
+        [
+          "unknown",
+          "Help me work this out"
+        ]
+      ],
+      "effect": "Set explicit basket scope before a within-budget complete-build claim."
+    },
+    {
+      "id": "pc_reuse",
+      "stage": "critical_followup",
+      "categories": [
+        "desktop"
+      ],
+      "control": "structured_parts",
+      "question": "Do you want to keep any existing parts or peripherals?",
+      "options": [
+        [
+          "none",
+          "No existing equipment to reuse"
+        ],
+        [
+          "specify",
+          "Yes, I will add the exact models"
+        ],
+        [
+          "unknown",
+          "Not sure"
+        ]
+      ],
+      "effect": "Check exact retained models and missing critical compatibility. Do not assume generic part names are enough."
+    },
+    {
+      "id": "current_device",
+      "stage": "route_specific",
+      "control": "model_search_with_manual",
+      "trigger": "Improve/repair/upgrade route.",
+      "question": "What device do you currently own?",
+      "optionsSource": "Model search, manual model entry and help finding the model.",
+      "effect": "Identify actual configuration and upgrade support; do not require a full new-device questionnaire."
+    },
+    {
+      "id": "current_problem",
+      "stage": "route_specific",
+      "control": "multi_with_other",
+      "trigger": "Improve/repair/upgrade route.",
+      "question": "What are you hoping to improve?",
+      "optionsSource": "Task slowness, storage space, battery, physical fault, unsupported application, ergonomics, other, unknown.",
+      "effect": "Identify need for diagnosis or compatibility checks. A complaint alone is not proof of a hardware fault or bottleneck."
+    },
+    {
+      "id": "purchase_timing",
+      "stage": "later_refinement",
+      "control": "single",
+      "question": "When do you need the device?",
+      "options": [
+        [
+          "urgent",
+          "As soon as possible"
+        ],
+        [
+          "deadline",
+          "By a date I choose"
+        ],
+        [
+          "wait",
+          "I can wait for a suitable offer"
+        ],
+        [
+          "explore",
+          "Just exploring"
+        ]
+      ],
+      "effect": "Prioritize actual stock/deadlines or optional alerts. Date entry appears only when needed."
+    },
+    {
+      "id": "delivery_area",
+      "stage": "offer_refinement",
+      "control": "area_search",
+      "question": "Where should we check delivery or pickup?",
+      "optionsSource": "Broad city/delivery area, manual area and decide later. No GPS permission required.",
+      "effect": "Required before location-dependent delivery/stock totals can be verified; not necessary to browse general fit."
+    },
+    {
+      "id": "payment_mode",
+      "stage": "offer_refinement",
+      "control": "single",
+      "question": "Which payment options would you like to compare?",
+      "options": [
+        [
+          "cash",
+          "Full payment"
+        ],
+        [
+          "installments",
+          "Installments"
+        ],
+        [
+          "compare",
+          "Compare full payment and installments"
+        ],
+        [
+          "unknown",
+          "Decide later"
+        ]
+      ],
+      "effect": "Keep total budget separate from payment schedule; do not infer loan eligibility or convert a monthly figure into a hidden larger purchase cap."
+    },
+    {
+      "id": "buying_for",
+      "stage": "optional_refinement",
+      "control": "single",
+      "question": "Who will use the device?",
+      "options": [
+        [
+          "self",
+          "Me"
+        ],
+        [
+          "other",
+          "Someone else"
+        ],
+        [
+          "shared",
+          "Several people"
+        ],
+        [
+          "team",
+          "A small team"
+        ],
+        [
+          "skip",
+          "Prefer to decide later"
+        ]
+      ],
+      "effect": "Supports separate decision profiles and collaboration; no age, salary or identity is required."
+    }
+  ],
+  "rules": [
+    "Route before profiling; browsing and checking an offer remain accessible without onboarding.",
+    "Ask about actual tasks before occupation; never derive requirements solely from job title.",
+    "Use radio-style controls for one answer and checkbox-style controls for multiple answers; label the selection rule.",
+    "Keep numeric budget presets ascending and stable. Include a custom exact ceiling and help setting a budget.",
+    "Unknown, skipped, not applicable and explicit no are different states.",
+    "Tasks and must-haves allow all relevant answers. Priority caps apply only to soft tradeoffs.",
+    "No-preference and unknown choices are exclusive with contradictory specific answers.",
+    "Do not preselect price, condition, OS, brand, financing or inferred behavioral preferences.",
+    "Critical unknowns block a confirmed-fit/fully-compatible claim, while allowing a clearly provisional preview.",
+    "Show a review summary with edit links, assumptions and unresolved requirements before finalizing the decision.",
+    "Changing category or intent invalidates derived answers and dependent task-specific branches; preserve only still-relevant answers.",
+    "Store a buying-decision profile rather than forcing one permanent person profile for all purchases.",
+    "Ask broad location before offer verification, and request optional account/notifications only at the point of benefit.",
+    "Initial core length and completion targets are hypotheses to test, not established UX laws."
+  ]
+}

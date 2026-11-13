@@ -1,0 +1,73 @@
+[
+  {
+    "name": "types-final",
+    "command": [
+      "npm.cmd",
+      "--prefix",
+      "apps/adviser",
+      "run",
+      "check"
+    ],
+    "startedAt": "2026-11-13T08:48:02.383956+00:00",
+    "finishedAt": "2026-11-13T08:48:07.878029+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "app-tests-final",
+    "command": [
+      "npm.cmd",
+      "--prefix",
+      "apps/adviser",
+      "test"
+    ],
+    "startedAt": "2026-11-13T08:48:07.878152+00:00",
+    "finishedAt": "2026-11-13T08:48:10.654339+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "adviser-http-final",
+    "command": [
+      "node",
+      "--experimental-strip-types",
+      "--test",
+      "services/adviser/server.test.mjs"
+    ],
+    "startedAt": "2026-11-13T08:48:10.654456+00:00",
+    "finishedAt": "2026-11-13T08:48:11.591276+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "baseline-packs-final",
+    "command": [
+      "python",
+      "research/prebuild/tools/run_unit_packs.py",
+      "--all"
+    ],
+    "startedAt": "2026-11-13T08:48:11.591360+00:00",
+    "finishedAt": "2026-11-13T08:48:22.548835+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "artifacts-final",
+    "command": [
+      "python",
+      "research/prebuild/tools/validate.py",
+      "--all"
+    ],
+    "startedAt": "2026-11-13T08:48:22.548926+00:00",
+    "finishedAt": "2026-11-13T08:48:23.729993+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "gate-g4-final",
+    "command": [
+      "python",
+      "research/prebuild/tools/validate.py",
+      "--gate",
+      "G4"
+    ],
+    "startedAt": "2026-11-13T08:48:23.730205+00:00",
+    "finishedAt": "2026-11-13T08:48:25.012807+00:00",
+    "exitCode": 2
+  }
+]

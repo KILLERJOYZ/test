@@ -1,0 +1,41 @@
+- heading "lựa." [level=1]
+- generic: Thiết bị thật. Quyết định có căn cứ.
+- button "Cập nhật" [disabled]:
+  - generic: Cập nhật
+- generic: Dữ liệu đóng gói · chưa kết nối nguồn cập nhật
+- generic: Máy nào hợp việc của bạn?
+- generic: 70 tin đăng thực tế từ dữ liệu kho. Giá là quan sát lịch sử, không phải giá trực tiếp.
+- generic: "Trần chi: 25.000.000 ₫ · RAM ≥ 0 GB · ổ ≥ 0 GB"
+- generic: Chưa chọn tác vụ
+- button "Điều chỉnh nhu cầu":
+  - generic: Điều chỉnh nhu cầu
+- generic: Tìm tên máy, CPU, RAM hoặc nhà bán
+- textbox "Tìm tên máy, CPU, RAM hoặc nhà bán" [active]: zzzz-no-product
+- button "Mọi nguồn":
+  - generic: Mọi nguồn
+- button "cellphones":
+  - generic: cellphones
+- button "thegioididong":
+  - generic: thegioididong
+- button "dienmayxanh":
+  - generic: dienmayxanh
+- button "fptshop":
+  - generic: fptshop
+- 'button "Sắp xếp: giá lịch sử"':
+  - generic: "Sắp xếp: giá lịch sử"
+- button "Hiện máy không đạt":
+  - generic: Hiện máy không đạt
+- generic: 0 tin cần kiểm tra · 0 không đạt yêu cầu đã biết
+- generic: Không có tin đáp ứng các tiêu chí đã biết. Không tự nới ngân sách hoặc yêu cầu.
+- button "Chỉnh nhu cầu":
+  - generic: Chỉnh nhu cầu
+- tab "Tư vấn":
+  - generic: Tư vấn
+- tab "Khám phá":
+  - generic: Khám phá
+- tab "So sánh 0":
+  - generic: So sánh 0
+- tab "Đã lưu":
+  - generic: Đã lưu
+- tab "Cài đặt":
+  - generic: Cài đặt

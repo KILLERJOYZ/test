@@ -1,0 +1,650 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "f9f1d167f058435798dd26dab743b813",
+  "selection": {
+    "task": null,
+    "pack": null,
+    "changed": [
+      "apps/adviser/src/decision-state.ts",
+      "apps/adviser/src/AndroidApp.tsx",
+      "research/prebuild/tools/contract_validation.mjs"
+    ],
+    "all": false
+  },
+  "testedFileHashes": {
+    "apps/adviser/src/decision-state.test.ts": "c58ee182528928d4bee031926746557f2733ad9b2deced6cd1db245e45a14858",
+    "apps/adviser/src/decision-state.ts": "d1ee7a85245717b3bfe577a4a217f0e639e7f64aa215c1a4e8f48be3085658d9",
+    "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+    "research/prebuild/tools/contracts.test.mjs": "ea41d6f9a9d4684f11f989d6f52d2a60394abe04a080ecbd13b6df28912ecdee",
+    "research/prebuild/tools/contract_validation.mjs": "4fb471dc55b9c132f822b99312bf8f71345fc5abc8c7f15c6bf0be8dbc6ec965",
+    "apps/adviser/src/ai.ts": "4be61db524594d02b9c407f8ca7c74ff677f9ed7d3054c9cc21afd56af652c49",
+    "apps/adviser/src/domain.test.ts": "8c2ee9589ec50a9d8a4dcb1a37978a8af1045764ebee86abac6b15e91d8b0bbb",
+    "apps/adviser/src/picker.test.ts": "84fd4a72fb718438504a0af695ef7454a8cbddf2cd0f0dd4c4dc2dbad36a2dd1",
+    "apps/adviser/src/ai.test.ts": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98",
+    "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/artifact_contracts.py": "21ebb9cad1cc854fc9d41b5b7fc72a853a948398524148d99cb8c7fe45ff2d9e"
+  },
+  "manifestHash": "634f56b24f3df7cd133d6a95f9fb0ee3c2a6efda19fa65cd570546daac08a3bd",
+  "packs": [
+    {
+      "id": "U06",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U06-01",
+          "status": "passed"
+        },
+        {
+          "id": "U06-02",
+          "status": "passed"
+        },
+        {
+          "id": "U06-03",
+          "status": "passed"
+        },
+        {
+          "id": "U06-04",
+          "status": "passed"
+        },
+        {
+          "id": "U06-05",
+          "status": "passed"
+        },
+        {
+          "id": "U06-06",
+          "status": "passed"
+        },
+        {
+          "id": "U06-07",
+          "status": "passed"
+        },
+        {
+          "id": "U06-08",
+          "status": "passed"
+        },
+        {
+          "id": "U06-09",
+          "status": "passed"
+        },
+        {
+          "id": "U06-10",
+          "status": "passed"
+        },
+        {
+          "id": "U06-11",
+          "status": "passed"
+        },
+        {
+          "id": "U06-12",
+          "status": "passed"
+        },
+        {
+          "id": "U06-13",
+          "status": "passed"
+        },
+        {
+          "id": "U06-14",
+          "status": "passed"
+        },
+        {
+          "id": "U06-15",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/f9f1d167f058435798dd26dab743b813-decision_state_tests.log"
+      ]
+    },
+    {
+      "id": "U07",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U07-01",
+          "status": "passed"
+        },
+        {
+          "id": "U07-02",
+          "status": "passed"
+        },
+        {
+          "id": "U07-03",
+          "status": "passed"
+        },
+        {
+          "id": "U07-04",
+          "status": "passed"
+        },
+        {
+          "id": "U07-05",
+          "status": "passed"
+        },
+        {
+          "id": "U07-06",
+          "status": "passed"
+        },
+        {
+          "id": "U07-07",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/f9f1d167f058435798dd26dab743b813-contract_tests.log"
+      ]
+    },
+    {
+      "id": "U08",
+      "exitCode": 2,
+      "cases": [
+        {
+          "id": "U08-01",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U08-02",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U08-03",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U08-04",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U08-05",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U08-06",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U08-07",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U08-08",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U08-09",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "id": "U10",
+      "exitCode": 2,
+      "cases": [
+        {
+          "id": "U10-01",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-02",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-03",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-04",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-05",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-06",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-07",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-08",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-09",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-10",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-11",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-12",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-13",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        },
+        {
+          "id": "U10-14",
+          "status": "not_run",
+          "reason": "deferred_owner"
+        }
+      ],
+      "logs": []
+    },
+    {
+      "id": "UBASE",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "UBASE-01",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-02",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-03",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-04",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-05",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-06",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-07",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-08",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-09",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-10",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-11",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-12",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-13",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-14",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-15",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-16",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-17",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-18",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/f9f1d167f058435798dd26dab743b813-baseline_domain.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U06-01",
+      "status": "passed"
+    },
+    {
+      "id": "U06-02",
+      "status": "passed"
+    },
+    {
+      "id": "U06-03",
+      "status": "passed"
+    },
+    {
+      "id": "U06-04",
+      "status": "passed"
+    },
+    {
+      "id": "U06-05",
+      "status": "passed"
+    },
+    {
+      "id": "U06-06",
+      "status": "passed"
+    },
+    {
+      "id": "U06-07",
+      "status": "passed"
+    },
+    {
+      "id": "U06-08",
+      "status": "passed"
+    },
+    {
+      "id": "U06-09",
+      "status": "passed"
+    },
+    {
+      "id": "U06-10",
+      "status": "passed"
+    },
+    {
+      "id": "U06-11",
+      "status": "passed"
+    },
+    {
+      "id": "U06-12",
+      "status": "passed"
+    },
+    {
+      "id": "U06-13",
+      "status": "passed"
+    },
+    {
+      "id": "U06-14",
+      "status": "passed"
+    },
+    {
+      "id": "U06-15",
+      "status": "passed"
+    },
+    {
+      "id": "U07-01",
+      "status": "passed"
+    },
+    {
+      "id": "U07-02",
+      "status": "passed"
+    },
+    {
+      "id": "U07-03",
+      "status": "passed"
+    },
+    {
+      "id": "U07-04",
+      "status": "passed"
+    },
+    {
+      "id": "U07-05",
+      "status": "passed"
+    },
+    {
+      "id": "U07-06",
+      "status": "passed"
+    },
+    {
+      "id": "U07-07",
+      "status": "passed"
+    },
+    {
+      "id": "U08-01",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U08-02",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U08-03",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U08-04",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U08-05",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U08-06",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U08-07",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U08-08",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U08-09",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-01",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-02",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-03",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-04",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-05",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-06",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-07",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-08",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-09",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-10",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-11",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-12",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-13",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "U10-14",
+      "status": "not_run",
+      "reason": "deferred_owner"
+    },
+    {
+      "id": "UBASE-01",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-02",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-03",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-04",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-05",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-06",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-07",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-08",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-09",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-10",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-11",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-12",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-13",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-14",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-15",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-16",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-17",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-18",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U06": "052235dbc542a923266c9db0a7d49096f2e6f41862a6d01e5a7793bef3c3978d",
+    "U07": "3d210e1941b9e20055f13352ebbae527cb9a357ca503218ad3b612f2bb5caf51",
+    "U08": "c8ddd368c61b39759fac6d90c16564dd6a28d99742a0c21f0cd4335c9d3b86ed",
+    "U10": "b631d29e65f3268fd4d849743fd25ff20ed620bf440eb590bf4661502907f5b4",
+    "UBASE": "757c1c6368f6d034fadbc695f7766e34a8b078000a522f465be3f671dc4a4edb"
+  },
+  "fixtureHashes": {},
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/f9f1d167f058435798dd26dab743b813-decision_state_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/f9f1d167f058435798dd26dab743b813-contract_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/f9f1d167f058435798dd26dab743b813-baseline_domain.log"
+  ],
+  "passed": 40,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 23,
+  "exitCode": 2
+}

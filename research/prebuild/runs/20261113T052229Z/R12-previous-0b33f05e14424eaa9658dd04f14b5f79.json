@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R12",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R12"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:01:11.727154+00:00",
+      "finishedAt": "2026-11-13T06:01:12.353861+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R12-artifact-48cfd33a2904449a99ce75cca5dbb962.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R12"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:32.196192+00:00",
+      "finishedAt": "2026-11-13T06:03:32.833214+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R12-artifact-6ba2f0a0da124e4f9fdcff2c27a84f7c.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R12"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:07:10.184435+00:00",
+      "finishedAt": "2026-11-13T06:07:10.786681+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R12-artifact-bf70ad0ad2874d3ab2ecb33f60de4ae9.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R12"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:07:11.955496+00:00",
+      "finishedAt": "2026-11-13T06:07:12.583231+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R12-artifact-ae3e0a15700543498d3bb26552805290.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R12"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:22:49.706358+00:00",
+      "finishedAt": "2026-11-13T06:22:50.351942+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R12-artifact-9e9bba79be8a49ccacd8ab06bb8ce636.log",
+      "reason": null
+    },
+    {
+      "id": "operations_evidence_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_operations_evidence.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:29:41.691574+00:00",
+      "finishedAt": "2026-11-13T06:29:42.226725+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/e222e1b0becd45308bddbd79f62411eb-operations_evidence_tests.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R12"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:29:41.691574+00:00",
+      "finishedAt": "2026-11-13T06:29:42.314474+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R12-artifact-413156f1ce9e475c815b79aaa2320d68.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "949b1a940ea0ef1651d1ea1b6182e9df8f0d85d6e9bd6893260848d5b04a3444",
+  "inputHashes": {
+    "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
+    "research/prebuild/03-source-register.json": "65a612548b4401980f5c408bc75773416a6cfb674639628b50c12f806901cdc6",
+    "research/prebuild/04-catalog-audit.json": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc",
+    "research/prebuild/07-api-contract.json": "50057485a01ca142981d4511c876aadea5bd1955b0eb8347f834c9055bdd8470"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U12",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/e222e1b0becd45308bddbd79f62411eb.json",
+      "reportHash": "0d304e543cfd7b00dfafa8c84aad0fc9928a4e2010fb39c058c122a578b00ce7",
+      "definitionHash": "51a3f46831cacbafe1425ad5225cb60c75a3938e79295dd737523a15ce788966",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_operations_evidence.py": "6bc855674f0041e410cdfb1ffaf446cc92df3d8b321fed1d63e223195f82d031",
+        "research/prebuild/tools/validate.py": "ea2db9f6ba5b1fb270ce56345be97ba2b2615b0ccfe898f11f73706568df85d4",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "U12-01",
+        "U12-02",
+        "U12-03",
+        "U12-04",
+        "U12-05",
+        "U12-06"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/12-operations-scenarios.json": "1469d50d7c72d1bc72f5adb6c9180b3eaecdf753c2b8396ead46b9632be64216",
+    "research/prebuild/12-operations-and-data-handling.md": "c34c06c3c1cc24901db7ded77a2481c9ba4aceb3893e987dce2edd97138f0cd2",
+    "research/prebuild/tools/test_operations_evidence.py": "6bc855674f0041e410cdfb1ffaf446cc92df3d8b321fed1d63e223195f82d031"
+  },
+  "commandDefinitionHashes": {
+    "operations_evidence_tests": "a16e49fb4d1883924a9d9ebe8e5091665644ef01ae3e23ea1c8af85121f01232"
+  }
+}

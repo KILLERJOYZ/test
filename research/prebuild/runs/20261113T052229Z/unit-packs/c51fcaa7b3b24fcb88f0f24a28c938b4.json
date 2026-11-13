@@ -1,0 +1,91 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "c51fcaa7b3b24fcb88f0f24a28c938b4",
+  "selection": {
+    "task": "R03",
+    "pack": null,
+    "changed": null,
+    "all": false
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/test_source_register.py": "1e8d8ca5c78dcf4eefb827de2a956047c4e662de15a4f8a1a352eae090f28caf",
+    "research/prebuild/tools/validate.py": "ea2db9f6ba5b1fb270ce56345be97ba2b2615b0ccfe898f11f73706568df85d4",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+    "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+  },
+  "manifestHash": "b275a392a8d6ce850f7afd0ef223092c020795389a089afe681c89534d6d8759",
+  "packs": [
+    {
+      "id": "U03",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U03-01",
+          "status": "passed"
+        },
+        {
+          "id": "U03-02",
+          "status": "passed"
+        },
+        {
+          "id": "U03-03",
+          "status": "passed"
+        },
+        {
+          "id": "U03-04",
+          "status": "passed"
+        },
+        {
+          "id": "U03-05",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/c51fcaa7b3b24fcb88f0f24a28c938b4-source_register_tests.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U03-01",
+      "status": "passed"
+    },
+    {
+      "id": "U03-02",
+      "status": "passed"
+    },
+    {
+      "id": "U03-03",
+      "status": "passed"
+    },
+    {
+      "id": "U03-04",
+      "status": "passed"
+    },
+    {
+      "id": "U03-05",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U03": "fa9f26f9f8e5fa3eeef07a0b40d7e2cc1228eea03a6a16660ab0f850e32573d2"
+  },
+  "fixtureHashes": {},
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/c51fcaa7b3b24fcb88f0f24a28c938b4-source_register_tests.log"
+  ],
+  "passed": 5,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "checks": [
+    "normal-motion radio selection and cancellation reversal",
+    "successful needs commit",
+    "confirmation acknowledgement",
+    "dark-theme rendering"
+  ],
+  "video": "native-motion.mp4",
+  "performance": "emulator raw frame stats only; physical targets not accepted",
+  "restoredNightMode": "no",
+  "restoredStylusHandwriting": "null"
+}

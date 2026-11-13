@@ -1,0 +1,323 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "bf9cc44716a147c0a19b4f248d936d5a",
+  "selection": {
+    "task": "R06",
+    "pack": null,
+    "changed": null,
+    "all": false
+  },
+  "testedFileHashes": {
+    "apps/adviser/src/decision-state.test.ts": "f7bab6dbefd0ee81fe60e8089ae0b13d9e8f5b42fc3ad1a3d3dacfea8ae5612d",
+    "apps/adviser/src/decision-state.ts": "95fc94183c30d9401e3bd7d7561a3bdf673c113ea158674c86c4205998578444",
+    "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+    "apps/adviser/src/domain.test.ts": "8c2ee9589ec50a9d8a4dcb1a37978a8af1045764ebee86abac6b15e91d8b0bbb",
+    "apps/adviser/src/picker.test.ts": "84fd4a72fb718438504a0af695ef7454a8cbddf2cd0f0dd4c4dc2dbad36a2dd1",
+    "apps/adviser/src/ai.test.ts": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98",
+    "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+    "apps/adviser/src/ai.ts": "4be61db524594d02b9c407f8ca7c74ff677f9ed7d3054c9cc21afd56af652c49",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/artifact_contracts.py": "21ebb9cad1cc854fc9d41b5b7fc72a853a948398524148d99cb8c7fe45ff2d9e"
+  },
+  "manifestHash": "4c04077695ff3b5f5f6328a2c6f590e50b0de973b4acccb374b84291820dff76",
+  "packs": [
+    {
+      "id": "U06",
+      "exitCode": 1,
+      "cases": [
+        {
+          "id": "U06-01",
+          "status": "not_run"
+        },
+        {
+          "id": "U06-02",
+          "status": "not_run"
+        },
+        {
+          "id": "U06-03",
+          "status": "not_run"
+        },
+        {
+          "id": "U06-04",
+          "status": "not_run"
+        },
+        {
+          "id": "U06-05",
+          "status": "not_run"
+        },
+        {
+          "id": "U06-06",
+          "status": "not_run"
+        },
+        {
+          "id": "U06-07",
+          "status": "not_run"
+        },
+        {
+          "id": "U06-08",
+          "status": "not_run"
+        },
+        {
+          "id": "U06-09",
+          "status": "passed"
+        },
+        {
+          "id": "U06-10",
+          "status": "passed"
+        },
+        {
+          "id": "U06-11",
+          "status": "passed"
+        },
+        {
+          "id": "U06-12",
+          "status": "passed"
+        },
+        {
+          "id": "U06-13",
+          "status": "not_run"
+        },
+        {
+          "id": "U06-14",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/bf9cc44716a147c0a19b4f248d936d5a-decision_state_tests.log"
+      ]
+    },
+    {
+      "id": "UBASE",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "UBASE-01",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-02",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-03",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-04",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-05",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-06",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-07",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-08",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-09",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-10",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-11",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-12",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-13",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-14",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-15",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-16",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-17",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-18",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/bf9cc44716a147c0a19b4f248d936d5a-baseline_domain.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U06-01",
+      "status": "not_run"
+    },
+    {
+      "id": "U06-02",
+      "status": "not_run"
+    },
+    {
+      "id": "U06-03",
+      "status": "not_run"
+    },
+    {
+      "id": "U06-04",
+      "status": "not_run"
+    },
+    {
+      "id": "U06-05",
+      "status": "not_run"
+    },
+    {
+      "id": "U06-06",
+      "status": "not_run"
+    },
+    {
+      "id": "U06-07",
+      "status": "not_run"
+    },
+    {
+      "id": "U06-08",
+      "status": "not_run"
+    },
+    {
+      "id": "U06-09",
+      "status": "passed"
+    },
+    {
+      "id": "U06-10",
+      "status": "passed"
+    },
+    {
+      "id": "U06-11",
+      "status": "passed"
+    },
+    {
+      "id": "U06-12",
+      "status": "passed"
+    },
+    {
+      "id": "U06-13",
+      "status": "not_run"
+    },
+    {
+      "id": "U06-14",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-01",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-02",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-03",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-04",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-05",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-06",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-07",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-08",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-09",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-10",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-11",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-12",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-13",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-14",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-15",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-16",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-17",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-18",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U06": "03abc8f6948654c0540686ccda3d85acff3fca668c98dbbe5e932a66c72a376a",
+    "UBASE": "757c1c6368f6d034fadbc695f7766e34a8b078000a522f465be3f671dc4a4edb"
+  },
+  "fixtureHashes": {},
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/bf9cc44716a147c0a19b4f248d936d5a-decision_state_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/bf9cc44716a147c0a19b4f248d936d5a-baseline_domain.log"
+  ],
+  "passed": 23,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 9,
+  "exitCode": 1
+}

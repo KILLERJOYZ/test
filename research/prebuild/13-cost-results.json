@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R13",
+  "inputs": [
+    {
+      "ref": "research/prebuild/13-cost-inputs.json",
+      "sha256": "e89e5f576dca1ce80f5a5199bb64059d2323420cccef82e30a6978a12b439436"
+    }
+  ],
+  "data": {
+    "scenarios": [
+      {
+        "id": "low",
+        "components": [
+          {
+            "id": "ai_calls",
+            "units": 0,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "hosting",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "source_license",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "build",
+            "units": null,
+            "rate": null,
+            "category": "one_time",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "review_support",
+            "units": null,
+            "rate": null,
+            "category": "staff",
+            "currency": "VND",
+            "amount": null
+          }
+        ],
+        "categories": {
+          "one_time": 0,
+          "recurring": 0,
+          "staff": 0
+        },
+        "knownSubtotal": 0,
+        "missingComponents": [
+          "ai_calls",
+          "hosting",
+          "source_license",
+          "build",
+          "review_support"
+        ],
+        "completeTotal": null,
+        "denominator": null,
+        "costPerUsefulSession": null,
+        "perSessionBasis": "Recurring only; one-time/staff allocation not assumed.",
+        "reason": "Missing mandatory components or observed useful-session denominator."
+      },
+      {
+        "id": "base",
+        "components": [
+          {
+            "id": "ai_calls",
+            "units": 0,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "hosting",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "source_license",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "build",
+            "units": null,
+            "rate": null,
+            "category": "one_time",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "review_support",
+            "units": null,
+            "rate": null,
+            "category": "staff",
+            "currency": "VND",
+            "amount": null
+          }
+        ],
+        "categories": {
+          "one_time": 0,
+          "recurring": 0,
+          "staff": 0
+        },
+        "knownSubtotal": 0,
+        "missingComponents": [
+          "ai_calls",
+          "hosting",
+          "source_license",
+          "build",
+          "review_support"
+        ],
+        "completeTotal": null,
+        "denominator": null,
+        "costPerUsefulSession": null,
+        "perSessionBasis": "Recurring only; one-time/staff allocation not assumed.",
+        "reason": "Missing mandatory components or observed useful-session denominator."
+      },
+      {
+        "id": "high",
+        "components": [
+          {
+            "id": "ai_calls",
+            "units": 0,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "hosting",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "source_license",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "build",
+            "units": null,
+            "rate": null,
+            "category": "one_time",
+            "currency": "VND",
+            "amount": null
+          },
+          {
+            "id": "review_support",
+            "units": null,
+            "rate": null,
+            "category": "staff",
+            "currency": "VND",
+            "amount": null
+          }
+        ],
+        "categories": {
+          "one_time": 0,
+          "recurring": 0,
+          "staff": 0
+        },
+        "knownSubtotal": 0,
+        "missingComponents": [
+          "ai_calls",
+          "hosting",
+          "source_license",
+          "build",
+          "review_support"
+        ],
+        "completeTotal": null,
+        "denominator": null,
+        "costPerUsefulSession": null,
+        "perSessionBasis": "Recurring only; one-time/staff allocation not assumed.",
+        "reason": "Missing mandatory components or observed useful-session denominator."
+      }
+    ]
+  },
+  "evidenceRefs": [],
+  "gaps": [
+    {
+      "id": "GAP-R13-RATES",
+      "reason": "Provider/source/hosting/staff rates and observed useful outcomes unavailable.",
+      "nextAction": "Obtain dated scoped quotes, selected topology and observed usage/capacity."
+    }
+  ]
+}

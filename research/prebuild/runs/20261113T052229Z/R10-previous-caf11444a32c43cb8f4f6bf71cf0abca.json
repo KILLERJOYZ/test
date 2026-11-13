@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R10",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R10"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:57:59.228622+00:00",
+      "finishedAt": "2026-11-13T05:57:59.982586+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R10-artifact-b875cdd1284e48b89f4da4fb177a7e8b.log",
+      "reason": null
+    },
+    {
+      "id": "ai_controlled",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "research/prebuild/tools/ai.test.mjs"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:30.397880+00:00",
+      "finishedAt": "2026-11-13T06:03:31.056525+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/b030408988b8416993aa1edd8abfb360-ai_controlled.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R10"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:30.397880+00:00",
+      "finishedAt": "2026-11-13T06:03:31.147853+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R10-artifact-8c7e25fe17ae4073a89287f356a39e92.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "93b48be91ea28d8c8b45e0011138de0d4a63a953ad3ddd0f0d5f7b933cd20b7a",
+  "inputHashes": {
+    "apps/adviser/src/ai.ts": "db39c6e7eb33ab1dc341b152984e524af18f596ac3b9288a3843a5b0c7304605",
+    "services/demo-ai/server.mjs": "505750b50566ccf7cd4a549a55b949dbd929efc1c300ef01cf02e69af0cd5c01",
+    "services/demo-ai/server.test.mjs": "c71396f46593eb3e0d2c6db89190dcacddf08b9956ce707d3a1c541faca52803",
+    "docs/planning/APP_FLOW_DEEP_RESEARCH.md": "83977fa9832f9a0ba97e1f33a5a6b43597c79186b2b70445054565500942983a"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U10",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/b030408988b8416993aa1edd8abfb360.json",
+      "reportHash": "89fe9bdd15104736445d4ab9c2cb81d18f748193c2426a273b0a7a1eea81bf17",
+      "definitionHash": "b631d29e65f3268fd4d849743fd25ff20ed620bf440eb590bf4661502907f5b4",
+      "testedFileHashes": {
+        "research/prebuild/tools/ai.test.mjs": "7dd1c86ba832d6c984e34312b4375085c839f69913dfb477806203082a8a3443",
+        "research/prebuild/tools/run_ai.mjs": "2ee1f3bc993cb60f834585c2cec197b71ca03ba30d1c4e3bbb460977116c5415",
+        "apps/adviser/src/ai.ts": "db39c6e7eb33ab1dc341b152984e524af18f596ac3b9288a3843a5b0c7304605",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "U10-01",
+        "U10-02",
+        "U10-03",
+        "U10-04",
+        "U10-05",
+        "U10-06",
+        "U10-07",
+        "U10-08",
+        "U10-09",
+        "U10-10",
+        "U10-11",
+        "U10-12",
+        "U10-13",
+        "U10-14"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/10-ai-evaluation.json": "99e3c30dd7772ca06f1a443fb4181103660ed160031719f8e6615195c1950f7f",
+    "research/prebuild/10-ai-evaluation-report.md": "a915c4f618ac1bfd51de0acc005296a8a5d900ebdb2b61e4df34228e6b944592",
+    "research/prebuild/tools/run_ai.mjs": "2ee1f3bc993cb60f834585c2cec197b71ca03ba30d1c4e3bbb460977116c5415",
+    "research/prebuild/tools/ai.test.mjs": "7dd1c86ba832d6c984e34312b4375085c839f69913dfb477806203082a8a3443"
+  },
+  "commandDefinitionHashes": {
+    "ai_controlled": "86916a0a101cae88e689e47098b684ff0bba00a07cc1ead763c6aa946bb11ae3"
+  }
+}

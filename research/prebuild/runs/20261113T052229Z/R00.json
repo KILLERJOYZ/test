@@ -1,0 +1,404 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R00",
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "c60c7aa350911974418e4778830b400bf07453f7cfbe8e516efe716f556e4300",
+  "inputHashes": {
+    "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
+    "docs/planning/APP_FLOW.md": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640",
+    "docs/planning/REPOSITORY_RESEARCH_2026-11-13.md": "62364e0983aaf9a30145b98a19d0731ebcc4288f7e0f7686107a6fa436ffadb7",
+    "docs/planning/project-traceability.json": "46423b863cbe3793bfbd3343d823ccd386a65bc184eb4ec2f9760ca0c951a92c",
+    "apps/adviser/package.json": "e9991914644a687b00d634daabfbcb181f6539c2035bd434a955cc3d1d3a3e0c",
+    "apps/adviser/VERIFICATION.md": "095932ccc3571e9dbe16587a8616e136ed1a585620c9f567eb9a8db63a45dded"
+  },
+  "consumedConfig": {
+    "seed": 20261113,
+    "ai.maxRequests": null,
+    "ai.maxCostVnd": null
+  },
+  "consumedEvidenceHashes": {},
+  "outputHashes": {
+    "research/prebuild/00-scope-and-decisions.md": "eda345ed8c0d8f9391934bd224446bb9b537bd0005d03128b46bbb3c64a62824",
+    "research/prebuild/tools/validate.py": "ea2db9f6ba5b1fb270ce56345be97ba2b2615b0ccfe898f11f73706568df85d4",
+    "research/prebuild/tools/test_validate.py": "bcf345283596abea2c9ee751d16e7d26d2ee761ca88f84d35cc50a575376d255",
+    "research/prebuild/tools/test_unit_runner.py": "21aba81335c93e443827937e30942fab2d4f759928db39690be77cbd7d23572a",
+    "research/prebuild/tools/run_unit_packs.py": "f8469e31ed645ea2fa0327ebb935dd8d1a14037a4dee2f85440bf986e586092d"
+  },
+  "sharedWrites": [
+    "run-config defaults initialized",
+    "evidence index initialized"
+  ],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U00",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec.json",
+      "reportHash": "4892430a5b7c8d5c327830339a19560d66328f6b576d63944d12dd2a97f7a180",
+      "definitionHash": "95042f18890d9ed277020e7590ef7a7d7a93eeedca99d26d14f1323f51375136",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_validate.py": "bcf345283596abea2c9ee751d16e7d26d2ee761ca88f84d35cc50a575376d255",
+        "research/prebuild/tools/test_unit_runner.py": "21aba81335c93e443827937e30942fab2d4f759928db39690be77cbd7d23572a",
+        "research/prebuild/tools/validate.py": "ea2db9f6ba5b1fb270ce56345be97ba2b2615b0ccfe898f11f73706568df85d4",
+        "research/prebuild/tools/run_unit_packs.py": "f8469e31ed645ea2fa0327ebb935dd8d1a14037a4dee2f85440bf986e586092d",
+        "apps/adviser/src/domain.test.ts": "8c2ee9589ec50a9d8a4dcb1a37978a8af1045764ebee86abac6b15e91d8b0bbb",
+        "apps/adviser/src/picker.test.ts": "84fd4a72fb718438504a0af695ef7454a8cbddf2cd0f0dd4c4dc2dbad36a2dd1",
+        "apps/adviser/src/ai.test.ts": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98",
+        "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+        "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+        "apps/adviser/src/ai.ts": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf",
+        "research/prebuild/tools/test_plan_contract.py": "87d54f5508caa967a0874c7aab87e74f40ce5efb0fd6be72eee861f58d193253",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "U00-01",
+        "U00-02",
+        "U00-03",
+        "U00-04",
+        "U00-05",
+        "U00-06",
+        "U00-07",
+        "U00-08",
+        "U00-09",
+        "U00-10"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    },
+    {
+      "packId": "UBASE",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec.json",
+      "reportHash": "4892430a5b7c8d5c327830339a19560d66328f6b576d63944d12dd2a97f7a180",
+      "definitionHash": "757c1c6368f6d034fadbc695f7766e34a8b078000a522f465be3f671dc4a4edb",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_validate.py": "bcf345283596abea2c9ee751d16e7d26d2ee761ca88f84d35cc50a575376d255",
+        "research/prebuild/tools/test_unit_runner.py": "21aba81335c93e443827937e30942fab2d4f759928db39690be77cbd7d23572a",
+        "research/prebuild/tools/validate.py": "ea2db9f6ba5b1fb270ce56345be97ba2b2615b0ccfe898f11f73706568df85d4",
+        "research/prebuild/tools/run_unit_packs.py": "f8469e31ed645ea2fa0327ebb935dd8d1a14037a4dee2f85440bf986e586092d",
+        "apps/adviser/src/domain.test.ts": "8c2ee9589ec50a9d8a4dcb1a37978a8af1045764ebee86abac6b15e91d8b0bbb",
+        "apps/adviser/src/picker.test.ts": "84fd4a72fb718438504a0af695ef7454a8cbddf2cd0f0dd4c4dc2dbad36a2dd1",
+        "apps/adviser/src/ai.test.ts": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98",
+        "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+        "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+        "apps/adviser/src/ai.ts": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf",
+        "research/prebuild/tools/test_plan_contract.py": "87d54f5508caa967a0874c7aab87e74f40ce5efb0fd6be72eee861f58d193253",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "UBASE-01",
+        "UBASE-02",
+        "UBASE-03",
+        "UBASE-04",
+        "UBASE-05",
+        "UBASE-06",
+        "UBASE-07",
+        "UBASE-08",
+        "UBASE-09",
+        "UBASE-10",
+        "UBASE-11",
+        "UBASE-12",
+        "UBASE-13",
+        "UBASE-14",
+        "UBASE-15",
+        "UBASE-16",
+        "UBASE-17",
+        "UBASE-18"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    },
+    {
+      "packId": "UPLAN",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec.json",
+      "reportHash": "4892430a5b7c8d5c327830339a19560d66328f6b576d63944d12dd2a97f7a180",
+      "definitionHash": "ae5629b0086cbda3959ea7675a5bf7b61bad88a016a556ce09e1e0570b1c061c",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_validate.py": "bcf345283596abea2c9ee751d16e7d26d2ee761ca88f84d35cc50a575376d255",
+        "research/prebuild/tools/test_unit_runner.py": "21aba81335c93e443827937e30942fab2d4f759928db39690be77cbd7d23572a",
+        "research/prebuild/tools/validate.py": "ea2db9f6ba5b1fb270ce56345be97ba2b2615b0ccfe898f11f73706568df85d4",
+        "research/prebuild/tools/run_unit_packs.py": "f8469e31ed645ea2fa0327ebb935dd8d1a14037a4dee2f85440bf986e586092d",
+        "apps/adviser/src/domain.test.ts": "8c2ee9589ec50a9d8a4dcb1a37978a8af1045764ebee86abac6b15e91d8b0bbb",
+        "apps/adviser/src/picker.test.ts": "84fd4a72fb718438504a0af695ef7454a8cbddf2cd0f0dd4c4dc2dbad36a2dd1",
+        "apps/adviser/src/ai.test.ts": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98",
+        "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+        "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+        "apps/adviser/src/ai.ts": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf",
+        "research/prebuild/tools/test_plan_contract.py": "87d54f5508caa967a0874c7aab87e74f40ce5efb0fd6be72eee861f58d193253",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "UPLAN-01",
+        "UPLAN-02",
+        "UPLAN-03",
+        "UPLAN-04",
+        "UPLAN-05",
+        "UPLAN-06",
+        "UPLAN-07",
+        "UPLAN-08",
+        "UPLAN-09",
+        "UPLAN-10"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "checks": [
+    {
+      "id": "baseline_types",
+      "command": [
+        "npm.cmd",
+        "--prefix",
+        "apps/adviser",
+        "run",
+        "check"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:22:31.378968+00:00",
+      "finishedAt": "2026-11-13T05:22:35.578837+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "build",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/baseline_types.log",
+      "reason": null
+    },
+    {
+      "id": "baseline_service",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "services/demo-ai/server.test.mjs"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:22:35.578933+00:00",
+      "finishedAt": "2026-11-13T05:22:36.033352+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "integration",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/baseline_service.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R00"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:30:18.533303+00:00",
+      "finishedAt": "2026-11-13T05:30:20.728621+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R00-artifact-0e6fa7137fe84314accd547c91e572af.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R00"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:33:16.004853+00:00",
+      "finishedAt": "2026-11-13T05:33:18.142962+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R00-artifact-5cf6c13ae7974a65b588658052f2453e.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R00"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:40:04.726044+00:00",
+      "finishedAt": "2026-11-13T05:40:06.786157+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R00-artifact-d7fb592edc49407aa135f09c48db3d45.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R00"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:18.502021+00:00",
+      "finishedAt": "2026-11-13T06:03:20.734265+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R00-artifact-0928eb2d16e34bddb8115f298552a7e9.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R00"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:07:01.803574+00:00",
+      "finishedAt": "2026-11-13T06:07:04.020803+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R00-artifact-27b4ff8f6bad46dcaa04e7accf9f9e84.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R00"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T08:22:05.476873+00:00",
+      "finishedAt": "2026-11-13T08:22:11.966974+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R00-artifact-5dbbbf584dfa46ed94cd7c1cdb3e2923.log",
+      "reason": null
+    },
+    {
+      "id": "validator_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_validate.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T08:47:08.364463+00:00",
+      "finishedAt": "2026-11-13T08:47:11.126171+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec-validator_tests.log",
+      "reason": null
+    },
+    {
+      "id": "unit_runner_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_unit_runner.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T08:47:08.364463+00:00",
+      "finishedAt": "2026-11-13T08:47:11.126196+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec-unit_runner_tests.log",
+      "reason": null
+    },
+    {
+      "id": "baseline_domain",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "apps/adviser/src/domain.test.ts",
+        "apps/adviser/src/picker.test.ts",
+        "apps/adviser/src/ai.test.ts"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T08:47:08.364463+00:00",
+      "finishedAt": "2026-11-13T08:47:11.126206+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec-baseline_domain.log",
+      "reason": null
+    },
+    {
+      "id": "plan_contract_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_plan_contract.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T08:47:08.364463+00:00",
+      "finishedAt": "2026-11-13T08:47:11.126211+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec-plan_contract_tests.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R00"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T08:47:08.364463+00:00",
+      "finishedAt": "2026-11-13T08:47:11.352280+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R00-artifact-529ef8e93cdb487cb1d96a023a744d10.log",
+      "reason": null
+    }
+  ],
+  "commandDefinitionHashes": {
+    "plan_contract_tests": "c7bd38d894915c144febb0f7586152ab5b0d5e42b878553d9afc4d067b38e75b",
+    "baseline_domain": "eaf12c7a1eaaedae894c24aedfa0de11ce4136a9ddfecea2fffee3f053519701",
+    "validator_tests": "a9a00c3a812a759c5b0615c778101818f739a0742434cf1ebe143dacd3a467b5",
+    "unit_runner_tests": "064c772afe28d2febc95244c49b2fde3246683e8b51854ebdbef9da6a707015f"
+  }
+}

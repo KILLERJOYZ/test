@@ -1,0 +1,16 @@
+{
+  "original": {
+    "system/font_scale": "1.0",
+    "global/animator_duration_scale": "null",
+    "global/transition_animation_scale": "1.0",
+    "global/window_animation_scale": "1.0"
+  },
+  "size": "Physical size: 1080x2400\r\n",
+  "density": "Physical density: 420\r\n",
+  "checks": [
+    "2.0x font: navigation and needs action present",
+    "disabled system animations: modal open/select/cancel operable",
+    "1200dp expanded comparison with paired identities"
+  ],
+  "status": "passed"
+}

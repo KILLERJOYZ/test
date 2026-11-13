@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R07",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R07"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:48:09.357847+00:00",
+      "finishedAt": "2026-11-13T05:48:10.011187+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R07-artifact-246f0a167956432ba58efdd1838eb511.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R07"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:51:32.223880+00:00",
+      "finishedAt": "2026-11-13T05:51:32.825930+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R07-artifact-2a90282bc9594799a234c31c0211a0a0.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R07"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:51:52.183246+00:00",
+      "finishedAt": "2026-11-13T05:51:52.835108+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R07-artifact-d1d36a2a675a4b928e564cc0425d07fe.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R07"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:27.030312+00:00",
+      "finishedAt": "2026-11-13T06:03:27.650542+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R07-artifact-1dc81c787a66405fb3096d2c0d74851c.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R07"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:07:05.585776+00:00",
+      "finishedAt": "2026-11-13T06:07:06.230588+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R07-artifact-b6ebbeee7cce44c2be428bdef3a272eb.log",
+      "reason": null
+    },
+    {
+      "id": "contract_tests",
+      "command": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "research/prebuild/tools/contracts.test.mjs"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:22:46.120768+00:00",
+      "finishedAt": "2026-11-13T06:22:46.670304+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/744014f5d20a4a618010e86be5e9ea86-contract_tests.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R07"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:22:46.120768+00:00",
+      "finishedAt": "2026-11-13T06:22:46.758300+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R07-artifact-573f496f5aa04e108932749eabc058ac.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "11b4129aa5205ff88d77a56b563b90d15fa14bb8ec058087611941b53cadb5ef",
+  "inputHashes": {
+    "services/demo-ai/server.mjs": "505750b50566ccf7cd4a549a55b949dbd929efc1c300ef01cf02e69af0cd5c01",
+    "apps/adviser/src/ai.ts": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf",
+    "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+    "docs/planning/APP_FLOW_DEEP_RESEARCH.md": "83977fa9832f9a0ba97e1f33a5a6b43597c79186b2b70445054565500942983a"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U07",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/744014f5d20a4a618010e86be5e9ea86.json",
+      "reportHash": "2942e482c3c0e1589cc7b5415c28503a0ec7b2bcdc553245acc306beffa503d3",
+      "definitionHash": "2d74ac943bafa83cdb866ad986ac62053480a5d8567e35db30bf32e9f26f9038",
+      "testedFileHashes": {
+        "research/prebuild/tools/contracts.test.mjs": "8102c0596f2a9d825510e3a7c3a1fe3b1aa065b2b0583056fd2f7bd4d488d057",
+        "research/prebuild/tools/contract_validation.mjs": "44dcb4954a79e62e4a227b6ae8fe1f1eb17829e52724dbb249bf0d9793bd4564",
+        "research/prebuild/tests/fixtures/api-needs.mjs": "2fc9151cb4c52865d1d236b651d345a20ef35081dcfffadfe1f89bad9a55dc8f",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "U07-01",
+        "U07-02",
+        "U07-03",
+        "U07-04",
+        "U07-05",
+        "U07-06",
+        "U07-07",
+        "U07-08",
+        "U07-09"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/07-architecture-decision.md": "092a961a5766a4b946fee1b1b2b069e2262a25669321db36a307b64228c357d2",
+    "research/prebuild/07-api-contract.json": "50057485a01ca142981d4511c876aadea5bd1955b0eb8347f834c9055bdd8470",
+    "research/prebuild/07-contract-examples.json": "82c1f2ab19b7515841f740618b05ee0bc951e4cf8c6e04f0637f852d42b48ece",
+    "research/prebuild/tools/contracts.test.mjs": "8102c0596f2a9d825510e3a7c3a1fe3b1aa065b2b0583056fd2f7bd4d488d057",
+    "research/prebuild/tools/contract_validation.mjs": "44dcb4954a79e62e4a227b6ae8fe1f1eb17829e52724dbb249bf0d9793bd4564"
+  },
+  "gitInputs": {
+    "git:main:spikes/brd-retrieval/schema.sql": {
+      "sha256": "06ad06ba6ada2dbe429e12f61e7202d90e340ff268698534d58eba7d7ddf040c",
+      "commit": "bd03eeeb0a1dfa3d0ac1e61a2705fdda5cb71436"
+    },
+    "git:main:spikes/brd-retrieval/agent_flow.py": {
+      "sha256": "35cf127694d7dedf2f7c4e0d688b913c57b548979cfcb12d0f5cefa757e358e4",
+      "commit": "bd03eeeb0a1dfa3d0ac1e61a2705fdda5cb71436"
+    },
+    "git:main:spikes/brd-retrieval/server.py": {
+      "sha256": "4a226e46dcfad23002384def5df1cabe19bec87e635e335a0fa1ab8970d916ef",
+      "commit": "bd03eeeb0a1dfa3d0ac1e61a2705fdda5cb71436"
+    }
+  },
+  "commandDefinitionHashes": {
+    "contract_tests": "86499bedc747b5aaaa1919a6c32beebd384295a558200592c3a49ec706582e21"
+  }
+}

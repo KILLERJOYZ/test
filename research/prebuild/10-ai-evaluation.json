@@ -1,0 +1,454 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R10",
+  "inputs": [
+    {
+      "ref": "apps/adviser/src/ai.ts",
+      "sha256": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf"
+    },
+    {
+      "ref": "apps/adviser/src/AndroidApp.tsx",
+      "sha256": "f60ecd7062c3cedacb9a1905fca658a791aec2b228b38e5d0720054334f726d1"
+    },
+    {
+      "ref": "services/demo-ai/server.mjs",
+      "sha256": "505750b50566ccf7cd4a549a55b949dbd929efc1c300ef01cf02e69af0cd5c01"
+    }
+  ],
+  "data": {
+    "provider": null,
+    "model": null,
+    "authorizationRef": null,
+    "controlledCases": [
+      {
+        "id": "U10-01",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-02",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-03",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-04",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-05",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-06",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-07",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-08",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-09",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-10",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-11",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-12",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-13",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      },
+      {
+        "id": "U10-14",
+        "result": "pass",
+        "mode": "controlled",
+        "evidenceRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log"
+      }
+    ],
+    "failures": [
+      {
+        "id": "F01",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-01"
+        ],
+        "result": "pass"
+      },
+      {
+        "id": "F02",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-02"
+        ],
+        "result": "pass"
+      },
+      {
+        "id": "F03",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-02"
+        ],
+        "result": "pass"
+      },
+      {
+        "id": "F04",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-03"
+        ],
+        "result": "pass"
+      },
+      {
+        "id": "F05",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-03"
+        ],
+        "result": "pass"
+      },
+      {
+        "id": "F06",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-04"
+        ],
+        "result": "pass"
+      },
+      {
+        "id": "F07",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-05"
+        ],
+        "result": "pass"
+      },
+      {
+        "id": "F08",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-05"
+        ],
+        "result": "pass"
+      },
+      {
+        "id": "F09",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-12"
+        ],
+        "result": "pass"
+      },
+      {
+        "id": "F10",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-13"
+        ],
+        "result": "pass"
+      },
+      {
+        "id": "F11",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-06"
+        ],
+        "result": "pass"
+      },
+      {
+        "id": "F12",
+        "mode": "controlled",
+        "testRef": "research/prebuild/runs/20261113T052229Z/R10-controlled.log",
+        "caseIds": [
+          "U10-07"
+        ],
+        "result": "pass"
+      }
+    ],
+    "live": {
+      "status": "not_run",
+      "reason": "Provider/model, numeric spending authorization and dated worst-case cost are not configured.",
+      "runs": []
+    },
+    "liveCaseProtocol": [
+      {
+        "id": "LIVE-01",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-02",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-03",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-04",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-05",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-06",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-07",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-08",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-09",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-10",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-11",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-12",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-13",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-14",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-15",
+        "kind": "interpret",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-16",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-17",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-18",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-19",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-20",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-21",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-22",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-23",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-24",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-25",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-26",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-27",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-28",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-29",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      },
+      {
+        "id": "LIVE-30",
+        "kind": "explain",
+        "expected": "Checked fields/facts only; proposals unconfirmed; unknown costs remain unknown.",
+        "labelProvenance": "synthetic_protocol",
+        "result": "not_run"
+      }
+    ],
+    "requestCount": 0,
+    "actualUsage": null,
+    "actualCostVnd": null,
+    "knownSubtotalVnd": 0,
+    "missingComponents": [
+      "live usage/pricing"
+    ],
+    "limitations": [
+      "Injected tests do not establish provider quality or provider-side cancellation/refund."
+    ]
+  },
+  "evidenceRefs": [],
+  "gaps": [
+    {
+      "id": "GAP-R10-LIVE",
+      "reason": "No authorized configured live provider execution.",
+      "nextAction": "Supply scoped numeric caps, pricing and access; execute reviewed 30-case live protocol."
+    }
+  ]
+}

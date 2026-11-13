@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R05",
+  "inputs": [
+    {
+      "ref": "apps/adviser/src/domain.ts",
+      "sha256": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d"
+    },
+    {
+      "ref": "apps/adviser/src/picker.ts",
+      "sha256": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943"
+    },
+    {
+      "ref": "brd.md",
+      "sha256": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712"
+    },
+    {
+      "ref": "research/prebuild/04-catalog-audit.json",
+      "sha256": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc"
+    }
+  ],
+  "data": {
+    "rulesVersion": "synthetic-policy-v1",
+    "datasetKind": "synthetic",
+    "supportedWorkloads": [
+      "study",
+      "code",
+      "creative",
+      "vm"
+    ],
+    "rules": [
+      {
+        "id": "S-CODE",
+        "applicability": "synthetic fixture mode only",
+        "constraintType": "hard",
+        "expression": "code requires fixture RAM >=16GB",
+        "sourceRefs": [
+          "apps/adviser/src/domain.ts#fit"
+        ],
+        "labelProvenance": "synthetic_rule"
+      },
+      {
+        "id": "S-CREATIVE",
+        "applicability": "synthetic fixture mode only",
+        "constraintType": "hard",
+        "expression": "creative requires illustrative level >=3",
+        "sourceRefs": [
+          "apps/adviser/src/domain.ts#fit"
+        ],
+        "labelProvenance": "synthetic_rule"
+      },
+      {
+        "id": "S-VM",
+        "applicability": "synthetic fixture mode only",
+        "constraintType": "hard",
+        "expression": "vm one requires 16GB; many requires 32GB; unknown blocks confirmation",
+        "sourceRefs": [
+          "apps/adviser/src/domain.ts#fit"
+        ],
+        "labelProvenance": "synthetic_rule"
+      }
+    ],
+    "unknownPolicy": "Real capability without exact applicable evidence remains unknown. Unknown mandatory fees prohibit complete total. Hard constraints and budget precede preference ranking.",
+    "evidenceRefs": [],
+    "unsupported": [
+      "unreviewed real workload capability",
+      "phone",
+      "unrestricted PC solver"
+    ],
+    "researchObservationCount": 0,
+    "rankingPolicy": "Rank only eligible exact variants. Ordered uses and soft preferences never override hard constraints."
+  },
+  "evidenceRefs": [],
+  "gaps": [
+    {
+      "id": "GAP-R05-001",
+      "reason": "No independently adjudicated real workload labels.",
+      "nextAction": "Collect exact application requirements and applicable measurements; review supported scope."
+    }
+  ]
+}

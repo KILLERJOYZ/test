@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Differentiation development sequence</title>
+<style>
+html,body{margin:0;padding:0;background:transparent;color:var(--foreground);font-family:var(--font-sans,sans-serif)}
+#sequence{width:100%;margin:0}
+#sequence .stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#sequence .stage{padding:16px;border-radius:var(--radius,12px);background:var(--card);color:var(--card-foreground,var(--foreground))}
+#sequence .label{font-size:12px;color:var(--muted-foreground);margin-bottom:12px}
+#sequence .name{font-size:16px;font-weight:500;margin:0 0 14px}
+#sequence ul{padding-left:18px;margin:0;font-size:14px;line-height:1.6}
+#sequence li+li{margin-top:10px}
+#sequence .dependency{border-top:1px solid var(--border);padding-top:12px;margin-top:16px;font-size:12px;line-height:1.5;color:var(--muted-foreground)}
+#sequence figcaption{font-size:12px;color:var(--muted-foreground);line-height:1.6;margin-top:12px}
+#sequence .path{display:flex;gap:8px;align-items:center;margin-bottom:12px;font-size:12px;color:var(--muted-foreground)}
+#sequence .line{height:2px;flex:1;background:var(--chart-1)}
+@media(max-width:570px){#sequence .stages{grid-template-columns:1fr}#sequence .name{margin-bottom:8px}#sequence .label{margin-bottom:6px}}
+</style></head><body>
+<figure id="sequence" aria-label="Proposed development sequence. Start with workload fit and exact-offer verification, then current-device alternatives, followed by setup and ownership advice. This is product judgment, not measured impact.">
+<div class="path"><span>Shared evidence grows</span><span class="line" aria-hidden="true"></span><span>Broader decisions →</span></div>
+<div class="stages">
+<section class="stage"><div class="label">FIRST PILOT</div><h2 class="name">Verify the choice</h2><ul><li>Fit for actual applications</li><li>Check an exact shop offer</li><li>Explain exclusions and unknowns</li></ul><div class="dependency">Foundation: exact variants, workload rules, local offer terms</div></section>
+<section class="stage"><div class="label">NEXT</div><h2 class="name">Challenge the purchase</h2><ul><li>Keep, upgrade, or replace</li><li>Explore budget tradeoffs</li><li>Reuse existing equipment</li></ul><div class="dependency">Adds: current-device facts, upgrade support, scenario evaluation</div></section>
+<section class="stage"><div class="label">LATER</div><h2 class="name">Improve ownership</h2><ul><li>Optimize a complete setup</li><li>Explore ownership costs</li><li>Learn from verified outcomes</li></ul><div class="dependency">Adds: broader compatibility, service data, consented outcome evidence</div></section>
+</div><figcaption>Proposed dependency sequence for a Vietnam laptop pilot; features are not yet built or validated.</figcaption>
+</figure></body></html>

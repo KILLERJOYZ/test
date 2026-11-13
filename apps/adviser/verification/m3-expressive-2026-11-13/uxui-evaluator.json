@@ -1,0 +1,122 @@
+{
+  "interface_type": "mobile-app",
+  "interface_type_note": "Focused current AdviserApp core-flow review UX-01 through UX-06; source inspection and dark web preview, not native certification. Parts 1, 2, 3, 4 and 6 considered; AI is reviewed separately. Score covers only these six findings. Unpublished principle codes are null rather than invented; upstream code-format instructions are internally inconsistent.",
+  "overall_score": 26,
+  "band": "poor",
+  "findings": [
+    {
+      "id": "UX-01",
+      "principle": {
+        "code": "I.1.1.03",
+        "slug": "error-prevention-in-forms",
+        "title": "Error Prevention in Forms",
+        "part": "part-4"
+      },
+      "severity": "critical",
+      "message": "AdviserApp.tsx confirm() sends invalid-budget feedback to a background notice while the modal stays open. Entering 0 reproduced no inline error; closing the form revealed the message. Detail-save acknowledgement is similarly outside the active modal.",
+      "remediation": "Render and announce field errors inside the form, focus the invalid field, preserve the draft, and show save results on the active detail surface. Verify invalid values and failed persistence.",
+      "business_impact": null
+    },
+    {
+      "id": "UX-02",
+      "principle": {
+        "code": "C.1.4.01",
+        "slug": "error-prevention",
+        "title": "Error Prevention",
+        "part": "part-2"
+      },
+      "severity": "critical",
+      "message": "AdviserApp.tsx lines 711-718 and 781-785 immediately persist individual or bulk history deletion. No confirmation, undo or restore path exists in this flow. Identified from source; deletion was not executed.",
+      "remediation": "Provide reversible single-delete or a clear confirmation; bulk deletion must show count and cancel action. Verify recovery and persistence failure.",
+      "business_impact": null
+    },
+    {
+      "id": "UX-03",
+      "principle": {
+        "code": null,
+        "slug": "accessible-selection",
+        "title": "Accessible Selection States",
+        "part": "part-6"
+      },
+      "severity": "critical",
+      "message": "The shared button exposes disabled state only; RAM, storage, source and task choices communicate selection through color. Browser needs-form options expose no checked/selected/pressed state. TalkBack was not tested.",
+      "remediation": "Use labelled radio groups for single choices and checkbox/toggle semantics for multiple tasks, plus a visible non-color selection indicator. Verify with TalkBack and external keyboard.",
+      "business_impact": null
+    },
+    {
+      "id": "UX-04",
+      "principle": {
+        "code": null,
+        "slug": "non-text-contrast",
+        "title": "Essential Control and Focus Contrast",
+        "part": "part-6"
+      },
+      "severity": "critical",
+      "message": "Empty input outlines measure 1.29-1.41:1 in light and 1.65-2.01:1 in dark against adjacent surfaces. The purple web focus outline measures 1.82-2.22:1 in dark. These essential cues miss 3:1 although normal text pairs pass.",
+      "remediation": "Separate essential outline from decorative divider roles and use theme-aware focus colors achieving at least 3:1 on actual adjacent surfaces. Keep disabled exceptions and decorative borders out of the failure count.",
+      "business_impact": null
+    },
+    {
+      "id": "UX-05",
+      "principle": {
+        "code": "F.1.1.03",
+        "slug": "mental-model",
+        "title": "Mental Model",
+        "part": "part-1"
+      },
+      "severity": "warning",
+      "message": "Searching zzzz-no-product shows a no-requirements-match message and only a change-needs CTA. AdviserApp.tsx lines 653-660 conflate no search/source matches with no eligible candidates.",
+      "remediation": "Use distinct empty states and clear-search/clear-filter actions while preserving confirmed needs. Verify restoring results without relaxing budget.",
+      "business_impact": null
+    },
+    {
+      "id": "UX-06",
+      "principle": {
+        "code": "F.1.1.05",
+        "slug": "recognition-rather-than-recall",
+        "title": "Recognition Rather Than Recall",
+        "part": "part-1"
+      },
+      "severity": "warning",
+      "message": "The comparison view renders two long summary strings as stacked cards, with full URLs and timestamps. Values are not aligned; remove/replace controls are absent in this view.",
+      "remediation": "Render comparable labelled attribute rows with stable product identities, explicit unknowns and remove/replace actions. Use side-by-side layout on expanded windows and progressive disclosure for long sources.",
+      "business_impact": null
+    }
+  ],
+  "strengths": [
+    {
+      "principle": {
+        "code": "D.2.1.02",
+        "slug": "visual-hierarchy",
+        "title": "Visual Hierarchy"
+      },
+      "message": "The needs card has a clear heading and prominent editing CTA. Most current opaque text pairs exceed 4.5:1."
+    },
+    {
+      "principle": {
+        "code": "C.1.4.01",
+        "slug": "error-prevention",
+        "title": "Error Prevention"
+      },
+      "message": "Requirements changes use a separate draft and explicit confirmation. Source/tests protect committed state against failed writes."
+    },
+    {
+      "principle": {
+        "code": "S.1.3.01",
+        "slug": "ai-transparency",
+        "title": "Transparency"
+      },
+      "message": "Historical prices, source dates, unknown costs and unverified suitability are visibly disclosed."
+    }
+  ],
+  "priority_fixes": [
+    "UX-01",
+    "UX-02",
+    "UX-03",
+    "UX-04",
+    "UX-05",
+    "UX-06"
+  ],
+  "api_enriched": false,
+  "api_note": "UXUI_API_KEY was absent. Internal-knowledge review only; no paid API or complete live taxonomy audit was performed. See https://uxuiprinciples.com/en/checkout for optional enrichment."
+}

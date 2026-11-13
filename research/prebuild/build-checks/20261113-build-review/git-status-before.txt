@@ -1,0 +1,18 @@
+ M README.md
+ M apps/adviser/src/AndroidApp.tsx
+ M apps/adviser/src/ai.ts
+ M apps/adviser/src/picker.ts
+ M docs/planning/IMPLEMENTATION_PLAN.md
+ M services/demo-ai/server.mjs
+ M services/demo-ai/server.test.mjs
+?? apps/adviser/src/decision-state.test.ts
+?? apps/adviser/src/decision-state.ts
+?? docs/planning/APP_FLOW.md
+?? docs/planning/APP_FLOW_DEEP_RESEARCH.md
+?? docs/planning/PREBUILD_RESEARCH_PLAN.md
+?? docs/planning/PREBUILD_RESEARCH_TRACKER.json
+?? docs/planning/PREBUILD_TEST_PACKS.json
+?? docs/planning/PREBUILD_TEST_PACKS.md
+?? docs/planning/REPOSITORY_RESEARCH_2026-11-13.md
+?? research/prebuild/
+?? spikes/

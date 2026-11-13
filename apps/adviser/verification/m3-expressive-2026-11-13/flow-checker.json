@@ -1,0 +1,147 @@
+{
+  "flow_id": "forms",
+  "flow_name": "Forms",
+  "flow_note": "Requirements modal is the dominant flow. Search recovery and AI proposal entry are adjacent flows. This checklist is authored from the installed fallback guidance and observed app; no proprietary/live checklist coverage is claimed.",
+  "metric_target": "completion-rate",
+  "phase": "both",
+  "preflight": {
+    "summary": "3 of 4 questions answered; 1 partial.",
+    "items": [
+      {
+        "id": "pf-1",
+        "question": "What must users accomplish?",
+        "why": "Keep the flow focused.",
+        "linked_principle": "cognitive-load",
+        "status": "answered",
+        "evidence": "brd.md and the confirm CTA require reviewing needs before recomputing the candidate list.",
+        "recommendation": null
+      },
+      {
+        "id": "pf-2",
+        "question": "Which constraints are required and which can remain unknown?",
+        "why": "Avoid fabricated requirements.",
+        "linked_principle": "error-prevention-in-forms",
+        "status": "answered",
+        "evidence": "Positive bounded budget; RAM/storage allow 0 as unknown; tasks and OS can be empty in validRequirements().",
+        "recommendation": null
+      },
+      {
+        "id": "pf-3",
+        "question": "Does cancelling preserve committed needs?",
+        "why": "Maintain user control.",
+        "linked_principle": "error-prevention",
+        "status": "answered",
+        "evidence": "edit() copies requirements into draft; closing changes form visibility; confirm() alone persists the new requirements.",
+        "recommendation": null
+      },
+      {
+        "id": "pf-4",
+        "question": "How are errors and interrupted sessions handled?",
+        "why": "Make recovery predictable.",
+        "linked_principle": "feedback",
+        "status": "partial",
+        "evidence": "Invalid values use a background notice. Modal Back exists in source, but native IME, recreation, focus and preference behavior were not tested.",
+        "recommendation": "Use modal-local errors and define/test native interruption and recreation behavior."
+      }
+    ],
+    "gaps": [
+      "pf-4"
+    ]
+  },
+  "postflight": {
+    "summary": "3 of 8 checks pass; 3 critical failures; 2 unknown checks.",
+    "ship_ready": false,
+    "items": [
+      {
+        "id": "po-1",
+        "check": "Confirmed requirements change only after explicit confirmation.",
+        "linked_smell": null,
+        "severity": "critical",
+        "status": "pass",
+        "evidence": "confirm() persists the draft and increments revision; AI proposals require a draft review.",
+        "recommendation": null
+      },
+      {
+        "id": "po-2",
+        "check": "Invalid input is explained where the user can correct it.",
+        "linked_smell": "silent-errors",
+        "severity": "critical",
+        "status": "fail",
+        "evidence": "Browser budget 0 leaves modal open without an inline message; closing reveals the notice.",
+        "recommendation": "Put field-specific error feedback inside the modal and announce it."
+      },
+      {
+        "id": "po-3",
+        "check": "Selected requirements are available without relying on color.",
+        "linked_smell": "contrast-blindness",
+        "severity": "critical",
+        "status": "fail",
+        "evidence": "RAM/storage/task choices are plain buttons without checked/selected/pressed states.",
+        "recommendation": "Use correct roles/state and a visible non-color indicator."
+      },
+      {
+        "id": "po-4",
+        "check": "Cancelling a draft preserves committed requirements.",
+        "linked_smell": null,
+        "severity": "critical",
+        "status": "pass",
+        "evidence": "Source edit() clones requirements and close only hides the form.",
+        "recommendation": null
+      },
+      {
+        "id": "po-5",
+        "check": "Budget boundaries are validated before persistence.",
+        "linked_smell": null,
+        "severity": "high",
+        "status": "pass",
+        "evidence": "validRequirements rejects non-safe-integer, nonpositive and above-maximum budgets; associated tests passed.",
+        "recommendation": null
+      },
+      {
+        "id": "po-6",
+        "check": "Native interactive areas meet 48 dp and remain usable with IME.",
+        "linked_smell": null,
+        "severity": "high",
+        "status": "unknown",
+        "evidence": "Source sets minHeight 48; no connected Android device, no effective hit-region/IME measurements.",
+        "recommendation": "Measure both dimensions, overlap and IME reachability on device."
+      },
+      {
+        "id": "po-7",
+        "check": "Large text, TalkBack and recreation preserve operability.",
+        "linked_smell": null,
+        "severity": "critical",
+        "status": "unknown",
+        "evidence": "No current native run was possible; historical verification applies to an older implementation.",
+        "recommendation": "Run the current app with TalkBack, large fonts and configuration changes."
+      },
+      {
+        "id": "po-8",
+        "check": "Persistence failure is surfaced inside the active requirements form.",
+        "linked_smell": "silent-errors",
+        "severity": "critical",
+        "status": "fail",
+        "evidence": "persist() returns false and sets a notice rendered behind the modal; source-confirmed path, runtime storage failure not injected.",
+        "recommendation": "Place save-failure feedback in the modal, retain the draft, and test retry."
+      }
+    ],
+    "critical_failures": [
+      "po-2",
+      "po-3",
+      "po-8"
+    ],
+    "high_failures": []
+  },
+  "key_principles": [
+    "error-prevention-in-forms",
+    "feedback",
+    "accessibility",
+    "user-control"
+  ],
+  "common_smells": [
+    "silent-errors",
+    "contrast-blindness"
+  ],
+  "api_enriched": false,
+  "api_note": "UXUI_API_KEY was absent. Internal-knowledge review only; no paid API or complete live taxonomy audit was performed. See https://uxuiprinciples.com/en/checkout for optional enrichment. Flow checklists require a pro API key for live smell linkage and severity metadata."
+}

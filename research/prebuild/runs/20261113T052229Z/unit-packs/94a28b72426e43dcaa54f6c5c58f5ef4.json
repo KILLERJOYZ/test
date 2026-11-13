@@ -1,0 +1,90 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "94a28b72426e43dcaa54f6c5c58f5ef4",
+  "selection": {
+    "task": "R01",
+    "pack": null,
+    "changed": null,
+    "all": false
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/test_buyer_evidence.py": "cd4cb95e08cfadc7e03be0f134a8ae0f59f60d6a070a0a3a67399ace2c213279",
+    "research/prebuild/tools/validate.py": "aa1c3d526db1425a7017370343440ad48f466fe51a066145f0e0211e57ed323d",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/artifact_contracts.py": "21ebb9cad1cc854fc9d41b5b7fc72a853a948398524148d99cb8c7fe45ff2d9e"
+  },
+  "manifestHash": "4c04077695ff3b5f5f6328a2c6f590e50b0de973b4acccb374b84291820dff76",
+  "packs": [
+    {
+      "id": "U01",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U01-01",
+          "status": "passed"
+        },
+        {
+          "id": "U01-02",
+          "status": "passed"
+        },
+        {
+          "id": "U01-03",
+          "status": "passed"
+        },
+        {
+          "id": "U01-04",
+          "status": "passed"
+        },
+        {
+          "id": "U01-05",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/94a28b72426e43dcaa54f6c5c58f5ef4-buyer_evidence_tests.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U01-01",
+      "status": "passed"
+    },
+    {
+      "id": "U01-02",
+      "status": "passed"
+    },
+    {
+      "id": "U01-03",
+      "status": "passed"
+    },
+    {
+      "id": "U01-04",
+      "status": "passed"
+    },
+    {
+      "id": "U01-05",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U01": "29bb09dd7d9cf396278090c2cc52a0228420622ef2b06db4921fa479704c3ab2"
+  },
+  "fixtureHashes": {},
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/94a28b72426e43dcaa54f6c5c58f5ef4-buyer_evidence_tests.log"
+  ],
+  "passed": 5,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

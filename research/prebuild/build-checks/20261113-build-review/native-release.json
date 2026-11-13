@@ -1,0 +1,17 @@
+{
+  "command": [
+    "E:\\test\\apps\\adviser\\android\\gradlew.bat",
+    "assembleRelease",
+    "-PreactNativeArchitectures=arm64-v8a,x86_64",
+    "--max-workers=2",
+    "--console=plain",
+    "--offline",
+    "--no-daemon"
+  ],
+  "exitCode": 0,
+  "startedAt": "2026-11-13T07:47:37.243388+00:00",
+  "finishedAt": "2026-11-13T07:49:16.396653+00:00",
+  "previousApkSha256": "a41961f3c8b4558fbcafe0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+  "apkSha256": "a35e955ceb16f6ca437a40dee22c685d587c9ed78d4df0b21f5f47a55690b9e2",
+  "log": "research\\prebuild\\build-checks\\20261113-build-review\\native-release.log"
+}

@@ -1,0 +1,1534 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "a58fb1cc4f5c49d894be8001a95b58b9",
+  "selection": {
+    "task": null,
+    "pack": null,
+    "changed": null,
+    "all": true
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/test_validate.py": "bcf345283596abea2c9ee751d16e7d26d2ee761ca88f84d35cc50a575376d255",
+    "research/prebuild/tools/test_unit_runner.py": "21aba81335c93e443827937e30942fab2d4f759928db39690be77cbd7d23572a",
+    "research/prebuild/tools/validate.py": "ea2db9f6ba5b1fb270ce56345be97ba2b2615b0ccfe898f11f73706568df85d4",
+    "research/prebuild/tools/run_unit_packs.py": "f8469e31ed645ea2fa0327ebb935dd8d1a14037a4dee2f85440bf986e586092d",
+    "research/prebuild/tools/test_buyer_evidence.py": "cd4cb95e08cfadc7e03be0f134a8ae0f59f60d6a070a0a3a67399ace2c213279",
+    "research/prebuild/tools/test_journey_evidence.py": "736fb22f8a0f720bccbd09886a09bdf949bec069557a01336c8aa26cd743f48a",
+    "research/prebuild/tools/test_source_register.py": "1e8d8ca5c78dcf4eefb827de2a956047c4e662de15a4f8a1a352eae090f28caf",
+    "research/prebuild/tools/test_audit_catalog.py": "cc57ae4d0fdceb162d0c4a85247d3d62f0715a7e5d25423e3926f64090f1b14b",
+    "research/prebuild/tools/audit_catalog.py": "d30bef2b24e34742d44503b3cf9f6edbf504691fec03d465f588febc56d06f04",
+    "research/prebuild/tools/test_cases.py": "0cec64f3fdd2f3dbab19570102be904f45ef158dc715d2832fda8316ee69d747",
+    "research/prebuild/tools/build_cases.py": "9245c5871e43db6dff2135e1549cf89ee1d6ca925049dea999c1248dcd2b3203",
+    "research/prebuild/05-workload-policy.json": "c980754924f950837259f86e0894332cd9f7109b38e9dcc9c79189bc7d553fe6",
+    "apps/adviser/src/decision-state.test.ts": "c58ee182528928d4bee031926746557f2733ad9b2deced6cd1db245e45a14858",
+    "apps/adviser/src/decision-state.ts": "d1ee7a85245717b3bfe577a4a217f0e639e7f64aa215c1a4e8f48be3085658d9",
+    "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+    "research/prebuild/tools/contracts.test.mjs": "505a1391a22cd304aecc06975ea8d4f2a0b38e4fd859c38b9d06fc21241d0ede",
+    "research/prebuild/tools/contract_validation.mjs": "6fbfc1db652f1a33695fdc36d61d8e35cdd7634e4b64a30d587837effd7d2bfa",
+    "research/prebuild/tests/fixtures/api-needs.mjs": "2fc9151cb4c52865d1d236b651d345a20ef35081dcfffadfe1f89bad9a55dc8f",
+    "research/prebuild/tests/fixtures/api-history.mjs": "eb69a001a8d393b777bcede3bc5033a45985825a76149bd3c55b2adf064668d9",
+    "spikes/prebuild-contract/policy.test.mjs": "7d2ec850ceab1a920b37204feb93eb8ac1daf410bfe9b2692f244516e135462c",
+    "spikes/prebuild-contract/repository.test.mjs": "4ec3fad7b715c604be5b1e0c3073cd744b30b53d4ec008202bfb513402a25bba",
+    "spikes/prebuild-contract/policy.ts": "24e818099990e0a2319b4a972bf041d6e599abb291e2f1500a649c11f8ad9e7c",
+    "spikes/prebuild-contract/repository.ts": "5d54ca0e06eecb321ddac58a38a940f2981e21923afd8b70ab23280434b81363",
+    "spikes/prebuild-contract/fixtures.mjs": "f59dd852b3e2f6b9fa717103f7382856b3dad54be580903c01db306c82f9e79e",
+    "research/prebuild/tools/eval.test.mjs": "99ef5505cd0828fe0eea8c4a4c37aae685b3f21581cf17946d03c3e930b43d0a",
+    "research/prebuild/tools/run_eval.mjs": "1f5e5d6a8950110b0a4f27f6ad943635e4d7375aec1de1a4ebfbfc3835b7b6a0",
+    "research/prebuild/tools/ai.test.mjs": "7dd1c86ba832d6c984e34312b4375085c839f69913dfb477806203082a8a3443",
+    "research/prebuild/tools/run_ai.mjs": "7bab31a9e7d923c61659149c746b0dde7483c4338b9b1aad430f8e89e0e19489",
+    "apps/adviser/src/ai.ts": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf",
+    "research/prebuild/tools/test_android_evidence.py": "282150ef3b8aabd20bb494da467b6f595da154f4a7ed95f3b7de16782cc5bf04",
+    "research/prebuild/tools/test_operations_evidence.py": "6bc855674f0041e410cdfb1ffaf446cc92df3d8b321fed1d63e223195f82d031",
+    "research/prebuild/tools/test_cost_model.py": "479d07035cd2f06e0ceb3b734b017a7d7706207f694a9df0d98620e457000949",
+    "research/prebuild/tools/cost_model.py": "2a6b8182b431fde649832a224beef88f06ffd462c180a87f8c4fb626d48ab63a",
+    "research/prebuild/tools/test_readiness.py": "fcab0adf8de15b26b79265d32c7155d873ebb9183371cd9e50b6e2db44c8b123",
+    "research/prebuild/tools/readiness.py": "143e01051ea6fcddd0bba3115c01c445cfa14ed41513396abe9540695196d0ca",
+    "apps/adviser/src/domain.test.ts": "8c2ee9589ec50a9d8a4dcb1a37978a8af1045764ebee86abac6b15e91d8b0bbb",
+    "apps/adviser/src/picker.test.ts": "84fd4a72fb718438504a0af695ef7454a8cbddf2cd0f0dd4c4dc2dbad36a2dd1",
+    "apps/adviser/src/ai.test.ts": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98",
+    "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+    "research/prebuild/tools/test_plan_contract.py": "87d54f5508caa967a0874c7aab87e74f40ce5efb0fd6be72eee861f58d193253",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+    "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+  },
+  "manifestHash": "5f67b8e5877128fb79a4551e1f32028d770cefe7e2be709443d6aab09d03b27e",
+  "packs": [
+    {
+      "id": "U00",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U00-01",
+          "status": "passed"
+        },
+        {
+          "id": "U00-02",
+          "status": "passed"
+        },
+        {
+          "id": "U00-03",
+          "status": "passed"
+        },
+        {
+          "id": "U00-04",
+          "status": "passed"
+        },
+        {
+          "id": "U00-05",
+          "status": "passed"
+        },
+        {
+          "id": "U00-06",
+          "status": "passed"
+        },
+        {
+          "id": "U00-07",
+          "status": "passed"
+        },
+        {
+          "id": "U00-08",
+          "status": "passed"
+        },
+        {
+          "id": "U00-09",
+          "status": "passed"
+        },
+        {
+          "id": "U00-10",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-validator_tests.log",
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-unit_runner_tests.log"
+      ]
+    },
+    {
+      "id": "U01",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U01-01",
+          "status": "passed"
+        },
+        {
+          "id": "U01-02",
+          "status": "passed"
+        },
+        {
+          "id": "U01-03",
+          "status": "passed"
+        },
+        {
+          "id": "U01-04",
+          "status": "passed"
+        },
+        {
+          "id": "U01-05",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-buyer_evidence_tests.log"
+      ]
+    },
+    {
+      "id": "U02",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U02-01",
+          "status": "passed"
+        },
+        {
+          "id": "U02-02",
+          "status": "passed"
+        },
+        {
+          "id": "U02-03",
+          "status": "passed"
+        },
+        {
+          "id": "U02-04",
+          "status": "passed"
+        },
+        {
+          "id": "U02-05",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-journey_evidence_tests.log"
+      ]
+    },
+    {
+      "id": "U03",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U03-01",
+          "status": "passed"
+        },
+        {
+          "id": "U03-02",
+          "status": "passed"
+        },
+        {
+          "id": "U03-03",
+          "status": "passed"
+        },
+        {
+          "id": "U03-04",
+          "status": "passed"
+        },
+        {
+          "id": "U03-05",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-source_register_tests.log"
+      ]
+    },
+    {
+      "id": "U04",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U04-01",
+          "status": "passed"
+        },
+        {
+          "id": "U04-02",
+          "status": "passed"
+        },
+        {
+          "id": "U04-03",
+          "status": "passed"
+        },
+        {
+          "id": "U04-04",
+          "status": "passed"
+        },
+        {
+          "id": "U04-05",
+          "status": "passed"
+        },
+        {
+          "id": "U04-06",
+          "status": "passed"
+        },
+        {
+          "id": "U04-07",
+          "status": "passed"
+        },
+        {
+          "id": "U04-08",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-audit_tests.log"
+      ]
+    },
+    {
+      "id": "U05",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U05-01",
+          "status": "passed"
+        },
+        {
+          "id": "U05-02",
+          "status": "passed"
+        },
+        {
+          "id": "U05-03",
+          "status": "passed"
+        },
+        {
+          "id": "U05-04",
+          "status": "passed"
+        },
+        {
+          "id": "U05-05",
+          "status": "passed"
+        },
+        {
+          "id": "U05-06",
+          "status": "passed"
+        },
+        {
+          "id": "U05-07",
+          "status": "passed"
+        },
+        {
+          "id": "U05-08",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-corpus_tests.log"
+      ]
+    },
+    {
+      "id": "U06",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U06-01",
+          "status": "passed"
+        },
+        {
+          "id": "U06-02",
+          "status": "passed"
+        },
+        {
+          "id": "U06-03",
+          "status": "passed"
+        },
+        {
+          "id": "U06-04",
+          "status": "passed"
+        },
+        {
+          "id": "U06-05",
+          "status": "passed"
+        },
+        {
+          "id": "U06-06",
+          "status": "passed"
+        },
+        {
+          "id": "U06-07",
+          "status": "passed"
+        },
+        {
+          "id": "U06-08",
+          "status": "passed"
+        },
+        {
+          "id": "U06-09",
+          "status": "passed"
+        },
+        {
+          "id": "U06-10",
+          "status": "passed"
+        },
+        {
+          "id": "U06-11",
+          "status": "passed"
+        },
+        {
+          "id": "U06-12",
+          "status": "passed"
+        },
+        {
+          "id": "U06-13",
+          "status": "passed"
+        },
+        {
+          "id": "U06-14",
+          "status": "passed"
+        },
+        {
+          "id": "U06-15",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-decision_state_tests.log"
+      ]
+    },
+    {
+      "id": "U07",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U07-01",
+          "status": "passed"
+        },
+        {
+          "id": "U07-02",
+          "status": "passed"
+        },
+        {
+          "id": "U07-03",
+          "status": "passed"
+        },
+        {
+          "id": "U07-04",
+          "status": "passed"
+        },
+        {
+          "id": "U07-05",
+          "status": "passed"
+        },
+        {
+          "id": "U07-06",
+          "status": "passed"
+        },
+        {
+          "id": "U07-07",
+          "status": "passed"
+        },
+        {
+          "id": "U07-08",
+          "status": "passed"
+        },
+        {
+          "id": "U07-09",
+          "status": "passed"
+        },
+        {
+          "id": "U07-10",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-contract_tests.log"
+      ]
+    },
+    {
+      "id": "U08",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U08-01",
+          "status": "passed"
+        },
+        {
+          "id": "U08-02",
+          "status": "passed"
+        },
+        {
+          "id": "U08-03",
+          "status": "passed"
+        },
+        {
+          "id": "U08-04",
+          "status": "passed"
+        },
+        {
+          "id": "U08-05",
+          "status": "passed"
+        },
+        {
+          "id": "U08-06",
+          "status": "passed"
+        },
+        {
+          "id": "U08-07",
+          "status": "passed"
+        },
+        {
+          "id": "U08-08",
+          "status": "passed"
+        },
+        {
+          "id": "U08-09",
+          "status": "passed"
+        },
+        {
+          "id": "U08-10",
+          "status": "passed"
+        },
+        {
+          "id": "U08-11",
+          "status": "passed"
+        },
+        {
+          "id": "U08-12",
+          "status": "passed"
+        },
+        {
+          "id": "U08-13",
+          "status": "passed"
+        },
+        {
+          "id": "U08-14",
+          "status": "passed"
+        },
+        {
+          "id": "U08-15",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-spike_unit_tests.log"
+      ]
+    },
+    {
+      "id": "U09",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U09-01",
+          "status": "passed"
+        },
+        {
+          "id": "U09-02",
+          "status": "passed"
+        },
+        {
+          "id": "U09-03",
+          "status": "passed"
+        },
+        {
+          "id": "U09-04",
+          "status": "passed"
+        },
+        {
+          "id": "U09-05",
+          "status": "passed"
+        },
+        {
+          "id": "U09-06",
+          "status": "passed"
+        },
+        {
+          "id": "U09-07",
+          "status": "passed"
+        },
+        {
+          "id": "U09-08",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-eval_tests.log"
+      ]
+    },
+    {
+      "id": "U10",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U10-01",
+          "status": "passed"
+        },
+        {
+          "id": "U10-02",
+          "status": "passed"
+        },
+        {
+          "id": "U10-03",
+          "status": "passed"
+        },
+        {
+          "id": "U10-04",
+          "status": "passed"
+        },
+        {
+          "id": "U10-05",
+          "status": "passed"
+        },
+        {
+          "id": "U10-06",
+          "status": "passed"
+        },
+        {
+          "id": "U10-07",
+          "status": "passed"
+        },
+        {
+          "id": "U10-08",
+          "status": "passed"
+        },
+        {
+          "id": "U10-09",
+          "status": "passed"
+        },
+        {
+          "id": "U10-10",
+          "status": "passed"
+        },
+        {
+          "id": "U10-11",
+          "status": "passed"
+        },
+        {
+          "id": "U10-12",
+          "status": "passed"
+        },
+        {
+          "id": "U10-13",
+          "status": "passed"
+        },
+        {
+          "id": "U10-14",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-ai_controlled.log"
+      ]
+    },
+    {
+      "id": "U11",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U11-01",
+          "status": "passed"
+        },
+        {
+          "id": "U11-02",
+          "status": "passed"
+        },
+        {
+          "id": "U11-03",
+          "status": "passed"
+        },
+        {
+          "id": "U11-04",
+          "status": "passed"
+        },
+        {
+          "id": "U11-05",
+          "status": "passed"
+        },
+        {
+          "id": "U11-06",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-android_evidence_tests.log"
+      ]
+    },
+    {
+      "id": "U12",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U12-01",
+          "status": "passed"
+        },
+        {
+          "id": "U12-02",
+          "status": "passed"
+        },
+        {
+          "id": "U12-03",
+          "status": "passed"
+        },
+        {
+          "id": "U12-04",
+          "status": "passed"
+        },
+        {
+          "id": "U12-05",
+          "status": "passed"
+        },
+        {
+          "id": "U12-06",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-operations_evidence_tests.log"
+      ]
+    },
+    {
+      "id": "U13",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U13-01",
+          "status": "passed"
+        },
+        {
+          "id": "U13-02",
+          "status": "passed"
+        },
+        {
+          "id": "U13-03",
+          "status": "passed"
+        },
+        {
+          "id": "U13-04",
+          "status": "passed"
+        },
+        {
+          "id": "U13-05",
+          "status": "passed"
+        },
+        {
+          "id": "U13-06",
+          "status": "passed"
+        },
+        {
+          "id": "U13-07",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-cost_tests.log"
+      ]
+    },
+    {
+      "id": "U14",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U14-01",
+          "status": "passed"
+        },
+        {
+          "id": "U14-02",
+          "status": "passed"
+        },
+        {
+          "id": "U14-03",
+          "status": "passed"
+        },
+        {
+          "id": "U14-04",
+          "status": "passed"
+        },
+        {
+          "id": "U14-05",
+          "status": "passed"
+        },
+        {
+          "id": "U14-06",
+          "status": "passed"
+        },
+        {
+          "id": "U14-07",
+          "status": "passed"
+        },
+        {
+          "id": "U14-08",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-readiness_tests.log"
+      ]
+    },
+    {
+      "id": "UBASE",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "UBASE-01",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-02",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-03",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-04",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-05",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-06",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-07",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-08",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-09",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-10",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-11",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-12",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-13",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-14",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-15",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-16",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-17",
+          "status": "passed"
+        },
+        {
+          "id": "UBASE-18",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-baseline_domain.log"
+      ]
+    },
+    {
+      "id": "UPLAN",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "UPLAN-01",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-02",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-03",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-04",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-05",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-06",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-07",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-08",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-09",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-10",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-plan_contract_tests.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U00-01",
+      "status": "passed"
+    },
+    {
+      "id": "U00-02",
+      "status": "passed"
+    },
+    {
+      "id": "U00-03",
+      "status": "passed"
+    },
+    {
+      "id": "U00-04",
+      "status": "passed"
+    },
+    {
+      "id": "U00-05",
+      "status": "passed"
+    },
+    {
+      "id": "U00-06",
+      "status": "passed"
+    },
+    {
+      "id": "U00-07",
+      "status": "passed"
+    },
+    {
+      "id": "U00-08",
+      "status": "passed"
+    },
+    {
+      "id": "U00-09",
+      "status": "passed"
+    },
+    {
+      "id": "U00-10",
+      "status": "passed"
+    },
+    {
+      "id": "U01-01",
+      "status": "passed"
+    },
+    {
+      "id": "U01-02",
+      "status": "passed"
+    },
+    {
+      "id": "U01-03",
+      "status": "passed"
+    },
+    {
+      "id": "U01-04",
+      "status": "passed"
+    },
+    {
+      "id": "U01-05",
+      "status": "passed"
+    },
+    {
+      "id": "U02-01",
+      "status": "passed"
+    },
+    {
+      "id": "U02-02",
+      "status": "passed"
+    },
+    {
+      "id": "U02-03",
+      "status": "passed"
+    },
+    {
+      "id": "U02-04",
+      "status": "passed"
+    },
+    {
+      "id": "U02-05",
+      "status": "passed"
+    },
+    {
+      "id": "U03-01",
+      "status": "passed"
+    },
+    {
+      "id": "U03-02",
+      "status": "passed"
+    },
+    {
+      "id": "U03-03",
+      "status": "passed"
+    },
+    {
+      "id": "U03-04",
+      "status": "passed"
+    },
+    {
+      "id": "U03-05",
+      "status": "passed"
+    },
+    {
+      "id": "U04-01",
+      "status": "passed"
+    },
+    {
+      "id": "U04-02",
+      "status": "passed"
+    },
+    {
+      "id": "U04-03",
+      "status": "passed"
+    },
+    {
+      "id": "U04-04",
+      "status": "passed"
+    },
+    {
+      "id": "U04-05",
+      "status": "passed"
+    },
+    {
+      "id": "U04-06",
+      "status": "passed"
+    },
+    {
+      "id": "U04-07",
+      "status": "passed"
+    },
+    {
+      "id": "U04-08",
+      "status": "passed"
+    },
+    {
+      "id": "U05-01",
+      "status": "passed"
+    },
+    {
+      "id": "U05-02",
+      "status": "passed"
+    },
+    {
+      "id": "U05-03",
+      "status": "passed"
+    },
+    {
+      "id": "U05-04",
+      "status": "passed"
+    },
+    {
+      "id": "U05-05",
+      "status": "passed"
+    },
+    {
+      "id": "U05-06",
+      "status": "passed"
+    },
+    {
+      "id": "U05-07",
+      "status": "passed"
+    },
+    {
+      "id": "U05-08",
+      "status": "passed"
+    },
+    {
+      "id": "U06-01",
+      "status": "passed"
+    },
+    {
+      "id": "U06-02",
+      "status": "passed"
+    },
+    {
+      "id": "U06-03",
+      "status": "passed"
+    },
+    {
+      "id": "U06-04",
+      "status": "passed"
+    },
+    {
+      "id": "U06-05",
+      "status": "passed"
+    },
+    {
+      "id": "U06-06",
+      "status": "passed"
+    },
+    {
+      "id": "U06-07",
+      "status": "passed"
+    },
+    {
+      "id": "U06-08",
+      "status": "passed"
+    },
+    {
+      "id": "U06-09",
+      "status": "passed"
+    },
+    {
+      "id": "U06-10",
+      "status": "passed"
+    },
+    {
+      "id": "U06-11",
+      "status": "passed"
+    },
+    {
+      "id": "U06-12",
+      "status": "passed"
+    },
+    {
+      "id": "U06-13",
+      "status": "passed"
+    },
+    {
+      "id": "U06-14",
+      "status": "passed"
+    },
+    {
+      "id": "U06-15",
+      "status": "passed"
+    },
+    {
+      "id": "U07-01",
+      "status": "passed"
+    },
+    {
+      "id": "U07-02",
+      "status": "passed"
+    },
+    {
+      "id": "U07-03",
+      "status": "passed"
+    },
+    {
+      "id": "U07-04",
+      "status": "passed"
+    },
+    {
+      "id": "U07-05",
+      "status": "passed"
+    },
+    {
+      "id": "U07-06",
+      "status": "passed"
+    },
+    {
+      "id": "U07-07",
+      "status": "passed"
+    },
+    {
+      "id": "U07-08",
+      "status": "passed"
+    },
+    {
+      "id": "U07-09",
+      "status": "passed"
+    },
+    {
+      "id": "U07-10",
+      "status": "passed"
+    },
+    {
+      "id": "U08-01",
+      "status": "passed"
+    },
+    {
+      "id": "U08-02",
+      "status": "passed"
+    },
+    {
+      "id": "U08-03",
+      "status": "passed"
+    },
+    {
+      "id": "U08-04",
+      "status": "passed"
+    },
+    {
+      "id": "U08-05",
+      "status": "passed"
+    },
+    {
+      "id": "U08-06",
+      "status": "passed"
+    },
+    {
+      "id": "U08-07",
+      "status": "passed"
+    },
+    {
+      "id": "U08-08",
+      "status": "passed"
+    },
+    {
+      "id": "U08-09",
+      "status": "passed"
+    },
+    {
+      "id": "U08-10",
+      "status": "passed"
+    },
+    {
+      "id": "U08-11",
+      "status": "passed"
+    },
+    {
+      "id": "U08-12",
+      "status": "passed"
+    },
+    {
+      "id": "U08-13",
+      "status": "passed"
+    },
+    {
+      "id": "U08-14",
+      "status": "passed"
+    },
+    {
+      "id": "U08-15",
+      "status": "passed"
+    },
+    {
+      "id": "U09-01",
+      "status": "passed"
+    },
+    {
+      "id": "U09-02",
+      "status": "passed"
+    },
+    {
+      "id": "U09-03",
+      "status": "passed"
+    },
+    {
+      "id": "U09-04",
+      "status": "passed"
+    },
+    {
+      "id": "U09-05",
+      "status": "passed"
+    },
+    {
+      "id": "U09-06",
+      "status": "passed"
+    },
+    {
+      "id": "U09-07",
+      "status": "passed"
+    },
+    {
+      "id": "U09-08",
+      "status": "passed"
+    },
+    {
+      "id": "U10-01",
+      "status": "passed"
+    },
+    {
+      "id": "U10-02",
+      "status": "passed"
+    },
+    {
+      "id": "U10-03",
+      "status": "passed"
+    },
+    {
+      "id": "U10-04",
+      "status": "passed"
+    },
+    {
+      "id": "U10-05",
+      "status": "passed"
+    },
+    {
+      "id": "U10-06",
+      "status": "passed"
+    },
+    {
+      "id": "U10-07",
+      "status": "passed"
+    },
+    {
+      "id": "U10-08",
+      "status": "passed"
+    },
+    {
+      "id": "U10-09",
+      "status": "passed"
+    },
+    {
+      "id": "U10-10",
+      "status": "passed"
+    },
+    {
+      "id": "U10-11",
+      "status": "passed"
+    },
+    {
+      "id": "U10-12",
+      "status": "passed"
+    },
+    {
+      "id": "U10-13",
+      "status": "passed"
+    },
+    {
+      "id": "U10-14",
+      "status": "passed"
+    },
+    {
+      "id": "U11-01",
+      "status": "passed"
+    },
+    {
+      "id": "U11-02",
+      "status": "passed"
+    },
+    {
+      "id": "U11-03",
+      "status": "passed"
+    },
+    {
+      "id": "U11-04",
+      "status": "passed"
+    },
+    {
+      "id": "U11-05",
+      "status": "passed"
+    },
+    {
+      "id": "U11-06",
+      "status": "passed"
+    },
+    {
+      "id": "U12-01",
+      "status": "passed"
+    },
+    {
+      "id": "U12-02",
+      "status": "passed"
+    },
+    {
+      "id": "U12-03",
+      "status": "passed"
+    },
+    {
+      "id": "U12-04",
+      "status": "passed"
+    },
+    {
+      "id": "U12-05",
+      "status": "passed"
+    },
+    {
+      "id": "U12-06",
+      "status": "passed"
+    },
+    {
+      "id": "U13-01",
+      "status": "passed"
+    },
+    {
+      "id": "U13-02",
+      "status": "passed"
+    },
+    {
+      "id": "U13-03",
+      "status": "passed"
+    },
+    {
+      "id": "U13-04",
+      "status": "passed"
+    },
+    {
+      "id": "U13-05",
+      "status": "passed"
+    },
+    {
+      "id": "U13-06",
+      "status": "passed"
+    },
+    {
+      "id": "U13-07",
+      "status": "passed"
+    },
+    {
+      "id": "U14-01",
+      "status": "passed"
+    },
+    {
+      "id": "U14-02",
+      "status": "passed"
+    },
+    {
+      "id": "U14-03",
+      "status": "passed"
+    },
+    {
+      "id": "U14-04",
+      "status": "passed"
+    },
+    {
+      "id": "U14-05",
+      "status": "passed"
+    },
+    {
+      "id": "U14-06",
+      "status": "passed"
+    },
+    {
+      "id": "U14-07",
+      "status": "passed"
+    },
+    {
+      "id": "U14-08",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-01",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-02",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-03",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-04",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-05",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-06",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-07",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-08",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-09",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-10",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-11",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-12",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-13",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-14",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-15",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-16",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-17",
+      "status": "passed"
+    },
+    {
+      "id": "UBASE-18",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-01",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-02",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-03",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-04",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-05",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-06",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-07",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-08",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-09",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-10",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U00": "95042f18890d9ed277020e7590ef7a7d7a93eeedca99d26d14f1323f51375136",
+    "U01": "29bb09dd7d9cf396278090c2cc52a0228420622ef2b06db4921fa479704c3ab2",
+    "U02": "132b112d3359a27fb21ebc5a9efd0ebaabb6c4edfd20c61c93324132c0a18aab",
+    "U03": "fa9f26f9f8e5fa3eeef07a0b40d7e2cc1228eea03a6a16660ab0f850e32573d2",
+    "U04": "d61eac03d3881e247289157b6a5d8795ee81681143c22c9c3d3b55cdb8f71004",
+    "U05": "b2af811d14d5c7ee9b7926c0d642d918a3a464b149aaaee4f302c057e3c4c85e",
+    "U06": "052235dbc542a923266c9db0a7d49096f2e6f41862a6d01e5a7793bef3c3978d",
+    "U07": "fd1089e71b09954226100a7f15be8a50ca0edaa04943b50713143e4ddc793898",
+    "U08": "3fc8d51af66d7dbb001588b67ce3153ff0aaeea9f8b51e1fa27cb5d6661707e8",
+    "U09": "450819565c622ab26e4343df40d5471e28e195dc2723f32ac6a59b2901d3b95e",
+    "U10": "b631d29e65f3268fd4d849743fd25ff20ed620bf440eb590bf4661502907f5b4",
+    "U11": "cb19053089875bff0d0cadbb028f3b353186dbea27b9bc5497f16b10e7338ab2",
+    "U12": "51a3f46831cacbafe1425ad5225cb60c75a3938e79295dd737523a15ce788966",
+    "U13": "22f881b111614ed72a7f29687aa4c2f6348308612675bf0ba3581403dfc48ab4",
+    "U14": "4fc315ee16dc01fa3d0cf34edaae1e0d9ac7efe37c11bb9f0197da1c938faa09",
+    "UBASE": "757c1c6368f6d034fadbc695f7766e34a8b078000a522f465be3f671dc4a4edb",
+    "UPLAN": "ae5629b0086cbda3959ea7675a5bf7b61bad88a016a556ce09e1e0570b1c061c"
+  },
+  "fixtureHashes": {
+    "research/prebuild/tests/fixtures/api-history.mjs": "eb69a001a8d393b777bcede3bc5033a45985825a76149bd3c55b2adf064668d9",
+    "research/prebuild/tests/fixtures/api-needs.mjs": "2fc9151cb4c52865d1d236b651d345a20ef35081dcfffadfe1f89bad9a55dc8f"
+  },
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-validator_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-unit_runner_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-buyer_evidence_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-journey_evidence_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-source_register_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-audit_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-corpus_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-decision_state_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-contract_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-spike_unit_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-eval_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-ai_controlled.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-android_evidence_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-operations_evidence_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-cost_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-readiness_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-baseline_domain.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/a58fb1cc4f5c49d894be8001a95b58b9-plan_contract_tests.log"
+  ],
+  "passed": 158,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

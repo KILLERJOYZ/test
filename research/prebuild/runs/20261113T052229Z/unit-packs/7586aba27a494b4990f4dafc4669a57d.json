@@ -1,0 +1,106 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "7586aba27a494b4990f4dafc4669a57d",
+  "selection": {
+    "task": "R13",
+    "pack": null,
+    "changed": null,
+    "all": false
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/test_cost_model.py": "479d07035cd2f06e0ceb3b734b017a7d7706207f694a9df0d98620e457000949",
+    "research/prebuild/tools/cost_model.py": "2a6b8182b431fde649832a224beef88f06ffd462c180a87f8c4fb626d48ab63a",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/artifact_contracts.py": "0c9eafbd988f9dfe88968f5914de23e01a53970598a5eff61c14589d4cc0fa33"
+  },
+  "manifestHash": "b275a392a8d6ce850f7afd0ef223092c020795389a089afe681c89534d6d8759",
+  "packs": [
+    {
+      "id": "U13",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U13-01",
+          "status": "passed"
+        },
+        {
+          "id": "U13-02",
+          "status": "passed"
+        },
+        {
+          "id": "U13-03",
+          "status": "passed"
+        },
+        {
+          "id": "U13-04",
+          "status": "passed"
+        },
+        {
+          "id": "U13-05",
+          "status": "passed"
+        },
+        {
+          "id": "U13-06",
+          "status": "passed"
+        },
+        {
+          "id": "U13-07",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/7586aba27a494b4990f4dafc4669a57d-cost_tests.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U13-01",
+      "status": "passed"
+    },
+    {
+      "id": "U13-02",
+      "status": "passed"
+    },
+    {
+      "id": "U13-03",
+      "status": "passed"
+    },
+    {
+      "id": "U13-04",
+      "status": "passed"
+    },
+    {
+      "id": "U13-05",
+      "status": "passed"
+    },
+    {
+      "id": "U13-06",
+      "status": "passed"
+    },
+    {
+      "id": "U13-07",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U13": "22f881b111614ed72a7f29687aa4c2f6348308612675bf0ba3581403dfc48ab4"
+  },
+  "fixtureHashes": {},
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/7586aba27a494b4990f4dafc4669a57d-cost_tests.log"
+  ],
+  "passed": 7,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

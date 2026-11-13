@@ -1,0 +1,169 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R13",
+  "inputs": [
+    {
+      "ref": "research/prebuild/09-retrieval-ranking-results.json",
+      "sha256": "ec79d682ef6a9a773555746e02dbfb19c94ada136387fada1e450b15ad1b3cfd"
+    },
+    {
+      "ref": "research/prebuild/10-ai-evaluation.json",
+      "sha256": "99e3c30dd7772ca06f1a443fb4181103660ed160031719f8e6615195c1950f7f"
+    },
+    {
+      "ref": "research/prebuild/12-operations-scenarios.json",
+      "sha256": "94dc2221387ea9cd452d5562ec393f3b408ada9caf3b4b1b409d8c63fb39db08"
+    }
+  ],
+  "data": {
+    "currency": "VND",
+    "datedRates": [],
+    "authorization/quoteRefs": [],
+    "usage": {
+      "liveRequestsObserved": 0,
+      "providerTokensObserved": null,
+      "retryCallsObserved": 0
+    },
+    "staffEffort": null,
+    "usefulSessionDefinition": "Observed buyer completes and understands scoped task without critical error; synthetic tests excluded.",
+    "scenarios": [
+      {
+        "id": "low",
+        "assumedMonthlySessions": 100,
+        "assumptionStatus": "proposed, not demand evidence",
+        "components": [
+          {
+            "id": "ai_calls",
+            "units": 0,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND"
+          },
+          {
+            "id": "hosting",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND"
+          },
+          {
+            "id": "source_license",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND"
+          },
+          {
+            "id": "build",
+            "units": null,
+            "rate": null,
+            "category": "one_time",
+            "currency": "VND"
+          },
+          {
+            "id": "review_support",
+            "units": null,
+            "rate": null,
+            "category": "staff",
+            "currency": "VND"
+          }
+        ],
+        "usefulSessions": null
+      },
+      {
+        "id": "base",
+        "assumedMonthlySessions": 1000,
+        "assumptionStatus": "proposed, not demand evidence",
+        "components": [
+          {
+            "id": "ai_calls",
+            "units": 0,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND"
+          },
+          {
+            "id": "hosting",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND"
+          },
+          {
+            "id": "source_license",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND"
+          },
+          {
+            "id": "build",
+            "units": null,
+            "rate": null,
+            "category": "one_time",
+            "currency": "VND"
+          },
+          {
+            "id": "review_support",
+            "units": null,
+            "rate": null,
+            "category": "staff",
+            "currency": "VND"
+          }
+        ],
+        "usefulSessions": null
+      },
+      {
+        "id": "high",
+        "assumedMonthlySessions": 10000,
+        "assumptionStatus": "proposed, not demand evidence",
+        "components": [
+          {
+            "id": "ai_calls",
+            "units": 0,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND"
+          },
+          {
+            "id": "hosting",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND"
+          },
+          {
+            "id": "source_license",
+            "units": 1,
+            "rate": null,
+            "category": "recurring",
+            "currency": "VND"
+          },
+          {
+            "id": "build",
+            "units": null,
+            "rate": null,
+            "category": "one_time",
+            "currency": "VND"
+          },
+          {
+            "id": "review_support",
+            "units": null,
+            "rate": null,
+            "category": "staff",
+            "currency": "VND"
+          }
+        ],
+        "usefulSessions": null
+      }
+    ]
+  },
+  "evidenceRefs": [],
+  "gaps": [
+    {
+      "id": "GAP-R13-001",
+      "reason": "No selected rates, measured capacity or observed useful outcomes. Complete cost remains unknown.",
+      "nextAction": "Resolve scoped external inputs and accountable review before production approval."
+    }
+  ]
+}

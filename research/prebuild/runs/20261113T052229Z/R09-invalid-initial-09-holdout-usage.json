@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R09",
+  "inputs": [],
+  "data": {
+    "corpusHash": "fe05f06041e81759fb3e831a826ee9ebeb6df9820e1da137ccf9676f59e8a4df",
+    "configHash": "e070a84dabf4a528c1ce8b9916381f4ad701617c9bc3d13d784556419db2f05b",
+    "partition": "heldout",
+    "consumed": false,
+    "reason": "Not evaluated",
+    "runs": []
+  },
+  "evidenceRefs": [],
+  "gaps": []
+}

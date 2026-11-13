@@ -1,0 +1,701 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R09",
+  "inputs": [
+    {
+      "ref": "apps/adviser/src/domain.ts",
+      "sha256": "354e41010c5a7b1da8f4413aaca67f9e44d87647c2d3f6af5603c0583d2c81b1"
+    },
+    {
+      "ref": "apps/adviser/src/picker.ts",
+      "sha256": "14d40ac999a997ad4275daefe126570aabae8fed8c897b7ba581b5924357e133"
+    },
+    {
+      "ref": "research/prebuild/05-evaluation-cases.json",
+      "sha256": "7cbd6ed3cd599c89a8a21a601ff596bba74ab98e88f814349d4a670fd6659bfd"
+    }
+  ],
+  "data": {
+    "version": "synthetic-v1",
+    "seed": 20261113,
+    "snapshotHashes": {
+      "apps/adviser/src/domain.ts": "354e41010c5a7b1da8f4413aaca67f9e44d87647c2d3f6af5603c0583d2c81b1",
+      "apps/adviser/src/picker.ts": "14d40ac999a997ad4275daefe126570aabae8fed8c897b7ba581b5924357e133",
+      "research/prebuild/05-evaluation-cases.json": "7cbd6ed3cd599c89a8a21a601ff596bba74ab98e88f814349d4a670fd6659bfd"
+    },
+    "partitions": {
+      "development": 40,
+      "heldout": 20
+    },
+    "queries": [
+      {
+        "id": "Q-exact-1",
+        "group": "exact",
+        "partition": "development",
+        "text": "p1",
+        "expected": [
+          "p1"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-2",
+        "group": "exact",
+        "partition": "development",
+        "text": "p2",
+        "expected": [
+          "p2"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-3",
+        "group": "exact",
+        "partition": "development",
+        "text": "p3",
+        "expected": [
+          "p3"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-4",
+        "group": "exact",
+        "partition": "development",
+        "text": "p4",
+        "expected": [
+          "p4"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-5",
+        "group": "exact",
+        "partition": "development",
+        "text": "p5",
+        "expected": [
+          "p5"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-6",
+        "group": "exact",
+        "partition": "development",
+        "text": "p6",
+        "expected": [
+          "p6"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-7",
+        "group": "exact",
+        "partition": "development",
+        "text": "p7",
+        "expected": [
+          "p7"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-8",
+        "group": "exact",
+        "partition": "development",
+        "text": "p8",
+        "expected": [
+          "p8"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-9",
+        "group": "exact",
+        "partition": "development",
+        "text": "p9",
+        "expected": [
+          "p9"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-10",
+        "group": "exact",
+        "partition": "development",
+        "text": "p10",
+        "expected": [
+          "p10"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-11",
+        "group": "exact",
+        "partition": "development",
+        "text": "p11",
+        "expected": [
+          "p11"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-12",
+        "group": "exact",
+        "partition": "development",
+        "text": "p12",
+        "expected": [
+          "p12"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-13",
+        "group": "exact",
+        "partition": "development",
+        "text": "p1",
+        "expected": [
+          "p1"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-14",
+        "group": "exact",
+        "partition": "development",
+        "text": "p2",
+        "expected": [
+          "p2"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-15",
+        "group": "exact",
+        "partition": "development",
+        "text": "p3",
+        "expected": [
+          "p3"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-16",
+        "group": "exact",
+        "partition": "development",
+        "text": "p4",
+        "expected": [
+          "p4"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-17",
+        "group": "exact",
+        "partition": "development",
+        "text": "p5",
+        "expected": [
+          "p5"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-18",
+        "group": "exact",
+        "partition": "development",
+        "text": "p6",
+        "expected": [
+          "p6"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-19",
+        "group": "exact",
+        "partition": "development",
+        "text": "p7",
+        "expected": [
+          "p7"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-20",
+        "group": "exact",
+        "partition": "development",
+        "text": "p8",
+        "expected": [
+          "p8"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-21",
+        "group": "exact",
+        "partition": "heldout",
+        "text": "p9",
+        "expected": [
+          "p9"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-22",
+        "group": "exact",
+        "partition": "heldout",
+        "text": "p10",
+        "expected": [
+          "p10"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-23",
+        "group": "exact",
+        "partition": "heldout",
+        "text": "p11",
+        "expected": [
+          "p11"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-24",
+        "group": "exact",
+        "partition": "heldout",
+        "text": "p12",
+        "expected": [
+          "p12"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-25",
+        "group": "exact",
+        "partition": "heldout",
+        "text": "p1",
+        "expected": [
+          "p1"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-26",
+        "group": "exact",
+        "partition": "heldout",
+        "text": "p2",
+        "expected": [
+          "p2"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-27",
+        "group": "exact",
+        "partition": "heldout",
+        "text": "p3",
+        "expected": [
+          "p3"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-28",
+        "group": "exact",
+        "partition": "heldout",
+        "text": "p4",
+        "expected": [
+          "p4"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-29",
+        "group": "exact",
+        "partition": "heldout",
+        "text": "p5",
+        "expected": [
+          "p5"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-exact-30",
+        "group": "exact",
+        "partition": "heldout",
+        "text": "p6",
+        "expected": [
+          "p6"
+        ],
+        "expectedAction": "retrieve",
+        "labelProvenance": "synthetic_rule",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-1",
+        "group": "task",
+        "partition": "development",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-2",
+        "group": "task",
+        "partition": "development",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-3",
+        "group": "task",
+        "partition": "development",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-4",
+        "group": "task",
+        "partition": "development",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-5",
+        "group": "task",
+        "partition": "development",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-6",
+        "group": "task",
+        "partition": "development",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-7",
+        "group": "task",
+        "partition": "development",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-8",
+        "group": "task",
+        "partition": "development",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-9",
+        "group": "task",
+        "partition": "development",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-10",
+        "group": "task",
+        "partition": "development",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-11",
+        "group": "task",
+        "partition": "heldout",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-12",
+        "group": "task",
+        "partition": "heldout",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-13",
+        "group": "task",
+        "partition": "heldout",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-14",
+        "group": "task",
+        "partition": "heldout",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-task-15",
+        "group": "task",
+        "partition": "heldout",
+        "text": "học tập lập trình",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-typo-1",
+        "group": "typo",
+        "partition": "development",
+        "text": "p1 laptop",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-typo-2",
+        "group": "typo",
+        "partition": "development",
+        "text": "p2 laptop",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-typo-3",
+        "group": "typo",
+        "partition": "development",
+        "text": "p3 laptop",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-typo-4",
+        "group": "typo",
+        "partition": "development",
+        "text": "p4 laptop",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-typo-5",
+        "group": "typo",
+        "partition": "development",
+        "text": "p5 laptop",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-typo-6",
+        "group": "typo",
+        "partition": "development",
+        "text": "p6 laptop",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-typo-7",
+        "group": "typo",
+        "partition": "development",
+        "text": "p7 laptop",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-typo-8",
+        "group": "typo",
+        "partition": "heldout",
+        "text": "p8 laptop",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-typo-9",
+        "group": "typo",
+        "partition": "heldout",
+        "text": "p9 laptop",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-typo-10",
+        "group": "typo",
+        "partition": "heldout",
+        "text": "p10 laptop",
+        "expected": null,
+        "expectedAction": "retrieve",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-unsupported-1",
+        "group": "unsupported",
+        "partition": "development",
+        "text": "unsupported workload",
+        "expected": null,
+        "expectedAction": "clarify",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-unsupported-2",
+        "group": "unsupported",
+        "partition": "development",
+        "text": "unsupported workload",
+        "expected": null,
+        "expectedAction": "clarify",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-unsupported-3",
+        "group": "unsupported",
+        "partition": "development",
+        "text": "unsupported workload",
+        "expected": null,
+        "expectedAction": "clarify",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-unsupported-4",
+        "group": "unsupported",
+        "partition": "heldout",
+        "text": "unsupported workload",
+        "expected": null,
+        "expectedAction": "clarify",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      },
+      {
+        "id": "Q-unsupported-5",
+        "group": "unsupported",
+        "partition": "heldout",
+        "text": "unsupported workload",
+        "expected": null,
+        "expectedAction": "clarify",
+        "labelProvenance": "unknown",
+        "evidenceRefs": []
+      }
+    ]
+  },
+  "evidenceRefs": [],
+  "gaps": [
+    {
+      "id": "GAP-R09-LABELS",
+      "reason": "No adjudicated real usefulness labels.",
+      "nextAction": "Obtain independent relevance judgments."
+    }
+  ]
+}

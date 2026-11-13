@@ -1,0 +1,1733 @@
+{
+  "schemaVersion": 2,
+  "planVersion": "2.1",
+  "updatedDate": "2026-11-13",
+  "timezone": "Asia/Saigon",
+  "pathBase": "repository_root",
+  "executor": "codex",
+  "plan": "docs/planning/PREBUILD_RESEARCH_PLAN.md",
+  "artifactContracts": "research/prebuild/RESEARCH_TEMPLATES.md",
+  "status": "R00-R14 local automation executed and validated; research evidence partial; G1-G4 pending; production backlog proposed.",
+  "migrationNote": "Retains R00–R14 IDs. Replaces human staffing/effort scheduling with artifact dependencies and separate automation/evidence states. Prior tasks were planned with no execution evidence.",
+  "automationStates": [
+    "todo",
+    "running",
+    "done",
+    "blocked"
+  ],
+  "evidenceStates": [
+    "unassessed",
+    "partial",
+    "sufficient"
+  ],
+  "checkResults": [
+    "pass",
+    "fail",
+    "not_run"
+  ],
+  "scheduler": {
+    "selection": "Resume the existing running task first; otherwise choose the lowest-order ordinary todo task with all requiresArtifacts tasks done and unchanged consumed inputs.",
+    "finalizer": "R14 executes when no earlier ordinary task remains runnable.",
+    "externalRule": "External gaps affect evidence sufficiency or a named conditional step; do not block unrelated automation.",
+    "resumeRule": "Resume running tasks; reopen affected consumers for changed input hashes/consumed config or evidence, or newly available external inputs. Shared ledger appends alone do not invalidate unrelated tasks. Preserve prior run records."
+  },
+  "sharedPaths": {
+    "config": "research/prebuild/run-config.json",
+    "evidenceIndex": "research/prebuild/00-evidence-index.json",
+    "runRecords": "research/prebuild/runs/<runId>/<taskId>.json",
+    "holdoutUsage": "research/prebuild/09-holdout-usage.json"
+  },
+  "defaults": {
+    "seed": 20261113,
+    "profileCases": 120,
+    "profileDevelopment": 80,
+    "profileHeldout": 40,
+    "queryCases": 60,
+    "queryDevelopment": 40,
+    "queryHeldout": 20,
+    "liveAiCases": 30,
+    "liveAiMaxRequests": null,
+    "liveAiMaxCostVnd": null,
+    "thresholdStatus": "proposed_not_ratified"
+  },
+  "commands": {
+    "baseline_types": {
+      "cmd": "npm --prefix apps/adviser run check",
+      "cwd": ".",
+      "existsNow": true,
+      "expectedExit": [
+        0
+      ],
+      "condition": "R00: installed dependencies available; later: relevant app/type contract changes.",
+      "level": "build",
+      "argv": [
+        "npm",
+        "--prefix",
+        "apps/adviser",
+        "run",
+        "check"
+      ]
+    },
+    "baseline_domain": {
+      "cmd": "node --experimental-strip-types --test apps/adviser/src/domain.test.ts apps/adviser/src/picker.test.ts apps/adviser/src/ai.test.ts",
+      "cwd": ".",
+      "existsNow": true,
+      "expectedExit": [
+        0
+      ],
+      "condition": "R00: compatible Node available; later: domain/picker/AI/app behavior changed.",
+      "level": "unit",
+      "argv": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "apps/adviser/src/domain.test.ts",
+        "apps/adviser/src/picker.test.ts",
+        "apps/adviser/src/ai.test.ts"
+      ]
+    },
+    "baseline_service": {
+      "cmd": "node --experimental-strip-types --test services/demo-ai/server.test.mjs",
+      "cwd": ".",
+      "existsNow": true,
+      "expectedExit": [
+        0
+      ],
+      "note": "Controlled provider only. Loopback denial is an environment blocker; use supported escalation, never call it passed.",
+      "condition": "R00: compatible Node and loopback access; later: service/AI contract changed.",
+      "level": "integration",
+      "argv": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "services/demo-ai/server.test.mjs"
+      ]
+    },
+    "validator_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_validate.py",
+      "cwd": ".",
+      "createdBy": "R00",
+      "expectedExit": [
+        0
+      ],
+      "level": "unit",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_validate.py"
+      ]
+    },
+    "audit_run": {
+      "cmd": "python research/prebuild/tools/audit_catalog.py --input data/all_laptops_normalized.json --out research/prebuild/04-catalog-audit.json",
+      "cwd": ".",
+      "createdBy": "R04",
+      "expectedExit": [
+        0
+      ],
+      "level": "research",
+      "argv": [
+        "python",
+        "research/prebuild/tools/audit_catalog.py",
+        "--input",
+        "data/all_laptops_normalized.json",
+        "--out",
+        "research/prebuild/04-catalog-audit.json"
+      ]
+    },
+    "audit_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_audit_catalog.py",
+      "cwd": ".",
+      "createdBy": "R04",
+      "expectedExit": [
+        0
+      ],
+      "level": "unit",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_audit_catalog.py"
+      ]
+    },
+    "corpus_run": {
+      "cmd": "python research/prebuild/tools/build_cases.py --config research/prebuild/run-config.json --out research/prebuild/05-evaluation-cases.json",
+      "cwd": ".",
+      "createdBy": "R05",
+      "expectedExit": [
+        0
+      ],
+      "level": "research",
+      "argv": [
+        "python",
+        "research/prebuild/tools/build_cases.py",
+        "--config",
+        "research/prebuild/run-config.json",
+        "--out",
+        "research/prebuild/05-evaluation-cases.json"
+      ]
+    },
+    "corpus_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_cases.py",
+      "cwd": ".",
+      "createdBy": "R05",
+      "expectedExit": [
+        0
+      ],
+      "level": "unit",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_cases.py"
+      ]
+    },
+    "contract_tests": {
+      "cmd": "node --experimental-strip-types --test research/prebuild/tools/contracts.test.mjs",
+      "cwd": ".",
+      "createdBy": "R07",
+      "expectedExit": [
+        0
+      ],
+      "level": "unit",
+      "argv": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "research/prebuild/tools/contracts.test.mjs"
+      ]
+    },
+    "spike_tests": {
+      "cmd": "node --experimental-strip-types --test spikes/prebuild-contract/contract.test.mjs",
+      "cwd": ".",
+      "createdBy": "R08",
+      "expectedExit": [
+        0
+      ],
+      "level": "integration",
+      "argv": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "spikes/prebuild-contract/contract.test.mjs"
+      ]
+    },
+    "eval_tests": {
+      "cmd": "node --experimental-strip-types --test research/prebuild/tools/eval.test.mjs",
+      "cwd": ".",
+      "createdBy": "R09",
+      "expectedExit": [
+        0
+      ],
+      "level": "unit",
+      "argv": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "research/prebuild/tools/eval.test.mjs"
+      ]
+    },
+    "eval_development": {
+      "cmd": "node --experimental-strip-types research/prebuild/tools/run_eval.mjs --partition development --out research/prebuild/09-retrieval-ranking-results.json",
+      "cwd": ".",
+      "createdBy": "R09",
+      "expectedExit": [
+        0
+      ],
+      "level": "research",
+      "argv": [
+        "node",
+        "--experimental-strip-types",
+        "research/prebuild/tools/run_eval.mjs",
+        "--partition",
+        "development",
+        "--out",
+        "research/prebuild/09-retrieval-ranking-results.json"
+      ]
+    },
+    "eval_holdout": {
+      "cmd": "node --experimental-strip-types research/prebuild/tools/run_eval.mjs --partition heldout --out research/prebuild/09-retrieval-ranking-results.json",
+      "cwd": ".",
+      "createdBy": "R09",
+      "expectedExit": [
+        0
+      ],
+      "condition": "Freeze policy/config/corpus first and consult 09-holdout-usage.json; label provenance must support the stated metric. A consumed partition is not new confirmation.",
+      "level": "research",
+      "argv": [
+        "node",
+        "--experimental-strip-types",
+        "research/prebuild/tools/run_eval.mjs",
+        "--partition",
+        "heldout",
+        "--out",
+        "research/prebuild/09-retrieval-ranking-results.json"
+      ]
+    },
+    "ai_controlled": {
+      "cmd": "node --experimental-strip-types --test research/prebuild/tools/ai.test.mjs",
+      "cwd": ".",
+      "createdBy": "R10",
+      "expectedExit": [
+        0
+      ],
+      "level": "unit",
+      "argv": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "research/prebuild/tools/ai.test.mjs"
+      ]
+    },
+    "ai_live": {
+      "cmd": "node --experimental-strip-types research/prebuild/tools/run_ai.mjs --mode live --out research/prebuild/10-ai-evaluation.json",
+      "cwd": ".",
+      "createdBy": "R10",
+      "expectedExit": [
+        0
+      ],
+      "condition": "Configured provider plus authorized numeric request/cost limits. Otherwise record not_run without making calls.",
+      "level": "live",
+      "argv": [
+        "node",
+        "--experimental-strip-types",
+        "research/prebuild/tools/run_ai.mjs",
+        "--mode",
+        "live",
+        "--out",
+        "research/prebuild/10-ai-evaluation.json"
+      ]
+    },
+    "android_devices": {
+      "cmd": "adb devices -l",
+      "cwd": ".",
+      "existsNow": "discover_executable_first",
+      "expectedExit": [
+        0
+      ],
+      "condition": "ADB available; list targets without changing device state.",
+      "level": "device",
+      "argv": [
+        "adb",
+        "devices",
+        "-l"
+      ]
+    },
+    "android_inspect": {
+      "cmd": "python apps/adviser/scripts/android-smoke.py inspect",
+      "cwd": ".",
+      "existsNow": true,
+      "expectedExit": [
+        0
+      ],
+      "condition": "Named authorized target selected; helper's required app state established. This inspect command alone is not full journey coverage.",
+      "level": "device",
+      "argv": [
+        "python",
+        "apps/adviser/scripts/android-smoke.py",
+        "inspect"
+      ]
+    },
+    "cost_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_cost_model.py",
+      "cwd": ".",
+      "createdBy": "R13",
+      "expectedExit": [
+        0
+      ],
+      "level": "unit",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_cost_model.py"
+      ]
+    },
+    "cost_run": {
+      "cmd": "python research/prebuild/tools/cost_model.py --input research/prebuild/13-cost-inputs.json --out research/prebuild/13-cost-results.json",
+      "cwd": ".",
+      "createdBy": "R13",
+      "expectedExit": [
+        0
+      ],
+      "level": "research",
+      "argv": [
+        "python",
+        "research/prebuild/tools/cost_model.py",
+        "--input",
+        "research/prebuild/13-cost-inputs.json",
+        "--out",
+        "research/prebuild/13-cost-results.json"
+      ]
+    },
+    "all_artifacts": {
+      "cmd": "python research/prebuild/tools/validate.py --all",
+      "cwd": ".",
+      "createdBy": "R00",
+      "expectedExit": [
+        0
+      ],
+      "level": "artifact",
+      "argv": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--all"
+      ]
+    },
+    "gate_g4": {
+      "cmd": "python research/prebuild/tools/validate.py --gate G4",
+      "cwd": ".",
+      "createdBy": "R00",
+      "expectedExit": [
+        0,
+        2
+      ],
+      "note": "0 only with sufficient applicable evidence and actual accept decision; 2 means pending/insufficient, not accepted.",
+      "level": "artifact",
+      "argv": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--gate",
+        "G4"
+      ]
+    },
+    "plan_contract_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_plan_contract.py",
+      "cwd": ".",
+      "level": "unit",
+      "existsNow": true,
+      "expectedExit": [
+        0
+      ],
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_plan_contract.py"
+      ]
+    },
+    "unit_runner_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_unit_runner.py",
+      "cwd": ".",
+      "level": "unit",
+      "createdBy": "R00",
+      "expectedExit": [
+        0
+      ],
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_unit_runner.py"
+      ]
+    },
+    "buyer_evidence_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_buyer_evidence.py",
+      "cwd": ".",
+      "level": "unit",
+      "createdBy": "R01",
+      "expectedExit": [
+        0
+      ],
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_buyer_evidence.py"
+      ]
+    },
+    "journey_evidence_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_journey_evidence.py",
+      "cwd": ".",
+      "level": "unit",
+      "createdBy": "R02",
+      "expectedExit": [
+        0
+      ],
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_journey_evidence.py"
+      ]
+    },
+    "source_register_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_source_register.py",
+      "cwd": ".",
+      "level": "unit",
+      "createdBy": "R03",
+      "expectedExit": [
+        0
+      ],
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_source_register.py"
+      ]
+    },
+    "android_evidence_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_android_evidence.py",
+      "cwd": ".",
+      "level": "unit",
+      "createdBy": "R11",
+      "expectedExit": [
+        0
+      ],
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_android_evidence.py"
+      ]
+    },
+    "operations_evidence_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_operations_evidence.py",
+      "cwd": ".",
+      "level": "unit",
+      "createdBy": "R12",
+      "expectedExit": [
+        0
+      ],
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_operations_evidence.py"
+      ]
+    },
+    "readiness_tests": {
+      "cmd": "python -m unittest discover -s research/prebuild/tools -p test_readiness.py",
+      "cwd": ".",
+      "level": "unit",
+      "createdBy": "R14",
+      "expectedExit": [
+        0
+      ],
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_readiness.py"
+      ]
+    },
+    "decision_state_tests": {
+      "cmd": "node --experimental-strip-types --test apps/adviser/src/decision-state.test.ts",
+      "cwd": ".",
+      "level": "unit",
+      "createdBy": "R06",
+      "expectedExit": [
+        0
+      ],
+      "argv": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "apps/adviser/src/decision-state.test.ts"
+      ]
+    },
+    "spike_unit_tests": {
+      "cmd": "node --experimental-strip-types --test spikes/prebuild-contract/policy.test.mjs spikes/prebuild-contract/repository.test.mjs",
+      "cwd": ".",
+      "level": "unit",
+      "createdBy": "R08",
+      "expectedExit": [
+        0
+      ],
+      "argv": [
+        "node",
+        "--experimental-strip-types",
+        "--test",
+        "spikes/prebuild-contract/policy.test.mjs",
+        "spikes/prebuild-contract/repository.test.mjs"
+      ]
+    }
+  },
+  "gates": [
+    {
+      "id": "G1",
+      "decision": "pending",
+      "decisionRef": null,
+      "scope": null,
+      "evidenceRefs": [],
+      "decidedAt": null
+    },
+    {
+      "id": "G2",
+      "decision": "pending",
+      "decisionRef": null,
+      "scope": null,
+      "evidenceRefs": [],
+      "decidedAt": null
+    },
+    {
+      "id": "G3",
+      "decision": "pending",
+      "decisionRef": null,
+      "scope": null,
+      "evidenceRefs": [],
+      "decidedAt": null
+    },
+    {
+      "id": "G4",
+      "decision": "pending",
+      "decisionRef": null,
+      "scope": null,
+      "evidenceRefs": [],
+      "decidedAt": null
+    }
+  ],
+  "tasks": [
+    {
+      "id": "R00",
+      "order": 0,
+      "executor": "codex",
+      "title": "Bootstrap executable research state",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [],
+      "reads": [
+        "brd.md",
+        "docs/planning/APP_FLOW.md",
+        "docs/planning/REPOSITORY_RESEARCH_2026-11-13.md",
+        "docs/planning/project-traceability.json",
+        "apps/adviser/package.json",
+        "apps/adviser/VERIFICATION.md"
+      ],
+      "outputs": [
+        "research/prebuild/run-config.json",
+        "research/prebuild/00-scope-and-decisions.md",
+        "research/prebuild/00-evidence-index.json",
+        "research/prebuild/tools/validate.py",
+        "research/prebuild/tools/test_validate.py",
+        "research/prebuild/tools/test_unit_runner.py",
+        "research/prebuild/tools/run_unit_packs.py"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Inspect Git status/current refs and relevant installed runtimes. Preserve current changes. Record exact input hashes instead of assuming the previous audit remains current.",
+        "Create run-config.json with the defaults in the plan and nullable external caps. Record inherited user decisions and unresolved scope; do not require human role assignments to start local work. On resume preserve supplied values; initialize missing keys only.",
+        "Create an appendable evidence index and run-record convention. Import prior records as historical references; do not import prior passes as current executions.",
+        "Implement the read-only standard-library validator specified in RESEARCH_TEMPLATES.md. Add negative tests for cycles, path escape, missing done-task outputs, false external pass, unknown fee/cost-as-zero and unapproved gate acceptance.",
+        "Run validator tests and available existing baseline checks once. Record actual outcomes and environment blockers; initialize the next runnable task.",
+        "Reuse the existing plan_contracts.py checker and its tests. Implement run_unit_packs.py from PREBUILD_TEST_PACKS.json: select task/pack/changed/all, run argument arrays, parse real unittest/Node results and mapped case IDs, preserve failure/incomplete exits, and emit a hashed report. Do not create empty placeholder suites."
+      ],
+      "requiredCommands": [
+        "plan_contract_tests",
+        "baseline_domain",
+        "validator_tests",
+        "unit_runner_tests"
+      ],
+      "conditionalCommands": [
+        "baseline_types",
+        "baseline_service"
+      ],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R00",
+      "acceptance": [
+        "Validator negative fixtures are rejected and valid partial-evidence artifacts are accepted structurally.",
+        "Run config is explicit; caps absent until authorized; input identities/hashes and baseline results exist.",
+        "No research task or gate is marked complete by creating this plan/bootstrap.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R00.json",
+      "inputHashes": {
+        "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
+        "docs/planning/APP_FLOW.md": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640",
+        "docs/planning/REPOSITORY_RESEARCH_2026-11-13.md": "62364e0983aaf9a30145b98a19d0731ebcc4288f7e0f7686107a6fa436ffadb7",
+        "docs/planning/project-traceability.json": "46423b863cbe3793bfbd3343d823ccd386a65bc184eb4ec2f9760ca0c951a92c",
+        "apps/adviser/package.json": "e9991914644a687b00d634daabfbcb181f6539c2035bd434a955cc3d1d3a3e0c",
+        "apps/adviser/VERIFICATION.md": "095932ccc3571e9dbe16587a8616e136ed1a585620c9f567eb9a8db63a45dded"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "External evidence remains partial; consult artifact gaps.",
+      "definitionHash": "c60c7aa350911974418e4778830b400bf07453f7cfbe8e516efe716f556e4300",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "UPLAN",
+        "UBASE",
+        "U00"
+      ]
+    },
+    {
+      "id": "R01",
+      "order": 1,
+      "executor": "codex",
+      "title": "Prepare and ingest buyer evidence",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R00"
+      ],
+      "reads": [
+        "research/onboarding-question-bank.json",
+        "research/business-needs-and-feature-inventory.md",
+        "research/prebuild/00-scope-and-decisions.md"
+      ],
+      "outputs": [
+        "research/prebuild/01-buyer-protocol.json",
+        "research/prebuild/01-buyer-observations.json",
+        "research/prebuild/01-buyer-research.md",
+        "research/prebuild/tools/test_buyer_evidence.py"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Create a screening/task protocol for 12 prospective interviews across students, office users and developers. Include recent/active buyers, behavior-first prompts and consent/retention fields.",
+        "Read any available authorized anonymized research records. Record participant IDs and evidence references; never create synthetic participant observations to meet the target.",
+        "Write observations.json as an empty array with collectedCount=0 when no real records exist. Keep hypotheses in a separate field.",
+        "Map each intake question to a material constraint, ranking preference, price condition or hypothesis; identify redundant questions and negative findings.",
+        "Summarize actual counts, cohort gaps and resulting product hypotheses. Prepare the smallest participant/input request; continue R02–R05 without waiting."
+      ],
+      "requiredCommands": [
+        "buyer_evidence_tests"
+      ],
+      "conditionalCommands": [],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R01",
+      "acceptance": [
+        "Participant and cohort counts equal sourced non-synthetic records.",
+        "Zero supplied interviews yields partial evidence and no demand/comprehension validation claim.",
+        "Every proposed question has a stated decision consequence or explicit hypothesis.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "buyer_sessions",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Real participant observations and appropriate use/consent context.",
+          "continueWith": "Finish protocol and hypothesis mapping; leave observation count zero."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R01.json",
+      "inputHashes": {
+        "research/onboarding-question-bank.json": "8201e56d88b8d966837057729773528f950b8fab0d866e0c8bf1c4a1c725fb37",
+        "research/business-needs-and-feature-inventory.md": "5a8f5cc65a8851c1f92784c0382738d084f30bc10507e9851b1396d87bcfec5f",
+        "research/prebuild/00-scope-and-decisions.md": "eda345ed8c0d8f9391934bd224446bb9b537bd0005d03128b46bbb3c64a62824"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "No remaining ordinary local task. Resolve artifact evidence gaps and reopen affected owner/consumers when new inputs arrive.",
+      "definitionHash": "7c03409fa7ff589805912fd56519ef19c54a5f29ca904a9776c5034c58370d9d",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U01"
+      ]
+    },
+    {
+      "id": "R02",
+      "order": 2,
+      "executor": "codex",
+      "title": "Benchmark observable journeys",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R00"
+      ],
+      "reads": [
+        "research/project-research.md",
+        "research/sources.md",
+        "research/mobile-interface-strategy.md",
+        "docs/planning/APP_FLOW.md"
+      ],
+      "outputs": [
+        "research/prebuild/02-journey-benchmark.json",
+        "research/prebuild/02-journey-benchmark.md",
+        "research/prebuild/tools/test_journey_evidence.py"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Define the same four tasks for the laptop reference and two relevant Vietnamese retailer journeys: needs/budget discovery, exact variant, price conditions, comparison/return.",
+        "Use available web/browser tools to inspect current primary pages. Record URL, observation time and access method; preserve observed versus advertised distinctions.",
+        "On blocked access, record inaccessible plus attempted method. Do not infer missing features or bypass access controls; use another accessible primary page where it answers the same question.",
+        "Produce a task matrix and at most five specific flow hypotheses tied to observed friction. Phone references inform evidence patterns only.",
+        "Keep researcher walkthroughs separate from participant findings; no invented task timings or competitor accuracy claims."
+      ],
+      "requiredCommands": [
+        "journey_evidence_tests"
+      ],
+      "conditionalCommands": [],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R02",
+      "acceptance": [
+        "Each claimed observed capability has a dated source/evidence reference.",
+        "Uninspected behavior is unknown; matrix includes comparable tasks and testable implications.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "journey_access",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Accessible primary reference/retailer UI or page evidence.",
+          "continueWith": "Publish the observed subset and gaps; do not block contract work."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R02.json",
+      "inputHashes": {
+        "research/project-research.md": "c138f2a551a618b4456c2dd60ead26c6d7eaee5d3e4b20a6d10754ba1c4dd1af",
+        "research/sources.md": "74136ca5e1720595cb92abdfbea8f0638a82e598141833b25e5135aace5c534a",
+        "research/mobile-interface-strategy.md": "d2a8de7480774262643ea0a4510a077cb7314d59bc052aec1c23092d8d807bc2",
+        "docs/planning/APP_FLOW.md": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "No remaining ordinary local task. Resolve artifact evidence gaps and reopen affected owner/consumers when new inputs arrive.",
+      "definitionHash": "f6a20d1adc94d1cc7f1c940d96781da5781033b66f22d45248e00acc58db05f8",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U02"
+      ]
+    },
+    {
+      "id": "R03",
+      "order": 3,
+      "executor": "codex",
+      "title": "Build source access register",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R00"
+      ],
+      "reads": [
+        "crawler/index.js",
+        "crawler/README.md",
+        "research/sources.md",
+        "brd.md"
+      ],
+      "outputs": [
+        "research/prebuild/03-source-register.json",
+        "research/prebuild/tools/test_source_register.py"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Inventory the four crawler sources and exact-model manufacturer/evidence references needed for the proposed workload scope.",
+        "Inspect current primary terms/feed/API documents. Separate research collection, storage/history, display, images/reviews, redistribution and model processing.",
+        "For each intended use, record documented_basis, prohibited or unresolved with source URL/date and scope. Public HTML or robots status is not permission.",
+        "Select feasible research routes and record required cadence/retention/coverage constraints. Do not contact a provider or accept a paid agreement without existing authorization.",
+        "Leave unresolved agreements as external requirements while R04 audits existing files."
+      ],
+      "requiredCommands": [
+        "source_register_tests"
+      ],
+      "conditionalCommands": [],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R03",
+      "acceptance": [
+        "Every source has per-use status, dated evidence or explicit unresolved fields.",
+        "Research permission is not automatically copied into production permission.",
+        "No source credential, confidential contract or raw private data enters public artifacts.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "source_rights",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Documented basis for the intended production source uses.",
+          "continueWith": "Review public primary material; keep current snapshots in crawled_draft/research-only mode."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R03.json",
+      "inputHashes": {
+        "crawler/index.js": "9716f200113cf99b8ad77794c69f1dcaa2798c271c1618eead62957982062d80",
+        "crawler/README.md": "18b2b5be48b4b54f449694a18d30433c630ad0cd934f35c4271d1325d4df9aa4",
+        "research/sources.md": "74136ca5e1720595cb92abdfbea8f0638a82e598141833b25e5135aace5c534a",
+        "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "No remaining ordinary local task. Resolve artifact evidence gaps and reopen affected owner/consumers when new inputs arrive.",
+      "definitionHash": "4120664223d438254aa2b64860e1f0737b7760081901fe7456df1927a5bdfd49",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U03"
+      ]
+    },
+    {
+      "id": "R04",
+      "order": 4,
+      "executor": "codex",
+      "title": "Implement repeatable catalog and offer audit",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R00"
+      ],
+      "reads": [
+        "data/all_laptops_normalized.json",
+        "crawler/src/models/laptopSchema.js",
+        "crawler/src/utils/storage.js"
+      ],
+      "outputs": [
+        "research/prebuild/tools/audit_catalog.py",
+        "research/prebuild/tools/test_audit_catalog.py",
+        "research/prebuild/04-catalog-audit.json",
+        "research/prebuild/04-catalog-findings.md"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Implement a no-network standard-library audit CLI. Parse current input, hash it, sort stable IDs and report counts by source/condition plus missing/invalid fields and duplicate identities.",
+        "Keep every source listing and its raw identity. Create draft canonical candidates; only mark a match accepted when exact evidence supports it. Similar names/URLs never prove equivalence.",
+        "Preserve reported availability and add whether it is observed, inferred or unknown. Missing shipping/fees and conditional discounts must not produce a verified complete total.",
+        "Select a reproducible stratified manual-review queue of up to 20 new listings; use approved/appropriate primary evidence when available. Retain rejected, unmatched and used records outside the proposed new-device set.",
+        "Write review counts, coverage limits and evidence references. Re-running unchanged input/config must preserve normalized counts/IDs; only run metadata changes.",
+        "Test duplicate IDs, absent fields, mixed conditions, ambiguous identity, unknown shipping, inferred stock and invalid integer money. Never overwrite data/*.json."
+      ],
+      "requiredCommands": [
+        "audit_tests",
+        "audit_run"
+      ],
+      "conditionalCommands": [],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R04",
+      "acceptance": [
+        "Counts derive from actual rows, not hardcoded 70/55/15 assumptions.",
+        "Source snapshots remain unchanged; unresolved identity and costs are never upgraded to accepted/complete by the audit.",
+        "Review and freshness claims name evidence and dates; missing real reviews leave evidence partial.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "catalog_review",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Exact variant, complete-offer and source-use verification for production-intended records.",
+          "continueWith": "Generate deterministic draft mapping/review queue; abstain on unresolved claims."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R04.json",
+      "inputHashes": {
+        "data/all_laptops_normalized.json": "dea729f33a3e087a3992c2898842ffecceaba93fd39c878b0ebb2ede35486853",
+        "crawler/src/models/laptopSchema.js": "1cc221abb948899df2a84eb7d399330d78c1fbba7a8ca8a7f1b0bee2aa053709",
+        "crawler/src/utils/storage.js": "bfcad510e964a8ef5d98e95d20925a323f0b6f03aff79fb36fc4cce87b2113e9"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "No remaining ordinary local task. Resolve artifact evidence gaps and reopen affected owner/consumers when new inputs arrive.",
+      "optionalReads": [
+        "research/prebuild/03-source-register.json"
+      ],
+      "definitionHash": "26fa5477b313aa894768b4aca9af34b6a93c6f03fd7ae439920083c8897950e8",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U04"
+      ]
+    },
+    {
+      "id": "R05",
+      "order": 5,
+      "executor": "codex",
+      "title": "Implement workload policy and frozen cases",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R00",
+        "R04"
+      ],
+      "reads": [
+        "apps/adviser/src/domain.ts",
+        "apps/adviser/src/picker.ts",
+        "brd.md",
+        "research/prebuild/04-catalog-audit.json"
+      ],
+      "outputs": [
+        "research/prebuild/05-workload-policy.md",
+        "research/prebuild/05-workload-policy.json",
+        "research/prebuild/05-evaluation-cases.json",
+        "research/prebuild/tools/build_cases.py",
+        "research/prebuild/tools/test_cases.py"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Define supported/unsupported/unknown workload states, hard constraints, ranking preferences and rule provenance. Consume R01 observations if available; otherwise tag cohort/workload assumptions provisional.",
+        "Use exact applicable vendor/measurement evidence for real rules. Keep synthetic RAM/level thresholds only in synthetic fixtures.",
+        "Implement reproducible case construction using configured seed and primary-group quotas. Store fixed case IDs, 80/40 partitions, snapshot hashes and expected-output provenance.",
+        "Expected results for synthetic invariant cases may be derived from explicit independent calculations; real suitability labels require supporting evidence/review. Mark unadjudicated labels unknown.",
+        "Test exact budget +/- one dong, missing fees, wrong variants, hard/soft order, no-fit/no-offer/filter-empty distinction, unknowns, stale versions and save history. Test split disjointness and freeze hashes.",
+        "Record reviewer gaps without blocking schema/spike development."
+      ],
+      "requiredCommands": [
+        "corpus_tests",
+        "corpus_run"
+      ],
+      "conditionalCommands": [],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R05",
+      "acceptance": [
+        "120 cases with the configured group totals and 80/40 disjoint split, or an explicit malformed/incomplete corpus failure.",
+        "Every expected label states origin; synthetic expectations cannot be reported as real hardware validation.",
+        "Changing consumed holdout inputs requires a new version and preserved prior results.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "workload_review",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Independent competent adjudication and evidence for real supported workloads.",
+          "continueWith": "Generate labelled synthetic regression cases and draft real cases with unknown expected suitability."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R05.json",
+      "inputHashes": {
+        "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d",
+        "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+        "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
+        "research/prebuild/04-catalog-audit.json": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "No remaining ordinary local task. Resolve artifact evidence gaps and reopen affected owner/consumers when new inputs arrive.",
+      "definitionHash": "1e9a1feb92f8f08619cd0f6cca461fd266d9577b6be6c684d3f921f4cd508928",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U05"
+      ]
+    },
+    {
+      "id": "R06",
+      "order": 6,
+      "executor": "codex",
+      "title": "Validate app states and prepare user study",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R00",
+        "R01",
+        "R02"
+      ],
+      "reads": [
+        "apps/adviser/src/AndroidApp.tsx",
+        "apps/adviser/src/picker.ts",
+        "docs/planning/APP_FLOW.md",
+        "research/prebuild/01-buyer-research.md",
+        "research/prebuild/02-journey-benchmark.json",
+        "docs/planning/APP_FLOW_DEEP_RESEARCH.md",
+        "docs/planning/PREBUILD_TEST_PACKS.json",
+        "research/prebuild/flow-review/current-flow-observations.json"
+      ],
+      "outputs": [
+        "research/prebuild/06-flow-validation.json",
+        "research/prebuild/06-flow-validation.md",
+        "apps/adviser/src/decision-state.test.ts",
+        "apps/adviser/src/decision-state.ts"
+      ],
+      "additionalWriteScope": [
+        "apps/adviser/** only for traced defect or bounded experiment; record reason"
+      ],
+      "steps": [
+        "Trace actual tabs/sheets, draft/confirm/apply transitions, filters, comparison, offers, saving and AI proposal behavior to source symbols.",
+        "Build a state-to-action-to-recovery matrix covering guest, clarification, no fit, filter empty, partial/conditional price, stale history, write failure and AI timeout.",
+        "Prepare 3–4 cognitive-interview and five-participant uncoached task protocols with exact build/fixture context and comprehension questions.",
+        "If available, execute bounded UI checks with the applicable computer-use skill/tools; label developer/automated walkthroughs separately from participant sessions.",
+        "Make only observed-defect or named-hypothesis prototype changes. Preserve behavior tests, record patch/source references and run affected existing checks.",
+        "Summarize measured findings and participant gaps. Do not consolidate tabs just because the terminology differs; record a reasoned proposal.",
+        "Use the source-backed flow findings as explicit regression inputs. Extract only the decision/navigation/persistence coordination needed for U06 into decision-state.ts and wire those helpers into AndroidApp.tsx. Test the production-used helpers with injected storage/clock/transport; never satisfy tests with a disconnected duplicate state machine. Preserve scoped UI behavior except traced fixes.",
+        "For any confirmed flow defect, write a failing regression before fixing it, keep the research reproduction, and record the before/after result. Unit checks cannot establish native Back, focus, keyboard, TalkBack or process-death behavior; link those journeys to R11."
+      ],
+      "requiredCommands": [
+        "baseline_domain",
+        "decision_state_tests"
+      ],
+      "conditionalCommands": [
+        "baseline_types"
+      ],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R06",
+      "acceptance": [
+        "Every scoped state has an entry/action/expected recovery and implementation/evidence reference.",
+        "Any source edit has a traced finding and passing affected checks.",
+        "No real participant data means no claimed usability acceptance; automated UI checks retain their own provenance.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass.",
+        "FLOW-01–FLOW-04 and any other scoped fixes have failing-before/passing-after regression evidence; source-only reproductions are not native journey acceptance. FLOW-05–FLOW-08 remain explicit R10/API work when not resolved here."
+      ],
+      "externalDependencies": [
+        {
+          "id": "usability_sessions",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Actual cognitive/uncoached participant observations.",
+          "continueWith": "Complete protocols, code/state audit and available automated walkthroughs."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R06.json",
+      "inputHashes": {
+        "apps/adviser/src/AndroidApp.tsx": "f60ecd7062c3cedacb9a1905fca658a791aec2b228b38e5d0720054334f726d1",
+        "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+        "docs/planning/APP_FLOW.md": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640",
+        "research/prebuild/01-buyer-research.md": "1c1a16f54ddfb8b23656299e3f26424fe0a00b2163f386c5562c6a42db7e6d80",
+        "research/prebuild/02-journey-benchmark.json": "a3ecadaaacf2e2314f94d5751cb356af7f5cf7ef49915e4d0782eab8428eb7bc",
+        "docs/planning/APP_FLOW_DEEP_RESEARCH.md": "83977fa9832f9a0ba97e1f33a5a6b43597c79186b2b70445054565500942983a",
+        "research/prebuild/flow-review/current-flow-observations.json": "f6452b08e16cdfc62839d149f21d186cd12387ab94cb0428696f318db40d7e3b"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "No remaining ordinary local task. Resolve artifact evidence gaps and reopen affected owner/consumers when new inputs arrive.",
+      "definitionHash": "b70ae500532172f47e9b0dba89dcc58ae701fe3cbfc84a72e28601c27483a02a",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "UBASE",
+        "U06"
+      ]
+    },
+    {
+      "id": "R07",
+      "order": 7,
+      "executor": "codex",
+      "title": "Implement one API and state contract",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R04",
+        "R05",
+        "R06"
+      ],
+      "reads": [
+        "services/demo-ai/server.mjs",
+        "apps/adviser/src/ai.ts",
+        "apps/adviser/src/picker.ts",
+        "git:main:spikes/brd-retrieval/schema.sql",
+        "git:main:spikes/brd-retrieval/agent_flow.py",
+        "git:main:spikes/brd-retrieval/server.py",
+        "docs/planning/APP_FLOW_DEEP_RESEARCH.md",
+        "docs/planning/PREBUILD_TEST_PACKS.json"
+      ],
+      "outputs": [
+        "research/prebuild/07-architecture-decision.md",
+        "research/prebuild/07-api-contract.json",
+        "research/prebuild/07-contract-examples.json",
+        "research/prebuild/tools/contracts.test.mjs",
+        "research/prebuild/tools/contract_validation.mjs"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Compare existing Node and Python contracts and port defaults. Choose one spike owner/runtime; default TypeScript reuse unless a documented technical finding favors Python. If selecting Python, revise R08's declared files and check command together before R07 is done, with the architecture decision reference.",
+        "Write a JSON-form OpenAPI contract and typed/example payloads for needs, variant detail/offers, recommendation runs and comparisons. Keep model calls behind server-only adapters.",
+        "Define explicit fit, offerValidity, priceCompleteness and affordability enums; add runId/decisionId/profileRevision/catalogVersion/rulesVersion and error codes.",
+        "Separate listing amount from payable total, draft from published evidence, and saved historical observations from refreshed results.",
+        "Implement structural/semantic contract checks against request/response examples for success, clarification, no_fit, no_verified_affordable_offer, filter_empty, source_unavailable and stale_revision.",
+        "Record the reuse map and exact port/config plan; do not merge branches or deploy a service.",
+        "Implement contract_validation.mjs as shared runtime validation for examples and the spike, with independent golden expected errors; contract tests must exercise the validator the spike consumes.",
+        "Use the ordered result-state decision table from APP_FLOW_DEEP_RESEARCH.md, including evidence_unknown. Carry decision/run/request/profile/catalog/rules/offer context and focused variant IDs end to end; specify restore/history identity without replacing removed variants."
+      ],
+      "requiredCommands": [
+        "contract_tests"
+      ],
+      "conditionalCommands": [],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R07",
+      "acceptance": [
+        "Examples validate and deliberate semantic contradictions fail.",
+        "One service contract resolves the endpoint mismatch; runtime choice has evidence and preserves budget/task authority.",
+        "Production scope and source acceptance remain explicit pending decisions.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R07.json",
+      "inputHashes": {
+        "services/demo-ai/server.mjs": "505750b50566ccf7cd4a549a55b949dbd929efc1c300ef01cf02e69af0cd5c01",
+        "apps/adviser/src/ai.ts": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf",
+        "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+        "docs/planning/APP_FLOW_DEEP_RESEARCH.md": "83977fa9832f9a0ba97e1f33a5a6b43597c79186b2b70445054565500942983a"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "External evidence remains partial; consult artifact gaps.",
+      "definitionHash": "11b4129aa5205ff88d77a56b563b90d15fa14bb8ec058087611941b53cadb5ef",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U07"
+      ]
+    },
+    {
+      "id": "R08",
+      "order": 8,
+      "executor": "codex",
+      "title": "Build isolated integration spike",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R04",
+        "R05",
+        "R07"
+      ],
+      "reads": [
+        "research/prebuild/07-api-contract.json",
+        "research/prebuild/05-workload-policy.json",
+        "research/prebuild/04-catalog-audit.json",
+        "apps/adviser/src/domain.ts"
+      ],
+      "outputs": [
+        "research/prebuild/08-integration-spike.md",
+        "spikes/prebuild-contract/package.json",
+        "spikes/prebuild-contract/server.ts",
+        "spikes/prebuild-contract/repository.ts",
+        "spikes/prebuild-contract/policy.ts",
+        "spikes/prebuild-contract/contract.test.mjs",
+        "spikes/prebuild-contract/policy.test.mjs",
+        "spikes/prebuild-contract/repository.test.mjs"
+      ],
+      "additionalWriteScope": [
+        "spikes/prebuild-contract/**"
+      ],
+      "steps": [
+        "Create an isolated private module under spikes/prebuild-contract using the chosen runtime. Implement the smallest repository/policy/API/client path that exercises the contract; no full app/admin implementation. Default files are package.json (private/type=module), server.ts, repository.ts, policy.ts and contract.test.mjs; use Node's existing type stripping rather than a new framework.",
+        "Use roughly ten reviewed research variants if available; otherwise use clearly synthetic cases and mark real-data feasibility unverified. Reuse money/revision invariants; never apply synthetic capability levels to real hardware.",
+        "Implement confirmation -> candidate evaluation -> independent offer/total states -> comparison inputs -> dated saved decision -> reopen. Persist a test snapshot and verify after reopening.",
+        "Add contract integration tests for wrong identity, +/- one dong, missing shipping, expired/withdrawn offer, no-fit/no-offer, source outage and out-of-order versions.",
+        "Exercise one evidence update and withdrawal with the selected derived-index adapter. An in-memory probe must not be reported as a PostgreSQL/Qdrant service test.",
+        "Run a named Android network smoke check when available; a script-only client is labelled as such. Record exact ports, start/stop commands, actual dependencies and reuse/discard conclusions."
+      ],
+      "requiredCommands": [
+        "spike_unit_tests",
+        "spike_tests"
+      ],
+      "conditionalCommands": [],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R08",
+      "acceptance": [
+        "Required contract scenarios pass through the service/client boundary, not only mocked policy functions.",
+        "Dataset kind is explicit; old snapshots remain dated and exact identities survive all transitions.",
+        "Database/native/real-data portions not exercised are not_run, with a narrowed conclusion.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "integration_environment",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Configured selected database/index/native target and sufficient reviewed records for their respective claims.",
+          "continueWith": "Use isolated synthetic/local adapters; retain unverified integration sections."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R08.json",
+      "inputHashes": {
+        "research/prebuild/07-api-contract.json": "1cf887673b627ce507a4e5afacdaacbe8c6b0184bb561c9b963d74d966073760",
+        "research/prebuild/05-workload-policy.json": "c980754924f950837259f86e0894332cd9f7109b38e9dcc9c79189bc7d553fe6",
+        "research/prebuild/04-catalog-audit.json": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc",
+        "apps/adviser/src/domain.ts": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "External evidence remains partial; consult artifact gaps.",
+      "definitionHash": "46cb3a87d03f31d572f469cd07a080096b72c3dc2095bf9e73d643edb082e699",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U08"
+      ]
+    },
+    {
+      "id": "R09",
+      "order": 9,
+      "executor": "codex",
+      "title": "Implement retrieval/ranking comparison harness",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R05",
+        "R08"
+      ],
+      "reads": [
+        "embedder/embeddings.py",
+        "embedder/search.py",
+        "research/prebuild/05-evaluation-cases.json",
+        "research/prebuild/08-integration-spike.md"
+      ],
+      "outputs": [
+        "research/prebuild/09-query-cases.json",
+        "research/prebuild/09-retrieval-ranking-results.json",
+        "research/prebuild/09-retrieval-ranking-report.md",
+        "research/prebuild/tools/run_eval.mjs",
+        "research/prebuild/tools/eval.test.mjs",
+        "research/prebuild/09-holdout-usage.json"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Build the 60-query corpus and fixed 40/20 partition from the plan. Record independent relevance/label status; ambiguous/unsupported queries expect clarification or no answer.",
+        "Implement lexical/filter baseline and workload ranking on identical snapshot/hard-eligibility inputs. Add local-hash/provider vector adapter only when feasible; unavailable arms are not_run.",
+        "Record per-case input/output, selected identities, correct/unknown/failed labels, recall numerator/denominator, timing samples and snapshot/config hashes.",
+        "Implement metric tests that reject cross-variant credit, exclude unknown labels from correctness denominators while counting them, and separate technical invariants from hardware utility.",
+        "Run development cases. Freeze policy/config before optional heldout run; preserve first heldout result and track consumption. Do not tune against it and then relabel the same set independent. Record consumption in 09-holdout-usage.json keyed by corpus/config hash; never mutate the frozen corpus. Append run results rather than overwriting earlier executions.",
+        "Report actual comparisons, coverage by cohort/budget, errors and a provisional keep/defer vector decision. No independently judged labels means no confirmed usefulness claim."
+      ],
+      "requiredCommands": [
+        "eval_tests",
+        "eval_development"
+      ],
+      "conditionalCommands": [
+        "eval_holdout"
+      ],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R09",
+      "acceptance": [
+        "Comparable arms use identical inputs and hard rules; unknown labels and absent arms remain visible.",
+        "Reported aggregate values can be recomputed from retained case results.",
+        "Integrity failures cannot be offset by retrieval/ranking score; heldout reuse is flagged.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "ranking_labels",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Adjudicated workload/relevance labels and supported data for real quality claims.",
+          "continueWith": "Run synthetic integrity and descriptive retrieval checks; label unjudged usefulness unknown."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R09.json",
+      "inputHashes": {
+        "embedder/embeddings.py": "92394293c23fb443fd44930c9e660f47842fcb7913076bf9b76a7339fe9b7f14",
+        "embedder/search.py": "2e2fbae834d4eb47353186b9bbeb5c92aa8c68babe9d20a175b1c1047c070120",
+        "research/prebuild/05-evaluation-cases.json": "d664fd777b27de347813b85430c7c272e40e223cd8e68193fa83b9a0a78f7a6e",
+        "research/prebuild/08-integration-spike.md": "3e6dbae4ea1da856690af6ed3e6fb01b08e36d93b29576b6ade1e2cbecbca9cf"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "External evidence remains partial; consult artifact gaps.",
+      "definitionHash": "0a779614a9b2e07ae62a1d2fd488606c033bde38a581b933ce1259ab34622152",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U09"
+      ]
+    },
+    {
+      "id": "R10",
+      "order": 10,
+      "executor": "codex",
+      "title": "Implement AI evaluation and gated live runner",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R05",
+        "R08"
+      ],
+      "reads": [
+        "apps/adviser/src/ai.ts",
+        "services/demo-ai/server.mjs",
+        "services/demo-ai/server.test.mjs",
+        "research/prebuild/run-config.json",
+        "docs/planning/APP_FLOW_DEEP_RESEARCH.md",
+        "docs/planning/PREBUILD_TEST_PACKS.json"
+      ],
+      "outputs": [
+        "research/prebuild/10-ai-evaluation.json",
+        "research/prebuild/10-ai-evaluation-report.md",
+        "research/prebuild/tools/run_ai.mjs",
+        "research/prebuild/tools/ai.test.mjs"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Create a runner with controlled and live modes. Before network access, require configured provider and authorized numeric request/cost limits; reserve the worst-case allowed call cost where pricing is known, otherwise require a stricter approved spending mechanism or skip.",
+        "Implement all 12 controlled failure scenarios from the plan against the relevant boundary, including cap exhaustion before provider invocation.",
+        "Record mode/provider/model, attempts, input/profile versions, validated output, latency, actual usage/cost and rejection/fallback result; redact credentials and private free text.",
+        "Prepare the 30-case live set with expected field/fact provenance. Run it only when configuration and authorization permit; otherwise write live.status=not_run and the concrete missing condition.",
+        "Verify proposed needs remain unconfirmed until user action, invalid/stale claims are rejected, and deterministic results survive provider failure.",
+        "Report technical integrity separately from participant comprehension or live-provider acceptance."
+      ],
+      "requiredCommands": [
+        "ai_controlled"
+      ],
+      "conditionalCommands": [
+        "ai_live"
+      ],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R10",
+      "acceptance": [
+        "Controlled tests confirm absent/capped live configuration makes zero provider calls.",
+        "Every accepted claim matches allowed semantics and current revision; fake-provider passes are labelled controlled.",
+        "Live call count/cost evidence is actual or explicitly absent; no default zero for unknown cost.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "live_provider",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Configured live access, data handling and authorized numeric limits.",
+          "continueWith": "Execute controlled tests and prepare cases; mark live acceptance pending."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R10.json",
+      "inputHashes": {
+        "apps/adviser/src/ai.ts": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf",
+        "services/demo-ai/server.mjs": "505750b50566ccf7cd4a549a55b949dbd929efc1c300ef01cf02e69af0cd5c01",
+        "services/demo-ai/server.test.mjs": "e0d95ede17190e7ccdb2abc6443d98572919be09bfd1108d1e944f5156ace3f7",
+        "docs/planning/APP_FLOW_DEEP_RESEARCH.md": "83977fa9832f9a0ba97e1f33a5a6b43597c79186b2b70445054565500942983a"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "No remaining ordinary local task. Resolve artifact evidence gaps and reopen affected owner/consumers when new inputs arrive.",
+      "definitionHash": "93b48be91ea28d8c8b45e0011138de0d4a63a953ad3ddd0f0d5f7b933cd20b7a",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U10"
+      ]
+    },
+    {
+      "id": "R11",
+      "order": 11,
+      "executor": "codex",
+      "title": "Execute available Android evidence collection",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R06",
+        "R08"
+      ],
+      "reads": [
+        "apps/adviser/VERIFICATION.md",
+        "apps/adviser/verification/android-demo-manifest.json",
+        "apps/adviser/scripts/android-smoke.py",
+        "research/prebuild/06-flow-validation.json"
+      ],
+      "outputs": [
+        "research/prebuild/11-android-cases.json",
+        "research/prebuild/11-android-evidence.md",
+        "research/prebuild/tools/test_android_evidence.py"
+      ],
+      "additionalWriteScope": [
+        "apps/adviser/** only for traced defect or bounded experiment; record reason"
+      ],
+      "steps": [
+        "Inventory available tools/authorized targets and current APK/hash. Reuse historical records only with their original provenance; do not rebuild unless source or artifact requirements justify it.",
+        "Define core journey, Back/IME, lifecycle, save/delete/recovery, offline/AI failure, scaling/themes, TalkBack/focus, reduced motion and supported keyboard/switch cases.",
+        "Use existing stateful smoke helper only after establishing its required foreground app/state. Capture build/device/OS and actual observations per case.",
+        "On a named physical phone when available, run release cases and 30 samples per proposed timing scenario. Retain raw values, failures and conditions; label emulator results separately.",
+        "Apply bounded fixes for observed failures and rerun affected checks. Missing device/accessibility interaction becomes not_run, not a fabricated pass.",
+        "Write the proposed support-matrix limitations and actionable pending evidence."
+      ],
+      "requiredCommands": [
+        "android_evidence_tests"
+      ],
+      "conditionalCommands": [
+        "android_devices",
+        "android_inspect",
+        "baseline_types",
+        "baseline_domain"
+      ],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R11",
+      "acceptance": [
+        "All cases say pass/fail/not_run and identify actual build/target when executed.",
+        "No physical target means physicalDeviceValidated=false; old emulator evidence is not relabelled current phone evidence.",
+        "Timing summaries resolve to actual raw samples and include failures/measurement limits.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "android_target",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Authorized physical target and actual accessibility interaction for those acceptance claims.",
+          "continueWith": "Complete protocol and available static/emulator checks; keep physical acceptance pending."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R11.json",
+      "inputHashes": {
+        "apps/adviser/VERIFICATION.md": "095932ccc3571e9dbe16587a8616e136ed1a585620c9f567eb9a8db63a45dded",
+        "apps/adviser/verification/android-demo-manifest.json": "0d1459b3110d30e2a974dadf7a057b0cbe7f717e2d65a9685f408d0bdfc419a1",
+        "apps/adviser/scripts/android-smoke.py": "d392ff629847f09b411c101b01926c53adc1b373f55391032127cecebc5143d9",
+        "research/prebuild/06-flow-validation.json": "f60b0b99575fa0390b68cc7125fd8cfe6b685bb219d947ffaebbd0a7c31afd12"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "No remaining ordinary local task. Resolve artifact evidence gaps and reopen affected owner/consumers when new inputs arrive.",
+      "definitionHash": "fdfd8da6a20b8de18971210478c1714af2b26d9ec65d0725be64889f3ad6d713",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U11"
+      ]
+    },
+    {
+      "id": "R12",
+      "order": 12,
+      "executor": "codex",
+      "title": "Specify and probe operating failures",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R03",
+        "R04",
+        "R07"
+      ],
+      "reads": [
+        "brd.md",
+        "research/prebuild/03-source-register.json",
+        "research/prebuild/04-catalog-audit.json",
+        "research/prebuild/07-api-contract.json"
+      ],
+      "outputs": [
+        "research/prebuild/12-operations-scenarios.json",
+        "research/prebuild/12-operations-and-data-handling.md",
+        "research/prebuild/tools/test_operations_evidence.py"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Model six scenarios: wrong variant/price correction, source outage/staleness, evidence withdrawal, unauthorized/revoked publication, provider failure/cap, and bad rule/catalog rollback.",
+        "For each, record trigger, authority, affected state, user-visible behavior, recovery check and whether it was executed in sandbox or only simulated/tabletop.",
+        "Probe applicable spike boundaries when runnable. Do not claim implemented production RBAC, backups or deletion because a scenario document exists.",
+        "Specify public/private/staff data boundaries, required retention/permissions, correction workflow, source freshness and incident roles. Use pending fields where ownership or policy is unassigned.",
+        "Measure observed review/update effort when available; retain unknown effort otherwise. Convert production-only controls into explicit future acceptance work."
+      ],
+      "requiredCommands": [
+        "operations_evidence_tests"
+      ],
+      "conditionalCommands": [],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R12",
+      "acceptance": [
+        "Six scenarios have expected transitions and observed/simulated/not_run evidence distinctions.",
+        "No tabletop case is labelled proof of actual production authorization/restore/deletion.",
+        "Retention/freshness/recovery values identify proposed versus decided status and evidence.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "operating_decisions",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Actual operating ownership, retention/freshness/recovery and budget decisions.",
+          "continueWith": "Provide concrete proposals, sandbox evidence and future acceptance tests."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R12.json",
+      "inputHashes": {
+        "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
+        "research/prebuild/03-source-register.json": "65a612548b4401980f5c408bc75773416a6cfb674639628b50c12f806901cdc6",
+        "research/prebuild/04-catalog-audit.json": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc",
+        "research/prebuild/07-api-contract.json": "1cf887673b627ce507a4e5afacdaacbe8c6b0184bb561c9b963d74d966073760"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "External evidence remains partial; consult artifact gaps.",
+      "definitionHash": "949b1a940ea0ef1651d1ea1b6182e9df8f0d85d6e9bd6893260848d5b04a3444",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U12"
+      ]
+    },
+    {
+      "id": "R13",
+      "order": 13,
+      "executor": "codex",
+      "title": "Implement cost model and scoped build estimate",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R09",
+        "R10",
+        "R11",
+        "R12"
+      ],
+      "reads": [
+        "research/prebuild/09-retrieval-ranking-results.json",
+        "research/prebuild/10-ai-evaluation.json",
+        "research/prebuild/12-operations-scenarios.json"
+      ],
+      "outputs": [
+        "research/prebuild/13-cost-inputs.json",
+        "research/prebuild/13-cost-results.json",
+        "research/prebuild/13-cost-capacity-and-estimate.md",
+        "research/prebuild/tools/cost_model.py",
+        "research/prebuild/tools/test_cost_model.py"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Collect measured request/token/latency and review/support effort plus current dated primary rates for selected options. An unavailable rate remains null, not an estimated fact.",
+        "Implement a deterministic low/base/high calculator separating one-time build/research, recurring service/source, and staff effort. Include retries/failed calls in incurred usage.",
+        "Define useful-session denominator explicitly; missing outcomes prevent a cost-per-useful-session claim.",
+        "Test zero denominator, missing rate, currency mismatch, retries and unchanged-input reproducibility. Report known subtotal plus missing components rather than misleading complete totals.",
+        "Draft a dependency-based production estimate by module/acceptance work using observed prototype effort. Separate external wait and assumptions; remove person-day research estimates from autonomous scheduling."
+      ],
+      "requiredCommands": [
+        "cost_tests",
+        "cost_run"
+      ],
+      "conditionalCommands": [],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R13",
+      "acceptance": [
+        "Recomputed numbers match recorded inputs/units; unknown rates/capacity propagate as incomplete.",
+        "Scenario assumptions are explicit and dated; no currency conversion without a recorded rate.",
+        "Build estimate names scope, dependencies and acceptance work, not a promised date.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "funding_capacity",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Actual rates/quotes where unavailable and team/budget decisions.",
+          "continueWith": "Calculate known components and conditional scenarios; expose missing rates/capacity."
+        }
+      ],
+      "runPolicy": "Run when required artifact tasks are done; external evidence gaps do not block this task's independent local steps.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R13.json",
+      "inputHashes": {
+        "research/prebuild/09-retrieval-ranking-results.json": "454ae8492adc8e9bce61089d9bee2c944ed88abc732bf109467047b8f7c572cc",
+        "research/prebuild/10-ai-evaluation.json": "d8ae94cc9fa956792c3a20edfe3189b36fe5ee33fe08029f0d3f33c1a9052e5f",
+        "research/prebuild/12-operations-scenarios.json": "e4fe7726d903a5c59f05f9c55150d9f27d36a2c6e35db173fc5f7080924a46f0"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "External evidence remains partial; consult artifact gaps.",
+      "definitionHash": "b53416bcd28fb208aa8d67cf602c483832ffca7318dfd1b77b3986ca9033b427",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "U13"
+      ]
+    },
+    {
+      "id": "R14",
+      "order": 14,
+      "executor": "codex",
+      "title": "Produce evidence-backed readiness and build backlog",
+      "automationStatus": "done",
+      "evidenceStatus": "partial",
+      "requiresArtifacts": [
+        "R00"
+      ],
+      "reads": [
+        "docs/planning/PREBUILD_RESEARCH_TRACKER.json",
+        "brd.md",
+        "docs/planning/IMPLEMENTATION_PLAN.md",
+        "research/prebuild/00-evidence-index.json"
+      ],
+      "outputs": [
+        "research/prebuild/14-build-readiness.json",
+        "research/prebuild/14-build-readiness.md",
+        "research/prebuild/14-production-backlog.json",
+        "research/prebuild/tools/test_readiness.py",
+        "research/prebuild/tools/readiness.py"
+      ],
+      "additionalWriteScope": [],
+      "steps": [
+        "Run after no earlier ordinary task is runnable. Read each task's automation/evidence/check state, including blocked and not_run work; do not require all external evidence to prepare the pack.",
+        "Answer each research question with evidence references, exact limitations and a product/build consequence. Preserve S0/S1 blockers and scope-dependent exceptions.",
+        "Prepare concrete production items before requesting a decision: requirement IDs, files/modules, contract/state changes, dependency, errors, executable acceptance tests, estimate assumptions and status proposed/accepted/deferred.",
+        "Map G1/G2/G3/G4 evidence using applicable BRD criteria. Technical artifact completeness cannot accept a gate; incorporate an actual existing user/owner decision only with a reference and scope.",
+        "Emit separate automation summary and research-readiness summary. Pending evidence yields revise/pending recommendations; no live/physical/human claim without observations.",
+        "Validate all completed artifacts and gate state. Provide exact next task/resume command and a minimal external-input list; do not start the production build.",
+        "Implement readiness.py as pure aggregation used to produce the readiness report. Summarize --all unit results separately: missing planned packs remain not_run and failed packs remain fail, even when this finalizer successfully produces a valid blocked-work report."
+      ],
+      "requiredCommands": [
+        "plan_contract_tests",
+        "readiness_tests",
+        "all_artifacts",
+        "gate_g4"
+      ],
+      "conditionalCommands": [],
+      "artifactCheck": "python research/prebuild/tools/validate.py --task R14",
+      "acceptance": [
+        "Every done task has checked artifacts; every missing external item appears in readiness gaps.",
+        "Every backlog item has concrete module/contract/test work and requirement/evidence traceability.",
+        "Gates remain pending without actual applicable decisions; invalid or critical contradictory evidence fails validation.",
+        "All required unit packs and activated change-impact packs have actual passing required cases against current source/fixture hashes. Deferred future consumer packs remain not_run until their owners execute them. Empty/missing/skipped required cases do not pass."
+      ],
+      "externalDependencies": [
+        {
+          "id": "gate_decisions",
+          "requiredFor": "evidence_sufficiency",
+          "status": "pending",
+          "need": "Actual G3/G4 decisions for the bounded scope, including any D1 deferral.",
+          "continueWith": "Finish concrete review pack and proposed backlog; report pending decisions."
+        }
+      ],
+      "runPolicy": "Run when no earlier ordinary task remains runnable; include blocked tasks in findings.",
+      "runRecord": "research/prebuild/runs/20261113T052229Z/R14.json",
+      "inputHashes": {
+        "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
+        "docs/planning/IMPLEMENTATION_PLAN.md": "fce922177d44307433c03f43a9298a6bc494253615de3c37623a3701ff9f8895"
+      },
+      "evidenceRefs": [],
+      "blocker": null,
+      "nextAction": "External evidence remains partial; consult artifact gaps.",
+      "definitionHash": "0a6e7bbf0c44e11aeceec09c9cc2e29d35296dc87fc560157f2e7df851989135",
+      "consumedConfig": {},
+      "consumedEvidenceHashes": {},
+      "requiredUnitPacks": [
+        "UPLAN",
+        "U14"
+      ]
+    }
+  ],
+  "sharedControlFiles": [
+    "docs/planning/PREBUILD_RESEARCH_TRACKER.json",
+    "research/prebuild/run-config.json",
+    "research/prebuild/00-evidence-index.json"
+  ],
+  "testPackCatalog": "docs/planning/PREBUILD_TEST_PACKS.json",
+  "testPackGuide": "docs/planning/PREBUILD_TEST_PACKS.md",
+  "unitPolicy": {
+    "catalog": "docs/planning/PREBUILD_TEST_PACKS.json",
+    "guide": "docs/planning/PREBUILD_TEST_PACKS.md",
+    "completion": "requiredUnitPacks plus impacted existing consumers must pass with all required case IDs executed. An unavailable required local suite blocks its owner; continue independent tasks.",
+    "finalizer": "R14 reports incomplete earlier packs honestly. Its own UPLAN/U14 checks can pass without accepting G3/G4.",
+    "impact": "Use catalog.changeImpact and testFiles with runner.activationRule. Run current/implemented consumers now; defer future owners explicitly to avoid backward task dependencies. Unknown executable paths need an owner and pack before completion."
+  },
+  "flowResearch": "docs/planning/APP_FLOW_DEEP_RESEARCH.md"
+}

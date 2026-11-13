@@ -1,0 +1,926 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R14",
+  "inputs": [
+    {
+      "ref": "research/prebuild/01-buyer-observations.json",
+      "sha256": "68a445a08cdde24e52455dc86e37eebf76384ebab95da3e222257916a64fa456"
+    },
+    {
+      "ref": "research/prebuild/03-source-register.json",
+      "sha256": "65a612548b4401980f5c408bc75773416a6cfb674639628b50c12f806901cdc6"
+    },
+    {
+      "ref": "research/prebuild/04-catalog-audit.json",
+      "sha256": "0c585221d43d8e0e69cbf7f1c93d8c1ba9dc83624316cd87a0b146ad59b190cc"
+    },
+    {
+      "ref": "research/prebuild/05-evaluation-cases.json",
+      "sha256": "d664fd777b27de347813b85430c7c272e40e223cd8e68193fa83b9a0a78f7a6e"
+    },
+    {
+      "ref": "research/prebuild/06-flow-validation.json",
+      "sha256": "f60b0b99575fa0390b68cc7125fd8cfe6b685bb219d947ffaebbd0a7c31afd12"
+    },
+    {
+      "ref": "research/prebuild/07-api-contract.json",
+      "sha256": "1cf887673b627ce507a4e5afacdaacbe8c6b0184bb561c9b963d74d966073760"
+    },
+    {
+      "ref": "research/prebuild/09-retrieval-ranking-results.json",
+      "sha256": "454ae8492adc8e9bce61089d9bee2c944ed88abc732bf109467047b8f7c572cc"
+    },
+    {
+      "ref": "research/prebuild/10-ai-evaluation.json",
+      "sha256": "d8ae94cc9fa956792c3a20edfe3189b36fe5ee33fe08029f0d3f33c1a9052e5f"
+    },
+    {
+      "ref": "research/prebuild/11-android-cases.json",
+      "sha256": "61ec1edf5ccfac70c4202e66f632d5b97be2306bf15903cd0350b680610a7572"
+    },
+    {
+      "ref": "research/prebuild/12-operations-scenarios.json",
+      "sha256": "e4fe7726d903a5c59f05f9c55150d9f27d36a2c6e35db173fc5f7080924a46f0"
+    },
+    {
+      "ref": "research/prebuild/13-cost-results.json",
+      "sha256": "c3d51bdc8eaa5544144add27f2ef29e68207c7cfe0228ae5e2168bf2790cb58c"
+    }
+  ],
+  "data": {
+    "items": [
+      {
+        "id": "P01",
+        "requirementIds": [
+          "BR-09",
+          "BR-13"
+        ],
+        "findingIds": [
+          "GAP-R03-001"
+        ],
+        "outcome": "Permitted source facts can be displayed with correct retention and provenance.",
+        "files": [
+          "research/prebuild/03-source-register.json",
+          "crawler/src/utils/storage.js"
+        ],
+        "contractChanges": [
+          "Per-purpose source-use grants with scope/expiry and publication guard"
+        ],
+        "stateChanges": [
+          "Unresolved -> documented basis only with evidence"
+        ],
+        "dependsOn": [],
+        "exceptionBehavior": "Unresolved/revoked grants block publication; do not erase historical audit.",
+        "acceptanceCommands": [
+          "python -m unittest discover -s research/prebuild/tools -p test_source_register.py"
+        ],
+        "acceptanceScenarios": [
+          "Attempt publication with missing/expired grant: rejected; revoke an active grant: suspend current data without rewriting history."
+        ],
+        "evidenceRefs": [
+          "E-R03-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "Contract negotiation, legal/source review and retention scope are external dependencies; effort/rates unknown.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P02",
+        "requirementIds": [
+          "BR-01",
+          "BR-03",
+          "BR-15"
+        ],
+        "findingIds": [
+          "GAP-R04-001"
+        ],
+        "outcome": "Users compare exact configurations without family-name substitution.",
+        "files": [
+          "crawler/src/models/laptopSchema.js",
+          "research/prebuild/tools/audit_catalog.py",
+          "spikes/prebuild-contract/repository.ts"
+        ],
+        "contractChanges": [
+          "Canonical identity evidence, condition and unresolved matching references"
+        ],
+        "stateChanges": [
+          "draft -> reviewed exact variant with explicit adjudication"
+        ],
+        "dependsOn": [
+          "P01"
+        ],
+        "exceptionBehavior": "Ambiguous/missing identity remains unknown; removed IDs use historical tombstones.",
+        "acceptanceCommands": [
+          "python -m unittest discover -s research/prebuild/tools -p test_audit_catalog.py",
+          "node --experimental-strip-types --test spikes/prebuild-contract/contract.test.mjs"
+        ],
+        "acceptanceScenarios": [
+          "Review queued new listings; same family/different RAM/part number remain distinct; wrong-variant offer cannot be accepted."
+        ],
+        "evidenceRefs": [
+          "E-R04-LOCAL",
+          "E-R08-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "Review queue is prepared but reviewed count is zero; independent adjudication and catalog breadth determine effort.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P03",
+        "requirementIds": [
+          "BR-02",
+          "BR-04",
+          "BR-05",
+          "BR-06"
+        ],
+        "findingIds": [
+          "GAP-R04-001",
+          "U08-11"
+        ],
+        "outcome": "A verified affordable offer shows the complete payable amount and unknown costs honestly.",
+        "files": [
+          "spikes/prebuild-contract/policy.ts",
+          "apps/adviser/src/domain.ts",
+          "research/prebuild/tools/audit_catalog.py"
+        ],
+        "contractChanges": [
+          "Destination/eligibility/stacking/included-charge context; full offer freshness"
+        ],
+        "stateChanges": [
+          "fit, validity, completeness and affordability remain independent"
+        ],
+        "dependsOn": [
+          "P01",
+          "P02"
+        ],
+        "exceptionBehavior": "Unknown mandatory cost prevents complete total; expiry/outage never becomes zero inventory.",
+        "acceptanceCommands": [
+          "node --experimental-strip-types --test spikes/prebuild-contract/policy.test.mjs",
+          "python -m unittest discover -s research/prebuild/tools -p test_audit_catalog.py"
+        ],
+        "acceptanceScenarios": [
+          "20m+200k+300k-500k confirmed discount=20m; B-1 rejects; included shipping not charged twice; unknown fee remains null."
+        ],
+        "evidenceRefs": [
+          "E-R04-LOCAL",
+          "E-R08-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "Synthetic arithmetic passes; real delivery/tax/discount context and expiry adapters remain unimplemented.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P04",
+        "requirementIds": [
+          "BR-03",
+          "BR-08"
+        ],
+        "findingIds": [
+          "GAP-R05-001",
+          "U08-10",
+          "U08-12",
+          "U08-13"
+        ],
+        "outcome": "Supported workload recommendations cite exact applicable requirements and measurements.",
+        "files": [
+          "research/prebuild/05-workload-policy.json",
+          "apps/adviser/src/domain.ts"
+        ],
+        "contractChanges": [
+          "Versioned evidence-backed workload constraints and applicability"
+        ],
+        "stateChanges": [
+          "Unreviewed real capability stays unknown"
+        ],
+        "dependsOn": [
+          "P02"
+        ],
+        "exceptionBehavior": "Unknown OS/peripheral/workload capability cannot pass via fixture thresholds.",
+        "acceptanceCommands": [
+          "python -m unittest discover -s research/prebuild/tools -p test_cases.py",
+          "node --experimental-strip-types --test apps/adviser/src/domain.test.ts"
+        ],
+        "acceptanceScenarios": [
+          "Replace fixture-only thresholds only with reviewed exact evidence; unsupported workload yields clarification/unknown."
+        ],
+        "evidenceRefs": [
+          "E-R05-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "No hardware measurements or independent real suitability labels; supported scope and measurement work drive estimate.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P05",
+        "requirementIds": [
+          "BR-06",
+          "BR-11",
+          "NFR-08"
+        ],
+        "findingIds": [
+          "FLOW-01",
+          "FLOW-02",
+          "FLOW-03",
+          "FLOW-04",
+          "U06-15",
+          "U08-14",
+          "U08-15",
+          "U07-10"
+        ],
+        "outcome": "Saved decisions survive concurrent actions and retain their original historical meaning.",
+        "files": [
+          "apps/adviser/src/decision-state.ts",
+          "apps/adviser/src/picker.ts",
+          "apps/adviser/src/AndroidApp.tsx"
+        ],
+        "contractChanges": [
+          "Durable migration/recovery and removed-variant tombstones"
+        ],
+        "stateChanges": [
+          "draft/confirmed/current/history remain separate"
+        ],
+        "dependsOn": [
+          "P02"
+        ],
+        "exceptionBehavior": "Failed reads block ordinary writes; failed mutations preserve committed state; partial destructive storage failure needs explicit recovery.",
+        "acceptanceCommands": [
+          "node --experimental-strip-types --test apps/adviser/src/decision-state.test.ts"
+        ],
+        "acceptanceScenarios": [
+          "Kill/restart during confirm/save/reset; no acknowledged state lost; invalid snapshots exportable; removed current variant retains dated historical configuration."
+        ],
+        "evidenceRefs": [
+          "E-R06-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "Controlled fixes implemented; process-death/OS storage failure and tombstone semantics need production/device validation.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P06",
+        "requirementIds": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "U07",
+          "U08",
+          "BR-11"
+        ],
+        "findingIds": [
+          "GAP-R07-001",
+          "GAP-R08-DEVICE",
+          "U07-08",
+          "U07-09"
+        ],
+        "outcome": "Android completes the real reviewed decision round trip through the chosen API.",
+        "files": [
+          "apps/adviser/src/AndroidApp.tsx",
+          "spikes/prebuild-contract/server.ts",
+          "spikes/prebuild-contract/repository.ts",
+          "research/prebuild/07-api-contract.json"
+        ],
+        "contractChanges": [
+          "Production catalog repository/client with full immutable run context"
+        ],
+        "stateChanges": [
+          "Refresh creates current run; saved snapshot stays historical"
+        ],
+        "dependsOn": [
+          "P01",
+          "P02",
+          "P03",
+          "P04",
+          "P05"
+        ],
+        "exceptionBehavior": "Network failure is source_unavailable; late catalog/profile/offer responses are discarded.",
+        "acceptanceCommands": [
+          "node --experimental-strip-types --test spikes/prebuild-contract/contract.test.mjs",
+          "npm --prefix apps/adviser run check"
+        ],
+        "acceptanceScenarios": [
+          "Run guest needs->exact detail->compare->offer->save->restart->reopen on current Android release against reviewed test server."
+        ],
+        "evidenceRefs": [
+          "E-R07-LOCAL",
+          "E-R08-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "Current HTTP round trip uses scripts/synthetic fixtures/local storage; production DB/index and Android network adapters remain to build.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P07",
+        "requirementIds": [
+          "BR-02",
+          "BR-08",
+          "U02"
+        ],
+        "findingIds": [
+          "GAP-R09-UTILITY"
+        ],
+        "outcome": "Search returns eligible exact variants with measured relevance and honest coverage.",
+        "files": [
+          "research/prebuild/tools/run_eval.mjs",
+          "embedder/search.py",
+          "embedder/embeddings.py"
+        ],
+        "contractChanges": [
+          "Adjudicated query labels and comparable retrieval arms"
+        ],
+        "stateChanges": [
+          "Heldout first-use vs diagnostic reuse retained"
+        ],
+        "dependsOn": [
+          "P02",
+          "P04",
+          "P06"
+        ],
+        "exceptionBehavior": "Hard violations are integrity failures; unavailable vector remains not_run.",
+        "acceptanceCommands": [
+          "node --experimental-strip-types --test research/prebuild/tools/eval.test.mjs",
+          "node --experimental-strip-types research/prebuild/tools/run_eval.mjs --partition development --out research/prebuild/09-retrieval-ranking-results.json"
+        ],
+        "acceptanceScenarios": [
+          "Adjudicate real labels; freeze snapshot/policy; compare arms on identical eligible set; consume new heldout once."
+        ],
+        "evidenceRefs": [
+          "E-R09-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "Vector deferred; synthetic recall is not utility. Label adjudication/corpus and selected index drive effort.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P08",
+        "requirementIds": [
+          "BR-07",
+          "BR-11",
+          "NFR-09"
+        ],
+        "findingIds": [
+          "FLOW-05",
+          "FLOW-06",
+          "FLOW-07",
+          "FLOW-08",
+          "GAP-R10-LIVE"
+        ],
+        "outcome": "AI explains the current focused decision and proposes edits without changing confirmed needs.",
+        "files": [
+          "apps/adviser/src/ai.ts",
+          "apps/adviser/src/AndroidApp.tsx",
+          "services/demo-ai/server.mjs",
+          "research/prebuild/tools/run_ai.mjs"
+        ],
+        "contractChanges": [
+          "Full context/abort/focus plus durable authorized usage ledger and live adapter"
+        ],
+        "stateChanges": [
+          "Proposal -> unconfirmed review -> explicit confirmation only"
+        ],
+        "dependsOn": [
+          "P03",
+          "P04",
+          "P06"
+        ],
+        "exceptionBehavior": "Contradictory/stale/out-of-focus response rejected; failure uses same-context deterministic fallback; cancellation never promises refund.",
+        "acceptanceCommands": [
+          "node --experimental-strip-types --test research/prebuild/tools/ai.test.mjs",
+          "node --experimental-strip-types --test services/demo-ai/server.test.mjs"
+        ],
+        "acceptanceScenarios": [
+          "Execute prepared 30-case live protocol only with configured access, authorized numeric limits and dated cost reserve; reconcile actual usage including failures."
+        ],
+        "evidenceRefs": [
+          "E-R10-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "Controlled fixes pass; no live provider evidence. Production auth/usage durability and quality evaluation remain.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P09",
+        "requirementIds": [
+          "AC-UX01",
+          "AC-UX02",
+          "AC-UX03",
+          "AC-UX04",
+          "AC-UX05",
+          "NFR-08"
+        ],
+        "findingIds": [
+          "GAP-R11-EXTERNAL"
+        ],
+        "outcome": "The current release works with native Back, input, focus, accessibility and restart.",
+        "files": [
+          "apps/adviser/scripts/android-smoke.py",
+          "apps/adviser/VERIFICATION.md",
+          "apps/adviser/src/AndroidApp.tsx"
+        ],
+        "contractChanges": [
+          "Named release/device evidence and raw timing samples"
+        ],
+        "stateChanges": [
+          "Current build only; stale APK evidence remains historical"
+        ],
+        "dependsOn": [
+          "P05",
+          "P06",
+          "P08"
+        ],
+        "exceptionBehavior": "Unexecuted device cases remain not_run; failed/timed-out samples stay visible.",
+        "acceptanceCommands": [
+          "python -m unittest discover -s research/prebuild/tools -p test_android_evidence.py",
+          "npm --prefix apps/adviser run build:android"
+        ],
+        "acceptanceScenarios": [
+          "On authorized phone execute D01-D08, TalkBack/switch/keyboard/reduced motion and thirty timing samples per scenario; retain build/OS/configuration."
+        ],
+        "evidenceRefs": [
+          "E-R11-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "No connected targets; current APK predates fixes. Hardware availability and supported matrix determine effort.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P10",
+        "requirementIds": [
+          "U01",
+          "U02",
+          "U03",
+          "U04",
+          "U05",
+          "BR-12"
+        ],
+        "findingIds": [
+          "GAP-R01-001",
+          "GAP-R06-BUYERS"
+        ],
+        "outcome": "Users understand and complete the buying decision without critical confusion.",
+        "files": [
+          "research/prebuild/01-buyer-protocol.json",
+          "research/prebuild/06-flow-validation.json"
+        ],
+        "contractChanges": [
+          "Consented anonymized observations with negative findings"
+        ],
+        "stateChanges": [
+          "Hypothesis -> observed finding only after real session"
+        ],
+        "dependsOn": [
+          "P06"
+        ],
+        "exceptionBehavior": "Incomplete cohort/task outcomes never become success; participant withdrawal respected.",
+        "acceptanceCommands": [
+          "python -m unittest discover -s research/prebuild/tools -p test_buyer_evidence.py",
+          "python research/prebuild/tools/validate.py --task R01"
+        ],
+        "acceptanceScenarios": [
+          "Twelve buyer interviews, 3-4 cognitive and five uncoached sessions using frozen build and task protocol; record completion/help/errors, not invented scores."
+        ],
+        "evidenceRefs": [
+          "E-R01-LOCAL",
+          "E-R06-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "All participant counts remain zero; recruitment/consent and observed redesign needs are external waits.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P11",
+        "requirementIds": [
+          "BR-09",
+          "BR-13",
+          "NFR-08"
+        ],
+        "findingIds": [
+          "GAP-R12-001"
+        ],
+        "outcome": "Corrections, outages and access revocation recover safely with accountable audit.",
+        "files": [
+          "spikes/prebuild-contract/repository.ts",
+          "research/prebuild/12-operations-scenarios.json"
+        ],
+        "contractChanges": [
+          "Production roles, source/evidence suspension, audit log, backup/restore"
+        ],
+        "stateChanges": [
+          "draft/reviewed/published/suspended/archived with reversible transitions"
+        ],
+        "dependsOn": [
+          "P01",
+          "P06"
+        ],
+        "exceptionBehavior": "Revoked access denies writes; withdrawal removes current claims while preserving history; rollback respects compatible schemas.",
+        "acceptanceCommands": [
+          "python -m unittest discover -s research/prebuild/tools -p test_operations_evidence.py",
+          "node --experimental-strip-types research/prebuild/runs/20261113T052229Z/operations-sandbox.mjs"
+        ],
+        "acceptanceScenarios": [
+          "Extend six sandbox cases to real role/revoke/restore environment; set and measure RPO/RTO with named owner."
+        ],
+        "evidenceRefs": [
+          "E-R12-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "Sandbox is implemented; production RBAC/backup and measured review/support capacity are absent.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P12",
+        "requirementIds": [
+          "NFR-09"
+        ],
+        "findingIds": [
+          "GAP-R13-RATES"
+        ],
+        "outcome": "Operating budgets and capacity reflect complete costs and useful outcomes.",
+        "files": [
+          "research/prebuild/tools/cost_model.py",
+          "research/prebuild/13-cost-inputs.json"
+        ],
+        "contractChanges": [
+          "Dated selected rates, conversions, charged usage and useful-session denominator"
+        ],
+        "stateChanges": [
+          "Unknown required component keeps complete total null"
+        ],
+        "dependsOn": [
+          "P01",
+          "P07",
+          "P08",
+          "P10",
+          "P11"
+        ],
+        "exceptionBehavior": "No zero-cost or per-useful-session claim from missing rate/outcome; charged retries included.",
+        "acceptanceCommands": [
+          "python -m unittest discover -s research/prebuild/tools -p test_cost_model.py",
+          "python research/prebuild/tools/cost_model.py --input research/prebuild/13-cost-inputs.json --out research/prebuild/13-cost-results.json"
+        ],
+        "acceptanceScenarios": [
+          "Obtain first-party scoped rates and measured effort; rerun low/base/high with documented allocation and rounding."
+        ],
+        "evidenceRefs": [
+          "E-R13-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "No selected price/capacity or measured labor baseline. Numeric build-days estimate remains null until reference work is measured.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P13",
+        "requirementIds": [
+          "BR-12",
+          "BR-13",
+          "NFR-08"
+        ],
+        "findingIds": [
+          "GAP-R12-001"
+        ],
+        "outcome": "Personal needs and service credentials remain protected with explicit retention and access.",
+        "files": [
+          "services/demo-ai/server.mjs",
+          "apps/adviser/src/AndroidApp.tsx",
+          "research/prebuild/12-operations-and-data-handling.md"
+        ],
+        "contractChanges": [
+          "Service authentication, access controls, redacted telemetry and deletion policy"
+        ],
+        "stateChanges": [
+          "Minimum guest data; restricted credentials/agreements outside public artifacts"
+        ],
+        "dependsOn": [
+          "P01",
+          "P06",
+          "P11"
+        ],
+        "exceptionBehavior": "Unauthorized service access blocked; deletion failure reported accurately; logs never contain keys/private prompt records.",
+        "acceptanceCommands": [
+          "node --experimental-strip-types --test services/demo-ai/server.test.mjs",
+          "python -m unittest discover -s research/prebuild/tools -p test_source_register.py"
+        ],
+        "acceptanceScenarios": [
+          "Add unauthorized/revoked-role, log-redaction and retention-expiry tests before exposing production service."
+        ],
+        "evidenceRefs": [
+          "E-R03-LOCAL",
+          "E-R12-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "Local demo is not a production-authenticated service. Threat model/retention/accountability decisions pending.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      },
+      {
+        "id": "P14",
+        "requirementIds": [
+          "G1",
+          "G2",
+          "G3",
+          "G4"
+        ],
+        "findingIds": [
+          "READINESS-PENDING"
+        ],
+        "outcome": "The production build starts only within an evidence-backed recorded scope decision.",
+        "files": [
+          "docs/planning/project-traceability.json",
+          "research/prebuild/14-build-readiness.json"
+        ],
+        "contractChanges": [
+          "Applicable scoped decision and evidence references"
+        ],
+        "stateChanges": [
+          "Pending/revise until actual decision; no automatic accept"
+        ],
+        "dependsOn": [
+          "P01",
+          "P04",
+          "P09",
+          "P10",
+          "P11",
+          "P12"
+        ],
+        "exceptionBehavior": "Passing tests cannot waive missing live/device/source evidence; D1 deferral applies only if actually recorded.",
+        "acceptanceCommands": [
+          "python research/prebuild/tools/validate.py --all",
+          "python research/prebuild/tools/validate.py --gate G4"
+        ],
+        "acceptanceScenarios": [
+          "Accountable reviewer records G3/G4 decision or explicit bounded D1 deferral with scope and referenced sufficient evidence."
+        ],
+        "evidenceRefs": [
+          "E-R00-LOCAL"
+        ],
+        "estimateAssumptions": {
+          "basis": "Review is external; no approval or D1 deferral exists. This item is a decision dependency, not estimated engineering labor.",
+          "implementationDays": null,
+          "externalWaitDays": null,
+          "status": "unestimated; not a commitment"
+        },
+        "scopeStatus": "proposed",
+        "decisionRef": null,
+        "acceptanceScope": "Commands are executable current regression entry points; production-specific scenarios require implementation and named fixtures/targets."
+      }
+    ],
+    "excludedExpansion": [
+      "U06 production scope unresolved",
+      "U19 excluded",
+      "Phones, unrestricted PC solver and Windows expansion deferred"
+    ],
+    "estimatePolicy": "No numeric labor estimates fabricated; use item assumptions and measured reference work before commitment.",
+    "findingIndex": {
+      "FLOW-01": {
+        "sourceRef": "research/prebuild/06-flow-validation.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "FLOW-02": {
+        "sourceRef": "research/prebuild/06-flow-validation.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "FLOW-03": {
+        "sourceRef": "research/prebuild/06-flow-validation.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "FLOW-04": {
+        "sourceRef": "research/prebuild/06-flow-validation.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "FLOW-05": {
+        "sourceRef": "research/prebuild/06-flow-validation.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "FLOW-06": {
+        "sourceRef": "research/prebuild/06-flow-validation.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "FLOW-07": {
+        "sourceRef": "research/prebuild/06-flow-validation.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "FLOW-08": {
+        "sourceRef": "research/prebuild/06-flow-validation.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R01-001": {
+        "sourceRef": "research/prebuild/01-buyer-observations.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R03-001": {
+        "sourceRef": "research/prebuild/03-source-register.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R04-001": {
+        "sourceRef": "research/prebuild/04-catalog-audit.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R05-001": {
+        "sourceRef": "research/prebuild/05-workload-policy.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R06-BUYERS": {
+        "sourceRef": "research/prebuild/06-flow-validation.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R07-001": {
+        "sourceRef": "research/prebuild/07-contract-examples.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R08-DEVICE": {
+        "sourceRef": "research/prebuild/runs/20261113T052229Z/R08.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R09-UTILITY": {
+        "sourceRef": "research/prebuild/09-retrieval-ranking-results.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R10-LIVE": {
+        "sourceRef": "research/prebuild/10-ai-evaluation.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R11-EXTERNAL": {
+        "sourceRef": "research/prebuild/11-android-cases.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R12-001": {
+        "sourceRef": "research/prebuild/12-operations-scenarios.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "GAP-R13-RATES": {
+        "sourceRef": "research/prebuild/13-cost-results.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "READINESS-PENDING": {
+        "sourceRef": "research/prebuild/14-build-readiness.json",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "U06-15": {
+        "sourceRef": "apps/adviser/src/decision-state.test.ts",
+        "description": "Recorded finding/gap or current pending readiness assessment."
+      },
+      "U08-10": {
+        "sourceRef": "spikes/prebuild-contract/policy.test.mjs",
+        "description": "Continued-review regression; before/after logs retained under current run."
+      },
+      "U08-11": {
+        "sourceRef": "spikes/prebuild-contract/policy.test.mjs",
+        "description": "Continued-review regression; before/after logs retained under current run."
+      },
+      "U07-08": {
+        "sourceRef": "research/prebuild/tools/contracts.test.mjs",
+        "description": "Continued API-boundary review; failing-before and passing-after logs retained."
+      },
+      "U07-09": {
+        "sourceRef": "research/prebuild/tools/contracts.test.mjs",
+        "description": "Continued API-boundary review; failing-before and passing-after logs retained."
+      },
+      "U08-12": {
+        "sourceRef": "spikes/prebuild-contract/policy.test.mjs",
+        "description": "Continued review regression; failing-before and passing-after evidence retained."
+      },
+      "U08-13": {
+        "sourceRef": "spikes/prebuild-contract/policy.test.mjs",
+        "description": "Continued review regression; failing-before and passing-after evidence retained."
+      },
+      "U08-14": {
+        "sourceRef": "spikes/prebuild-contract/repository.test.mjs",
+        "description": "Continued review regression; failing-before and passing-after evidence retained."
+      },
+      "U08-15": {
+        "sourceRef": "spikes/prebuild-contract/repository.test.mjs",
+        "description": "Continued review regression; failing-before and passing-after evidence retained."
+      },
+      "U07-10": {
+        "sourceRef": "research/prebuild/tools/contracts.test.mjs",
+        "description": "Malformed saved-history rejection with independent valid and invalid fixtures; unit and HTTP before/after logs retained."
+      }
+    }
+  },
+  "evidenceRefs": [
+    "E-R00-LOCAL",
+    "E-R01-LOCAL",
+    "E-R02-LOCAL",
+    "E-R03-LOCAL",
+    "E-R04-LOCAL",
+    "E-R05-LOCAL",
+    "E-R06-LOCAL",
+    "E-R07-LOCAL",
+    "E-R08-LOCAL",
+    "E-R09-LOCAL",
+    "E-R10-LOCAL",
+    "E-R11-LOCAL",
+    "E-R12-LOCAL",
+    "E-R13-LOCAL"
+  ],
+  "gaps": [
+    {
+      "id": "READY-SOURCE",
+      "reason": "No documented production source-use basis or reviewed exact/complete offers.",
+      "nextAction": "Execute linked production backlog acceptance work."
+    },
+    {
+      "id": "READY-WORKLOAD",
+      "reason": "No independent real workload/relevance adjudication.",
+      "nextAction": "Execute linked production backlog acceptance work."
+    },
+    {
+      "id": "READY-NATIVE",
+      "reason": "Current app source lacks a rebuilt named-device validation set.",
+      "nextAction": "Execute linked production backlog acceptance work."
+    },
+    {
+      "id": "READY-BUYERS",
+      "reason": "No real buyer/comprehension observations.",
+      "nextAction": "Execute linked production backlog acceptance work."
+    },
+    {
+      "id": "READY-OPS",
+      "reason": "Production operating owners, access/restore and cost/capacity remain unresolved.",
+      "nextAction": "Execute linked production backlog acceptance work."
+    },
+    {
+      "id": "READY-AI",
+      "reason": "No configured authorized live-provider evaluation or explicit D1 deferral.",
+      "nextAction": "Execute linked production backlog acceptance work."
+    }
+  ]
+}

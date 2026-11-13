@@ -1,0 +1,387 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R01",
+  "inputs": [
+    {
+      "ref": "research/onboarding-question-bank.json",
+      "sha256": "8201e56d88b8d966837057729773528f950b8fab0d866e0c8bf1c4a1c725fb37"
+    },
+    {
+      "ref": "research/business-needs-and-feature-inventory.md",
+      "sha256": "5a8f5cc65a8851c1f92784c0382738d084f30bc10507e9851b1396d87bcfec5f"
+    },
+    {
+      "ref": "research/prebuild/00-scope-and-decisions.md",
+      "sha256": "eda345ed8c0d8f9391934bd224446bb9b537bd0005d03128b46bbb3c64a62824"
+    }
+  ],
+  "data": {
+    "cohorts": [
+      {
+        "id": "student",
+        "target": 4
+      },
+      {
+        "id": "office",
+        "target": 4
+      },
+      {
+        "id": "developer",
+        "target": 4
+      }
+    ],
+    "targetCount": 12,
+    "screening": [
+      "Adult recent buyer within six months or active buyer planning within three months.",
+      "Ask about actual tasks, constraints and payer involvement; no AI-use requirement.",
+      "Record overlap; assign exactly one primary cohort without duplicating participants."
+    ],
+    "questions": [
+      {
+        "id": "intent",
+        "prompt": "Bạn muốn được giúp điều gì?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "category",
+        "prompt": "Bạn đang tìm thiết bị nào?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "budget",
+        "prompt": "Bạn muốn chi tối đa bao nhiêu cho lần mua này?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "laptop_uses",
+        "prompt": "Bạn thường dùng laptop để làm gì?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "phone_uses",
+        "prompt": "Bạn thường dùng điện thoại để làm gì?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "desktop_uses",
+        "prompt": "Bạn thường dùng PC để làm gì?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "condition",
+        "prompt": "Bạn cân nhắc tình trạng máy nào?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "laptop_priorities",
+        "prompt": "Hai ưu tiên nào quan trọng nhất với bạn?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "phone_priorities",
+        "prompt": "Hai ưu tiên nào quan trọng nhất với bạn?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "desktop_priorities",
+        "prompt": "Hai ưu tiên nào quan trọng nhất với bạn?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "must_have",
+        "prompt": "Is there anything the device must support?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "required_software",
+        "prompt": "Which applications or tools do you need?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "vm_count",
+        "prompt": "How many virtual machines or emulators run at the same time?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "gaming_titles",
+        "prompt": "Which games matter to you?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "gaming_target",
+        "prompt": "What gaming experience are you aiming for?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "creative_scale",
+        "prompt": "What kind of projects do you usually work on?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "phone_camera",
+        "prompt": "What do you mainly want to capture?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "phone_charging",
+        "prompt": "How often can you usually charge during your day?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "required_os",
+        "prompt": "Do you need to keep using a particular operating system?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "accessibility",
+        "prompt": "Which interaction needs should we account for?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "pc_scope",
+        "prompt": "What must your PC budget include?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "pc_reuse",
+        "prompt": "Do you want to keep any existing parts or peripherals?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "current_device",
+        "prompt": "What device do you currently own?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "current_problem",
+        "prompt": "What are you hoping to improve?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "purchase_timing",
+        "prompt": "When do you need the device?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "delivery_area",
+        "prompt": "Where should we check delivery or pickup?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "payment_mode",
+        "prompt": "Which payment options would you like to compare?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      },
+      {
+        "id": "buying_for",
+        "prompt": "Who will use the device?",
+        "source": "research/onboarding-question-bank.json",
+        "status": "proposed"
+      }
+    ],
+    "taskEffectByQuestion": {
+      "intent": {
+        "effect": "Route the journey. Offer check, existing-device and browse routes bypass unrelated discovery questions.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "category": {
+        "effect": "Choose question and catalog scope. Unknown routes to a clarification, not an arbitrary default.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "budget": {
+        "effect": "User-confirmed hard ceiling in VND for the stated purchase scope. Values are illustrative preset ceilings, not market benchmarks. Unknown means no budget-personalized eligibility claim.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "laptop_uses": {
+        "effect": "Select all actual uses. Tasks route follow-ups; occupation does not set hardware minimums.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "phone_uses": {
+        "effect": "Select all actual uses. Show relevant follow-ups; daily apps do not imply demanding workloads.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "desktop_uses": {
+        "effect": "Select all actual uses. Route task-specific requirements and build scope.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "condition": {
+        "effect": "Explicit new/used restriction. Unknown is not permission to recommend used as equivalent; disclose the assumption or ask before selecting a used offer.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "laptop_priorities": {
+        "effect": "Soft ranking priorities only. Choosing two must never discard any selected task or required feature.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "phone_priorities": {
+        "effect": "Soft ranking only. Keep camera measurement, battery evidence and support facts distinct.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "desktop_priorities": {
+        "effect": "Soft ranking only; cannot override electrical, physical or workload compatibility.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "must_have": {
+        "effect": "A marked must-have becomes a hard constraint. Brand or aesthetic preferences are not automatically hard requirements.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "required_software": {
+        "effect": "Retrieve vendor compatibility requirements and relevant workload evidence. Merely selecting an app does not confirm performance.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "vm_count": {
+        "effect": "Workload intensity signal; refine memory/CPU guidance with workload evidence rather than a universal RAM rule.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "gaming_titles": {
+        "effect": "Identify relevant game/anti-cheat/platform requirements; do not substitute a generic gamer label.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "gaming_target": {
+        "effect": "Translate goals through relevant evidence. Custom numeric targets need a supported measurement basis.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "creative_scale": {
+        "effect": "Avoid bundling unrelated project-size meanings into one generic heavy-work option.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "phone_camera": {
+        "effect": "Weight relevant measured camera behaviors rather than megapixels.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "phone_charging": {
+        "effect": "Context for battery priorities, not a promise of all-day measured runtime.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "required_os": {
+        "effect": "A required platform is a hard constraint; lack of requirement does not establish app compatibility.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "accessibility": {
+        "effect": "Use non-diagnostic language and hands-on checks. Do not infer needs from age or require medical information.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "pc_scope": {
+        "effect": "Set explicit basket scope before a within-budget complete-build claim.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "pc_reuse": {
+        "effect": "Check exact retained models and missing critical compatibility. Do not assume generic part names are enough.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "current_device": {
+        "effect": "Identify actual configuration and upgrade support; do not require a full new-device questionnaire.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "current_problem": {
+        "effect": "Identify need for diagnosis or compatibility checks. A complaint alone is not proof of a hardware fault or bottleneck.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "purchase_timing": {
+        "effect": "Prioritize actual stock/deadlines or optional alerts. Date entry appears only when needed.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "delivery_area": {
+        "effect": "Required before location-dependent delivery/stock totals can be verified; not necessary to browse general fit.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "payment_mode": {
+        "effect": "Keep total budget separate from payment schedule; do not infer loan eligibility or convert a monthly figure into a hidden larger purchase cap.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      },
+      "buying_for": {
+        "effect": "Supports separate decision profiles and collaboration; no age, salary or identity is required.",
+        "scope": "Review against Android/new-laptop slice; categories, financing and existing-device expansion are deferred.",
+        "evidenceStatus": "hypothesis"
+      }
+    },
+    "sessionPrompts": [
+      "Tell me about the last time you chose a laptop. What happened first?",
+      "Show how you compared the last two options, if comfortable.",
+      "Which required task or cost ruled an option out?",
+      "Try choosing with your own needs; explain when you think changes become confirmed.",
+      "Explain whether this fitting device has a verified affordable offer.",
+      "Review an AI-proposed edit: what changed before and after confirmation?",
+      "Reopen a saved decision: which price is historical and what needs refreshing?",
+      "What was unhelpful or confusing? What would you use instead?"
+    ],
+    "consent": {
+      "procedure": "Explain voluntary participation, purpose and anonymized use before starting; separate optional recording permission; stop on withdrawal.",
+      "contactStorage": "Outside repository; never store contact details in protocol outputs."
+    },
+    "retention": {
+      "proposal": "Delete optional raw recordings within 30 days after coding; anonymized notes retained only with agreed scope.",
+      "status": "proposed; confirm with participant before collection"
+    },
+    "tasks": [
+      "T05",
+      "T14",
+      "T15",
+      "T19",
+      "T20"
+    ],
+    "redundancyReview": "Broad bank has routing/financing/ownership questions outside this slice. Do not ask every bank question in each session; ask only questions with an applicable decision effect. No observed redundancy rates yet.",
+    "negativeFindings": []
+  },
+  "evidenceRefs": [],
+  "gaps": [
+    {
+      "id": "GAP-R01-001",
+      "reason": "No authorized participant observation records supplied or found.",
+      "nextAction": "Recruit four recent or active laptop buyers in each cohort; obtain consent and record anonymized task outcomes."
+    }
+  ]
+}

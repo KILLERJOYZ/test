@@ -1,0 +1,277 @@
+{
+  "date": "2026-11-13",
+  "scope": "Audit-driven frontend implementation; Android emulator evidence, not physical-device acceptance",
+  "apk": {
+    "path": "apps/adviser/artifacts/lua-adviser-demo.apk",
+    "sha256": "804023753542f7cf198302cd9e1862be7404b578b9797aa972ed13261cae3b72",
+    "bytes": 44688843,
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "signatureVerified": true
+  },
+  "device": {
+    "serial": "emulator-5554",
+    "model": "sdk_gphone16k_x86_64",
+    "android": "17",
+    "sdk": "37",
+    "size": "Physical size: 1080x2400",
+    "density": "Physical density: 420"
+  },
+  "packages": {
+    "expo": "54.0.38",
+    "react-native": "0.81.5",
+    "react-native-reanimated": "4.1.7",
+    "react-native-worklets": "0.5.1",
+    "react-native-svg": "15.12.1"
+  },
+  "checks": {
+    "appRegressionTests": {
+      "passed": 60,
+      "failed": 0
+    },
+    "adviserServiceTests": {
+      "passed": 11,
+      "failed": 0
+    },
+    "productionPreviewBuild": "passed",
+    "viteDevelopmentStartup": "passed",
+    "androidDualAbiRelease": "passed",
+    "nativeFlows": {
+      "status": "passed",
+      "checks": [
+        "persistent navigation",
+        "native checked semantics",
+        "inline invalid budget",
+        "cancel draft",
+        "search recovery",
+        "two-item comparison",
+        "modal save acknowledgement",
+        "delete cancel and confirm"
+      ],
+      "serial": "emulator-5554"
+    },
+    "nativeConfiguration": {
+      "original": {
+        "system/font_scale": "1.0",
+        "global/animator_duration_scale": "null",
+        "global/transition_animation_scale": "1.0",
+        "global/window_animation_scale": "1.0"
+      },
+      "size": "Physical size: 1080x2400\r\n",
+      "density": "Physical density: 420\r\n",
+      "checks": [
+        "2.0x font: navigation and needs action present",
+        "disabled system animations: modal open/select/cancel operable",
+        "1200dp expanded comparison with paired identities"
+      ],
+      "status": "passed"
+    },
+    "nativeMotion": {
+      "status": "passed",
+      "checks": [
+        "normal-motion radio selection and cancellation reversal",
+        "successful needs commit",
+        "confirmation acknowledgement",
+        "dark-theme rendering"
+      ],
+      "video": "native-motion.mp4",
+      "performance": "emulator raw frame stats only; physical targets not accepted",
+      "restoredNightMode": "no",
+      "restoredStylusHandwriting": "null"
+    },
+    "finalAnimation": {
+      "status": "passed",
+      "checks": [
+        "final APK install and launch",
+        "select and deselect with independent release spring",
+        "cancel draft",
+        "native home rendering"
+      ],
+      "video": "native-motion.mp4"
+    }
+  },
+  "limitations": [
+    "Physical phone, full TalkBack/external keyboard and representative-user acceptance not run.",
+    "Successful Gemini Nano inference needs a supported physical device.",
+    "Emulator frame stats are recorded without asserting physical performance targets.",
+    "Browser interaction verification remains unavailable after the earlier automatic-review block; native app verification was performed.",
+    "Failure/search-diagnostic captures are retained debugging evidence, excluded from accepted results.",
+    "Full flow/configuration runs precede the final independent release-spring cleanup; final packaged control-animation smoke is recorded separately."
+  ],
+  "sourceHashes": [
+    {
+      "path": "apps/adviser/src/adviser-client.test.ts",
+      "sha256": "bd08885cd621fdf1bf071aaf360aebc91b40d9fb1817e2a23a86fb8eb93d0bc3"
+    },
+    {
+      "path": "apps/adviser/src/adviser-client.ts",
+      "sha256": "8fabd662eeea9abbac68f476e2481d3c0ea91d463dc97cebb4abc53d41fa73d9"
+    },
+    {
+      "path": "apps/adviser/src/adviser-store.test.ts",
+      "sha256": "67a227138b6dc4508980a57ad1005b31c0a7f9ac701d73bd857ca8e399ca1c96"
+    },
+    {
+      "path": "apps/adviser/src/adviser-store.ts",
+      "sha256": "4692c5368ec540e2b1695b4b77d4fa0dec1f1d3a345df65f589acefaaf53d56e"
+    },
+    {
+      "path": "apps/adviser/src/AdviserApp.tsx",
+      "sha256": "1ea2fe38c0ae52d9986dc21def5be63e0c93d2996d345c8dc523963648d77aea"
+    },
+    {
+      "path": "apps/adviser/src/ai.test.ts",
+      "sha256": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98"
+    },
+    {
+      "path": "apps/adviser/src/ai.ts",
+      "sha256": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf"
+    },
+    {
+      "path": "apps/adviser/src/AndroidApp.tsx",
+      "sha256": "f60ecd7062c3cedacb9a1905fca658a791aec2b228b38e5d0720054334f726d1"
+    },
+    {
+      "path": "apps/adviser/src/App.tsx",
+      "sha256": "cb4ba55391d55dc38135cf6bc924286ecfbf7513fe3183ddb247427aba91551f"
+    },
+    {
+      "path": "apps/adviser/src/catalog.test.ts",
+      "sha256": "529b5ad10c88277af66f8c301ce0bfdb89e2820ef702d24c7efffe413c1aa287"
+    },
+    {
+      "path": "apps/adviser/src/catalog.ts",
+      "sha256": "cac787cfbf5eec185981d09d65715174e961802cd6191ffacced84da8c5f2eb1"
+    },
+    {
+      "path": "apps/adviser/src/ComparisonView.tsx",
+      "sha256": "41ee4b2ddc9cfa123b1dcee9cff38e2b6fb9780a527b36863d74d761e723b1f1"
+    },
+    {
+      "path": "apps/adviser/src/decision-state.test.ts",
+      "sha256": "c58ee182528928d4bee031926746557f2733ad9b2deced6cd1db245e45a14858"
+    },
+    {
+      "path": "apps/adviser/src/decision-state.ts",
+      "sha256": "d1ee7a85245717b3bfe577a4a217f0e639e7f64aa215c1a4e8f48be3085658d9"
+    },
+    {
+      "path": "apps/adviser/src/design-tokens.css",
+      "sha256": "884f572719d0eb7947534cbd9371bae36a8f69386594f6c7648b942886b1dab9"
+    },
+    {
+      "path": "apps/adviser/src/design-tokens.ts",
+      "sha256": "13ad0d7c5c5216c697c6ec4645fb3efa0951ade80ffa0fe38abcefafcc7e238c"
+    },
+    {
+      "path": "apps/adviser/src/domain.test.ts",
+      "sha256": "8c2ee9589ec50a9d8a4dcb1a37978a8af1045764ebee86abac6b15e91d8b0bbb"
+    },
+    {
+      "path": "apps/adviser/src/domain.ts",
+      "sha256": "a1cd4cbc293b74a16e34dc4caa31f77cbcf6ed4d137a606c8a0c9cd3523bdb7d"
+    },
+    {
+      "path": "apps/adviser/src/expressive-theme.css",
+      "sha256": "8f04a4c85062abae8f923852827009d2aad2f383b2ffe1e99624b96403fac1fd"
+    },
+    {
+      "path": "apps/adviser/src/expressive-theme.ts",
+      "sha256": "0400bd3f3b3fc97d290925db552b3b448dd899b20316ebd2356093ab233d1a99"
+    },
+    {
+      "path": "apps/adviser/src/ExpressiveButton.tsx",
+      "sha256": "5d4f1b0f3371477ac2ecb6fadc2248ce8016367af5bd95baf992ac044f3d6b0b"
+    },
+    {
+      "path": "apps/adviser/src/ExpressiveButton.web.tsx",
+      "sha256": "92a6158982df36fdaf2a9f5388ad1fc009c22d5b756b5fddf99fe897a4a4dd86"
+    },
+    {
+      "path": "apps/adviser/src/ExpressiveLoading.tsx",
+      "sha256": "b6891285c2b8fcaa07003bc75668958adcd3439e249e1af7bfb579e2e5d30653"
+    },
+    {
+      "path": "apps/adviser/src/ExpressiveSurface.tsx",
+      "sha256": "dc410c1b7e59aadb3e5aecd9dd9df15ab1b35f5f879fed862aafdea0a105229f"
+    },
+    {
+      "path": "apps/adviser/src/ExpressiveSurface.web.tsx",
+      "sha256": "1980fab826f88c05c42e6a4f9ae4878e4bc73ef4c51a78554a82fad76ff0b8cd"
+    },
+    {
+      "path": "apps/adviser/src/icons.tsx",
+      "sha256": "77341b85b4acf62a67761e77d20bce78c99c58a4742102acc67afe70cdf65a44"
+    },
+    {
+      "path": "apps/adviser/src/icons.web.tsx",
+      "sha256": "22ea3a77af5a33cd8b0be5a064bae0011eb49e2ad24526e9004dd05b5ffc3205"
+    },
+    {
+      "path": "apps/adviser/src/listing-evidence.ts",
+      "sha256": "672784df06d0fc20ad1eb6486026117b18dbe23d2fefc683196f36088e793828"
+    },
+    {
+      "path": "apps/adviser/src/local-ai.test.ts",
+      "sha256": "af2ee0516dc346727bbd35316c048c68e25df26041497c3786736fa62f9a2617"
+    },
+    {
+      "path": "apps/adviser/src/local-ai.ts",
+      "sha256": "e8ca0e44bdf8c2ba4499674690934d7d1bb7cd5ebcfa480ce0f6758a5b40d88a"
+    },
+    {
+      "path": "apps/adviser/src/main.web.tsx",
+      "sha256": "6a621e322b032b4c950579e8dff281d486e22ada6e60d4dc880defa0c0bf0140"
+    },
+    {
+      "path": "apps/adviser/src/NavigationIcon.tsx",
+      "sha256": "2319dc2fc1852ba746551a70a7cd1b1f9f9d51fd5b6f2191e009c022e8af0367"
+    },
+    {
+      "path": "apps/adviser/src/picker.test.ts",
+      "sha256": "84fd4a72fb718438504a0af695ef7454a8cbddf2cd0f0dd4c4dc2dbad36a2dd1"
+    },
+    {
+      "path": "apps/adviser/src/picker.ts",
+      "sha256": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943"
+    },
+    {
+      "path": "apps/adviser/src/qa.web.tsx",
+      "sha256": "3e1f1cfcdd8edf527838fc7229e105f3f6be5f21eef94b9fe82a9a37b1eb7ceb"
+    },
+    {
+      "path": "apps/adviser/src/real-catalog.json",
+      "sha256": "4d023d9e96bb45baf63ac0dc68ad93699cf6b0500911f75dc6f6a7b42795642b"
+    },
+    {
+      "path": "apps/adviser/src/theme-validation.ts",
+      "sha256": "a3d08c134c7d7594094949001e7eb98dbfa17c79ec6f5985954f0c9883b2acfd"
+    },
+    {
+      "path": "apps/adviser/src/useExpressiveTheme.ts",
+      "sha256": "a7808624c6eef2be948f01afe63578053b221786cd424dd2a24e64b8fa03f50f"
+    },
+    {
+      "path": "apps/adviser/src/web.css",
+      "sha256": "f128898aa0a286092708df137a4fabf058beb6257427e50c4ea7f1a4bc7dcb10"
+    },
+    {
+      "path": "apps/adviser/native/adviser/LocalAiModule.kt",
+      "sha256": "6747ac7f9b0c6621b5c83fe842e2da807a5ce8df97388b7b42a6b436600d6516"
+    },
+    {
+      "path": "apps/adviser/package.json",
+      "sha256": "45fb770dbc874beda1cebc3f29b1e52ad1b5fe36890d4b8ab941e1b1e54d05fc"
+    },
+    {
+      "path": "apps/adviser/package-lock.json",
+      "sha256": "05e63aac9994896dd0ed5c7e1c1eba579189ffec0b339af19080c71b419bccd3"
+    },
+    {
+      "path": "apps/adviser/vite.config.ts",
+      "sha256": "a842ba9082e87f8c8949bb5a7594c0912ad87ef2cea6785faa3cf9753b3c02ba"
+    }
+  ]
+}

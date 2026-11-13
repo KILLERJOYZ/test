@@ -1,0 +1,79 @@
+{
+  "bodyHeight": 20124,
+  "tabs": [
+    {
+      "label": "Tư vấn",
+      "rect": {
+        "bottom": 20112.5,
+        "height": 56,
+        "left": 8,
+        "right": 78.3984375,
+        "top": 20056.5,
+        "width": 70.3984375,
+        "x": 8,
+        "y": 20056.5
+      },
+      "selected": null
+    },
+    {
+      "label": "Khám phá",
+      "rect": {
+        "bottom": 20112.5,
+        "height": 56,
+        "left": 82.3984375,
+        "right": 152.8046875,
+        "top": 20056.5,
+        "width": 70.40625,
+        "x": 82.3984375,
+        "y": 20056.5
+      },
+      "selected": null
+    },
+    {
+      "label": "So sánh 0",
+      "rect": {
+        "bottom": 20112.5,
+        "height": 56,
+        "left": 156.8046875,
+        "right": 227.203125,
+        "top": 20056.5,
+        "width": 70.3984375,
+        "x": 156.8046875,
+        "y": 20056.5
+      },
+      "selected": null
+    },
+    {
+      "label": "Đã lưu",
+      "rect": {
+        "bottom": 20112.5,
+        "height": 56,
+        "left": 231.203125,
+        "right": 301.6015625,
+        "top": 20056.5,
+        "width": 70.3984375,
+        "x": 231.203125,
+        "y": 20056.5
+      },
+      "selected": null
+    },
+    {
+      "label": "Cài đặt",
+      "rect": {
+        "bottom": 20112.5,
+        "height": 56,
+        "left": 305.6015625,
+        "right": 376,
+        "top": 20056.5,
+        "width": 70.3984375,
+        "x": 305.6015625,
+        "y": 20056.5
+      },
+      "selected": null
+    }
+  ],
+  "viewport": {
+    "height": 844,
+    "width": 390
+  }
+}

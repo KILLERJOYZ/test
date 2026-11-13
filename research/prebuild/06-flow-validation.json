@@ -1,0 +1,672 @@
+{
+  "schemaVersion": 1,
+  "taskId": "R06",
+  "inputs": [
+    {
+      "ref": "apps/adviser/src/AndroidApp.tsx",
+      "sha256": "f60ecd7062c3cedacb9a1905fca658a791aec2b228b38e5d0720054334f726d1"
+    },
+    {
+      "ref": "apps/adviser/src/picker.ts",
+      "sha256": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943"
+    },
+    {
+      "ref": "docs/planning/APP_FLOW.md",
+      "sha256": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640"
+    },
+    {
+      "ref": "research/prebuild/01-buyer-research.md",
+      "sha256": "1c1a16f54ddfb8b23656299e3f26424fe0a00b2163f386c5562c6a42db7e6d80"
+    },
+    {
+      "ref": "research/prebuild/02-journey-benchmark.json",
+      "sha256": "a3ecadaaacf2e2314f94d5751cb356af7f5cf7ef49915e4d0782eab8428eb7bc"
+    },
+    {
+      "ref": "docs/planning/APP_FLOW_DEEP_RESEARCH.md",
+      "sha256": "83977fa9832f9a0ba97e1f33a5a6b43597c79186b2b70445054565500942983a"
+    },
+    {
+      "ref": "research/prebuild/flow-review/current-flow-observations.json",
+      "sha256": "f6452b08e16cdfc62839d149f21d186cd12387ab94cb0428696f318db40d7e3b"
+    }
+  ],
+  "data": {
+    "buildRef": {
+      "commit": "d2f26ee62e50d661e30bc2aa271ae061f9e4e823",
+      "sourceHashes": {
+        "apps/adviser/src/AndroidApp.tsx": "f60ecd7062c3cedacb9a1905fca658a791aec2b228b38e5d0720054334f726d1",
+        "apps/adviser/src/picker.ts": "186ca36ec8f1c2c8acb4bcdc56e79fe9f68e1dacd87789f6668d3a610fbce943",
+        "apps/adviser/src/decision-state.ts": "d1ee7a85245717b3bfe577a4a217f0e639e7f64aa215c1a4e8f48be3085658d9"
+      }
+    },
+    "states": [
+      {
+        "id": "T01",
+        "entry": "Launch → restore → Home",
+        "action": "Launch → restore → Home",
+        "guard": "Storage boot state must be ready before ordinary writes; rejected reads and corrupt bytes block writes.",
+        "expectedNextState": "Home",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:hydration effect",
+        "unitCaseIds": [
+          "U06-10",
+          "U06-12"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T02",
+        "entry": "Home → Start/edit → picker step 1",
+        "action": "Home → Start/edit → picker step 1",
+        "guard": "Copy active needs; ordering has 1–3 uses; extra tasks stay mandatory",
+        "expectedNextState": "picker step 1",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U06-01",
+          "U06-08"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T03",
+        "entry": "Step 1 → Next → step 2",
+        "action": "Step 1 → Next → step 2",
+        "guard": "Requires a main use; budget/VM/preferences are edited in draft",
+        "expectedNextState": "step 2",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U06-01",
+          "U06-08"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T04",
+        "entry": "Step 2 → Review → step 3",
+        "action": "Step 2 → Review → step 3",
+        "guard": "Review is reachable while invalid; errors disable final confirmation",
+        "expectedNextState": "step 3",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U06-02",
+          "U06-03"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T05",
+        "entry": "Step 3 → Confirm → Home/results",
+        "action": "Step 3 → Confirm → Home/results",
+        "guard": "Validate, persist, increment revision, clear filters/history/expansion, then dismiss",
+        "expectedNextState": "Home/results",
+        "committedMutation": "Durable store mutation only through coordinator; picker/filter edits remain drafts.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:applyNeeds",
+        "unitCaseIds": [
+          "U06-02",
+          "U06-03",
+          "U06-14"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T06",
+        "entry": "Picker Back / close",
+        "action": "Picker Back / close",
+        "guard": "Android Back moves one picker step back; close dismisses the whole picker",
+        "expectedNextState": "Picker Back / close",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U06-01",
+          "U06-13"
+        ],
+        "deviceCaseIds": [
+          "D02"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T07",
+        "entry": "Home/results → filters → apply/cancel",
+        "action": "Home/results → filters → apply/cancel",
+        "guard": "Draft filters commit only on Apply; clearing filters preserves needs",
+        "expectedNextState": "apply/cancel",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U06-04"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T08",
+        "entry": "Results → Show more / tradeoffs",
+        "action": "Results → Show more / tradeoffs",
+        "guard": "First three matches expand; at most four excluded fixture options appear separately",
+        "expectedNextState": "Show more / tradeoffs",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U06-04"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T09",
+        "entry": "Explore → type name/RAM/SSD → detail",
+        "action": "Explore → type name/RAM/SSD → detail",
+        "guard": "Local substring search over 12 fixtures; no questionnaire required, no server/vector search",
+        "expectedNextState": "detail",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T10",
+        "entry": "Product card/detail → compare toggle",
+        "action": "Product card/detail → compare toggle",
+        "guard": "Max two distinct IDs; third is rejected rather than replacing a selection",
+        "expectedNextState": "compare toggle",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:compareToggle",
+        "unitCaseIds": [
+          "U06-05"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T11",
+        "entry": "Compare → detail / remove / save",
+        "action": "Compare → detail / remove / save",
+        "guard": "One or two selections are usable; ineligible options remain visibly ineligible",
+        "expectedNextState": "detail / remove / save",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U06-05",
+          "U06-07"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T12",
+        "entry": "Detail → switch configuration",
+        "action": "Detail → switch configuration",
+        "guard": "Only fixture p1/p4 expose the sibling switch; every subsequent offer belongs to the chosen ID",
+        "expectedNextState": "switch configuration",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U07-04",
+          "U08-03"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T13",
+        "entry": "Detail → sample offer → detail",
+        "action": "Detail → sample offer → detail",
+        "guard": "Only current offers open; incomplete total stays incomplete; no external destination or order",
+        "expectedNextState": "detail",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U07-03"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T14",
+        "entry": "Detail/Compare → save",
+        "action": "Detail/Compare → save",
+        "guard": "Requires confirmation flag; snapshot includes needs, IDs, totals/seller/time and versions; acknowledge after write",
+        "expectedNextState": "save",
+        "committedMutation": "Durable store mutation only through coordinator; picker/filter edits remain drafts.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:save",
+        "unitCaseIds": [
+          "U06-03",
+          "U06-07",
+          "U06-12",
+          "U06-14"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T15",
+        "entry": "Saved → reopen → Home",
+        "action": "Saved → reopen → Home",
+        "guard": "Persist saved needs, restore at most two selected IDs, clear filters, keep history label; reuse saved revision",
+        "expectedNextState": "Home",
+        "committedMutation": "Durable store mutation only through coordinator; picker/filter edits remain drafts.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:reopenDecision",
+        "unitCaseIds": [
+          "U06-07"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T16",
+        "entry": "Saved → share/delete",
+        "action": "Saved → share/delete",
+        "guard": "Share dated fictional summary; delete rewrites saved list; errors preserve prior committed store",
+        "expectedNextState": "share/delete",
+        "committedMutation": "Durable store mutation only through coordinator; picker/filter edits remain drafts.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U06-03",
+          "U06-09",
+          "U06-11"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T17",
+        "entry": "Settings → theme/service URL/fixture price",
+        "action": "Settings → theme/service URL/fixture price",
+        "guard": "Queued reducers preserve acknowledged settings/offer changes. AI offer-context invalidation remains R10.",
+        "expectedNextState": "theme/service URL/fixture price",
+        "committedMutation": "Durable store mutation only through coordinator; picker/filter edits remain drafts.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U06-09",
+          "U10-12"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T18",
+        "entry": "Settings → export/recover/reset/delete all",
+        "action": "Settings → export/recover/reset/delete all",
+        "guard": "Reset/delete share persistence queue; exact current recovery bytes take precedence.",
+        "expectedNextState": "export/recover/reset/delete all",
+        "committedMutation": "Durable store mutation only through coordinator; picker/filter edits remain drafts.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:Settings recovery actions",
+        "unitCaseIds": [
+          "U06-10",
+          "U06-11"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T19",
+        "entry": "Results/detail → AI → explain",
+        "action": "Results/detail → AI → explain",
+        "guard": "Sheet replaces the prior sheet; request carries text, needs, offers, but no focused variant IDs",
+        "expectedNextState": "explain",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U10-11",
+          "U10-14"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T20",
+        "entry": "AI → proposed needs → review",
+        "action": "AI → proposed needs → review",
+        "guard": "Allowed patch fields become an unconfirmed draft at step 3; final confirmation uses T05",
+        "expectedNextState": "review",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U10-04",
+          "U10-10"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T21",
+        "entry": "AI → cancel/background/dismiss",
+        "action": "AI → cancel/background/dismiss",
+        "guard": "Ticket invalidates the response; underlying fetch is only aborted by its own timeout today",
+        "expectedNextState": "cancel/background/dismiss",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U06-06",
+          "U10-06",
+          "U10-13"
+        ],
+        "deviceCaseIds": [
+          "D01"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T22",
+        "entry": "Detail → AI → close",
+        "action": "Detail → AI → close",
+        "guard": "Closing chat returns to captured detail and exact product ID; AI request focus remains R10.",
+        "expectedNextState": "close",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:chat onClose",
+        "unitCaseIds": [
+          "U06-13",
+          "U10-14"
+        ],
+        "deviceCaseIds": [
+          "D02"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      },
+      {
+        "id": "T23",
+        "entry": "Non-Home tab → Android Back",
+        "action": "Non-Home tab → Android Back",
+        "guard": "Returns to Home; Back at Home delegates to system; modal Back uses its own handler",
+        "expectedNextState": "Android Back",
+        "committedMutation": "No implicit confirmed-needs mutation.",
+        "effects": "Storage/network/share according to owning handler; native effects unverified.",
+        "cancel/back": "Picker Back uses pickerBack; filter dismissal preserves active filters; chat returns to captured origin; native dispatch requires D02.",
+        "recovery": "Preserve last committed state on failed write; explicit retry/reset/export; unknown external outcomes stay unknown.",
+        "sourceSymbol": "apps/adviser/src/AndroidApp.tsx:AndroidApp",
+        "unitCaseIds": [
+          "U06-13"
+        ],
+        "deviceCaseIds": [
+          "D02"
+        ],
+        "verification": "source trace plus referenced helper cases; not full native transition execution"
+      }
+    ],
+    "automatedChecks": [
+      {
+        "packId": "U06",
+        "caseIds": [
+          "U06-01",
+          "U06-02",
+          "U06-03",
+          "U06-04",
+          "U06-05",
+          "U06-06",
+          "U06-07",
+          "U06-08",
+          "U06-09",
+          "U06-10",
+          "U06-11",
+          "U06-12",
+          "U06-13",
+          "U06-14",
+          "U06-15"
+        ],
+        "mode": "controlled_unit"
+      }
+    ],
+    "participantSessions": [],
+    "findings": [
+      {
+        "id": "FLOW-01",
+        "evidenceRefs": [
+          "E-R06-REGRESSIONS"
+        ],
+        "severity": "high",
+        "proposedChange": "Production-used queue/hydration/restore helpers and actual app wiring.",
+        "patchRef": "apps/adviser/src/decision-state.ts",
+        "failingRegressionRef": "research/prebuild/runs/20261113T052229Z/R06-persistence-before.log",
+        "retestRef": "apps/adviser/src/decision-state.test.ts",
+        "status": "controlled_regression_passed",
+        "limitations": "Native acceptance and empirical comprehension remain unperformed."
+      },
+      {
+        "id": "FLOW-02",
+        "evidenceRefs": [
+          "E-R06-REGRESSIONS"
+        ],
+        "severity": "high",
+        "proposedChange": "Production-used queue/hydration/restore helpers and actual app wiring.",
+        "patchRef": "apps/adviser/src/decision-state.ts",
+        "failingRegressionRef": "research/prebuild/runs/20261113T052229Z/R06-persistence-before.log",
+        "retestRef": "apps/adviser/src/decision-state.test.ts",
+        "status": "controlled_regression_passed",
+        "limitations": "Native acceptance and empirical comprehension remain unperformed."
+      },
+      {
+        "id": "FLOW-03",
+        "evidenceRefs": [
+          "E-R06-REGRESSIONS"
+        ],
+        "severity": "high",
+        "proposedChange": "Production-used queue/hydration/restore helpers and actual app wiring.",
+        "patchRef": "apps/adviser/src/decision-state.ts",
+        "failingRegressionRef": "research/prebuild/runs/20261113T052229Z/R06-persistence-before.log",
+        "retestRef": "apps/adviser/src/decision-state.test.ts",
+        "status": "controlled_regression_passed",
+        "limitations": "Native acceptance and empirical comprehension remain unperformed."
+      },
+      {
+        "id": "FLOW-04",
+        "evidenceRefs": [
+          "E-R06-REGRESSIONS"
+        ],
+        "severity": "high",
+        "proposedChange": "Production-used queue/hydration/restore helpers and actual app wiring.",
+        "patchRef": "apps/adviser/src/decision-state.ts",
+        "failingRegressionRef": "research/prebuild/runs/20261113T052229Z/R06-U06-12-before.log",
+        "retestRef": "apps/adviser/src/decision-state.test.ts",
+        "status": "controlled_regression_passed",
+        "limitations": "Native acceptance and empirical comprehension remain unperformed."
+      },
+      {
+        "id": "FLOW-05",
+        "evidenceRefs": [],
+        "severity": "high",
+        "proposedChange": "R07/R10: bind explanation, focus, context and cancellation to current run.",
+        "patchRef": "apps/adviser/src/ai.ts",
+        "failingRegressionRef": null,
+        "retestRef": "research/prebuild/tools/ai.test.mjs",
+        "status": "controlled_R10_regression_passed",
+        "limitations": "No native or live-provider acceptance; original source baseline is preserved."
+      },
+      {
+        "id": "FLOW-06",
+        "evidenceRefs": [],
+        "severity": "high",
+        "proposedChange": "R07/R10: bind explanation, focus, context and cancellation to current run.",
+        "patchRef": "apps/adviser/src/ai.ts",
+        "failingRegressionRef": null,
+        "retestRef": "research/prebuild/tools/ai.test.mjs",
+        "status": "controlled_R10_regression_passed",
+        "limitations": "No native or live-provider acceptance; original source baseline is preserved."
+      },
+      {
+        "id": "FLOW-07",
+        "evidenceRefs": [],
+        "severity": "medium",
+        "proposedChange": "R07/R10: bind explanation, focus, context and cancellation to current run.",
+        "patchRef": "apps/adviser/src/ai.ts",
+        "failingRegressionRef": null,
+        "retestRef": "research/prebuild/tools/ai.test.mjs",
+        "status": "controlled_R10_regression_passed",
+        "limitations": "No native or live-provider acceptance; original source baseline is preserved."
+      },
+      {
+        "id": "FLOW-08",
+        "evidenceRefs": [],
+        "severity": "medium",
+        "proposedChange": "R07/R10: bind explanation, focus, context and cancellation to current run.",
+        "patchRef": "apps/adviser/src/ai.ts",
+        "failingRegressionRef": null,
+        "retestRef": "research/prebuild/tools/ai.test.mjs",
+        "status": "controlled_R10_regression_passed",
+        "limitations": "No native or live-provider acceptance; original source baseline is preserved."
+      }
+    ],
+    "studyProtocols": {
+      "cognitive": {
+        "target": "3-4 consenting participants",
+        "method": "Think aloud; no leading AI prompts; record misunderstandings and recovery.",
+        "tasks": [
+          "Explain draft versus confirmed at T04/T05",
+          "Explain fit versus verified affordable offer at T13",
+          "Review AI proposal at T20",
+          "Reopen historical decision at T15"
+        ]
+      },
+      "uncoached": {
+        "target": 5,
+        "tasks": [
+          "Guest needs to shortlist",
+          "Compare exact variants",
+          "Inspect incomplete offer",
+          "Save and reopen",
+          "Review proposed edit without unintended confirmation"
+        ],
+        "measures": [
+          "completion with/without help",
+          "critical misunderstanding",
+          "observed errors and recovery"
+        ],
+        "successThresholdStatus": "proposed, not ratified"
+      },
+      "buildContext": "Freeze build hash, synthetic fixture/rules versions, device and accessibility configuration before sessions. Consent and raw contacts outside repository."
+    },
+    "consumedPackDefinitions": {
+      "UBASE": "757c1c6368f6d034fadbc695f7766e34a8b078000a522f465be3f671dc4a4edb",
+      "U06": "052235dbc542a923266c9db0a7d49096f2e6f41862a6d01e5a7793bef3c3978d"
+    }
+  },
+  "evidenceRefs": [
+    "E-R06-REGRESSIONS"
+  ],
+  "gaps": [
+    {
+      "id": "GAP-R06-DEVICE",
+      "reason": "No native D01-D08 observations in this execution.",
+      "nextAction": "Run R11 on a named authorized build/device."
+    },
+    {
+      "id": "GAP-R06-BUYERS",
+      "reason": "No cognitive or uncoached participants.",
+      "nextAction": "Execute consented protocols; retain failures and negative observations."
+    }
+  ]
+}

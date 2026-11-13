@@ -1,0 +1,44 @@
+ M README.md
+ M apps/adviser/README.md
+ M apps/adviser/app.json
+ M apps/adviser/artifacts/lua-adviser-demo.apk
+ M apps/adviser/index.js
+ M apps/adviser/package-lock.json
+ M apps/adviser/package.json
+ M apps/adviser/scripts/build-android.ps1
+ M apps/adviser/src/AndroidApp.tsx
+ M apps/adviser/src/ai.ts
+ M apps/adviser/src/main.web.tsx
+ M apps/adviser/src/picker.ts
+ M docs/planning/IMPLEMENTATION_PLAN.md
+ M services/demo-ai/server.mjs
+ M services/demo-ai/server.test.mjs
+?? apps/adviser/README-demo-history.md
+?? apps/adviser/artifacts/lua-adviser-demo.manifest.json
+?? apps/adviser/native/
+?? apps/adviser/plugins/
+?? apps/adviser/scripts/import-catalog.mjs
+?? apps/adviser/scripts/package-android.ps1
+?? apps/adviser/src/AdviserApp.tsx
+?? apps/adviser/src/adviser-client.test.ts
+?? apps/adviser/src/adviser-client.ts
+?? apps/adviser/src/adviser-store.test.ts
+?? apps/adviser/src/adviser-store.ts
+?? apps/adviser/src/catalog.test.ts
+?? apps/adviser/src/catalog.ts
+?? apps/adviser/src/decision-state.test.ts
+?? apps/adviser/src/decision-state.ts
+?? apps/adviser/src/local-ai.test.ts
+?? apps/adviser/src/local-ai.ts
+?? apps/adviser/src/real-catalog.json
+?? docs/planning/APP_FLOW.md
+?? docs/planning/APP_FLOW_DEEP_RESEARCH.md
+?? docs/planning/PREBUILD_RESEARCH_PLAN.md
+?? docs/planning/PREBUILD_RESEARCH_TRACKER.json
+?? docs/planning/PREBUILD_TEST_PACKS.json
+?? docs/planning/PREBUILD_TEST_PACKS.md
+?? docs/planning/REPOSITORY_RESEARCH_2026-11-13.md
+?? research/connected-adviser/
+?? research/prebuild/
+?? services/adviser/
+?? spikes/

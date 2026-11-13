@@ -1,0 +1,99 @@
+{
+  "runId": "android-demo-2026-11-12-primary-checkout-rebuild",
+  "sourceBase": "f7ec267fdcdac181ab88422c9aba297cd3deca85",
+  "workingTree": "release APK rebuilt from committed Expo source in the primary E:\\test checkout",
+  "requirements": "../../brd.md (lowercase attachment baseline plus confirmed Android/Expo amendments)",
+  "framework": {
+    "expo": "54.0.38",
+    "reactNative": "0.81.5",
+    "react": "19.1.0"
+  },
+  "artifact": {
+    "path": "../artifacts/lua-adviser-demo.apk",
+    "sha256": "a41961f3c8b4558fbcaFE0bde1d8928b2274d06704c527d8cdfe586a53a8035f",
+    "bytes": 34375792,
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "signing": "generated Android debug signing key; demo distribution only",
+    "signatureVerified": true,
+    "signerCertificate": "CN=Android Debug, OU=Android, O=Unknown, L=Unknown, ST=Unknown, C=US"
+  },
+  "android": {
+    "package": "vn.lua.adviser",
+    "versionName": "0.3.0",
+    "minSdk": 24,
+    "targetSdk": 36,
+    "testedEmulator": "Resizable_Experimental / sdk_gphone16k_x86_64",
+    "testedAndroidRelease": "17",
+    "testedApi": 37,
+    "size": "1080x2400",
+    "density": 420,
+    "physicalDeviceTested": false,
+    "emulatorMemoryMbFinal": 2048
+  },
+  "automatedChecks": {
+    "typescript": "passed",
+    "domainPickerAIUnitTests": {
+      "passed": 18,
+      "failed": 0
+    },
+    "httpServiceTests": {
+      "passed": 1,
+      "failed": 0,
+      "provider": "injected test double"
+    },
+    "expoDoctor": {
+      "passed": 18,
+      "failed": 0
+    },
+    "htmlPreviewBuild": "passed",
+    "expoAndroidExport": "passed",
+    "androidReleaseBuild": "passed"
+  },
+  "liveProviderTested": false,
+  "remainingEvidence": [
+    "physical Android phone",
+    "TalkBack/switch-access review",
+    "full performance distributions",
+    "exploratory buyer study",
+    "live provider credentials/model and real request",
+    "production data readiness"
+  ],
+  "toolingNotes": [
+    "ADB on default port became unresponsive; emulator verification continued through an isolated server on port 5038.",
+    "Smoke helper verifies the foreground app package and successful UI dump to prevent stale/wrong-app observations.",
+    "The experimental API 37 emulator exited during final verification and was restarted with a 2 GB memory setting. Interrupted attempts are not counted as passes.",
+    "Some captures taken during configuration recreation showed splash/blank screens or null UI roots; only settled app captures count as visual evidence."
+  ],
+  "nativeSmoke": {
+    "packageGuard": "vn.lua.adviser",
+    "metroRequired": false,
+    "pickerAndFilterRecovery": "passed",
+    "saveAndRestartRestoration": "passed",
+    "comparison": "passed",
+    "exactVariantAndSampleOffer": "passed",
+    "missingProviderFallback": "passed",
+    "deleteSavedDecision": "passed",
+    "finalTargetedBackAndBudgetChecks": "passed",
+    "expandedLayout": "baseline expanded layout visually reviewed; rapid configuration transitions on experimental emulator need broader device coverage",
+    "fontScale1_3": "passed visual review on rebuilt APK after fixing text measurement",
+    "fontScalingImplementation": "OS fontScale applied explicitly in shared React Native text/input components; automatic second scaling disabled",
+    "emulatorSettingsRestored": true
+  },
+  "evidenceImages": [
+    "android-large-text-fixed.png",
+    "expo-confirmed.png",
+    "expo-filter-empty.png",
+    "expo-no-fit.png",
+    "expo-comparison.png",
+    "expo-variant.png",
+    "expo-sample-offer.png",
+    "expo-restored.png",
+    "expo-deleted.png",
+    "expo-ai-fallback.png",
+    "expo-android-back.png",
+    "android-expanded.png"
+  ]
+}

@@ -1,0 +1,35 @@
+/* Generated from design-tokens.ts; run npm run tokens. */
+:root {
+  --lua-bg: #F8F5FF;
+  --lua-surface: #FFFFFF;
+  --lua-container: #EEE7FA;
+  --lua-primary: #59409D;
+  --lua-onPrimary: #FFFFFF;
+  --lua-secondary: #DFF36F;
+  --lua-onSecondary: #263000;
+  --lua-text: #211B30;
+  --lua-muted: #625A70;
+  --lua-line: #D5CDE0;
+  --lua-error: #A32C37;
+  --lua-success: #306347;
+  --lua-shape-card: 28px;
+  --lua-shape-hero: 36px;
+  --lua-shape-button: 26px;
+  --lua-shape-chip: 24px;
+  --lua-shape-selectedChip: 18px;
+  --lua-shape-sheet: 32px;
+}
+[data-lua-theme="dark"] {
+  --lua-bg: #15111D;
+  --lua-surface: #231E2D;
+  --lua-container: #332A43;
+  --lua-primary: #CEBAFF;
+  --lua-onPrimary: #2D175D;
+  --lua-secondary: #DFF36F;
+  --lua-onSecondary: #263000;
+  --lua-text: #ECE4F5;
+  --lua-muted: #C3B9D0;
+  --lua-line: #51465F;
+  --lua-error: #FFB2B8;
+  --lua-success: #9CD5AF;
+}

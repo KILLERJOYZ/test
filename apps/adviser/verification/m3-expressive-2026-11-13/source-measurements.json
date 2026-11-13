@@ -1,0 +1,237 @@
+{
+  "date": "2026-11-13",
+  "method": "WCAG sRGB relative luminance; unrounded values determine thresholds. Opaque default colors only; inactive controls exempt. Non-text ratios require contextual review of which visual cues identify a control.",
+  "palettes": [
+    {
+      "theme": "dark",
+      "bg": "#101b18",
+      "card": "#1d2d27",
+      "text": "#e3eee7",
+      "muted": "#a5b9ac",
+      "accent": "#9ed6b1",
+      "onAccent": "#163323",
+      "line": "#385044",
+      "focus": "#59409D"
+    },
+    {
+      "theme": "light",
+      "bg": "#f3f6ee",
+      "card": "#ffffff",
+      "text": "#193127",
+      "muted": "#50675b",
+      "accent": "#245f43",
+      "onAccent": "#ffffff",
+      "line": "#d0ddd1",
+      "focus": "#59409D"
+    }
+  ],
+  "measurements": [
+    {
+      "theme": "dark",
+      "foreground": "text",
+      "background": "bg",
+      "foregroundHex": "#e3eee7",
+      "backgroundHex": "#101b18",
+      "ratio": 14.807028216965971,
+      "threshold": 4.5,
+      "meetsThreshold": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "text",
+      "background": "card",
+      "foregroundHex": "#e3eee7",
+      "backgroundHex": "#1d2d27",
+      "ratio": 12.114749682278637,
+      "threshold": 4.5,
+      "meetsThreshold": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "muted",
+      "background": "bg",
+      "foregroundHex": "#a5b9ac",
+      "backgroundHex": "#101b18",
+      "ratio": 8.502692076463314,
+      "threshold": 4.5,
+      "meetsThreshold": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "muted",
+      "background": "card",
+      "foregroundHex": "#a5b9ac",
+      "backgroundHex": "#1d2d27",
+      "ratio": 6.956695470723822,
+      "threshold": 4.5,
+      "meetsThreshold": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "onAccent",
+      "background": "accent",
+      "foregroundHex": "#163323",
+      "backgroundHex": "#9ed6b1",
+      "ratio": 8.295050058987737,
+      "threshold": 4.5,
+      "meetsThreshold": true
+    },
+    {
+      "theme": "dark",
+      "foreground": "line",
+      "background": "card",
+      "foregroundHex": "#385044",
+      "backgroundHex": "#1d2d27",
+      "ratio": 1.6467135858545332,
+      "threshold": 3,
+      "meetsThreshold": false
+    },
+    {
+      "theme": "dark",
+      "foreground": "line",
+      "background": "bg",
+      "foregroundHex": "#385044",
+      "backgroundHex": "#101b18",
+      "ratio": 2.012665153674323,
+      "threshold": 3,
+      "meetsThreshold": false
+    },
+    {
+      "theme": "dark",
+      "foreground": "card",
+      "background": "bg",
+      "foregroundHex": "#1d2d27",
+      "backgroundHex": "#101b18",
+      "ratio": 1.2222314620850632,
+      "threshold": 3,
+      "meetsThreshold": false
+    },
+    {
+      "theme": "dark",
+      "foreground": "focus",
+      "background": "card",
+      "foregroundHex": "#59409D",
+      "backgroundHex": "#1d2d27",
+      "ratio": 1.8155015448994916,
+      "threshold": 3,
+      "meetsThreshold": false
+    },
+    {
+      "theme": "dark",
+      "foreground": "focus",
+      "background": "bg",
+      "foregroundHex": "#59409D",
+      "backgroundHex": "#101b18",
+      "ratio": 2.2189631076401963,
+      "threshold": 3,
+      "meetsThreshold": false
+    },
+    {
+      "theme": "light",
+      "foreground": "text",
+      "background": "bg",
+      "foregroundHex": "#193127",
+      "backgroundHex": "#f3f6ee",
+      "ratio": 12.734045490059684,
+      "threshold": 4.5,
+      "meetsThreshold": true
+    },
+    {
+      "theme": "light",
+      "foreground": "text",
+      "background": "card",
+      "foregroundHex": "#193127",
+      "backgroundHex": "#ffffff",
+      "ratio": 13.907686338782282,
+      "threshold": 4.5,
+      "meetsThreshold": true
+    },
+    {
+      "theme": "light",
+      "foreground": "muted",
+      "background": "bg",
+      "foregroundHex": "#50675b",
+      "backgroundHex": "#f3f6ee",
+      "ratio": 5.6020969684739885,
+      "threshold": 4.5,
+      "meetsThreshold": true
+    },
+    {
+      "theme": "light",
+      "foreground": "muted",
+      "background": "card",
+      "foregroundHex": "#50675b",
+      "backgroundHex": "#ffffff",
+      "ratio": 6.118417555347854,
+      "threshold": 4.5,
+      "meetsThreshold": true
+    },
+    {
+      "theme": "light",
+      "foreground": "onAccent",
+      "background": "accent",
+      "foregroundHex": "#ffffff",
+      "backgroundHex": "#245f43",
+      "ratio": 7.5189404329277565,
+      "threshold": 4.5,
+      "meetsThreshold": true
+    },
+    {
+      "theme": "light",
+      "foreground": "line",
+      "background": "card",
+      "foregroundHex": "#d0ddd1",
+      "backgroundHex": "#ffffff",
+      "ratio": 1.4051287392054073,
+      "threshold": 3,
+      "meetsThreshold": false
+    },
+    {
+      "theme": "light",
+      "foreground": "line",
+      "background": "bg",
+      "foregroundHex": "#d0ddd1",
+      "backgroundHex": "#f3f6ee",
+      "ratio": 1.2865528347829076,
+      "threshold": 3,
+      "meetsThreshold": false
+    },
+    {
+      "theme": "light",
+      "foreground": "card",
+      "background": "bg",
+      "foregroundHex": "#ffffff",
+      "backgroundHex": "#f3f6ee",
+      "ratio": 1.0921655925949656,
+      "threshold": 3,
+      "meetsThreshold": false
+    },
+    {
+      "theme": "light",
+      "foreground": "focus",
+      "background": "card",
+      "foregroundHex": "#59409D",
+      "backgroundHex": "#ffffff",
+      "ratio": 7.939532564694171,
+      "threshold": 3,
+      "meetsThreshold": true
+    },
+    {
+      "theme": "light",
+      "foreground": "focus",
+      "background": "bg",
+      "foregroundHex": "#59409D",
+      "backgroundHex": "#f3f6ee",
+      "ratio": 7.269531853525972,
+      "threshold": 3,
+      "meetsThreshold": true
+    }
+  ],
+  "activeSource": {
+    "importsSharedTokens": false,
+    "containsReducedMotionHandling": false,
+    "containsWindowSizeHandling": false,
+    "containsSpringAnimation": false,
+    "unconditionalModalSlide": true
+  }
+}
