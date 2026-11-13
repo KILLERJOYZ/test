@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "serial": "emulator-5580",
+  "version": "0.5.1",
+  "observations": [
+    {
+      "phase": "launch",
+      "root": "M3 host with Device Advisor feature",
+      "existingDataRetained": true
+    },
+    {
+      "phase": "restart",
+      "root": "M3 host with Device Advisor feature",
+      "existingDataRetained": true
+    }
+  ],
+  "limits": "Launch/restart only; category journeys use component tests. Physical AICore and accessibility acceptance remain open."
+}

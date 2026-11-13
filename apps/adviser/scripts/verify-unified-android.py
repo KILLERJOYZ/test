@@ -10,6 +10,7 @@ parser.add_argument("--adb", required=True)
 parser.add_argument("--serial", required=True)
 parser.add_argument("--output", default="verification/unified-0.5.1")
 args = parser.parse_args()
+expected_version = json.loads((Path(__file__).resolve().parent.parent / "app.json").read_text(encoding="utf-8"))["expo"]["version"]
 output = Path(args.output)
 output.mkdir(parents=True, exist_ok=True)
 prefix = [args.adb, "-s", args.serial]
@@ -36,8 +37,8 @@ for phase in ("launch", "restart"):
     adb("pull", "/sdcard/unified-smoke.png", str(output / f"{phase}.png"))
     observed.append({"phase": phase, "root": "M3 host with Device Advisor feature", "existingDataRetained": True})
 package = adb("shell", "dumpsys", "package", "vn.lua.adviser").decode("utf-8")
-assert "versionName=0.5.0" in package
+assert f"versionName={expected_version}" in package
 (output / "native-smoke.json").write_text(json.dumps({"status": "passed", "serial": args.serial,
-    "version": "0.5.0", "observations": observed,
+    "version": expected_version, "observations": observed,
     "limits": "Launch/restart only; category journeys use component tests. Physical AICore and accessibility acceptance remain open."}, indent=2), encoding="utf-8")
-print("PASS: installed unified 0.5.0 root launches and restarts without clearing app data")
+print(f"PASS: installed M3 host {expected_version} launches and restarts without clearing app data")
