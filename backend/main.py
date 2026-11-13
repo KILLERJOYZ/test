@@ -1,5 +1,7 @@
 import logging
 import uuid
+import sqlite3
+from contextlib import closing
 from datetime import datetime, timezone
 from typing import Optional
 
@@ -34,9 +36,10 @@ logging.basicConfig(
     datefmt="%H:%M:%S",
 )
 logger = logging.getLogger("backend.main")
+from backend.services import device_catalog
 
 app = FastAPI(
-    title="Laptop Adviser API",
+    title="Lựa Device Adviser API",
     description="Backend API kết nối PostgreSQL local và cung cấp dữ liệu cho ứng dụng Lựa Adviser.",
     version="1.0.0",
 )
@@ -62,15 +65,34 @@ def verify_token(authorization: Optional[str] = Header(None)):
 @app.get("/health", response_model=HealthResponse)
 def health_check():
     """Kiểm tra tình trạng sống của API, PostgreSQL và số lượng laptop."""
-    count = fetch_laptop_count()
+    source = device_catalog.catalog_source()
+    count = fetch_laptop_count() if source == "postgresql" else sum(
+        r.get("category", "laptop") == "laptop" for r in device_catalog.catalog_rows())
     return HealthResponse(
         status="ok",
-        db="connected" if count > 0 else "empty",
+        db=("connected" if count > 0 else "empty") if source == "postgresql" else "not_required",
         laptopCount=count,
         ai="rules_fallback",
-        refresh="postgresql",
+        refresh=source,
         checkedAt=datetime.now(timezone.utc).isoformat(),
     )
+
+@app.get("/advisor/v1/manifest")
+def device_manifest(authorization: Optional[str] = Header(None)):
+    verify_token(authorization)
+    try:
+        return device_catalog.signed_snapshot()
+    except Exception:
+        logger.exception("Device catalog unavailable")
+        raise HTTPException(503, detail={"code": "CATALOG_UNAVAILABLE"})
+
+@app.get("/advisor/v1/catalogs/{version}/bundle")
+def device_bundle(version: str, authorization: Optional[str] = Header(None)):
+    verify_token(authorization)
+    payload = device_catalog.get_snapshot(version)
+    if payload is None:
+        raise HTTPException(409, detail={"code": "STALE_CATALOG"})
+    return Response(content=payload, media_type="application/json")
 
 @app.get("/v1/catalog", response_model=CatalogResponse)
 def get_catalog(authorization: Optional[str] = Header(None)):
@@ -92,6 +114,7 @@ def get_catalog(authorization: Optional[str] = Header(None)):
 
 @app.get("/v1/laptops")
 def search_laptops(
+    authorization: Optional[str] = Header(None),
     q: str = Query("", description="Từ khóa tìm kiếm"),
     source: str = Query("", description="Nguồn bán lẻ (cellphones, fptshop, ...)"),
     brand: str = Query("", description="Hãng sản xuất (Lenovo, ASUS, ...)"),
@@ -103,6 +126,7 @@ def search_laptops(
     offset: int = Query(0, ge=0),
 ):
     """Truy vấn tìm kiếm, lọc và phân trang danh sách laptop từ PostgreSQL."""
+    verify_token(authorization)
     data = query_laptops(
         q=q,
         source=source,
@@ -118,8 +142,9 @@ def search_laptops(
     return {"total": data["total"], "items": items}
 
 @app.get("/v1/laptops/{laptop_id}", response_model=ListingModel)
-def get_laptop_detail(laptop_id: str):
+def get_laptop_detail(laptop_id: str, authorization: Optional[str] = Header(None)):
     """Lấy thông tin chi tiết một laptop theo ID."""
+    verify_token(authorization)
     row = fetch_laptop_by_id(laptop_id)
     if not row:
         raise HTTPException(
@@ -129,8 +154,9 @@ def get_laptop_detail(laptop_id: str):
     return row_to_listing(row)
 
 @app.post("/v1/compare", response_model=CompareResponse)
-def compare_laptops(req: CompareRequest):
+def compare_laptops(req: CompareRequest, authorization: Optional[str] = Header(None)):
     """Đối chiếu 2 cấu hình laptop dựa trên bộ Requirements."""
+    verify_token(authorization)
     items: list[ListingModel] = []
     assessments: list[dict] = []
 
@@ -190,6 +216,12 @@ def submit_report(req: ReportRequest, authorization: Optional[str] = Header(None
         status="open",
         createdAt=datetime.now(timezone.utc).isoformat(),
     )
+    # Acknowledgement means durable receipt, including across API restarts.
+    report_db = device_catalog.APP / ".expo/reports.sqlite"
+    report_db.parent.mkdir(parents=True, exist_ok=True)
+    with closing(sqlite3.connect(report_db)) as db, db:
+        db.execute("CREATE TABLE IF NOT EXISTS reports(id TEXT PRIMARY KEY, payload TEXT NOT NULL)")
+        db.execute("INSERT INTO reports VALUES (?,?)", (report.id, report.model_dump_json()))
     return ReportResponse(report=report)
 
 if __name__ == "__main__":

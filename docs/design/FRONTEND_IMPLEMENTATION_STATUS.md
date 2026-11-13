@@ -1,3 +1,5 @@
+> Historical implementation/evidence record. The active unified 0.5.0 runtime, service setup and SDK matrix are defined in the [application contract](../../apps/adviser/UNIFIED_APP.md). Earlier startup and port instructions below describe their recorded release.
+
 # Frontend implementation and verification
 
 13 November 2026. The audit-driven frontend changes are implemented and packaged. Native regression and configuration checks passed on the named emulator. Product acceptance and physical-device accessibility/performance evidence remain separate.

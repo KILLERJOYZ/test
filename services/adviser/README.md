@@ -1,3 +1,5 @@
+> Historical implementation/evidence record. The active unified 0.5.0 runtime, service setup and SDK matrix are defined in the [application contract](../../apps/adviser/UNIFIED_APP.md). Earlier startup and port instructions below describe their recorded release.
+
 # Connected adviser service
 
 The Android 0.4.0 entry point uses 70 real, dated repository listings. This service reads `data/all_laptops_normalized.json` on every catalog request and before/after AI evaluation. Updating that file changes the served catalog revision without restarting the service. Android checks every 30 seconds when connected and refreshes on foreground/manual refresh. This is repository synchronization; no retailer crawler or live price feed is started.

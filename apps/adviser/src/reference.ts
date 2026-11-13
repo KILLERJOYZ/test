@@ -1,5 +1,6 @@
 import seed from "./reference-seed.json" with { type: "json" };
 import type { Needs } from "./picker.ts";
+import { listingEvidence } from "./listing-evidence.ts";
 import {
   assessCandidate,
   recommendCandidates,
@@ -23,6 +24,8 @@ export type Reference = {
   catalogVersion?: string;
   category?: "phone" | "tablet" | "laptop" | "desktop";
   formFactor?: string;
+  shipping?: number | null;
+  fees?: number | null;
 };
 export const referenceSeed = seed as {
   version: string;
@@ -51,6 +54,7 @@ export function referenceRequirement(needs: Needs): Requirement {
       workloads: p.purposes,
       constraints: {
         minimumRamGiB: p.minimumRamGiB ?? undefined,
+        minimumStorageGiB: p.minimumStorageGiB ?? undefined,
         mandatoryOS: p.osMandatory ? (p.os ?? undefined) : undefined,
         mandatoryFormFactor: p.formMandatory
           ? (p.formFactor ?? undefined)
@@ -82,6 +86,11 @@ export function referenceRequirement(needs: Needs): Requirement {
   };
 }
 export function referenceCandidate(row: Reference, needs: Needs): Candidate {
+  const verified = listingEvidence({
+    name: row.name,
+    ram: row.ramGiB,
+    storage: row.storageGiB,
+  });
   const profile = needs.deviceProfile;
   const category = row.category ?? "laptop";
   const low = category === "phone" ? 0.14 : category === "tablet" ? 0.25 : 1,
@@ -108,14 +117,15 @@ export function referenceCandidate(row: Reference, needs: Needs): Candidate {
     condition: row.condition === "unknown" ? null : row.condition,
     currency: "VND",
     price: row.price,
-    shipping: null,
-    fees: null,
+    shipping: row.shipping ?? null,
+    fees: row.fees ?? null,
     accessories:
       needs.advisor?.requiredAccessoriesVnd === undefined
         ? 0
         : needs.advisor.requiredAccessoriesVnd,
     discount: null,
-    ramGiB: row.ramGiB,
+    ramGiB: verified.ram,
+    storageGiB: verified.storage,
     os: typeof row.specs.os === "string" ? row.specs.os : null,
     stock:
       row.availability === "in_stock"
@@ -201,8 +211,10 @@ export function selectReferences(
   sort = "fit",
   showAll = false,
 ) {
+  const browsing = !needs.useOrderConfirmed;
   rows = rows.filter(
     (row) =>
+      browsing ||
       (row.category ?? "laptop") === referenceRequirement(needs).category,
   );
   const run = recommendationRun(rows, needs);
@@ -212,7 +224,7 @@ export function selectReferences(
     ...run.qualified.filter((a) => !shortlistIds.has(a.candidate.id)),
     ...run.verify,
   ].map((a) => rows.find((r) => r.id === a.candidate.id)!);
-  const visible = (showAll ? rows : eligible).filter(
+  const visible = (browsing || showAll ? rows : eligible).filter(
     (r) =>
       `${r.name} ${r.brand} ${r.source} ${r.specs.ram ?? ""}`
         .toLowerCase()
@@ -241,6 +253,11 @@ export function referenceUrl(row: Reference) {
     thegioididong: "www.thegioididong.com",
     dienmayxanh: "www.dienmayxanh.com",
     fptshop: "fptshop.com.vn",
+    gearvn: "gearvn.com",
+    phongvu: "phongvu.vn",
+    hacom: "hacom.vn",
+    laptopaz: "laptopaz.vn",
+    trungtran: "trungtran.vn",
   };
   if (
     u.protocol !== "https:" ||

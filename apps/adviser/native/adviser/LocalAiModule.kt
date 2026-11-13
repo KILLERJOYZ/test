@@ -10,6 +10,11 @@ import com.google.mlkit.genai.prompt.generateContentRequest
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
 import java.util.concurrent.ConcurrentHashMap
+import java.security.MessageDigest
+import java.security.KeyFactory
+import java.security.Signature
+import java.security.spec.X509EncodedKeySpec
+import android.util.Base64
 
 /** Device-local Gemini Nano bridge. No prompt is sent to an application backend. */
 class LocalAiModule(context: ReactApplicationContext) : ReactContextBaseJavaModule(context) {
@@ -62,6 +67,22 @@ class LocalAiModule(context: ReactApplicationContext) : ReactContextBaseJavaModu
         }
     }
     @ReactMethod @Synchronized fun cancel(requestId: String) { jobs[requestId]?.cancel() }
+    @ReactMethod fun digest(payload: String, promise: Promise) {
+        try {
+            if (payload.length > 3000000) throw IllegalArgumentException("Payload too large")
+            promise.resolve(MessageDigest.getInstance("SHA-256").digest(payload.toByteArray(Charsets.UTF_8)).joinToString("") { "%02x".format(it) })
+        } catch (e: Exception) { promise.reject("DIGEST_FAILED", e) }
+    }
+    @ReactMethod fun verify(payload: String, signature: String, publicKey: String, promise: Promise) {
+        try {
+            if (payload.length > 20000 || signature.length > 2048 || publicKey.length > 8192) throw IllegalArgumentException("Invalid signature envelope")
+            val key = KeyFactory.getInstance("RSA").generatePublic(X509EncodedKeySpec(Base64.decode(publicKey, Base64.DEFAULT)))
+            val verifier = Signature.getInstance("SHA256withRSA")
+            verifier.initVerify(key)
+            verifier.update(payload.toByteArray(Charsets.UTF_8))
+            promise.resolve(verifier.verify(Base64.decode(signature, Base64.DEFAULT)))
+        } catch (_: Exception) { promise.resolve(false) }
+    }
     override fun invalidate() { scope.cancel(); model.close(); super.invalidate() }
 }
 class LocalAiPackage : ReactPackage {

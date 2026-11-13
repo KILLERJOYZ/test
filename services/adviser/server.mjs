@@ -361,10 +361,10 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
     provider: null, // Android uses on-device Gemini Nano; no cloud calls.
     token: process.env.ADVISER_TOKEN || "",
   });
-  server.listen(Number(process.env.ADVISER_PORT || 8788), host, () =>
+  server.listen(Number(process.env.ADVISER_PORT || 8789), host, () =>
     console.log(
       "Adviser API listening on loopback port " +
-        (process.env.ADVISER_PORT || 8788),
+        (process.env.ADVISER_PORT || 8789),
     ),
   );
 }

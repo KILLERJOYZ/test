@@ -6,17 +6,18 @@ import React from 'react';
 import { create, act } from 'react-test-renderer';
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 const mocks = {
+ './ExpressiveButton': `import React from 'react'; export function ExpressiveButton({label,onPress,disabled}){return React.createElement('Pressable',{onPress,disabled},label)}`,
  './catalog-sync': `export async function syncReferenceCatalog(){return 'test-signed-version';}`,
 
  './device-ai': `export const aiCapability=async()=>'unsupported';export const prepareAi=async()=>{throw Error('unsupported')};export const cancelAi=async()=>{};export const extractDeviceNeeds=async()=>{throw Error('use form')};`,
   './reference-storage': `import seed from './src/reference-seed.json'; const referenceSeed=seed; export const referenceStorageKind='test reference adapter';export async function rollbackReferences(){};export async function loadReferences(){return referenceSeed.rows;};`,
-  'react-native': `import React from 'react'; export const StatusBar='StatusBar',View='View',Text='Text',TextInput='TextInput',Pressable='Pressable',ScrollView='ScrollView'; export const StyleSheet={create:x=>x};export const Linking={openURL:async()=>({})};export const Share={share:async()=>({})};export const AppState={addEventListener:()=>({remove(){}})};export const BackHandler={addEventListener:()=>({remove(){}})};`,
+  'react-native': `import React from 'react'; export const NativeModules={};export const useColorScheme=()=> 'light';export const AccessibilityInfo={isReduceMotionEnabled:async()=>true,addEventListener:()=>({remove(){}})};export const StatusBar='StatusBar',View='View',Text='Text',TextInput='TextInput',Pressable='Pressable',ScrollView='ScrollView'; export const StyleSheet={create:x=>x};export const Linking={openURL:async()=>({})};export const Share={share:async()=>({})};export const AppState={addEventListener:()=>({remove(){}})};export const BackHandler={addEventListener:()=>({remove(){}})};`,
   '@react-native-async-storage/async-storage': `export default {getItem:async()=>null};`,
   'react-native-safe-area-context': `export const SafeAreaProvider='SafeAreaProvider',SafeAreaView='SafeAreaView';`,
   './demo-storage': `const records=new Map();globalThis.deviceTestRecords=records;export const storageKind='test adapter';export const storage={getItem:async k=>records.get(k)??null,setItem:async(k,v)=>{records.set(k,v)},removeItem:async k=>records.delete(k)};`,
 };
 await mkdir('.expo/demo2-tests',{recursive:true});
-await build({entryPoints:['src/DeviceAdvisorApp.tsx'],bundle:true,platform:'node',format:'cjs',outfile:'.expo/demo2-tests/app.cjs',external:['react'],plugins:[{name:'native-test-boundaries',setup(b){b.onResolve({filter:/.*/},args=>args.path in mocks?{path:args.path,namespace:'mock'}:undefined);b.onLoad({filter:/.*/,namespace:'mock'},args=>({contents:mocks[args.path],loader:'js',resolveDir:process.cwd()}));}}]});
+await build({entryPoints:['src/UnifiedAdvisorApp.tsx'],bundle:true,platform:'node',format:'cjs',outfile:'.expo/demo2-tests/app.cjs',external:['react'],plugins:[{name:'native-test-boundaries',setup(b){b.onResolve({filter:/.*/},args=>args.path in mocks?{path:args.path,namespace:'mock'}:undefined);b.onLoad({filter:/.*/,namespace:'mock'},args=>({contents:mocks[args.path],loader:'js',resolveDir:process.cwd()}));}}]});
 const App=createRequire(import.meta.url)('../.expo/demo2-tests/app.cjs').default;
 let app;
 const text=()=>JSON.stringify(app.toJSON());

@@ -1,3 +1,5 @@
+> Historical implementation/evidence record. The active unified 0.5.0 runtime, service setup and SDK matrix are defined in the [application contract](../../apps/adviser/UNIFIED_APP.md). Earlier startup and port instructions below describe their recorded release.
+
 # Connected adviser implementation — 13 November 2026
 
 The user explicitly requested implementation of a fuller real-data/refresh/AI version after the prebuild assessment, and selected the existing repository listings as the data source. Version 0.4.0 is a new implemented laptop journey and replaces the synthetic demo as the Android and web entry point. This authorization to implement does not invent source permission, current retail prices, paid AI authority, empirical observations or gate approval.

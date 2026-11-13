@@ -1,7 +1,7 @@
 import type { Listing } from "./catalog.ts";
 
 /** Detect explicit title/structured disagreements, without choosing either source. */
-export function listingEvidence(v: Listing) {
+export function listingEvidence(v: Pick<Listing, "name" | "ram" | "storage">) {
   const pair = v.name.match(/(\d+)\s*GB\s*[,/]\s*(\d+)\s*(GB|TB)/i);
   const titleRam = pair ? Number(pair[1]) : null;
   const titleStorage = pair

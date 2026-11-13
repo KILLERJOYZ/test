@@ -14,9 +14,12 @@ import {
   StatusBar,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { LIGHT } from "./design-tokens";
+import { useAdvisorTheme, legacyPalette } from "./AdvisorTheme";
+import { ExpressiveButton } from "./ExpressiveButton";
 import ReferenceExplorer from "./ReferenceExplorer";
 import { storage } from "./demo-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { connectedDraft } from "./unified-adapters";
 import { money } from "./domain";
 import { EMPTY_NEEDS, type Needs } from "./picker";
 import {
@@ -87,29 +90,25 @@ function Button({
   onPress,
   disabled = false,
   quiet = false,
+  selected,
 }: {
   title: string;
   onPress: () => void;
   disabled?: boolean;
   quiet?: boolean;
+  selected?: boolean;
 }) {
+  const { colors, reduceMotion } = useAdvisorTheme();
   return (
-    <Pressable
-      accessibilityRole="button"
-      accessibilityState={{ disabled }}
-      disabled={disabled}
+    <ExpressiveButton
+      label={title}
       onPress={onPress}
-      style={({ pressed }) => [
-        s.button,
-        quiet && s.quiet,
-        disabled && { opacity: 0.4 },
-        pressed && { opacity: 0.8 },
-      ]}
-    >
-      <Text style={[s.buttonText, quiet && { color: LIGHT.primary }]}>
-        {title}
-      </Text>
-    </Pressable>
+      disabled={disabled}
+      secondary={quiet}
+      selected={selected}
+      colors={colors}
+      reduceMotion={reduceMotion}
+    />
   );
 }
 function Choice({
@@ -127,6 +126,8 @@ function Choice({
   onPress: () => void;
   disabled?: boolean;
 }) {
+  const LIGHT = legacyPalette(useAdvisorTheme().colors);
+  const s = makeStyles(LIGHT);
   return (
     <Pressable
       accessibilityRole="checkbox"
@@ -147,7 +148,7 @@ function Choice({
       <View style={[s.badge, selected && { backgroundColor: LIGHT.primary }]}>
         <Text
           style={{
-            color: selected ? "#FFFFFF" : LIGHT.primary,
+            color: LIGHT.onSecondary,
             fontWeight: "800",
           }}
         >
@@ -168,6 +169,8 @@ function Field({
   onChange: (s: string) => void;
   numeric?: boolean;
 }) {
+  const LIGHT = legacyPalette(useAdvisorTheme().colors);
+  const s = makeStyles(LIGHT);
   return (
     <View style={{ gap: 7 }}>
       <Text style={s.label}>{label}</Text>
@@ -177,12 +180,21 @@ function Field({
         value={value}
         onChangeText={onChange}
         keyboardType={numeric ? "number-pad" : "default"}
-        multiline={!numeric}
+        secureTextEntry={label.startsWith("Khóa")}
+        multiline={
+          !numeric && !label.startsWith("Khóa") && !label.startsWith("Máy chủ")
+        }
+        placeholderTextColor={LIGHT.muted}
       />
     </View>
   );
 }
-export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
+export default function DeviceAdvisorApp({
+  onExit,
+}: { onExit?: () => void } = {}) {
+  const { colors, dark } = useAdvisorTheme();
+  const LIGHT = legacyPalette(colors);
+  const s = makeStyles(LIGHT);
   const [draft, setDraft] = useState<DeviceProfile>(newProfile),
     [confirmed, setConfirmed] = useState<DeviceProfile>(newProfile),
     [screen, setScreen] = useState<Screen>("results"),
@@ -191,8 +203,20 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
     [notice, setNotice] = useState(""),
     [restoreBlocked, setRestoreBlocked] = useState(false),
     [questionIndex, setQuestionIndex] = useState(0);
+  const [token, setToken] = useState("");
+  const [connection, setConnection] = useState(
+    "Dữ liệu trên máy · chưa kết nối máy chủ",
+  );
+  const [autoRefresh, setAutoRefresh] = useState(false);
+  const [resetPending, setResetPending] = useState(false);
+  const refreshing = useRef(false);
+  const syncAbort = useRef<AbortController | null>(null);
   const [catalogRevision, setCatalogRevision] = useState(0),
     [serverUrl, setServerUrl] = useState("http://127.0.0.1:8788");
+  useEffect(() => {
+    setConnection("Dữ liệu trên máy · chưa kết nối địa chỉ này");
+    return () => syncAbort.current?.abort();
+  }, [serverUrl, token]);
   const [input, setInput] = useState(""),
     [proposal, setProposal] = useState<TextProposal | null>(null),
     [ai, setAi] = useState("checking"),
@@ -214,6 +238,9 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
         ]);
         if (settings && active) {
           const saved = JSON.parse(settings);
+          if (typeof saved.token === "string") setToken(saved.token);
+          if (typeof saved.autoRefresh === "boolean")
+            setAutoRefresh(saved.autoRefresh);
           if (typeof saved.useNano === "boolean") setUseNano(saved.useNano);
           if (typeof saved.serverUrl === "string")
             setServerUrl(saved.serverUrl);
@@ -224,6 +251,17 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
           if (!d) setDraft(p);
         }
         if (d && active) setDraft(validateRestoredProfile(JSON.parse(d)));
+        if (!c && !d && active) {
+          const migrated = connectedDraft(
+            await AsyncStorage.getItem("lua-connected-adviser-v1"),
+          );
+          if (migrated && active) {
+            setDraft(migrated);
+            setNotice(
+              "Đã giữ ngân sách và yêu cầu phần cứng cũ trong bản nháp. Chọn ba mục đích và ba ưu tiên, rồi xác nhận lại.",
+            );
+          }
+        }
       } catch {
         if (active) setRestoreBlocked(true);
         if (active)
@@ -254,17 +292,20 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
   useEffect(() => {
     if (ready && !restoreBlocked)
       void storage
-        .setItem(KEY + "-settings", JSON.stringify({ serverUrl, useNano }))
+        .setItem(
+          KEY + "-settings",
+          JSON.stringify({ serverUrl, token, useNano, autoRefresh }),
+        )
         .catch(() => setNotice("Không lưu được cài đặt."));
-  }, [ready, restoreBlocked, serverUrl, useNano]);
+  }, [ready, restoreBlocked, serverUrl, token, useNano, autoRefresh]);
   useEffect(() => {
     scroll.current?.scrollTo({ y: 0, animated: false });
   }, [screen, questionIndex]);
   useEffect(() => {
     const a = BackHandler.addEventListener("hardwareBackPress", () => {
       if (screen === "results") {
-        onExit();
-        return true;
+        onExit?.();
+        return !!onExit;
       }
       const i = STEPS.indexOf(screen);
       setScreen(i > 0 ? STEPS[i - 1] : "results");
@@ -300,6 +341,7 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
       "condition",
       "warranty",
       "minimumRamGiB",
+      "minimumStorageGiB",
       "os",
       "osMandatory",
       "formFactor",
@@ -370,6 +412,48 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
       setBusy(false);
     }
   }
+  async function refreshCatalog() {
+    if (refreshing.current || !serverUrl) return;
+    refreshing.current = true;
+    setBusy(true);
+    const url = serverUrl,
+      auth = token;
+    const controller = new AbortController();
+    syncAbort.current = controller;
+    setConnection("Đang kiểm tra bản cập nhật…");
+    try {
+      const version = await syncReferenceCatalog(url, auth, controller.signal);
+      if (alive.current && !controller.signal.aborted) {
+        setCatalogRevision((v) => v + 1);
+        setConnection(
+          "Đã đồng bộ lúc " +
+            new Date().toLocaleTimeString("vi-VN") +
+            " · " +
+            version,
+        );
+      }
+    } catch {
+      if (alive.current && !controller.signal.aborted)
+        setConnection(
+          "Không kết nối được. Catalog trên máy được giữ; kiểm tra địa chỉ hoặc khóa máy chủ.",
+        );
+    } finally {
+      refreshing.current = false;
+      if (alive.current) setBusy(false);
+    }
+  }
+  useEffect(() => {
+    if (!ready || !autoRefresh) return;
+    void refreshCatalog();
+    const timer = setInterval(() => void refreshCatalog(), 30000);
+    const listener = AppState.addEventListener("change", (state) => {
+      if (state === "active") void refreshCatalog();
+    });
+    return () => {
+      clearInterval(timer);
+      listener.remove();
+    };
+  }, [ready, autoRefresh, serverUrl, token]);
   const qs = questions(draft),
     q = qs[questionIndex],
     step = STEPS.indexOf(screen),
@@ -408,14 +492,13 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
   );
   return (
     <SafeAreaProvider>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle={dark ? "light-content" : "dark-content"} />
       <SafeAreaView style={s.root}>
         <ScrollView
           ref={scroll}
           contentContainerStyle={s.page}
           keyboardShouldPersistTaps="handled"
         >
-          <Text style={s.brand}>LỰA / DEVICE ADVISOR</Text>
           <Text accessibilityRole="header" style={s.title}>
             Thiết bị hợp với bạn.
           </Text>
@@ -430,6 +513,7 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
                 key={id}
                 title={title}
                 quiet
+                selected={screen === id}
                 onPress={() => setScreen(id as Screen)}
               />
             ))}
@@ -635,6 +719,21 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
                       edit({
                         ...draft,
                         minimumRamGiB: v.trim() === "" ? null : Number(v),
+                      })
+                    }
+                  />
+                  <Field
+                    label="Lưu trữ tối thiểu GB (không bắt buộc)"
+                    value={
+                      draft.minimumStorageGiB == null
+                        ? ""
+                        : String(draft.minimumStorageGiB)
+                    }
+                    numeric
+                    onChange={(v) =>
+                      edit({
+                        ...draft,
+                        minimumStorageGiB: v.trim() ? Number(v) : null,
                       })
                     }
                   />
@@ -874,6 +973,11 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
                       ? "chưa đặt"
                       : draft.warranty + " tháng"}
                   </Text>
+                  {draft.minimumStorageGiB != null && (
+                    <Text style={s.body}>
+                      Lưu trữ tối thiểu: {draft.minimumStorageGiB} GB
+                    </Text>
+                  )}
                   {draft.minimumRamGiB !== null && (
                     <Text style={s.body}>
                       RAM tối thiểu: {draft.minimumRamGiB} GiB
@@ -1006,28 +1110,29 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
           {screen === "settings" && (
             <View style={s.card}>
               <Text style={s.heading}>Dữ liệu và AI trên thiết bị</Text>
+              <Text accessibilityLiveRegion="polite" style={s.body}>
+                {connection}
+              </Text>
               <Field
                 label="Máy chủ catalog HTTPS / localhost"
                 value={serverUrl}
                 onChange={setServerUrl}
               />
+              <Field
+                label="Khóa dịch vụ (nếu máy chủ yêu cầu)"
+                value={token}
+                onChange={setToken}
+              />
               <Button
                 title="Đồng bộ catalog đã ký"
                 disabled={busy}
-                onPress={async () => {
-                  setBusy(true);
-                  try {
-                    const version = await syncReferenceCatalog(serverUrl);
-                    setCatalogRevision((v) => v + 1);
-                    setNotice("Đã kích hoạt catalog " + version);
-                  } catch (e) {
-                    setNotice(
-                      (e as Error).message + " Catalog trước được giữ.",
-                    );
-                  } finally {
-                    setBusy(false);
-                  }
-                }}
+                onPress={() => void refreshCatalog()}
+              />
+              <Choice
+                title="Tự kiểm tra dữ liệu mỗi 30 giây"
+                selected={autoRefresh}
+                description="Chỉ tải catalog; không gửi hồ sơ nhu cầu."
+                onPress={() => setAutoRefresh(!autoRefresh)}
               />
               <Button
                 title="Khôi phục catalog trước"
@@ -1113,12 +1218,23 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
                   }
                 }}
               />
-              <Button title="Chọn demo khác" quiet onPress={onExit} />
+              {resetPending && (
+                <Button
+                  title="Giữ phiên hiện tại"
+                  quiet
+                  onPress={() => setResetPending(false)}
+                />
+              )}
+              {onExit && (
+                <Button title="Chọn demo khác" quiet onPress={onExit} />
+              )}
             </View>
           )}
           <ReferenceExplorer
             catalogRevision={catalogRevision}
             needs={profileToNeeds(confirmed)}
+            endpoint={serverUrl}
+            token={token}
             screen={screen}
             onNavigate={setScreen}
             onProposeBudget={(budget, revision) => {
@@ -1140,117 +1256,128 @@ export default function DeviceAdvisorApp({ onExit }: { onExit: () => void }) {
     </SafeAreaProvider>
   );
 }
-const s = StyleSheet.create({
-  root: { flex: 1, backgroundColor: LIGHT.bg },
-  page: {
-    padding: 20,
-    gap: 16,
-    maxWidth: 820,
-    width: "100%",
-    alignSelf: "center",
-  },
-  brand: { color: LIGHT.primary, fontWeight: "800", letterSpacing: 2 },
-  title: { fontSize: 32, lineHeight: 40, color: LIGHT.text, fontWeight: "800" },
-  heading: {
-    fontSize: 26,
-    lineHeight: 34,
-    color: LIGHT.text,
-    fontWeight: "800",
-  },
-  body: { fontSize: 16, lineHeight: 25, color: LIGHT.muted },
-  label: { fontSize: 17, lineHeight: 25, fontWeight: "700", color: LIGHT.text },
-  card: {
-    backgroundColor: LIGHT.surface,
-    padding: 22,
-    borderRadius: 30,
-    gap: 16,
-    borderWidth: 1,
-    borderColor: LIGHT.line,
-  },
-  button: {
-    backgroundColor: LIGHT.primary,
-    padding: 15,
-    minHeight: 50,
-    borderRadius: 20,
-    justifyContent: "center",
-  },
-  buttonText: {
-    color: LIGHT.onPrimary,
-    fontWeight: "700",
-    fontSize: 15,
-    lineHeight: 22,
-  },
-  quiet: { backgroundColor: LIGHT.container },
-  nav: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
-  choice: {
-    padding: 18,
-    borderRadius: 24,
-    borderWidth: 2,
-    borderColor: LIGHT.line,
-    backgroundColor: "#FFFFFF",
-    minHeight: 90,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-  },
-  chosen: { borderColor: LIGHT.primary, backgroundColor: LIGHT.container },
-  choiceTitle: {
-    fontSize: 19,
-    lineHeight: 26,
-    fontWeight: "700",
-    color: LIGHT.text,
-  },
-  badge: {
-    height: 32,
-    width: 32,
-    borderRadius: 16,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: LIGHT.secondary,
-  },
-  input: {
-    borderColor: LIGHT.line,
-    borderWidth: 1,
-    padding: 15,
-    borderRadius: 16,
-    minHeight: 54,
-    fontSize: 18,
-    color: LIGHT.text,
-    backgroundColor: "#FFFFFF",
-  },
-  step: {
-    alignSelf: "flex-start",
-    backgroundColor: LIGHT.secondary,
-    padding: 10,
-    borderRadius: 16,
-    color: LIGHT.onSecondary,
-    fontWeight: "800",
-  },
-  progress: { flexDirection: "row", gap: 5 },
-  segment: {
-    flex: 1,
-    height: 6,
-    borderRadius: 3,
-    backgroundColor: LIGHT.container,
-  },
-  notice: {
-    padding: 14,
-    borderRadius: 16,
-    backgroundColor: "#FFF1CF",
-    color: "#744B00",
-    fontSize: 15,
-    lineHeight: 23,
-  },
-  price: {
-    fontSize: 28,
-    lineHeight: 36,
-    color: LIGHT.primary,
-    fontWeight: "800",
-  },
-  orderRow: {
-    flexDirection: "row",
-    gap: 6,
-    alignItems: "center",
-    flexWrap: "wrap",
-  },
-});
+const makeStyles = (LIGHT: ReturnType<typeof legacyPalette>) =>
+  StyleSheet.create({
+    root: { flex: 1, backgroundColor: LIGHT.bg },
+    page: {
+      padding: 20,
+      gap: 16,
+      maxWidth: 820,
+      width: "100%",
+      alignSelf: "center",
+    },
+    brand: { color: LIGHT.primary, fontWeight: "800", letterSpacing: 2 },
+    title: {
+      fontSize: 32,
+      lineHeight: 40,
+      color: LIGHT.text,
+      fontWeight: "800",
+    },
+    heading: {
+      fontSize: 26,
+      lineHeight: 34,
+      color: LIGHT.text,
+      fontWeight: "800",
+    },
+    body: { fontSize: 16, lineHeight: 25, color: LIGHT.muted },
+    label: {
+      fontSize: 17,
+      lineHeight: 25,
+      fontWeight: "700",
+      color: LIGHT.text,
+    },
+    card: {
+      backgroundColor: LIGHT.surface,
+      padding: 22,
+      borderRadius: 30,
+      gap: 16,
+      borderWidth: 1,
+      borderColor: LIGHT.line,
+    },
+    button: {
+      backgroundColor: LIGHT.primary,
+      padding: 15,
+      minHeight: 50,
+      borderRadius: 20,
+      justifyContent: "center",
+    },
+    buttonText: {
+      color: LIGHT.onPrimary,
+      fontWeight: "700",
+      fontSize: 15,
+      lineHeight: 22,
+    },
+    quiet: { backgroundColor: LIGHT.container },
+    nav: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+    choice: {
+      padding: 18,
+      borderRadius: 24,
+      borderWidth: 2,
+      borderColor: LIGHT.line,
+      backgroundColor: LIGHT.surface,
+      minHeight: 90,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 12,
+    },
+    chosen: { borderColor: LIGHT.primary, backgroundColor: LIGHT.container },
+    choiceTitle: {
+      fontSize: 19,
+      lineHeight: 26,
+      fontWeight: "700",
+      color: LIGHT.text,
+    },
+    badge: {
+      height: 32,
+      width: 32,
+      borderRadius: 16,
+      alignItems: "center",
+      justifyContent: "center",
+      backgroundColor: LIGHT.secondary,
+    },
+    input: {
+      borderColor: LIGHT.line,
+      borderWidth: 1,
+      padding: 15,
+      borderRadius: 16,
+      minHeight: 54,
+      fontSize: 18,
+      color: LIGHT.text,
+      backgroundColor: LIGHT.surface,
+    },
+    step: {
+      alignSelf: "flex-start",
+      backgroundColor: LIGHT.secondary,
+      padding: 10,
+      borderRadius: 16,
+      color: LIGHT.onSecondary,
+      fontWeight: "800",
+    },
+    progress: { flexDirection: "row", gap: 5 },
+    segment: {
+      flex: 1,
+      height: 6,
+      borderRadius: 3,
+      backgroundColor: LIGHT.container,
+    },
+    notice: {
+      padding: 14,
+      borderRadius: 16,
+      backgroundColor: LIGHT.container,
+      color: LIGHT.onSecondary,
+      fontSize: 15,
+      lineHeight: 23,
+    },
+    price: {
+      fontSize: 28,
+      lineHeight: 36,
+      color: LIGHT.primary,
+      fontWeight: "800",
+    },
+    orderRow: {
+      flexDirection: "row",
+      gap: 6,
+      alignItems: "center",
+      flexWrap: "wrap",
+    },
+  });

@@ -2,7 +2,7 @@
   "expo": {
     "name": "Lựa · Adviser",
     "slug": "lua-adviser",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "platforms": [
       "android"
     ],
@@ -12,13 +12,13 @@
     "plugins": ["./plugins/with-local-network.cjs", "./plugins/with-local-ai.cjs"],
     "android": {
       "package": "vn.lua.adviser",
-      "versionCode": 2,
+      "versionCode": 3,
       "edgeToEdgeEnabled": true,
       "permissions": [],
       "blockedPermissions": ["android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.SYSTEM_ALERT_WINDOW"]
     },
     "extra": {
-      "dataset": "repository-real-listings",
+      "dataset": "unified-device-reference-v1",
       "aiMode": "on-device-gemini-nano"
     }
   }

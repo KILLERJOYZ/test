@@ -1,3 +1,5 @@
+> Active runtime update, 14 November 2026: [Unified app contract](../../apps/adviser/UNIFIED_APP.md). This overrides earlier runtime, SDK, service port and selection-count descriptions where they conflict. Historical package/evidence statuses do not automatically certify 0.5.0.
+
 # Demo-first implementation plan
 ## Vietnam-first AI device buying adviser
 

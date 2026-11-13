@@ -1,3 +1,5 @@
+> Historical implementation/evidence record. The active unified 0.5.0 runtime, service setup and SDK matrix are defined in the [application contract](./UNIFIED_APP.md). Earlier startup and port instructions below describe their recorded release.
+
 # Device Advisor system — current implementation
 
 Updated 13 November 2026. This document describes the full-category Demo 2 implementation requested by the user. It extends the existing BRD journeys; production and model-quality gates retain their separate acceptance requirements.

@@ -10,7 +10,11 @@ const byteLength = (s: string) => {
   }
   return n;
 };
-export async function syncReferenceCatalog(baseUrl: string) {
+export async function syncReferenceCatalog(
+  baseUrl: string,
+  token = "",
+  signal?: AbortSignal,
+) {
   const url = new URL(baseUrl);
   if (
     url.username ||
@@ -26,9 +30,15 @@ export async function syncReferenceCatalog(baseUrl: string) {
     throw Error("Dùng HTTPS hoặc máy chủ localhost để kiểm thử.");
   const base = url.href.replace(/\/$/, "");
   const controller = new AbortController();
+  const cancel = () => controller.abort();
+  signal?.addEventListener("abort", cancel, { once: true });
+  if (signal?.aborted) controller.abort();
   const timer = setTimeout(() => controller.abort(), 20000);
   const read = async (path: string, max: number) => {
-    const response = await fetch(base + path, { signal: controller.signal });
+    const response = await fetch(base + path, {
+      signal: controller.signal,
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+    });
     if (
       !response.ok ||
       Number(response.headers.get("content-length") ?? 0) > max
@@ -60,9 +70,11 @@ export async function syncReferenceCatalog(baseUrl: string) {
     const b = validateReferenceBundle(JSON.parse(raw));
     if (b.catalogVersion !== m.catalogVersion)
       throw Error("Phiên bản catalog không khớp.");
+    if (controller.signal.aborted) throw Error("Đã hủy đồng bộ.");
     await activateReferences(b);
     return b.catalogVersion;
   } finally {
     clearTimeout(timer);
+    signal?.removeEventListener("abort", cancel);
   }
 }

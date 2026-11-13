@@ -6,8 +6,10 @@ import React from 'react';
 import { create, act } from 'react-test-renderer';
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
 const mocks = {
+  './ExpressiveButton': `import React from 'react'; export function ExpressiveButton({label,onPress,disabled}){return React.createElement('Pressable',{onPress,disabled},label)}`,
+
   './reference-storage': `import seed from './src/reference-seed.json'; const referenceSeed=seed; export const referenceStorageKind='test reference adapter';export async function loadReferences(){return referenceSeed.rows;};`,
-  'react-native': `import React from 'react'; export const View='View',Text='Text',TextInput='TextInput',Pressable='Pressable',ScrollView='ScrollView'; export const StyleSheet={create:x=>x};export const Linking={openURL:async()=>({})};export const Share={share:async()=>({})};export const AppState={addEventListener:()=>({remove(){}})};export const BackHandler={addEventListener:()=>({remove(){}})};`,
+  'react-native': `import React from 'react'; export const NativeModules={};export const useColorScheme=()=> 'light';export const AccessibilityInfo={isReduceMotionEnabled:async()=>true,addEventListener:()=>({remove(){}})};export const View='View',Text='Text',TextInput='TextInput',Pressable='Pressable',ScrollView='ScrollView'; export const StyleSheet={create:x=>x};export const Linking={openURL:async()=>({})};export const Share={share:async()=>({})};export const AppState={addEventListener:()=>({remove(){}})};export const BackHandler={addEventListener:()=>({remove(){}})};`,
   '@react-native-async-storage/async-storage': `export default {getItem:async()=>null};`,
   'react-native-safe-area-context': `export const SafeAreaProvider='SafeAreaProvider',SafeAreaView='SafeAreaView';`,
   './demo-storage': `const records=new Map();export const storageKind='test adapter';export const storage={getItem:async k=>records.get(k)??null,setItem:async(k,v)=>{records.set(k,v)},removeItem:async k=>records.delete(k)};`,
@@ -50,7 +52,7 @@ await press('Chi tiết và nguồn dữ liệu');assert.match(text(),/Giá thâ
 await press('Lưu quyết định với giá lịch sử');await press('Đã lưu');assert.match(text(),/Xem bản ghi đã lưu/);
 await press('Xem bản ghi đã lưu');assert.match(text(),/Mở trang nguồn để kiểm tra giá/);
 await press('Quay lại gợi ý');await press('Chọn so sánh');await press('Chọn so sánh');await press('Mở so sánh');assert.match(text(),/So sánh hai bản ghi nguồn/);
-await press('Đã lưu');await press('Xóa bản lưu');assert.doesNotMatch(text(),/Xem bản ghi đã lưu/);
+await press('Đã lưu');await press('Xóa bản lưu');assert.match(text(),/Xem bản ghi đã lưu/);await press('Xác nhận xóa bản lưu');assert.doesNotMatch(text(),/Xem bản ghi đã lưu/);
 await act(async()=>app.unmount());
 await writeFile('.expo/demo2-tests/results.json',JSON.stringify({status:'passed',checks:['first-launch shared results','separate tasks screen','separate budget screen','separate preferences screen','review before results','review edit preserves input','confirmed recommendations','cancel preserves confirmed result','saved screen isolation','recommendations navigation','restart restores confirmed result','reference detail','real decision save','saved reference reopen','reference paired comparison','saved reference delete','mandatory RAM review','mandatory OS review'],boundary:'React component test with mocked native/storage adapters; not Android device acceptance'},null,2));
 console.log('PASS: 18 Demo 2 navigation/review/restoration checks (mock native/storage boundaries).');

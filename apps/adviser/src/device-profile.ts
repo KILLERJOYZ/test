@@ -104,6 +104,7 @@ export type DeviceProfile = {
     { origin: "FORM" | "USER_TEXT"; confirmed: boolean; evidence?: string }
   >;
   minimumRamGiB: number | null;
+  minimumStorageGiB?: number | null;
   os: string | null;
   osMandatory: boolean;
   formFactor: string | null;
@@ -253,6 +254,8 @@ export function profileErrors(p: DeviceProfile, requireConfirmed = false) {
     errors.push("RAM tối thiểu không hợp lệ.");
   if (!["new", "used"].includes(p.condition))
     errors.push("Điều kiện máy không hợp lệ.");
+  if (p.minimumStorageGiB != null && (!money(p.minimumStorageGiB) || p.minimumStorageGiB === 0))
+    errors.push("Lưu trữ tối thiểu không hợp lệ.");
   if (
     p.priorities.includes("operating_system") &&
     (!p.os || !OS_OPTIONS[p.category].includes(p.os))
@@ -295,6 +298,7 @@ export function validateRestoredProfile(value: unknown): DeviceProfile {
     [p.ceilingVnd, p.targetVnd, p.accessoriesVnd, p.minimumRamGiB].some(
       (n) => n !== null && (!Number.isSafeInteger(n) || n! < 0),
     ) ||
+    (p.minimumStorageGiB != null && (!Number.isSafeInteger(p.minimumStorageGiB) || p.minimumStorageGiB <= 0)) ||
     (p.os !== null && typeof p.os !== "string") ||
     (p.formFactor !== null && typeof p.formFactor !== "string") ||
     !p.answers ||

@@ -14,6 +14,7 @@ def get_connection():
         user=DB_USER,
         password=DB_PASSWORD,
         dbname=DB_NAME,
+        connect_timeout=5,
     )
 
 def ensure_laptops_table():

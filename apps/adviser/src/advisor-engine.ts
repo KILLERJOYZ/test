@@ -21,6 +21,7 @@ export type Dimension =
 export type EvidenceValue = { value: number; evidenceId: string };
 export type AdvisorConstraints = {
   minimumRamGiB?: number;
+  minimumStorageGiB?: number;
   mandatoryFormFactor?: string;
   minimumWarrantyMonths?: number;
   mandatoryOS?: string;
@@ -53,6 +54,7 @@ export type Candidate = {
   accessories: number | null;
   discount: { value: number; eligible: boolean | null } | null;
   ramGiB: number | null;
+  storageGiB?: number | null;
   os: string | null;
   stock: boolean | null;
   observedAt: string;
@@ -200,6 +202,8 @@ export function requirementErrors(r: Requirement) {
     (!safe(r.constraints.minimumRamGiB) || r.constraints.minimumRamGiB === 0)
   )
     errors.push("RAM tối thiểu không hợp lệ.");
+  if (r.constraints.minimumStorageGiB !== undefined && (!safe(r.constraints.minimumStorageGiB) || r.constraints.minimumStorageGiB === 0))
+    errors.push("Lưu trữ tối thiểu không hợp lệ.");
   if (
     r.constraints.requiredAccessoriesVnd !== undefined &&
     r.constraints.requiredAccessoriesVnd !== null &&
@@ -289,6 +293,10 @@ export function assessCandidate(
     c.stock === false ? "FAIL" : c.stock === true && fresh ? "PASS" : "UNKNOWN",
     "Tồn kho cần có quan sát còn hiệu lực.",
   );
+  const storage = r.constraints.minimumStorageGiB;
+  if (storage !== undefined)
+    add("STORAGE", c.storageGiB == null ? "UNKNOWN" : c.storageGiB >= storage ? "PASS" : "FAIL",
+      `Lưu trữ tối thiểu ${storage} GB; nguồn ghi ${c.storageGiB ?? "chưa rõ"}.`);
   const min = r.constraints.minimumRamGiB;
   if (min !== undefined)
     add(

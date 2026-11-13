@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   View,
   Text,
@@ -19,20 +19,19 @@ import {
 import { RULE_VERSION, SCORING_VERSION } from "./advisor-engine";
 import { PURPOSES } from "./device-profile";
 import { storage } from "./demo-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {
+  importConnectedHistory,
+  validUnifiedSaved,
+  type UnifiedSaved,
+} from "./unified-adapters";
+import { ListingTools, QuotationForm } from "./ListingTools";
+import { UnifiedComparison } from "./UnifiedComparison";
+import { useAdvisorTheme, legacyPalette } from "./AdvisorTheme";
+import { ExpressiveButton } from "./ExpressiveButton";
 import { money } from "./domain";
 import type { Needs } from "./picker";
-type Saved = {
-  id: string;
-  row: Reference;
-  needs: Needs;
-  date: string;
-  recommendationSnapshot?: {
-    runKey: string;
-    ruleVersion: string;
-    scoringVersion: string;
-    assessment: ReturnType<typeof referenceAssessment>;
-  };
-};
+type Saved = UnifiedSaved;
 const KEY = "lua-real-reference-decisions-v1";
 function Action({
   title,
@@ -43,31 +42,42 @@ function Action({
   onPress: () => void;
   disabled?: boolean;
 }) {
+  const { colors, reduceMotion } = useAdvisorTheme();
   return (
-    <Pressable
-      accessibilityRole="button"
-      disabled={disabled}
-      accessibilityState={{ disabled }}
+    <ExpressiveButton
+      label={title}
       onPress={onPress}
-      style={[s.button, disabled && { opacity: 0.4 }]}
-    >
-      <Text style={s.action}>{title}</Text>
-    </Pressable>
+      disabled={disabled}
+      colors={colors}
+      reduceMotion={reduceMotion}
+    />
   );
 }
 export default function ReferenceExplorer({
   needs,
+  endpoint = "",
+  token = "",
   screen,
   onNavigate,
   onProposeBudget,
   catalogRevision = 0,
 }: {
   needs: Needs;
+  endpoint?: string;
+  token?: string;
   catalogRevision?: number;
   onProposeBudget?: (budget: number, baseRevision: number) => void;
   screen: string;
   onNavigate: (s: "results" | "detail" | "compare" | "saved") => void;
 }) {
+  const LIGHT = legacyPalette(useAdvisorTheme().colors);
+  const s = makeStyles(LIGHT);
+  const historyReady = useRef(false),
+    writeLock = useRef(false);
+  const [deleteId, setDeleteId] = useState<string | null>(null);
+  const [source, setSource] = useState("");
+  const [savedQuery, setSavedQuery] = useState("");
+  const [historicalNeeds, setHistoricalNeeds] = useState<Needs | null>(null);
   const [rows, setRows] = useState<Reference[]>([]),
     [error, setError] = useState(""),
     [loaded, setLoaded] = useState(false);
@@ -97,35 +107,49 @@ export default function ReferenceExplorer({
             "Không mở được catalog. Hãy mở lại demo; không thay bằng sản phẩm giả.",
           );
       });
-    storage
-      .getItem(KEY)
-      .then((raw) => {
-        if (raw && active) {
-          const data = JSON.parse(raw);
-          if (!Array.isArray(data)) throw Error();
-          setSaved(
-            data.filter(
-              (x) =>
-                x &&
-                typeof x.id === "string" &&
-                x.row &&
-                typeof x.row.name === "string" &&
-                x.needs &&
-                Number.isSafeInteger(x.needs.budget) &&
-                typeof x.date === "string",
-            ),
-          );
-        }
-      })
-      .catch(() => {
-        if (active)
-          setError("Không đọc được quyết định đã lưu. Dữ liệu gốc được giữ.");
-      });
     return () => {
       active = false;
     };
   }, [catalogRevision]);
+  useEffect(() => {
+    let active = true;
+    (async () => {
+      try {
+        const raw = await storage.getItem(KEY);
+        const data = raw ? JSON.parse(raw) : [];
+        if (!Array.isArray(data) || data.some((x) => !validUnifiedSaved(x)))
+          throw Error();
+        const imported = await storage.getItem(KEY + "-connected-imported");
+        const migrated = imported
+          ? []
+          : importConnectedHistory(
+              await AsyncStorage.getItem("lua-connected-adviser-v1"),
+            );
+        const ids = new Set(data.map((x) => x.id));
+        const combined = [...data, ...migrated.filter((x) => !ids.has(x.id))];
+        if (combined.length !== data.length)
+          await storage.setItem(KEY, JSON.stringify(combined));
+        if (!imported) await storage.setItem(KEY + "-connected-imported", "1");
+        if (active) {
+          setSaved(combined);
+          historyReady.current = true;
+        }
+      } catch {
+        if (active) {
+          historyReady.current = false;
+          setError(
+            "Không đọc được lịch sử. Dữ liệu gốc được giữ; tạm khóa ghi lịch sử.",
+          );
+        }
+      }
+    })();
+    return () => {
+      active = false;
+    };
+  }, []);
   async function persist(next: Saved[]) {
+    if (!historyReady.current || writeLock.current) return;
+    writeLock.current = true;
     setWriting(true);
     try {
       await storage.setItem(KEY, JSON.stringify(next));
@@ -134,17 +158,54 @@ export default function ReferenceExplorer({
     } catch {
       setError("Không ghi được dữ liệu; danh sách cũ được giữ.");
     } finally {
+      writeLock.current = false;
       setWriting(false);
     }
   }
+  useEffect(() => {
+    if (!loaded || historicalNeeds) return;
+    setSelected((ids) => ids.filter((id) => rows.some((r) => r.id === id)));
+    if (detail) {
+      const current = rows.find((r) => r.id === detail.id);
+      // Manual quotes do not belong to the downloaded catalog.
+      if (current) setDetail(current);
+      else if (detail.catalogVersion) setHistoricalNeeds(needs);
+    }
+  }, [rows, loaded, detail?.id, historicalNeeds, needs.revision]);
   useEffect(() => {
     setLimit(3);
     setExplore(false);
   }, [query, weight, sort, needs.revision]);
   if (!["results", "detail", "compare", "saved"].includes(screen)) return null;
-  const result = selectReferences(rows, needs, query, weight, sort, all);
+  const result = selectReferences(
+    source ? rows.filter((r) => r.source === source) : rows,
+    needs,
+    query,
+    weight,
+    sort,
+    all,
+  );
+  const viewedNeeds = historicalNeeds ?? needs;
   function facts(r: Reference) {
-    const assessment = referenceAssessment(r, needs);
+    const assessment = referenceAssessment(r, viewedNeeds);
+    if (!viewedNeeds.useOrderConfirmed)
+      return (
+        <>
+          <Text style={s.price}>
+            {r.price === null ? "Chưa có giá" : money(r.price)}
+          </Text>
+          <Text style={s.body}>
+            {r.source} · Quan sát: {r.observedAt}
+          </Text>
+          <Text style={s.body}>
+            RAM: {r.ramGiB ?? "chưa rõ"} GB · Lưu trữ:{" "}
+            {r.storageGiB ?? "chưa rõ"} GB
+          </Text>
+          <Text style={s.warning}>
+            Bản ghi để khám phá. Xác nhận nhu cầu trước khi đánh giá phù hợp.
+          </Text>
+        </>
+      );
     return (
       <>
         <Text style={s.price}>
@@ -258,6 +319,23 @@ export default function ReferenceExplorer({
           />
           <TextInput
             style={s.input}
+            value={source}
+            onChangeText={setSource}
+            accessibilityLabel="Lọc nguồn bán"
+            placeholder="Nguồn bán (ví dụ fptshop; trống = tất cả)"
+          />
+          {needs.deviceProfile?.category === "PC" &&
+            needs.deviceProfile.pcType === "LAPTOP" && (
+              <QuotationForm
+                onOpen={(r) => {
+                  setHistoricalNeeds(null);
+                  setDetail(r);
+                  onNavigate("detail");
+                }}
+              />
+            )}
+          <TextInput
+            style={s.input}
             value={weight}
             onChangeText={setWeight}
             placeholder="Trọng lượng tối đa kg (bỏ trống nếu không cần)"
@@ -285,6 +363,7 @@ export default function ReferenceExplorer({
             onPress={() => {
               setQuery("");
               setWeight("");
+              setSource("");
               setAll(false);
             }}
           />
@@ -370,19 +449,26 @@ export default function ReferenceExplorer({
               <Action
                 title="Chi tiết và nguồn dữ liệu"
                 onPress={() => {
+                  setHistoricalNeeds(null);
                   setDetail(r);
                   onNavigate("detail");
                 }}
               />
               <Action
                 title={selected.includes(r.id) ? "Bỏ so sánh" : "Chọn so sánh"}
-                onPress={() =>
+                onPress={() => {
+                  if (!selected.includes(r.id) && selected.length === 2) {
+                    setError(
+                      "Đã chọn hai máy. Bỏ một máy trước khi chọn máy khác.",
+                    );
+                    return;
+                  }
                   setSelected(
                     selected.includes(r.id)
                       ? selected.filter((id) => id !== r.id)
-                      : [...selected.slice(-1), r.id],
-                  )
-                }
+                      : [...selected, r.id],
+                  );
+                }}
               />
               <Action
                 title="Mở so sánh"
@@ -402,7 +488,23 @@ export default function ReferenceExplorer({
       {screen === "detail" && detail && (
         <View style={s.card}>
           <Text style={s.heading}>{detail.name}</Text>
+          {historicalNeeds && (
+            <Text style={s.warning}>
+              Bản ghi lịch sử · đánh giá theo nhu cầu khi lưu.
+            </Text>
+          )}
           {facts(detail)}
+          <ListingTools
+            key={
+              detail.id +
+              String(viewedNeeds.revision) +
+              String(detail.catalogVersion)
+            }
+            row={detail}
+            needs={viewedNeeds}
+            endpoint={endpoint}
+            token={token}
+          />
           {Object.entries(detail.specs)
             .filter(([k, v]) => v !== null && k !== "rawSpecs")
             .map(([k, v]) => (
@@ -444,20 +546,20 @@ export default function ReferenceExplorer({
             }}
           />
           <Action
-            disabled={writing}
+            disabled={writing || !historyReady.current}
             title="Lưu quyết định với giá lịch sử"
             onPress={() =>
               void persist([
                 {
                   id: String(Date.now()),
                   row: detail,
-                  needs,
+                  needs: viewedNeeds,
                   date: new Date().toISOString(),
                   recommendationSnapshot: {
                     runKey: result.run.runKey,
                     ruleVersion: RULE_VERSION,
                     scoringVersion: SCORING_VERSION,
-                    assessment: referenceAssessment(detail, needs),
+                    assessment: referenceAssessment(detail, viewedNeeds),
                   },
                 },
                 ...saved,
@@ -479,22 +581,13 @@ export default function ReferenceExplorer({
               cùng cấu hình; không gộp nơi bán tự động.
             </Text>
           )}
-          {selected
-            .map((id) => rows.find((r) => r.id === id))
-            .filter((r): r is Reference => !!r)
-            .map((r) => (
-              <View key={r.id} style={s.card}>
-                <Text style={s.heading}>{r.name}</Text>
-                {facts(r)}
-                <Text style={s.body}>
-                  CPU: {String(r.specs.cpu ?? "Chưa rõ")} · GPU:{" "}
-                  {String(r.specs.gpu ?? "Chưa rõ")}
-                </Text>
-                <Text style={s.body}>
-                  Màn hình: {String(r.specs.screen ?? "Chưa rõ")}
-                </Text>
-              </View>
-            ))}
+          <UnifiedComparison
+            rows={selected
+              .map((id) => rows.find((r) => r.id === id))
+              .filter((r): r is Reference => !!r)}
+            needs={needs}
+            onRemove={(id) => setSelected(selected.filter((v) => v !== id))}
+          />
           <Action
             title="Quay lại catalog"
             onPress={() => onNavigate("results")}
@@ -511,89 +604,129 @@ export default function ReferenceExplorer({
               Mở chi tiết một cấu hình để lưu nhu cầu và giá tại thời điểm xem.
             </Text>
           )}
-          {saved.map((x) => (
-            <View key={x.id} style={s.card}>
-              <Text style={s.heading}>{x.row.name}</Text>
-              <Text style={s.body}>
-                Lưu: {x.date} · Quan sát nguồn: {x.row.observedAt}
-              </Text>
-              <Text style={s.body}>
-                Trần khi lưu: {money(x.needs.budget)} · Giá lịch sử:{" "}
-                {x.row.price === null ? "Chưa rõ" : money(x.row.price)}
-              </Text>
-              <Text style={s.warning}>
-                Không phải giá mới được xác minh. Nhu cầu hiện tại được giữ khi
-                mở chi tiết.
-              </Text>
-              <Action
-                title="Xem bản ghi đã lưu"
-                onPress={() => {
-                  setDetail(x.row);
-                  onNavigate("detail");
-                }}
-              />
-              <Action
-                disabled={writing}
-                title="Xóa bản lưu"
-                onPress={() => void persist(saved.filter((v) => v.id !== x.id))}
-              />
-              <Action
-                title="Chia sẻ quyết định"
-                onPress={() =>
-                  void Share.share({
-                    message: `${x.row.name}\nGiá tham khảo ${x.row.price === null ? "chưa rõ" : money(x.row.price)}\nQuan sát ${x.row.observedAt}\nTrần ${money(x.needs.budget)}\n${x.row.url}\nChưa xác minh tổng thanh toán hoặc tương thích workload.`,
-                  }).catch(() => setError("Không chia sẻ được."))
-                }
-              />
-            </View>
-          ))}
+          <TextInput
+            style={s.input}
+            accessibilityLabel="Tìm quyết định đã lưu"
+            placeholder="Tên máy hoặc ngày lưu"
+            value={savedQuery}
+            onChangeText={setSavedQuery}
+          />
+          {saved
+            .filter((x) =>
+              (x.row.name + " " + x.date)
+                .toLocaleLowerCase("vi")
+                .includes(savedQuery.toLocaleLowerCase("vi")),
+            )
+            .map((x) => (
+              <View key={x.id} style={s.card}>
+                <Text style={s.heading}>{x.row.name}</Text>
+                <Text style={s.body}>
+                  Lưu: {x.date} · Quan sát nguồn: {x.row.observedAt}
+                </Text>
+                <Text style={s.body}>
+                  Trần khi lưu: {money(x.needs.budget)} · Giá lịch sử:{" "}
+                  {x.row.price === null ? "Chưa rõ" : money(x.row.price)}
+                </Text>
+                <Text style={s.warning}>
+                  Giá và nhu cầu lịch sử được giữ khi mở chi tiết.
+                </Text>
+                <Action
+                  title="Xem bản ghi đã lưu"
+                  onPress={() => {
+                    setHistoricalNeeds(x.needs);
+                    setDetail(x.row);
+                    onNavigate("detail");
+                  }}
+                />
+                <Action
+                  disabled={writing}
+                  title="Xóa bản lưu"
+                  onPress={() => setDeleteId(x.id)}
+                />
+                {deleteId === x.id && (
+                  <View style={s.row}>
+                    <Action
+                      title="Xác nhận xóa bản lưu"
+                      disabled={writing}
+                      onPress={() => {
+                        void persist(saved.filter((v) => v.id !== x.id));
+                        setDeleteId(null);
+                      }}
+                    />
+                    <Action
+                      title="Giữ bản lưu"
+                      onPress={() => setDeleteId(null)}
+                    />
+                  </View>
+                )}
+                <Action
+                  title="Chia sẻ quyết định"
+                  onPress={() =>
+                    void Share.share({
+                      message: `${x.row.name}\nGiá tham khảo ${x.row.price === null ? "chưa rõ" : money(x.row.price)}\nQuan sát ${x.row.observedAt}\nTrần ${money(x.needs.budget)}\n${x.row.url}\nChưa xác minh tổng thanh toán hoặc tương thích workload.`,
+                    }).catch(() => setError("Không chia sẻ được."))
+                  }
+                />
+              </View>
+            ))}
         </>
       )}
     </View>
   );
 }
-const s = StyleSheet.create({
-  card: {
-    padding: 20,
-    gap: 12,
-    backgroundColor: "#FFFFFF",
-    borderRadius: 26,
-    borderWidth: 1,
-    borderColor: "#DDD3EC",
-  },
-  heading: {
-    fontSize: 21,
-    lineHeight: 29,
-    fontWeight: "700",
-    color: "#211B30",
-  },
-  body: { fontSize: 15, lineHeight: 23, color: "#4E465C" },
-  caption: { fontSize: 13, lineHeight: 20, color: "#625A70" },
-  price: { fontSize: 26, lineHeight: 34, fontWeight: "800", color: "#59409D" },
-  warning: {
-    fontSize: 14,
-    lineHeight: 22,
-    color: "#744B00",
-    backgroundColor: "#FFF1CF",
-    padding: 12,
-    borderRadius: 12,
-  },
-  input: {
-    minHeight: 52,
-    padding: 14,
-    borderWidth: 1,
-    borderColor: "#B4A7C8",
-    borderRadius: 14,
-    fontSize: 16,
-    color: "#211B30",
-  },
-  button: {
-    minHeight: 48,
-    padding: 14,
-    borderRadius: 18,
-    backgroundColor: "#59409D",
-    justifyContent: "center",
-  },
-  action: { fontSize: 15, lineHeight: 22, fontWeight: "600", color: "#FFFFFF" },
-  row: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
-});
+const makeStyles = (LIGHT: ReturnType<typeof legacyPalette>) =>
+  StyleSheet.create({
+    card: {
+      padding: 20,
+      gap: 12,
+      backgroundColor: LIGHT.surface,
+      borderRadius: 26,
+      borderWidth: 1,
+      borderColor: LIGHT.line,
+    },
+    heading: {
+      fontSize: 21,
+      lineHeight: 29,
+      fontWeight: "700",
+      color: LIGHT.text,
+    },
+    body: { fontSize: 15, lineHeight: 23, color: LIGHT.muted },
+    caption: { fontSize: 13, lineHeight: 20, color: LIGHT.muted },
+    price: {
+      fontSize: 26,
+      lineHeight: 34,
+      fontWeight: "800",
+      color: LIGHT.primary,
+    },
+    warning: {
+      fontSize: 14,
+      lineHeight: 22,
+      color: LIGHT.onSecondary,
+      backgroundColor: LIGHT.container,
+      padding: 12,
+      borderRadius: 12,
+    },
+    input: {
+      minHeight: 52,
+      padding: 14,
+      borderWidth: 1,
+      borderColor: LIGHT.line,
+      borderRadius: 14,
+      fontSize: 16,
+      color: LIGHT.text,
+    },
+    button: {
+      minHeight: 48,
+      padding: 14,
+      borderRadius: 18,
+      backgroundColor: LIGHT.primary,
+      justifyContent: "center",
+    },
+    action: {
+      fontSize: 15,
+      lineHeight: 22,
+      fontWeight: "600",
+      color: LIGHT.surface,
+    },
+    row: { flexDirection: "row", flexWrap: "wrap", gap: 8 },
+  });

@@ -77,6 +77,12 @@ async function check(label, fn) {
   console.log("PASS: " + label);
 }
 try {
+  await check("cancelled refresh cannot activate a catalog", async () => {
+    const controller = new AbortController();
+    controller.abort();
+    await assert.rejects(api.syncReferenceCatalog(base, "", controller.signal));
+    assert.equal((await api.loadReferences()).length, 75);
+  });
   await check("bundled real catalog loads into actual SQLite", async () =>
     assert.equal((await api.loadReferences()).length, 75),
   );

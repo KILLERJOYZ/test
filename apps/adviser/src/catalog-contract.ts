@@ -12,6 +12,11 @@ const hosts: Record<string, string> = {
   thegioididong: "www.thegioididong.com",
   dienmayxanh: "www.dienmayxanh.com",
   fptshop: "fptshop.com.vn",
+  gearvn: "gearvn.com",
+  phongvu: "phongvu.vn",
+  hacom: "hacom.vn",
+  laptopaz: "laptopaz.vn",
+  trungtran: "trungtran.vn",
 };
 export function validateReferenceBundle(value: unknown): CatalogBundle {
   const b = value as CatalogBundle;
@@ -52,6 +57,9 @@ export function validateReferenceBundle(value: unknown): CatalogBundle {
       throw Error("Loại máy hoặc tình trạng không hợp lệ.");
     if (r.price !== null && (!Number.isSafeInteger(r.price) || r.price <= 0))
       throw Error("Giá không hợp lệ.");
+    for (const n of [r.shipping, r.fees])
+      if (n != null && (!Number.isSafeInteger(n) || n < 0))
+        throw Error("Phí không hợp lệ.");
     for (const n of [r.ramGiB, r.storageGiB, r.weightKg])
       if (n !== null && (!Number.isFinite(n) || n <= 0))
         throw Error("Đơn vị/thông số không hợp lệ.");

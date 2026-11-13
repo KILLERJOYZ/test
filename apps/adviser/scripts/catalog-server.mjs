@@ -95,7 +95,7 @@ if (process.argv.includes("--prepare")) {
     });
     res.end(body);
   });
-  server.listen(Number(process.env.ADVISOR_PORT ?? 8788), "127.0.0.1", () =>
+  server.listen(Number(process.env.ADVISOR_PORT ?? 8790), "127.0.0.1", () =>
     console.log("Signed catalog server listening on localhost."),
   );
 }
