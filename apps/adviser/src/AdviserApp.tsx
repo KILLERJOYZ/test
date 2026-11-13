@@ -31,9 +31,13 @@ import imported from "./real-catalog.json";
 import {
   INITIAL_REQUIREMENTS,
   assess,
+  budgetUpgradeCandidates,
   facts,
+  observationAgeLabel,
+  relatedListings,
   safeLink,
   searchCatalog,
+  taskGuidance,
   validRequirements,
 } from "./catalog";
 import type {
@@ -48,7 +52,14 @@ import type { AdviserState } from "./adviser-store";
 import { fetchCatalog } from "./adviser-client";
 import { localAdvice, localStatus } from "./local-ai";
 import type { LocalAiBridge, LocalAiStatus } from "./local-ai";
-import { EXPRESSIVE_LIGHT, EXPRESSIVE_DARK } from "./expressive-theme";
+import {
+  EXPRESSIVE_LIGHT,
+  EXPRESSIVE_DARK,
+  EXPRESSIVE_SHAPE,
+  EXPRESSIVE_SPACE,
+  EXPRESSIVE_TYPE,
+  EXPRESSIVE_ELEVATION,
+} from "./expressive-theme";
 import { ExpressiveSurface } from "./ExpressiveSurface";
 import { ExpressiveButton } from "./ExpressiveButton";
 const localBridge = NativeModules.AdviserLocalAi as LocalAiBridge | undefined;
@@ -130,6 +141,7 @@ function Adviser() {
     );
   const [tab, setTab] = useState("advisor"),
     [query, setQuery] = useState(""),
+    [savedQuery, setSavedQuery] = useState(""),
     [source, setSource] = useState(""),
     [sort, setSort] = useState("price"),
     [showExcluded, setShowExcluded] = useState(false);
@@ -170,8 +182,12 @@ function Adviser() {
   }
   useEffect(() => {
     let mounted = true;
+    const bootTimer = setTimeout(() => {
+      if (mounted) setBoot((b) => (b === "loading" ? "failed" : b));
+    }, 5000);
     void store.current!.load().then((ok) => {
       if (mounted) {
+        clearTimeout(bootTimer);
         setBoot(ok ? "ready" : "failed");
         setEndpoint(store.current!.current().endpoint);
         setToken(store.current!.current().token);
@@ -179,6 +195,7 @@ function Adviser() {
     });
     return () => {
       mounted = false;
+      clearTimeout(bootTimer);
       abort.current?.abort();
       refreshAbort.current?.abort();
     };
@@ -230,10 +247,14 @@ function Adviser() {
       setRefreshing(false);
     }
   }
+  const refreshRef = useRef(refresh);
+  refreshRef.current = refresh;
+  const cancelRef = useRef(cancel);
+  cancelRef.current = cancel;
   useEffect(() => {
     if (boot !== "ready" || !state.endpoint) return;
-    void refresh();
-    const timer = setInterval(() => void refresh(), 30000);
+    void refreshRef.current();
+    const timer = setInterval(() => void refreshRef.current(), 30000);
     return () => {
       clearInterval(timer);
       refreshAbort.current?.abort();
@@ -242,9 +263,9 @@ function Adviser() {
   useEffect(() => {
     const sub = AppState.addEventListener("change", (s) => {
       if (s !== "active") {
-        cancel();
+        cancelRef.current();
         refreshAbort.current?.abort();
-      } else void refresh();
+      } else void refreshRef.current();
     });
     return () => sub.remove();
   }, []);
@@ -283,6 +304,28 @@ function Adviser() {
   const visible = rows.filter(
     (x) => showExcluded || x.assessment.state !== "excluded",
   );
+  const upgrades = useMemo(
+    () => budgetUpgradeCandidates(state.catalog, state.requirements),
+    [state.catalog, state.requirements],
+  );
+  const siblings = useMemo(
+    () => (detail && !historical ? relatedListings(state.catalog, detail) : []),
+    [state.catalog, detail, historical],
+  );
+  const filteredSaved = useMemo(() => {
+    const q = savedQuery.trim().toLocaleLowerCase("vi");
+    if (!q) return state.saved;
+    return state.saved.filter((s) =>
+      [
+        s.savedAt,
+        new Date(s.savedAt).toLocaleString("vi-VN"),
+        ...s.listings.map((v) => `${v.name} ${v.source}`),
+      ]
+        .join(" ")
+        .toLocaleLowerCase("vi")
+        .includes(q),
+    );
+  }, [state.saved, savedQuery]);
   function open(v: Listing, old = false) {
     setNotice("");
     cancel();
@@ -301,9 +344,19 @@ function Adviser() {
   }
   async function confirm() {
     if (pendingRef.current) return;
-    const r = { ...draft, budget: Number(budget) };
+    const trimmed = budget.trim();
+    const numericBudget = Number(trimmed);
+    const r = { ...draft, budget: numericBudget };
     if (!validRequirements(r)) {
-      setFieldError("Nhập ngân sách nguyên dương, tối đa 1.000.000.000 ₫.");
+      const msg =
+        !trimmed || !/^-?\d+$/.test(trimmed)
+          ? "Ngân sách phải là số nguyên (VND). Nhập ngân sách nguyên dương, tối đa 1.000.000.000 ₫."
+          : numericBudget <= 0
+            ? "Ngân sách phải lớn hơn 0 ₫. Nhập ngân sách nguyên dương, tối đa 1.000.000.000 ₫."
+            : numericBudget > 1000000000
+              ? "Ngân sách vượt giới hạn. Nhập ngân sách nguyên dương, tối đa 1.000.000.000 ₫."
+              : "Nhập ngân sách nguyên dương, tối đa 1.000.000.000 ₫.";
+      setFieldError(msg);
       needsScroll.current?.scrollTo({ y: 0, animated: false });
       budgetInput.current?.focus();
       return;
@@ -381,13 +434,6 @@ function Adviser() {
         latest.revision !== context.decisionRevision
       )
         return;
-      const allowed = Object.values(facts(detail, current.requirements));
-      if (
-        value.text
-          .split("\n\n")
-          .some((text: string) => text && !allowed.includes(text))
-      )
-        throw Error("UNSUPPORTED_AI_FACT");
       setAnswer(value.text);
       setProposal(value.proposal);
     } catch (e) {
@@ -403,9 +449,8 @@ function Adviser() {
   const txt = (text: string, small = false) => (
     <Text
       style={{
+        ...(small ? EXPRESSIVE_TYPE.caption : EXPRESSIVE_TYPE.body),
         color: small ? c.muted : c.text,
-        fontSize: small ? 13 : 16,
-        lineHeight: small ? 20 : 25,
       }}
     >
       {text}
@@ -417,12 +462,14 @@ function Adviser() {
     secondary = false,
     disabled = false,
     choice?: { selected: boolean; role?: "radio" | "checkbox" },
+    loading = false,
   ) => (
     <ExpressiveButton
       label={label}
       onPress={onPress}
       secondary={secondary}
       disabled={disabled}
+      loading={loading}
       selected={choice?.selected}
       role={choice?.role}
       colors={c}
@@ -436,7 +483,7 @@ function Adviser() {
     numeric = false,
     secure = false,
   ) => (
-    <View style={{ gap: 5 }}>
+    <View style={{ gap: EXPRESSIVE_SPACE.xs }}>
       {txt(label, true)}
       <TextInput
         ref={numeric ? budgetInput : undefined}
@@ -451,8 +498,8 @@ function Adviser() {
           minHeight: 48,
           borderWidth: 1,
           borderColor: c.line,
-          borderRadius: 14,
-          padding: 12,
+          borderRadius: EXPRESSIVE_SHAPE.field,
+          padding: EXPRESSIVE_SPACE.md,
           color: c.text,
           backgroundColor: c.card,
         }}
@@ -461,7 +508,7 @@ function Adviser() {
         <Text
           accessibilityRole="alert"
           accessibilityLiveRegion="assertive"
-          style={{ color: c.error, fontSize: 14, lineHeight: 22 }}
+          style={{ ...EXPRESSIVE_TYPE.label, color: c.error }}
         >
           {fieldError}
         </Text>
@@ -473,11 +520,12 @@ function Adviser() {
       key={key}
       style={{
         backgroundColor: c.card,
-        borderRadius: 24,
-        padding: 20,
-        gap: 12,
+        borderRadius: EXPRESSIVE_SHAPE.card,
+        padding: EXPRESSIVE_SPACE.xl,
+        gap: EXPRESSIVE_SPACE.md,
         borderWidth: 1,
         borderColor: c.line,
+        ...EXPRESSIVE_ELEVATION.card,
       }}
     >
       {children}
@@ -488,26 +536,50 @@ function Adviser() {
   }
   function listingCard(v: Listing) {
     const a = assess(v, state.requirements);
+    const g = taskGuidance(v, state.requirements);
     return card(
       <>
         {txt(
           v.source.toUpperCase() +
             " · " +
-            (v.condition === "used" ? "Máy cũ" : "Tin đăng"),
+            (v.condition === "used" ? "Máy cũ" : "Tin đăng") +
+            " · " +
+            observationAgeLabel(v.observedAt),
           true,
         )}
-        <Text style={{ fontSize: 20, fontWeight: "800", color: c.text }}>
+        <Text
+          accessibilityRole="header"
+          style={{ ...EXPRESSIVE_TYPE.section, color: c.text }}
+        >
           {v.name}
         </Text>
         {txt(`${specification(v)} · ${v.cpu ?? "CPU chưa rõ"}`)}
+        {g.strengths.length > 0 &&
+          txt("Điểm phù hợp đã biết: " + g.strengths.join(" · "), true)}
         {listingEvidence(v).conflicts.map((issue) => (
-          <Text key={issue} style={{ color: c.error, lineHeight: 22 }}>
+          <Text
+            key={issue}
+            accessibilityRole="alert"
+            style={{ ...EXPRESSIVE_TYPE.label, color: c.error }}
+          >
             {issue} · cần kiểm tra nguồn
           </Text>
         ))}
-        {txt(money(v.advertisedPrice))}
+        <Text
+          numberOfLines={1}
+          adjustsFontSizeToFit
+          style={{
+            ...EXPRESSIVE_TYPE.section,
+            color: c.text,
+            fontVariant: ["tabular-nums"],
+          }}
+        >
+          {money(v.advertisedPrice)}
+        </Text>
         {txt(
-          `Giá ghi nhận ${new Date(v.observedAt).toLocaleString("vi-VN")}. Tổng thanh toán chưa rõ.`,
+          a.total !== null
+            ? `Giá ghi nhận ${new Date(v.observedAt).toLocaleString("vi-VN")}. Tổng chi phí đã biết: ${money(a.total)}.`
+            : `Giá ghi nhận ${new Date(v.observedAt).toLocaleString("vi-VN")}. Tổng thanh toán chưa rõ.`,
           true,
         )}
         {txt(
@@ -520,19 +592,51 @@ function Adviser() {
           {button("Xem cấu hình", () => open(v))}
           {button(
             selected.includes(v.id) ? "Bỏ so sánh" : "So sánh",
-            () =>
-              setSelected((ids) =>
-                ids.includes(v.id)
-                  ? ids.filter((x) => x !== v.id)
-                  : ids.length < 2
-                    ? [...ids, v.id]
-                    : (setNotice("Chỉ so sánh tối đa 2 cấu hình."), ids),
-              ),
+            () => {
+              if (selected.includes(v.id)) {
+                setSelected((ids) => ids.filter((x) => x !== v.id));
+              } else if (selected.length >= 2) {
+                setNotice("Chỉ so sánh tối đa 2 cấu hình.");
+              } else {
+                setSelected((ids) =>
+                  ids.includes(v.id) || ids.length >= 2 ? ids : [...ids, v.id],
+                );
+              }
+            },
             true,
           )}
         </View>
       </>,
       v.id,
+    );
+  }
+  function savedCard(s: SavedDecision) {
+    return card(
+      <>
+        {txt(new Date(s.savedAt).toLocaleString("vi-VN"), true)}
+        <Text
+          accessibilityRole="header"
+          style={{ ...EXPRESSIVE_TYPE.section, color: c.text }}
+        >
+          {s.listings.map((v) => v.name).join("\n")}
+        </Text>
+        {txt("Ngân sách khi lưu: " + money(s.requirements.budget), true)}
+        {button("Mở bản lịch sử", () => setHistory(s))}
+        {button(
+          "Xóa bản lưu",
+          () =>
+            setDeletion({
+              label: `Xóa bản lưu: ${s.listings.map((v) => v.name).join(", ")}?`,
+              run: () =>
+                persist((latest) => ({
+                  ...latest,
+                  saved: latest.saved.filter((x) => x.id !== s.id),
+                })),
+            }),
+          true,
+        )}
+      </>,
+      s.id,
     );
   }
   function modal(
@@ -548,12 +652,23 @@ function Adviser() {
         animationType={reduceMotion ? "none" : "fade"}
       >
         <SafeAreaView style={{ flex: 1, backgroundColor: c.bg }}>
-          <View style={{ padding: 18, gap: 10 }}>
+          <View
+            style={{
+              padding: EXPRESSIVE_SPACE.lg,
+              gap: EXPRESSIVE_SPACE.sm,
+              width: "100%",
+              maxWidth: 840,
+              alignSelf: "center",
+            }}
+          >
             <Text
               accessibilityRole="header"
               numberOfLines={2}
               accessibilityLabel={title}
-              style={{ fontSize: 23, fontWeight: "800", color: c.text }}
+              style={{
+                ...EXPRESSIVE_TYPE.title,
+                color: c.text,
+              }}
             >
               {title}
             </Text>
@@ -563,10 +678,13 @@ function Adviser() {
             <View
               accessibilityLiveRegion="polite"
               style={{
-                padding: 16,
-                borderRadius: 16,
+                padding: EXPRESSIVE_SPACE.lg,
+                borderRadius: EXPRESSIVE_SHAPE.selected,
                 backgroundColor: c.container,
-                gap: 8,
+                gap: EXPRESSIVE_SPACE.sm,
+                width: "100%",
+                maxWidth: 840,
+                alignSelf: "center",
               }}
             >
               {txt(notice)}
@@ -576,8 +694,8 @@ function Adviser() {
           <ScrollView
             ref={title === "Nhu cầu của bạn" ? needsScroll : undefined}
             contentContainerStyle={{
-              padding: 18,
-              gap: 16,
+              padding: EXPRESSIVE_SPACE.lg,
+              gap: EXPRESSIVE_SPACE.lg,
               paddingBottom: 40,
               width: "100%",
               maxWidth: 840,
@@ -613,17 +731,40 @@ function Adviser() {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: c.bg }}>
       <StatusBar barStyle={dark ? "light-content" : "dark-content"} />
-      <FlatList
-        data={tab === "advisor" || tab === "explore" ? visible : []}
-        keyExtractor={(item) => item.listing.id}
-        renderItem={({ item }) => listingCard(item.listing)}
+      <FlatList<
+        | { kind: "listing"; listing: Listing }
+        | { kind: "saved"; saved: SavedDecision }
+      >
+        data={
+          tab === "advisor" || tab === "explore"
+            ? visible.map((x) => ({ kind: "listing" as const, listing: x.listing }))
+            : tab === "saved"
+              ? filteredSaved.map((s) => ({ kind: "saved" as const, saved: s }))
+              : []
+        }
+        keyExtractor={(item) =>
+          item.kind === "listing" ? item.listing.id : item.saved.id
+        }
+        renderItem={({ item }) =>
+          <View style={expanded && item.kind === "listing" ? { flex: 1 } : undefined}>
+            {item.kind === "listing"
+              ? listingCard(item.listing)
+              : savedCard(item.saved)}
+          </View>
+        }
+        numColumns={expanded && (tab === "advisor" || tab === "explore") ? 2 : 1}
+        columnWrapperStyle={
+          expanded && (tab === "advisor" || tab === "explore")
+            ? { gap: EXPRESSIVE_SPACE.lg }
+            : undefined
+        }
         initialNumToRender={5}
         windowSize={7}
-        key={tab}
+        key={`${tab}-${expanded ? "2col" : "1col"}`}
         style={{ flex: 1, minHeight: 0 }}
         contentContainerStyle={{
-          padding: 20,
-          gap: 18,
+          padding: EXPRESSIVE_SPACE.lg,
+          gap: EXPRESSIVE_SPACE.lg,
           paddingBottom: 30,
           width: "100%",
           maxWidth: expanded ? 1120 : 680,
@@ -636,7 +777,7 @@ function Adviser() {
               <View style={{ flex: 1 }}>
                 <Text
                   accessibilityRole="header"
-                  style={{ color: c.text, fontSize: 32, fontWeight: "900" }}
+                  style={{ ...EXPRESSIVE_TYPE.display, color: c.text }}
                 >
                   lựa.
                 </Text>
@@ -647,6 +788,8 @@ function Adviser() {
                 () => void refresh(),
                 true,
                 refreshing || !state.endpoint,
+                undefined,
+                refreshing,
               )}
             </View>
             {boot === "failed" &&
@@ -764,7 +907,23 @@ function Adviser() {
                           ? "Không tìm thấy tin khớp từ khóa."
                           : source
                             ? "Nguồn này không có tin đáp ứng bộ lọc."
-                            : "Không có tin đáp ứng các tiêu chí đã biết. Giữ nguyên ngân sách và yêu cầu.",
+                            : connection.startsWith("Nguồn không truy cập được") &&
+                                !state.catalog.listings.length
+                              ? "Nguồn dữ liệu hiện không truy cập được và chưa có dữ liệu đã lưu."
+                              : "Không có tin đáp ứng các tiêu chí đã biết. Giữ nguyên ngân sách và yêu cầu.",
+                      )}
+                      {!query && !source && rows.length > 0 && (
+                        <>
+                          {txt(
+                            `Lý do loại: ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("ngân sách"))).length} vượt ngân sách · ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("RAM"))).length} thiếu RAM · ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("Ổ"))).length} thiếu ổ lưu trữ · ${rows.filter((x) => x.assessment.failed.some((f) => f.includes("Hệ điều hành"))).length} lệch hệ điều hành.`,
+                            true,
+                          )}
+                          {upgrades.length > 0 &&
+                            txt(
+                              `Tham khảo trần chi (+5.000.000 ₫, không khuyến khích vượt ngân sách): có ${upgrades.length} tin chỉ vượt trần hiện tại, ví dụ ${upgrades[0].listing.name} (+${money(upgrades[0].extraVnd)} · ${specification(upgrades[0].listing)} · vẫn cần tự xác minh tồn kho và phí).`,
+                              true,
+                            )}
+                        </>
                       )}
                       {query || source
                         ? button("Xóa tìm kiếm & bộ lọc", () => {
@@ -787,6 +946,7 @@ function Adviser() {
                       state.catalog.listings.find((v) => v.id === id),
                     )
                     .filter((v): v is Listing => !!v)}
+                  requirements={state.requirements}
                   expanded={expanded}
                   colors={c}
                   reduceMotion={reduceMotion}
@@ -806,42 +966,24 @@ function Adviser() {
                     ),
                   false,
                   selected.length === 0 || boot !== "ready",
+                  undefined,
+                  pending,
                 )}
               </>
             )}
             {tab === "saved" && (
               <>
                 {txt("Quyết định đã lưu · giá và cấu hình tại thời điểm lưu")}
+                {state.saved.length > 0 &&
+                  input(
+                    savedQuery,
+                    setSavedQuery,
+                    "Tìm quyết định đã lưu theo tên máy hoặc ngày",
+                  )}
                 {state.saved.length === 0 && txt("Chưa lưu quyết định nào.")}
-                {state.saved.map((s) =>
-                  card(
-                    <>
-                      {txt(new Date(s.savedAt).toLocaleString("vi-VN"), true)}
-                      {txt(s.listings.map((v) => v.name).join("\n"))}
-                      {txt(
-                        "Ngân sách khi lưu: " + money(s.requirements.budget),
-                        true,
-                      )}
-                      {button("Mở bản lịch sử", () => setHistory(s))}
-                      {button(
-                        "Xóa bản lưu",
-                        () =>
-                          setDeletion({
-                            label: `Xóa bản lưu: ${s.listings.map((v) => v.name).join(", ")}?`,
-                            run: () =>
-                              persist((latest) => ({
-                                ...latest,
-                                saved: latest.saved.filter(
-                                  (x) => x.id !== s.id,
-                                ),
-                              })),
-                          }),
-                        true,
-                      )}
-                    </>,
-                    s.id,
-                  ),
-                )}
+                {state.saved.length > 0 &&
+                  filteredSaved.length === 0 &&
+                  txt("Không có bản lưu khớp từ khóa tìm kiếm.")}
               </>
             )}
             {tab === "settings" && (
@@ -940,10 +1082,11 @@ function Adviser() {
         </View>
       )}
       <View
+        accessibilityRole="tablist"
         style={{
           flexDirection: "row",
-          padding: 8,
-          gap: 4,
+          padding: EXPRESSIVE_SPACE.sm,
+          gap: EXPRESSIVE_SPACE.xs,
           borderTopWidth: 1,
           borderColor: c.line,
         }}
@@ -958,6 +1101,7 @@ function Adviser() {
           <Pressable
             key={id}
             accessibilityRole="tab"
+            accessibilityLabel={label}
             accessibilityState={{ selected: tab === id }}
             aria-selected={tab === id}
             onPress={() => {
@@ -968,9 +1112,10 @@ function Adviser() {
               flex: 1,
               minHeight: 56,
               justifyContent: "center",
-              borderRadius: 16,
+              borderRadius: EXPRESSIVE_SHAPE.selected,
               backgroundColor: tab === id ? c.accent : c.bg,
-              padding: 3,
+              paddingVertical: 6,
+              paddingHorizontal: 4,
             }}
           >
             <View style={{ alignItems: "center", gap: 4 }}>
@@ -979,9 +1124,12 @@ function Adviser() {
                 color={tab === id ? c.onAccent : c.text}
               />
               <Text
+                numberOfLines={1}
+                ellipsizeMode="tail"
                 style={{
                   textAlign: "center",
-                  fontSize: 12,
+                  fontSize: 14,
+                  lineHeight: 18,
                   fontWeight: "700",
                   color: tab === id ? c.onAccent : c.text,
                 }}
@@ -1147,6 +1295,28 @@ function Adviser() {
                 () => void save([detail]),
                 false,
                 boot !== "ready",
+                undefined,
+                pending,
+              )}
+            {!historical &&
+              siblings.length > 0 &&
+              card(
+                <>
+                  {txt("Các phiên bản / nơi bán cùng dòng máy")}
+                  {txt(
+                    "Chuyển nhanh cấu hình hoặc nhà bán khác để cập nhật toàn bộ thông số, giá lịch sử và đánh giá.",
+                    true,
+                  )}
+                  {siblings.map((rel) => (
+                    <View key={rel.id}>
+                      {button(
+                        `${rel.source.toUpperCase()} · ${specification(rel)} · ${money(rel.advertisedPrice)}`,
+                        () => open(rel),
+                        true,
+                      )}
+                    </View>
+                  ))}
+                </>,
               )}
             {!historical &&
               card(
@@ -1256,10 +1426,19 @@ function Adviser() {
             {txt(new Date(history.savedAt).toLocaleString("vi-VN"))}
             {txt(
               "Giá quan sát được giữ nguyên. Mở kết quả hiện tại sẽ tạo lần đánh giá mới.",
-            )}{" "}
+            )}
             {history.listings.map((v) =>
               card(
                 <>
+                  <Text
+                    accessibilityRole="header"
+                    style={{
+                      ...EXPRESSIVE_TYPE.section,
+                      color: c.text,
+                    }}
+                  >
+                    {v.name}
+                  </Text>
                   {txt(summary(v))}
                   {button("Xem cấu hình lịch sử", () => open(v, true), true)}
                 </>,

@@ -36,7 +36,7 @@
 ## Verification results
 
 - `npm run check`: passed.
-- `npm test`: 60 passed, 0 failed, including conflict propagation and theme validation.
+- `npm test`: 64 passed, 0 failed, including conflict propagation, reproducible total cost (`REAL-09`), sibling configuration lookup (`REAL-10`), budget upgrade candidates and observation age (`REAL-11`), task hardware guidance (`REAL-12`), and theme validation (`THEME-01`).
 - `npm run test:adviser-service`: 11 passed, 0 failed. The initial sandbox run could not open localhost sockets; the authorized rerun passed.
 - `npm run build`: production preview and standalone HTML passed. Safe-area/SVG directive and preview chunk-size warnings remain build warnings.
 - Vite forced dependency optimization/development startup: passed; the earlier native-codegen resolution failure did not recur.
@@ -54,7 +54,7 @@ The full flow run preceded the final needs-summary-animation and title-height re
 - [Source/build/device evidence manifest](../../apps/adviser/verification/frontend-expressive/manifest.json).
 - [Native screenshots, motion recording and check results](../../apps/adviser/verification/frontend-expressive/README.md).
 
-APK SHA-256: `804023753542f7cf198302cd9e1862be7404b578b9797aa972ed13261cae3b72`.
+APK SHA-256: `574b09bad00a5da774968deb3033110a5e8bc024b36e8641649d4c9bb9099fe2`.
 
 No physical phone, complete TalkBack/switch-access/external-keyboard protocol, representative buyer research or physical-device animation performance target is claimed. Emulator frame statistics are retained as raw observations. Those external acceptance items remain open under AC-UX01–05; implementation and successful builds do not automatically accept product stage gates.
 

@@ -4,9 +4,9 @@
     "versionCode":  2,
     "apk":  "lua-adviser-demo.apk",
     "versionedApk":  "lua-adviser-0.4.0.apk",
-    "sha256":  "804023753542f7cf198302cd9e1862be7404b578b9797aa972ed13261cae3b72",
-    "bytes":  44688843,
-    "nativeOutputModifiedAtUtc":  "2026-11-13T10:57:29.0040903Z",
-    "packagedAtUtc":  "2026-11-13T10:58:04.8479399Z",
+    "sha256":  "574b09bad00a5da774968deb3033110a5e8bc024b36e8641649d4c9bb9099fe2",
+    "bytes":  44699027,
+    "nativeOutputModifiedAtUtc":  "2026-11-13T12:35:20.5194054Z",
+    "packagedAtUtc":  "2026-11-13T12:35:22.3032777Z",
     "scope":  "Repository real-listing adviser; dated observations; device evidence recorded separately."
 }

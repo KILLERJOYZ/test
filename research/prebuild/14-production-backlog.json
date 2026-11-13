@@ -36,7 +36,7 @@
     },
     {
       "ref": "research/prebuild/11-android-cases.json",
-      "sha256": "61ec1edf5ccfac70c4202e66f632d5b97be2306bf15903cd0350b680610a7572"
+      "sha256": "d68168e8c7a8344a3eed5a4b15ec63d89c5600f94ab0e9f74afa3217b4cd9274"
     },
     {
       "ref": "research/prebuild/12-operations-scenarios.json",
@@ -195,9 +195,7 @@
         ],
         "findingIds": [
           "GAP-R05-001",
-          "U08-10",
-          "U08-12",
-          "U08-13"
+          "U08-10"
         ],
         "outcome": "Supported workload recommendations cite exact applicable requirements and measurements.",
         "files": [
@@ -246,10 +244,7 @@
           "FLOW-02",
           "FLOW-03",
           "FLOW-04",
-          "U06-15",
-          "U08-14",
-          "U08-15",
-          "U07-10"
+          "U06-15"
         ],
         "outcome": "Saved decisions survive concurrent actions and retain their original historical meaning.",
         "files": [
@@ -747,133 +742,7 @@
       "U19 excluded",
       "Phones, unrestricted PC solver and Windows expansion deferred"
     ],
-    "estimatePolicy": "No numeric labor estimates fabricated; use item assumptions and measured reference work before commitment.",
-    "findingIndex": {
-      "FLOW-01": {
-        "sourceRef": "research/prebuild/06-flow-validation.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "FLOW-02": {
-        "sourceRef": "research/prebuild/06-flow-validation.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "FLOW-03": {
-        "sourceRef": "research/prebuild/06-flow-validation.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "FLOW-04": {
-        "sourceRef": "research/prebuild/06-flow-validation.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "FLOW-05": {
-        "sourceRef": "research/prebuild/06-flow-validation.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "FLOW-06": {
-        "sourceRef": "research/prebuild/06-flow-validation.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "FLOW-07": {
-        "sourceRef": "research/prebuild/06-flow-validation.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "FLOW-08": {
-        "sourceRef": "research/prebuild/06-flow-validation.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R01-001": {
-        "sourceRef": "research/prebuild/01-buyer-observations.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R03-001": {
-        "sourceRef": "research/prebuild/03-source-register.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R04-001": {
-        "sourceRef": "research/prebuild/04-catalog-audit.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R05-001": {
-        "sourceRef": "research/prebuild/05-workload-policy.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R06-BUYERS": {
-        "sourceRef": "research/prebuild/06-flow-validation.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R07-001": {
-        "sourceRef": "research/prebuild/07-contract-examples.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R08-DEVICE": {
-        "sourceRef": "research/prebuild/runs/20261113T052229Z/R08.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R09-UTILITY": {
-        "sourceRef": "research/prebuild/09-retrieval-ranking-results.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R10-LIVE": {
-        "sourceRef": "research/prebuild/10-ai-evaluation.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R11-EXTERNAL": {
-        "sourceRef": "research/prebuild/11-android-cases.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R12-001": {
-        "sourceRef": "research/prebuild/12-operations-scenarios.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "GAP-R13-RATES": {
-        "sourceRef": "research/prebuild/13-cost-results.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "READINESS-PENDING": {
-        "sourceRef": "research/prebuild/14-build-readiness.json",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "U06-15": {
-        "sourceRef": "apps/adviser/src/decision-state.test.ts",
-        "description": "Recorded finding/gap or current pending readiness assessment."
-      },
-      "U08-10": {
-        "sourceRef": "spikes/prebuild-contract/policy.test.mjs",
-        "description": "Continued-review regression; before/after logs retained under current run."
-      },
-      "U08-11": {
-        "sourceRef": "spikes/prebuild-contract/policy.test.mjs",
-        "description": "Continued-review regression; before/after logs retained under current run."
-      },
-      "U07-08": {
-        "sourceRef": "research/prebuild/tools/contracts.test.mjs",
-        "description": "Continued API-boundary review; failing-before and passing-after logs retained."
-      },
-      "U07-09": {
-        "sourceRef": "research/prebuild/tools/contracts.test.mjs",
-        "description": "Continued API-boundary review; failing-before and passing-after logs retained."
-      },
-      "U08-12": {
-        "sourceRef": "spikes/prebuild-contract/policy.test.mjs",
-        "description": "Continued review regression; failing-before and passing-after evidence retained."
-      },
-      "U08-13": {
-        "sourceRef": "spikes/prebuild-contract/policy.test.mjs",
-        "description": "Continued review regression; failing-before and passing-after evidence retained."
-      },
-      "U08-14": {
-        "sourceRef": "spikes/prebuild-contract/repository.test.mjs",
-        "description": "Continued review regression; failing-before and passing-after evidence retained."
-      },
-      "U08-15": {
-        "sourceRef": "spikes/prebuild-contract/repository.test.mjs",
-        "description": "Continued review regression; failing-before and passing-after evidence retained."
-      },
-      "U07-10": {
-        "sourceRef": "research/prebuild/tools/contracts.test.mjs",
-        "description": "Malformed saved-history rejection with independent valid and invalid fixtures; unit and HTTP before/after logs retained."
-      }
-    }
+    "estimatePolicy": "No numeric labor estimates fabricated; use item assumptions and measured reference work before commitment."
   },
   "evidenceRefs": [
     "E-R00-LOCAL",

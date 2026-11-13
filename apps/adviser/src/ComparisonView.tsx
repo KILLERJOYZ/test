@@ -1,12 +1,15 @@
 import React from "react";
 import { Text, View } from "react-native";
-import type { Listing } from "./catalog";
+import { assess, INITIAL_REQUIREMENTS, taskGuidance } from "./catalog";
+import type { Listing, Requirements } from "./catalog";
 import { listingEvidence } from "./listing-evidence";
 import type { ExpressiveColors } from "./expressive-theme";
+import { EXPRESSIVE_SHAPE } from "./expressive-theme";
 import { ExpressiveButton } from "./ExpressiveButton";
 import { ExpressiveSurface } from "./ExpressiveSurface";
 export function ComparisonView({
   items,
+  requirements = INITIAL_REQUIREMENTS,
   expanded,
   colors: c,
   reduceMotion,
@@ -15,6 +18,7 @@ export function ComparisonView({
   onBrowse,
 }: {
   items: Listing[];
+  requirements?: Requirements;
   expanded: boolean;
   colors: ExpressiveColors;
   reduceMotion: boolean;
@@ -45,6 +49,28 @@ export function ComparisonView({
           ? "Chưa rõ"
           : v.advertisedPrice.toLocaleString("vi-VN") + " ₫",
     ],
+    [
+      "Tổng chi phí đã biết",
+      (v: Listing) => {
+        const t = assess(v, requirements).total;
+        return t === null
+          ? "Chưa đủ phí giao hàng / phí bắt buộc"
+          : t.toLocaleString("vi-VN") + " ₫";
+      },
+    ],
+    [
+      "Đánh giá theo nhu cầu",
+      (v: Listing) => {
+        const a = assess(v, requirements);
+        const g = taskGuidance(v, requirements);
+        if (a.failed.length) return "Không đạt: " + a.failed.join("; ");
+        return [
+          ...g.strengths,
+          ...g.caveats,
+          "Cần tự xác minh tại nhà bán",
+        ].join(" · ");
+      },
+    ],
     ["Nguồn", (v: Listing) => v.source],
     [
       "Ngày quan sát",
@@ -74,12 +100,13 @@ export function ComparisonView({
             style={{
               flex: expanded ? 1 : undefined,
               padding: 16,
-              borderRadius: 28,
+              borderRadius: EXPRESSIVE_SHAPE.card,
               backgroundColor: c.container,
               gap: 12,
             }}
           >
             <Text
+              accessibilityRole="header"
               style={{
                 fontSize: 18,
                 lineHeight: 26,
@@ -90,7 +117,11 @@ export function ComparisonView({
               {v.name}
             </Text>
             {listingEvidence(v).conflicts.map((x) => (
-              <Text key={x} style={{ color: c.error }}>
+              <Text
+                key={x}
+                accessibilityRole="alert"
+                style={{ color: c.error }}
+              >
                 {x}
               </Text>
             ))}
@@ -126,24 +157,32 @@ export function ComparisonView({
           >
             <Text style={{ color: c.muted, fontWeight: "700" }}>{label}</Text>
             <View style={{ flexDirection: "row", gap: 12 }}>
-              {items.map((v, i) => (
-                <View key={v.id} style={{ flex: 1, gap: 4 }}>
-                  <Text style={{ color: c.muted, fontSize: 12 }}>
-                    Máy {i + 1}
-                  </Text>
-                  <Text
-                    selectable
-                    style={{
-                      color: c.text,
-                      fontSize: 16,
-                      lineHeight: 24,
-                      fontVariant: ["tabular-nums"],
-                    }}
+              {items.map((v, i) => {
+                const val = get(v);
+                return (
+                  <View
+                    key={v.id}
+                    accessible
+                    accessibilityLabel={`Máy ${i + 1} (${v.name}), ${label}: ${val}`}
+                    style={{ flex: 1, gap: 4 }}
                   >
-                    {get(v)}
-                  </Text>
-                </View>
-              ))}
+                    <Text style={{ color: c.muted, fontSize: 14 }}>
+                      Máy {i + 1}
+                    </Text>
+                    <Text
+                      selectable
+                      style={{
+                        color: c.text,
+                        fontSize: 16,
+                        lineHeight: 24,
+                        fontVariant: ["tabular-nums"],
+                      }}
+                    >
+                      {val}
+                    </Text>
+                  </View>
+                );
+              })}
             </View>
           </View>
         ))}

@@ -124,10 +124,18 @@ export function assess(v: Listing, r: Requirements) {
       ? unknown.push("Chưa rõ hệ điều hành")
       : !v.os.toLowerCase().includes(r.os.toLowerCase()) &&
         failed.push("Hệ điều hành không khớp");
+  const total =
+    v.advertisedPrice !== null &&
+    v.shipping !== null &&
+    v.fees !== null &&
+    Number.isSafeInteger(v.advertisedPrice + v.shipping + v.fees)
+      ? v.advertisedPrice + v.shipping + v.fees
+      : null;
   if (v.advertisedPrice !== null && v.advertisedPrice > r.budget)
     failed.push("Giá niêm yết đã vượt ngân sách");
-  if (v.shipping === null || v.fees === null || v.advertisedPrice === null)
-    unknown.push("Chưa đủ tổng chi phí");
+  else if (total !== null && total > r.budget)
+    failed.push("Tổng chi phí đã vượt ngân sách");
+  if (total === null) unknown.push("Chưa đủ tổng chi phí");
   if (r.tasks.length)
     unknown.push("Chưa có bằng chứng năng lực cho tác vụ đã chọn");
   return {
@@ -136,7 +144,7 @@ export function assess(v: Listing, r: Requirements) {
       : ("needs_verification" as const),
     failed,
     unknown,
-    total: null,
+    total,
     affordability: "unknown" as const,
   };
 }
@@ -172,8 +180,8 @@ export function searchCatalog(
           Number(b.assessment.state === "excluded") ||
         (sort === "name"
           ? a.listing.name.localeCompare(b.listing.name)
-          : (a.listing.advertisedPrice ?? Infinity) -
-            (b.listing.advertisedPrice ?? Infinity)) ||
+          : (a.assessment.total ?? a.listing.advertisedPrice ?? Infinity) -
+            (b.assessment.total ?? b.listing.advertisedPrice ?? Infinity)) ||
         a.listing.id.localeCompare(b.listing.id),
     );
 }
@@ -183,7 +191,10 @@ export function facts(v: Listing, r: Requirements): Record<string, string> {
   return {
     identity: `${v.name}: định danh cấu hình chưa kiểm duyệt.`,
     price: `Giá niêm yết lịch sử: ${v.advertisedPrice === null ? "chưa rõ" : v.advertisedPrice.toLocaleString("vi-VN") + " ₫"}; quan sát ${v.observedAt}. Chưa xác nhận giá hiện tại.`,
-    cost: "Phí giao hàng, phí bắt buộc, tồn kho và khả năng chi trả: chưa xác minh.",
+    cost:
+      a.total !== null
+        ? `Tổng chi phí đã biết: ${a.total.toLocaleString("vi-VN")} ₫ (giá ${v.advertisedPrice!.toLocaleString("vi-VN")} ₫ + vận chuyển ${v.shipping!.toLocaleString("vi-VN")} ₫ + phí ${v.fees!.toLocaleString("vi-VN")} ₫). Tồn kho và khả năng chi trả: chưa xác minh.`
+        : "Phí giao hàng, phí bắt buộc, tồn kho và khả năng chi trả: chưa xác minh.",
     spec: `RAM: ${evidence.ram ?? "chưa xác minh"} GB; ổ: ${evidence.storage ?? "chưa xác minh"} GB; CPU: ${v.cpu ?? "chưa rõ"}. ${evidence.conflicts.join("; ")}`,
     fit: a.failed.length
       ? a.failed.join("; ")
@@ -197,10 +208,14 @@ export type AdviceContext = {
   focusId: string;
   requestId: string;
 };
+const CONTEXT_KEYS: (keyof AdviceContext)[] = [
+  "catalogRevision",
+  "decisionRevision",
+  "focusId",
+  "requestId",
+];
 export function sameContext(a: AdviceContext, b: AdviceContext) {
-  return ["catalogRevision", "decisionRevision", "focusId", "requestId"].every(
-    (k) => (a as any)[k] === (b as any)[k],
-  );
+  return CONTEXT_KEYS.every((k) => a[k] === b[k]);
 }
 export function checkedAdvice(value: any, allowed: Record<string, string>) {
   if (
@@ -245,3 +260,108 @@ export function validSaved(x: any): x is SavedDecision {
     })
   );
 }
+const STOP_WORDS = new Set(["laptop", "máy", "tính", "xách", "tay", "chính", "hãng"]);
+function familyTokens(name: string): string[] {
+  return name
+    .toLocaleLowerCase("vi")
+    .replace(/[^a-z0-9à-ỹ\s-]/gi, " ")
+    .split(/\s+/)
+    .filter((t) => t.length > 1 && !STOP_WORDS.has(t))
+    .slice(0, 3);
+}
+export function relatedListings(c: Catalog, target: Listing, limit = 6): Listing[] {
+  const base = familyTokens(target.name);
+  if (base.length < 2) return [];
+  return c.listings
+    .filter((v) => {
+      if (v.id === target.id) return false;
+      const tokens = familyTokens(v.name);
+      return tokens.length >= 2 && tokens[0] === base[0] && tokens[1] === base[1];
+    })
+    .sort(
+      (a, b) =>
+        (a.advertisedPrice ?? Infinity) - (b.advertisedPrice ?? Infinity) ||
+        a.id.localeCompare(b.id),
+    )
+    .slice(0, limit);
+}
+export function budgetUpgradeCandidates(
+  c: Catalog,
+  r: Requirements,
+  deltaVnd = 5000000,
+  limit = 3,
+) {
+  if (!validRequirements(r) || deltaVnd <= 0) return [];
+  const cap = Math.min(1000000000, r.budget + deltaVnd);
+  if (cap <= r.budget) return [];
+  const higherReq: Requirements = { ...r, budget: cap };
+  return c.listings
+    .map((v) => {
+      const now = assess(v, r);
+      const next = assess(v, higherReq);
+      const price = now.total ?? v.advertisedPrice;
+      return {
+        listing: v,
+        now,
+        next,
+        extraVnd: price !== null ? price - r.budget : null,
+      };
+    })
+    .filter(
+      (x) =>
+        x.now.state === "excluded" &&
+        x.now.failed.length === 1 &&
+        x.now.failed[0].includes("ngân sách") &&
+        x.next.state === "needs_verification" &&
+        x.extraVnd !== null &&
+        x.extraVnd > 0 &&
+        x.extraVnd <= deltaVnd,
+    )
+    .sort((a, b) => a.extraVnd! - b.extraVnd! || a.listing.id.localeCompare(b.listing.id))
+    .slice(0, limit);
+}
+export function observationAgeLabel(observedAt: string, nowMs = Date.now()): string {
+  const parsed = Date.parse(observedAt);
+  if (!Number.isFinite(parsed))
+    return "Quan sát lịch sử · chưa xác nhận giá hiện tại";
+  const days = Math.max(0, Math.floor((nowMs - parsed) / 86400000));
+  return days === 0
+    ? "Quan sát lịch sử trong ngày · chưa phải giá trực tiếp"
+    : `Quan sát lịch sử (${days} ngày trước · chưa phải giá trực tiếp)`;
+}
+export function taskGuidance(v: Listing, r: Requirements) {
+  const evidence = listingEvidence(v);
+  const strengths: string[] = [];
+  const caveats: string[] = [];
+  if (evidence.ram !== null) {
+    if (r.tasks.includes("Máy ảo")) {
+      if (evidence.ram >= 32)
+        strengths.push(`RAM ${evidence.ram} GB phù hợp cấp phát bộ nhớ máy ảo`);
+      else if (evidence.ram < 16)
+        caveats.push(`Tác vụ Máy ảo: RAM ${evidence.ram} GB hạn chế khi chạy máy ảo`);
+    } else if (
+      (r.tasks.includes("Lập trình") ||
+        r.tasks.includes("Thiết kế") ||
+        r.tasks.includes("Chơi game")) &&
+      evidence.ram >= 16
+    ) {
+      strengths.push(`RAM ${evidence.ram} GB đáp ứng mức đa nhiệm thông thường`);
+    } else if (
+      (r.tasks.includes("Lập trình") ||
+        r.tasks.includes("Thiết kế") ||
+        r.tasks.includes("Chơi game")) &&
+      evidence.ram < 16
+    ) {
+      caveats.push(`RAM ${evidence.ram} GB có thể chật khi mở tác vụ nặng`);
+    }
+  }
+  if (evidence.storage !== null && evidence.storage >= 512)
+    strengths.push(`Ổ lưu trữ ${evidence.storage} GB`);
+  if (evidence.conflicts.length > 0)
+    caveats.push(...evidence.conflicts);
+  if (r.tasks.length > 0)
+    caveats.push("Chưa có bài đo độc lập cho tác vụ đã chọn");
+  return { strengths, caveats };
+}
+
+

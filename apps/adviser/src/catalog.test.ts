@@ -6,11 +6,15 @@ import { importCatalog } from "../scripts/import-catalog.mjs";
 import {
   INITIAL_REQUIREMENTS as r,
   assess,
+  budgetUpgradeCandidates,
   checkedAdvice,
   facts,
+  observationAgeLabel,
+  relatedListings,
   safeLink,
   sameContext,
   searchCatalog,
+  taskGuidance,
   validCatalog,
   validRequirements,
   validSaved,
@@ -171,11 +175,68 @@ test("EVIDENCE-02 title storage conflict remains unresolved without guessing a r
 });
 
 
-test("THEME-01 fallback themes preserve text and essential-control contrast",async()=>{
- const {validTheme}=await import('./theme-validation.ts');
- const {EXPRESSIVE_DARK,EXPRESSIVE_LIGHT}=await import('./expressive-theme.ts');
- assert.ok(validTheme(EXPRESSIVE_DARK));assert.ok(validTheme(EXPRESSIVE_LIGHT));
- assert.equal(validTheme({...EXPRESSIVE_DARK,line:EXPRESSIVE_DARK.bg}),false);
- assert.equal(validTheme({...EXPRESSIVE_LIGHT,text:'#ffffff'}),false);
- assert.equal(validTheme({}),false);
+test("THEME-01 fallback themes preserve text and essential-control contrast", async () => {
+  const { validTheme } = await import('./theme-validation.ts');
+  const { EXPRESSIVE_DARK, EXPRESSIVE_LIGHT } = await import('./expressive-theme.ts');
+  assert.ok(validTheme(EXPRESSIVE_DARK)); assert.ok(validTheme(EXPRESSIVE_LIGHT));
+  assert.equal(validTheme({ ...EXPRESSIVE_DARK, line: EXPRESSIVE_DARK.bg }), false);
+  assert.equal(validTheme({ ...EXPRESSIVE_LIGHT, text: '#ffffff' }), false);
+  assert.equal(validTheme({}), false);
 });
+test("REAL-09 known mandatory charges compute reproducible total and enforce budget ceiling", () => {
+  const withFees = {
+    ...v,
+    ram: 16,
+    storage: 512,
+    advertisedPrice: 24700000,
+    shipping: 200000,
+    fees: 100000,
+  };
+  const ok = assess(withFees, r);
+  assert.equal(ok.total, 25000000);
+  assert.equal(ok.state, "needs_verification");
+  assert.ok(!ok.unknown.includes("Chưa đủ tổng chi phí"));
+  assert.ok(facts(withFees, r).cost.includes("25.000.000"));
+  const over = assess({ ...withFees, fees: 100001 }, r);
+  assert.equal(over.total, 25000001);
+  assert.equal(over.state, "excluded");
+  assert.ok(over.failed.includes("Tổng chi phí đã vượt ngân sách"));
+});
+test("REAL-10 relatedListings surfaces sibling configurations in the same family without self-inclusion", () => {
+  const withSiblings = c.listings.find(
+    (x) => relatedListings(c, x).length > 0,
+  )!;
+  assert.ok(withSiblings);
+  const siblings = relatedListings(c, withSiblings);
+  assert.ok(siblings.length > 0 && siblings.length <= 6);
+  assert.ok(siblings.every((s) => s.id !== withSiblings.id));
+});
+test("REAL-11 budgetUpgradeCandidates identifies listings excluded solely by budget ceiling and observationAgeLabel marks historical age", () => {
+  const lowBudgetReq = { ...r, budget: 15000000, minRam: 8 };
+  const upgrades = budgetUpgradeCandidates(c, lowBudgetReq, 5000000);
+  assert.ok(upgrades.length > 0);
+  assert.ok(
+    upgrades.every(
+      (u) =>
+        u.extraVnd !== null &&
+        u.extraVnd > 0 &&
+        u.extraVnd <= 5000000 &&
+        u.now.state === "excluded" &&
+        u.next.state === "needs_verification",
+    ),
+  );
+  const label = observationAgeLabel("2026-11-01T00:00:00Z", Date.parse("2026-11-13T00:00:00Z"));
+  assert.ok(label.includes("12 ngày trước"));
+  assert.ok(label.includes("chưa phải giá trực tiếp"));
+});
+test("REAL-12 taskGuidance surfaces verified hardware strengths and caveats without fabricating benchmark proof", () => {
+  const vmReady = { ...v, ram: 32, storage: 512 };
+  const g1 = taskGuidance(vmReady, { ...r, tasks: ["Máy ảo"] });
+  assert.ok(g1.strengths.some((s) => s.includes("32 GB")));
+  assert.ok(g1.caveats.some((c) => c.includes("Chưa có bài đo độc lập")));
+  const lowRam = { ...v, ram: 8, storage: 256 };
+  const g2 = taskGuidance(lowRam, { ...r, tasks: ["Máy ảo"] });
+  assert.ok(g2.caveats.some((c) => c.includes("RAM 8 GB hạn chế")));
+});
+
+

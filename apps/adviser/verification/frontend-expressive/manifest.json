@@ -3,8 +3,8 @@
   "scope": "Audit-driven frontend implementation; Android emulator evidence, not physical-device acceptance",
   "apk": {
     "path": "apps/adviser/artifacts/lua-adviser-demo.apk",
-    "sha256": "804023753542f7cf198302cd9e1862be7404b578b9797aa972ed13261cae3b72",
-    "bytes": 44688843,
+    "sha256": "574b09bad00a5da774968deb3033110a5e8bc024b36e8641649d4c9bb9099fe2",
+    "bytes": 44699027,
     "abis": [
       "arm64-v8a",
       "x86_64"
@@ -28,7 +28,7 @@
   },
   "checks": {
     "appRegressionTests": {
-      "passed": 60,
+      "passed": 64,
       "failed": 0
     },
     "adviserServiceTests": {
@@ -119,7 +119,7 @@
     },
     {
       "path": "apps/adviser/src/AdviserApp.tsx",
-      "sha256": "1ea2fe38c0ae52d9986dc21def5be63e0c93d2996d345c8dc523963648d77aea"
+      "sha256": "7093e82320a3922ae3852b54cc489aed2cbd85c5464234d6298ce9b6c666af87"
     },
     {
       "path": "apps/adviser/src/ai.test.ts",
@@ -139,15 +139,15 @@
     },
     {
       "path": "apps/adviser/src/catalog.test.ts",
-      "sha256": "529b5ad10c88277af66f8c301ce0bfdb89e2820ef702d24c7efffe413c1aa287"
+      "sha256": "3cf224c1d1a4ad6463fdc6080b93640406596a825ee7b8caeee4bfdca97d3e41"
     },
     {
       "path": "apps/adviser/src/catalog.ts",
-      "sha256": "cac787cfbf5eec185981d09d65715174e961802cd6191ffacced84da8c5f2eb1"
+      "sha256": "86c8cae659c0de2c00674540b199e39e03d084b4d266de1a20703d559419d4e5"
     },
     {
       "path": "apps/adviser/src/ComparisonView.tsx",
-      "sha256": "41ee4b2ddc9cfa123b1dcee9cff38e2b6fb9780a527b36863d74d761e723b1f1"
+      "sha256": "1c8cd7592cde1da0b16de3e21bbaf416143023f3f1d748084d1929fcf6202a01"
     },
     {
       "path": "apps/adviser/src/decision-state.test.ts",
@@ -159,7 +159,7 @@
     },
     {
       "path": "apps/adviser/src/design-tokens.css",
-      "sha256": "884f572719d0eb7947534cbd9371bae36a8f69386594f6c7648b942886b1dab9"
+      "sha256": "f41079e667dfd355acaefcc6cf769802a1b6ceb14c668dc280f298078914ca84"
     },
     {
       "path": "apps/adviser/src/design-tokens.ts",
@@ -179,15 +179,15 @@
     },
     {
       "path": "apps/adviser/src/expressive-theme.ts",
-      "sha256": "0400bd3f3b3fc97d290925db552b3b448dd899b20316ebd2356093ab233d1a99"
+      "sha256": "17fb0953deff4d7a3d0483014050d09fa695098367cb2c99bb7c5c005c165407"
     },
     {
       "path": "apps/adviser/src/ExpressiveButton.tsx",
-      "sha256": "5d4f1b0f3371477ac2ecb6fadc2248ce8016367af5bd95baf992ac044f3d6b0b"
+      "sha256": "e5f49d41f563a1e9a6d7345a146a36e09b55adb3b501e28947fc93fb88d30a54"
     },
     {
       "path": "apps/adviser/src/ExpressiveButton.web.tsx",
-      "sha256": "92a6158982df36fdaf2a9f5388ad1fc009c22d5b756b5fddf99fe897a4a4dd86"
+      "sha256": "34babaf0837121612a36694224c655156a5743a4d393b01960f5ed57b084c3e5"
     },
     {
       "path": "apps/adviser/src/ExpressiveLoading.tsx",
@@ -255,7 +255,7 @@
     },
     {
       "path": "apps/adviser/src/web.css",
-      "sha256": "f128898aa0a286092708df137a4fabf058beb6257427e50c4ea7f1a4bc7dcb10"
+      "sha256": "6855b47169326f86805449698f888064b2ee5ce3b22b2afd840c053ac3167056"
     },
     {
       "path": "apps/adviser/native/adviser/LocalAiModule.kt",

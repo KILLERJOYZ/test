@@ -10,7 +10,7 @@
     "docs/planning/APP_FLOW.md": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640",
     "docs/planning/REPOSITORY_RESEARCH_2026-11-13.md": "62364e0983aaf9a30145b98a19d0731ebcc4288f7e0f7686107a6fa436ffadb7",
     "docs/planning/project-traceability.json": "46423b863cbe3793bfbd3343d823ccd386a65bc184eb4ec2f9760ca0c951a92c",
-    "apps/adviser/package.json": "e9991914644a687b00d634daabfbcb181f6539c2035bd434a955cc3d1d3a3e0c",
+    "apps/adviser/package.json": "45fb770dbc874beda1cebc3f29b1e52ad1b5fe36890d4b8ab941e1b1e54d05fc",
     "apps/adviser/VERIFICATION.md": "095932ccc3571e9dbe16587a8616e136ed1a585620c9f567eb9a8db63a45dded"
   },
   "consumedConfig": {
@@ -36,8 +36,8 @@
   "unitPackResults": [
     {
       "packId": "U00",
-      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec.json",
-      "reportHash": "4892430a5b7c8d5c327830339a19560d66328f6b576d63944d12dd2a97f7a180",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/7a0475a9bf064ca2901244ba813bce22.json",
+      "reportHash": "283b8a7dded443f16763f57fe2331d0b2fcfc108d65514dfa6cf665c757b49da",
       "definitionHash": "95042f18890d9ed277020e7590ef7a7d7a93eeedca99d26d14f1323f51375136",
       "testedFileHashes": {
         "research/prebuild/tools/test_validate.py": "bcf345283596abea2c9ee751d16e7d26d2ee761ca88f84d35cc50a575376d255",
@@ -74,8 +74,8 @@
     },
     {
       "packId": "UBASE",
-      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec.json",
-      "reportHash": "4892430a5b7c8d5c327830339a19560d66328f6b576d63944d12dd2a97f7a180",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/7a0475a9bf064ca2901244ba813bce22.json",
+      "reportHash": "283b8a7dded443f16763f57fe2331d0b2fcfc108d65514dfa6cf665c757b49da",
       "definitionHash": "757c1c6368f6d034fadbc695f7766e34a8b078000a522f465be3f671dc4a4edb",
       "testedFileHashes": {
         "research/prebuild/tools/test_validate.py": "bcf345283596abea2c9ee751d16e7d26d2ee761ca88f84d35cc50a575376d255",
@@ -120,8 +120,8 @@
     },
     {
       "packId": "UPLAN",
-      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec.json",
-      "reportHash": "4892430a5b7c8d5c327830339a19560d66328f6b576d63944d12dd2a97f7a180",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/7a0475a9bf064ca2901244ba813bce22.json",
+      "reportHash": "283b8a7dded443f16763f57fe2331d0b2fcfc108d65514dfa6cf665c757b49da",
       "definitionHash": "ae5629b0086cbda3959ea7675a5bf7b61bad88a016a556ce09e1e0570b1c061c",
       "testedFileHashes": {
         "research/prebuild/tools/test_validate.py": "bcf345283596abea2c9ee751d16e7d26d2ee761ca88f84d35cc50a575376d255",
@@ -296,6 +296,23 @@
       "reason": null
     },
     {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R00"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T08:47:08.364463+00:00",
+      "finishedAt": "2026-11-13T08:47:11.352280+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R00-artifact-529ef8e93cdb487cb1d96a023a744d10.log",
+      "reason": null
+    },
+    {
       "id": "validator_tests",
       "command": [
         "python",
@@ -308,12 +325,12 @@
         "test_validate.py"
       ],
       "cwd": ".",
-      "startedAt": "2026-11-13T08:47:08.364463+00:00",
-      "finishedAt": "2026-11-13T08:47:11.126171+00:00",
+      "startedAt": "2026-11-13T12:00:15.026908+00:00",
+      "finishedAt": "2026-11-13T12:00:17.383603+00:00",
       "exitCode": 0,
       "result": "pass",
       "mode": "unit",
-      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec-validator_tests.log",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/7a0475a9bf064ca2901244ba813bce22-validator_tests.log",
       "reason": null
     },
     {
@@ -329,12 +346,12 @@
         "test_unit_runner.py"
       ],
       "cwd": ".",
-      "startedAt": "2026-11-13T08:47:08.364463+00:00",
-      "finishedAt": "2026-11-13T08:47:11.126196+00:00",
+      "startedAt": "2026-11-13T12:00:15.026908+00:00",
+      "finishedAt": "2026-11-13T12:00:17.383621+00:00",
       "exitCode": 0,
       "result": "pass",
       "mode": "unit",
-      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec-unit_runner_tests.log",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/7a0475a9bf064ca2901244ba813bce22-unit_runner_tests.log",
       "reason": null
     },
     {
@@ -348,12 +365,12 @@
         "apps/adviser/src/ai.test.ts"
       ],
       "cwd": ".",
-      "startedAt": "2026-11-13T08:47:08.364463+00:00",
-      "finishedAt": "2026-11-13T08:47:11.126206+00:00",
+      "startedAt": "2026-11-13T12:00:15.026908+00:00",
+      "finishedAt": "2026-11-13T12:00:17.383631+00:00",
       "exitCode": 0,
       "result": "pass",
       "mode": "unit",
-      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec-baseline_domain.log",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/7a0475a9bf064ca2901244ba813bce22-baseline_domain.log",
       "reason": null
     },
     {
@@ -369,12 +386,12 @@
         "test_plan_contract.py"
       ],
       "cwd": ".",
-      "startedAt": "2026-11-13T08:47:08.364463+00:00",
-      "finishedAt": "2026-11-13T08:47:11.126211+00:00",
+      "startedAt": "2026-11-13T12:00:15.026908+00:00",
+      "finishedAt": "2026-11-13T12:00:17.383637+00:00",
       "exitCode": 0,
       "result": "pass",
       "mode": "unit",
-      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/333dd083005c4c66b5bc92151ae418ec-plan_contract_tests.log",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/7a0475a9bf064ca2901244ba813bce22-plan_contract_tests.log",
       "reason": null
     },
     {
@@ -386,12 +403,12 @@
         "R00"
       ],
       "cwd": ".",
-      "startedAt": "2026-11-13T08:47:08.364463+00:00",
-      "finishedAt": "2026-11-13T08:47:11.352280+00:00",
+      "startedAt": "2026-11-13T12:00:15.026908+00:00",
+      "finishedAt": "2026-11-13T12:00:17.563813+00:00",
       "exitCode": 0,
       "result": "pass",
       "mode": "artifact",
-      "outputRef": "research/prebuild/runs/20261113T052229Z/R00-artifact-529ef8e93cdb487cb1d96a023a744d10.log",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R00-artifact-10e6d2ef74b1469880593ef49ee83d87.log",
       "reason": null
     }
   ],

@@ -124,81 +124,6 @@
       "reason": null
     },
     {
-      "id": "readiness_tests",
-      "command": [
-        "python",
-        "-m",
-        "unittest",
-        "discover",
-        "-s",
-        "research/prebuild/tools",
-        "-p",
-        "test_readiness.py"
-      ],
-      "cwd": ".",
-      "startedAt": "2026-11-13T06:37:47.431691+00:00",
-      "finishedAt": "2026-11-13T06:37:48.296634+00:00",
-      "exitCode": 0,
-      "result": "pass",
-      "mode": "unit",
-      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/94fc550c473f4a6083df462b0555c3a7-readiness_tests.log",
-      "reason": null
-    },
-    {
-      "id": "plan_contract_tests",
-      "command": [
-        "python",
-        "-m",
-        "unittest",
-        "discover",
-        "-s",
-        "research/prebuild/tools",
-        "-p",
-        "test_plan_contract.py"
-      ],
-      "cwd": ".",
-      "startedAt": "2026-11-13T06:37:47.431691+00:00",
-      "finishedAt": "2026-11-13T06:37:48.296662+00:00",
-      "exitCode": 0,
-      "result": "pass",
-      "mode": "unit",
-      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/94fc550c473f4a6083df462b0555c3a7-plan_contract_tests.log",
-      "reason": null
-    },
-    {
-      "id": "all_artifacts",
-      "command": [
-        "python",
-        "research/prebuild/tools/validate.py",
-        "--all"
-      ],
-      "cwd": ".",
-      "startedAt": "2026-11-13T06:37:48.296677+00:00",
-      "finishedAt": "2026-11-13T06:37:49.067303+00:00",
-      "exitCode": 0,
-      "result": "pass",
-      "mode": "artifact",
-      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-all_artifacts-b04b440e3ce649508a4dbfd73f2c39bf.log",
-      "reason": null
-    },
-    {
-      "id": "gate_g4",
-      "command": [
-        "python",
-        "research/prebuild/tools/validate.py",
-        "--gate",
-        "G4"
-      ],
-      "cwd": ".",
-      "startedAt": "2026-11-13T06:37:49.067406+00:00",
-      "finishedAt": "2026-11-13T06:37:49.806286+00:00",
-      "exitCode": 2,
-      "result": "pass",
-      "mode": "artifact",
-      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-gate_g4-b3680db32df74d79afaa6971942f9edf.log",
-      "reason": null
-    },
-    {
       "id": "artifact_check",
       "command": [
         "python",
@@ -214,6 +139,98 @@
       "mode": "artifact",
       "outputRef": "research/prebuild/runs/20261113T052229Z/R14-artifact-5d9078d7bf064f1dadfc29c09bd21802.log",
       "reason": null
+    },
+    {
+      "id": "readiness_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_readiness.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T12:00:18.879514+00:00",
+      "finishedAt": "2026-11-13T12:00:19.764525+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/19cf615a47a24fb4afce913040d2a3cc-readiness_tests.log",
+      "reason": null
+    },
+    {
+      "id": "plan_contract_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_plan_contract.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T12:00:18.879514+00:00",
+      "finishedAt": "2026-11-13T12:00:19.764547+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/19cf615a47a24fb4afce913040d2a3cc-plan_contract_tests.log",
+      "reason": null
+    },
+    {
+      "id": "all_artifacts",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--all"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T12:00:19.764558+00:00",
+      "finishedAt": "2026-11-13T12:00:20.615566+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-all_artifacts-8d6f391e70d748cfb9986665da1bb6ee.log",
+      "reason": null
+    },
+    {
+      "id": "gate_g4",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--gate",
+        "G4"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T12:00:20.615685+00:00",
+      "finishedAt": "2026-11-13T12:00:21.444368+00:00",
+      "exitCode": 2,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-gate_g4-8dea0dbdb92b48d8a1811d39f6545bfd.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R14"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T12:00:18.879514+00:00",
+      "finishedAt": "2026-11-13T12:00:21.574126+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R14-artifact-858479923e2d44a2b6f690df4b992164.log",
+      "reason": null
     }
   ],
   "automationStatus": "done",
@@ -221,7 +238,7 @@
   "definitionHash": "0a6e7bbf0c44e11aeceec09c9cc2e29d35296dc87fc560157f2e7df851989135",
   "inputHashes": {
     "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
-    "docs/planning/IMPLEMENTATION_PLAN.md": "fce922177d44307433c03f43a9298a6bc494253615de3c37623a3701ff9f8895"
+    "docs/planning/IMPLEMENTATION_PLAN.md": "049389d6bc23e52b804f6aac21501952bfb406a32818d1f4d836d1cedb0bfb49"
   },
   "consumedConfig": {},
   "consumedEvidenceHashes": {},
@@ -232,8 +249,8 @@
   "unitPackResults": [
     {
       "packId": "U14",
-      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/94fc550c473f4a6083df462b0555c3a7.json",
-      "reportHash": "8edf21d5febf16f06a88032688af7bddd8dad1c346218ea4576f7648122bee76",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/19cf615a47a24fb4afce913040d2a3cc.json",
+      "reportHash": "23bc97777e65a4b0700f3ff5b0b49d5e3cd9f4489aadd5d9cb259b1a63ba24ea",
       "definitionHash": "4fc315ee16dc01fa3d0cf34edaae1e0d9ac7efe37c11bb9f0197da1c938faa09",
       "testedFileHashes": {
         "research/prebuild/tools/test_readiness.py": "fcab0adf8de15b26b79265d32c7155d873ebb9183371cd9e50b6e2db44c8b123",
@@ -260,8 +277,8 @@
     },
     {
       "packId": "UPLAN",
-      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/94fc550c473f4a6083df462b0555c3a7.json",
-      "reportHash": "8edf21d5febf16f06a88032688af7bddd8dad1c346218ea4576f7648122bee76",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/19cf615a47a24fb4afce913040d2a3cc.json",
+      "reportHash": "23bc97777e65a4b0700f3ff5b0b49d5e3cd9f4489aadd5d9cb259b1a63ba24ea",
       "definitionHash": "ae5629b0086cbda3959ea7675a5bf7b61bad88a016a556ce09e1e0570b1c061c",
       "testedFileHashes": {
         "research/prebuild/tools/test_readiness.py": "fcab0adf8de15b26b79265d32c7155d873ebb9183371cd9e50b6e2db44c8b123",
@@ -296,9 +313,9 @@
     "gate_g4": "d7e52bc3d99d1674f45772d56a010c2943bfc24d1c66f0af2bacaa3a2761216c"
   },
   "outputHashes": {
-    "research/prebuild/14-build-readiness.json": "82909d36dd72b5b0edc2663347ac97dd6fe6d5196e6c059e745591b18f68641b",
+    "research/prebuild/14-build-readiness.json": "8a90f862a28c1a84a0e67ef6befc1cac3165e45697eb5bb7c87478e968c6747e",
     "research/prebuild/14-build-readiness.md": "6672c4ce83aa7701a5afde1533c2f9c39e6e1387a2d855494a866302b1467888",
-    "research/prebuild/14-production-backlog.json": "b0ff447d89afb6706434220a3eec6726ec79b4c50993981fc53b55799a55267f",
+    "research/prebuild/14-production-backlog.json": "bc4968074c399ab1f1e248f04e2f0dd6b7903a6468b4e19d481c7024ffa58c5c",
     "research/prebuild/tools/test_readiness.py": "fcab0adf8de15b26b79265d32c7155d873ebb9183371cd9e50b6e2db44c8b123",
     "research/prebuild/tools/readiness.py": "143e01051ea6fcddd0bba3115c01c445cfa14ed41513396abe9540695196d0ca"
   },

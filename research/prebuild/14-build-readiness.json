@@ -36,7 +36,7 @@
     },
     {
       "ref": "research/prebuild/11-android-cases.json",
-      "sha256": "61ec1edf5ccfac70c4202e66f632d5b97be2306bf15903cd0350b680610a7572"
+      "sha256": "d68168e8c7a8344a3eed5a4b15ec63d89c5600f94ab0e9f74afa3217b4cd9274"
     },
     {
       "ref": "research/prebuild/12-operations-scenarios.json",
@@ -440,60 +440,8 @@
       ],
       "productionScopeStatus": "provisional"
     },
-    "unitPackSummaryRef": "research/prebuild/runs/20261113T052229Z/unit-packs/ca4a7a5795d844da9aa1572d7c75af5d.json",
-    "automationAssessmentNote": "All R00-R14 local automation executed; external evidence partial; gates pending.",
-    "unitPackResults": {
-      "packs": 17,
-      "requiredCases": 158,
-      "passed": 158,
-      "failed": 0,
-      "skipped": 0,
-      "notRun": 0,
-      "discoveredUnitTests": 165,
-      "exitCode": 0
-    },
-    "finalCheckRefs": [
-      "research/prebuild/runs/20261113T052229Z/final_types.log",
-      "research/prebuild/runs/20261113T052229Z/final_service_http.log",
-      "research/prebuild/runs/20261113T052229Z/final_spike_http.log"
-    ],
-    "continuedReview": {
-      "fixedFindingIds": [
-        "U08-10",
-        "U08-11"
-      ],
-      "beforeRef": "research/prebuild/runs/20261113T052229Z/R08-unknowns-before.log",
-      "afterRef": "research/prebuild/runs/20261113T052229Z/R08-unknowns-after.log",
-      "readinessImpact": "Pending production readiness unchanged."
-    },
-    "apiBoundaryReview": {
-      "fixedFindingIds": [
-        "U07-08",
-        "U07-09"
-      ],
-      "beforeRef": "research/prebuild/runs/20261113T052229Z/API-boundary-before.log",
-      "afterRef": "research/prebuild/runs/20261113T052229Z/API-boundary-after.log",
-      "readinessImpact": "Pending production readiness unchanged."
-    },
-    "hardHistoryReview": {
-      "fixedFindingIds": [
-        "U08-12",
-        "U08-13",
-        "U08-14",
-        "U08-15"
-      ],
-      "beforeRef": "research/prebuild/runs/20261113T052229Z/R08-hard-history-before-v2.log",
-      "afterRef": "research/prebuild/runs/20261113T052229Z/R08-hard-history-after.log",
-      "readinessImpact": "Production gates remain pending."
-    },
-    "savedContractReview": {
-      "fixedFindingIds": [
-        "U07-10"
-      ],
-      "beforeRef": "research/prebuild/runs/20261113T052229Z/saved-contract-before.log",
-      "afterRef": "research/prebuild/runs/20261113T052229Z/saved-contract-after.log",
-      "readinessImpact": "Pending production decision unchanged."
-    }
+    "unitPackSummaryRef": null,
+    "automationAssessmentNote": "R14 is running during package generation; final execution record establishes completion after validation."
   },
   "evidenceRefs": [
     "E-R00-LOCAL",
