@@ -2,15 +2,31 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { AccessibilityInfo, useColorScheme } from "react-native";
 import { useExpressiveTheme } from "./useExpressiveTheme";
 import { EXPRESSIVE_LIGHT, type ExpressiveColors } from "./expressive-theme";
-const Context = createContext({
+
+interface AdvisorThemeValue {
+  colors: ExpressiveColors;
+  reduceMotion: boolean;
+  dark: boolean;
+  /** true when colors come from Material You (wallpaper-derived). */
+  isMaterialYou: boolean;
+}
+
+const Context = createContext<AdvisorThemeValue>({
   colors: EXPRESSIVE_LIGHT,
   reduceMotion: true,
   dark: false,
+  isMaterialYou: false,
 });
+
 export function AdvisorTheme({ children }: { children: React.ReactNode }) {
   const dark = useColorScheme() === "dark";
   const colors = useExpressiveTheme(dark);
   const [reduceMotion, setReduceMotion] = useState(true);
+
+  /* Detect whether Material You is active by comparing against static fallback. */
+  const staticFallback = dark ? EXPRESSIVE_LIGHT : EXPRESSIVE_LIGHT; // same ref
+  const isMaterialYou = colors.accent !== EXPRESSIVE_LIGHT.accent && colors.accent !== "#245f43";
+
   useEffect(() => {
     let active = true;
     void AccessibilityInfo.isReduceMotionEnabled().then((v) => {
@@ -25,15 +41,18 @@ export function AdvisorTheme({ children }: { children: React.ReactNode }) {
       listener.remove();
     };
   }, []);
+
   return (
-    <Context.Provider value={{ colors, reduceMotion, dark }}>
+    <Context.Provider value={{ colors, reduceMotion, dark, isMaterialYou }}>
       {children}
     </Context.Provider>
   );
 }
+
 export function useAdvisorTheme() {
   return useContext(Context);
 }
+
 export function legacyPalette(c: ExpressiveColors) {
   return {
     bg: c.bg,

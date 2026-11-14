@@ -1,11 +1,16 @@
+from datetime import datetime, timezone
 import hashlib
 import json
+from pathlib import Path
 import re
-from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
-from backend.db import fetch_all_laptops_raw, fetch_laptop_by_id
+from backend.db import fetch_all_laptops_raw, fetch_laptop_by_id, query_laptops
 from backend.schemas import CatalogModel, ListingModel, RequirementsModel
+from backend.services import device_catalog
+
+REAL_CATALOG_FILE = Path(__file__).resolve().parents[2] / "apps" / "adviser" / "src" / "real-catalog.json"
+
 
 def parse_quantity(val: Any, is_storage: bool = False) -> Optional[int]:
     """Trích xuất số lượng GB từ chuỗi (ví dụ: '16GB', '512GB SSD', '1 TB')."""
@@ -14,13 +19,16 @@ def parse_quantity(val: Any, is_storage: bool = False) -> Optional[int]:
     if isinstance(val, (int, float)):
         return int(val)
     s = str(val).strip()
-    match = re.search(r'(\d+(?:\.\d+)?)\s*(GB|TB)', s, re.IGNORECASE)
+    match = re.search(r"(\d+(?:\.\d+)?)\s*(GB|TB)", s, re.IGNORECASE)
     if not match:
+        if s.isdigit():
+            return int(s)
         return None
     num = float(match.group(1))
     unit = match.group(2).upper()
     total_gb = int(num * 1024 if (is_storage and unit == "TB") else num)
     return total_gb if total_gb >= 0 else None
+
 
 def ensure_https_url(url: Optional[str], default_domain: str = "example.com") -> str:
     """Đảm bảo URL hợp lệ theo điều kiện safeLink của Frontend (protocol https)."""
@@ -32,6 +40,39 @@ def ensure_https_url(url: Optional[str], default_domain: str = "example.com") ->
     elif not url_str.startswith("https://"):
         url_str = "https://" + url_str.lstrip("/")
     return url_str
+
+
+def _normalize_repo_listing(raw: Dict[str, Any]) -> ListingModel:
+    """Chuẩn hóa một mục trong real-catalog.json sang ListingModel đầy đủ."""
+    data = dict(raw)
+    thumb = data.get("thumbnail")
+    images = list(data.get("images") or [])
+    if thumb and thumb not in images:
+        images.insert(0, thumb)
+    media = data.get("media")
+    if not isinstance(media, dict):
+        media = {"thumbnail": thumb, "images": images}
+    data["images"] = images
+    data["media"] = media
+    return ListingModel.model_validate(data)
+
+
+def load_repository_catalog() -> CatalogModel:
+    """Đọc danh mục từ apps/adviser/src/real-catalog.json khi ở chế độ repository."""
+    raw = json.loads(REAL_CATALOG_FILE.read_text(encoding="utf-8"))
+    listings = [_normalize_repo_listing(item) for item in raw.get("listings", [])]
+    revision = raw.get("revision")
+    if not revision:
+        serialized = json.dumps([l.model_dump() for l in listings], sort_keys=True)
+        revision = hashlib.sha256(serialized.encode("utf-8")).hexdigest()
+    imported_at = raw.get("importedAt") or datetime.now(timezone.utc).isoformat()
+    return CatalogModel(
+        schemaVersion=int(raw.get("schemaVersion", 1)),
+        revision=revision,
+        importedAt=imported_at,
+        listings=listings,
+    )
+
 
 def row_to_listing(row: Dict[str, Any]) -> ListingModel:
     """Chuyển đổi một bản ghi PostgreSQL sang ListingModel."""
@@ -54,7 +95,6 @@ def row_to_listing(row: Dict[str, Any]) -> ListingModel:
     if cond not in ("new", "used", "unknown"):
         cond = "new"
 
-    # Tạo rawHash ổn định
     hash_payload = {
         "id": full_id,
         "name": row.get("name"),
@@ -131,12 +171,19 @@ def row_to_listing(row: Dict[str, Any]) -> ListingModel:
         availability=row.get("availability") or "in_stock",
     )
 
+
 def build_catalog_snapshot() -> CatalogModel:
-    """Tạo toàn bộ đối tượng CatalogModel từ dữ liệu PostgreSQL hiện tại."""
+    """Tạo đối tượng CatalogModel theo nguồn đã chọn (repository hoặc postgresql).
+
+    Tuyệt đối không âm thầm chuyển sang repository khi postgresql gặp sự cố (F-49).
+    """
+    source_mode = device_catalog.catalog_source()
+    if source_mode == "repository":
+        return load_repository_catalog()
+
     rows = fetch_all_laptops_raw()
     listings = [row_to_listing(r) for r in rows]
 
-    # Tính revision hash từ toàn bộ danh sách listings
     serialized = json.dumps([l.model_dump() for l in listings], sort_keys=True)
     revision = hashlib.sha256(serialized.encode("utf-8")).hexdigest()
     imported_at = datetime.now(timezone.utc).isoformat()
@@ -147,6 +194,147 @@ def build_catalog_snapshot() -> CatalogModel:
         importedAt=imported_at,
         listings=listings,
     )
+
+
+def get_listing_by_id(laptop_id: str) -> Optional[ListingModel]:
+    """Lấy 1 ListingModel theo ID từ repository hoặc PostgreSQL."""
+    source_mode = device_catalog.catalog_source()
+    clean_id = laptop_id.split(":", 1)[-1] if ":" in laptop_id else laptop_id
+    if source_mode == "repository":
+        catalog = load_repository_catalog()
+        for item in catalog.listings:
+            item_clean = item.id.split(":", 1)[-1] if ":" in item.id else item.id
+            if item.id == laptop_id or item_clean == clean_id:
+                return item
+        return None
+
+    row = fetch_laptop_by_id(laptop_id)
+    return row_to_listing(row) if row else None
+
+
+def _effective_total(item: ListingModel) -> Optional[int]:
+    if item.advertisedPrice is None:
+        return None
+    if item.shipping is not None and item.fees is not None:
+        return item.advertisedPrice + item.shipping + item.fees
+    return item.advertisedPrice
+
+
+def search_catalog_laptops(
+    q: str = "",
+    source: str = "",
+    brand: str = "",
+    max_price: Optional[int] = None,
+    min_ram: Optional[int] = None,
+    min_storage: Optional[int] = None,
+    sort: str = "price",
+    limit: int = 12,
+    offset: int = 0,
+) -> Dict[str, Any]:
+    """Tìm kiếm, lọc, sắp xếp và phân trang thống nhất trên cả repository và postgresql."""
+    source_mode = device_catalog.catalog_source()
+
+    if source_mode == "postgresql":
+        data = query_laptops(
+            q=q,
+            source=source,
+            brand=brand,
+            max_price=max_price,
+            min_ram=min_ram,
+            min_storage=min_storage,
+            sort=sort,
+            limit=limit,
+            offset=offset,
+        )
+        items = [row_to_listing(r).model_dump() for r in data["items"]]
+        total = int(data["total"])
+        return {
+            "total": total,
+            "limit": limit,
+            "offset": offset,
+            "hasMore": (offset + len(items)) < total,
+            "items": items,
+        }
+
+    # Repository mode
+    listings = list(load_repository_catalog().listings)
+    q_norm = q.strip().lower()
+    source_norm = source.strip().lower()
+    brand_norm = brand.strip().lower()
+
+    filtered: List[ListingModel] = []
+    for item in listings:
+        if source_norm and item.source.lower() != source_norm:
+            continue
+        if brand_norm:
+            item_brand = (item.brand or "").lower()
+            if item_brand != brand_norm and brand_norm not in item.name.lower():
+                continue
+        if max_price is not None and max_price > 0:
+            if item.advertisedPrice is None or item.advertisedPrice > max_price:
+                continue
+        if min_ram is not None and min_ram > 0:
+            if item.ram is None or item.ram < min_ram:
+                continue
+        if min_storage is not None and min_storage > 0:
+            if item.storage is None or item.storage < min_storage:
+                continue
+        if q_norm:
+            haystack = " ".join(
+                filter(
+                    None,
+                    [
+                        item.name,
+                        item.cpu,
+                        item.brand,
+                        item.model,
+                        item.gpu,
+                        f"{item.ram}gb {item.ram} gb" if item.ram is not None else "",
+                        f"{item.storage}gb {item.storage} gb" if item.storage is not None else "",
+                        item.source,
+                    ],
+                )
+            ).lower()
+            if q_norm not in haystack:
+                continue
+        filtered.append(item)
+
+    if sort == "name":
+        filtered.sort(key=lambda x: (x.name.lower(), x.id))
+    elif sort == "price_desc":
+        filtered.sort(key=lambda x: (x.advertisedPrice is None, -(x.advertisedPrice or 0), x.id))
+    elif sort == "total":
+        filtered.sort(key=lambda x: (_effective_total(x) is None, _effective_total(x) or 0, x.id))
+    elif sort == "fit":
+        fit_req = RequirementsModel(
+            budget=min(max(max_price or 25_000_000, 1), 1_000_000_000),
+            minRam=min(max(min_ram or 0, 0), 1024),
+            minStorage=min(max(min_storage or 0, 0), 100_000),
+        )
+        filtered.sort(
+            key=lambda x: (
+                assess_listing(x, fit_req)["state"] == "excluded",
+                len(assess_listing(x, fit_req)["failed"]),
+                -(x.ram or 0),
+                x.advertisedPrice is None,
+                x.advertisedPrice or 0,
+                x.id,
+            )
+        )
+    else:
+        filtered.sort(key=lambda x: (x.advertisedPrice is None, x.advertisedPrice or 0, x.id))
+
+    total = len(filtered)
+    paged = filtered[offset : offset + limit]
+    items = [item.model_dump() for item in paged]
+    return {
+        "total": total,
+        "limit": limit,
+        "offset": offset,
+        "hasMore": (offset + len(items)) < total,
+        "items": items,
+    }
+
 
 def assess_listing(listing: ListingModel, r: RequirementsModel) -> Dict[str, Any]:
     """Đánh giá độ phù hợp của máy đối với bộ Requirements."""

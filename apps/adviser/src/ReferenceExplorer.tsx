@@ -1,38 +1,41 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useRef, useState } from "react";
 import {
-  View,
-  Text,
-  TextInput,
-  Pressable,
   Linking,
   Share,
   StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from "react-native";
-import { loadReferences, referenceStorageKind } from "./reference-storage";
+import { RULE_VERSION, SCORING_VERSION } from "./advisor-engine";
+import { legacyPalette, useAdvisorTheme } from "./AdvisorTheme";
+import { MAX_COMPARE_ITEMS, observationAgeLabel } from "./catalog";
+import { createUniqueDecisionId } from "./decision-state";
+import { storage } from "./demo-storage";
+import { PURPOSES } from "./device-profile";
+import { money } from "./domain";
+import { ExpressiveButton } from "./ExpressiveButton";
+import { ListingTools, QuotationForm } from "./ListingTools";
+import type { Needs } from "./picker";
 import {
-  referenceSeed,
   referenceAssessment,
-  selectReferences,
+  referenceSeed,
   referenceUrl,
+  selectReferences,
   type Reference,
 } from "./reference";
-import { RULE_VERSION, SCORING_VERSION } from "./advisor-engine";
-import { PURPOSES } from "./device-profile";
-import { storage } from "./demo-storage";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { loadReferences, referenceStorageKind } from "./reference-storage";
 import {
   importConnectedHistory,
   validUnifiedSaved,
   type UnifiedSaved,
 } from "./unified-adapters";
-import { ListingTools, QuotationForm } from "./ListingTools";
 import { UnifiedComparison } from "./UnifiedComparison";
-import { useAdvisorTheme, legacyPalette } from "./AdvisorTheme";
-import { ExpressiveButton } from "./ExpressiveButton";
-import { money } from "./domain";
-import type { Needs } from "./picker";
+
 type Saved = UnifiedSaved;
 const KEY = "lua-real-reference-decisions-v1";
+
 function Action({
   title,
   onPress,
@@ -53,6 +56,7 @@ function Action({
     />
   );
 }
+
 export default function ReferenceExplorer({
   needs,
   endpoint = "",
@@ -77,12 +81,13 @@ export default function ReferenceExplorer({
   const [deleteId, setDeleteId] = useState<string | null>(null);
   const [source, setSource] = useState("");
   const [savedQuery, setSavedQuery] = useState("");
+  const [focusedField, setFocusedField] = useState<string | null>(null);
   const [historicalNeeds, setHistoricalNeeds] = useState<Needs | null>(null);
   const [rows, setRows] = useState<Reference[]>([]),
     [error, setError] = useState(""),
     [loaded, setLoaded] = useState(false);
   const [showEvidence, setShowEvidence] = useState(false);
-  const [limit, setLimit] = useState(3),
+  const [limit, setLimit] = useState(6),
     [explore, setExplore] = useState(false);
   const [query, setQuery] = useState(""),
     [weight, setWeight] = useState(""),
@@ -92,6 +97,7 @@ export default function ReferenceExplorer({
     [selected, setSelected] = useState<string[]>([]),
     [saved, setSaved] = useState<Saved[]>([]),
     [writing, setWriting] = useState(false);
+
   useEffect(() => {
     let active = true;
     loadReferences()
@@ -111,6 +117,7 @@ export default function ReferenceExplorer({
       active = false;
     };
   }, [catalogRevision]);
+
   useEffect(() => {
     let active = true;
     (async () => {
@@ -147,6 +154,7 @@ export default function ReferenceExplorer({
       active = false;
     };
   }, []);
+
   async function persist(next: Saved[]) {
     if (!historyReady.current || writeLock.current) return;
     writeLock.current = true;
@@ -162,21 +170,24 @@ export default function ReferenceExplorer({
       setWriting(false);
     }
   }
+
   useEffect(() => {
     if (!loaded || historicalNeeds) return;
     setSelected((ids) => ids.filter((id) => rows.some((r) => r.id === id)));
     if (detail) {
       const current = rows.find((r) => r.id === detail.id);
-      // Manual quotes do not belong to the downloaded catalog.
       if (current) setDetail(current);
       else if (detail.catalogVersion) setHistoricalNeeds(needs);
     }
   }, [rows, loaded, detail?.id, historicalNeeds, needs.revision]);
+
   useEffect(() => {
-    setLimit(3);
+    setLimit(6);
     setExplore(false);
   }, [query, weight, sort, needs.revision]);
+
   if (!["results", "detail", "compare", "saved"].includes(screen)) return null;
+
   const result = selectReferences(
     source ? rows.filter((r) => r.source === source) : rows,
     needs,
@@ -186,8 +197,26 @@ export default function ReferenceExplorer({
     all,
   );
   const viewedNeeds = historicalNeeds ?? needs;
+
+  function formatRunBrief() {
+    const topLines = result.visible
+      .slice(0, 5)
+      .map(
+        (r, idx) =>
+          `${idx + 1}. ${r.name} (${r.source}) — ${r.price === null ? "Chưa rõ giá" : money(r.price)}`,
+      );
+    return [
+      `Tóm tắt kết quả tư vấn · Lựa Device Advisor (${RULE_VERSION} / ${SCORING_VERSION})`,
+      `Trần chi tiêu: ${money(needs.budget)}`,
+      `Đủ điều kiện: ${result.run.qualified.length} · Cần xác minh: ${result.run.verify.length} · Bị loại: ${result.run.excluded.length}`,
+      ...(topLines.length ? ["Gợi ý hàng đầu:", ...topLines] : []),
+      "Lưu ý: Dữ liệu quan sát thực tế; vui lòng tự kiểm tra giá và tồn kho tại cửa hàng.",
+    ].join("\n");
+  }
+
   function facts(r: Reference) {
     const assessment = referenceAssessment(r, viewedNeeds);
+    const ageLabel = observationAgeLabel(r.observedAt);
     if (!viewedNeeds.useOrderConfirmed)
       return (
         <>
@@ -195,7 +224,7 @@ export default function ReferenceExplorer({
             {r.price === null ? "Chưa có giá" : money(r.price)}
           </Text>
           <Text style={s.body}>
-            {r.source} · Quan sát: {r.observedAt}
+            {r.source} · {ageLabel}
           </Text>
           <Text style={s.body}>
             RAM: {r.ramGiB ?? "chưa rõ"} GB · Lưu trữ:{" "}
@@ -218,14 +247,10 @@ export default function ReferenceExplorer({
           {String(r.specs.ram ?? "RAM chưa rõ")} ·{" "}
           {String(r.specs.storage ?? "Ổ đĩa chưa rõ")}
         </Text>
-        <Text style={s.body}>Quan sát: {r.observedAt}</Text>
-        <Text style={s.warning}>
-          {assessment.state === "excluded"
-            ? "Không đạt điều kiện đã chọn"
-            : assessment.state === "qualified"
-              ? "Đạt các điều kiện có chứng cứ"
-              : "Phương án tham khảo · cần xác minh"}
-        </Text>
+        <Text style={s.body}>{ageLabel}</Text>
+        {assessment.state === "excluded" && (
+          <Text style={s.warning}>Không đạt điều kiện đã chọn</Text>
+        )}
         <Text style={s.body}>
           Độ phủ chứng cứ ưu tiên:{" "}
           {Math.round(assessment.evidenceCoverage * 100)}%.{" "}
@@ -248,6 +273,7 @@ export default function ReferenceExplorer({
       </>
     );
   }
+
   return (
     <View style={{ gap: 16 }}>
       <Text style={s.caption}>
@@ -260,24 +286,21 @@ export default function ReferenceExplorer({
           ý theo hồ sơ của bạn.
         </Text>
       ) : (
-        <>
-          {" "}
-          <Text style={s.body}>
-            Trần tham khảo: {money(needs.budget)} · Tác vụ:{" "}
-            {needs.deviceProfile
-              ? needs.deviceProfile.purposes
-                  .map(
-                    (id) =>
-                      Object.values(PURPOSES)
-                        .flat()
-                        .find((p) => p.id === id)?.label ?? id,
-                  )
-                  .join(", ")
-              : needs.tasks.join(", ")}
-            . Xếp theo chính sách ưu tiên có phiên bản; dữ liệu thiếu tạo khoảng
-            điểm, không được thay bằng điểm trung bình.
-          </Text>
-        </>
+        <Text style={s.body}>
+          Trần tham khảo: {money(needs.budget)} · Tác vụ:{" "}
+          {needs.deviceProfile
+            ? needs.deviceProfile.purposes
+                .map(
+                  (id) =>
+                    Object.values(PURPOSES)
+                      .flat()
+                      .find((p) => p.id === id)?.label ?? id,
+                )
+                .join(", ")
+            : needs.tasks.join(", ")}
+          . Xếp theo chính sách ưu tiên có phiên bản; dữ liệu thiếu tạo khoảng
+          điểm, không được thay bằng điểm trung bình.
+        </Text>
       )}
       <Text style={s.warning}>
         Dữ liệu thu thập thực, chưa được xác minh lại tại thời điểm xem. Giá và
@@ -302,27 +325,45 @@ export default function ReferenceExplorer({
             title="Xuất kết quả tư vấn và chứng cứ"
             onPress={() =>
               void Share.share({
-                message: JSON.stringify({
-                  ruleVersion: RULE_VERSION,
-                  scoringVersion: SCORING_VERSION,
-                  run: result.run,
-                }),
+                message: formatRunBrief(),
               }).catch(() => setError("Không xuất được kết quả."))
             }
           />
           <TextInput
-            style={s.input}
+            style={[
+              s.input,
+              focusedField === "query" && {
+                borderColor: LIGHT.primary,
+                borderWidth: 2,
+              },
+            ]}
             value={query}
             onChangeText={setQuery}
+            onFocus={() => setFocusedField("query")}
+            onBlur={() =>
+              setFocusedField((f) => (f === "query" ? null : f))
+            }
             placeholder="Tìm tên máy, hãng, nơi bán, RAM"
+            placeholderTextColor={LIGHT.muted}
             accessibilityLabel="Tìm catalog thật"
           />
           <TextInput
-            style={s.input}
+            style={[
+              s.input,
+              focusedField === "source" && {
+                borderColor: LIGHT.primary,
+                borderWidth: 2,
+              },
+            ]}
             value={source}
             onChangeText={setSource}
+            onFocus={() => setFocusedField("source")}
+            onBlur={() =>
+              setFocusedField((f) => (f === "source" ? null : f))
+            }
             accessibilityLabel="Lọc nguồn bán"
             placeholder="Nguồn bán (ví dụ fptshop; trống = tất cả)"
+            placeholderTextColor={LIGHT.muted}
           />
           {needs.deviceProfile?.category === "PC" &&
             needs.deviceProfile.pcType === "LAPTOP" && (
@@ -335,10 +376,21 @@ export default function ReferenceExplorer({
               />
             )}
           <TextInput
-            style={s.input}
+            style={[
+              s.input,
+              focusedField === "weight" && {
+                borderColor: LIGHT.primary,
+                borderWidth: 2,
+              },
+            ]}
             value={weight}
             onChangeText={setWeight}
+            onFocus={() => setFocusedField("weight")}
+            onBlur={() =>
+              setFocusedField((f) => (f === "weight" ? null : f))
+            }
             placeholder="Trọng lượng tối đa kg (bỏ trống nếu không cần)"
+            placeholderTextColor={LIGHT.muted}
             accessibilityLabel="Giới hạn trọng lượng"
             keyboardType="decimal-pad"
           />
@@ -455,11 +507,18 @@ export default function ReferenceExplorer({
                 }}
               />
               <Action
-                title={selected.includes(r.id) ? "Bỏ so sánh" : "Chọn so sánh"}
+                title={
+                  selected.includes(r.id)
+                    ? "Bỏ so sánh"
+                    : `Chọn so sánh (${selected.length}/${MAX_COMPARE_ITEMS})`
+                }
                 onPress={() => {
-                  if (!selected.includes(r.id) && selected.length === 2) {
+                  if (
+                    !selected.includes(r.id) &&
+                    selected.length >= MAX_COMPARE_ITEMS
+                  ) {
                     setError(
-                      "Đã chọn hai máy. Bỏ một máy trước khi chọn máy khác.",
+                      `Đã chọn tối đa ${MAX_COMPARE_ITEMS} máy. Bỏ một máy trước khi chọn máy khác.`,
                     );
                     return;
                   }
@@ -471,16 +530,16 @@ export default function ReferenceExplorer({
                 }}
               />
               <Action
-                title="Mở so sánh"
-                disabled={selected.length !== 2}
+                title={`Mở so sánh (${selected.length})`}
+                disabled={selected.length < 2}
                 onPress={() => onNavigate("compare")}
               />
             </View>
           ))}
           {result.visible.length > limit && (
             <Action
-              title={`Xem thêm ${Math.min(6, result.visible.length - limit)} cấu hình`}
-              onPress={() => setLimit(limit + 6)}
+              title={`Xem thêm ${Math.min(8, result.visible.length - limit)} cấu hình`}
+              onPress={() => setLimit(limit + 8)}
             />
           )}
         </>
@@ -519,16 +578,14 @@ export default function ReferenceExplorer({
             onPress={() => setShowEvidence(!showEvidence)}
           />
           {showEvidence && (
-            <>
-              <Text style={s.caption}>
-                Lý do và chứng cứ:{" "}
-                {referenceAssessment(detail, needs)
-                  .checks.map(
-                    (c) => `${c.code}=${c.state} [${c.evidenceIds.join(", ")}]`,
-                  )
-                  .join("; ")}
-              </Text>
-            </>
+            <Text style={s.caption}>
+              Lý do và chứng cứ:{" "}
+              {referenceAssessment(detail, needs)
+                .checks.map(
+                  (c) => `${c.code}=${c.state} [${c.evidenceIds.join(", ")}]`,
+                )
+                .join("; ")}
+            </Text>
           )}
           <Text selectable style={s.body}>
             {detail.url}
@@ -551,7 +608,7 @@ export default function ReferenceExplorer({
             onPress={() =>
               void persist([
                 {
-                  id: String(Date.now()),
+                  id: createUniqueDecisionId(),
                   row: detail,
                   needs: viewedNeeds,
                   date: new Date().toISOString(),
@@ -574,11 +631,13 @@ export default function ReferenceExplorer({
       )}
       {screen === "compare" && (
         <>
-          <Text style={s.heading}>So sánh hai bản ghi nguồn</Text>
-          {selected.length !== 2 && (
+          <Text style={s.heading}>
+            So sánh cấu hình nguồn (tối đa {MAX_COMPARE_ITEMS} máy)
+          </Text>
+          {selected.length < 2 && (
             <Text style={s.body}>
-              Chọn hai sản phẩm trong catalog để so sánh. Cùng tên chưa chắc
-              cùng cấu hình; không gộp nơi bán tự động.
+              Chọn từ 2 đến {MAX_COMPARE_ITEMS} sản phẩm trong catalog để so
+              sánh. Cùng tên chưa chắc cùng cấu hình; không gộp nơi bán tự động.
             </Text>
           )}
           <UnifiedComparison
@@ -605,11 +664,22 @@ export default function ReferenceExplorer({
             </Text>
           )}
           <TextInput
-            style={s.input}
+            style={[
+              s.input,
+              focusedField === "saved" && {
+                borderColor: LIGHT.primary,
+                borderWidth: 2,
+              },
+            ]}
             accessibilityLabel="Tìm quyết định đã lưu"
             placeholder="Tên máy hoặc ngày lưu"
+            placeholderTextColor={LIGHT.muted}
             value={savedQuery}
             onChangeText={setSavedQuery}
+            onFocus={() => setFocusedField("saved")}
+            onBlur={() =>
+              setFocusedField((f) => (f === "saved" ? null : f))
+            }
           />
           {saved
             .filter((x) =>
@@ -621,7 +691,8 @@ export default function ReferenceExplorer({
               <View key={x.id} style={s.card}>
                 <Text style={s.heading}>{x.row.name}</Text>
                 <Text style={s.body}>
-                  Lưu: {x.date} · Quan sát nguồn: {x.row.observedAt}
+                  Lưu: {new Date(x.date).toLocaleString("vi-VN")} ·{" "}
+                  {observationAgeLabel(x.row.observedAt)}
                 </Text>
                 <Text style={s.body}>
                   Trần khi lưu: {money(x.needs.budget)} · Giá lịch sử:{" "}
@@ -649,12 +720,14 @@ export default function ReferenceExplorer({
                       title="Xác nhận xóa bản lưu"
                       disabled={writing}
                       onPress={() => {
+                        if (writing) return;
                         void persist(saved.filter((v) => v.id !== x.id));
                         setDeleteId(null);
                       }}
                     />
                     <Action
                       title="Giữ bản lưu"
+                      disabled={writing}
                       onPress={() => setDeleteId(null)}
                     />
                   </View>
@@ -663,7 +736,7 @@ export default function ReferenceExplorer({
                   title="Chia sẻ quyết định"
                   onPress={() =>
                     void Share.share({
-                      message: `${x.row.name}\nGiá tham khảo ${x.row.price === null ? "chưa rõ" : money(x.row.price)}\nQuan sát ${x.row.observedAt}\nTrần ${money(x.needs.budget)}\n${x.row.url}\nChưa xác minh tổng thanh toán hoặc tương thích workload.`,
+                      message: `${x.row.name}\nGiá tham khảo: ${x.row.price === null ? "chưa rõ" : money(x.row.price)}\n${observationAgeLabel(x.row.observedAt)}\nTrần chi tiêu: ${money(x.needs.budget)}\n${x.row.url}\nChưa xác minh tổng thanh toán hoặc tương thích workload.`,
                     }).catch(() => setError("Không chia sẻ được."))
                   }
                 />
@@ -674,6 +747,7 @@ export default function ReferenceExplorer({
     </View>
   );
 }
+
 const makeStyles = (LIGHT: ReturnType<typeof legacyPalette>) =>
   StyleSheet.create({
     card: {
@@ -693,10 +767,11 @@ const makeStyles = (LIGHT: ReturnType<typeof legacyPalette>) =>
     body: { fontSize: 15, lineHeight: 23, color: LIGHT.muted },
     caption: { fontSize: 13, lineHeight: 20, color: LIGHT.muted },
     price: {
-      fontSize: 26,
-      lineHeight: 34,
+      fontSize: 28,
+      lineHeight: 36,
       fontWeight: "800",
       color: LIGHT.primary,
+      fontVariant: ["tabular-nums"],
     },
     warning: {
       fontSize: 14,

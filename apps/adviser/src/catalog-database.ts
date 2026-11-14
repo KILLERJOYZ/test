@@ -5,16 +5,37 @@ import {
   type CatalogBundle,
 } from "./catalog-contract";
 import schema from "./reference-schema.json";
+
 let loading: Promise<Reference[]> | undefined;
 export const referenceStorageKind = "SQLite · catalog có phiên bản";
+
 async function database() {
   const db = await SQLite.openDatabaseAsync("lua-reference.db");
   await db.execAsync(
     schema.sql +
       " CREATE TABLE IF NOT EXISTS reference_snapshot(version TEXT PRIMARY KEY,payload TEXT NOT NULL);",
   );
+  // Migrate pre-0.6.0 tables missing indexed category/price_vnd columns (F-35)
+  try {
+    await db.execAsync(
+      "ALTER TABLE reference_listing ADD COLUMN category TEXT NOT NULL DEFAULT 'laptop';",
+    );
+  } catch {
+    // Column already exists
+  }
+  try {
+    await db.execAsync(
+      "ALTER TABLE reference_listing ADD COLUMN price_vnd INTEGER;",
+    );
+  } catch {
+    // Column already exists
+  }
+  await db.execAsync(
+    "CREATE INDEX IF NOT EXISTS reference_by_category ON reference_listing(category); CREATE INDEX IF NOT EXISTS reference_listing_price ON reference_listing(price_vnd);",
+  );
   return db;
 }
+
 export function loadReferences(): Promise<Reference[]> {
   if (!loading)
     loading = load().catch((e) => {
@@ -23,6 +44,7 @@ export function loadReferences(): Promise<Reference[]> {
     });
   return loading;
 }
+
 async function load() {
   const db = await database();
   let meta = await db.getFirstAsync<{ value: string }>(
@@ -37,6 +59,7 @@ async function load() {
     "dea729f33a3e087a",
     "472cc87d5c7918d8",
     "9d2055abff9bcf99",
+    "535d33d05b4be03f",
   ];
   if (
     !meta ||
@@ -44,12 +67,15 @@ async function load() {
       (meta.value === bundled?.value ||
         (!bundled && knownBundled.includes(meta.value))))
   ) {
-    await activateReferences({
-      schemaVersion: 1,
-      market: "VN",
-      catalogVersion: referenceSeed.version,
-      rows: referenceSeed.rows,
-    });
+    await activateReferences(
+      {
+        schemaVersion: 1,
+        market: "VN",
+        catalogVersion: referenceSeed.version,
+        rows: referenceSeed.rows,
+      },
+      { allowRollback: true },
+    );
     meta = { value: referenceSeed.version };
   }
   await db.runAsync(
@@ -65,7 +91,11 @@ async function load() {
     catalogVersion: meta!.value,
   }));
 }
-export async function activateReferences(value: unknown) {
+
+export async function activateReferences(
+  value: unknown,
+  options: { allowRollback?: boolean } = {},
+) {
   const b = validateReferenceBundle(value);
   const db = await database();
   await db.withExclusiveTransactionAsync(async (tx) => {
@@ -74,6 +104,19 @@ export async function activateReferences(value: unknown) {
       "SELECT value FROM reference_meta WHERE key=?",
       "version",
     );
+    const oldRevRow = await tx.getFirstAsync<{ value: string }>(
+      "SELECT value FROM reference_meta WHERE key=?",
+      "revisionNumber",
+    );
+    const oldRev = oldRevRow ? Number(oldRevRow.value) : 0;
+    if (
+      !options.allowRollback &&
+      b.revisionNumber !== undefined &&
+      Number.isFinite(oldRev) &&
+      b.revisionNumber < oldRev
+    ) {
+      throw Error("Từ chối gói catalog có số thứ tự cũ hơn bản hiện hành.");
+    }
     if (old?.value === b.catalogVersion) return;
     if (old) {
       const rows = await tx.getAllAsync<{ raw_json: string }>(
@@ -83,6 +126,7 @@ export async function activateReferences(value: unknown) {
         schemaVersion: 1,
         market: "VN",
         catalogVersion: old.value,
+        ...(oldRev > 0 ? { revisionNumber: oldRev } : {}),
         rows: rows.map((r) => JSON.parse(r.raw_json)),
       };
       await tx.runAsync(
@@ -103,12 +147,14 @@ export async function activateReferences(value: unknown) {
       await tx.runAsync("INSERT INTO reference_source(id) VALUES (?)", source);
     for (const r of b.rows) {
       await tx.runAsync(
-        "INSERT INTO reference_listing(id,source_id,name,condition,raw_json) VALUES (?,?,?,?,?)",
+        "INSERT INTO reference_listing(id,source_id,name,condition,raw_json,category,price_vnd) VALUES (?,?,?,?,?,?,?)",
         r.id,
         r.source,
         r.name,
         r.condition,
         JSON.stringify(r),
+        r.category ?? "laptop",
+        r.price,
       );
       await tx.runAsync(
         "INSERT INTO reference_offer(listing_id,price_vnd,observed_at,url) VALUES (?,?,?,?)",
@@ -117,13 +163,13 @@ export async function activateReferences(value: unknown) {
         r.observedAt,
         r.url,
       );
-      for (const [key, value] of Object.entries(r.specs))
-        if (value !== null)
+      for (const [key, val] of Object.entries(r.specs))
+        if (val !== null)
           await tx.runAsync(
             "INSERT INTO reference_fact(listing_id,key,value_json) VALUES (?,?,?)",
             r.id,
             key,
-            JSON.stringify(value),
+            JSON.stringify(val),
           );
     }
     await tx.runAsync(
@@ -131,6 +177,13 @@ export async function activateReferences(value: unknown) {
       "version",
       b.catalogVersion,
     );
+    if (b.revisionNumber !== undefined) {
+      await tx.runAsync(
+        "INSERT OR REPLACE INTO reference_meta(key,value) VALUES (?,?)",
+        "revisionNumber",
+        String(b.revisionNumber),
+      );
+    }
     await tx.runAsync(
       "DELETE FROM reference_snapshot WHERE version != (SELECT value FROM reference_meta WHERE key=?)",
       "previous",
@@ -138,6 +191,7 @@ export async function activateReferences(value: unknown) {
   });
   loading = undefined;
 }
+
 export async function rollbackReferences() {
   const db = await database();
   const p = await db.getFirstAsync<{ payload: string }>(
@@ -145,5 +199,5 @@ export async function rollbackReferences() {
     "previous",
   );
   if (!p) throw Error("Chưa có snapshot trước để khôi phục.");
-  await activateReferences(JSON.parse(p.payload));
+  await activateReferences(JSON.parse(p.payload), { allowRollback: true });
 }

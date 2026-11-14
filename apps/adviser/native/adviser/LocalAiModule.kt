@@ -50,11 +50,15 @@ class LocalAiModule(context: ReactApplicationContext) : ReactContextBaseJavaModu
         }
     }
     @ReactMethod @Synchronized fun generate(requestId: String, prompt: String, promise: Promise) {
+        generateWithTimeout(requestId, prompt, 25000, promise)
+    }
+    @ReactMethod @Synchronized fun generateWithTimeout(requestId: String, prompt: String, timeoutMs: Int, promise: Promise) {
         if (prompt.length > 10000 || requestId.length > 100 || prompt.isBlank()) { promise.reject("INVALID_INPUT", "Prompt exceeds local bounds"); return }
         if (jobs.values.any { it.isActive }) { promise.reject("BUSY", "Local inference is already running"); return }
+        val boundedTimeout = timeoutMs.toLong().coerceIn(5000L, 90000L)
         jobs[requestId] = scope.launch {
             try {
-                val text = withTimeout(45000) {
+                val text = withTimeout(boundedTimeout) {
                     if (model.checkStatus() != FeatureStatus.AVAILABLE) throw IllegalStateException("MODEL_UNAVAILABLE")
                     val request = generateContentRequest(TextPart(prompt)) { maxOutputTokens = 512; temperature = 0.0f }
                     model.generateContent(request).candidates.firstOrNull()?.text ?: throw IllegalStateException("EMPTY_OUTPUT")

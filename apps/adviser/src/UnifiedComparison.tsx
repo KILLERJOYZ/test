@@ -1,9 +1,12 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { ScrollView, Text, View } from "react-native";
 import { useAdvisorTheme } from "./AdvisorTheme";
 import { ExpressiveButton } from "./ExpressiveButton";
 import { referenceAssessment, type Reference } from "./reference";
 import type { Needs } from "./picker";
+import { retailerDisplayName } from "./RetailerBadge";
+import { formatVnd } from "./i18n";
+
 export function UnifiedComparison({
   rows,
   needs,
@@ -15,11 +18,7 @@ export function UnifiedComparison({
 }) {
   const { colors: c, reduceMotion } = useAdvisorTheme();
   const fields: [string, (r: Reference) => string][] = [
-    [
-      "Giá quan sát",
-      (r) =>
-        r.price === null ? "Chưa rõ" : r.price.toLocaleString("vi-VN") + " ₫",
-    ],
+    ["Giá quan sát", (r) => formatVnd(r.price)],
     ["RAM", (r) => (r.ramGiB === null ? "Chưa rõ" : r.ramGiB + " GB")],
     [
       "Lưu trữ",
@@ -28,15 +27,16 @@ export function UnifiedComparison({
     ["CPU", (r) => String(r.specs.cpu ?? "Chưa rõ")],
     ["Hệ điều hành", (r) => String(r.specs.os ?? "Chưa rõ")],
     ["Màn hình", (r) => String(r.specs.screen ?? "Chưa rõ")],
-    ["Nguồn", (r) => r.source],
-    ["Ngày quan sát", (r) => r.observedAt],
+    ["Nguồn", (r) => retailerDisplayName(r.source)],
+    [
+      "Ngày quan sát",
+      (r) => new Date(r.observedAt).toLocaleDateString("vi-VN"),
+    ],
     [
       "Tổng trọn bộ",
       (r) => {
         const a = referenceAssessment(r, needs);
-        return a.total === null
-          ? "Chưa đủ dữ liệu"
-          : a.total.toLocaleString("vi-VN") + " ₫";
+        return a.total === null ? "Chưa đủ dữ liệu" : formatVnd(a.total);
       },
     ],
     [
@@ -51,47 +51,111 @@ export function UnifiedComparison({
       },
     ],
   ];
+  if (!rows.length) return null;
   return (
-    <View style={{ gap: 16 }}>
-      <View style={{ flexDirection: "row", gap: 12 }}>
-        {rows.map((r) => (
-          <View key={r.id} style={{ flex: 1, gap: 8 }}>
-            <Text style={{ fontSize: 18, fontWeight: "700", color: c.text }}>
-              {r.name}
-            </Text>
-            <ExpressiveButton
-              label={"Bỏ " + r.name}
-              secondary
-              onPress={() => onRemove(r.id)}
-              colors={c}
-              reduceMotion={reduceMotion}
-            />
-          </View>
-        ))}
-      </View>
-      {fields.map(([label, value]) => (
+    <ScrollView horizontal showsHorizontalScrollIndicator>
+      <View
+        style={{
+          borderWidth: 1,
+          borderColor: c.line,
+          borderRadius: 20,
+          backgroundColor: c.card,
+          overflow: "hidden",
+        }}
+      >
         <View
-          key={label}
           style={{
-            gap: 8,
-            paddingVertical: 12,
-            borderTopWidth: 1,
+            flexDirection: "row",
+            borderBottomWidth: 1,
             borderColor: c.line,
+            backgroundColor: c.container,
           }}
         >
-          <Text style={{ color: c.muted, fontWeight: "700" }}>{label}</Text>
-          <View style={{ flexDirection: "row", gap: 12 }}>
-            {rows.map((r) => (
-              <Text
-                key={r.id}
-                style={{ flex: 1, color: c.text, lineHeight: 23 }}
-              >
-                {value(r)}
-              </Text>
-            ))}
+          <View style={{ width: 112, padding: 12, justifyContent: "center" }}>
+            <Text style={{ fontWeight: "800", color: c.onContainer }}>
+              Thuộc tính ({rows.length}/4)
+            </Text>
           </View>
+          {rows.map((r) => (
+            <View
+              key={r.id}
+              style={{
+                width: 196,
+                padding: 12,
+                gap: 8,
+                borderLeftWidth: 1,
+                borderColor: c.line,
+              }}
+            >
+              <Text
+                numberOfLines={2}
+                style={{ fontSize: 16, fontWeight: "700", color: c.text }}
+              >
+                {r.name}
+              </Text>
+              <ExpressiveButton
+                label={"Bỏ " + r.name.slice(0, 18)}
+                secondary
+                onPress={() => onRemove(r.id)}
+                colors={c}
+                reduceMotion={reduceMotion}
+              />
+            </View>
+          ))}
         </View>
-      ))}
-    </View>
+        {fields.map(([label, value]) => {
+          const vals = rows.map((r) => value(r));
+          const differs = rows.length > 1 && new Set(vals).size > 1;
+          return (
+            <View
+              key={label}
+              style={{
+                flexDirection: "row",
+                borderBottomWidth: 1,
+                borderColor: c.line,
+                backgroundColor: differs ? c.container : c.card,
+              }}
+            >
+              <View
+                style={{ width: 112, padding: 12, justifyContent: "center" }}
+              >
+                <Text style={{ color: c.muted, fontWeight: "700", fontSize: 13 }}>
+                  {label}
+                </Text>
+              </View>
+              {rows.map((r, idx) => {
+                const cellVal = vals[idx];
+                return (
+                  <View
+                    key={r.id}
+                    accessible
+                    accessibilityLabel={`Máy ${idx + 1} (${r.name}), ${label}: ${cellVal}`}
+                    style={{
+                      width: 196,
+                      padding: 12,
+                      borderLeftWidth: 1,
+                      borderColor: c.line,
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Text
+                      selectable
+                      style={{
+                        color: c.text,
+                        lineHeight: 20,
+                        fontWeight: differs ? "700" : "400",
+                        fontVariant: ["tabular-nums"],
+                      }}
+                    >
+                      {cellVal}
+                    </Text>
+                  </View>
+                );
+              })}
+            </View>
+          );
+        })}
+      </View>
+    </ScrollView>
   );
 }

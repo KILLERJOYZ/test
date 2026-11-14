@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revision": "9c3436ed9013359afc3e5d7e3f38cf265b8318eafecadb954557927bd34ec6e6",
-  "importedAt": "2026-11-11T06:39:22.141Z",
+  "revision": "1ac404e179af49be499a361e60ad10681252352f741dd26cd11136bb1d8b1188",
+  "importedAt": "2026-11-12T18:20:54Z",
   "listings": [
     {
       "id": "cellphones:7f2f820acd4a84f3",
@@ -21,7 +21,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "25e987a6a62b257f2c787b19a47961cf0e74cdfdb8a2dd2ddad162a4c88cd743"
+      "rawHash": "ea2041a1d822723d2ebdd3d45ee3a27d10939503c3acc7298b81a3b16d38ea1c",
+      "brand": "Lenovo",
+      "model": "LOQ 15IRH11E 83Y9003VVN",
+      "gpu": "NVIDIA GeForce RTX 3050 6GB GDDR6, Boost Clock 1732MHz, TGP 75W, 142 AI TOPS",
+      "battery": "60Wh, 135W Slim Tip (3-pin)",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_87.png",
+      "priceOriginal": 36990000,
+      "discountPercent": 27,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:a7bab6632c13ea32",
@@ -41,7 +50,18 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "bf0ce4a6178b13773b1ff1e61753f17acf2de3ff2e299faa5f6feda759f4679b"
+      "rawHash": "76336d49b4007af55d447754129fe4ea77bb0e5ed6e3128ff78b5d53a3b8aef4",
+      "brand": "Lenovo",
+      "model": "IdeaPad Slim 3 14IWC11 83RQ002PVN",
+      "gpu": "Intel Graphics",
+      "battery": "50Wh, 65W Round Tip (3-pin)",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2__3.png",
+      "priceOriginal": 22990000,
+      "discountPercent": 20,
+      "installment": "Trả góp 0%",
+      "ratingAverage": 5,
+      "ratingCount": 1,
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:ad9773c67399899b",
@@ -61,7 +81,15 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "5e9e3e2edac71b00502f30be2b6295e6599c672f570896e41f1d925d4eaa0ee5"
+      "rawHash": "74abbd26a17b59fd583d0d8b0e1ae9d00288a64eac53b8087049995d0f3491ec",
+      "brand": "Acer",
+      "model": "Swift Air 14 SFA14-I31-55NR",
+      "gpu": "Intel Graphics",
+      "battery": "70 Wh 3-cell Li-ion battery 3-pin 100 W PD PCR 50%, TCO 9.0 AC adapter",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_8.png",
+      "priceOriginal": 24990000,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:be1679c5de970b02",
@@ -81,7 +109,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "9b901157802c5147ffa0b018f63a388f131778445f3fe2b773ba83a87cccd55f"
+      "rawHash": "8519fae128ea9029559816db61317e3f33f7b7ee0dd718a650b122489d4d26ad",
+      "brand": "ASUS",
+      "model": "Vivobook S16 S5608QA-MB354W",
+      "gpu": "Qualcomm Adreno",
+      "battery": "50WHrs, 3S1P, 3-cell Li-ion",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_18_48.png",
+      "priceOriginal": 29990000,
+      "discountPercent": 23,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:c546b624c5687d64",
@@ -101,7 +138,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "fd713769cd7fba6150fe7204620fd80227f3107947a68b8f58cd8284e2625869"
+      "rawHash": "58782c7dfc687c6a5647104cc71761f8c595a4594ad76331fc6bd34ed8f50631",
+      "brand": "ASUS",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_881_7.png",
+      "priceOriginal": 35990000,
+      "discountPercent": 24,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:43a42e0d27bb63af",
@@ -121,7 +164,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "33cf53602b9362226aad50bffe303f055e6f93664484e888879600e18ebc2e5b"
+      "rawHash": "6cfc58c7b068d2d81c8e42d632002afb6a7fc10ae8a612e9bf3a4830b2f32487",
+      "brand": "Dell",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_21.png",
+      "priceOriginal": 31390000,
+      "discountPercent": 4,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:0cfd4aff7363aea1",
@@ -141,7 +190,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "b2754460f1b68682526e062676383c1c787729a6a4424a44573100619f9b1afe"
+      "rawHash": "7dc375d4134ff10bee7eade9373fd6641ec1f39ebd3c26a5c6096f0c636614b2",
+      "brand": "MSI",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_24.png",
+      "priceOriginal": 25490000,
+      "discountPercent": 10,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:18f41f2b58f0034c",
@@ -161,7 +216,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "a054c77d9a5f14f0818fa010b0fbe878fc522065326144184988e7b154a966c3"
+      "rawHash": "5ec5d5f1dc155ab30f3b9829563b5133c15cf0d15c5840422ead934817461aab",
+      "brand": "Acer",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_2_11.png",
+      "priceOriginal": 24990000,
+      "discountPercent": 8,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:f73b3f9a9bf91111",
@@ -181,7 +242,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "c4d2d393459f99890cb9fe6dc8b24ec2a1cefbbb48b40eeb2d15b9459259f684"
+      "rawHash": "b1af048769e28d4ddfec40ba208857feabc3545c820f8bd2445c4b20d2751fd5",
+      "brand": "ASUS",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1091_1.png",
+      "priceOriginal": 22990000,
+      "discountPercent": 18,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:d191518716fc7b4e",
@@ -201,7 +268,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "b8eb1fa6888d7e6f5a818824ec97ac630d60877e033fd930e5f1efcc7eed330a"
+      "rawHash": "63e03625b42b94bd5c6b08f8c66f7e2e5ce2bec18cb01250e1deb00232bc53bd",
+      "brand": "ASUS",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_1_28.png",
+      "priceOriginal": 36490000,
+      "discountPercent": 21,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:7c700dfcb047445c",
@@ -221,7 +294,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "38496780c25443df504f87966631fbe37256f6e6972ea07bb79cec0803eea504"
+      "rawHash": "3b15b47aae9ad84ec662f8ab38ec4c6236862d53104b13f20023e752bb19ad5c",
+      "brand": "ASUS",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_72.png",
+      "priceOriginal": 38990000,
+      "discountPercent": 17,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:618bf9a0a7f065e0",
@@ -241,7 +320,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "950ab62c5e9d3bdcdc69d68ada9130437dc97dbc8d64fed7805baace2e0d1df8"
+      "rawHash": "c499f08a5dcf5ce7b0c1af2714fb7ad5c4737bfb043912bc11cc01e0de0f5f68",
+      "brand": "Lenovo",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_16_63.png",
+      "priceOriginal": 27990000,
+      "discountPercent": 11,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:a7d68e1c68f7fc9a",
@@ -261,7 +346,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "107c7a0648bc01eead918385421507575f139fd45a402d2e7739e38e53d3a913"
+      "rawHash": "6de125398dc8253d5f97c7bbbb5e3bb11410dfbbb807b38a48eeac194473d3b8",
+      "brand": "MSI",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_29.png",
+      "priceOriginal": 21990000,
+      "discountPercent": 5,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:424142f3b39c2be7",
@@ -281,7 +372,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "1e56c6d83dcf2674ac065d3266692b5628e3adcb70cd119045a3e7fa3b301a68"
+      "rawHash": "fc61a8fc94b9e5d41b6c4e9fae1b3d07a6555d5c1d9c7b624f38cdebfbd91de5",
+      "brand": "Lenovo",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1099_4_.png",
+      "priceOriginal": 27990000,
+      "discountPercent": 18,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:45f82ddcf4314b09",
@@ -293,7 +390,7 @@
       "ram": 8,
       "storage": 256,
       "cpu": null,
-      "os": null,
+      "os": "macOS",
       "screen": "13 inch",
       "weight": null,
       "advertisedPrice": 18790000,
@@ -301,7 +398,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "c7e47056f3566dd69cfc563b2f0da0eec124bede4b79732786009cb0f767b75e"
+      "rawHash": "6329ececcad69a3a3b7f441787f01f94543555115c1a680c1324ba5232b88f0b",
+      "brand": "Apple",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_13_19.png",
+      "priceOriginal": 19490000,
+      "discountPercent": 4,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:cb6e98e031bbb0e1",
@@ -321,7 +424,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "22628c7ddec718172a9e1d56d7f808a5a2349f2b8cc95871f23951eb6d1e8115"
+      "rawHash": "64c6590c7a2132f5440a2cccfe8d35b47d78f2a02ad675e008cb099a7828ed29",
+      "brand": "Acer",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_945_19.png",
+      "priceOriginal": 23490000,
+      "discountPercent": 2,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:8fc93efa3c3a4db3",
@@ -333,7 +442,7 @@
       "ram": 16,
       "storage": 512,
       "cpu": null,
-      "os": null,
+      "os": "macOS",
       "screen": "13 inch",
       "weight": null,
       "advertisedPrice": 33190000,
@@ -341,7 +450,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "0463a97801f8a31afacace48407ffcca4d0ba9d56eeae9f748063577f5097f3f"
+      "rawHash": "c366e5c881aaa81604374a085f9497d36b35e0f6e225ac3de5bd441d737ec46f",
+      "brand": "Apple",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_13_17.png",
+      "priceOriginal": 35990000,
+      "discountPercent": 8,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:96260129b298bbe3",
@@ -361,7 +476,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "0c98ae17f86dec4627d055298c68092c7cde0e0675d9d0d54aad7974df054294"
+      "rawHash": "24a418334e1a5fcc15040410c625b2e9ca4aac3e99bce59b7ce1a81d192b945f",
+      "brand": "MSI",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_7_126.png",
+      "priceOriginal": 30690000,
+      "discountPercent": 6,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:9669286e9e3aee87",
@@ -381,7 +502,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "24c9a51595b705172e7d5cadc8adab27c761fd03a906693b8e39efc681dfa32c"
+      "rawHash": "3df6b5e2ae125af0a5fa415532a8f7beb827179812c545383693e425e056a883",
+      "brand": "Acer",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_1042.png",
+      "priceOriginal": 27990000,
+      "discountPercent": 7,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:fc193c03b0115811",
@@ -401,7 +528,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "b1c3c2d9f7a5ba40c2bf7c6d8e696a9ccc7c3a2cc8b00b9f231be447f94f7457"
+      "rawHash": "4afa11cc66dfac99483b048f432235137d8592404e477b1b4794a4b100e6c289",
+      "brand": "HP",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_7_78.png",
+      "priceOriginal": 29990000,
+      "discountPercent": 7,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:d93ecd1977a584c9",
@@ -421,7 +554,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "33170ff59ab19816dcbd95fc70882ec4b1b93101663e087477f660ed455f1bd5"
+      "rawHash": "0991c06b665ad3e4c0920431fbb6142e1757f0ad9939d51f0c81ee2ca9f0c55f",
+      "brand": "MSI",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_d_i_1__4_62.png",
+      "priceOriginal": 35490000,
+      "discountPercent": 1,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:ef236226aa7e40fc",
@@ -433,7 +572,7 @@
       "ram": 16,
       "storage": 256,
       "cpu": null,
-      "os": null,
+      "os": "macOS",
       "screen": null,
       "weight": null,
       "advertisedPrice": 18590000,
@@ -441,7 +580,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "4878ae73077eec4175b7ca4f002e4356bb3ee0f8138f3251c723f55a9f640f3e"
+      "rawHash": "642a43f5e835a6854941c067a3b8e4f14c9d86ecd20625db042be57c8a768571",
+      "brand": "Apple",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/m/image_1396_1.png",
+      "priceOriginal": 24990000,
+      "discountPercent": 26,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:32aa9831a4c2750c",
@@ -461,7 +606,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "d25f60f5cde3093a4b2e5342cc80fad39212d77068f0b241c1578e5bf8bcb3bd"
+      "rawHash": "2aaae314789d8fcffeebba8abfaa684f3b92061d9c32df93e9a2d241116cfe38",
+      "brand": "Acer",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/g/r/group_975_17.png",
+      "priceOriginal": 29990000,
+      "discountPercent": 3,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:fc5a3d5a9daba598",
@@ -473,7 +624,7 @@
       "ram": 8,
       "storage": 512,
       "cpu": null,
-      "os": null,
+      "os": "macOS",
       "screen": "13 inch",
       "weight": null,
       "advertisedPrice": 21290000,
@@ -481,7 +632,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "41f2a16bdd891e015aab450f282e5bc42a7e27f6cd632fb68ff3b3f293b32100"
+      "rawHash": "0b0f29d4ac42e064ac0b1331d0a03c0a0667374f263030f63d2520dd91de53de",
+      "brand": "Apple",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/m/a/macbook_1__7_10.png",
+      "priceOriginal": 21990000,
+      "discountPercent": 3,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "cellphones:e41688f770712ac8",
@@ -501,7 +658,13 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "e0752811ffe9633cd4da6601ebb3d93a6b4b9c417c9fdf6dd866d14e529091b9"
+      "rawHash": "3c9b1441c34e05256031f1bc1f87674cfe685a0a13f182c1dd213547945b0117",
+      "brand": "ASUS",
+      "thumbnail": "https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_4__10_30.png",
+      "priceOriginal": 25990000,
+      "discountPercent": 8,
+      "installment": "Trả góp 0%",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:f230b970b23f4fb3",
@@ -515,13 +678,17 @@
       "cpu": "Intel Core 5 Raptor Lake - 120U",
       "os": "Windows 11 Home SL",
       "screen": "14 inch",
-      "weight": null,
+      "weight": "1.402 kg",
       "advertisedPrice": 21290000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "3d532d67e3eccf947fdc2d2f9d1353bf707c166843922e627fc89e6c4dee90fc"
+      "rawHash": "24a44b92114e71d2623e120b4acdeaba0341bb5cedf115520d6b309cb5c706c2",
+      "brand": "Hp",
+      "gpu": "Card tích hợp - Intel UHD Graphics",
+      "battery": "3 cell, 41.04 Wh",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:ad3abce85c608efe",
@@ -541,7 +708,18 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "2ebd7396b2f9fd7323178ee86719603fa0f8e52f92a7c13946fb622b9a3bc266"
+      "rawHash": "8305016b790343213339c94950748ba6b7f3adbf335c22cda2d55551d8a10108",
+      "brand": "Asus",
+      "model": "Vivobook 14 X1404VA - EB2385W",
+      "gpu": "Card tích hợp - Intel UHD Graphics",
+      "battery": "3-cell Li-ion, 42 Wh",
+      "thumbnail": "https://cdn.tgdd.vn/2026/11/timerseo/0220042104187-laptop-tron-20261104-600x600.png",
+      "priceOriginal": 16490000,
+      "discountPercent": 5,
+      "installment": "Trả chậm 0% trả trước 0đ",
+      "ratingAverage": 5,
+      "ratingCount": 76,
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:76142541fb30d5dd",
@@ -561,7 +739,11 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "fa995aa4ae9c7d226b4ebfab6cdb51bb342d5b0551657ad15416bd2b68705cdf"
+      "rawHash": "d16aa5ab6c8a086e5955790c1972e927891a51ab0f1eb50dc0b102c5f0b2a1bc",
+      "brand": "Dell",
+      "gpu": "Card tích hợp - AMD Radeon Graphics",
+      "battery": "3-cell Li-ion, 41 Wh",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:a1ee4165cda3b8ec",
@@ -573,7 +755,7 @@
       "ram": 16,
       "storage": 512,
       "cpu": null,
-      "os": null,
+      "os": "macOS",
       "screen": "13 inch",
       "weight": null,
       "advertisedPrice": 33390000,
@@ -581,7 +763,9 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "7a4e432b1191baf9f8a9c92913d99e2772b8a0e439f88b1bdbfe4bc740aa27ef"
+      "rawHash": "6995fb6c8ac092a51a01ce20b831da03900d02dd0d7755dbf4477ab8f2e1b289",
+      "brand": "Apple",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:5782a1f84495e024",
@@ -601,7 +785,9 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "a3dce45f7eaeeb2604939aa8b562bf833926272078b064046f96c3983aeee0ba"
+      "rawHash": "207e7f97dbd4137131a72f7b94469786b8f1db6b4ed19fb670c3c727d3f5b928",
+      "brand": "HP",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:9b8200c7a8ca76e7",
@@ -621,7 +807,9 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "4bd3733e530a02d470056cc6a9acd779b8e54a4e0ebef5a53118d0ee9ec1defc"
+      "rawHash": "d80459455d6dad174f9f6e30916f209d59dc2f5dc46004f8937c769afcd1781d",
+      "brand": "Dell",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:3bd6eb67586962ad",
@@ -641,7 +829,9 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "99a6d802a19664cf2c1b04db911642a450dc38ab376edfa4156c954724ff5b4a"
+      "rawHash": "84cdd04c93fc81000ad2f87083f091751b191fb268752029344e0181214ad075",
+      "brand": "Acer",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:3670eca089f3082e",
@@ -661,7 +851,9 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "dc1115d710882742d540b7a1d7b3e14fe05e48f79762f0081f8d9e6d7bd8560f"
+      "rawHash": "2281d7d77743a24f2be7a7e06f09de1dd7fdcc76346ce85fc755de7291c559a0",
+      "brand": "ASUS",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:661e1af9d36d8403",
@@ -681,7 +873,9 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "10fff089b02196afa557ed8e9e603dbbcf85b157bd45ab3f3d035cc5d02cee51"
+      "rawHash": "33843fcd25c8d2e20a4e073bc9dbf0ecd5a9e17a8862048576dcd9bc22f58bc6",
+      "brand": "MSI",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:8dcb7faec0406c39",
@@ -701,7 +895,9 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "e1ca18ab2183058eea17bac49f89392896c89c38e26b7c0f237c52fa7efd17b6"
+      "rawHash": "d10360c66b333b3c14e2051b1fbbab10a77b9baca55bb84f5b7486e7c90d8714",
+      "brand": "ASUS",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:bda527c380e4c123",
@@ -721,7 +917,9 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "e79bfafbfa16d977def18935f9f0fc4d25d24fc55ffbc949c9cb584a273aebd1"
+      "rawHash": "75c2410e803dddc4d9b80f49fb8fa01af640df0a774e77882040a4507c570cc0",
+      "brand": "Lenovo",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:e27bdda8ed313c49",
@@ -741,7 +939,9 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "788a5ef926eeb6dc6660a0cc124e7076a461ffea30be81bfccda31ee3b66fec0"
+      "rawHash": "e5b42f757a83dff85e53abe17ad5865b8f7ce57d2c3a117476dca7d2f043ee3e",
+      "brand": "HP",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:de357c0a165dad04",
@@ -761,7 +961,9 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "d30f71bab093021b1c3fdb2c427a22c95ced06aba87b4ec75a5cb22d0ee5d3f5"
+      "rawHash": "de6f58e1d0acbc9daad35c63d0a50282b7cad5edad5bdc0a149add339621db91",
+      "brand": "Dell",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:c161bc3b0624e9f4",
@@ -781,7 +983,8 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "7a1002835ddb902ac283b820065501b01345f68e4fc6d0d9c4bb07daf65cc837"
+      "rawHash": "dd1c9b83f77377aa937ebb0848db1db9796ba512f55d98d8d353f904d3fe99e4",
+      "availability": "in_stock"
     },
     {
       "id": "thegioididong:a8fbf419f19cb0ef",
@@ -801,7 +1004,9 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "f0cc4f6a1f904a45417d09fb9d522e0c7734698ec6ab7c5fdea876aaf14bb93b"
+      "rawHash": "639c5094a2515e3e86357c595c7a8623f85cf5b34d6256a55912ac9342987199",
+      "brand": "ASUS",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:fc8c18d46da007ee",
@@ -821,7 +1026,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "256871a2f8ef3e1b36eabac74d64b03fb670f7f8ca14a841a005c9fc3d8c261f"
+      "rawHash": "6dfcc47b5cf6016e20edb719a0d38d1a636eb766fdf13479f64ebc4bfd08a603",
+      "brand": "Samsung",
+      "model": "XE340XDA-KA1VN",
+      "gpu": "Card tích hợp - Intel UHD Graphics",
+      "battery": "2 cell Li-ion, 42.3 Wh",
+      "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/328598/samsung-galaxy-chromebook-go-xe340xda-n4500-thumb-638754875185657229-200x200.jpg",
+      "priceOriginal": 11790000,
+      "discountPercent": 55,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:3cde85a162616dc5",
@@ -841,7 +1055,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "c75b7226d04e4d32407acda483e317eaf5ab31fbcc6a9295764e14812b6fc3c1"
+      "rawHash": "643866fec6c7bf606242c55fb01389dce906ee0194139bea08f9ab8a227768d9",
+      "brand": "Apple",
+      "model": "MacBook Air 15 inch M2 8GB",
+      "gpu": "Card tích hợp - 10 nhân GPU",
+      "battery": "Lên đến 18 giờ (Hãng công bố)",
+      "thumbnail": "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/309016/apple-macbook-air-m2-2023-starlight-thumb-200x200.jpg",
+      "priceOriginal": 31690000,
+      "discountPercent": 43,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:401a45d2a5234832",
@@ -861,7 +1084,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "9222659b5172638e53bafed238475df24a69a8f47aa14abd3d05ecbebd01cf31"
+      "rawHash": "89c1d717efd3b66b8b6cb80aaadcd22937b14fedba158d69f6945d965462201a",
+      "brand": "Acer",
+      "model": "Gaming Nitro AN515 58 773Y",
+      "gpu": "Card rời - NVIDIA GeForce RTX 3050Ti, 4 GB",
+      "battery": "4-cell Li-ion, 57.5 Wh",
+      "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/329337/acer-nitro-an515-58-773y-i7-12700h-nhqfksv00116g-thumb-638760092227335057-200x200.jpg",
+      "priceOriginal": 33190000,
+      "discountPercent": 39,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:975c0a4a08415634",
@@ -881,7 +1113,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "4aa58e9f7f1bae24c036dcae402be273fe357018b92be688e8678a66a98a8015"
+      "rawHash": "32adf053f64b90fffbcd2efdeaa9b02333930844ba550ca927ab30f1d5b3d36f",
+      "brand": "HP",
+      "model": "Pavilion X360 14 ek2024TU - 9Z2V6PA",
+      "gpu": "Card tích hợp - Intel Graphics",
+      "battery": "3-cell Li-ion, 43 Wh",
+      "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/326830/hp-pavilion-x360-14-ek2024tu-core-5-9z2v6pa-170225-110535-640-200x200.jpg",
+      "priceOriginal": 24490000,
+      "discountPercent": 37,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:4fd6d2a03d14af3b",
@@ -901,7 +1142,11 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "912acb6db04a1b064a932d2b962c714c71363e8b492da6c2794d0c5aae476ffd"
+      "rawHash": "cd01c8eb0af59f2a05db56f2b511082c5b6b22cfe32983225632e6ec2ef3945a",
+      "brand": "HP",
+      "gpu": "Card tích hợp - Intel Iris Xe Graphics",
+      "battery": "3-cell Li-ion, 41 Wh",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:8566430c8f1ff31e",
@@ -921,7 +1166,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "9bf0a86e7918e25ff8955585e3952bc517018025ba39c0688071041a0379fabc"
+      "rawHash": "b04d06611b6087be449b787819abfc2ebac24634d0deef67eaf18cc2bf9b60a4",
+      "brand": "Acer",
+      "model": "Aspire 7 Gaming A715 76G 5132",
+      "gpu": "Card rời - NVIDIA GeForce GTX 1650 4 GB",
+      "battery": "4-cell Li-ion, 50 Wh",
+      "thumbnail": "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/307786/acer-aspire-7-gaming-a715-76g-5132-i5-nhqmesv002-thumb-200x200.jpg",
+      "priceOriginal": 18644727,
+      "discountPercent": 37,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:027eb9f9e4270165",
@@ -941,7 +1195,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "85397dc5581de0bae1db2677f67da764b401fce9ab870ffe576dd06ec8e4c5b2"
+      "rawHash": "637d555f3108e7eaeda725eff6d2faa8491da9b43a7de699bf8b8cbb7c666513",
+      "brand": "Apple",
+      "model": "MacBook Air 15 inch M3 8GB",
+      "gpu": "Card tích hợp - 10 nhân GPU",
+      "battery": "Lên đến 18 giờ (Hãng công bố)",
+      "thumbnail": "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/322616/macbook-air-15-inch-m3-2024-xanh-200x200.jpg",
+      "priceOriginal": 32290000,
+      "discountPercent": 36,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:f3a0bb001a472037",
@@ -961,7 +1224,15 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "d7f8c844dff6bc10375a051e827ab342ea5ce9c8bed5549696c743c138a88b18"
+      "rawHash": "7dea6d8b9efd8553806e17efcfbac3ebb90d91a6f2beba826b5fde80f0b464e9",
+      "brand": "Acer",
+      "model": "Gaming Aspire 7 A715 76G 5806 - NH.QMFSV.002",
+      "gpu": "Card rời - NVIDIA GeForce RTX 3050, 4 GB",
+      "battery": "3-cell Li-ion, 50 Wh",
+      "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/313177/acer-aspire-7-gaming-a715-76g-5806-i5-nhqmfsv002-thumb-638754898004072091-200x200.jpg",
+      "priceOriginal": 15060000,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:0f6328af0c586cd1",
@@ -981,7 +1252,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "94a9481b544e21bbde5c3086413120afe1ae6a5b50652c381e81545b8e804c64"
+      "rawHash": "457d21af975e2ba400e6aabd0cb7a2f14742f1b5f18987ff2805420dd1669daf",
+      "brand": "HP",
+      "model": "Pavilion 15 eg3091TU - 8C5L2PA",
+      "gpu": "Card tích hợp - Intel Iris Xe Graphics",
+      "battery": "3-cell Li-ion, 41 Wh",
+      "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/311177/hp-pavilion-15-eg3091tu-i7-8c5l2pa-170225-103417-620-200x200.jpg",
+      "priceOriginal": 25390000,
+      "discountPercent": 33,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:c3d7210a8d7d1a76",
@@ -1001,7 +1281,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "d07c947fe746c1efbef57f0a22f3780baf74f58ea22b574bdcc02b726b40e291"
+      "rawHash": "b324fc1115e2eb36fe0f4c6d7c903f0d0be59e102c09aa2120bc7fc10ab815b3",
+      "brand": "Apple",
+      "model": "MacBook Pro 16 inch M3 Pro 18GB",
+      "gpu": "• 18 lõi",
+      "battery": "Lên đến 22 giờ (Hãng công bố)",
+      "thumbnail": "https://img.tgdd.vn/imgt/old/f_webp,fit_outside,quality_75/https://cdn.tgdd.vn/Products/Images/44/318233/apple-macbook-pro-16-inch-m3-pro-2023-12-core-311023-033651-200x200.jpg",
+      "priceOriginal": 63690000,
+      "discountPercent": 28,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:fd53f0025ec17ce9",
@@ -1021,7 +1310,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "87f727b16ca15391755f2ec75cfdd3c83880f76589d9892f2689b905e375eb17"
+      "rawHash": "87cc644bbc3f896b539d1a57d0794277e8594c9792a6e8057372889b000d5fbc",
+      "brand": "Dell",
+      "model": "Inspiron 15 3530 - P16WD",
+      "gpu": "Card tích hợp - Intel Iris Xe Graphics",
+      "battery": "4-cell Li-ion, 54 Wh",
+      "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/325247/dell-inspiron-15-3530-i7-p16wd-thumb-638754948496889615-200x200.jpg",
+      "priceOriginal": 28490000,
+      "discountPercent": 38,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:dca9629c8dc17df8",
@@ -1041,7 +1339,15 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "85fe4b543a7aac084ee85b4d99be9c837af93cc45e07b2f6135727b8442e618b"
+      "rawHash": "e19221b0e319168d3c25e6cd002e25a927ca982081f28519806e1dc37c404a70",
+      "brand": "Apple",
+      "model": "MacBook Pro 14 inch M3 Pro 18GB",
+      "gpu": "• 18 lõi",
+      "battery": "Lên đến 18 giờ (Hãng công bố)",
+      "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/318230/apple-macbook-pro-14-inch-m3-pro-2023-111124-040015-777-200x200.jpg",
+      "priceOriginal": 38060000,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:ac0e0dda196d6217",
@@ -1061,7 +1367,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "cc10630a3e3c0a3292baa6b746945a31d29d7d9418499e58b32a5cb747f11538"
+      "rawHash": "beeee59939a34fdfdf3ca0fe881867abac65e07c673bdac6116a00f1c6e28b66",
+      "brand": "Acer",
+      "model": "Swift Go 14 41 R251 - NX.KG3SV.005",
+      "gpu": "Card tích hợp - AMD Radeon Graphics",
+      "battery": "50 Wh",
+      "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/327506/acer-swift-go-14-41-r251-r5-nxkg3sv005-thumb-638754974034145190-200x200.jpg",
+      "priceOriginal": 22090000,
+      "discountPercent": 32,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:cc43755c5fb814cd",
@@ -1081,7 +1396,16 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "e1fddf4b5e485c9b96367e4cba3e622fbff8f71467e5c71fd12126a8633d4bae"
+      "rawHash": "a7f1e549b655f63358140f88e151f2d61d6f15a2a162b00c6c901dcc292134d0",
+      "brand": "Dell",
+      "model": "Inspiron 14 5440 - 7FN5J",
+      "gpu": "Card tích hợp - Intel Graphics",
+      "battery": "4-cell Li-ion, 54 Wh",
+      "thumbnail": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/44/325953/dell-inspiron-14-5440-core-7-7fn5j-thumb-638754955274250524-200x200.jpg",
+      "priceOriginal": 31390000,
+      "discountPercent": 32,
+      "installment": "Trả chậm 0%",
+      "availability": "in_stock"
     },
     {
       "id": "dienmayxanh:2e0ced591a8cfb17",
@@ -1101,7 +1425,11 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "5f9bcc2d146f447e1aeff1b810960987d3c5ee983d6f48a815b06d89c1e07f33"
+      "rawHash": "d6dbdd38001490190b465a9e6fdaeba2bd8728674cb54bc5851d49e2d189e4aa",
+      "brand": "MSI",
+      "gpu": "Card rời - NVIDIA GeForce RTX 4050, 6 GB",
+      "battery": "3 cell, 53.5 Wh",
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:f8d02408bda8ae93",
@@ -1121,7 +1449,15 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "799859d8397b4a2f62cdd91cea957d951700199be1e9e4dfe636dbc0f4b835c4"
+      "rawHash": "69382881fb8e3331122a3f291cfd0db78d1bbdca725979bc3d908922dba6701c",
+      "brand": "Acer",
+      "model": "Aspire Lite 14 AL14-44P-R0SP",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930661_acer_aspire_lite_14_al14_44_01_fb52eeb1fe.png",
+      "priceOriginal": 21990000,
+      "discountPercent": 11,
+      "ratingAverage": 4.9,
+      "ratingCount": 10,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:f18437115175ec5f",
@@ -1141,7 +1477,15 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "902b1501b4cfbd9bf857aa0e73e4c141eb98deab803fc44777651de108c5d34e"
+      "rawHash": "bc2bd9ed8e839e545ce2886580c428e2b0afc10e468912421554d6049aecef8f",
+      "brand": "HP",
+      "model": "250R G10",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/hp_250r_g10_silver_no_figer_01_4189a6deca.png",
+      "priceOriginal": 26790000,
+      "discountPercent": 21,
+      "ratingAverage": 4.9,
+      "ratingCount": 70,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:9ebacea6eb86d412",
@@ -1161,7 +1505,15 @@
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "c391dfcea3ca9db9fdb1736d87c211cbec1bc6a65236220c1aa114f773a9eaff"
+      "rawHash": "3afb5a916ce718a5d9465e562d049c7e87b0349103e1f82f0d7a56c69f91a0cf",
+      "brand": "Asus",
+      "model": "Vivobook X1404VA-EB355W",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/asus_vivobook_14_x1404_1_172d6c07b6.png",
+      "priceOriginal": 25990000,
+      "discountPercent": 12,
+      "ratingAverage": 4.9,
+      "ratingCount": 145,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:28a617079f02bd8b",
@@ -1170,18 +1522,26 @@
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/dell-14-dc14250-core-5-120u-dc4c5386w",
       "condition": "new",
       "observedAt": "2026-11-11T04:39:50.754Z",
-      "ram": null,
-      "storage": null,
+      "ram": 16,
+      "storage": 512,
       "cpu": "Core 5 120U",
-      "os": null,
-      "screen": null,
+      "os": "Win11",
+      "screen": "14 inch",
       "weight": null,
       "advertisedPrice": 26990000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "91de356ff60cfa2569ed8643821a4dd9a00b84a4d29f1e0177c0e38eb8463c6a"
+      "rawHash": "fb1179b8ed8d0b7adb35a3846983ed7a38f9f48b7a3c0ad5dc727b26e13170ea",
+      "brand": "Dell",
+      "model": "14 DC14250",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/dell_14_dc14250_bac_01_187ecc6453.png",
+      "priceOriginal": 27990000,
+      "discountPercent": 4,
+      "ratingAverage": 4.9,
+      "ratingCount": 68,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:1f1dd132e6326e76",
@@ -1192,16 +1552,24 @@
       "observedAt": "2026-11-11T04:39:50.754Z",
       "ram": 256,
       "storage": 256,
-      "cpu": null,
-      "os": null,
-      "screen": null,
+      "cpu": "A18 Pro",
+      "os": "macOS",
+      "screen": "13 inch",
       "weight": null,
       "advertisedPrice": 18790000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "59d3e31ad99e979367b63cc5ce8a424e66868b445f303ee1ee69f37d9574f55a"
+      "rawHash": "9e9e74a4d41dec3882e776308a0ffd5a02b8bf619e4a7abd41bd7202c26b1b3c",
+      "brand": "Apple",
+      "model": "MacBook Neo 13 8GB",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/Mac_Book_13_in_A18_Pro_Citrus_1_f70ec68b06.png",
+      "priceOriginal": 19490000,
+      "discountPercent": 4,
+      "ratingAverage": 4.9,
+      "ratingCount": 297,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:90dc4e8b5da26c0d",
@@ -1210,18 +1578,26 @@
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-ideapad-slim-3-16iwc11-83rs002kvn",
       "condition": "new",
       "observedAt": "2026-11-11T04:39:50.754Z",
-      "ram": null,
-      "storage": null,
+      "ram": 8,
+      "storage": 512,
       "cpu": "Core 5 320",
-      "os": null,
-      "screen": null,
+      "os": "Win11HSL (83RS002KVN)",
+      "screen": "16 inch",
       "weight": null,
       "advertisedPrice": 18490000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "797d28d1af7744003b29e8d41f2488d6f5ccb8896b42a7155e21058cd7afcec7"
+      "rawHash": "3c5b78fc8ba7f94bf049b165010258dd75930fc9fd70733a8190d9cabd5c4bb1",
+      "brand": "Lenovo",
+      "model": "IdeaPad Slim 3 16IWC11",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930377_lenovo_ideapad_slim_3_16iwc11_01_dae1811782.png",
+      "priceOriginal": 25990000,
+      "discountPercent": 29,
+      "ratingAverage": 4.9,
+      "ratingCount": 156,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:1f335510f698863f",
@@ -1230,18 +1606,26 @@
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/acer-aspire-lite-15-al15-36p-30tn-c3-n350",
       "condition": "new",
       "observedAt": "2026-11-11T04:39:50.754Z",
-      "ram": null,
-      "storage": null,
-      "cpu": null,
-      "os": null,
-      "screen": null,
+      "ram": 8,
+      "storage": 512,
+      "cpu": "N350",
+      "os": "Win 11",
+      "screen": "15.6 inch",
       "weight": null,
       "advertisedPrice": 15690000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "c8e8662c3e78046393eb6ef67fe316689d2b717862e07abe34413d4a02a047a7"
+      "rawHash": "6cf209662e926b7df4d935ac00a56e0a0fa48418747fc283b40c2c0fdc361e3b",
+      "brand": "Acer",
+      "model": "Aspire Lite 15 AL15-36P-30TN C3",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930513_acer_aspire_lite_15_al15_36p_30tn_01_31569a6c93.png",
+      "priceOriginal": 18990000,
+      "discountPercent": 17,
+      "ratingAverage": 4.9,
+      "ratingCount": 19,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:5634a28bf0fbd9ac",
@@ -1250,18 +1634,26 @@
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/colorful-rimbook-l1-i5-12450h-ce50016512c-g-e1ac",
       "condition": "new",
       "observedAt": "2026-11-11T04:39:50.754Z",
-      "ram": null,
-      "storage": null,
+      "ram": 16,
+      "storage": 512,
       "cpu": "i5-12450H",
-      "os": null,
-      "screen": null,
+      "os": "Win11_CE50016512C-G-E1AD",
+      "screen": "15.6 inch",
       "weight": null,
       "advertisedPrice": 17490000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "0ed8c37478d21b3e807eb5e92fbce02834df7bcbf3328aa10367260b6bee4791"
+      "rawHash": "eb8b6aef56ab5b17b8262023842b0e4347f056f8040da1e6dc5b5dfc99fe5749",
+      "brand": "Colorful",
+      "model": "Rimbook L1",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/colorful_rimbook_l1_xam_1_96ce53228b.png",
+      "priceOriginal": 21990000,
+      "discountPercent": 20,
+      "ratingAverage": 4.9,
+      "ratingCount": 154,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:e23bf7863b1b3369",
@@ -1272,16 +1664,25 @@
       "observedAt": "2026-11-11T04:39:50.754Z",
       "ram": 16,
       "storage": 512,
-      "cpu": null,
-      "os": null,
-      "screen": null,
+      "cpu": "M5",
+      "os": "macOS Tahoe, có Apple Intelligence",
+      "screen": "13.6 inch",
       "weight": null,
       "advertisedPrice": 33390000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "fb265f220a751d158e23e095b14a2b815b7d1dbff0bcd0b57726e152564f6335"
+      "rawHash": "c8640eb82d53b63fed1fd15d272bb38802ed80b6c461c45089b23d15f37dcfa8",
+      "brand": "Apple",
+      "model": "MacBook Air 13 M5 10CPU",
+      "battery": "53,8 Wh, xem video đến 18 giờ, duyệt web không dây đến 15 giờ",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_air_13_m5_starlight_1_bfd6f1c5ed.png",
+      "priceOriginal": 35990000,
+      "discountPercent": 7,
+      "ratingAverage": 4.9,
+      "ratingCount": 244,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:98baf04ff7b010fe",
@@ -1290,18 +1691,26 @@
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-ideapad-slim-3-14iwc11-83rq002pvn",
       "condition": "new",
       "observedAt": "2026-11-11T04:39:50.754Z",
-      "ram": null,
-      "storage": null,
+      "ram": 8,
+      "storage": 512,
       "cpu": "Core 5 320",
-      "os": null,
-      "screen": null,
+      "os": "Win11SL (83RQ002PVN)",
+      "screen": "14 inch",
       "weight": null,
       "advertisedPrice": 18490000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "e19da4c821e4c46851a926e4e00c60e373c948a09222c7b3aabd7e249ee179c0"
+      "rawHash": "c6db6792621d4123c935b89fe6ced319e40ae055b098e1d4b249beac34a2854a",
+      "brand": "Lenovo",
+      "model": "IdeaPad Slim 3 14IWC11",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00929657_lenovo_ideapad_slim_3_14iwc11_01_a7054ebbc2.png",
+      "priceOriginal": 25990000,
+      "discountPercent": 29,
+      "ratingAverage": 4.9,
+      "ratingCount": 182,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:07490167de78ab2e",
@@ -1310,18 +1719,26 @@
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/asus-vivobook-16-x1607ca-mb387w-ultra-5-225h",
       "condition": "new",
       "observedAt": "2026-11-11T04:39:50.754Z",
-      "ram": null,
-      "storage": null,
-      "cpu": null,
-      "os": null,
-      "screen": null,
+      "ram": 16,
+      "storage": 512,
+      "cpu": "Core Ultra 5",
+      "os": "Win11",
+      "screen": "16 inch",
       "weight": null,
       "advertisedPrice": 24990000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "a9e80e96a85defc071a98be64b841648a757e5a111415c40956e4baaa962efd5"
+      "rawHash": "f5723567b88f7950f65cb74d6d7451c17a4b4784d5c32dbc1fa1481693bd6cd4",
+      "brand": "ASUS",
+      "model": "Vivobook 16 X1607CA-MB387W Ultra 5 225H",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00930030_asus_vivobook_16_x1607ca_bac_logo_ai_17df31a9b3.png",
+      "priceOriginal": 33490000,
+      "discountPercent": 25,
+      "ratingAverage": 4.9,
+      "ratingCount": 141,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:41dd2a495dd74724",
@@ -1330,18 +1747,26 @@
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-15-fd1289tu-ultra-7-155h-c2cv8pa",
       "condition": "new",
       "observedAt": "2026-11-11T04:39:50.754Z",
-      "ram": null,
-      "storage": null,
-      "cpu": null,
-      "os": null,
-      "screen": null,
+      "ram": 16,
+      "storage": 512,
+      "cpu": "Core Ultra 7",
+      "os": "Win11_C2CV8PA",
+      "screen": "15.6 inch",
       "weight": null,
       "advertisedPrice": 25990000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "711a435f50cc2243f5867aae793080d881fd07f559ec3db26bca5e15288ca667"
+      "rawHash": "c502b8c76e61476fa3721ff72b2a946b9e27cd037542871c27c66cd79281e99c",
+      "brand": "HP",
+      "model": "15-fd1289TU Ultra 7-155H",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00922844_hp_15_fd1289tu_c2cv8pa_bac_01_216c5b8b09.png",
+      "priceOriginal": 27590000,
+      "discountPercent": 6,
+      "ratingAverage": 4.9,
+      "ratingCount": 268,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:6992c93e76516db7",
@@ -1352,16 +1777,24 @@
       "observedAt": "2026-11-11T04:39:50.754Z",
       "ram": 16,
       "storage": 1024,
-      "cpu": null,
-      "os": null,
-      "screen": null,
+      "cpu": "M5",
+      "os": "macOS",
+      "screen": "14 inch",
       "weight": null,
       "advertisedPrice": 53990000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "dd9d310acbc78265f741e70dc2b36c026ea149ee39ffd3dd8519feef256f574f"
+      "rawHash": "5c877119c8e0f57f0a90fc0b924bba8dc2ca398841673ee64875a90694234d4b",
+      "brand": "Apple",
+      "model": "MacBook Pro 14 M5 10CPU",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/macbook_pro_14_m5_2025_den_1_c0818fdf94.jpg",
+      "priceOriginal": 55490000,
+      "discountPercent": 3,
+      "ratingAverage": 4.9,
+      "ratingCount": 38,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:11ef0732e787d7bd",
@@ -1370,18 +1803,26 @@
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-omnibook-7-14-fr0033tu-ultra-5-225u-c1mn2pa",
       "condition": "new",
       "observedAt": "2026-11-11T04:39:50.754Z",
-      "ram": null,
-      "storage": null,
-      "cpu": null,
-      "os": null,
-      "screen": null,
+      "ram": 16,
+      "storage": 512,
+      "cpu": "Core Ultra 5",
+      "os": "Win11",
+      "screen": "14 inch",
       "weight": null,
       "advertisedPrice": 27990000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "01f74e2d0823eb34ce7982533f44e55b57bdf8a0110fb9c2a02f26a7e21867e2"
+      "rawHash": "275c34f8e15f910e0ca82c44f5fde7c8191817bc2b458d62c37970ff569af917",
+      "brand": "HP",
+      "model": "OmniBook 7 14-fr0033TU Ultra 5-225U",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/00921488_hp_omnibook_7_14_fr0033tu_bac_01_fb14b7c88d.png",
+      "priceOriginal": 28790000,
+      "discountPercent": 5,
+      "ratingAverage": 4.9,
+      "ratingCount": 299,
+      "availability": "in_stock"
     },
     {
       "id": "fptshop:1ff17e84130248f7",
@@ -1390,18 +1831,26 @@
       "url": "https://fptshop.com.vn/may-tinh-xach-tay/hp-14-em0024au-ryzen-5-7520u-d0bg8pa",
       "condition": "new",
       "observedAt": "2026-11-11T04:39:50.754Z",
-      "ram": null,
-      "storage": null,
-      "cpu": null,
-      "os": null,
-      "screen": null,
+      "ram": 16,
+      "storage": 512,
+      "cpu": "Ryzen 5",
+      "os": "Win11 (D0BG8PA)",
+      "screen": "14 inch",
       "weight": null,
       "advertisedPrice": 21490000,
       "shipping": null,
       "fees": null,
       "stock": "unknown",
       "identity": "unreviewed",
-      "rawHash": "b1a60e3a4af8b310ccd06a6bfd03a863fb0d9dc1630323619473f1892b08154e"
+      "rawHash": "4b84c1431ea210c74588f23a2e18bab52e031023a5884cc639d7c8938db5cbce",
+      "brand": "HP",
+      "model": "14-em0024AU Ryzen 5-7520U",
+      "thumbnail": "https://cdn2.fptshop.com.vn/unsafe/360x0/filters:format(webp):quality(75)/hp_14_em_bac_01_f60ff4a623.png",
+      "priceOriginal": 23990000,
+      "discountPercent": 12,
+      "ratingAverage": 4.9,
+      "ratingCount": 163,
+      "availability": "in_stock"
     }
   ]
 }

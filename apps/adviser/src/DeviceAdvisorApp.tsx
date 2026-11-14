@@ -1,51 +1,57 @@
-import { syncReferenceCatalog } from "./catalog-sync";
-import { rollbackReferences } from "./reference-storage";
-import React, { useState, useEffect, useRef } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useEffect, useRef, useState } from "react";
 import {
-  View,
-  Text,
-  TextInput,
+  AppState,
+  BackHandler,
   Pressable,
   ScrollView,
-  StyleSheet,
-  BackHandler,
-  AppState,
   Share,
   StatusBar,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { useAdvisorTheme, legacyPalette } from "./AdvisorTheme";
-import { ExpressiveButton } from "./ExpressiveButton";
-import ReferenceExplorer from "./ReferenceExplorer";
+import { legacyPalette, useAdvisorTheme } from "./AdvisorTheme";
+import { syncReferenceCatalog } from "./catalog-sync";
 import { storage } from "./demo-storage";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { connectedDraft } from "./unified-adapters";
-import { money } from "./domain";
-import { EMPTY_NEEDS, type Needs } from "./picker";
 import {
-  CATEGORIES,
-  PURPOSES,
-  DEVICE_PRIORITIES,
-  OS_OPTIONS,
-  FORM_OPTIONS,
-  bands,
-  newProfile,
-  changeCategory,
-  setPurposes,
-  reorder,
-  questions,
-  profileErrors,
-  validateRestoredProfile,
+  aiCapability,
+  cancelAi,
+  extractDeviceNeeds,
+  prepareAi,
+} from "./device-ai";
+import {
   applyDeviceText,
+  bands,
+  CATEGORIES,
+  changeCategory,
+  DEVICE_PRIORITIES,
+  FORM_OPTIONS,
+  newProfile,
+  OS_OPTIONS,
+  profileErrors,
+  PURPOSES,
+  questions,
+  reorder,
+  setPurposes,
+  validateRestoredProfile,
   type DeviceProfile,
   type TextProposal,
 } from "./device-profile";
+import { money } from "./domain";
+import { ExpressiveButton } from "./ExpressiveButton";
+import { formatVndDigits, parseVndDigits } from "./i18n";
+import { EMPTY_NEEDS, type Needs } from "./picker";
+import { rollbackReferences } from "./reference-storage";
+import ReferenceExplorer from "./ReferenceExplorer";
 import {
-  aiCapability,
-  prepareAi,
-  cancelAi,
-  extractDeviceNeeds,
-} from "./device-ai";
+  loadSharedSettings,
+  saveSharedSettings,
+  subscribeSharedSettings,
+} from "./shared-settings";
+import { connectedDraft } from "./unified-adapters";
 
 const KEY = "device-advisor-v1";
 type Screen =
@@ -69,6 +75,7 @@ const STEPS: Screen[] = [
   "clarify",
   "review",
 ];
+
 export function profileToNeeds(p: DeviceProfile): Needs {
   return {
     ...EMPTY_NEEDS,
@@ -85,6 +92,41 @@ export function profileToNeeds(p: DeviceProfile): Needs {
     deviceProfile: p,
   };
 }
+
+function parseOptionalInt(raw: string): number | null {
+  const digits = parseVndDigits(raw);
+  if (!digits) return null;
+  const n = Number(digits);
+  return Number.isSafeInteger(n) ? n : null;
+}
+
+function formatProfileBrief(p: DeviceProfile): string {
+  if (!p.category) return "Chưa chọn loại thiết bị.";
+  const purposeLabels = p.purposes.map(
+    (id) =>
+      Object.values(PURPOSES)
+        .flat()
+        .find((x) => x.id === id)?.label ?? id,
+  );
+  const priorityLabels = p.priorities.map(
+    (id) => DEVICE_PRIORITIES.find((x) => x.id === id)?.label ?? id,
+  );
+  return [
+    `Thiết bị: ${p.category}${p.category === "PC" && p.pcType ? ` (${p.pcType})` : ""}`,
+    `Trạng thái: ${p.confirmed ? "Đã xác nhận" : "Bản nháp"}`,
+    `Trần chi tiêu: ${p.ceilingVnd === null ? "Chưa đặt" : money(p.ceilingVnd)}`,
+    `Mục đích: ${purposeLabels.join(", ") || "Chưa chọn"}`,
+    `Ưu tiên: ${priorityLabels.join(", ") || "Chưa chọn"}`,
+    p.minimumRamGiB !== null ? `RAM tối thiểu: ${p.minimumRamGiB} GiB` : "",
+    p.minimumStorageGiB != null
+      ? `Lưu trữ tối thiểu: ${p.minimumStorageGiB} GB`
+      : "",
+    p.os ? `Hệ điều hành: ${p.os} (${p.osMandatory ? "bắt buộc" : "ưu tiên"})` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
 function Button({
   title,
   onPress,
@@ -111,6 +153,7 @@ function Button({
     />
   );
 }
+
 function Choice({
   title,
   description = "",
@@ -148,7 +191,7 @@ function Choice({
       <View style={[s.badge, selected && { backgroundColor: LIGHT.primary }]}>
         <Text
           style={{
-            color: LIGHT.onSecondary,
+            color: selected ? LIGHT.onPrimary : LIGHT.onSecondary,
             fontWeight: "800",
           }}
         >
@@ -158,6 +201,7 @@ function Choice({
     </Pressable>
   );
 }
+
 function Field({
   label,
   value,
@@ -171,13 +215,19 @@ function Field({
 }) {
   const LIGHT = legacyPalette(useAdvisorTheme().colors);
   const s = makeStyles(LIGHT);
+  const [focused, setFocused] = useState(false);
   return (
     <View style={{ gap: 7 }}>
       <Text style={s.label}>{label}</Text>
       <TextInput
         accessibilityLabel={label}
-        style={s.input}
+        style={[
+          s.input,
+          focused && { borderColor: LIGHT.primary, borderWidth: 2 },
+        ]}
         value={value}
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
         onChangeText={onChange}
         keyboardType={numeric ? "number-pad" : "default"}
         secureTextEntry={label.startsWith("Khóa")}
@@ -189,6 +239,7 @@ function Field({
     </View>
   );
 }
+
 export default function DeviceAdvisorApp({
   onExit,
   asFeature = false,
@@ -201,6 +252,7 @@ export default function DeviceAdvisorApp({
     [screen, setScreen] = useState<Screen>("results"),
     [ready, setReady] = useState(false),
     [busy, setBusy] = useState(false),
+    [aiSeconds, setAiSeconds] = useState(0),
     [notice, setNotice] = useState(""),
     [restoreBlocked, setRestoreBlocked] = useState(false),
     [questionIndex, setQuestionIndex] = useState(0);
@@ -212,12 +264,15 @@ export default function DeviceAdvisorApp({
   const [resetPending, setResetPending] = useState(false);
   const refreshing = useRef(false);
   const syncAbort = useRef<AbortController | null>(null);
+  const applyingSharedRef = useRef(false);
   const [catalogRevision, setCatalogRevision] = useState(0),
     [serverUrl, setServerUrl] = useState("http://127.0.0.1:8788");
+
   useEffect(() => {
     setConnection("Dữ liệu trên máy · chưa kết nối địa chỉ này");
     return () => syncAbort.current?.abort();
   }, [serverUrl, token]);
+
   const [input, setInput] = useState(""),
     [proposal, setProposal] = useState<TextProposal | null>(null),
     [ai, setAi] = useState("checking"),
@@ -227,15 +282,36 @@ export default function DeviceAdvisorApp({
     ticket = useRef(0),
     alive = useRef(true),
     writing = useRef(false);
+
+  useEffect(() => {
+    if (!busy || screen !== "text") {
+      setAiSeconds(0);
+      return;
+    }
+    const timer = setInterval(() => setAiSeconds((n) => n + 1), 1000);
+    return () => clearInterval(timer);
+  }, [busy, screen]);
+
   useEffect(() => {
     alive.current = true;
     let active = true;
+    const unsubShared = subscribeSharedSettings((shared) => {
+      if (!active) return;
+      applyingSharedRef.current = true;
+      if (shared.endpoint) setServerUrl(shared.endpoint);
+      setToken(shared.token);
+      setTimeout(() => {
+        applyingSharedRef.current = false;
+      }, 0);
+    });
+
     (async () => {
       try {
-        const [c, d, settings] = await Promise.all([
+        const [c, d, settings, shared] = await Promise.all([
           storage.getItem(KEY + "-confirmed"),
           storage.getItem(KEY + "-draft"),
           storage.getItem(KEY + "-settings"),
+          loadSharedSettings(),
         ]);
         if (settings && active) {
           const saved = JSON.parse(settings);
@@ -245,6 +321,10 @@ export default function DeviceAdvisorApp({
           if (typeof saved.useNano === "boolean") setUseNano(saved.useNano);
           if (typeof saved.serverUrl === "string")
             setServerUrl(saved.serverUrl);
+        }
+        if (shared && active) {
+          if (shared.endpoint) setServerUrl(shared.endpoint);
+          if (shared.token) setToken(shared.token);
         }
         if (c && active) {
           const p = validateRestoredProfile(JSON.parse(c));
@@ -278,9 +358,11 @@ export default function DeviceAdvisorApp({
       active = false;
       alive.current = false;
       ticket.current++;
+      unsubShared();
       void cancelAi();
     };
   }, []);
+
   useEffect(() => {
     if (!ready || restoreBlocked) return;
     const id = setTimeout(() => {
@@ -290,23 +372,42 @@ export default function DeviceAdvisorApp({
     }, 300);
     return () => clearTimeout(id);
   }, [draft, ready, restoreBlocked]);
+
   useEffect(() => {
-    if (ready && !restoreBlocked)
+    if (!ready || restoreBlocked) return;
+    const timer = setTimeout(() => {
       void storage
         .setItem(
           KEY + "-settings",
           JSON.stringify({ serverUrl, token, useNano, autoRefresh }),
         )
         .catch(() => setNotice("Không lưu được cài đặt."));
+      if (!applyingSharedRef.current) {
+        void saveSharedSettings(serverUrl, token);
+      }
+    }, 350);
+    return () => clearTimeout(timer);
   }, [ready, restoreBlocked, serverUrl, token, useNano, autoRefresh]);
+
   useEffect(() => {
     scroll.current?.scrollTo({ y: 0, animated: false });
   }, [screen, questionIndex]);
+
   useEffect(() => {
     const a = BackHandler.addEventListener("hardwareBackPress", () => {
       if (screen === "results") {
         onExit?.();
         return !!onExit;
+      }
+      if (
+        screen === "detail" ||
+        screen === "compare" ||
+        screen === "saved" ||
+        screen === "settings" ||
+        screen === "text"
+      ) {
+        setScreen("results");
+        return true;
       }
       const i = STEPS.indexOf(screen);
       setScreen(i > 0 ? STEPS[i - 1] : "results");
@@ -325,8 +426,8 @@ export default function DeviceAdvisorApp({
       b.remove();
     };
   }, [screen, onExit]);
+
   function edit(next: DeviceProfile) {
-    setRestoreBlocked(false);
     ticket.current++;
     setProposal(null);
     const provenance = { ...next.provenance };
@@ -358,6 +459,7 @@ export default function DeviceAdvisorApp({
       revision: draft.revision + 1,
     });
   }
+
   function toggle(key: "purposes" | "priorities", id: string) {
     const ids = draft[key].includes(id)
       ? draft[key].filter((x) => x !== id)
@@ -377,7 +479,14 @@ export default function DeviceAdvisorApp({
           },
     );
   }
+
   async function commit() {
+    if (restoreBlocked) {
+      setNotice(
+        "Hồ sơ lưu trước bị lỗi. Hãy xuất dữ liệu gốc hoặc xóa phiên hiện tại trong Dữ liệu & AI trước khi ghi mới.",
+      );
+      return;
+    }
     const errors = profileErrors(draft);
     if (errors.length) {
       setNotice(errors.join(" "));
@@ -400,7 +509,6 @@ export default function DeviceAdvisorApp({
     try {
       await storage.setItem(KEY + "-confirmed", JSON.stringify(next));
       if (alive.current) {
-        setRestoreBlocked(false);
         setConfirmed(next);
         setDraft(next);
         setNotice("Đã xác nhận lựa chọn.");
@@ -413,11 +521,12 @@ export default function DeviceAdvisorApp({
       setBusy(false);
     }
   }
+
   async function refreshCatalog() {
-    if (refreshing.current || !serverUrl) return;
+    if (refreshing.current || !serverUrl.trim()) return;
     refreshing.current = true;
     setBusy(true);
-    const url = serverUrl,
+    const url = serverUrl.trim(),
       auth = token;
     const controller = new AbortController();
     syncAbort.current = controller;
@@ -443,18 +552,21 @@ export default function DeviceAdvisorApp({
       if (alive.current) setBusy(false);
     }
   }
+
   useEffect(() => {
     if (!ready || !autoRefresh) return;
-    void refreshCatalog();
+    const debounce = setTimeout(() => void refreshCatalog(), 500);
     const timer = setInterval(() => void refreshCatalog(), 30000);
     const listener = AppState.addEventListener("change", (state) => {
       if (state === "active") void refreshCatalog();
     });
     return () => {
+      clearTimeout(debounce);
       clearInterval(timer);
       listener.remove();
     };
   }, [ready, autoRefresh, serverUrl, token]);
+
   const qs = questions(draft),
     q = qs[questionIndex],
     step = STEPS.indexOf(screen),
@@ -466,6 +578,7 @@ export default function DeviceAdvisorApp({
       .find((p) => p.id === id)?.label ??
     DEVICE_PRIORITIES.find((p) => p.id === id)?.label ??
     id;
+
   const order = (key: "purposes" | "priorities") => (
     <View style={{ gap: 8 }}>
       {draft[key].map((id, i) => (
@@ -491,6 +604,7 @@ export default function DeviceAdvisorApp({
       ))}
     </View>
   );
+
   return (
     <SafeAreaProvider>
       <StatusBar barStyle={dark ? "light-content" : "dark-content"} />
@@ -618,7 +732,7 @@ export default function DeviceAdvisorApp({
                     {draft.purposes.length}/3 đã chọn · Thứ tự 1–2–3 thể hiện
                     mức quan trọng. Nhóm người dùng sẽ có câu hỏi làm rõ.
                   </Text>
-                  {PURPOSES[category].map((p, i) => (
+                  {PURPOSES[category].map((p) => (
                     <Choice
                       key={p.id}
                       title={p.label}
@@ -666,12 +780,15 @@ export default function DeviceAdvisorApp({
                     label="Mức chi mong muốn VND (không bắt buộc)"
                     numeric
                     value={
-                      draft.targetVnd === null ? "" : String(draft.targetVnd)
+                      draft.targetVnd === null ||
+                      !Number.isFinite(draft.targetVnd)
+                        ? ""
+                        : formatVndDigits(String(draft.targetVnd))
                     }
                     onChange={(v) =>
                       edit({
                         ...draft,
-                        targetVnd: v.trim() === "" ? null : Number(v),
+                        targetVnd: parseOptionalInt(v),
                       })
                     }
                   />
@@ -679,12 +796,15 @@ export default function DeviceAdvisorApp({
                     label="Trần tổng chi tiêu VND"
                     numeric
                     value={
-                      draft.ceilingVnd === null ? "" : String(draft.ceilingVnd)
+                      draft.ceilingVnd === null ||
+                      !Number.isFinite(draft.ceilingVnd)
+                        ? ""
+                        : formatVndDigits(String(draft.ceilingVnd))
                     }
                     onChange={(v) =>
                       edit({
                         ...draft,
-                        ceilingVnd: v.trim() === "" ? null : Number(v),
+                        ceilingVnd: parseOptionalInt(v),
                       })
                     }
                   />
@@ -692,14 +812,15 @@ export default function DeviceAdvisorApp({
                     label="Phụ kiện bắt buộc VND (trống = chưa biết; 0 = không cần)"
                     numeric
                     value={
-                      draft.accessoriesVnd === null
+                      draft.accessoriesVnd === null ||
+                      !Number.isFinite(draft.accessoriesVnd)
                         ? ""
-                        : String(draft.accessoriesVnd)
+                        : formatVndDigits(String(draft.accessoriesVnd))
                     }
                     onChange={(v) =>
                       edit({
                         ...draft,
-                        accessoriesVnd: v.trim() === "" ? null : Number(v),
+                        accessoriesVnd: parseOptionalInt(v),
                       })
                     }
                   />
@@ -715,21 +836,23 @@ export default function DeviceAdvisorApp({
                     label="RAM tối thiểu GiB (không bắt buộc)"
                     numeric
                     value={
-                      draft.minimumRamGiB === null
+                      draft.minimumRamGiB === null ||
+                      !Number.isFinite(draft.minimumRamGiB)
                         ? ""
                         : String(draft.minimumRamGiB)
                     }
                     onChange={(v) =>
                       edit({
                         ...draft,
-                        minimumRamGiB: v.trim() === "" ? null : Number(v),
+                        minimumRamGiB: parseOptionalInt(v),
                       })
                     }
                   />
                   <Field
                     label="Lưu trữ tối thiểu GB (không bắt buộc)"
                     value={
-                      draft.minimumStorageGiB == null
+                      draft.minimumStorageGiB == null ||
+                      !Number.isFinite(draft.minimumStorageGiB)
                         ? ""
                         : String(draft.minimumStorageGiB)
                     }
@@ -737,7 +860,7 @@ export default function DeviceAdvisorApp({
                     onChange={(v) =>
                       edit({
                         ...draft,
-                        minimumStorageGiB: v.trim() ? Number(v) : null,
+                        minimumStorageGiB: parseOptionalInt(v),
                       })
                     }
                   />
@@ -755,7 +878,8 @@ export default function DeviceAdvisorApp({
                       !draft.bandId ||
                       !Number.isSafeInteger(draft.ceilingVnd) ||
                       !draft.ceilingVnd ||
-                      draft.ceilingVnd <= 0
+                      draft.ceilingVnd <= 0 ||
+                      draft.ceilingVnd > 1000000000
                     }
                     onPress={() => setScreen("priorities")}
                   />
@@ -1012,7 +1136,11 @@ export default function DeviceAdvisorApp({
                   ))}
                   <Button
                     title="Xác nhận và xem gợi ý"
-                    disabled={!enabled || profileErrors(draft).length > 0}
+                    disabled={
+                      !enabled ||
+                      restoreBlocked ||
+                      profileErrors(draft).length > 0
+                    }
                     onPress={() => void commit()}
                   />
                   {profileErrors(draft).map((e) => (
@@ -1055,7 +1183,11 @@ export default function DeviceAdvisorApp({
                 }}
               />
               <Button
-                title="Phân tích nhu cầu"
+                title={
+                  busy
+                    ? `Đang phân tích nhu cầu (${aiSeconds}s)…`
+                    : "Phân tích nhu cầu"
+                }
                 disabled={busy || !input.trim()}
                 onPress={async () => {
                   const id = ++ticket.current;
@@ -1185,7 +1317,7 @@ export default function DeviceAdvisorApp({
                 title="Xuất hồ sơ và bản nháp"
                 onPress={() =>
                   void Share.share({
-                    message: JSON.stringify({ confirmed, draft }),
+                    message: `Hồ sơ đã xác nhận:\n${formatProfileBrief(confirmed)}\n\nBản nháp hiện tại:\n${formatProfileBrief(draft)}`,
                   }).catch(() => setNotice("Không xuất được."))
                 }
               />
@@ -1260,6 +1392,7 @@ export default function DeviceAdvisorApp({
     </SafeAreaProvider>
   );
 }
+
 const makeStyles = (LIGHT: ReturnType<typeof legacyPalette>) =>
   StyleSheet.create({
     root: { flex: 1, backgroundColor: LIGHT.bg },
@@ -1377,6 +1510,7 @@ const makeStyles = (LIGHT: ReturnType<typeof legacyPalette>) =>
       lineHeight: 36,
       color: LIGHT.primary,
       fontWeight: "800",
+      fontVariant: ["tabular-nums"],
     },
     orderRow: {
       flexDirection: "row",

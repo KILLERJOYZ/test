@@ -130,6 +130,7 @@ export function newProfile(): DeviceProfile {
     answers: {},
     provenance: {},
     minimumRamGiB: null,
+    minimumStorageGiB: null,
     os: null,
     osMandatory: false,
     formFactor: null,
@@ -161,6 +162,7 @@ export function changeCategory(
     osMandatory: false,
     formMandatory: false,
     minimumRamGiB: null,
+    minimumStorageGiB: null,
     confirmed: false,
     revision: p.revision + 1,
   };
@@ -234,9 +236,12 @@ export function profileErrors(p: DeviceProfile, requireConfirmed = false) {
   if (!bands(p.category).some((b) => b.id === p.bandId))
     errors.push("Chọn khoảng giá.");
   const money = (n: unknown) =>
-    typeof n === "number" && Number.isSafeInteger(n) && n >= 0;
+    typeof n === "number" &&
+    Number.isSafeInteger(n) &&
+    n >= 0 &&
+    n <= 1000000000;
   if (!money(p.ceilingVnd) || p.ceilingVnd === 0)
-    errors.push("Xác nhận trần tổng chi tiêu.");
+    errors.push("Xác nhận trần tổng chi tiêu (1 – 1.000.000.000 ₫).");
   if (
     p.targetVnd !== null &&
     p.ceilingVnd !== null &&
@@ -249,12 +254,21 @@ export function profileErrors(p: DeviceProfile, requireConfirmed = false) {
     errors.push("Chi phí phụ kiện không hợp lệ.");
   if (
     p.minimumRamGiB !== null &&
-    (!money(p.minimumRamGiB) || p.minimumRamGiB === 0)
+    (typeof p.minimumRamGiB !== "number" ||
+      !Number.isSafeInteger(p.minimumRamGiB) ||
+      p.minimumRamGiB <= 0 ||
+      p.minimumRamGiB > 1024)
   )
     errors.push("RAM tối thiểu không hợp lệ.");
   if (!["new", "used"].includes(p.condition))
     errors.push("Điều kiện máy không hợp lệ.");
-  if (p.minimumStorageGiB != null && (!money(p.minimumStorageGiB) || p.minimumStorageGiB === 0))
+  if (
+    p.minimumStorageGiB != null &&
+    (typeof p.minimumStorageGiB !== "number" ||
+      !Number.isSafeInteger(p.minimumStorageGiB) ||
+      p.minimumStorageGiB <= 0 ||
+      p.minimumStorageGiB > 100000)
+  )
     errors.push("Lưu trữ tối thiểu không hợp lệ.");
   if (
     p.priorities.includes("operating_system") &&
@@ -380,22 +394,22 @@ export function applyDeviceText(p: DeviceProfile, proposal: TextProposal) {
       ...next.provenance,
       ...(proposal.category
         ? {
-            category: {
-              origin: "USER_TEXT" as const,
-              confirmed: false,
-              evidence: proposal.evidence,
-            },
-          }
+          category: {
+            origin: "USER_TEXT" as const,
+            confirmed: false,
+            evidence: proposal.evidence,
+          },
+        }
         : {}),
       ...(proposal.ceilingVnd === undefined
         ? {}
         : {
-            ceilingVnd: {
-              origin: "USER_TEXT" as const,
-              confirmed: false,
-              evidence: proposal.evidence,
-            },
-          }),
+          ceilingVnd: {
+            origin: "USER_TEXT" as const,
+            confirmed: false,
+            evidence: proposal.evidence,
+          },
+        }),
     },
     revision: p.revision + 1,
     confirmed: false,

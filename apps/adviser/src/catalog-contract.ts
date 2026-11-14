@@ -1,10 +1,14 @@
 import type { Reference } from "./reference.ts";
+
 export type CatalogBundle = {
   schemaVersion: 1;
   market: "VN";
   catalogVersion: string;
+  revisionNumber?: number;
+  validUntil?: string;
   rows: Reference[];
 };
+
 const hosts: Record<string, string> = {
   apple: "www.apple.com",
   samsung: "samsungmobilepress.com",
@@ -18,7 +22,11 @@ const hosts: Record<string, string> = {
   laptopaz: "laptopaz.vn",
   trungtran: "trungtran.vn",
 };
-export function validateReferenceBundle(value: unknown): CatalogBundle {
+
+export function validateReferenceBundle(
+  value: unknown,
+  nowMs = Date.now(),
+): CatalogBundle {
   const b = value as CatalogBundle;
   if (
     !b ||
@@ -26,11 +34,16 @@ export function validateReferenceBundle(value: unknown): CatalogBundle {
     b.market !== "VN" ||
     typeof b.catalogVersion !== "string" ||
     !/^[a-zA-Z0-9._-]{1,80}$/.test(b.catalogVersion) ||
+    (b.revisionNumber !== undefined &&
+      (!Number.isSafeInteger(b.revisionNumber) || b.revisionNumber < 1)) ||
+    (b.validUntil !== undefined &&
+      (!Number.isFinite(Date.parse(b.validUntil)) ||
+        Date.parse(b.validUntil) <= nowMs)) ||
     !Array.isArray(b.rows) ||
     b.rows.length < 1 ||
     b.rows.length > 5000
   )
-    throw Error("Catalog không tương thích.");
+    throw Error("Catalog không tương thích hoặc đã hết hạn.");
   const ids = new Set<string>();
   for (const r of b.rows) {
     if (
@@ -76,6 +89,7 @@ export function validateReferenceBundle(value: unknown): CatalogBundle {
   }
   return b;
 }
+
 export type Manifest = {
   schemaVersion: 1;
   market: "VN";
@@ -83,8 +97,14 @@ export type Manifest = {
   minAppVersion: number;
   bytes: number;
   sha256: string;
+  revisionNumber?: number;
+  validUntil?: string;
 };
-export function validateManifest(value: unknown): Manifest {
+
+export function validateManifest(
+  value: unknown,
+  nowMs = Date.now(),
+): Manifest {
   const m = value as Manifest;
   if (
     !m ||
@@ -97,8 +117,13 @@ export function validateManifest(value: unknown): Manifest {
     m.bytes <= 0 ||
     m.bytes > 3000000 ||
     !/^[a-f0-9]{64}$/.test(m.sha256) ||
-    !/^[a-zA-Z0-9._-]{1,80}$/.test(m.catalogVersion)
+    !/^[a-zA-Z0-9._-]{1,80}$/.test(m.catalogVersion) ||
+    (m.revisionNumber !== undefined &&
+      (!Number.isSafeInteger(m.revisionNumber) || m.revisionNumber < 1)) ||
+    (m.validUntil !== undefined &&
+      (!Number.isFinite(Date.parse(m.validUntil)) ||
+        Date.parse(m.validUntil) <= nowMs))
   )
-    throw Error("Manifest không tương thích.");
+    throw Error("Manifest không tương thích hoặc đã hết hạn.");
   return m;
 }

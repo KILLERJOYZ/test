@@ -8,19 +8,28 @@ import {
   assess,
   budgetUpgradeCandidates,
   checkedAdvice,
+  detectLocalProactiveNudge,
   facts,
+  formatSavedShareBrief,
   observationAgeLabel,
   parseQuotationDraft,
   relatedListings,
   safeLink,
   sameContext,
+  savedDecisionDiffs,
   searchCatalog,
   taskGuidance,
   validCatalog,
   validRequirements,
   validSaved,
 } from "./catalog.ts";
-import { VI, formatVnd, getStrings } from "./i18n.ts";
+import {
+  VI,
+  formatVnd,
+  formatVndDigits,
+  getStrings,
+  parseVndDigits,
+} from "./i18n.ts";
 const c = JSON.parse(
   fs.readFileSync(new URL("./real-catalog.json", import.meta.url), "utf8"),
 );
@@ -285,12 +294,76 @@ test("REAL-13 parseQuotationDraft validates allowlisted retailer links, manual f
   );
 });
 
-test("I18N-01 Vietnamese string table and VND formatter preserve locale semantics", () => {
+test("I18N-01 Vietnamese string table, safe VND guards and dot-grouping helpers", () => {
   const s = getStrings("vi");
   assert.equal(s.brandTitle, "lựa.");
   assert.equal(s.tabs.advisor, "Tư vấn");
+  assert.equal(s.buyNow, "Mua ngay");
   assert.equal(formatVnd(null), VI.unknownValue);
+  assert.equal(formatVnd(undefined), VI.unknownValue);
+  assert.equal(formatVnd(NaN), VI.unknownValue);
+  assert.equal(formatVnd(-500), VI.unknownValue);
   assert.equal(formatVnd(25000000), "25.000.000 ₫");
+  assert.equal(formatVndDigits("25000000"), "25.000.000");
+  assert.equal(formatVndDigits("0025.000abc000"), "25.000.000");
+  assert.equal(parseVndDigits("25.000.000 ₫"), "25000000");
+});
+
+test("V06-01 4-item saved decisions, groupName, dot-grouped quotes, OS normalization and proactive nudges", () => {
+  const dottedQuote = parseQuotationDraft({
+    name: "Laptop ASUS ExpertBook B1 16GB/512GB",
+    url: "https://cellphones.com.vn/laptop-asus-expertbook.html",
+    advertisedPrice: "22.990.000",
+    shipping: "150.000",
+    ram: "16",
+    storage: "512",
+  });
+  assert.ok(dottedQuote);
+  assert.equal(dottedQuote.listing.advertisedPrice, 22990000);
+  assert.equal(dottedQuote.listing.shipping, 150000);
+
+  const fourSaved = {
+    id: "dec-4",
+    savedAt: "2026-11-14T00:00:00.000Z",
+    catalogRevision: c.revision,
+    requirements: r,
+    listings: c.listings.slice(0, 4),
+    groupName: "Laptop CNTT",
+  };
+  assert.equal(validSaved(fourSaved), true);
+  assert.equal(
+    validSaved({ ...fourSaved, listings: c.listings.slice(0, 5) }),
+    false,
+  );
+  assert.ok(formatSavedShareBrief([fourSaved]).includes("Laptop CNTT"));
+  assert.equal(savedDecisionDiffs(fourSaved, c).length, 4);
+
+  const winListing = { ...v, os: "Win 11 Home SL" };
+  assert.equal(
+    assess(winListing, { ...r, os: "Windows" }).failed.includes(
+      "Hệ điều hành không khớp",
+    ),
+    false,
+  );
+
+  const fitSorted = searchCatalog(
+    c,
+    { ...r, budget: 30000000, tasks: ["Lập trình"] },
+    "",
+    "",
+    "fit",
+  );
+  assert.equal(fitSorted.length, 70);
+
+  const indecision = detectLocalProactiveNudge(
+    c,
+    r,
+    null,
+    [c.listings[0].id, c.listings[1].id, c.listings[2].id],
+    [],
+  );
+  assert.equal(indecision?.signalType, "indecision_compare");
+  assert.equal(indecision?.citedListingIds.length, 3);
 });
 
 

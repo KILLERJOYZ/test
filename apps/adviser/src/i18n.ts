@@ -33,11 +33,18 @@ export interface AdviserStrings {
   searchPlaceholder: string;
   savedSearchPlaceholder: string;
   allSources: string;
+  sortByFit: string;
   sortByPrice: string;
+  sortByTotal: string;
   sortByName: string;
   showExcluded: string;
   hideExcluded: string;
   unknownValue: string;
+  buyNow: string;
+  buyingOptionsTitle: string;
+  visitRetailer: string;
+  copilotAction: string;
+  loadMore: string;
   tabs: {
     advisor: string;
     explore: string;
@@ -72,20 +79,27 @@ export const VI: AdviserStrings = {
   cancel: "Hủy",
   saveDecision: "Lưu quyết định này",
   saveComparisonDecision: "Lưu quyết định so sánh",
-  reportDataDiscrepancy: "Báo sai lệch dữ liệu",
+  reportDataDiscrepancy: "Báo thông tin sai",
   openHistorySnapshot: "Mở bản lịch sử",
   deleteSavedSnapshot: "Xóa bản lưu",
   compareAction: "So sánh",
   removeCompareAction: "Bỏ so sánh",
   viewConfigAction: "Xem cấu hình",
   searchPlaceholder: "Tìm tên máy, CPU, RAM hoặc nhà bán",
-  savedSearchPlaceholder: "Tìm bản lưu theo tên máy, nguồn hoặc ngày",
+  savedSearchPlaceholder: "Tìm bản lưu theo tên nhóm, tên máy, nguồn hoặc ngày",
   allSources: "Mọi nguồn",
-  sortByPrice: "Sắp xếp: giá lịch sử",
+  sortByFit: "Sắp xếp: độ phù hợp",
+  sortByPrice: "Sắp xếp: giá niêm yết",
+  sortByTotal: "Sắp xếp: tổng chi phí",
   sortByName: "Sắp xếp: tên",
   showExcluded: "Hiện máy không đạt",
   hideExcluded: "Ẩn máy không đạt",
   unknownValue: "Chưa rõ",
+  buyNow: "Mua ngay",
+  buyingOptionsTitle: "Tùy chọn cấu hình & nơi bán",
+  visitRetailer: "Đến cửa hàng",
+  copilotAction: "Tư vấn tự do bằng AI",
+  loadMore: "Xem thêm cấu hình",
   tabs: {
     advisor: "Tư vấn",
     explore: "Khám phá",
@@ -103,7 +117,21 @@ export function getStrings(locale: SupportedLocale = "vi"): AdviserStrings {
   return DICTIONARIES[locale] ?? VI;
 }
 
-export function formatVnd(amount: number | null): string {
-  return amount === null ? VI.unknownValue : amount.toLocaleString("vi-VN") + " ₫";
+export function formatVndDigits(raw: string): string {
+  const digits = String(raw ?? "")
+    .replace(/\D/g, "")
+    .replace(/^0+(?=\d)/, "");
+  return digits.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+export function parseVndDigits(formatted: string): string {
+  return String(formatted ?? "").replace(/\D/g, "");
+}
+
+export function formatVnd(amount: number | null | undefined): string {
+  if (amount == null || !Number.isFinite(amount) || amount < 0) {
+    return VI.unknownValue;
+  }
+  return formatVndDigits(String(Math.round(amount))) + " ₫";
 }
 

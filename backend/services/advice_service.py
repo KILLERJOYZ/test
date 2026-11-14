@@ -1,13 +1,16 @@
+import json
 import re
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 from backend.schemas import AdviceContextModel, AdviceResponse, ListingModel, RequirementsModel
+from backend.services.ai_gateway import call_chatgpt_json, is_online_ai_available, wrap_user_query
 from backend.services.catalog_service import assess_listing
+
 
 def compute_listing_evidence(v: ListingModel) -> Dict[str, Any]:
     """Phát hiện mâu thuẫn giữa tiêu đề và thông số kỹ thuật."""
     name = v.name or ""
-    pair_match = re.search(r'(\d+)\s*GB\s*[,/]\s*(\d+)\s*(GB|TB)', name, re.IGNORECASE)
+    pair_match = re.search(r"(\d+)\s*GB\s*[,/]\s*(\d+)\s*(GB|TB)", name, re.IGNORECASE)
     title_ram = int(pair_match.group(1)) if pair_match else None
     title_storage = None
     if pair_match:
@@ -30,12 +33,13 @@ def compute_listing_evidence(v: ListingModel) -> Dict[str, Any]:
         "conflicts": conflicts,
     }
 
+
 def format_vnd(amount: Optional[int]) -> str:
     if amount is None:
         return "chưa rõ"
-    # Format dạng 22.990.000 ₫
     formatted = f"{amount:,}".replace(",", ".")
     return f"{formatted} ₫"
+
 
 def generate_allowed_facts(v: ListingModel, r: RequirementsModel) -> Dict[str, str]:
     """Sinh tập dữ kiện có kiểm chứng bắt buộc theo chuẩn BR-07."""
@@ -59,6 +63,7 @@ def generate_allowed_facts(v: ListingModel, r: RequirementsModel) -> Dict[str, s
         "source": f"Nguồn: {v.source} — {v.url}",
     }
 
+
 def extract_proposal_from_message(message: str, current: RequirementsModel) -> Optional[RequirementsModel]:
     """Phát hiện ý định thay đổi nhu cầu từ câu hỏi của người dùng."""
     text = message.lower()
@@ -68,24 +73,21 @@ def extract_proposal_from_message(message: str, current: RequirementsModel) -> O
     min_storage = current.minStorage
     tasks = list(current.tasks)
 
-    # Phát hiện ngân sách: ví dụ 'ngân sách 30 triệu', '30tr', '25 triệu'
-    budget_match = re.search(r'(\d+)\s*(triệu|tr)', text)
+    budget_match = re.search(r"(\d+)\s*(triệu|tr)", text)
     if budget_match:
         val = int(budget_match.group(1)) * 1_000_000
         if 1_000_000 <= val <= 1_000_000_000:
             budget = val
             changed = True
 
-    # Phát hiện RAM: ví dụ 'ram 16gb', '16 gb ram', 'ram 32'
-    ram_match = re.search(r'(?:ram\s*(\d+)|(\d+)\s*gb\s*ram)', text)
+    ram_match = re.search(r"(?:ram\s*(\d+)|(\d+)\s*gb\s*ram)", text)
     if ram_match:
         val = int(ram_match.group(1) or ram_match.group(2))
         if val in (8, 16, 32, 64):
             min_ram = val
             changed = True
 
-    # Phát hiện SSD / Ổ cứng: ví dụ 'ssd 512', 'ổ 1tb'
-    ssd_match = re.search(r'(?:ssd|ổ|lưu trữ)\s*(\d+)\s*(gb|tb)?', text)
+    ssd_match = re.search(r"(?:ssd|ổ|lưu trữ)\s*(\d+)\s*(gb|tb)?", text)
     if ssd_match:
         num = int(ssd_match.group(1))
         unit = (ssd_match.group(2) or "gb").lower()
@@ -94,7 +96,6 @@ def extract_proposal_from_message(message: str, current: RequirementsModel) -> O
             min_storage = val
             changed = True
 
-    # Phát hiện tác vụ
     task_keywords = {
         "lập trình": "Lập trình",
         "code": "Lập trình",
@@ -122,19 +123,19 @@ def extract_proposal_from_message(message: str, current: RequirementsModel) -> O
         )
     return None
 
+
 def generate_advice_response(
     listing: ListingModel,
     requirements: RequirementsModel,
     message: str,
     context: AdviceContextModel,
 ) -> AdviceResponse:
-    """Tạo phản hồi tư vấn chuẩn chỉ dùng facts có kiểm chứng."""
+    """Tạo phản hồi tư vấn chuẩn chỉ dùng facts có kiểm chứng (BR-07)."""
     allowed = generate_allowed_facts(listing, requirements)
     msg = message.lower()
 
     selected_keys: List[str] = []
 
-    # Chọn factIds phù hợp dựa trên ngữ cảnh câu hỏi
     if any(k in msg for k in ["giá", "tiền", "chi phí", "rẻ", "đắt", "ngân sách", "bao nhiêu"]):
         selected_keys.extend(["price", "cost"])
 
@@ -153,10 +154,31 @@ def generate_advice_response(
     if not selected_keys:
         selected_keys = ["fit", "spec", "price"]
 
-    # Đảm bảo không trùng và tối đa 6 facts
+    if is_online_ai_available():
+        llm_choice = call_chatgpt_json(
+            system_prompt=(
+                "Return JSON only: {\"factIds\": [string]}. "
+                "Choose between 1 and 6 keys strictly from supplied facts keys."
+            ),
+            user_payload=json.dumps(
+                {
+                    "message": wrap_user_query(message),
+                    "facts": allowed,
+                },
+                ensure_ascii=False,
+            ),
+            max_tokens=200,
+        )
+        if llm_choice and isinstance(llm_choice.get("factIds"), list):
+            valid_ids = [
+                fid for fid in llm_choice["factIds"]
+                if isinstance(fid, str) and fid in allowed
+            ]
+            if valid_ids:
+                selected_keys = valid_ids
+
     unique_keys = list(dict.fromkeys(selected_keys))[:6]
     text_result = "\n\n".join(allowed[k] for k in unique_keys)
-
     proposal = extract_proposal_from_message(message, requirements)
 
     return AdviceResponse(

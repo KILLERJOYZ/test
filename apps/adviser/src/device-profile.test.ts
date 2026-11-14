@@ -70,12 +70,13 @@ for (const category of CATEGORIES)
       ),
     );
   });
-test("category change clears dependent choices but preserves budget", () => {
+test("category change clears dependent choices including minimumStorageGiB but preserves budget", () => {
   const old = {
     ...complete("Tablet"),
     os: "iPadOS",
     formFactor: "2-in-1",
     minimumRamGiB: 16,
+    minimumStorageGiB: 512,
   };
   const next = changeCategory(old, "Phone");
   assert.equal(next.ceilingVnd, old.ceilingVnd);
@@ -83,6 +84,16 @@ test("category change clears dependent choices but preserves budget", () => {
   assert.deepEqual(next.purposes, []);
   assert.equal(next.os, null);
   assert.equal(next.minimumRamGiB, null);
+  assert.equal(next.minimumStorageGiB, null);
+  assert.ok(
+    profileErrors({ ...complete("PC"), ceilingVnd: 2_000_000_000 }).length > 0,
+  );
+  assert.ok(
+    profileErrors({ ...complete("PC"), minimumRamGiB: 2048 }).length > 0,
+  );
+  assert.ok(
+    profileErrors({ ...complete("PC"), minimumStorageGiB: 200000 }).length > 0,
+  );
 });
 test("tier boundaries exactly match the attachment, including PC 62/92M", () => {
   assert.deepEqual(

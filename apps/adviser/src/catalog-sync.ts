@@ -2,6 +2,7 @@ import trust from "./catalog-trust.json";
 import { verifyNativeSignature, digestText } from "./device-ai";
 import { validateManifest, validateReferenceBundle } from "./catalog-contract";
 import { activateReferences } from "./reference-storage";
+
 const byteLength = (s: string) => {
   let n = 0;
   for (const c of s) {
@@ -10,6 +11,7 @@ const byteLength = (s: string) => {
   }
   return n;
 };
+
 export async function syncReferenceCatalog(
   baseUrl: string,
   token = "",
@@ -24,7 +26,7 @@ export async function syncReferenceCatalog(
     !(
       url.protocol === "https:" ||
       (url.protocol === "http:" &&
-        ["localhost", "127.0.0.1", "10.0.2.2"].includes(url.hostname))
+        ["localhost", "127.0.0.1", "10.0.2.2", "[::1]"].includes(url.hostname))
     )
   )
     throw Error("Dùng HTTPS hoặc máy chủ localhost để kiểm thử.");
@@ -70,8 +72,18 @@ export async function syncReferenceCatalog(
     const b = validateReferenceBundle(JSON.parse(raw));
     if (b.catalogVersion !== m.catalogVersion)
       throw Error("Phiên bản catalog không khớp.");
+    if (
+      m.revisionNumber !== undefined &&
+      b.revisionNumber !== undefined &&
+      b.revisionNumber !== m.revisionNumber
+    )
+      throw Error("Số thứ tự phiên bản catalog không khớp manifest.");
     if (controller.signal.aborted) throw Error("Đã hủy đồng bộ.");
-    await activateReferences(b);
+    await activateReferences(
+      m.revisionNumber !== undefined && b.revisionNumber === undefined
+        ? { ...b, revisionNumber: m.revisionNumber }
+        : b,
+    );
     return b.catalogVersion;
   } finally {
     clearTimeout(timer);
