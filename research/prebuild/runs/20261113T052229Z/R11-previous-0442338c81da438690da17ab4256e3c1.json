@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261113T052229Z",
+  "taskId": "R11",
+  "checks": [
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R11"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T05:59:29.185090+00:00",
+      "finishedAt": "2026-11-13T05:59:29.810800+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R11-artifact-b956055cee3d4a14a6afc2f526b46226.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R11"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:03:31.355555+00:00",
+      "finishedAt": "2026-11-13T06:03:31.988496+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R11-artifact-c032c4ded8d94721ab13b950b683f2c5.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R11"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:07:09.371742+00:00",
+      "finishedAt": "2026-11-13T06:07:09.985024+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R11-artifact-58860d181c344455853c2737f9147148.log",
+      "reason": null
+    },
+    {
+      "id": "android_evidence_tests",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/prebuild/tools",
+        "-p",
+        "test_android_evidence.py"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:07:11.116564+00:00",
+      "finishedAt": "2026-11-13T06:07:11.692056+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "unit",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/unit-packs/8fa9a7d6084b44ebae4179bf32cd616e-android_evidence_tests.log",
+      "reason": null
+    },
+    {
+      "id": "artifact_check",
+      "command": [
+        "python",
+        "research/prebuild/tools/validate.py",
+        "--task",
+        "R11"
+      ],
+      "cwd": ".",
+      "startedAt": "2026-11-13T06:07:11.116564+00:00",
+      "finishedAt": "2026-11-13T06:07:11.778483+00:00",
+      "exitCode": 0,
+      "result": "pass",
+      "mode": "artifact",
+      "outputRef": "research/prebuild/runs/20261113T052229Z/R11-artifact-037192763cbb4cabb0d75fb6f698eca4.log",
+      "reason": null
+    }
+  ],
+  "automationStatus": "done",
+  "evidenceStatus": "partial",
+  "definitionHash": "fdfd8da6a20b8de18971210478c1714af2b26d9ec65d0725be64889f3ad6d713",
+  "inputHashes": {
+    "apps/adviser/VERIFICATION.md": "095932ccc3571e9dbe16587a8616e136ed1a585620c9f567eb9a8db63a45dded",
+    "apps/adviser/verification/android-demo-manifest.json": "0d1459b3110d30e2a974dadf7a057b0cbe7f717e2d65a9685f408d0bdfc419a1",
+    "apps/adviser/scripts/android-smoke.py": "d392ff629847f09b411c101b01926c53adc1b373f55391032127cecebc5143d9",
+    "research/prebuild/06-flow-validation.json": "f60b0b99575fa0390b68cc7125fd8cfe6b685bb219d947ffaebbd0a7c31afd12"
+  },
+  "consumedConfig": {},
+  "consumedEvidenceHashes": {},
+  "sharedWrites": [],
+  "decisions": [],
+  "gaps": [],
+  "blocker": null,
+  "unitPackResults": [
+    {
+      "packId": "U11",
+      "reportRef": "research/prebuild/runs/20261113T052229Z/unit-packs/8fa9a7d6084b44ebae4179bf32cd616e.json",
+      "reportHash": "9f6e95277f77e1db181d128c04f2747a1dd30e70941073837b914bf524edb6cc",
+      "definitionHash": "cb19053089875bff0d0cadbb028f3b353186dbea27b9bc5497f16b10e7338ab2",
+      "testedFileHashes": {
+        "research/prebuild/tools/test_android_evidence.py": "282150ef3b8aabd20bb494da467b6f595da154f4a7ed95f3b7de16782cc5bf04",
+        "research/prebuild/tools/validate.py": "ea2db9f6ba5b1fb270ce56345be97ba2b2615b0ccfe898f11f73706568df85d4",
+        "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+        "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+        "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+        "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+      },
+      "passedCaseIds": [
+        "U11-01",
+        "U11-02",
+        "U11-03",
+        "U11-04",
+        "U11-05",
+        "U11-06"
+      ],
+      "failedCaseIds": [],
+      "skippedCaseIds": [],
+      "notRunCaseIds": []
+    }
+  ],
+  "outputHashes": {
+    "research/prebuild/11-android-cases.json": "61ec1edf5ccfac70c4202e66f632d5b97be2306bf15903cd0350b680610a7572",
+    "research/prebuild/11-android-evidence.md": "fe85ec84de51c796910c94f8f2985ebd13041623b978519dd6e16f3ceb936012",
+    "research/prebuild/tools/test_android_evidence.py": "282150ef3b8aabd20bb494da467b6f595da154f4a7ed95f3b7de16782cc5bf04"
+  },
+  "commandDefinitionHashes": {
+    "android_evidence_tests": "b59b64f3c291221e2b70216ab5c2f13ee615e88c289821f2fea33c523afb03f6"
+  }
+}

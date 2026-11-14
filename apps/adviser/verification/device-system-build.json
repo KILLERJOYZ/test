@@ -1,0 +1,162 @@
+{
+  "status": "implemented and verified as internal full-category demo; production and model-quality acceptance pending",
+  "verifiedAtUtc": "2026-11-12T18:26:39.656650+00:00",
+  "workspace": "C:/Users/luken/test",
+  "workingTree": "uncommitted shared workspace; unrelated pre-existing changes retained",
+  "artifacts": {
+    "artifacts/lua-device-advisor-full.apk": {
+      "bytes": 40356504,
+      "sha256": "eeb2708a5e0122a3231cffe9f935006a1a6030a60f94fb9c4213b40f46b9ed06"
+    },
+    "artifacts/lua-reference.sqlite": {
+      "bytes": 266240,
+      "sha256": "bc64ae8590ec84a2a12fe912343aec000a818e699496721726f356e29a38b5ca"
+    },
+    "dist/demo.html": {
+      "bytes": 608032,
+      "sha256": "57865a40e15650bbeeeb60e131f2b76c1b4152e7c139545fb8d930dff97d6427"
+    }
+  },
+  "sourceSha256": {
+    "app.json": "299b0797ea50c51f5fbf465288971966b5ab70f77028f71513568d805fa0725c",
+    "package-lock.json": "327330604ab17159947c3f0c71482fd94e635b90fe00bec4cb2338fc22bea347",
+    "src/DeviceAdvisorApp.tsx": "12fef4f1936a09f4b0efebfe5f2e48f25f4d1585e331f75b0891f6cf746cb712",
+    "src/device-profile.ts": "af66727cc5c4ec3ec9324ee786b553e55ca44ffb5b7d09e0b0389668f9f0d4a6",
+    "src/advisor-engine.ts": "c66abab9bb5775da8ab03facc74ada87bfe40112134d0aaad97459472d7e3429",
+    "src/reference.ts": "67b948637bea3686679a9bbdaf5c7ba0c7be847bb3d2f854461858944f7ac4a1",
+    "src/reference-seed.json": "ad25799f7dd34a3663c44ae976ab1496dda0d79867d67f1dd7d5b0fdcfb2767e",
+    "src/catalog-database.ts": "258939963bd82334d2d105983393458222a438ccd83789843bd6ea3a55b8a383",
+    "src/catalog-sync.ts": "0ddefdb6035512d71f137cd4cc9b0d750591fff4def006fa8ebe08acc920608e",
+    "src/catalog-contract.ts": "e957cd4d71468a581c57bbae80f389ca35dbfbfd6baa24044dc251f1100eefb7",
+    "src/device-ai.ts": "de12c769f00a052421a59e07031309f6d8a9253282734e2f2301ce4103b51b84",
+    "src/catalog-trust.json": "26efb4d008d7af764fe5a8ed67d031d03fea199c9c1fdbe198f4ac206a9910ec",
+    "modules/device-advisor/android/src/main/java/expo/modules/deviceadvisor/DeviceAdvisorNativeModule.kt": "25ff2ca41e2d8eaa77edc6f6c1094c4062d2009cb6ca107f8add18a6eda882f6",
+    "modules/device-advisor/android/build.gradle": "38282b45315b6b4ba01a7d97a6780d09873a06a361650b012ed95694806f7bad",
+    "plugins/with-advisor-ksp.cjs": "9c451141930e0844023a86c56b5bc0ec5b296009165c23d73add90bf721ee39a",
+    "plugins/with-advisor-network.cjs": "370d6c6beac8db7ac05327c3256800102060a75eb34faba6439c25d9a7659a9e"
+  },
+  "scope": {
+    "categories": [
+      "Phone",
+      "Tablet",
+      "PC.LAPTOP",
+      "PC.DESKTOP"
+    ],
+    "purposes": 19,
+    "priorities": 10,
+    "selection": "exactly three ordered purposes and priorities",
+    "resultSurface": "ReferenceExplorer shared at first launch and after review"
+  },
+  "nativeMatrix": {
+    "expo": "54",
+    "reactNative": "0.81.5",
+    "gradle": "8.14.3",
+    "agp": "8.11.0",
+    "jdk": "21.0.8",
+    "kotlin": "2.3.21",
+    "ksp": "2.3.11",
+    "mlkitPrompt": "1.0.0-beta5",
+    "coroutines": "1.11.0",
+    "minSdk": 26,
+    "compileSdk": 36,
+    "targetSdk": 36,
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "r8Minification": false,
+    "releaseSigning": "internal demo debug key; apksigner verify passed",
+    "releaseLint": "passed; not suppressed",
+    "apk16KBZipAlignment": "zipalign -c -P 16 4 passed"
+  },
+  "catalog": {
+    "version": "535d33d05b4be03f",
+    "sourceSha256": "535d33d05b4be03f3fafdfe0f8734de5dd94c99514aa30a8046b02aefc65bf4c",
+    "rows": 75,
+    "sources": 6,
+    "integrity": "ok",
+    "foreignKeys": "ok",
+    "negativePriceRejection": "passed",
+    "transactionRollback": "passed",
+    "database": "apps\\adviser\\artifacts\\lua-reference.sqlite",
+    "databaseSha256": "bc64ae8590ec84a2a12fe912343aec000a818e699496721726f356e29a38b5ca",
+    "mode": "collected reference observations; not currently verified offers"
+  },
+  "checks": {
+    "typescript": "passed",
+    "domainTests": {
+      "passed": 55,
+      "failed": 0
+    },
+    "threeCategoryComponents": {
+      "status": "passed",
+      "categories": [
+        "Phone",
+        "Tablet",
+        "PC"
+      ],
+      "checks": [
+        "exact ranked purposes",
+        "exact ranked priorities",
+        "category-specific OS and form",
+        "adaptive questions",
+        "unknown answers",
+        "full review",
+        "same recommendation surface",
+        "restart",
+        "unsupported AI form fallback",
+        "corrupt draft retained after autosave delay"
+      ],
+      "boundary": "React component tests with native/storage/AI mocks"
+    },
+    "legacyDemo2": "18 navigation/review/restoration checks passed (mock native/storage boundaries)",
+    "signedCatalog": {
+      "status": "passed",
+      "checks": 10,
+      "crypto": "real RSA SHA256",
+      "transport": "local HTTP",
+      "database": "actual SQLite through Expo API adapter",
+      "nativeCryptography": "separate Android runtime smoke required"
+    },
+    "nativeRuntime": {
+      "status": "passed",
+      "emulator": "Resizable_Experimental",
+      "serial": "127.0.0.1:5561",
+      "android": "17",
+      "api": 37,
+      "physicalDevice": false,
+      "catalogVersion": "535d33d05b4be03f",
+      "rows": 75,
+      "checks": [
+        "Phone guided journey through three ordered purposes, budget, three priorities, OS/form, three UNKNOWN questions and review",
+        "shared result surface after confirmation",
+        "final APK restart restores confirmed profile",
+        "bundled catalog upgrade preserves confirmed profile and saved history",
+        "real RSA SHA256 signature verification and SQLite activation of device-system-native-update-2",
+        "native catalog rollback to 535d33d05b4be03f",
+        "AICore unsupported with forms available",
+        "real phone reference detail and dated saved decision"
+      ],
+      "nanoGeneration": "not performed; emulator reports unsupported",
+      "evidenceNote": "Full guided flow ran before final metadata and header refinements; final APK reinstalled and restart, catalog migration, signed sync, rollback, detail and save were checked again."
+    },
+    "androidReleaseBuild": "BUILD SUCCESSFUL in 31s; 339 actionable tasks",
+    "webBuild": "passed; dist/demo.html; bundle-size advisory remains",
+    "ci": "workflow configured; not run remotely"
+  },
+  "remaining": [
+    "Supported physical Nano download/generation, foreground/cancel/quota and Vietnamese held-out evaluation",
+    "Reviewed complete offers and software/measurement evidence across categories; current manufacturer references have no verified Vietnamese prices/stock",
+    "Physical accessibility/recreation/foldable/full-disk and 5000-SKU performance matrix",
+    "Provisional ranking anchors and target/band scoring calibration",
+    "Production publisher operation, source rights, signing custody/rotation and acceptance gates"
+  ],
+  "buildFindingsResolved": [
+    "ML Kit Kotlin 2.3 metadata requires actual root buildscript Kotlin upgrade, not only Expo version-catalog override",
+    "Explicit independent KSP2 version avoids Expo SDK54 legacy Kotlin/KSP lookup",
+    "Gradle memory raised to 3GiB heap/1.5GiB metaspace; release lint remains enabled",
+    "Network domain includeSubdomains attributes added; cleartext remains localhost-only",
+    "Corrupt profile autosave no longer overwrites recoverable raw records",
+    "Older bundled snapshot rollback survives reload instead of silently upgrading again"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "artifact": "artifacts\\lua-adviser-advisor-module.apk",
+  "sha256": "36119f83f41bba8fd8f403c69374d5238ac57a126160cc2f623f0b27184eec07",
+  "ruleVersion": "advisor-rules-1",
+  "scoringVersion": "advisor-utility-intervals-1",
+  "catalogVersion": "dea729f33a3e087a",
+  "typescript": "passed",
+  "appTests": 40,
+  "engineTests": 12,
+  "componentChecks": 18,
+  "serviceTest": 1,
+  "sqliteIntegrityAndRollback": "passed",
+  "htmlBuild": "passed",
+  "androidReleaseBuild": "passed",
+  "nativeEvidence": "advisor-native-results.json",
+  "scope": "deterministic recommendation core connected to current laptop/SQLite demo; broader categories and Nano not included",
+  "latestArtifactInstalled": true,
+  "latestCatalogVisible": true,
+  "nativeGuidedFlow": "passed; see advisor-native-results.json",
+  "technicalEvidence": "collapsed by default in final presentation"
+}

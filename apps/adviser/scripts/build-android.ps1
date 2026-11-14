@@ -8,8 +8,8 @@ if (-not $env:JAVA_HOME) {
     $env:JAVA_HOME = $jdk
 }
 if (-not $env:ANDROID_HOME) { $env:ANDROID_HOME = Join-Path $env:LOCALAPPDATA 'Android\Sdk' }
-& node --experimental-strip-types (Join-Path $PSScriptRoot 'import-catalog.mjs')
-if ($LASTEXITCODE -ne 0) { throw 'Real catalog import failed; refusing to package a stale catalog.' }
+# The unified app packages reference-seed.json. Legacy real-catalog.json is a
+# historical regression fixture and must not be regenerated as a build side effect.
 Push-Location $appRoot
 try {
     & npx expo prebuild --platform android --no-install

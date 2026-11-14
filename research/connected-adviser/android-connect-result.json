@@ -1,8 +1,8 @@
 {
   "mode": "connect",
   "result": "pass",
-  "serial": "emulator-5580",
-  "observedAt": "2026-11-13T08:53:09Z",
+  "serial": "emulator-5554",
+  "observedAt": "2026-11-13T14:26:50Z",
   "physicalDevice": false,
-  "apkSha256": "fd3160b6828c2f1cc6ebe4a4773c8fe2830553959ab37b9b8beed5591cb88dce"
+  "apkSha256": "560ff20ae8fa60e3b0e6aedf25cd1100a1e508e8b78d1b7be18355d063f559b5"
 }

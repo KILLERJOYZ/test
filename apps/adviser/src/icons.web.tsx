@@ -32,10 +32,15 @@ import {
   AlertCircle,
   MapPin,
   LayoutGrid,
+  Sparkles,
+  Store,
+  Tag,
 } from "lucide-react";
+
 const map: Record<string, typeof Compass> = {
   compass: Compass,
   compare: ArrowLeftRight,
+  swap: ArrowLeftRight,
   bookmark: Bookmark,
   up: ArrowUpRight,
   right: ArrowRight,
@@ -67,7 +72,11 @@ const map: Record<string, typeof Compass> = {
   alert: AlertCircle,
   pin: MapPin,
   grid: LayoutGrid,
+  sparkles: Sparkles,
+  store: Store,
+  tag: Tag,
 };
+
 export function Icon({
   name,
   size = 20,

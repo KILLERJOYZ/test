@@ -1,0 +1,129 @@
+import type { Reference } from "./reference.ts";
+
+export type CatalogBundle = {
+  schemaVersion: 1;
+  market: "VN";
+  catalogVersion: string;
+  revisionNumber?: number;
+  validUntil?: string;
+  rows: Reference[];
+};
+
+const hosts: Record<string, string> = {
+  apple: "www.apple.com",
+  samsung: "samsungmobilepress.com",
+  cellphones: "cellphones.com.vn",
+  thegioididong: "www.thegioididong.com",
+  dienmayxanh: "www.dienmayxanh.com",
+  fptshop: "fptshop.com.vn",
+  gearvn: "gearvn.com",
+  phongvu: "phongvu.vn",
+  hacom: "hacom.vn",
+  laptopaz: "laptopaz.vn",
+  trungtran: "trungtran.vn",
+};
+
+export function validateReferenceBundle(
+  value: unknown,
+  nowMs = Date.now(),
+): CatalogBundle {
+  const b = value as CatalogBundle;
+  if (
+    !b ||
+    b.schemaVersion !== 1 ||
+    b.market !== "VN" ||
+    typeof b.catalogVersion !== "string" ||
+    !/^[a-zA-Z0-9._-]{1,80}$/.test(b.catalogVersion) ||
+    (b.revisionNumber !== undefined &&
+      (!Number.isSafeInteger(b.revisionNumber) || b.revisionNumber < 1)) ||
+    (b.validUntil !== undefined &&
+      (!Number.isFinite(Date.parse(b.validUntil)) ||
+        Date.parse(b.validUntil) <= nowMs)) ||
+    !Array.isArray(b.rows) ||
+    b.rows.length < 1 ||
+    b.rows.length > 5000
+  )
+    throw Error("Catalog không tương thích hoặc đã hết hạn.");
+  const ids = new Set<string>();
+  for (const r of b.rows) {
+    if (
+      !r ||
+      typeof r.id !== "string" ||
+      !r.id ||
+      r.id.length > 200 ||
+      ids.has(r.id) ||
+      typeof r.name !== "string" ||
+      !r.name ||
+      r.name.length > 500 ||
+      !r.specs ||
+      typeof r.specs !== "object" ||
+      Array.isArray(r.specs)
+    )
+      throw Error("Định danh hoặc thông số không hợp lệ.");
+    ids.add(r.id);
+    if (
+      !["phone", "tablet", "laptop", "desktop"].includes(
+        r.category ?? "laptop",
+      ) ||
+      !["new", "used", "refurbished", "unknown"].includes(r.condition)
+    )
+      throw Error("Loại máy hoặc tình trạng không hợp lệ.");
+    if (r.price !== null && (!Number.isSafeInteger(r.price) || r.price <= 0))
+      throw Error("Giá không hợp lệ.");
+    for (const n of [r.shipping, r.fees])
+      if (n != null && (!Number.isSafeInteger(n) || n < 0))
+        throw Error("Phí không hợp lệ.");
+    for (const n of [r.ramGiB, r.storageGiB, r.weightKg])
+      if (n !== null && (!Number.isFinite(n) || n <= 0))
+        throw Error("Đơn vị/thông số không hợp lệ.");
+    if (!Number.isFinite(Date.parse(r.observedAt)))
+      throw Error("Thời điểm quan sát không hợp lệ.");
+    const u = new URL(r.url);
+    if (
+      u.protocol !== "https:" ||
+      u.hostname !== hosts[r.source] ||
+      u.username ||
+      u.password
+    )
+      throw Error("Nguồn không được chấp nhận.");
+  }
+  return b;
+}
+
+export type Manifest = {
+  schemaVersion: 1;
+  market: "VN";
+  catalogVersion: string;
+  minAppVersion: number;
+  bytes: number;
+  sha256: string;
+  revisionNumber?: number;
+  validUntil?: string;
+};
+
+export function validateManifest(
+  value: unknown,
+  nowMs = Date.now(),
+): Manifest {
+  const m = value as Manifest;
+  if (
+    !m ||
+    m.schemaVersion !== 1 ||
+    m.market !== "VN" ||
+    !Number.isInteger(m.minAppVersion) ||
+    m.minAppVersion < 1 ||
+    m.minAppVersion > 1 ||
+    !Number.isSafeInteger(m.bytes) ||
+    m.bytes <= 0 ||
+    m.bytes > 3000000 ||
+    !/^[a-f0-9]{64}$/.test(m.sha256) ||
+    !/^[a-zA-Z0-9._-]{1,80}$/.test(m.catalogVersion) ||
+    (m.revisionNumber !== undefined &&
+      (!Number.isSafeInteger(m.revisionNumber) || m.revisionNumber < 1)) ||
+    (m.validUntil !== undefined &&
+      (!Number.isFinite(Date.parse(m.validUntil)) ||
+        Date.parse(m.validUntil) <= nowMs))
+  )
+    throw Error("Manifest không tương thích hoặc đã hết hạn.");
+  return m;
+}

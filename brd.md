@@ -11,6 +11,10 @@
 | Companion plan | [Implementation plan](./docs/planning/IMPLEMENTATION_PLAN.md) |
 | Traceability | [Requirement and verification register](./docs/planning/project-traceability.json) |
 
+Active runtime integration, 14 November 2026: the [unified app contract](./apps/adviser/UNIFIED_APP.md) selects one full-category root, shared M3 UI and signed FastAPI catalog. Earlier laptop-first sequencing and two-preference counts remain historical for the legacy release.
+
+Current Demo 2 implementation contract, 13 November 2026: following the user's instruction to implement the full Device Advisor system, extend the existing U01–U05/U07/U08 journeys to Phone, Tablet and PC (laptop/prebuilt desktop), with exactly three ordered purposes and three ordered priorities from the supplied integration plan. The separate category, purposes, budget, priorities, clarification and review screens return to the same recommendation surface shown at first launch. This supersedes the earlier Demo 2 selection counts; it does not approve parent spreadsheet rows or accept production gates. [Implementation and evidence](./apps/adviser/DEVICE_ADVISOR_SYSTEM.md).
+
 Version 3.2 adds Expo as the React Native framework for Android debug iteration. App-specific native builds remain required for native acceptance.
 
 Version 3.1 uses the user-supplied lowercase `brd.md` attachment as its requirements source. Its hackathon priorities in §§7–8 govern demo feature inclusion. The user-confirmed Android-only React Native scope and Material 3 Expressive criteria supersede the older platform language. HTML/CSS is for design previews only. The separate uppercase workspace BRD and its U19 additions do not govern this implementation. Later detailed production cases in this attachment remain staged requirements, not hackathon feature commitments.

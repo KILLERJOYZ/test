@@ -1,0 +1,13 @@
+{
+  "version": "7ea41128fd8779f3",
+  "sourceSha256": "7ea41128fd8779f3d9f7839365acb9ae37b160e246931fecdb27e2e13461f065",
+  "rows": 75,
+  "sources": 4,
+  "integrity": "ok",
+  "foreignKeys": "ok",
+  "negativePriceRejection": "passed",
+  "transactionRollback": "passed",
+  "database": "apps\\adviser\\artifacts\\lua-reference.sqlite",
+  "databaseSha256": "1fcf947f344232f8c621b780872bf9b65d3cbc01d81503d693f1534517b4369e",
+  "mode": "collected reference observations; not currently verified offers"
+}

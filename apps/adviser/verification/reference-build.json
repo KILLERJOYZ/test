@@ -1,0 +1,25 @@
+{
+  "artifact": "artifacts/lua-adviser-reference.apk",
+  "sha256": "84a6cf58d1bf2ef6fd436581008174cf1752fdc47b397ed15bf06a3018dcc80c",
+  "mode": "collected real reference records",
+  "referenceDatabase": "artifacts/lua-reference.sqlite",
+  "rows": 70,
+  "sources": 4,
+  "typescript": "passed",
+  "appTests": 28,
+  "componentFlowChecks": 16,
+  "serviceTests": 1,
+  "androidReleaseBuild": "passed",
+  "htmlBuild": "passed",
+  "installedEmulator": "passed: first import, tasks, budget, priorities, review, reference recommendations and real detail",
+  "nativeResults": "reference-native-results.json",
+  "notVerified": [
+    "physical phone",
+    "TalkBack",
+    "current offers",
+    "complete checkout totals",
+    "real workload suitability",
+    "Nano"
+  ],
+  "screenshotEvidence": "reference-native.png and reference-native-detail.png; ADB warning prefix removed before PNG decoding"
+}

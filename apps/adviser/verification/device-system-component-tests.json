@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "categories": [
+    "Phone",
+    "Tablet",
+    "PC"
+  ],
+  "checks": [
+    "exact ranked purposes",
+    "exact ranked priorities",
+    "category-specific OS and form",
+    "adaptive questions",
+    "unknown answers",
+    "full review",
+    "same recommendation surface",
+    "restart",
+    "unsupported AI form fallback",
+    "corrupt draft retained after autosave delay"
+  ],
+  "boundary": "React component tests with native/storage/AI mocks"
+}

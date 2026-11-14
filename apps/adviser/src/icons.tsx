@@ -1,4 +1,5 @@
 import { Text } from "react-native";
+
 export function Icon({
   name,
   size = 20,
@@ -20,6 +21,11 @@ export function Icon({
     search: "⌕",
     down: "⌄",
     more: "···",
+    sparkles: "✦",
+    store: "⌂",
+    swap: "⇄",
+    cpu: "⊞",
+    tag: "◈",
   };
   return (
     <Text accessible={false} style={{ fontSize: size, color }}>

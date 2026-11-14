@@ -12,31 +12,57 @@ export function importCatalog(raw) {
     if (!m) return null;
     const n =
       Number(m[1]) * (storage && m[2].toUpperCase() === "TB" ? 1024 : 1);
-    return Number.isSafeInteger(n) ? n : null;
+    return Number.isSafeInteger(n) && n > 0 ? n : null;
   };
-  const listings = raw.products.map((v) => ({
-    id: `${v.source}:${v.id}`,
-    name: v.name,
-    source: v.source,
-    url: v.url,
-    condition: ["new", "used"].includes(v.condition) ? v.condition : "unknown",
-    observedAt: v.metadata?.crawledAt,
-    ram: quantity(v.specs?.ram),
-    storage: quantity(v.specs?.storage, true),
-    cpu: v.specs?.cpu ?? null,
-    os: v.specs?.os ?? null,
-    screen: v.specs?.screen ?? null,
-    weight: v.specs?.weight ?? null,
-    advertisedPrice:
-      Number.isSafeInteger(v.pricing?.current) && v.pricing.current > 0
-        ? v.pricing.current
-        : null,
-    shipping: null,
-    fees: null,
-    stock: "unknown",
-    identity: "unreviewed",
-    rawHash: hash(v),
-  }));
+  const listings = raw.products.map((v) => {
+    const item = {
+      id: `${v.source}:${v.id}`,
+      name: v.name,
+      source: v.source,
+      url: v.url,
+      condition: ["new", "used"].includes(v.condition) ? v.condition : "unknown",
+      observedAt: v.metadata?.crawledAt,
+      ram: quantity(v.specs?.ram),
+      storage: quantity(v.specs?.storage, true),
+      cpu: v.specs?.cpu ?? null,
+      os: v.specs?.os ?? null,
+      screen: v.specs?.screen ?? null,
+      weight: v.specs?.weight ?? null,
+      advertisedPrice:
+        Number.isSafeInteger(v.pricing?.current) && v.pricing.current > 0
+          ? v.pricing.current
+          : null,
+      shipping: null,
+      fees: null,
+      stock: "unknown",
+      identity: "unreviewed",
+      rawHash: hash(v),
+    };
+    if (v.brand) item.brand = v.brand;
+    if (v.model) item.model = v.model;
+    if (v.specs?.gpu) item.gpu = v.specs.gpu;
+    if (v.specs?.battery) item.battery = v.specs.battery;
+    if (v.media?.thumbnail) item.thumbnail = v.media.thumbnail;
+    if (Number.isSafeInteger(v.pricing?.original) && v.pricing.original > 0) {
+      item.priceOriginal = v.pricing.original;
+    }
+    if (typeof v.pricing?.discountPercent === "number" && v.pricing.discountPercent > 0) {
+      item.discountPercent = v.pricing.discountPercent;
+    }
+    if (typeof v.pricing?.installment === "string" && v.pricing.installment.trim()) {
+      item.installment = v.pricing.installment.trim();
+    }
+    if (typeof v.rating?.average === "number") {
+      item.ratingAverage = v.rating.average;
+    }
+    if (Number.isSafeInteger(v.rating?.count)) {
+      item.ratingCount = v.rating.count;
+    }
+    if (typeof v.availability === "string" && v.availability) {
+      item.availability = v.availability;
+    }
+    return item;
+  });
   const result = {
     schemaVersion: 1,
     revision: hash(listings),

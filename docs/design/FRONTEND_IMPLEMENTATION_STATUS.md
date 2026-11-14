@@ -1,3 +1,5 @@
+> Historical implementation/evidence record. The active unified 0.5.0 runtime, service setup and SDK matrix are defined in the [application contract](../../apps/adviser/UNIFIED_APP.md). Earlier startup and port instructions below describe their recorded release.
+
 # Frontend implementation and verification
 
 13 November 2026. The audit-driven frontend changes are implemented and packaged. Native regression and configuration checks passed on the named emulator. Product acceptance and physical-device accessibility/performance evidence remain separate.
@@ -36,8 +38,8 @@
 ## Verification results
 
 - `npm run check`: passed.
-- `npm test`: 60 passed, 0 failed, including conflict propagation and theme validation.
-- `npm run test:adviser-service`: 11 passed, 0 failed. The initial sandbox run could not open localhost sockets; the authorized rerun passed.
+- `npm test`: 67 passed, 0 failed, including conflict propagation, reproducible total cost (`REAL-09`), sibling configuration lookup (`REAL-10`), budget upgrade candidates and observation age (`REAL-11`), task hardware guidance (`REAL-12`), quotation intake (`REAL-13`), Vietnamese i18n string table (`I18N-01`), report submission (`CLIENT-05`), and theme validation (`THEME-01`).
+- `npm run test:adviser-service`: 16 passed, 0 failed (including `GOV-01`–`GOV-04` governance, RBAC, report triage, backup/restore, durable restart persistence, telemetry redaction, and `PILOT-01` fixed-snapshot evaluation across 8 buyer cohorts). The initial sandbox run could not open localhost sockets; the authorized rerun passed.
 - `npm run build`: production preview and standalone HTML passed. Safe-area/SVG directive and preview chunk-size warnings remain build warnings.
 - Vite forced dependency optimization/development startup: passed; the earlier native-codegen resolution failure did not recur.
 - Android release: ARM64 + x86-64 build passed. APK signature verified, installed and launched on the emulator.
@@ -54,7 +56,7 @@ The full flow run preceded the final needs-summary-animation and title-height re
 - [Source/build/device evidence manifest](../../apps/adviser/verification/frontend-expressive/manifest.json).
 - [Native screenshots, motion recording and check results](../../apps/adviser/verification/frontend-expressive/README.md).
 
-APK SHA-256: `804023753542f7cf198302cd9e1862be7404b578b9797aa972ed13261cae3b72`.
+APK SHA-256: `560ff20ae8fa60e3b0e6aedf25cd1100a1e508e8b78d1b7be18355d063f559b5`.
 
 No physical phone, complete TalkBack/switch-access/external-keyboard protocol, representative buyer research or physical-device animation performance target is claimed. Emulator frame statistics are retained as raw observations. Those external acceptance items remain open under AC-UX01–05; implementation and successful builds do not automatically accept product stage gates.
 

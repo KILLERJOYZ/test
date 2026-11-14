@@ -9,6 +9,7 @@ export function ExpressiveButton({
   onPress,
   secondary = false,
   disabled = false,
+  loading = false,
   selected,
   role = "button",
   colors: c,
@@ -18,12 +19,14 @@ export function ExpressiveButton({
   onPress: () => void;
   secondary?: boolean;
   disabled?: boolean;
+  loading?: boolean;
   selected?: boolean;
   role?: AccessibilityRole;
   colors: ExpressiveColors;
   reduceMotion: boolean;
 }) {
   const [focused, setFocused] = React.useState(false);
+  const isDisabled = disabled || loading;
   const scale = useRef(new Animated.Value(1)).current;
   const radius = useRef(
     new Animated.Value(
@@ -64,8 +67,10 @@ export function ExpressiveButton({
   return (
     <Pressable
       accessibilityRole={role}
+      accessibilityLabel={label}
       accessibilityState={{
-        disabled,
+        disabled: isDisabled,
+        busy: loading || undefined,
         ...(selected === undefined
           ? {}
           : role === "radio" || role === "checkbox"
@@ -76,7 +81,7 @@ export function ExpressiveButton({
         role === "radio" || role === "checkbox" ? selected : undefined
       }
       aria-pressed={role === "button" ? selected : undefined}
-      disabled={disabled}
+      disabled={isDisabled}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
       onPress={onPress}
@@ -93,25 +98,29 @@ export function ExpressiveButton({
             paddingVertical: 13,
             borderRadius: radius,
             backgroundColor: secondary
-              ? pressed
+              ? selected || pressed
                 ? c.container
                 : c.bg
               : c.accent,
-            borderWidth: focused ? 2 : 1,
-            borderColor: focused ? c.accent : c.line,
-            opacity: disabled ? 0.5 : 1,
+            borderWidth: focused || selected ? 2 : 1,
+            borderColor: focused || selected ? c.accent : c.line,
+            opacity: isDisabled ? 0.5 : 1,
             justifyContent: "center",
           }}
         >
           <Text
             style={{
-              color: secondary ? c.text : c.onAccent,
+              color: secondary
+                ? selected
+                  ? c.onContainer
+                  : c.text
+                : c.onAccent,
               fontWeight: "700",
               fontSize: 15,
               lineHeight: 22,
             }}
           >
-            {selected === true ? "✓  " : ""}
+            {loading ? "⏳  " : selected === true ? "✓  " : ""}
             {label}
           </Text>
         </Animated.View>

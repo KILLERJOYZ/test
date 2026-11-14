@@ -3,8 +3,8 @@
   "scope": "Audit-driven frontend implementation; Android emulator evidence, not physical-device acceptance",
   "apk": {
     "path": "apps/adviser/artifacts/lua-adviser-demo.apk",
-    "sha256": "804023753542f7cf198302cd9e1862be7404b578b9797aa972ed13261cae3b72",
-    "bytes": 44688843,
+    "sha256": "560ff20ae8fa60e3b0e6aedf25cd1100a1e508e8b78d1b7be18355d063f559b5",
+    "bytes": 44706647,
     "abis": [
       "arm64-v8a",
       "x86_64"
@@ -28,11 +28,11 @@
   },
   "checks": {
     "appRegressionTests": {
-      "passed": 60,
+      "passed": 67,
       "failed": 0
     },
     "adviserServiceTests": {
-      "passed": 11,
+      "passed": 16,
       "failed": 0
     },
     "productionPreviewBuild": "passed",
@@ -102,32 +102,8 @@
   ],
   "sourceHashes": [
     {
-      "path": "apps/adviser/src/adviser-client.test.ts",
-      "sha256": "bd08885cd621fdf1bf071aaf360aebc91b40d9fb1817e2a23a86fb8eb93d0bc3"
-    },
-    {
-      "path": "apps/adviser/src/adviser-client.ts",
-      "sha256": "8fabd662eeea9abbac68f476e2481d3c0ea91d463dc97cebb4abc53d41fa73d9"
-    },
-    {
-      "path": "apps/adviser/src/adviser-store.test.ts",
-      "sha256": "67a227138b6dc4508980a57ad1005b31c0a7f9ac701d73bd857ca8e399ca1c96"
-    },
-    {
-      "path": "apps/adviser/src/adviser-store.ts",
-      "sha256": "4692c5368ec540e2b1695b4b77d4fa0dec1f1d3a345df65f589acefaaf53d56e"
-    },
-    {
       "path": "apps/adviser/src/AdviserApp.tsx",
-      "sha256": "1ea2fe38c0ae52d9986dc21def5be63e0c93d2996d345c8dc523963648d77aea"
-    },
-    {
-      "path": "apps/adviser/src/ai.test.ts",
-      "sha256": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98"
-    },
-    {
-      "path": "apps/adviser/src/ai.ts",
-      "sha256": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf"
+      "sha256": "2862ad3411dd59fdff8b06d1ed31edc11a1c17c77f7b4c1f74a529daaeb40f4b"
     },
     {
       "path": "apps/adviser/src/AndroidApp.tsx",
@@ -138,16 +114,64 @@
       "sha256": "cb4ba55391d55dc38135cf6bc924286ecfbf7513fe3183ddb247427aba91551f"
     },
     {
+      "path": "apps/adviser/src/ComparisonView.tsx",
+      "sha256": "1c8cd7592cde1da0b16de3e21bbaf416143023f3f1d748084d1929fcf6202a01"
+    },
+    {
+      "path": "apps/adviser/src/ExpressiveButton.tsx",
+      "sha256": "e5f49d41f563a1e9a6d7345a146a36e09b55adb3b501e28947fc93fb88d30a54"
+    },
+    {
+      "path": "apps/adviser/src/ExpressiveButton.web.tsx",
+      "sha256": "34babaf0837121612a36694224c655156a5743a4d393b01960f5ed57b084c3e5"
+    },
+    {
+      "path": "apps/adviser/src/ExpressiveLoading.tsx",
+      "sha256": "b6891285c2b8fcaa07003bc75668958adcd3439e249e1af7bfb579e2e5d30653"
+    },
+    {
+      "path": "apps/adviser/src/ExpressiveSurface.tsx",
+      "sha256": "dc410c1b7e59aadb3e5aecd9dd9df15ab1b35f5f879fed862aafdea0a105229f"
+    },
+    {
+      "path": "apps/adviser/src/ExpressiveSurface.web.tsx",
+      "sha256": "1980fab826f88c05c42e6a4f9ae4878e4bc73ef4c51a78554a82fad76ff0b8cd"
+    },
+    {
+      "path": "apps/adviser/src/NavigationIcon.tsx",
+      "sha256": "2319dc2fc1852ba746551a70a7cd1b1f9f9d51fd5b6f2191e009c022e8af0367"
+    },
+    {
+      "path": "apps/adviser/src/adviser-client.test.ts",
+      "sha256": "d16cc37ec26b033b379ab2882ce8e9c8a934b36ba7599b28ecc056c5c3e8a89e"
+    },
+    {
+      "path": "apps/adviser/src/adviser-client.ts",
+      "sha256": "149d1fcffea167b2d4bc9245a2fa52703c120bc2dd212c05b60a5e1fbf82a047"
+    },
+    {
+      "path": "apps/adviser/src/adviser-store.test.ts",
+      "sha256": "67a227138b6dc4508980a57ad1005b31c0a7f9ac701d73bd857ca8e399ca1c96"
+    },
+    {
+      "path": "apps/adviser/src/adviser-store.ts",
+      "sha256": "4692c5368ec540e2b1695b4b77d4fa0dec1f1d3a345df65f589acefaaf53d56e"
+    },
+    {
+      "path": "apps/adviser/src/ai.test.ts",
+      "sha256": "eaf286e4399b819efb5f2ed2cef3ff4fba2f31b931f7d9109bba64df96907f98"
+    },
+    {
+      "path": "apps/adviser/src/ai.ts",
+      "sha256": "8d5c54142a2c75583ab1738f31ea3ce3a3409755feb9c8f761defb5d1c4e42bf"
+    },
+    {
       "path": "apps/adviser/src/catalog.test.ts",
-      "sha256": "529b5ad10c88277af66f8c301ce0bfdb89e2820ef702d24c7efffe413c1aa287"
+      "sha256": "9fb7ed3ffa250bfab3704ca21e9368cab7c37a2332c4e4919dee5afbea1dc0bf"
     },
     {
       "path": "apps/adviser/src/catalog.ts",
-      "sha256": "cac787cfbf5eec185981d09d65715174e961802cd6191ffacced84da8c5f2eb1"
-    },
-    {
-      "path": "apps/adviser/src/ComparisonView.tsx",
-      "sha256": "41ee4b2ddc9cfa123b1dcee9cff38e2b6fb9780a527b36863d74d761e723b1f1"
+      "sha256": "4fb43a2d515ff998afffb80d51fa5c74e4509b88061134e7df19e1f4c1a5c18e"
     },
     {
       "path": "apps/adviser/src/decision-state.test.ts",
@@ -159,7 +183,7 @@
     },
     {
       "path": "apps/adviser/src/design-tokens.css",
-      "sha256": "884f572719d0eb7947534cbd9371bae36a8f69386594f6c7648b942886b1dab9"
+      "sha256": "f41079e667dfd355acaefcc6cf769802a1b6ceb14c668dc280f298078914ca84"
     },
     {
       "path": "apps/adviser/src/design-tokens.ts",
@@ -179,27 +203,11 @@
     },
     {
       "path": "apps/adviser/src/expressive-theme.ts",
-      "sha256": "0400bd3f3b3fc97d290925db552b3b448dd899b20316ebd2356093ab233d1a99"
+      "sha256": "17fb0953deff4d7a3d0483014050d09fa695098367cb2c99bb7c5c005c165407"
     },
     {
-      "path": "apps/adviser/src/ExpressiveButton.tsx",
-      "sha256": "5d4f1b0f3371477ac2ecb6fadc2248ce8016367af5bd95baf992ac044f3d6b0b"
-    },
-    {
-      "path": "apps/adviser/src/ExpressiveButton.web.tsx",
-      "sha256": "92a6158982df36fdaf2a9f5388ad1fc009c22d5b756b5fddf99fe897a4a4dd86"
-    },
-    {
-      "path": "apps/adviser/src/ExpressiveLoading.tsx",
-      "sha256": "b6891285c2b8fcaa07003bc75668958adcd3439e249e1af7bfb579e2e5d30653"
-    },
-    {
-      "path": "apps/adviser/src/ExpressiveSurface.tsx",
-      "sha256": "dc410c1b7e59aadb3e5aecd9dd9df15ab1b35f5f879fed862aafdea0a105229f"
-    },
-    {
-      "path": "apps/adviser/src/ExpressiveSurface.web.tsx",
-      "sha256": "1980fab826f88c05c42e6a4f9ae4878e4bc73ef4c51a78554a82fad76ff0b8cd"
+      "path": "apps/adviser/src/i18n.ts",
+      "sha256": "fb5e47c777033c406f6c33b633101dbb7270d0d6fbcb6c8036c7342aec82019a"
     },
     {
       "path": "apps/adviser/src/icons.tsx",
@@ -224,10 +232,6 @@
     {
       "path": "apps/adviser/src/main.web.tsx",
       "sha256": "6a621e322b032b4c950579e8dff281d486e22ada6e60d4dc880defa0c0bf0140"
-    },
-    {
-      "path": "apps/adviser/src/NavigationIcon.tsx",
-      "sha256": "2319dc2fc1852ba746551a70a7cd1b1f9f9d51fd5b6f2191e009c022e8af0367"
     },
     {
       "path": "apps/adviser/src/picker.test.ts",
@@ -255,7 +259,7 @@
     },
     {
       "path": "apps/adviser/src/web.css",
-      "sha256": "f128898aa0a286092708df137a4fabf058beb6257427e50c4ea7f1a4bc7dcb10"
+      "sha256": "6855b47169326f86805449698f888064b2ee5ce3b22b2afd840c053ac3167056"
     },
     {
       "path": "apps/adviser/native/adviser/LocalAiModule.kt",

@@ -7,13 +7,14 @@ import Animated, {
   withSpring,
   cancelAnimation,
 } from "react-native-reanimated";
-import { EXPRESSIVE_SPRING } from "./expressive-theme";
+import { EXPRESSIVE_SHAPE, EXPRESSIVE_SPRING } from "./expressive-theme";
 import type { ExpressiveColors } from "./expressive-theme";
 export function ExpressiveButton({
   label,
   onPress,
   secondary = false,
   disabled = false,
+  loading = false,
   selected,
   role = "button",
   colors: c,
@@ -23,16 +24,22 @@ export function ExpressiveButton({
   onPress: () => void;
   secondary?: boolean;
   disabled?: boolean;
+  loading?: boolean;
   selected?: boolean;
   role?: AccessibilityRole;
   colors: ExpressiveColors;
   reduceMotion: boolean;
 }) {
   const [focused,setFocused]=React.useState(false);
+  const isDisabled = disabled || loading;
   const scale = useSharedValue(1),
-    radius = useSharedValue(selected ? 16 : 24);
+    radius = useSharedValue(
+      selected ? EXPRESSIVE_SHAPE.selected : EXPRESSIVE_SHAPE.button,
+    );
   useEffect(() => {
-    const target = selected ? 16 : 24;
+    const target = selected
+      ? EXPRESSIVE_SHAPE.selected
+      : EXPRESSIVE_SHAPE.button;
     radius.value = reduceMotion
       ? target
       : withSpring(target, EXPRESSIVE_SPRING);
@@ -55,14 +62,15 @@ export function ExpressiveButton({
       accessibilityRole={role}
       accessibilityLabel={label}
       accessibilityState={{
-        disabled,
+        disabled: isDisabled,
+        busy: loading || undefined,
         ...(selected === undefined
           ? {}
           : role === "radio" || role === "checkbox"
             ? { checked: selected }
             : { selected }),
       }}
-      disabled={disabled}
+      disabled={isDisabled}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
       onPress={onPress}
@@ -77,14 +85,14 @@ export function ExpressiveButton({
               minHeight: 48,
               paddingHorizontal: 16,
               paddingVertical: 13,
-              borderWidth: focused?2:1,
-              borderColor: focused?c.accent:c.line,
+              borderWidth: focused || selected ? 2 : 1,
+              borderColor: focused || selected ? c.accent : c.line,
               backgroundColor: secondary
-                ? pressed
+                ? selected || pressed
                   ? c.container
                   : c.bg
                 : c.accent,
-              opacity: disabled ? 0.5 : 1,
+              opacity: isDisabled ? 0.5 : 1,
               justifyContent: "center",
             },
             style,
@@ -92,13 +100,17 @@ export function ExpressiveButton({
         >
           <Text
             style={{
-              color: secondary ? c.text : c.onAccent,
+              color: secondary
+                ? selected
+                  ? c.onContainer
+                  : c.text
+                : c.onAccent,
               fontWeight: "700",
               fontSize: 15,
               lineHeight: 22,
             }}
           >
-            {selected ? "✓  " : ""}
+            {loading ? "⏳  " : selected ? "✓  " : ""}
             {label}
           </Text>
         </Animated.View>

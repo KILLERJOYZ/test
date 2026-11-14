@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-14",
+  "version": "0.5.0",
+  "apkSha256": "527e1aefc4b30a3f7f26abf1ff459ec6c329fd455f85972a79fa683e536ac913",
+  "gitCommit": "3dc2630c8ae8872e60598bc6c544ba1179666cbe",
+  "dirtyWorkingTree": true,
+  "compiledSourceChecks": 25,
+  "compiledSourcesMatch": true,
+  "checks": {
+    "typecheck": "passed",
+    "unitTests": {
+      "passed": 111,
+      "failed": 0
+    },
+    "rootComponentJourneys": [
+      "Phone",
+      "Tablet",
+      "PC",
+      "restart",
+      "unsupported AI",
+      "corrupt draft retained"
+    ],
+    "legacyDemoChecks": 18,
+    "signedCatalogChecks": 11,
+    "fastApiTests": 6,
+    "webBuild": "passed",
+    "androidRelease": "passed",
+    "apkSignature": "verified",
+    "zipAlignment16k": "verified",
+    "emulator": "final APK installed; launch/restart passed without clearing app data",
+    "browser": "signed FastAPI refresh succeeded; dark-theme narrow and wide layouts inspected"
+  },
+  "limits": [
+    "No successful physical-device AICore inference established",
+    "No live PostgreSQL source acceptance run",
+    "Native smoke covers launch/restart; category journeys use component adapters",
+    "Development signing; dated incomplete catalog evidence; production gates remain open"
+  ],
+  "originalVerificationBase": "71dfdc6acbcffbed46d88ceafb3b0a21f6f2289e",
+  "sourceCommit": "3dc2630c8ae8872e60598bc6c544ba1179666cbe",
+  "sourceDirty": false,
+  "artifactPackagingHasGeneratedChanges": true
+}

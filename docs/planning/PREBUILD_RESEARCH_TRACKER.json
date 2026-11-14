@@ -685,7 +685,7 @@
         "docs/planning/APP_FLOW.md": "aba60e016c1ed3a5dbd17d3330f28b5339fa04511d0084eb5dafb87429169640",
         "docs/planning/REPOSITORY_RESEARCH_2026-11-13.md": "62364e0983aaf9a30145b98a19d0731ebcc4288f7e0f7686107a6fa436ffadb7",
         "docs/planning/project-traceability.json": "46423b863cbe3793bfbd3343d823ccd386a65bc184eb4ec2f9760ca0c951a92c",
-        "apps/adviser/package.json": "e9991914644a687b00d634daabfbcb181f6539c2035bd434a955cc3d1d3a3e0c",
+        "apps/adviser/package.json": "45fb770dbc874beda1cebc3f29b1e52ad1b5fe36890d4b8ab941e1b1e54d05fc",
         "apps/adviser/VERIFICATION.md": "095932ccc3571e9dbe16587a8616e136ed1a585620c9f567eb9a8db63a45dded"
       },
       "evidenceRefs": [],
@@ -1488,12 +1488,12 @@
       "inputHashes": {
         "apps/adviser/VERIFICATION.md": "095932ccc3571e9dbe16587a8616e136ed1a585620c9f567eb9a8db63a45dded",
         "apps/adviser/verification/android-demo-manifest.json": "0d1459b3110d30e2a974dadf7a057b0cbe7f717e2d65a9685f408d0bdfc419a1",
-        "apps/adviser/scripts/android-smoke.py": "d392ff629847f09b411c101b01926c53adc1b373f55391032127cecebc5143d9",
+        "apps/adviser/scripts/android-smoke.py": "8c8c9575017c7b1c07551667df64f11c14c9f8cb2799cc9ce2273c6b6d378e18",
         "research/prebuild/06-flow-validation.json": "f60b0b99575fa0390b68cc7125fd8cfe6b685bb219d947ffaebbd0a7c31afd12"
       },
       "evidenceRefs": [],
       "blocker": null,
-      "nextAction": "No remaining ordinary local task. Resolve artifact evidence gaps and reopen affected owner/consumers when new inputs arrive.",
+      "nextAction": "External evidence remains partial; consult artifact gaps.",
       "definitionHash": "fdfd8da6a20b8de18971210478c1714af2b26d9ec65d0725be64889f3ad6d713",
       "consumedConfig": {},
       "consumedEvidenceHashes": {},
@@ -1701,7 +1701,7 @@
       "runRecord": "research/prebuild/runs/20261113T052229Z/R14.json",
       "inputHashes": {
         "brd.md": "7adbb66688322919ca8eaee3bb9843ef6e3eff77659f2ded93d2591cbc2cc712",
-        "docs/planning/IMPLEMENTATION_PLAN.md": "fce922177d44307433c03f43a9298a6bc494253615de3c37623a3701ff9f8895"
+        "docs/planning/IMPLEMENTATION_PLAN.md": "049389d6bc23e52b804f6aac21501952bfb406a32818d1f4d836d1cedb0bfb49"
       },
       "evidenceRefs": [],
       "blocker": null,

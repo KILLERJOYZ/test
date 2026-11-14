@@ -1,0 +1,210 @@
+{
+  "runId": "20261113T052229Z",
+  "invocationId": "19cf615a47a24fb4afce913040d2a3cc",
+  "selection": {
+    "task": "R14",
+    "pack": null,
+    "changed": null,
+    "all": false
+  },
+  "testedFileHashes": {
+    "research/prebuild/tools/test_readiness.py": "fcab0adf8de15b26b79265d32c7155d873ebb9183371cd9e50b6e2db44c8b123",
+    "research/prebuild/tools/readiness.py": "143e01051ea6fcddd0bba3115c01c445cfa14ed41513396abe9540695196d0ca",
+    "research/prebuild/tools/test_plan_contract.py": "87d54f5508caa967a0874c7aab87e74f40ce5efb0fd6be72eee861f58d193253",
+    "research/prebuild/tools/plan_contracts.py": "d6f69add8c1eaeab46d09c045beae86561fd3bfe0bcd42822977828cc8632722",
+    "research/prebuild/tools/provenance.py": "5fb37e9fe07f345f8e1a1db3245db0cdd82fb4e3452db0500f7320a052f64936",
+    "research/prebuild/tools/artifact_contracts.py": "c31e2cea4da14231d63621d7a85fffc0138f8f18b98b2659dca5863230fb2652",
+    "research/prebuild/tools/evidence_rules.py": "00968d83011ee279d261491f842ac98dc8eb2157b74aa7499fea10017e0a171a"
+  },
+  "manifestHash": "5f67b8e5877128fb79a4551e1f32028d770cefe7e2be709443d6aab09d03b27e",
+  "packs": [
+    {
+      "id": "U14",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "U14-01",
+          "status": "passed"
+        },
+        {
+          "id": "U14-02",
+          "status": "passed"
+        },
+        {
+          "id": "U14-03",
+          "status": "passed"
+        },
+        {
+          "id": "U14-04",
+          "status": "passed"
+        },
+        {
+          "id": "U14-05",
+          "status": "passed"
+        },
+        {
+          "id": "U14-06",
+          "status": "passed"
+        },
+        {
+          "id": "U14-07",
+          "status": "passed"
+        },
+        {
+          "id": "U14-08",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/19cf615a47a24fb4afce913040d2a3cc-readiness_tests.log"
+      ]
+    },
+    {
+      "id": "UPLAN",
+      "exitCode": 0,
+      "cases": [
+        {
+          "id": "UPLAN-01",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-02",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-03",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-04",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-05",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-06",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-07",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-08",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-09",
+          "status": "passed"
+        },
+        {
+          "id": "UPLAN-10",
+          "status": "passed"
+        }
+      ],
+      "logs": [
+        "research/prebuild/runs/20261113T052229Z/unit-packs/19cf615a47a24fb4afce913040d2a3cc-plan_contract_tests.log"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "U14-01",
+      "status": "passed"
+    },
+    {
+      "id": "U14-02",
+      "status": "passed"
+    },
+    {
+      "id": "U14-03",
+      "status": "passed"
+    },
+    {
+      "id": "U14-04",
+      "status": "passed"
+    },
+    {
+      "id": "U14-05",
+      "status": "passed"
+    },
+    {
+      "id": "U14-06",
+      "status": "passed"
+    },
+    {
+      "id": "U14-07",
+      "status": "passed"
+    },
+    {
+      "id": "U14-08",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-01",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-02",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-03",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-04",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-05",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-06",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-07",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-08",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-09",
+      "status": "passed"
+    },
+    {
+      "id": "UPLAN-10",
+      "status": "passed"
+    }
+  ],
+  "limitations": [
+    "Unit results do not establish empirical research or gate acceptance."
+  ],
+  "commandVersions": {
+    "python": "Python 3.14.6",
+    "node": "v24.18.0"
+  },
+  "packDefinitionHashes": {
+    "U14": "4fc315ee16dc01fa3d0cf34edaae1e0d9ac7efe37c11bb9f0197da1c938faa09",
+    "UPLAN": "ae5629b0086cbda3959ea7675a5bf7b61bad88a016a556ce09e1e0570b1c061c"
+  },
+  "fixtureHashes": {
+    "research/prebuild/tests/fixtures/api-history.mjs": "eb69a001a8d393b777bcede3bc5033a45985825a76149bd3c55b2adf064668d9",
+    "research/prebuild/tests/fixtures/api-needs.mjs": "2fc9151cb4c52865d1d236b651d345a20ef35081dcfffadfe1f89bad9a55dc8f"
+  },
+  "logs": [
+    "research/prebuild/runs/20261113T052229Z/unit-packs/19cf615a47a24fb4afce913040d2a3cc-readiness_tests.log",
+    "research/prebuild/runs/20261113T052229Z/unit-packs/19cf615a47a24fb4afce913040d2a3cc-plan_contract_tests.log"
+  ],
+  "passed": 18,
+  "failed": 0,
+  "skipped": 0,
+  "notRun": 0,
+  "exitCode": 0
+}

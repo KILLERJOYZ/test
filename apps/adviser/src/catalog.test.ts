@@ -6,15 +6,30 @@ import { importCatalog } from "../scripts/import-catalog.mjs";
 import {
   INITIAL_REQUIREMENTS as r,
   assess,
+  budgetUpgradeCandidates,
   checkedAdvice,
+  detectLocalProactiveNudge,
   facts,
+  formatSavedShareBrief,
+  observationAgeLabel,
+  parseQuotationDraft,
+  relatedListings,
   safeLink,
   sameContext,
+  savedDecisionDiffs,
   searchCatalog,
+  taskGuidance,
   validCatalog,
   validRequirements,
   validSaved,
 } from "./catalog.ts";
+import {
+  VI,
+  formatVnd,
+  formatVndDigits,
+  getStrings,
+  parseVndDigits,
+} from "./i18n.ts";
 const c = JSON.parse(
   fs.readFileSync(new URL("./real-catalog.json", import.meta.url), "utf8"),
 );
@@ -180,11 +195,177 @@ test("EVIDENCE-02 title storage conflict remains unresolved without guessing a r
 });
 
 
-test("THEME-01 fallback themes preserve text and essential-control contrast",async()=>{
- const {validTheme}=await import('./theme-validation.ts');
- const {EXPRESSIVE_DARK,EXPRESSIVE_LIGHT}=await import('./expressive-theme.ts');
- assert.ok(validTheme(EXPRESSIVE_DARK));assert.ok(validTheme(EXPRESSIVE_LIGHT));
- assert.equal(validTheme({...EXPRESSIVE_DARK,line:EXPRESSIVE_DARK.bg}),false);
- assert.equal(validTheme({...EXPRESSIVE_LIGHT,text:'#ffffff'}),false);
- assert.equal(validTheme({}),false);
+test("THEME-01 fallback themes preserve text and essential-control contrast", async () => {
+  const { validTheme } = await import('./theme-validation.ts');
+  const { EXPRESSIVE_DARK, EXPRESSIVE_LIGHT } = await import('./expressive-theme.ts');
+  assert.ok(validTheme(EXPRESSIVE_DARK)); assert.ok(validTheme(EXPRESSIVE_LIGHT));
+  assert.equal(validTheme({ ...EXPRESSIVE_DARK, line: EXPRESSIVE_DARK.bg }), false);
+  assert.equal(validTheme({ ...EXPRESSIVE_LIGHT, text: '#ffffff' }), false);
+  assert.equal(validTheme({}), false);
 });
+test("REAL-09 known mandatory charges compute reproducible total and enforce budget ceiling", () => {
+  const withFees = {
+    ...v,
+    ram: 16,
+    storage: 512,
+    advertisedPrice: 24700000,
+    shipping: 200000,
+    fees: 100000,
+  };
+  const ok = assess(withFees, r);
+  assert.equal(ok.total, 25000000);
+  assert.equal(ok.state, "needs_verification");
+  assert.ok(!ok.unknown.includes("Chưa đủ tổng chi phí"));
+  assert.ok(facts(withFees, r).cost.includes("25.000.000"));
+  const over = assess({ ...withFees, fees: 100001 }, r);
+  assert.equal(over.total, 25000001);
+  assert.equal(over.state, "excluded");
+  assert.ok(over.failed.includes("Tổng chi phí đã vượt ngân sách"));
+});
+test("REAL-10 relatedListings surfaces sibling configurations in the same family without self-inclusion", () => {
+  const withSiblings = c.listings.find(
+    (x: any) => relatedListings(c, x).length > 0,
+  )!;
+  assert.ok(withSiblings);
+  const siblings = relatedListings(c, withSiblings);
+  assert.ok(siblings.length > 0 && siblings.length <= 6);
+  assert.ok(siblings.every((s) => s.id !== withSiblings.id));
+});
+test("REAL-11 budgetUpgradeCandidates identifies listings excluded solely by budget ceiling and observationAgeLabel marks historical age", () => {
+  const lowBudgetReq = { ...r, budget: 15000000, minRam: 8 };
+  const upgrades = budgetUpgradeCandidates(c, lowBudgetReq, 5000000);
+  assert.ok(upgrades.length > 0);
+  assert.ok(
+    upgrades.every(
+      (u) =>
+        u.extraVnd !== null &&
+        u.extraVnd > 0 &&
+        u.extraVnd <= 5000000 &&
+        u.now.state === "excluded" &&
+        u.next.state === "needs_verification",
+    ),
+  );
+  const label = observationAgeLabel("2026-11-01T00:00:00Z", Date.parse("2026-11-13T00:00:00Z"));
+  assert.ok(label.includes("12 ngày trước"));
+  assert.ok(label.includes("chưa phải giá trực tiếp"));
+});
+test("REAL-12 taskGuidance surfaces verified hardware strengths and caveats without fabricating benchmark proof", () => {
+  const vmReady = { ...v, ram: 32, storage: 512 };
+  const g1 = taskGuidance(vmReady, { ...r, tasks: ["Máy ảo"] });
+  assert.ok(g1.strengths.some((s) => s.includes("32 GB")));
+  assert.ok(g1.caveats.some((c) => c.includes("Chưa có bài đo độc lập")));
+  const lowRam = { ...v, ram: 8, storage: 256 };
+  const g2 = taskGuidance(lowRam, { ...r, tasks: ["Máy ảo"] });
+  assert.ok(g2.caveats.some((c) => c.includes("RAM 8 GB hạn chế")));
+});
+test("REAL-13 parseQuotationDraft validates allowlisted retailer links, manual fallback and full total calculation", () => {
+  const fpt = parseQuotationDraft({
+    name: "Laptop Lenovo IdeaPad Slim 5 16GB/512GB",
+    url: "https://fptshop.com.vn/may-tinh-xach-tay/lenovo-slim-5",
+    advertisedPrice: "18500000",
+    shipping: "150000",
+    fees: "50000",
+    ram: "16",
+    storage: "512",
+    nowIso: "2026-11-13T00:00:00Z",
+  });
+  assert.ok(fpt);
+  assert.equal(fpt.recognizedRetailer, true);
+  assert.equal(fpt.listing.source, "fptshop");
+  assert.equal(assess(fpt.listing, r).total, 18700000);
+  const manual = parseQuotationDraft({
+    name: "Báo giá cửa hàng địa phương",
+    url: "https://unknown-shop.example.com/quote/1",
+    advertisedPrice: "26000000",
+    ram: "16",
+    storage: "512",
+  });
+  assert.ok(manual);
+  assert.equal(manual.recognizedRetailer, false);
+  assert.equal(manual.listing.source, "manual-quote");
+  assert.equal(assess(manual.listing, r).state, "excluded");
+  assert.equal(
+    parseQuotationDraft({
+      name: "Bad URL",
+      url: "http://insecure.example.com",
+      advertisedPrice: "15000000",
+    }),
+    null,
+  );
+});
+
+test("I18N-01 Vietnamese string table, safe VND guards and dot-grouping helpers", () => {
+  const s = getStrings("vi");
+  assert.equal(s.brandTitle, "lựa.");
+  assert.equal(s.tabs.advisor, "Tư vấn");
+  assert.equal(s.buyNow, "Mua ngay");
+  assert.equal(formatVnd(null), VI.unknownValue);
+  assert.equal(formatVnd(undefined), VI.unknownValue);
+  assert.equal(formatVnd(NaN), VI.unknownValue);
+  assert.equal(formatVnd(-500), VI.unknownValue);
+  assert.equal(formatVnd(25000000), "25.000.000 ₫");
+  assert.equal(formatVndDigits("25000000"), "25.000.000");
+  assert.equal(formatVndDigits("0025.000abc000"), "25.000.000");
+  assert.equal(parseVndDigits("25.000.000 ₫"), "25000000");
+});
+
+test("V06-01 4-item saved decisions, groupName, dot-grouped quotes, OS normalization and proactive nudges", () => {
+  const dottedQuote = parseQuotationDraft({
+    name: "Laptop ASUS ExpertBook B1 16GB/512GB",
+    url: "https://cellphones.com.vn/laptop-asus-expertbook.html",
+    advertisedPrice: "22.990.000",
+    shipping: "150.000",
+    ram: "16",
+    storage: "512",
+  });
+  assert.ok(dottedQuote);
+  assert.equal(dottedQuote.listing.advertisedPrice, 22990000);
+  assert.equal(dottedQuote.listing.shipping, 150000);
+
+  const fourSaved = {
+    id: "dec-4",
+    savedAt: "2026-11-14T00:00:00.000Z",
+    catalogRevision: c.revision,
+    requirements: r,
+    listings: c.listings.slice(0, 4),
+    groupName: "Laptop CNTT",
+  };
+  assert.equal(validSaved(fourSaved), true);
+  assert.equal(
+    validSaved({ ...fourSaved, listings: c.listings.slice(0, 5) }),
+    false,
+  );
+  assert.ok(formatSavedShareBrief([fourSaved]).includes("Laptop CNTT"));
+  assert.equal(savedDecisionDiffs(fourSaved, c).length, 4);
+
+  const winListing = { ...v, os: "Win 11 Home SL" };
+  assert.equal(
+    assess(winListing, { ...r, os: "Windows" }).failed.includes(
+      "Hệ điều hành không khớp",
+    ),
+    false,
+  );
+
+  const fitSorted = searchCatalog(
+    c,
+    { ...r, budget: 30000000, tasks: ["Lập trình"] },
+    "",
+    "",
+    "fit",
+  );
+  assert.equal(fitSorted.length, 70);
+
+  const indecision = detectLocalProactiveNudge(
+    c,
+    r,
+    null,
+    [c.listings[0].id, c.listings[1].id, c.listings[2].id],
+    [],
+  );
+  assert.equal(indecision?.signalType, "indecision_compare");
+  assert.equal(indecision?.citedListingIds.length, 3);
+});
+
+
+
+

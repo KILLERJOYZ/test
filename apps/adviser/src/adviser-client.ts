@@ -70,7 +70,7 @@ export async function fetchCatalog(
   if (
     !validCatalog(value.catalog) ||
     !Number.isFinite(Date.parse(value.checkedAt)) ||
-    value.sourceState !== "repository_snapshot"
+    !["repository_snapshot", "postgresql_snapshot"].includes(value.sourceState)
   )
     throw Error("INVALID_CATALOG");
   return value;
@@ -83,6 +83,8 @@ export async function fetchLaptops(
     source?: string;
     brand?: string;
     max_price?: number;
+    min_ram?: number;
+    min_storage?: number;
     sort?: string;
     limit?: number;
     offset?: number;
@@ -96,9 +98,11 @@ export async function fetchLaptops(
   if (params.source) qs.set("source", params.source);
   if (params.brand) qs.set("brand", params.brand);
   if (params.max_price) qs.set("max_price", String(params.max_price));
+  if (params.min_ram) qs.set("min_ram", String(params.min_ram));
+  if (params.min_storage) qs.set("min_storage", String(params.min_storage));
   if (params.sort) qs.set("sort", params.sort);
-  if (params.limit) qs.set("limit", String(params.limit));
-  if (params.offset) qs.set("offset", String(params.offset));
+  if (params.limit != null) qs.set("limit", String(params.limit));
+  if (params.offset != null) qs.set("offset", String(params.offset));
 
   const path = `/v1/laptops${qs.toString() ? `?${qs.toString()}` : ""}`;
   const controller = new AbortController();
@@ -126,10 +130,17 @@ export async function fetchCompare(
   transport = fetch,
 ) {
   const controller = new AbortController();
-  return call(endpoint, "/v1/compare", token, signal || controller.signal, transport, {
-    ids,
-    requirements,
-  });
+  return call(
+    endpoint,
+    "/v1/compare",
+    token,
+    signal || controller.signal,
+    transport,
+    {
+      ids,
+      requirements,
+    },
+  );
 }
 
 export async function fetchAdvice(
@@ -156,4 +167,142 @@ export async function fetchAdvice(
   )
     throw Error("INVALID_ADVICE");
   return value;
+}
+
+export async function submitListingReport(
+  endpoint: string,
+  token: string,
+  payload: {
+    listingId: string;
+    category: "price" | "spec" | "stock" | "link";
+    note: string;
+  },
+  signal: AbortSignal,
+  transport = fetch,
+) {
+  const value = await call(
+    endpoint,
+    "/v1/reports",
+    token,
+    signal,
+    transport,
+    payload,
+  );
+  if (
+    !value?.report ||
+    typeof value.report.id !== "string" ||
+    value.report.listingId !== payload.listingId
+  )
+    throw Error("INVALID_REPORT_RESPONSE");
+  return value.report;
+}
+
+export type CopilotShortlistItem = {
+  listing: Listing;
+  tradeoffSummary: string;
+  assessment?: {
+    state: string;
+    failed: string[];
+    unknown: string[];
+  };
+};
+
+export type CopilotResponse = {
+  assistantReply: string;
+  proposedRequirements: Requirements | null;
+  requiresConfirmation: boolean;
+  clarifyingQuestions: string[];
+  shortlist: CopilotShortlistItem[];
+  mode: string;
+};
+
+export async function fetchCopilotAdvice(
+  endpoint: string,
+  token: string,
+  payload: {
+    sessionId: string;
+    message: string;
+    requirements: Requirements;
+    nanoDraft?: Record<string, unknown> | null;
+    preferOffline?: boolean;
+  },
+  signal: AbortSignal,
+  transport = fetch,
+): Promise<CopilotResponse> {
+  const value = await call(
+    endpoint,
+    "/advisor/v1/copilot",
+    token,
+    signal,
+    transport,
+    payload,
+  );
+  if (!value || typeof value.assistantReply !== "string") {
+    throw Error("INVALID_COPILOT_RESPONSE");
+  }
+  const proposed =
+    value.proposedRequirements && validRequirements(value.proposedRequirements)
+      ? value.proposedRequirements
+      : null;
+  return {
+    assistantReply: value.assistantReply,
+    proposedRequirements: proposed,
+    requiresConfirmation: true,
+    clarifyingQuestions: Array.isArray(value.clarifyingQuestions)
+      ? value.clarifyingQuestions.filter((q: unknown) => typeof q === "string")
+      : [],
+    shortlist: Array.isArray(value.shortlist) ? value.shortlist.slice(0, 3) : [],
+    mode: typeof value.mode === "string" ? value.mode : "online_langgraph_chatgpt",
+  };
+}
+
+export async function fetchProactiveNudge(
+  endpoint: string,
+  token: string,
+  payload: {
+    requirements: Requirements;
+    currentListingId?: string | null;
+    recentListingIds: string[];
+    compareIds: string[];
+    preferOffline?: boolean;
+  },
+  signal: AbortSignal,
+  transport = fetch,
+) {
+  return call(
+    endpoint,
+    "/advisor/v1/proactive",
+    token,
+    signal,
+    transport,
+    payload,
+  );
+}
+
+export type SynthesizedReview = {
+  listingId: string;
+  performance: string;
+  thermals_noise: string;
+  battery_real: string;
+  quirks_cons: string;
+  sourceName: string;
+  sourceUrl: string;
+  checkedAt: string;
+  status: string;
+};
+
+export async function fetchListingReview(
+  endpoint: string,
+  token: string,
+  listingId: string,
+  signal: AbortSignal,
+  transport = fetch,
+): Promise<SynthesizedReview> {
+  return call(
+    endpoint,
+    `/v1/reviews/${encodeURIComponent(listingId)}`,
+    token,
+    signal,
+    transport,
+  );
 }

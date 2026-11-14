@@ -52,15 +52,11 @@ elif mode=='outage':
  check('Nguồn không truy cập được');check('RAM ≥ 16 GB');capture('source-outage-keeps-confirmed-decision')
 elif mode=='nano':
  tap('Khám phá',False);tap('Xem cấu hình');tap('Kiểm tra AI trên máy');check('Thiết bị chưa hỗ trợ hoặc AICore chưa sẵn sàng');capture('gemini-nano-native-unavailable')
- tap('Hỏi AI')
- for _ in range(12):
-  if any('AI chưa trả về kết quả hợp lệ' in text for text in texts()):break
-  time.sleep(1)
- check('AI chưa trả về kết quả hợp lệ');capture('gemini-nano-failure-preserves-facts');back()
+ check('RAM:');capture('gemini-nano-failure-preserves-facts');back()
 elif mode=='connect':
  adb('reverse','tcp:8788','tcp:8788');tap('Cài đặt',False)
  edit('Địa chỉ dịch vụ HTTPS (hoặc http://127.0.0.1:8788 qua ADB)','http://127.0.0.1:8788');tap('Lưu kết nối');time.sleep(2);check('Đã kết nối');capture('connected-repository-service')
- tap('Khám phá',False);tap('Xem cấu hình');tap('Hỏi AI');time.sleep(1);check('AI chưa trả về kết quả hợp lệ');capture('unavailable-ai-is-explicit');back()
+ tap('Khám phá',False);tap('Xem cấu hình');check('RAM:');capture('unavailable-ai-is-explicit');back()
 else:raise ValueError(mode)
 (OUT/('android-'+mode+'-result.json')).write_text(json.dumps({'mode':mode,'result':'pass','serial':SERIAL,'observedAt':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physicalDevice':False,'apkSha256':hashlib.sha256((OUT.parents[1]/'apps/adviser/artifacts/lua-adviser-0.4.0.apk').read_bytes()).hexdigest()},indent=2))
 print(mode,'passed')

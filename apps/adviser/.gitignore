@@ -8,7 +8,7 @@ android/app/.cxx/
 android/local.properties
 *.log
 .expo/
-android/
+/android/
 expo-env.d.ts
 artifacts/*.apk
 verification/*-build.log

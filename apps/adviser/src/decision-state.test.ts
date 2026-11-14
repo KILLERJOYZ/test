@@ -33,7 +33,7 @@ test('U06-15 throwing updater does not poison later writes',async()=>{
  assert.equal(await p.mutate(()=>{throw Error('bad command');}),false);
  assert.equal(await p.mutate(s=>({...s,dark:true})),true);
 });
-import { cloneDraft, confirmNeeds, toggleComparison, filterDraft, requestIsCurrent, reopenDecision, pickerBack, chatOrigin, recoveryBytes } from './decision-state.ts';
+import { cloneDraft, confirmNeeds, toggleComparison, swapComparisonColumn, createUniqueDecisionId, filterDraft, requestIsCurrent, reopenDecision, pickerBack, chatOrigin, recoveryBytes } from './decision-state.ts';
 import { EMPTY_FILTERS, evaluate, updateTasks } from './picker.ts';
 test('U06-01 draft cancellation leaves committed arrays and revision intact',()=>{
  const draft=cloneDraft(needs);draft.tasks.push('code');draft.primaryUseOrder.reverse();draft.priorities.push('power');assert.deepEqual(needs.tasks,['study']);assert.deepEqual(needs.priorities,[]);assert.equal(needs.revision,1);
@@ -48,8 +48,12 @@ test('U06-03 invalid and failed persistence keep prior confirmed state',async()=
 test('U06-04 filter drafts cancel and clear without changing needs',()=>{
  const active={...EMPTY_FILTERS,maxWeight:1};const draft=filterDraft(active);draft.maxWeight=2;assert.equal(active.maxWeight,1);assert.equal(evaluate(needs,EMPTY_FILTERS).state,'eligible');assert.equal(needs.budget,22000000);
 });
-test('U06-05 third exact comparison selection is explicitly rejected',()=>{
- assert.deepEqual(toggleComparison(['p1','p4'],'p2'),{ids:['p1','p4'],rejected:true});assert.deepEqual(toggleComparison(['p1','p4'],'p1'),{ids:['p4'],rejected:false});assert.deepEqual(toggleComparison(['p1'],'p4').ids,['p1','p4']);
+test('U06-05 comparison allows up to 4 items, swaps in place and rejects 5th selection',()=>{
+ assert.deepEqual(toggleComparison(['p1','p4'],'p2'),{ids:['p1','p4','p2'],rejected:false});
+ assert.deepEqual(toggleComparison(['p1','p2','p3','p4'],'p5'),{ids:['p1','p2','p3','p4'],rejected:true});
+ assert.deepEqual(toggleComparison(['p1','p4'],'p1'),{ids:['p4'],rejected:false});
+ assert.deepEqual(swapComparisonColumn(['p1','p2','p3'],'p2','p9'),['p1','p9','p3']);
+ assert.notEqual(createUniqueDecisionId(),createUniqueDecisionId());
 });
 test('U06-06 cancelled or old revision response is ignored',()=>{
  assert.equal(requestIsCurrent(1,2,1,1),false);assert.equal(requestIsCurrent(2,2,1,2),false);assert.equal(requestIsCurrent(2,2,2,2),true);

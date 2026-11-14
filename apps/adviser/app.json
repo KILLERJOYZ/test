@@ -2,24 +2,31 @@
   "expo": {
     "name": "Lựa · Adviser",
     "slug": "lua-adviser",
-    "version": "0.4.0",
+    "scheme": "lua-adviser",
+    "version": "0.6.0",
     "platforms": [
       "android"
     ],
     "orientation": "default",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "plugins": ["./plugins/with-local-network.cjs", "./plugins/with-local-ai.cjs"],
+    "plugins": [
+      "./plugins/with-local-network.cjs",
+      "./plugins/with-local-ai.cjs",
+      "expo-sqlite"
+    ],
     "android": {
       "package": "vn.lua.adviser",
-      "versionCode": 2,
-      "edgeToEdgeEnabled": true,
+      "versionCode": 5,
       "permissions": [],
-      "blockedPermissions": ["android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE", "android.permission.SYSTEM_ALERT_WINDOW"]
+      "blockedPermissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ]
     },
     "extra": {
-      "dataset": "repository-real-listings",
-      "aiMode": "on-device-gemini-nano"
+      "dataset": "unified-device-reference-v1",
+      "aiMode": "hybrid-langgraph-gemini-nano"
     }
   }
 }

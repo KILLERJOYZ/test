@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { URL } from "node:url";
 import { INITIAL_REQUIREMENTS } from "./catalog.ts";
-import { createAdviserStore, validState } from "./adviser-store.ts";
+import { createAdviserStore, migrateAdviserState, validState } from "./adviser-store.ts";
 import type { AdviserState } from "./adviser-store.ts";
 const catalog = JSON.parse(
   fs.readFileSync(new URL("./real-catalog.json", import.meta.url), "utf8"),
@@ -27,7 +27,7 @@ test("STORE-01 failed initial read blocks writes until explicit recovery", async
     async () => {
       writes++;
     },
-    () => {},
+    () => { },
   );
   assert.equal(await store.load(), false);
   assert.equal(await store.update((s) => ({ ...s, revision: 1 })), false);
@@ -40,7 +40,7 @@ test("STORE-02 malformed restore preserves bytes and blocks mutation", async () 
     initial,
     async () => "{}",
     async () => assert.fail("write"),
-    () => {},
+    () => { },
   );
   assert.equal(await store.load(), false);
   assert.equal(store.ready(), false);
@@ -55,7 +55,7 @@ test("STORE-03 queued updates reduce latest committed state", async () => {
     async () => {
       if (++n === 1) await gate;
     },
-    () => {},
+    () => { },
   );
   await store.load();
   const a = store.update((s) => ({ ...s, revision: s.revision + 1 })),
@@ -73,7 +73,7 @@ test("STORE-04 failed write and throwing reducer preserve prior state and usable
     async () => {
       if (fail) throw Error("disk");
     },
-    () => {},
+    () => { },
   );
   await store.load();
   assert.equal(await store.update((s) => ({ ...s, revision: 9 })), false);
@@ -95,7 +95,7 @@ test("STORE-05 delete serializes after save and restart restores final state", a
     async (s) => {
       raw = s;
     },
-    () => {},
+    () => { },
   );
   await store.load();
   const saved = {
@@ -112,10 +112,28 @@ test("STORE-05 delete serializes after save and restart restores final state", a
   const reopened = createAdviserStore(
     initial,
     async () => raw,
-    async () => {},
-    () => {},
+    async () => { },
+    () => { },
   );
   assert.ok(await reopened.load());
   assert.deepEqual(reopened.current().saved, []);
   assert.ok(validState(reopened.current()));
+});
+
+test("STORE-06 validState enforces strict key whitelist and migrateAdviserState upgrades schema 0", () => {
+  assert.equal(validState({ ...initial, unexpectedKey: true }), false);
+  const migrated = migrateAdviserState(
+    {
+      schemaVersion: 0,
+      requirements: INITIAL_REQUIREMENTS,
+      revision: 2,
+      saved: [],
+      catalog,
+      endpoint: "https://example.com",
+      token: "abc",
+      legacyExtra: "stripped",
+    },
+    catalog,
+  );
+  assert.ok(validState(migrated));
 });

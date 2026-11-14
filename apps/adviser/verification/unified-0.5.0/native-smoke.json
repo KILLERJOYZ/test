@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "serial": "emulator-5580",
+  "version": "0.5.0",
+  "observations": [
+    {
+      "phase": "launch",
+      "root": "unified full-category app",
+      "existingDataRetained": true
+    },
+    {
+      "phase": "restart",
+      "root": "unified full-category app",
+      "existingDataRetained": true
+    }
+  ],
+  "limits": "Launch/restart only; category journeys use component tests. Physical AICore and accessibility acceptance remain open."
+}
